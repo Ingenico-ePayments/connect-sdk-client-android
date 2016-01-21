@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    
+	   	<ImageView
+	        android:id="@+id/headerImage"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/logo_merchant"
+	        style="@style/HeaderLogo" />
+	   	
+	   	<LinearLayout
+	   	    android:layout_width="match_parent"
+	   	    android:layout_height="match_parent"
+	   	    android:layout_margin="20dp"
+	   	    android:orientation="vertical">
+	    
+		    <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="To process a payment using the services provided by GlobalCollect, the following information must be provided by a merchant. \n\nAfter providing the information requested below, this example app can process a payment."
+		    	/>
+		    
+		    <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Client Session Identifier:"
+		        android:layout_marginTop="10dp"/>
+		    
+		    <EditText
+		        android:id="@+id/client_session_identifier"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content" />
+		    
+		    <TextView
+		        android:layout_marginTop="10dp"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Customer Identifier:"/>
+		    
+		    <EditText
+		        android:id="@+id/customer_identifier"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+				/>
+		    
+		    <TextView
+		        android:layout_marginTop="10dp"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Region:"/>
+		    
+		    <Spinner
+		        android:id="@+id/region"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"/>
+		    
+		    <TextView
+		        android:layout_marginTop="10dp"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Environment:"/>
+		    
+		    <Spinner
+		        android:id="@+id/environment"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"/>
+		    
+		    <TextView
+		        android:layout_marginTop="10dp"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Amount in cents:"/>
+		    
+		    <EditText
+		        android:id="@+id/amount"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:inputType="number" />
+		    
+		    <TextView
+		        android:layout_marginTop="10dp"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Country code:"/>
+		    
+		    <Spinner
+		        android:id="@+id/country_code"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"/>
+		    
+		    <TextView
+		        android:layout_marginTop="10dp"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Currency code:"/>
+		    
+		    <Spinner
+		        android:id="@+id/currency_code"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"/>
+		    
+		    <LinearLayout
+		        android:layout_marginTop="10dp"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+		        
+		        <CheckBox
+		            android:id="@+id/payment_is_recurring"
+		            android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" />
+		        
+			    <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="Payment is recurring"/>
+			    
+			</LinearLayout>
+		    
+		    <Button
+		        android:layout_marginTop="10dp"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:text="Pay securely now"
+		        android:background="@drawable/active_button_background"
+		        android:textSize="20sp"
+		        android:textStyle="bold"
+		        android:textColor="#FFFFFF"
+		        android:onClick="payButtonPressed"/>"
+		    
+		</LinearLayout>
+
+	</LinearLayout>
+</ScrollView>

@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+	<ScrollView 
+	    android:layout_weight="0"
+	    android:id="@+id/container"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    tools:context="com.globalcollect.gateway.sdk.client.android.activities.SelectPaymentProductActivity"
+	    tools:ignore="MergeRootFrame" >
+	    
+	    
+	    <LinearLayout
+		    android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        style="@style/WhiteLayout">
+	
+			<include layout="@layout/activity_header" />
+			
+			
+			<TextView
+			    android:id="@+id/listAccountsOnFileHeader"
+				android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+	        	android:text="@string/gc.general.header.choose.paymentproduct.accountsonfile.header"
+	        	android:visibility="gone"
+	        	style="@style/ListHeaderText" />
+			
+			<ImageView
+			    android:id="@+id/listAccountsOnFileDivider"
+		        android:layout_width="match_parent"
+		        android:layout_height="1dp"
+		        android:scaleType="fitXY"
+		        android:visibility="gone"
+		        android:src="@drawable/line" />
+			
+			<LinearLayout
+	        	android:id="@+id/listAccountsOnFile"
+	        	android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:background="#ffffff"
+	        	android:gravity="center_vertical"
+	        	android:orientation="vertical"
+	        	android:visibility="gone" 
+	        	android:paddingBottom="30dp"
+	        	/>
+			
+			<TextView
+				android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+	        	android:text="@string/gc.general.header.choose.paymentproduct.header"
+	        	style="@style/ListHeaderText" />
+			
+			<ImageView
+		        android:layout_width="match_parent"
+		        android:layout_height="1dp"
+		        android:scaleType="fitXY"
+		        android:src="@drawable/line" />
+					
+			<LinearLayout
+	        	android:id="@+id/listPaymentProducts"
+	        	android:layout_width="match_parent"
+	        	android:layout_height="wrap_content"
+	        	android:background="#ffffff"
+	        	android:gravity="center_vertical"
+	        	android:orientation="vertical" />
+	    </LinearLayout>
+	</ScrollView>
+
+	<include layout="@layout/activity_footer" />
+
+</LinearLayout>

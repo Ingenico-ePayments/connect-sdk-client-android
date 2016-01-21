@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+	<ScrollView 
+	    android:layout_weight="0"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    tools:context="com.globalcollect.gateway.sdk.client.android.activities.SelectPaymentProductActivity" >
+	    
+		<LinearLayout
+		    android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        style="@style/WhiteLayout" >
+			
+		    <include layout="@layout/activity_header" />
+			        
+		    <LinearLayout
+		        android:id="@+id/renderInputFieldsLayout"
+		     	android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical" 
+		        style="@style/RenderInputFieldsLayout" />
+		    
+		     <LinearLayout
+		        android:id="@+id/rememberLayoutParent"
+		     	android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical"
+		        style="@style/RenderInputFieldsLayout" >
+		    
+				<LinearLayout
+				    android:id="@+id/rememberLayout"
+			    	android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="horizontal"
+			        android:visibility="gone" >
+						
+					<CheckBox
+						android:id="@+id/rememberMe"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_weight="1"
+						android:text="@string/gc.page.paymentProductDetails.rememberMe"
+						style="@style/RememberMeCheckbox" />
+					
+				</LinearLayout>
+			
+			</LinearLayout>
+		        
+			<LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical" >
+		        
+			    <Button
+				    android:id="@+id/payNowButton"
+				    style="@style/PayButton"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1"
+				  
+				    android:onClick="submitInputFields"
+				    android:text="@string/gc.page.paymentProductDetails.payButton" />
+		        
+			    <Button
+				    android:id="@+id/cancelText"
+				    style="@style/CancelButton"
+				    android:layout_width="match_parent"
+			    	android:layout_height="wrap_content"
+			    	android:layout_weight="1"
+			    	
+			    	android:onClick="backToPaymentProductScreen"
+			    	android:text="@string/gc.page.paymentProductDetails.cancelButton" />
+	
+			</LinearLayout>
+			
+		</LinearLayout>
+	</ScrollView>		
+		
+	<include layout="@layout/activity_footer"/>
+
+</LinearLayout>

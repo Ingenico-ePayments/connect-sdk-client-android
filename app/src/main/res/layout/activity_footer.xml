@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    style="@style/FooterLayout"
+    android:gravity="bottom"
+    android:layout_weight="1"
+    android:layout_height="0dip">
+
+	<TextView
+	    android:gravity="center_horizontal"
+	    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gc.general.footer.privacyPolicy"
+        style="@style/FooterText" />
+	
+</LinearLayout>
