@@ -1,0 +1,7 @@
+.gradle
+.idea
+/build
+*/build/intermediates
+*/build/outputs
+*/build/tmp
+local.properties

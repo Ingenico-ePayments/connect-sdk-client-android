@@ -9,7 +9,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunica
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
 
 /**
- * AsyncTask which executes an paymentproduct directory call to the Global Collect Gateway 
+ * AsyncTask which executes an paymentproduct directory call to the GlobalCollect platform
  * 
  * Copyright 2014 Global Collect Services B.V
  *
@@ -76,7 +76,7 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
     @Override
     protected PaymentProductDirectoryResponse doInBackground(String... params) {
     	
-    	// Do the call to the GlobalCollect Gateway
+    	// Do the call to the GlobalCollect platform
     	return communicator.getPaymentProductDirectory(productId, currencyCode, countryCode, context);
     }
 

@@ -8,7 +8,7 @@ import android.os.AsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
 
 /**
- * AsyncTask which executes an convert amount call to the Global Collect Gateway 
+ * AsyncTask which executes an convert amount call to the GlobalCollect platform
  * 
  * Copyright 2014 Global Collect Services B.V
  *
@@ -72,7 +72,7 @@ public class ConvertAmountAsyncTask extends AsyncTask<String, Void, Long> {
     @Override
     protected Long doInBackground(String... params) {
     	
-    	// Do the call to the GlobalCollect Gateway
+    	// Do the call to the GlobalCollect platform
 		Long convertedAmount = communicator.convertAmount(amount, source, target, context);
     	return convertedAmount;
     }

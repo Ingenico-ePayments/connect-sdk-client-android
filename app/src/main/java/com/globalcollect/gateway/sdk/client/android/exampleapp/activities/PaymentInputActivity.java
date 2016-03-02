@@ -165,7 +165,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 					}
 					// Submit the information contained in the encrypted
 					// payment request represented by preparedPaymentRequest
-					// to GlobalCollect via your server.
+					// to the GlobalCollect platform via your server.
 				}
 			};
 	     	

@@ -5,7 +5,7 @@ import java.security.InvalidParameterException;
 
 /**
  * Pojo which holds the PaymentProductCachkey data
- * It's used to determine if a PaymentProduct should be retrieved from the GlobalCollect Gateway, or retrieved from the memory cache
+ * It's used to determine if a PaymentProduct should be retrieved from the GlobalCollect platform, or retrieved from the memory cache
  * 
  * Copyright 2014 Global Collect Services B.V
  *

@@ -9,7 +9,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunica
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
 
 /**
- * AsyncTask which executes an publickey lookup call to the Global Collect Gateway 
+ * AsyncTask which executes an publickey lookup call to the GlobalCollect platform
  * 
  * Copyright 2014 Global Collect Services B.V
  *
@@ -52,7 +52,7 @@ public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyRespons
     @Override
     protected PublicKeyResponse doInBackground(String... params) {
     	
-    	// Do the call to the GlobalCollect Gateway
+    	// Do the call to the GlobalCollect platform
     	PublicKeyResponse response = communicator.getPublicKey(context);
     	
     	return response;

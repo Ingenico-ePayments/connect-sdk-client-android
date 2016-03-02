@@ -2,7 +2,7 @@
 <resources>
   
     <!-- Example App Translations -->
-    <string name="app_name">GlobalCollect Checkout</string>
+    <string name="app_name">Ingenico ePayments Checkout</string>
     <string name="gc.general.header.secure.payment">Secure payment</string>    
     <string name="gc.general.header.choose.paymentproduct.header">Pick your paymentproduct:</string>
     <string name="gc.general.header.choose.paymentproduct.accountsonfile.header">Previous payment products</string>
