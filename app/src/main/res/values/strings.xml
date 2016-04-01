@@ -126,7 +126,6 @@
     <string name="gc.general.paymentProducts.114.name">Visa Debit</string>
     <string name="gc.general.paymentProducts.117.name">Maestro</string>
     <string name="gc.general.paymentProducts.119.name">MasterCard Debit</string>
-    <string name="gc.general.paymentProducts.12.name">Check</string>
     <string name="gc.general.paymentProducts.122.name">Visa Electron</string>
     <string name="gc.general.paymentProducts.123.name">Dankort</string>
     <string name="gc.general.paymentProducts.124.name">Laser</string>

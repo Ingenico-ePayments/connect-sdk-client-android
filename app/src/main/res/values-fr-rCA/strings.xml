@@ -82,12 +82,6 @@
 	<string name="gc.general.paymentProducts.114.name">VISA Débit</string>
 	<string name="gc.general.paymentProducts.117.name">Maestro</string>
 	<string name="gc.general.paymentProducts.119.name">MasterCard Débit</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.CHEQUEACCOUNTHOLDER.label">Établissez un chèque à l\'ordre de</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.PAYMENTREFERENCE.label">Votre référence de paiement est</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS1.label">Envoyez à (line 1)</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS2.label">Envoyez à (line 2)</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS3.label">Envoyez à (line 3)</string>
-	<string name="gc.general.paymentProducts.12.name">Chèque</string>
 	<string name="gc.general.paymentProducts.122.name">VISA Electron</string>
 	<string name="gc.general.paymentProducts.123.name">Dankort</string>
 	<string name="gc.general.paymentProducts.125.name">JCB</string>

@@ -536,7 +536,7 @@ public final class R {
 		public static final int abc_textfield_search_material = 0x7f020044;
 		public static final int design_fab_background = 0x7f020046;
 		public static final int design_snackbar_background = 0x7f020047;
-		public static final int notification_template_icon_bg = 0x7f020088;
+		public static final int notification_template_icon_bg = 0x7f020087;
 	}
 	public static final class id {
 		public static final int action0 = 0x7f0b008e;
@@ -728,7 +728,7 @@ public final class R {
 		public static final int abc_shareactionprovider_share_with = 0x7f050010;
 		public static final int abc_shareactionprovider_share_with_application = 0x7f050011;
 		public static final int abc_toolbar_collapse_description = 0x7f050012;
-		public static final int appbar_scrolling_view_behavior = 0x7f0500d3;
+		public static final int appbar_scrolling_view_behavior = 0x7f0500cd;
 		public static final int status_bar_notification_info_overflow = 0x7f050013;
 	}
 	public static final class style {

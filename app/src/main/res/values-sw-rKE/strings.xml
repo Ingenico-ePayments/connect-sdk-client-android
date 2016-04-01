@@ -82,12 +82,6 @@
 	<string name="gc.general.paymentProducts.114.name">Visa Debit</string>
 	<string name="gc.general.paymentProducts.117.name">Maestro</string>
 	<string name="gc.general.paymentProducts.119.name">MasterCard Debit</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.CHEQUEACCOUNTHOLDER.label">Fanya hundi ilipwe kwa</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.PAYMENTREFERENCE.label">Rejeleo la malipo yako ni</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS1.label">Tuma kwa (line 1)</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS2.label">Tuma kwa (line 2)</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS3.label">Tuma kwa (line 3)</string>
-	<string name="gc.general.paymentProducts.12.name">Hundi</string>
 	<string name="gc.general.paymentProducts.122.name">Visa Electron</string>
 	<string name="gc.general.paymentProducts.123.name">Dankort</string>
 	<string name="gc.general.paymentProducts.125.name">JCB</string>

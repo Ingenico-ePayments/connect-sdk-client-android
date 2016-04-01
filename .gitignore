@@ -4,4 +4,7 @@
 */build/intermediates
 */build/outputs
 */build/tmp
+*/build/docs
+*/build/libs
+*/build/poms
 local.properties

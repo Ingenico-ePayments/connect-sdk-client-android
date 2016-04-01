@@ -82,12 +82,6 @@
 	<string name="gc.general.paymentProducts.114.name">Visa Debit</string>
 	<string name="gc.general.paymentProducts.117.name">Maestro</string>
 	<string name="gc.general.paymentProducts.119.name">MasterCard Debit</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.CHEQUEACCOUNTHOLDER.label">小切手の振り出し先を指定</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.PAYMENTREFERENCE.label">お客様の支払照会は</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS1.label">送信先（line 1）</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS2.label">送信先（line 2）</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS3.label">送信先（line 3）</string>
-	<string name="gc.general.paymentProducts.12.name">小切手</string>
 	<string name="gc.general.paymentProducts.122.name">Visa Electron</string>
 	<string name="gc.general.paymentProducts.123.name">Dankort</string>
 	<string name="gc.general.paymentProducts.125.name">JCB</string>

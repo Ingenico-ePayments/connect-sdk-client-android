@@ -82,12 +82,6 @@
 	<string name="gc.general.paymentProducts.114.name">Visa Debit</string>
 	<string name="gc.general.paymentProducts.117.name">Maestro</string>
 	<string name="gc.general.paymentProducts.119.name">MasterCard Debit</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.CHEQUEACCOUNTHOLDER.label">수표 발행 대상:</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.PAYMENTREFERENCE.label">귀하의 지불 참조 번호:</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS1.label">수취인(line 1):</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS2.label">수취인(line 2):</string>
-	<string name="gc.general.paymentProducts.12.instructionFields.POSTALADDRESS3.label">수취인(line 3):</string>
-	<string name="gc.general.paymentProducts.12.name">수표</string>
 	<string name="gc.general.paymentProducts.122.name">Visa Electron</string>
 	<string name="gc.general.paymentProducts.123.name">Dankort</string>
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
