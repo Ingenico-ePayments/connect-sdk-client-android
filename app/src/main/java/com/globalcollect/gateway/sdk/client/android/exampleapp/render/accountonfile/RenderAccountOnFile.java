@@ -16,7 +16,6 @@ import com.globalcollect.gateway.sdk.client.android.sdk.formatter.StringFormatte
 import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFileDisplay;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
 
 
@@ -30,13 +29,13 @@ public class RenderAccountOnFile implements RenderAccountOnFileInterface {
 	
 	@SuppressWarnings("deprecation")
 	@Override
-	public void renderAccountOnFile(AccountOnFile accountOnFile, BasicPaymentProduct product, ViewGroup parent) {
+	public void renderAccountOnFile(AccountOnFile accountOnFile, String productId, ViewGroup parent) {
 	
 		if (accountOnFile == null) {
 			throw new InvalidParameterException("Error renderingAccountOnFile, accountOnFile may not be null");
 		}
-		if (product == null) {
-			throw new InvalidParameterException("Error renderingAccountOnFile, product may not be null");
+		if (productId == null) {
+			throw new InvalidParameterException("Error renderingAccountOnFile, productId may not be null");
 		}
 		if (parent == null) {
 			throw new InvalidParameterException("Error renderingAccountOnFile, parent may not be null");
@@ -77,7 +76,7 @@ public class RenderAccountOnFile implements RenderAccountOnFileInterface {
 		
 		// Set the logo via the AssetManager
 		AssetManager logoManager = AssetManager.getInstance(parent.getContext());
-		Drawable logo = logoManager.getLogo(product.getId());
+		Drawable logo = logoManager.getLogo(productId);
 		
 		if (Build.VERSION.SDK_INT < 16) {
 			accountOnFileLogoImageView.setBackgroundDrawable(logo);

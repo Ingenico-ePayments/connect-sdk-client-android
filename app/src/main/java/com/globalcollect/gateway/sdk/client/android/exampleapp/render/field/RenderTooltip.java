@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.translation.Translator;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 ;
 
 /** 
@@ -30,7 +30,7 @@ public class RenderTooltip implements RenderTooltipInterface {
 	
 		
 	@Override
-	public void renderTooltip(final String fieldId, PaymentProduct selectedPaymentProduct, final ViewGroup rowView) {
+	public void renderTooltip(final String fieldId, BasicPaymentItem selectedPaymentProduct, final ViewGroup rowView) {
 		
 		
 		// Check if the translated tooltip text is in the translationsfile.
@@ -39,7 +39,7 @@ public class RenderTooltip implements RenderTooltipInterface {
 		final String tooltipText = translator.getPaymentProductFieldTooltipText(selectedPaymentProduct.getId(), fieldId);
 		final Integer drawableId = translator.getPaymentProductFieldTooltipImage(selectedPaymentProduct.getId(), fieldId);
 		
-		if (tooltipText != null && !tooltipText.isEmpty()) {
+		if (tooltipText != null && !tooltipText.isEmpty() && !tooltipText.startsWith(translator.BAD_TRANSLATION_KEY_MARKER)) {
 			
 			// Add the questionmark tooltip image after the inputfield
 			ImageView tooltipImage = new ImageView(rowView.getContext());
@@ -57,6 +57,9 @@ public class RenderTooltip implements RenderTooltipInterface {
 					tooltipLayoutParams.topMargin = TOOLTIP_MARGIN_TOP_CHECKBOX;
 				}
 			}
+
+			// Add a tag, so we can find the view
+			tooltipImage.setTag(fieldId);
 			
 			rowView.addView(tooltipImage, tooltipLayoutParams);
 			
@@ -97,7 +100,7 @@ public class RenderTooltip implements RenderTooltipInterface {
 	 * Creates a tooltip textview and adds it under the rowView.
 	 * 
 	 * @param tooltipText, the text that is shown on the screen
-	 * @param fieldIdentifier, the id of the belonging paymentproductfield, this is used for setting a unique tag on the textview
+	 * @param fieldId, the id of the belonging paymentproductfield, this is used for setting a unique tag on the textview
 	 * @param rowView, the view under who the textview is added
 	 * @param drawableId, this drawable is shown under the tooltiptext
 	 */

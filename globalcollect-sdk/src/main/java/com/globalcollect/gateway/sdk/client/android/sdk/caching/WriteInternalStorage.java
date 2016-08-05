@@ -84,9 +84,9 @@ class WriteInternalStorage {
 			objectOutputStream = new ObjectOutputStream(fileOutputStream);
 			objectOutputStream.writeObject(currentCachedIinResponses);
         } catch (StreamCorruptedException e) {
-			Log.e(TAG, "Error storing PaymentProducts on internal device storage", e);
+			Log.e(TAG, "Error storing BasicPaymentProducts on internal device storage", e);
 		} catch (IOException e) {
-			Log.e(TAG, "Error storing PaymentProducts on internal device storage", e);
+			Log.e(TAG, "Error storing BasicPaymentProducts on internal device storage", e);
 		} finally {
 			try {
 				objectOutputStream.close();

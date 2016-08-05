@@ -1,5 +1,24 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;import java.security.InvalidParameterException;import java.util.HashMap;import android.view.View;import android.view.ViewGroup;import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.FormElement.ListType;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
-/** * Delegate which handles the rendering of fields  *  * Copyright 2014 Global Collect Services B.V * */
+package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
+
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.FormElement.ListType;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentItem;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
+
+import java.security.InvalidParameterException;
+import java.util.HashMap;
+
+/**
+ * Delegate which handles the rendering of fields 
+ * 
+ * Copyright 2014 Global Collect Services B.V
+ *
+ */
 public class RenderInputDelegate {
 	
 
@@ -46,35 +65,34 @@ public class RenderInputDelegate {
 		renderField.registerCustomTooltipRenderer(renderer);
 	}
 
-	
-	
+
 	/**
 	 * Renders all PaymentProductField fields that are given in the list fields
 	 * This is a delegate who defers the rendering to the specific RenderInputField implementation
-	 * 
-	 * @param product, the paymentproduct that contains all fields that are going to be rendered
+	 *
+	 * @param paymentItem, the paymentproduct that contains all fields that are going to be rendered
 	 * @param accountOnFile, the selected accountOnFile that contains previous payment data
-	 * @param paymentRequest, the paymentRequest which contains all entered user input
+	 * @param inputDataPersister, the paymentRequest which contains all entered user input
 	 */
-	public void renderPaymentInputFields(PaymentProduct product, AccountOnFile accountOnFile, PaymentRequest paymentRequest, C2sPaymentProductContext c2sContext) {
-		
-		if (product == null) {
-			throw new InvalidParameterException("Error rendering PaymentInputFields, product may not be null");
+	public void renderPaymentInputFields(PaymentItem paymentItem, AccountOnFile accountOnFile, InputDataPersister inputDataPersister, PaymentContext paymentContext) {
+
+		if (paymentItem == null) {
+			throw new InvalidParameterException("Error rendering PaymentInputFields, basicPaymentItem may not be null");
 		}
-		
-		// Render all field
+
+		// Render all fields
 		RenderInputRegistry registry = new RenderInputRegistry(customRenderers);
-		
-		for (PaymentProductField field : product.getPaymentProductFields()) {
-			
+
+		for (PaymentProductField field : paymentItem.getPaymentProductFields()) {
+
 			RenderInputFieldInterface renderer = registry.getRenderInputFieldForFieldType(field.getDisplayHints().getFormElement().getType());
 			if (renderer != null) {
-				renderField.renderField(renderer, field, product, accountOnFile, paymentRequest, c2sContext);
+				renderField.renderField(renderer, field, paymentItem, accountOnFile, inputDataPersister, paymentContext);
 			}
 		}
 	}
 
-	
+
 	/**
 	 * Hides all tooltiptexts
 	 */

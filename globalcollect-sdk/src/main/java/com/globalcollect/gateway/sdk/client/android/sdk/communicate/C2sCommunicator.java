@@ -8,27 +8,29 @@ import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
 import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.sdk.exception.CommunicationException;
 import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.ConvertedAmountResponse;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.CountryCode;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.CurrencyCode;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinDetailsRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProducts;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Serializable;
-import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.security.InvalidParameterException;
 import java.util.Date;
 import java.util.List;
@@ -80,20 +82,20 @@ public class C2sCommunicator implements Serializable {
 		}
 		return new C2sCommunicator(configuration);
 	}
-	
-	
+
+
 	/**
-	 * Retrieves a list of paymentproducts from the GC gateway without any fields
+	 * Retrieves a list of basicpaymentproducts from the GC gateway without any fields
 	 * 
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param c2sContext, used for reading device metada which is send to the GC gateway
+	 * @param context, used for reading device metadata which is send to the GC gateway
+	 * @param paymentContext, payment information that is used to retrieve the correct payment products
 	 *
-	 * @return list of PaymentProducts, or null when an error has occured
+	 * @return list of BasicPaymentProducts, or null when an error has occured
 	 */
-	public PaymentProducts getPaymentProducts(C2sPaymentProductContext c2sContext, Context context) {
+	public BasicPaymentProducts getBasicPaymentProducts(PaymentContext paymentContext, Context context) {
 		
-		if (c2sContext == null) {
-			throw new InvalidParameterException("Error getting PaymentProducts, request may not be null");
+		if (paymentContext == null) {
+			throw new InvalidParameterException("Error getting BasicPaymentProducts, request may not be null");
 		}
 
 		HttpURLConnection connection = null;
@@ -107,17 +109,17 @@ public class C2sCommunicator implements Serializable {
 					
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(c2sContext.getCountryCode());
-			queryString.append("&amount=").append(c2sContext.getTotalAmount());			
-			queryString.append("&isRecurring=").append(c2sContext.isRecurring());
-			queryString.append("&currencyCode=").append(c2sContext.getCurrencyCode());
+			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
+			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
+			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
 			queryString.append("&hide=fields");
 			queryString.append("&").append(createCacheBusterParameter());
-			
+
 			// Add query string to complete path
 			completePath += queryString.toString();
 			
-			// Do the call and deserialise the result to PaymentProducts
+			// Do the call and deserialise the result to BasicPaymentProducts
 			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
@@ -127,17 +129,17 @@ public class C2sCommunicator implements Serializable {
 			}
 
 	        Gson gson = new Gson();
-			PaymentProducts paymentProducts = gson.fromJson(responseBody, PaymentProducts.class);
+			BasicPaymentProducts basicPaymentProducts = gson.fromJson(responseBody, BasicPaymentProducts.class);
 
 			// Set the logos for all paymentproducts
-			for(BasicPaymentProduct paymentProduct : paymentProducts.getPaymentProducts()) {
+			for(BasicPaymentProduct paymentProduct : basicPaymentProducts.getBasicPaymentProducts()) {
 				
 				AssetManager manager = AssetManager.getInstance(context);
 				Drawable logo = manager.getLogo(paymentProduct.getId());
 				paymentProduct.getDisplayHints().setLogo(logo);
 			}
 			
-			return paymentProducts;
+			return basicPaymentProducts;
 
 		} catch (CommunicationException e) {
 			Log.i(TAG, "Error while getting paymentproducts:" + e.getMessage());
@@ -154,18 +156,18 @@ public class C2sCommunicator implements Serializable {
 			} catch (IOException e) {}
 		}
 	}
-	
-	
+
+
 	/**
 	 * Retrieves a single paymentproduct from the GC gateway including all its fields
 	 * 
-	 * @param productId
+	 * @param productId, used to retrieve the PaymentProduct that is associated with this id
 	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param c2sContext, C2sPaymentProductContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts 
+	 * @param paymentContext, PaymentContext which contains all neccesary data to retrieve a paymentproduct
 	 * 
 	 * @return PaymentProduct, or null when an error has occured
 	 */
-	public PaymentProduct getPaymentProduct(String productId, Context context, C2sPaymentProductContext c2sContext) {
+	public PaymentProduct getPaymentProduct(String productId, Context context, PaymentContext paymentContext) {
 		
 		if (productId == null) {
 			throw new InvalidParameterException("Error getting PaymentProduct, productId may not be null");
@@ -182,10 +184,10 @@ public class C2sCommunicator implements Serializable {
 					
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(c2sContext.getCountryCode());
-			queryString.append("&amount=").append(c2sContext.getTotalAmount());			
-			queryString.append("&isRecurring=").append(c2sContext.isRecurring());
-			queryString.append("&currencyCode=").append(c2sContext.getCurrencyCode());
+			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
+			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
+			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
 			queryString.append("&").append(createCacheBusterParameter());
 			completePath += queryString.toString();
 			
@@ -216,8 +218,143 @@ public class C2sCommunicator implements Serializable {
 				}
 			} catch (IOException e) {}
 		}
-	}	
-	
+	}
+
+
+	/**
+	 * Retrieves a list of basicpaymentproductgroups from the GC gateway without any fields
+	 *
+	 * @param context, used for reading device metadata which is send to the GC gateway
+	 * @param paymentContext, used to retrieve the correct productGroups from the GC gateway
+	 *
+	 * @return list of BasicPaymentProducts, or null when an error has occured
+	 */
+	public BasicPaymentProductGroups getBasicPaymentProductGroups(PaymentContext paymentContext, Context context) {
+
+		if (paymentContext == null) {
+			throw new InvalidParameterException("Error getting BasicPaymentProductGroups, request may not be null");
+		}
+
+		HttpURLConnection connection = null;
+
+		try {
+
+			// Build the complete url which is called
+			String baseUrl = configuration.getBaseUrl();
+			String paymentProductGroupsPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTGROUPS_PATH.replace("[cid]", configuration.getCustomerId());
+			String completePath = baseUrl + paymentProductGroupsPath;
+
+			// Add query parameters
+			StringBuilder queryString = new StringBuilder();
+			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
+			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
+			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
+			queryString.append("&hide=fields");
+			queryString.append("&").append(createCacheBusterParameter());
+
+			// Add query string to complete path
+			completePath += queryString.toString();
+
+			// Do the call and deserialise the result to BasicPaymentProducts
+			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
+			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+
+			// Log the response
+			if (Constants.ENABLE_REQUEST_LOGGING) {
+				logResponse(connection, responseBody);
+			}
+
+			Gson gson = new Gson();
+			BasicPaymentProductGroups basicPaymentProductGroups = gson.fromJson(responseBody, BasicPaymentProductGroups.class);
+
+			// Set the logos for all BasicPaymentProductGroups
+			for(BasicPaymentProductGroup paymentProductGroup : basicPaymentProductGroups.getBasicPaymentProductGroups()) {
+
+				AssetManager manager = AssetManager.getInstance(context);
+				Drawable logo = manager.getLogo(paymentProductGroup.getId());
+				paymentProductGroup.getDisplayHints().setLogo(logo);
+			}
+
+			return basicPaymentProductGroups;
+
+		} catch (CommunicationException e) {
+			Log.i(TAG, "Error while getting paymentProductGroups:" + e.getMessage());
+			return null;
+		} catch (Exception e) {
+			Log.i(TAG, "Error while getting paymentProductGroups:" + e.getMessage());
+			return null;
+		} finally {
+			try {
+				if (connection != null) {
+					connection.getInputStream().close();
+					connection.disconnect();
+				}
+			} catch (IOException e) {}
+		}
+	}
+
+	/**
+	 * Retrieves a single paymentProductGroup from the GC gateway including all its fields
+	 *
+	 * @param groupId, used to retrieve the BasicPaymentProductGroup that is associated with this id
+	 * @param context, used for reading device metada which is send to the GC gateway
+	 * @param paymentContext, PaymentContext which contains all neccesary data to retrieve a paymentProductGroup
+	 *
+	 * @return PaymentProduct, or null when an error has occured
+	 */
+	public PaymentProductGroup getPaymentProductGroup(String groupId, Context context, PaymentContext paymentContext) {
+
+		if (groupId == null) {
+			throw new InvalidParameterException("Error getting paymentProductGroup, groupId may not be null");
+		}
+
+		HttpURLConnection connection = null;
+
+		try {
+
+			// Build the complete url which is called
+			String baseUrl = configuration.getBaseUrl();
+			String paymentProductPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTGROUP_PATH.replace("[cid]", configuration.getCustomerId()).replace("[gid]", groupId);
+			String completePath = baseUrl + paymentProductPath;
+
+			// Add query parameters
+			StringBuilder queryString = new StringBuilder();
+			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
+			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
+			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
+			queryString.append("&").append(createCacheBusterParameter());
+			completePath += queryString.toString();
+
+			// Do the call and deserialise the result to PaymentProduct
+			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
+			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+
+			// Log the response
+			if (Constants.ENABLE_REQUEST_LOGGING) {
+				logResponse(connection, responseBody);
+			}
+
+			Gson gson = new Gson();
+			return gson.fromJson(responseBody, PaymentProductGroup.class);
+
+		} catch (CommunicationException e) {
+			Log.i(TAG, "Error while getting paymentProductGroup:" + e.getMessage());
+			return null;
+		} catch (Exception e) {
+			Log.i(TAG, "Error while getting paymentProductGroup:" + e.getMessage());
+			return null;
+		} finally {
+			try {
+				if (connection != null) {
+					connection.getInputStream().close();
+					connection.disconnect();
+				}
+			} catch (IOException e) {}
+		}
+	}
+
 
 	/**
 	 * Retrieves a list of directories for a given paymentproduct
@@ -229,7 +366,7 @@ public class C2sCommunicator implements Serializable {
 	 * 
 	 * @return PaymentProductDirectoryResponse, or null when an error has occured
 	 */
-	public PaymentProductDirectoryResponse getPaymentProductDirectory(String productId, String currencyCode, String countryCode, Context context) {
+	public PaymentProductDirectoryResponse getPaymentProductDirectory(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context) {
 		
 		if (productId == null) {
 			throw new InvalidParameterException("Error getting PaymentProduct directory, productId may not be null");
@@ -255,8 +392,8 @@ public class C2sCommunicator implements Serializable {
 					
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?currencyCode=").append(currencyCode);
-			queryString.append("&countryCode=").append(countryCode);			
+			queryString.append("?currencyCode=").append(currencyCode.name());
+			queryString.append("&countryCode=").append(countryCode.name());
 			queryString.append("&").append(createCacheBusterParameter());
 			completePath += queryString.toString();
 			
@@ -288,21 +425,22 @@ public class C2sCommunicator implements Serializable {
 		}
 	}	
 	
-	
+
 	/**
 	 * Get the IIN details for the entered partial creditcardnumber
-	 * 
-	 * @param context, used for reading device metada which is send to the GC gateway 
+	 *
+	 * @param context, used for reading device metada which is send to the GC gateway
 	 * @param partialCreditCardNumber, entered partial creditcardnumber
-	 * 
+	 * @param paymentContext, meta data for the payment that is used to get contextual information from the GC gateway
+	 *
 	 * @return IinDetailsResponse which contains the result of the IIN lookup, or null when an error has occured
 	 */
-	public String getPaymentProductIdByCreditCardNumber(String partialCreditCardNumber, Context context) {
-		
+	public IinDetailsResponse getPaymentProductIdByCreditCardNumber(String partialCreditCardNumber, Context context, PaymentContext paymentContext) {
+
 		if (partialCreditCardNumber == null ) {
 			throw new InvalidParameterException("Error getting IinDetails, partialCreditCardNumber may not be null");
 		}
-		
+
 		// Trim partialCreditCardNumber to MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP digits
 		if (partialCreditCardNumber.length() > MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP) {
 			partialCreditCardNumber = partialCreditCardNumber.substring(0, MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP);
@@ -311,16 +449,16 @@ public class C2sCommunicator implements Serializable {
 		HttpURLConnection connection = null;
 
 		try {
-			
+
 			// Construct the url for the IIN details call
 			String paymentProductPath = Constants.GC_GATEWAY_IIN_LOOKUP_PATH.replace("[cid]", configuration.getCustomerId());
 			String url = configuration.getBaseUrl() + paymentProductPath;
-			
+
 			// Serialise the IinDetailsRequest to json, so it can be added to the postbody
 			Gson gson = new Gson();
-			IinDetailsRequest iinRequest = new IinDetailsRequest(partialCreditCardNumber);
+			IinDetailsRequest iinRequest = new IinDetailsRequest(partialCreditCardNumber, paymentContext);
 			String iinRequestJson = gson.toJson(iinRequest);
-			
+
 			// Do the call and deserialise the result to IinDetailsResponse
 			connection = doHTTPPostRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context), iinRequestJson);
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
@@ -332,9 +470,9 @@ public class C2sCommunicator implements Serializable {
 
 			//IinDetailsResponse iinResponse = gson.fromJson(new InputStreamReader(connection.getInputStream()), IinDetailsResponse.class);
 			IinDetailsResponse iinResponse = gson.fromJson(responseBody, IinDetailsResponse.class);
-			
-			return iinResponse.getPaymentProductId();
-			
+
+			return iinResponse;
+
 		} catch (Exception e) {
 			Log.i(TAG, "Error getting PaymentProductIdByCreditCardNumber response:" + e.getMessage());
 			return null;
@@ -347,8 +485,8 @@ public class C2sCommunicator implements Serializable {
 			} catch (IOException e) {}
 		}
 	}
-	
-	
+
+
 	/**
 	 * Retrieves the publickey from the GC gateway
 	 * 
@@ -462,7 +600,8 @@ public class C2sCommunicator implements Serializable {
 			} catch (IOException e) {}
 		}
 	}
-	
+
+
 	/**
 	 * Returns map of metadata of the device this SDK is running on
 	 * The map contains the SDK version, OS, OS version and screensize
@@ -488,7 +627,7 @@ public class C2sCommunicator implements Serializable {
 	/**
 	 * Does a GET request with HttpURLConnection
 	 *
-	 * @param url, url where the request is sent to
+	 * @param location, url where the request is sent to
 	 * @param clientSessionId, used for session identification on the GC gateway
 	 * @param metadata, map filled with metadata, which is added to the request
 	 *
@@ -618,7 +757,7 @@ public class C2sCommunicator implements Serializable {
 	 * Logs all request headers, url and body
 	 *
 	 * @param connection
-	 * @param responseBody
+	 * @param postBody
 	 *
 	 * @throws IOException
 	 */

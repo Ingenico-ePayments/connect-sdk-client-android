@@ -1,9 +1,5 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.activities;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,11 +13,16 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCartItem;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.AmountOfMoney;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CountryCode;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.EnvironmentType;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
+
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
 
 /**
  * Dummy startpage to start payment
@@ -156,13 +157,10 @@ public class StartPageActivity extends Activity{
 		}
 		
 		// Get boolean from checkBox
-		Boolean isRecurring = ((CheckBox) findViewById(R.id.payment_is_recurring)).isChecked();
-		
-		// Null check
-		if (isRecurring == null){
-			return;
-		}
-		
+		boolean isRecurring = ((CheckBox) findViewById(R.id.payment_is_recurring)).isChecked();
+
+		// Get boolean from checkBox
+		boolean groupPaymentProducts = ((CheckBox) findViewById(R.id.group_paymentproducts)).isChecked();
 		
 		// Country code
 		CountryCode countryCode = null;
@@ -203,22 +201,23 @@ public class StartPageActivity extends Activity{
 		ShoppingCart cart = new ShoppingCart(); 
 		cart.addItemToShoppingCart(new ShoppingCartItem("Something", Long.parseLong(amount), 1));
 		
-		// Create the C2sPaymentProductContext object
-		C2sPaymentProductContext context = new C2sPaymentProductContext(isRecurring, cart.getTotalAmount(), currencyCode, countryCode);
+		// Create the PaymentContext object
+		AmountOfMoney amountOfMoney = new AmountOfMoney(cart.getTotalAmount(), currencyCode);
+		PaymentContext paymentContext = new PaymentContext(amountOfMoney, countryCode, isRecurring);
 		
 		// and show the SelectPaymentProductActivity
 		Intent paymentIntent = new Intent(this, SelectPaymentProductActivity.class);
 		
 		// Attach the following objects to the paymentIntent 
-		paymentIntent.putExtra(Constants.INTENT_CONTEXT, context);
+		paymentIntent.putExtra(Constants.INTENT_CONTEXT, paymentContext);
 		paymentIntent.putExtra(Constants.INTENT_SHOPPINGCART, cart);
 		paymentIntent.putExtra(Constants.MERCHANT_CLIENT_SESSION_IDENTIFIER, clientSessionIdentifier);
 		paymentIntent.putExtra(Constants.MERCHANT_CUSTOMER_IDENTIFIER, customerId);
 		paymentIntent.putExtra(Constants.MERCHANT_REGION, region);
 		paymentIntent.putExtra(Constants.MERCHANT_ENVIRONMENT, environment);
+		paymentIntent.putExtra(Constants.INTENT_GROUP_PAYMENTPRODUCTS, groupPaymentProducts);
 		
 		// Start paymentIntent
 		startActivity(paymentIntent);
-
 	}
 }

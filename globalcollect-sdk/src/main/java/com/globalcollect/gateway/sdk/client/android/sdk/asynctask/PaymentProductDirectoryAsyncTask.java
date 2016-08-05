@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.CountryCode;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
 
 /**
@@ -28,8 +30,8 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
 	// The productId for the product which need to be retrieved
 	private String productId;
 	
-	private String currencyCode;
-	private String countryCode;
+	private CurrencyCode currencyCode;
+	private CountryCode countryCode;
 	
 	
 	/**
@@ -42,8 +44,8 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
 	 * @param communicator, Communicator which does the communication to the GC gateway
 	 * @param listener,     listener which will be called by the AsyncTask
 	 */
-    public PaymentProductDirectoryAsyncTask(String productId, String currencyCode, String countryCode, Context context, 
-    							  C2sCommunicator communicator, OnPaymentProductDirectoryCallCompleteListener listener) {
+    public PaymentProductDirectoryAsyncTask(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context,
+											C2sCommunicator communicator, OnPaymentProductDirectoryCallCompleteListener listener) {
     	
     	if (productId == null) {
 			throw new InvalidParameterException("Error creating PaymentProductDirectoryAsyncTask, productId may not be null");

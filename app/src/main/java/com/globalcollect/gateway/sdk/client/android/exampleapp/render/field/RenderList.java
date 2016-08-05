@@ -1,4 +1,24 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;import java.security.InvalidParameterException;import java.util.ArrayList;import java.util.List;import android.view.View;import android.view.ViewGroup;import android.widget.AdapterView;import android.widget.AdapterView.OnItemSelectedListener;import android.widget.ArrayAdapter;import android.widget.LinearLayout.LayoutParams;import android.widget.Spinner;import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.ValueMap;
+package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
+
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.Spinner;
+
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.ValueMap;
+
+import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * This class handles all rendering of the list field 
@@ -7,15 +27,15 @@ package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;im
  */
 public class RenderList implements RenderInputFieldInterface, OnItemSelectedListener {
 	
-	private PaymentRequest paymentRequest;
+	private InputDataPersister inputDataPersister;
 	private PaymentProductField field;
 	
 	private List<String> values;
 	
 
 	@Override
-	public View renderField(PaymentProductField field, PaymentProduct selectedPaymentProduct, ViewGroup rowView, AccountOnFile account, PaymentRequest paymentRequest
-			, C2sPaymentProductContext context) {
+	public View renderField(PaymentProductField field, BasicPaymentItem selectedPaymentProduct, ViewGroup rowView, AccountOnFile account, InputDataPersister inputDataPersister,
+							PaymentContext context) {
 		
 		if (field == null) {
 			throw new InvalidParameterException("Error rendering list, field may not be null");
@@ -26,12 +46,12 @@ public class RenderList implements RenderInputFieldInterface, OnItemSelectedList
 		if (rowView == null) {
 			throw new InvalidParameterException("Error rendering list, rowView may not be null");
 		}
-		if (paymentRequest == null) {
-			throw new InvalidParameterException("Error rendering list, paymentRequest may not be null");
+		if (inputDataPersister == null) {
+			throw new InvalidParameterException("Error rendering list, inputDataPersister may not be null");
 		}		
 		
 		this.field = field;
-		this.paymentRequest = paymentRequest;
+		this.inputDataPersister = inputDataPersister;
 		
 		
 		// Create new spinner and fill its values
@@ -56,7 +76,11 @@ public class RenderList implements RenderInputFieldInterface, OnItemSelectedList
 			for (KeyValuePair attribute : account.getAttributes()) {
 				if (attribute.getKey().equals(field.getId())) {
 					int spinnerPosition = dataAdapter.getPosition(attribute.getValue());
-					spinner.setSelection(spinnerPosition);										if (!attribute.isEditingAllowed()) {						spinner.setEnabled(false);					}
+					spinner.setSelection(spinnerPosition);
+					
+					if (!attribute.isEditingAllowed()) {
+						spinner.setEnabled(false);
+					}
 					
 				}
 			}
@@ -84,7 +108,7 @@ public class RenderList implements RenderInputFieldInterface, OnItemSelectedList
 				
 				for (ValueMap valueMap : field.getDisplayHints().getFormElement().getValueMapping()){
 					if (valueMap.getDisplayName().equals(value)){
-						paymentRequest.setValue(field.getId(), valueMap.getValue());
+						inputDataPersister.setValue(field.getId(), valueMap.getValue());
 					}
 				}
 			}

@@ -18,7 +18,7 @@ public class FieldInputTextWatcherCurrency implements TextWatcher {
 	
 	
 	// PaymentRequest is the object where all entered values are stored for a field
-	private PaymentRequest paymentRequest;
+	private InputDataPersister inputDataPersister;
 	
 	// PaymentProductFieldid needed for storing values in the paymentRequest
 	private String paymentProductFieldId;
@@ -27,10 +27,10 @@ public class FieldInputTextWatcherCurrency implements TextWatcher {
 	private EditText otherEditText;
 	private Boolean isIntegerPart;
 	
-	public FieldInputTextWatcherCurrency (PaymentRequest paymentRequest, String paymentProductFieldId, EditText otherEditText, Boolean isIntegerPart) {
+	public FieldInputTextWatcherCurrency (InputDataPersister inputDataPersister, String paymentProductFieldId, EditText otherEditText, Boolean isIntegerPart) {
 
 		
-		if (paymentRequest == null) {
+		if (inputDataPersister == null) {
 			throw new InvalidParameterException("Error creating FieldInputTextWatcherCurrency, paymentRequest may not be null");
 		}
 		if (paymentProductFieldId == null) {
@@ -43,7 +43,7 @@ public class FieldInputTextWatcherCurrency implements TextWatcher {
 			throw new InvalidParameterException("Error creating FieldInputTextWatcherCurrency, isIntegerPart may not be null");
 		}
 		
-		this.paymentRequest = paymentRequest;
+		this.inputDataPersister = inputDataPersister;
 		this.paymentProductFieldId = paymentProductFieldId;
 		this.otherEditText = otherEditText;
 		this.isIntegerPart = isIntegerPart;
@@ -78,7 +78,7 @@ public class FieldInputTextWatcherCurrency implements TextWatcher {
 		}
 
 		// Save state of field
-		paymentRequest.setValue(paymentProductFieldId, value.toString());
+		inputDataPersister.setValue(paymentProductFieldId, value.toString());
 	}
 
 }

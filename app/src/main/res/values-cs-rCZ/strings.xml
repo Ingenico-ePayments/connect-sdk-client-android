@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Detekováno několik možností platby</string>
+	<string name="gc.general.cobrands.fullText">Některé karty používají ke zpracování Vaší platby několik značek. Můžete si vybrat svou preferovanou značku karty.</string>
+	<string name="gc.general.cobrands.introText">Tato karta má několik možností platby, vyberte, prosím, možnost, kterou preferujete.</string>
+	<string name="gc.general.cobrands.readmore">Co znamená několik možností platby?</string>
+	<string name="gc.general.cobrands.selectbrand">Vyberte svou preferovanou možnost</string>
+	<string name="gc.general.cobrands.toggleCobrands">Detekováno několik možností platby</string>
+	<string name="gc.general.errors.image.altText">Varování</string>
+	<string name="gc.general.errors.incorrectMerchantId">Došlo k technické chybě, která nám zabránila zobrazit správné instrukce pro finalizaci Vaší platby: nesprávné ID obchodníka. Zkuste, prosím, jinou platební metodu nebo kontaktujte firmu, u které jste nakoupili.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">Když jsme se pokusili zobrazit instrukce pro finalizaci Vaší platby, došlo k technické chybě. Zkuste to, prosím, znovu nebo zkuste jinou platební metodu.</string>
+	<string name="gc.general.errors.invalidSubdomain">Došlo k technické chybě v důsledku chyby konfigurace:  subdoména není platná. Zkuste to, prosím, znovu nebo zkuste jinou platební metodu.</string>
+	<string name="gc.general.errors.techicalProblem">Když jsme se pokusili zpracovat Vaši platbu, došlo k technické chybě. Zkuste to, prosím, znovu nebo zkuste jinou platební metodu.</string>
+	<string name="gc.general.errors.title">Chyba platby</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Majitel účtu</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Číslo účtu</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Částka</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Číslo bankovního účtu</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Kód banky</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Název banky</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Obrázek čárového kódu k zobrazení v místě, kde platíte.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Čárový kód</string>
 	<string name="gc.general.instructionFields.CITY.label">Město</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Číslo smlouvy</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Referenční číslo</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">Zvláštní ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Kód SWIFT</string>
+	<string name="gc.general.paymentProcessing">Zpracováváme Vaši platbu. Čekejte, prosím. Zpracování Vaší platby může trvat několik sekund. </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Jméno majitele účtu</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Jan Novák</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Číslo účtu</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Město</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Zadejte svůj bezpečnostní kód, jak vidíte na obrázku</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">E-mail</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Vyberte banku</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefonní číslo</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefonní číslo</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Zapamatovat si moje údaje pro další nákupy</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Pokud zaškrtnete toto políčko, vaše platební údaje budou uloženy pro další nákupy.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Kód státu</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Kód státu</string>
 	<string name="gc.general.paymentProductFields.street.label">Ulice</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Ulice</string>
 	<string name="gc.general.paymentProductFields.surname.label">Příjmení</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Příjmení</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Karta, kterou jste zadali, není podporovaná. Zadejte, prosím, jinou kartu nebo zkuste jinou platební metodu.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Zadejte platný e-mail</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Zadejte platné datum expirace</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Vyberte alespoň jednu hodnotu ze seznamu</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Zadejte hodnotu</string>
 	<string name="gc.general.paymentProductFields.zip.label">PSČ</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">PSČ</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Karty</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Jméno majitele účtu</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Číslo účtu</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Sekundární poplatek za expiraci</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Faktura</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Online debet Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Wallet/Kiosk</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">Opakující se QIWI</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

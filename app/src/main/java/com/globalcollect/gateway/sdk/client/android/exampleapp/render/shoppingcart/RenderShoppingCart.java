@@ -1,5 +1,4 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.render.shoppingcart;
-import java.io.Serializable;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -11,7 +10,10 @@ import android.widget.TextView;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCartItem;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
+
+import java.io.Serializable;
+
 ;
 
 /**
@@ -25,27 +27,27 @@ public class RenderShoppingCart implements Serializable {
 	private static final long serialVersionUID = -6223291405311752991L;
 	
 	private ShoppingCart cart;
-	private C2sPaymentProductContext c2sContext;
+	private PaymentContext paymentContext;
 	private View view;
 	
 	
 	/**
 	 * Constructor
-	 * @param checkoutDetails
+	 * @param paymentContext
 	 * @param cart
-	 * @param view
+	 * @param context
 	 */
-	public RenderShoppingCart(C2sPaymentProductContext c2sContext, ShoppingCart cart, View view, Context context) {
+	public RenderShoppingCart(PaymentContext paymentContext, ShoppingCart cart, View view, Context context) {
 		
 		this.cart = cart;
 		this.view = view;
-		this.c2sContext = c2sContext;
+		this.paymentContext = paymentContext;
 		
 		// Set the totalcost text on the header
 		TextView totalCost = (TextView)view.findViewById(R.id.totalCost);
 		TextView totalCostDetail = (TextView)view.findViewById(R.id.totalCostDetail);
 		
-		String formattedTotalAmount = cart.getTotalAmountFormatted(c2sContext.getCountryCode(), c2sContext.getCurrencyCode());
+		String formattedTotalAmount = cart.getTotalAmountFormatted(paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode());
 		totalCost.setText(formattedTotalAmount);
 		totalCostDetail.setText(formattedTotalAmount);
 		
@@ -105,7 +107,7 @@ public class RenderShoppingCart implements Serializable {
 			
 			//Show the amount formatted
 			TextView cost = new TextView(context);
-			cost.setText(item.getAmountFormatted(c2sContext.getCountryCode(), c2sContext.getCurrencyCode()));
+			cost.setText(item.getAmountFormatted(paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode()));
 			cost.setTextAppearance(context, R.style.TotalCostLayoutSmallText);
 			cost.setGravity(Gravity.RIGHT);
 			layout.addView(cost, costParams);

@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Εντοπίστηκαν πολλαπλές δυνατότητες πληρωμής</string>
+	<string name="gc.general.cobrands.fullText">Για ορισμένες κάρτες παρέχονται πολλαπλές υπηρεσίες επεξεργασίας της πληρωμής σας. Μπορείτε να επιλέξετε την υπηρεσία που προτιμάτε</string>
+	<string name="gc.general.cobrands.introText">Αυτή η κάρτα έχει πολλαπλές δυνατότητες πληρωμής. Επιλέξτε τη δυνατότητα πληρωμής που προτιμάτε.</string>
+	<string name="gc.general.cobrands.readmore">Τι είναι οι πολλαπλές δυνατότητες πληρωμής;</string>
+	<string name="gc.general.cobrands.selectbrand">Επιλέξτε τη δυνατότητα πληρωμής που προτιμάτε</string>
+	<string name="gc.general.cobrands.toggleCobrands">Εντοπίστηκαν πολλαπλές δυνατότητες πληρωμής</string>
+	<string name="gc.general.errors.image.altText">Προειδοποίηση</string>
+	<string name="gc.general.errors.incorrectMerchantId">Παρουσιάστηκε τεχνικό σφάλμα που μας εμποδίζει να σας δείξουμε τις οδηγίες ολοκλήρωσης της πληρωμής σας: λανθασμένο αναγνωριστικό εμπόρου. Επιλέξτε άλλον τρόπο πληρωμής ή επικοινωνήστε με την εταιρεία από όπου κάνετε την αγορά.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">Παρουσιάστηκε τεχνικό σφάλμα καθώς προσπαθούσαμε να σας δείξουμε τις οδηγίες ολοκλήρωσης της πληρωμής σας. Προσπαθήστε ξανά ή επιλέξτε άλλον τρόπο πληρωμής.</string>
+	<string name="gc.general.errors.invalidSubdomain">Παρουσιάστηκε τεχνικό σφάλμα λόγω σφάλματος διαμόρφωσης:  ο υποτομέας δεν είναι έγκυρος. Προσπαθήστε ξανά ή επιλέξτε άλλον τρόπο πληρωμής.</string>
+	<string name="gc.general.errors.techicalProblem">Παρουσιάστηκε τεχνικό σφάλμα καθώς προσπαθούσαμε να επεξεργαστούμε την πληρωμή σας. Προσπαθήστε ξανά ή επιλέξτε άλλον τρόπο πληρωμής.</string>
+	<string name="gc.general.errors.title">Σφάλμα πληρωμής</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Κάτοχος λογαριασμού</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Αριθμός λογαριασμού</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Ποσό</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Αριθμός τραπεζικού λογαριασμού</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Κωδικός τράπεζας</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Όνομα τράπεζας</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Εικόνα γραμμωτού κώδικα που θα πρέπει να επιδείξετε στο σημείο πληρωμής.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Γραμμωτός κωδικός</string>
 	<string name="gc.general.instructionFields.CITY.label">Πόλη</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Αριθμός σύμβασης</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Αριθμός αναφοράς</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">Ειδικό αναγνωριστικό</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Κωδικός Swift</string>
+	<string name="gc.general.paymentProcessing">Επεξεργαζόμαστε την πληρωμή σας. Παρακαλούμε περιμένετε. Μπορεί να χρειαστούν μερικά δευτερόλεπτα για την επεξεργασία της πληρωμής σας. </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Όνομα κατόχου λογαριασμού</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Αριθμός λογαριασμού</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Πόλη</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Πληκτρολογήστε τον κωδικό ασφαλείας σας όπως φαίνεται στην εικόνα</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">Διεύθυνση email</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Επιλέξτε τράπεζα</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Αριθμός τηλεφώνου</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Αριθμός τηλεφώνου</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Απομνημόνευση των στοιχείων μου για μελλοντικές αγορές</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Εάν σημειώσετε αυτό το πλαίσιο, οι πληροφορίες πληρωμής σας θα αποθηκευτούν για μελλοντικές αγορές.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Κωδικός πολιτείας</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Κωδικός πολιτείας</string>
 	<string name="gc.general.paymentProductFields.street.label">Οδός</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Οδός</string>
 	<string name="gc.general.paymentProductFields.surname.label">Επώνυμο</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Επώνυμο</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Η κάρτα που εισαγάγατε δεν υποστηρίζεται. Εισαγάγετε άλλη κάρτα ή επιλέξτε άλλον τρόπο πληρωμής.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Συμπληρώστε μια έγκυρη διεύθυνση email</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Συμπληρώστε μια έγκυρη ημερομηνία λήξης</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Επιλέξτε μία από τις τιμές της λίστας</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Συμπληρώστε μια τιμή</string>
 	<string name="gc.general.paymentProductFields.zip.label">Ταχυδρομικός κώδικας</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Ταχυδρομικός κώδικας</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Κάρτες</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Όνομα κατόχου λογαριασμού</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Αριθμός λογαριασμού</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Δευτερεύουσα προσαύξηση λήξης</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Τιμολόγιο</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Ηλεκτρονική χρέωση Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">Πορτοφόλι/αυτόματο μηχάνημα συναλλαγών QIWI</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI Επαναλαμβανόμενο</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

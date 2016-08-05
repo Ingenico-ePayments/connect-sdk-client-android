@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">זוהו אמצעי תשלום מרובים</string>
+	<string name="gc.general.cobrands.fullText">יש כרטיסים המשתמשים במותגים שונים לצורך עיבוד התשלום. באפשרותך לבחור את מותג הכרטיס העדיף מבחינתך</string>
+	<string name="gc.general.cobrands.introText">בכרטיס זה יש אפשרויות תשלום רבות, בחר את השיטה העדיפה מבחינתך.</string>
+	<string name="gc.general.cobrands.readmore">מהן אפשרויות תשלום רבות?</string>
+	<string name="gc.general.cobrands.selectbrand">בחר את השיטה העדיפה מבחינתך</string>
+	<string name="gc.general.cobrands.toggleCobrands">זוהו אמצעי תשלום מרובים</string>
+	<string name="gc.general.errors.image.altText">אזהרה</string>
+	<string name="gc.general.errors.incorrectMerchantId">אירעה תקלה טכנית המונעת מאיתנו להציג לך את ההנחיות הנכונות כדי לסיים את התשלום: מזהה הסוחר (Merchant ID) שגוי. אנא נסה להשתמש באמצעי תשלום אחר או פנה לחברה שממנה בוצעה הרכישה.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">כאשר ניסינו להציג את ההנחיות להשלמת התשלום אירעה תקלה טכנית. אנא נסה שוב או נסה להשתמש באמצעי תשלום אחר.</string>
+	<string name="gc.general.errors.invalidSubdomain">אירעה תקלה טכנית בעקבות שגיאת קונפיגורציה:  דומיין המשנה אינו חוקי. אנא נסה שוב או נסה להשתמש באמצעי תשלום אחר.</string>
+	<string name="gc.general.errors.techicalProblem">כאשר ניסינו לעבד את התשלום שלך אירעה תקלה טכנית. אנא נסה שוב או נסה להשתמש באמצעי תשלום אחר.</string>
+	<string name="gc.general.errors.title">תשלום שנכשל</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">בעל החשבון</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">מספר חשבון</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">סכום</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">מספר חשבון בנק</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">קוד הבנק</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">שם הבנק</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">תמונת הברקוד שתוצג במיקום שבו אתה משלם.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">ברקוד</string>
 	<string name="gc.general.instructionFields.CITY.label">עיר</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">מספר חוזה</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">מספר סימוכין</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">מזהה מיוחד</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">קוד Swift</string>
+	<string name="gc.general.paymentProcessing">אנו מעבדים את התשלום. אנא המתן. ייתכן שעיבוד התשלום ייקח כמה שניות. </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">שם בעל החשבון</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">פלוני אלמוני</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">מספר חשבון</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">עיר</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">הזן את קוד האבטחה כפי שמוצג בתמונה</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">כתובת דוא"ל</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">בחר את הבנק שלך</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">מספר טלפון</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">מספר טלפון</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">זכור את הפרטים שלי עבור עסקאות עתידיות</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">אם תסמן תיבה זו, פרטי התשלום שלך יאוחסנו עבור רכישות עתידיות.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">קוד מדינה</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">קוד מדינה</string>
 	<string name="gc.general.paymentProductFields.street.label">רחוב</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">רחוב</string>
 	<string name="gc.general.paymentProductFields.surname.label">שם משפחה</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">שם משפחה</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">אין תמיכה בכרטיס שהזנת. אנא הזן כרטיס אחר או השתמש באמצעי תשלום אחר.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">נא הזן כתובת דואר אלקטרוני תקפה</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">נא הזן תאריך פקיעת תוקף חוקי</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">בחר אחד מהערכים ברשימה</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">ספק ערך</string>
 	<string name="gc.general.paymentProductFields.zip.label">מיקוד</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">מיקוד</string>
+	<string name="gc.general.paymentProductGroups.cards.name">כרטיסים</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">שם בעל החשבון</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">מספר חשבון</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">תשלום נוסף לתאריך פקיעת תוקף משני</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">חשבונית</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">חיוב מקוון Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">ארנק/קיוסק QIWI</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI חוזר</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

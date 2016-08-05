@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">여러 가지 결제 옵션 이용 가능</string>
+	<string name="gc.general.cobrands.fullText">일부 카드는 결제를 진행하며 여러 가지 브랜드를 이용하고 있습니다. 선호하는 카드 브랜드를 선택해 주십시오.</string>
+	<string name="gc.general.cobrands.introText">이 카드는 여러 가지 결제 옵션 이용이 가능합니다. 선호하는 옵션을 선택해 주십시오.</string>
+	<string name="gc.general.cobrands.readmore">여러 가지 결제 옵션이란 무엇입니까?</string>
+	<string name="gc.general.cobrands.selectbrand">원하는 옵션을 선택하시기 바랍니다.</string>
+	<string name="gc.general.cobrands.toggleCobrands">여러 가지 결제 옵션 이용 가능</string>
+	<string name="gc.general.errors.image.altText">주의</string>
+	<string name="gc.general.errors.incorrectMerchantId">정확한 결제 완료 안내를 보여드리는 과정에서 기술적인 문제가 발생했습니다: 정확하지 않은 판매자 ID 다른 결제 수단을 이용하거나 판매점에 연락하시기 바랍니다.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">결제 완료 안내를 보여드리는 과정에서 기술적인 문제가 발생했습니다. 다시 시도하거나 다른 결제 수단을 이용해 주십시오.</string>
+	<string name="gc.general.errors.invalidSubdomain">설정 오류로 인해 기술적인 문제가 발새했습니다.  서브도메인이 유효하지 않습니다. 다시 시도하거나 다른 결제 수단을 이용해 주십시오.</string>
+	<string name="gc.general.errors.techicalProblem">결제 진행 과정에서 기술적인 문제가 발생했습니다. 다시 시도하거나 다른 결제 수단을 이용해 주십시오.</string>
+	<string name="gc.general.errors.title">결제 오류</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">예금주</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">계좌 번호</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">금액</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">은행 계좌 번호</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">은행 코드</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">은행명</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">바코드 이미지가 결제한 위치를 보여줍니다.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">바코드</string>
 	<string name="gc.general.instructionFields.CITY.label">구/군/시</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">계약 번호</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">참조 번호</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">특별 ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">스위프트 코드</string>
+	<string name="gc.general.paymentProcessing">결제가 진행되고 있습니다. 잠시만 기다려주십시오. 결제 진행에 몇 초가 걸릴 수 있습니다. </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">예금주명</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">계좌 번호</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">구/군/시</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">그림에 표시된 대로 보안 코드를 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">이메일 주소</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">은행을 선택하십시오</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">전화번호</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">전화번호</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">향후 구매를 위해 내 세부 정보 기억</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">이 상자에 체크하면 향후 구매를 위해 귀하의 지불 정보가 저장됩니다.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">주(State) 코드</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">주(State) 코드</string>
 	<string name="gc.general.paymentProductFields.street.label">거리</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">거리</string>
 	<string name="gc.general.paymentProductFields.surname.label">성</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">성</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">입력한 카드는 이용하실 수 없습니다. 다른 카드를 입력하거나 다른 결제 수단을 이용해 주십시오.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">유효한 이메일 주소를 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">유효한 만료일을 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">목록에서 1개의 값을 선택하십시오</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">값을 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.zip.label">우편번호</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">우편번호</string>
+	<string name="gc.general.paymentProductGroups.cards.name">카드</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">예금주명</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">계좌 번호</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">2차 만료 추가요금</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">송장</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">온라인 인출(Braspag) </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Wallet/Kiosk</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI Recurring</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

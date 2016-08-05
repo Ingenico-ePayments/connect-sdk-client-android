@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Có nhiều tùy chọn thanh toán</string>
+	<string name="gc.general.cobrands.fullText">Một số thẻ sử dụng nhiều nhãn hiệu để xử lý thanh toán của quý khách. Quý khách có thể chọn nhãn hiệu thẻ quý khách mong muốn.</string>
+	<string name="gc.general.cobrands.introText">Thẻ này có nhiều tùy chọn thanh toán, vui lòng chọn tùy chọn quý khách mong muốn.</string>
+	<string name="gc.general.cobrands.readmore">Nhiều tùy chọn thanh toán là gì?</string>
+	<string name="gc.general.cobrands.selectbrand">Hãy chọn tùy chọn quý khách mong muốn</string>
+	<string name="gc.general.cobrands.toggleCobrands">Có nhiều tùy chọn thanh toán</string>
+	<string name="gc.general.errors.image.altText">Cảnh báo</string>
+	<string name="gc.general.errors.incorrectMerchantId">Đã có sai sót kỹ thuật ngăn cản chúng tôi đưa ra các hướng dẫn phù hợp để hoàn thành thanh toán của quý khách: Tài khoản Giao dịch không đúng. Vui lòng thử phương thức thanh toán khác hoặc liên hệ với công ty quý khách mua hàng.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">Đã có sai sót kỹ thuật trong lúc chúng tôi cố gắng đưa ra các hướng dẫn để hoàn thành thanh toán của quý khách. Vui lòng thử lại hoặc thử phương thức thanh toán khác.</string>
+	<string name="gc.general.errors.invalidSubdomain">Đã có sai sót kỹ thuật do lỗi cấu hình:  tên miền phụ không đúng. Vui lòng thử lại hoặc thử phương thức thanh toán khác.</string>
+	<string name="gc.general.errors.techicalProblem">Đã có sai sót kỹ thuật trong lúc chúng tôi cố gắng xử lý thanh toán của quý khách. Vui lòng thử lại hoặc thử phương thức thanh toán khác.</string>
+	<string name="gc.general.errors.title">Thanh toán không thành công</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Chủ tài khoản</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Số tài khoản</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Số tiền</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Số tài khoản ngân hàng</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Mã ngân hàng</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Tên ngân hàng</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Hình mã vạch để hiển thị tại địa điểm quý khách thanh toán.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Mã vạch</string>
 	<string name="gc.general.instructionFields.CITY.label">Thành phố</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Số hợp đồng</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Số tham chiếu</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">ID đặc biệt</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Mã Swift</string>
+	<string name="gc.general.paymentProcessing">Chúng tôi đang xử lý thanh toán của quý khách. Vui lòng chờ. Có thể mất vài giây để xử lý thanh toán của quý khách. </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Tên chủ tài khoản</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Số tài khoản</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Thành phố</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Vui lòng nhập mã bảo mật của bạn như được cho thấy trong hình</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">Địa chỉ email</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Chọn ngân hàng của bạn</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Số điện thoại</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Số điện thoại</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Ghi nhớ chi tiết của tôi cho các giao dịch mua hàng trong tương lai</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Nếu bạn chọn hộp này, thông tin thanh toán của bạn sẽ được lưu lại cho các giao dịch mua hàng trong tương lai.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Mã tiểu bang</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Mã tiểu bang</string>
 	<string name="gc.general.paymentProductFields.street.label">Đường</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Đường</string>
 	<string name="gc.general.paymentProductFields.surname.label">Họ</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Họ</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Thẻ quý khách sử dụng không được hỗ trợ. Vui lòng dùng thẻ khác hoặc thử phương thức thanh toán khác.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Vui lòng cung cấp một địa chỉ email hợp lệ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Vui lòng cung cấp một ngày hết hạn hợp lệ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Vui lòng chọn một giá trị từ danh sách</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Vui lòng cung cấp một giá trị</string>
 	<string name="gc.general.paymentProductFields.zip.label">Mã zip</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Mã zip</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Thẻ</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Tên chủ tài khoản</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Số tài khoản</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Phụ phí hết hạn phụ</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Hóa đơn</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Ghi nợ trực tuyến Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Wallet/Kiosk</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI Định Kỳ</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

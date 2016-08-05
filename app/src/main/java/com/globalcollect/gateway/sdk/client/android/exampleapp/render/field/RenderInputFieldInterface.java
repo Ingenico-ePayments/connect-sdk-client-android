@@ -3,11 +3,10 @@ package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 
 /**
  * Defines the rendering of inputfields interface
@@ -26,11 +25,11 @@ public interface RenderInputFieldInterface {
 	 * @param selectedPaymentProduct, the selected PaymentProduct, used for getting the correct translations
 	 * @param rowView, the ViewGroup to which the rendered inputfield is added
 	 * @param accountOnFile, the AccountOnFile which contains stored paymentdata
-	 * @param paymentRequest, the paymentRequest which contains all entered user input
+	 * @param inputDataPersister, the paymentRequest which contains all entered user input
 	 * 
 	 * @return the rendered view
 	 */
-	public View renderField(PaymentProductField field, PaymentProduct selectedPaymentProduct, 
-							ViewGroup rowView, AccountOnFile accountOnFile, PaymentRequest paymentRequest, C2sPaymentProductContext context);
+	public View renderField(PaymentProductField field, BasicPaymentItem selectedPaymentProduct,
+							ViewGroup rowView, AccountOnFile accountOnFile, InputDataPersister inputDataPersister, PaymentContext paymentContext);
 	
 }

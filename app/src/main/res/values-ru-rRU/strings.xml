@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Обнаружено несколько опций оплаты</string>
+	<string name="gc.general.cobrands.fullText">Некоторые карты используют несколько брендов для обработки платежа. Вы можете выбрать предпочтительный бренд для оплаты с карты</string>
+	<string name="gc.general.cobrands.introText">Данная карта поддерживает несколько опций оплаты, выберите предпочтительную опцию.</string>
+	<string name="gc.general.cobrands.readmore">Что имеется в виду под «несколькими опциями оплаты»?</string>
+	<string name="gc.general.cobrands.selectbrand">Выберите предпочтительную опцию</string>
+	<string name="gc.general.cobrands.toggleCobrands">Обнаружено несколько опций оплаты</string>
+	<string name="gc.general.errors.image.altText">Предупреждение</string>
+	<string name="gc.general.errors.incorrectMerchantId">Возникла техническая ошибка, не позволяющая отобразить соответствующие инструкции при завершении платежа: неверный ID продавца. Выберите другой способ оплаты или свяжитесь с компанией-продавцом.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">Возникла техническая ошибка при отображении инструкций на последнем этапе проведения платежа. Повторите попытку или выберите другой способ оплаты.</string>
+	<string name="gc.general.errors.invalidSubdomain">Произошла техническая ошибка, связанная с ошибкой конфигурации: недопустимый поддомен. Повторите попытку или выберите другой способ оплаты.</string>
+	<string name="gc.general.errors.techicalProblem">В процессе обработки Вашего платежа возникла техническая ошибка. Повторите попытку или выберите другой способ оплаты.</string>
+	<string name="gc.general.errors.title">Не удалось провести платеж</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Владелец счета</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Номер счета</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Сумма</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Номер банковского счета:</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Bank code</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Название банка</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Изображение штрихкода, которое необходимо предъявить в месте оплаты.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Штрихкод</string>
 	<string name="gc.general.instructionFields.CITY.label">Город</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Номер договора</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Идентификационный номер</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">Специальный идентификатор</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Код SWIFT</string>
+	<string name="gc.general.paymentProcessing">Мы обрабатываем Ваш платеж. Пожалуйста, подождите. Обработка платежа может занять несколько секунд.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Имя владельца счета</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Джон Доу</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Номер счета</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Город</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Введите код безопасности, указанный на картинке</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">Адрес эл. почты</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Выберите ваш банк</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Номер телефона</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Номер телефона</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Запомнить указанные данные для будущих покупок</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Если вы поставите галочку в этом пункте, ваши платежные реквизиты останутся в системе для будущих покупок.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Код штата</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Код штата</string>
 	<string name="gc.general.paymentProductFields.street.label">Улица</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Улица</string>
 	<string name="gc.general.paymentProductFields.surname.label">Фамилия</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Фамилия</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Введенная карта не поддерживается. Введите другую карту или выберите другой способ оплаты.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Введите действительный адрес эл. почты</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Введите действительную дату истечения срока действия</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Выберите одно значение из списка</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Введите значение</string>
 	<string name="gc.general.paymentProductFields.zip.label">Почтовый индекс</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Почтовый индекс</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Карты</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Имя владельца счета</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Номер счета</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Доплата за вторую дату истечения срока действия</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Счет-фактура</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Онлайн-дебетование Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Wallet/Терминал</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">Периодические платежи QIWI</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

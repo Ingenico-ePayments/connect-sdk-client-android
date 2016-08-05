@@ -8,7 +8,7 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.shoppingcart.RenderShoppingCart;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 
 /**
  * Copyright 2014 Global Collect Services B.V
@@ -26,7 +26,7 @@ public class PaymentResultActivity extends ShoppingCartActivity {
 		// Get information from the intent
 		Intent intent = getIntent();
 		ShoppingCart shoppingCart 			= (ShoppingCart)			 intent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
-		C2sPaymentProductContext context    = (C2sPaymentProductContext) intent.getSerializableExtra(Constants.INTENT_CONTEXT);
+		PaymentContext context    = (PaymentContext)  intent.getSerializableExtra(Constants.INTENT_CONTEXT);
 		
 		// Render the shoppingcart details
 		shoppingCartRenderer = new RenderShoppingCart(context, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());	

@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Több fizetési lehetőség észlelve</string>
+	<string name="gc.general.cobrands.fullText">Egyes kártyáknál több kártyatípus áll rendelkezésre a fizetés feldolgozásához. Kiválaszthatja a kívánt kártyatípust</string>
+	<string name="gc.general.cobrands.introText">Ennél a kártyánál több fizetési lehetőség áll rendelkezésre. Kérjük, válassza ki, melyiket szeretné használni.</string>
+	<string name="gc.general.cobrands.readmore">Melyek a fizetési lehetőségek?</string>
+	<string name="gc.general.cobrands.selectbrand">Válassza ki a kívánt lehetőséget</string>
+	<string name="gc.general.cobrands.toggleCobrands">Több fizetési lehetőség észlelve</string>
+	<string name="gc.general.errors.image.altText">Figyelmeztetés</string>
+	<string name="gc.general.errors.incorrectMerchantId">Technikai hiba történt, ami megakadályozta a fizetés megfelelő véglegesítési utasításainak megjelenítését: helytelen Kereskedő ID. Kérjük, próbálkozzon más fizetési móddal, vagy vegye fel a kapcsolatot a céggel, amelyiktől vásárol.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">A fizetés véglegesítési utasításainak megjelenítése közben technikai hiba történt. Kérjük, próbálkozzon újra vagy más fizetési móddal.</string>
+	<string name="gc.general.errors.invalidSubdomain">Konfigurációs probléma miatt technikai hiba történt: érvénytelen aldomain. Kérjük, próbálkozzon újra vagy más fizetési móddal.</string>
+	<string name="gc.general.errors.techicalProblem">A fizetés feldolgozása közben technikai hiba történt. Kérjük, próbálkozzon újra vagy más fizetési móddal.</string>
+	<string name="gc.general.errors.title">Fizetési hiba</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Számlatulajdonos</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Bankszámlaszám</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Összeg</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Bankszámlaszám</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Banki kód</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Bank neve</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Vonalkód képe, amelyet a fizetés helyén bemutathat.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Vonalkód</string>
 	<string name="gc.general.instructionFields.CITY.label">Város</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Szerződésszám</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Hivatkozási szám</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">Különleges azonosító</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift-kód</string>
+	<string name="gc.general.paymentProcessing">Fizetése feldolgozás alatt áll. Kérjük, várjon. A fizetése feldolgozása eltarthat néhány másodpercig. </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Számlatulajdonos neve</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Ismeretlen Személy</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Bankszámlaszám</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Város</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Kérjük, írja be a képen látható biztonsági kódot</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">E-mail cím</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Válassza ki a bankját</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefonszám</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefonszám</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Adataim eltárolása jövőbeli vásárlásokhoz</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Ha bejelöli ezt a négyzetet, akkor a rendszer eltárolja a fizetési adatait a jövőbeli vásárlások megkönnyítése céljából.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Állam rövidítése</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Állam rövidítése</string>
 	<string name="gc.general.paymentProductFields.street.label">Utca és házszám</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Utca és házszám</string>
 	<string name="gc.general.paymentProductFields.surname.label">Vezetéknév</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Vezetéknév</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">A megadott kártya nem támogatott. Kérjük, adjon meg másik kártyát, vagy próbálkozzon más fizetési móddal.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Kérjük, hogy érvényes e-mail címet adjon meg</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Kérjük, hogy érvényes lejárati dátumot adjon meg</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Kérjük, hogy válasszon a listában szereplő értékek közül</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Kérjük, adja meg az értéket</string>
 	<string name="gc.general.paymentProductFields.zip.label">Irányítószám</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Irányítószám</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Kártyák</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Számlatulajdonos neve</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Bankszámlaszám</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Másodlagos lejárati pótdíj</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Számla</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Online megbízás Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI tárca/Kiosk</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI ismétlődő</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

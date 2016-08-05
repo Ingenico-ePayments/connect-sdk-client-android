@@ -69,7 +69,7 @@ public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyRespons
     
     /**
      * Interface for OnPublicKeyLoaded listener
-     * Is called from the PaymentProductsAsyncTask when it has the publickey
+     * Is called from the BasicPaymentProductsAsyncTask when it has the publickey
      * 
      * Copyright 2014 Global Collect Services B.V
      *

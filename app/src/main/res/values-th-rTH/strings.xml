@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">พบตัวเลือกการชำระเงินหลายแบรนด์</string>
+	<string name="gc.general.cobrands.fullText">บัตรบางใบใช้หลายแบรนด์ในการดำเนินการชำระเงินของคุณ คุณสามารถเลือกแบรนด์บัตรที่คุณต้องการได้</string>
+	<string name="gc.general.cobrands.introText">บัตรนี้มีตัวเลือกการชำระเงินหลายแบรนด์ โปรดเลือกตัวเลือกที่คุณต้องการ</string>
+	<string name="gc.general.cobrands.readmore">ตัวเลือกการชำระเงินหลายแบรนด์คืออะไร</string>
+	<string name="gc.general.cobrands.selectbrand">เลือกตัวเลือกที่คุณต้องการ</string>
+	<string name="gc.general.cobrands.toggleCobrands">พบตัวเลือกการชำระเงินหลายแบรนด์</string>
+	<string name="gc.general.errors.image.altText">คำเตือน</string>
+	<string name="gc.general.errors.incorrectMerchantId">เกิดข้อผิดพลาดทางเทคนิคไม่ให้เราแสดงวิธีที่ถูกต้องเพื่อให้การชำระเงินของคุณเสร็จสมบูรณ์: รหัสร้านค้าไม่ถูกต้อง โปรดลองวิธีการชำระเงินแบบอื่นหรือติดต่อบริษัทที่คุณได้ซื้อสินค้า</string>
+	<string name="gc.general.errors.instructions.renderingProblem">เกิดข้อผิดพลาดทางเทคนิคในขณะที่เราพยายามแสดงวิธีการเพื่อให้การชำระเงินของคุณเสร็จสมบูรณ์ โปรดลองใหม่อีกครั้งหรือลองวิธีการชำระเงินแบบอื่น</string>
+	<string name="gc.general.errors.invalidSubdomain">เกิดข้อผิดพลาดทางเทคนิคเนื่องจากการกำหนดค่าที่ผิดพลาด: โดเมนย่อยไม่ถูกต้อง โปรดลองใหม่อีกครั้งหรือลองวิธีการชำระเงินแบบอื่น</string>
+	<string name="gc.general.errors.techicalProblem">เกิดข้อผิดพลาดทางเทคนิคในขณะที่เราพยายามดำเนินการชำระเงินของคุณ โปรดลองใหม่อีกครั้งหรือลองวิธีการชำระเงินแบบอื่น</string>
+	<string name="gc.general.errors.title">ความล้มเหลวในการชำระเงิน</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">เจ้าของบัญชี</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">หมายเลขบัญชี</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">จำนวนเงิน</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">หมายเลขบัญชีธนาคาร</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">รหัสธนาคาร</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">ชื่อธนาคาร</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">รูปบาร์โค้ดแสดงสถานที่ที่คุณชำระเงิน</string>
 	<string name="gc.general.instructionFields.BARCODE.label">บาร์โค้ด</string>
 	<string name="gc.general.instructionFields.CITY.label">จังหวัด</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">หมายเลขสัญญา</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">หมายเลขอ้างอิง</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">หมายเลขประจำตัวพิเศษ</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">รหัส Swift Code</string>
+	<string name="gc.general.paymentProcessing">เรากำลังดำเนินการชำระเงินของคุณ โปรดรอ อาจใช้เวลาหลายวินาทีในการดำเนินการชำระเงิน</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">ชื่อเจ้าของบัญชี</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">สมชาย ใจดี</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">หมายเลขบัญชี</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">จังหวัด</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">กรุณาใส่รหัสความปลอดภัยของท่าน ตามภาพ</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">อีเมลแอดเดรส</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">เลือกธนาคารของท่าน</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">เบอร์โทรศัพท์</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">เบอร์โทรศัพท์</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">จำรายละเอียดไว้เพื่อการซื้อในอนาคต</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">ถ้าท่านกาเครื่องหมายในช่องนี้ ข้อมูลการจ่ายเงินของท่านจะถูกเก็บไว้เพื่อการซื้อครั้งถัดไปในอนาคต</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">รหัสรัฐ</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">รหัสรัฐ</string>
 	<string name="gc.general.paymentProductFields.street.label">ถนน</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">ถนน</string>
 	<string name="gc.general.paymentProductFields.surname.label">นามสกุล</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">นามสกุล</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">คุณไม่สามารถชำระเงินด้วยบัตรที่คุณกรอกได้ โปรดกรอกข้อมูลบัตรอื่นหรือลองวิธีการชำระเงินแบบอื่น</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">กรุณาระบุอีเมลแอดเดรสที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">กรุณาระบุวันหมดอายุที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">กรุณาเลือกมาหนึ่งตัวเลือกจากรายการ</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">กรุณาระบุค่า</string>
 	<string name="gc.general.paymentProductFields.zip.label">รหัสไปรษณีย์</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">รหัสไปรษณีย์</string>
+	<string name="gc.general.paymentProductGroups.cards.name">บัตรเครดิต</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">ชื่อเจ้าของบัญชี</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">หมายเลขบัญชี</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">ค่าธรรมเนียมการหมดอายุอันที่สอง</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">ใบแจ้งหนี้</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">การหักบัญชีออนไลน์ Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI กระเป๋า/เครื่อง (Wallet/Kiosk)</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI แบบประจำ</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

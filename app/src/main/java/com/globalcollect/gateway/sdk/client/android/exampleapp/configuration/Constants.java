@@ -12,11 +12,12 @@ public class Constants {
 	public static String INTENT_SHOPPINGCART 			 = "shoppingcart";
 	public static String INTENT_GC_SESSION	 			 = "coresession";
 	public static String INTENT_LOADED_PRODUCTS 		 = "loaded_paymentproducts";
-	public static String INTENT_SELECTED_PRODUCT 		 = "selected_product";
+	public static String INTENT_SELECTED_ITEM			 = "selected_item";
 	public static String INTENT_SELECTED_ACCOUNT_ON_FILE = "selected_account_on_file";
 	public static String INTENT_SUCCESSFUL				 = "successful";
 	public static String INTENT_ERRORMESSAGE			 = "errorMessage";
 	public static String INTENT_URL_WEBVIEW				 = "url";
+	public static String INTENT_GROUP_PAYMENTPRODUCTS	 = "group_paymentproducts";
 	
 	/** Bundle data keys **/
 	public static String BUNDLE_PAYMENT_PRODUCTS 	= "bundle_paymentproducts";

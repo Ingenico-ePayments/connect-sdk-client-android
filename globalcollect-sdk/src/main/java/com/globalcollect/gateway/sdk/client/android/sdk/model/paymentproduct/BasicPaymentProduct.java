@@ -1,11 +1,11 @@
 package com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints.DisplayHintsPaymentItem;
+
 import java.io.Serializable;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints.DisplayHintsPaymentProducts;
 
 /**
  * Pojo which holds the BasicPaymentProduct properties
@@ -14,12 +14,13 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.dis
  * Copyright 2014 Global Collect Services B.V
  *
  */
-public class BasicPaymentProduct implements Serializable {
+public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 
 	private static final long serialVersionUID = -8362704974696989741L;
 	
 	private String id;
 	private String paymentMethod;
+	private String paymentProductGroup;
 	private Long minAmount;
 	private Long maxAmount;
 	private Boolean allowsRecurring;
@@ -27,10 +28,12 @@ public class BasicPaymentProduct implements Serializable {
 	private Boolean autoTokenized;
 	private Boolean usesRedirectionTo3rdParty;
 	private MobileIntegrationLevel mobileIntegrationLevel;
-	private DisplayHintsPaymentProducts displayHints;
+	private DisplayHintsPaymentItem displayHints;
 	
 	// List containing all AccountOnFiles
 	private List<AccountOnFile> accountsOnFile = new ArrayList<AccountOnFile>();
+
+
 
 	public String getId(){
 		return id;
@@ -38,6 +41,10 @@ public class BasicPaymentProduct implements Serializable {
 	
 	public String getPaymentMethod() {
 		return paymentMethod;
+	}
+
+	public String getPaymentProductGroup() {
+		return paymentProductGroup;
 	}
 	
 	public Boolean allowsRecurring() {
@@ -86,8 +93,8 @@ public class BasicPaymentProduct implements Serializable {
 		return null;
 	}
 	
-	public DisplayHintsPaymentProducts getDisplayHints(){
+	public DisplayHintsPaymentItem getDisplayHints(){
 		return displayHints;
 	}
-	
+
 }

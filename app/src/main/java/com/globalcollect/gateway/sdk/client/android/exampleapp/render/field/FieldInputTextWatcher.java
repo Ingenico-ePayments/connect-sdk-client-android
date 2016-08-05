@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.model.FormatResult;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
 /**
  * Android textwatcher that jumps the focus to the next inputfield when this is one is filled
@@ -22,7 +21,7 @@ public class FieldInputTextWatcher implements TextWatcher {
 	
 	
 	// PaymentRequest is the object where all entered values are stored for a field
-	private PaymentRequest paymentRequest;
+	private InputDataPersister inputDataPersister;
 	
 	// PaymentProductFieldid needed for storing values in the paymentRequest
 	private String paymentProductFieldId;
@@ -47,9 +46,9 @@ public class FieldInputTextWatcher implements TextWatcher {
 	private Integer maxFieldLength;
 	
 	
-	public FieldInputTextWatcher(PaymentRequest paymentRequest, String paymentProductFieldId, Integer maxFieldLength, EditText editText, Boolean addMask, ViewGroup parentView) {
+	public FieldInputTextWatcher(InputDataPersister inputDataPersister, String paymentProductFieldId, Integer maxFieldLength, EditText editText, Boolean addMask, ViewGroup parentView) {
 		
-		if (paymentRequest == null) {
+		if (inputDataPersister == null) {
 			throw new InvalidParameterException("Error creating FieldInputTextWatcher, paymentRequest may not be null");
 		}
 		if (paymentProductFieldId == null) {
@@ -68,7 +67,7 @@ public class FieldInputTextWatcher implements TextWatcher {
 			throw new InvalidParameterException("Error creating FieldInputTextWatcher, parentView may not be null");
 		}
 		
-		this.paymentRequest = paymentRequest;
+		this.inputDataPersister = inputDataPersister;
 		this.paymentProductFieldId = paymentProductFieldId;
 		this.maxFieldLength = maxFieldLength;
 		this.editText = editText;
@@ -95,22 +94,18 @@ public class FieldInputTextWatcher implements TextWatcher {
 			previousEnteredValue = s.toString();
 
 			// Save state of field
-			paymentRequest.setValue(paymentProductFieldId, editText.getText().toString());
+			inputDataPersister.setValue(paymentProductFieldId, editText.getText().toString());
 			
 			// Format the input if addMask == true
 			if (addMask) {
 				
 				// Mask the input
 				Integer cursorIndex = editText.getSelectionStart();
-				FormatResult applyMaskResult = paymentRequest.getMaskedValue(paymentProductFieldId, s.toString(), oldValue, cursorIndex);
+				FormatResult applyMaskResult = inputDataPersister.getMaskedValue(paymentProductFieldId, s.toString(), oldValue, cursorIndex);
 				
 				// Render the FormatResult
 				if (applyMaskResult != null) {
-					
-					// get the unmasked input and put it in the paymentRequest
-					String unmaskedValue = paymentRequest.getUnmaskedValue(paymentProductFieldId, s.toString());
-					paymentRequest.setValue(paymentProductFieldId, unmaskedValue);
-					
+
 					// if the mask result isn't the same as the value entered
 					// replace text with mask result
 					if(!applyMaskResult.getFormattedResult().equals(s.toString())){
@@ -132,24 +127,25 @@ public class FieldInputTextWatcher implements TextWatcher {
 						
 			
 			
-			// Determine the next EditText in the container and give that focus
+			// Determine the next EditText in the container and give that focus when the current field is filled
 			if (s.length() == maxFieldLength && s.length() != 0) {
 				
 				ViewGroup parentContainer = (ViewGroup)view.getParent();
-				
-				int childCount = parentContainer.getChildCount();
-				for (int i = parentContainer.indexOfChild(view) + 1; i < childCount; i ++) {
-	
-					View nextView = (View)parentContainer.getChildAt(i);
-					if (nextView != null && nextView instanceof EditText || nextView instanceof LinearLayout) {
-	
-						// Set focus to the next view
-						if (nextView instanceof LinearLayout) {
-							((LinearLayout) nextView).getChildAt(0).requestFocus();
-						} else {
-							nextView.requestFocus();
+				if (parentContainer != null) {
+					int childCount = parentContainer.getChildCount();
+					for (int i = parentContainer.indexOfChild(view) + 1; i < childCount; i++) {
+
+						View nextView = (View) parentContainer.getChildAt(i);
+						if (nextView != null && nextView instanceof EditText || nextView instanceof LinearLayout) {
+
+							// Set focus to the next view
+							if (nextView instanceof LinearLayout) {
+								((LinearLayout) nextView).getChildAt(0).requestFocus();
+							} else {
+								nextView.requestFocus();
+							}
+							break;
 						}
-						break;
 					}
 				}
 			}

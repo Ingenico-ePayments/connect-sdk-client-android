@@ -22,9 +22,9 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.Validat
  */
 public class PaymentRequest implements Serializable {
 	
+
 	private static final long serialVersionUID = 1553481971640554760L;
-	
-	
+
 	// Paymentproduct which the customer is using 
 	private PaymentProduct paymentProduct;
 	
@@ -38,7 +38,7 @@ public class PaymentRequest implements Serializable {
 	private List<ValidationErrorMessage> errorMessageIds = new ArrayList<ValidationErrorMessage>();
 	
 	// Used for storing account on file (true is storing)
-	private Boolean tokenize = false;;
+	private Boolean tokenize = false;
 	
 	
 	/**
@@ -63,6 +63,7 @@ public class PaymentRequest implements Serializable {
 		
 	/**
 	 * Validates all fields based on their value and their validationrules
+	 * If a field is prefilled from the account on file, but it has been altered, it will be validated.
 	 *  
 	 * @return list of errorMessageIds
 	 */
@@ -74,28 +75,30 @@ public class PaymentRequest implements Serializable {
 		for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
 			
 			// See if a field isn't in the accountOnFile for this paymentproduct
-			Boolean isFieldInAccountOnFile = false; 
+			Boolean isFieldInAccountOnFileAndNotAltered = false;
 			for (AccountOnFile ppAccountOnFile : paymentProduct.getAccountsOnFile()) {
 				
 				// Match only the account which is selected
 				if (accountOnFile != null && accountOnFile.getId().equals(ppAccountOnFile.getId())) {
 					for (KeyValuePair pair : accountOnFile.getAttributes()) {
-						if (pair.getKey().equals(field.getId())) {
-							isFieldInAccountOnFile = true;
+						if (pair.getKey().equals(field.getId()) && 				// Field is in account on file
+								(!pair.isEditingAllowed() || 					// Not altered
+										(getValue(field.getId()) == null))) { 	// Not altered; Unaltered values should not be in the request
+							isFieldInAccountOnFileAndNotAltered = true;
 						}
 					}
 				}
 			}
 			
 			// Validate the field with its value
-			if (!isFieldInAccountOnFile) {
+			if (!isFieldInAccountOnFileAndNotAltered) {
 				errorMessageIds.addAll(field.validateValue(getValue(field.getId())));
 			}
 		}
 		return errorMessageIds;
 	}
-	
-	
+
+
 	/**
 	 * Add value to the paymentproductfields map
 	 * 
@@ -118,7 +121,6 @@ public class PaymentRequest implements Serializable {
 	}
 	
 	
-	
 	/** 
 	 * Gets the value of given paymentProductFieldId 
 	 */
@@ -129,18 +131,31 @@ public class PaymentRequest implements Serializable {
 		}
 		return fieldValues.get(paymentProductFieldId);
 	}
-	
+
+	/**
+	 * Removes the value of given paymentProductFieldId
+	 * @param paymentProductFieldId
+     */
+	public void removeValue(String paymentProductFieldId) {
+
+		if (paymentProductFieldId == null) {
+			throw new InvalidParameterException("Error removing value from PaymentRequest, paymentProductFieldId may not be null");
+		}
+		fieldValues.remove(paymentProductFieldId);
+	}
+
+
 	/**
 	 * Gets masked value for the given newValue and oldValue with the mask of the paymentProductField with paymentProductFieldId
-	 * 
+	 *
 	 * @param paymentProductFieldId, the paymentProductField whose mask is used
 	 * @param newValue, the value which is masked
 	 * @param oldValue, the previous value, used for determining
-	 * 
+	 *
 	 * @return FormatResult which contains maskedvalue and cursorindex, or null if there is no paymentProductField found
 	 */
 	public FormatResult getMaskedValue(String paymentProductFieldId, String newValue, String oldValue, Integer cursorIndex) {
-		
+
 		if (paymentProductFieldId == null) {
 			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, paymentProductFieldId may not be null");
 		}
@@ -150,23 +165,23 @@ public class PaymentRequest implements Serializable {
 		if (oldValue == null) {
 			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, oldValue may not be null");
 		}
-		
+
 		// Loop trough all fields and format the matching field value.
 		for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
 			if (field.getId().equals(paymentProductFieldId)) {
 				return field.applyMask(newValue, oldValue, cursorIndex);
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * Add value to the paymentproductfields map
-	 * 
+	 *
 	 * @param paymentProductFieldId
 	 * @param newValue
-	 * 
+	 *
 	 * @return String with unmaskedvalue, or null if there is no no paymentProductField found
 	 */
 	public String getUnmaskedValue(String paymentProductFieldId, String newValue){
@@ -176,87 +191,88 @@ public class PaymentRequest implements Serializable {
 		if (newValue == null) {
 			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, newValue may not be null");
 		}
-		
+
 		// Loop through all fields and deformat the matching field value.
 		for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
 			if (field.getId().equals(paymentProductFieldId)) {
 				return field.removeMask(newValue);
 			}
 		}
-		
+
 		return null;
 	}
-	
-	
-	/** 
-	 * Gets the map with all fieldvalues 
+
+
+	/**
+	 * Gets the map with all fieldvalues
 	 */
 	public Map<String, String> getValues() {
 		return fieldValues;
 	}
-	
-	/** 
-	 * Gets the map with all unmasked fieldvalues 
+
+	/**
+	 * Gets the map with all unmasked fieldvalues
 	 */
 	public Map<String, String> getUnmaskedValues(){
 		Map<String, String> unMaskedFieldValues = new HashMap<String, String>();
-		
+
 		// Loop through all the fieldValues
 		for (Entry<String, String> entry : fieldValues.entrySet()){
 			String key = entry.getKey();
 			String value = entry.getValue();
-			
+
 			// Loop through all fields and format the matching field value.
 			for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
 				if (field.getId().equals(key)) {
 					// retrieve value from fieldFormatter
 					value = field.removeMask(value);
-					
+
 					// put the value in the new hashmap
 					unMaskedFieldValues.put(key, value);
-					
+
 					break;
+
 				}
+
 			}
-			
-			
+
+
 		}
-		
+
 		return unMaskedFieldValues;
 	}
-	
-	/** 
-	 * Gets the map with all masked fieldvalues 
+
+
+	/**
+	 * Gets the map with all masked fieldvalues
 	 */
 	public Map<String, String> getMaskedValues(){
 		Map<String, String> maskedFieldValues = new HashMap<String, String>();
-		
 		// Loop through all the fieldValues
-		for (Entry<String, String> entry : fieldValues.entrySet()){
+		for (Entry<String, String> entry : fieldValues.entrySet()) {
 			String key = entry.getKey();
 			String value = entry.getValue();
-			
+
 			// Loop through all fields and format the matching field value.
 			for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
 				if (field.getId().equals(key)) {
 					// retrieve value from fieldFormatter
 					value = field.applyMask(value);
-					
+
 					// put the value in the new hashmap
 					maskedFieldValues.put(key, value);
-					
 					break;
 				}
 			}
 		}
-		
+
 		return maskedFieldValues;
 	}
-	
-	
-	
-	
-		
+
+
+
+
+
 	/**
 	 * Merges given paymentProduct.fieldvalues map with the current paymentproduct values 
 	 * 

@@ -1,7 +1,5 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
 
-import java.security.InvalidParameterException;
-
 import android.text.InputFilter;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -13,12 +11,13 @@ import android.widget.TextView;
 
 import com.globalcollect.gateway.sdk.client.android.exampleapp.translation.Translator;
 import com.globalcollect.gateway.sdk.client.android.sdk.formatter.StringFormatter;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
+
+import java.security.InvalidParameterException;
 
 /**
  * Renders currency field
@@ -28,9 +27,9 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.Pay
  */
 public class RenderCurrency implements RenderInputFieldInterface{
 	
-	@Override
-	public View renderField(PaymentProductField field, PaymentProduct selectedPaymentProduct, 
-							ViewGroup rowView, AccountOnFile account, PaymentRequest paymentRequest, C2sPaymentProductContext context) {
+//	@Override
+	public View renderField(PaymentProductField field, BasicPaymentItem selectedPaymentProduct,
+							ViewGroup rowView, AccountOnFile account, InputDataPersister inputDataPersister, PaymentContext paymentContext) {
 		
 		if (field == null) {
 			throw new InvalidParameterException("Error rendering currency, field may not be null");
@@ -41,8 +40,11 @@ public class RenderCurrency implements RenderInputFieldInterface{
 		if (rowView == null) {
 			throw new InvalidParameterException("Error rendering currency, rowView may not be null");
 		}
-		if (paymentRequest == null) {
-			throw new InvalidParameterException("Error rendering currency, paymentRequest may not be null");
+		if (inputDataPersister == null) {
+			throw new InvalidParameterException("Error rendering currency, inputDataPersister may not be null");
+		}
+		if (paymentContext == null) {
+			throw new InvalidParameterException("Error rendering currency, paymentContext may not be null");
 		}
 	
 		
@@ -100,7 +102,7 @@ public class RenderCurrency implements RenderInputFieldInterface{
 		linearLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		
 		TextView currencySymbol = new TextView(rowView.getContext());
-		currencySymbol.setText(context.getCurrencyCode().toString());
+		currencySymbol.setText(paymentContext.getAmountOfMoney().getCurrencyCode().toString());
 
 		TextView seperator = new TextView(rowView.getContext());
 		String seperatorLabel = translator.getPaymentProductFieldLabel(selectedPaymentProduct.getId(), "seperator");
@@ -111,11 +113,11 @@ public class RenderCurrency implements RenderInputFieldInterface{
 		decimalPart.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
 		decimalPart.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2)});
 
-		integerPart.addTextChangedListener(new FieldInputTextWatcherCurrency(paymentRequest, field.getId(), decimalPart, true));
-		decimalPart.addTextChangedListener(new FieldInputTextWatcherCurrency(paymentRequest, field.getId(), integerPart, false));
+		integerPart.addTextChangedListener(new FieldInputTextWatcherCurrency(inputDataPersister, field.getId(), decimalPart, true));
+		decimalPart.addTextChangedListener(new FieldInputTextWatcherCurrency(inputDataPersister, field.getId(), integerPart, false));
 		
 		// get paymentproductvalue from paymentrequest
-		String paymentProductValue = paymentRequest.getValue(field.getId());		
+		String paymentProductValue = inputDataPersister.getValue(field.getId());
 		if(paymentProductValue != null && account == null){
 			
 			Double doubleValue = Double.parseDouble(paymentProductValue);

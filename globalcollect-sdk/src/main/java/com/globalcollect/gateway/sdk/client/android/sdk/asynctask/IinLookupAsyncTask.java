@@ -1,16 +1,15 @@
 package com.globalcollect.gateway.sdk.client.android.sdk.asynctask;
 
-import java.security.InvalidParameterException;
-import java.util.List;
-
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.globalcollect.gateway.sdk.client.android.sdk.caching.CacheHandler;
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinStatus;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProducts;
+
+import java.security.InvalidParameterException;
+import java.util.List;
 
 /**
  * AsyncTask which executes an IIN lookup call to the GC gateway 
@@ -31,25 +30,24 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
 
 	// Entered partial creditcardnumber
 	private String partialCreditCardNumber;
-	
-	// All loaded paymentproducts, needed for checking the IinLookup result
-	private PaymentProducts paymentProducts;
-	
+
 	// Communicator which does the communication to the GC gateway
 	private C2sCommunicator communicator;
-	
+
+	// Payment context that is sent in the request
+	private PaymentContext paymentContext;
+
 	
 	/**
 	 * Constructor
 	 * @param context, used for reading stubbing data
 	 * @param partialCreditCardNumber, entered partial creditcardnumber
 	 * @param communicator, communicator which does the communication to the GC gateway
-	 * @param paymentProducts, all loaded paymentproducts, needed for checking the IinLookup result
 	 * @param listeners, listeners which will be called by the AsyncTask when the IIN result is retrieved
+	 * @param paymentContext, payment data that is sent to the gc Gateway; May be null, but this will yield a limited response from the gateway
 	 */
     public IinLookupAsyncTask(Context context, String partialCreditCardNumber, C2sCommunicator communicator, 
-    						  PaymentProducts paymentProducts, List<OnIinLookupCompleteListener> listeners) {
-    	
+    						  List<OnIinLookupCompleteListener> listeners, PaymentContext paymentContext) {
     	if (context == null) {
 			throw new InvalidParameterException("Error creating IinLookupAsyncTask, context may not be null");
 		}
@@ -59,65 +57,47 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
     	if (communicator == null ) {
 			throw new InvalidParameterException("Error creating PaymentProductAsyncTask, communicator may not be null");
 		}
-    	if (paymentProducts == null ) {
-			throw new InvalidParameterException("Error creating PaymentProductAsyncTask, paymentProducts may not be null");
-		}
     	if (listeners == null) {
     		throw new InvalidParameterException("Error creating IinLookupAsyncTask, listeners may not be null");
 		}
-    	
+
     	this.context = context;
         this.listeners = listeners;
         this.communicator = communicator;
-        this.paymentProducts = paymentProducts;
         this.partialCreditCardNumber = partialCreditCardNumber;
+		this.paymentContext = paymentContext;
     }
-   
 
-    @Override
+
+	@Override
     protected IinDetailsResponse doInBackground(String... params) {
-    	
-    	// Check if partialCreditCardNumber == IIN_LOOKUP_NR_OF_CHARS
+
+    	// Check if partialCreditCardNumber >= IIN_LOOKUP_NR_OF_CHARS
     	// If not return IinStatus.NOT_ENOUGH_DIGITS
     	if (partialCreditCardNumber.length() < IIN_LOOKUP_NR_OF_CHARS) {
-    		return new IinDetailsResponse(null, IinStatus.NOT_ENOUGH_DIGITS);
+    		return new IinDetailsResponse(IinStatus.NOT_ENOUGH_DIGITS);
     	}
-    		
-    	// Check if the value is in the cache, then return that
-    	CacheHandler cacheHandler = new CacheHandler(context);
-    	
-    	String partialCreditCardNumberCacheKey = partialCreditCardNumber;
-    	if (partialCreditCardNumberCacheKey.length() > IIN_LOOKUP_NR_OF_CHARS) {
-    		partialCreditCardNumberCacheKey = partialCreditCardNumberCacheKey.substring(0, IIN_LOOKUP_NR_OF_CHARS);
-    	}
-    	
-    	if (cacheHandler.getIinResponsesFromCache().containsKey(partialCreditCardNumberCacheKey)) {
-    		return cacheHandler.getIinResponsesFromCache().get(partialCreditCardNumberCacheKey);
-    	}
-    	
-    	// Do the iinlookup call to the GC gateway
-    	String paymentProductId = communicator.getPaymentProductIdByCreditCardNumber(partialCreditCardNumber, context);
-    	
-    	// Determine the result of the lookup
-    	if (paymentProductId == null) {
-    		
-    		// If the paymentProductId is not known, then return IinStatus.UNKNOWN
-    		return new IinDetailsResponse(null, IinStatus.UNKNOWN);
-    		
-    	} else if (paymentProducts.getPaymentProductById(paymentProductId) == null) {
-    		
-    		// Check if the paymentProductId is in the loaded paymentproducts
-        	// If not return IinStatus.UNSUPPORTED
-    		return new IinDetailsResponse(null, IinStatus.UNSUPPORTED);
-    		
-    	} else {
-    		
-    		// This is a correct result, store this result in the cache and return IinStatus.SUPPORTED
-    		IinDetailsResponse response = new IinDetailsResponse(paymentProductId, IinStatus.SUPPORTED);
-    		cacheHandler.addIinResponseToCache(partialCreditCardNumberCacheKey, response);
-    		return response;
-    	}
-    }
+
+		IinDetailsResponse iinResponse = communicator.getPaymentProductIdByCreditCardNumber(partialCreditCardNumber, context, paymentContext);
+
+		// Determine the result of the lookup
+		if (iinResponse == null || iinResponse.getPaymentProductId() == null) {
+
+			// If the iinResponse is null or the paymentProductId is null, then return IinStatus.UNKNOWN
+			return new IinDetailsResponse(IinStatus.UNKNOWN);
+
+		} else if (!iinResponse.isAllowedInContext()) {
+
+			// If the paymentproduct is currently not allowed, then return IinStatus.SUPPORTED_BUT_NOT_ALLOWED
+			return new IinDetailsResponse(IinStatus.EXISTING_BUT_NOT_ALLOWED);
+
+		} else {
+
+			// This is a correct result, store this result in the cache and return IinStatus.SUPPORTED
+			iinResponse.setStatus(IinStatus.SUPPORTED);
+			return iinResponse;
+		}
+	}
 
     
     @Override

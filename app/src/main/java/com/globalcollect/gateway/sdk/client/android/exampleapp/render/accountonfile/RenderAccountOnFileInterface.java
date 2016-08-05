@@ -3,7 +3,6 @@ package com.globalcollect.gateway.sdk.client.android.exampleapp.render.accounton
 import android.view.ViewGroup;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
 
 /**
  * Defines the rendering of accounts on file interface
@@ -19,10 +18,10 @@ public interface RenderAccountOnFileInterface {
 	 * This AccountOnFile is added to the given parent
 	 * 
 	 * @param accountOnFile, AccountOnFile containing data for the account on file rendering
-	 * @param product, PaymentProduct containing data for the account on file rendering
+	 * @param productId, productId, marking the product belonging to the account on file
 	 * @param parent, the ViewGroup to which the rendered account on file is added
 	 */
-	public void renderAccountOnFile(AccountOnFile accountOnFile, BasicPaymentProduct product, ViewGroup parent);
+	public void renderAccountOnFile(AccountOnFile accountOnFile, String productId, ViewGroup parent);
 	
 	
 }

@@ -24,8 +24,7 @@ public class RenderValidationMessage implements RenderValidationMessageInterface
 	
 	// Prefix for validationmessage views
 	private final String VALIDATION_MESSAGE_TAG_PREFIX = "validation_message_";
-	
-	
+
 	
 	@Override
 	public void renderValidationMessage(String validationMessage, ViewGroup rowView, String fieldId) {
@@ -38,6 +37,11 @@ public class RenderValidationMessage implements RenderValidationMessageInterface
 		}
 		if (fieldId == null ) {
 			throw new InvalidParameterException("Error rendering ValidationMessage, fieldId may not be null");
+		}
+
+		// Check if there is not already an error message of this kind showing in the ViewGroup
+		if (((ViewGroup) rowView.getParent()).findViewWithTag(VALIDATION_MESSAGE_TAG_PREFIX + fieldId) != null) {
+			return;
 		}
 	
 		// Create a new TextView and add it to the rowView

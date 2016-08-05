@@ -49,7 +49,7 @@ public class ValidationTest extends AndroidTestCase {
 	
 	public ValidationTest() {
 		
-		// Fill the test listEntries 
+		// Fill the test listEntries
 		listEntries.add("1");
 		listEntries.add("2");
 		listEntries.add("3");

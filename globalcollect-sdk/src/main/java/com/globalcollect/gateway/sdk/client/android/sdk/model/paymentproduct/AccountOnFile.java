@@ -31,8 +31,8 @@ public class AccountOnFile implements Serializable {
 		return id;
 	}
 	
-	public Integer getPaymentProductId() {
-		return paymentProductId;
+	public String getPaymentProductId() {
+		return paymentProductId.toString();
 	}
 	
 	public DisplayHintsAccountOnFile getDisplayHints() {

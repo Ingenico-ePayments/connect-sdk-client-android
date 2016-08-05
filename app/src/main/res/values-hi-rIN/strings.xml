@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">अनेक भुगतान विकल्पों का पता लगाया गया</string>
+	<string name="gc.general.cobrands.fullText">कुछ कार्ड आपके भुगतान को प्रोसेस करने के लिए अनेक ब्रांडों का इस्तेमाल करते हैं। आप अपने वरीयताप्राप्त कार्ड ब्रांड को चुन सकते हैं</string>
+	<string name="gc.general.cobrands.introText">इस कार्ड में अनेक भुगतान विकल्प हैं, कृपया अपने वरीयताप्राप्त विकल्प को चुनें।</string>
+	<string name="gc.general.cobrands.readmore">अनेक भुगतान विकल्प क्या हैं?</string>
+	<string name="gc.general.cobrands.selectbrand">अपने वरीयताप्राप्त विकल्प का चयन करें</string>
+	<string name="gc.general.cobrands.toggleCobrands">अनेक भुगतान विकल्पों का पता लगाया गया</string>
+	<string name="gc.general.errors.image.altText">चेतावनी</string>
+	<string name="gc.general.errors.incorrectMerchantId">एक तकनीकी त्रुटि हुई जिसने हमें आपके भुगतान को अंतिम रूप देने के लिए आपको सही निर्देश दिखाने से रोक दिया: गलत मर्चेंट आईडी। कृपया भुगतान की अन्य विधि आज़माएं या उस कंपनी से संपर्क करें जिससे आप खरीदारी कर रहे हैं।</string>
+	<string name="gc.general.errors.instructions.renderingProblem">जब हमने आपके भुगतान को अंतिम रूप देने के लिए निर्देश दिखाने की कोशिश की तो एक तकनीकी त्रुटि हुई। कृपया फिर से प्रयास करें या भुगतान की अन्य विधि को आज़माएं।</string>
+	<string name="gc.general.errors.invalidSubdomain">कंफिगरेशन त्रुटि के कारण से एक तकनीकी त्रुटि हुई:  उपडोमेन मान्य नहीं है। कृपया फिर से प्रयास करें या भुगतान की अन्य विधि को आज़माएं।</string>
+	<string name="gc.general.errors.techicalProblem">जब हमने आपके भुगतान को प्रोसेस करने की कोशिश की तो एक तकनीकी त्रुटि हुई। कृपया फिर से प्रयास करें या अन्य भुगतान विधि को आज़माएं।</string>
+	<string name="gc.general.errors.title">भुगतान विफल</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">खाता धारक</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">खाता संख्या</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">धनराशि</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">बैंक खाता संख्या</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">बैंक कोड</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">बैंक का नाम</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">जिस स्थान पर आप भुगतान कर रहे हैं, उसे दिखाने के लिए बारकोड इमेज।</string>
 	<string name="gc.general.instructionFields.BARCODE.label">बारकोड</string>
 	<string name="gc.general.instructionFields.CITY.label">शहर</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">संपर्क संख्या</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">संदर्भ संख्या</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">विशेष ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">स्विफ्ट कोड (Swift code)</string>
+	<string name="gc.general.paymentProcessing">हम आपके भुगतान को प्रोसेस कर रहे हैं। कृपया प्रतीक्षा करें। आपके भुगतान को प्रोसेस करने के लिए कई सेकेंड लग सकते हैं। </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">खाता धारक का नाम</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">जॉन डो (John Doe)</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">खाता संख्या</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">शहर</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">कृपया अपना सुरक्षा कोड दर्ज करें जैसा कि चित्र में दिखाया गया है</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">ईमेल पता</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">अपना बैंक चुनें</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">फोन संख्या</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">फोन संख्या</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">भविष्य की खरीदों के लिए मेरे ब्यौरे याद रखें</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">यदि आप इस खाने पर निशान लगाते हैं तो आपकी भुगतान सूचना भावी खरीदों के लिए स्टोर हो जाएगी।</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">कोड बताएं</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">कोड बताएं</string>
 	<string name="gc.general.paymentProductFields.street.label">गली</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">गली</string>
 	<string name="gc.general.paymentProductFields.surname.label">उपनाम</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">उपनाम</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">आपके द्वारा डाला गया कार्ड सपोर्टेड नहीं है। कृपया कोई अन्य कार्ड डालें करें या भुगतान की अन्य विधि को आज़माएं।</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">कृपया एक मान्य ईमेल पता प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">कृपया एक मान्य समाप्ति तारीख प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">कृपया सूची के मानों में से एक मान (value) चुनें</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">कृपया कोई मान प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.zip.label">जिप कोड</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">जिप कोड</string>
+	<string name="gc.general.paymentProductGroups.cards.name">कार्ड</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">खाता धारक का नाम</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">खाता संख्या</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">गौण समाप्ति सरचार्ज</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">बीजक</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">ऑनलाइन प्रत्यक्ष ब्रासपाग </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI वॉलेट/कियोस्क</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI रिकरिंग</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">एलीपे (Alipay)</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

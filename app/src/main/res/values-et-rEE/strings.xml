@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Tuvastati mitu maksevalikut</string>
+	<string name="gc.general.cobrands.fullText">Mõned kaardid kasutavad teie makse töötlemiseks mitmeid kaubamärke. Saate valida oma eelistatud kaardi kaubamärgi</string>
+	<string name="gc.general.cobrands.introText">Teie kaardil on mitu maksevalikut, palun valige eelistatud valik.</string>
+	<string name="gc.general.cobrands.readmore">Mida tähendab mitu maksevalikut?</string>
+	<string name="gc.general.cobrands.selectbrand">Valige oma eelistatud valik.</string>
+	<string name="gc.general.cobrands.toggleCobrands">Tuvastati mitu maksevalikut</string>
+	<string name="gc.general.errors.image.altText">Hoiatus</string>
+	<string name="gc.general.errors.incorrectMerchantId">Teie makse lõpetamiseks õigete juhiste näitamisel tekkis tehniline viga: vale kaupmehe ID-number. Palun proovige muud makseviisi või võtke ühendust müügiettevõttega.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">Teie makse lõpetamiseks juhiste näitamisel tekkis tehniline viga. Palun proovige uuesti või proovige muud makseviisi.</string>
+	<string name="gc.general.errors.invalidSubdomain">Tehniline viga tekkis konfiguratsiooni vea tõttu:  alamdomeen ei ole kehtiv. Palun proovige uuesti või proovige muud makseviisi.</string>
+	<string name="gc.general.errors.techicalProblem">Teie makse töötlemisel tekkis tehniline viga. Palun proovige uuesti või proovige muud makseviisi.</string>
+	<string name="gc.general.errors.title">Maksehäire</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Konto omanik</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Konto number</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Summa</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Pangakonto number</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Panga kood</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Panga nimi</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Ribakoodi kujutis näitab teie makse teostamise asukohta.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Vöötkood</string>
 	<string name="gc.general.instructionFields.CITY.label">Linn</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Lepingu number</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Viitenumber</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">Spetsiaalne ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">SWIFT kood</string>
+	<string name="gc.general.paymentProcessing">Me töötleme teie makset. Palun oodake. Teie makse töötlemiseks kulub mõni sekund. </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Konto omaniku nimi</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Konto number</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Linn</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Palun sisestage turvakood nagu kujutisel näidatud</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">E-posti aadress</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Valige oma pank</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefoni number</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefoni number</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Jäta minu andmed meelde järgimste ostude jaoks</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Kui teete sellesse kasti märke, talletub teie makse informatsioon järgmiste ostude jaoks.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Riigi kood</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Riigi kood</string>
 	<string name="gc.general.paymentProductFields.street.label">Tänav</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Tänav</string>
 	<string name="gc.general.paymentProductFields.surname.label">Perekonnanimi</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Perekonnanimi</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Sisestatud kaarti ei toetata. Palun sisestage muu kaart või proovige muud makseviisi.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Palun märkige õige meiliaadress</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Palun märkige õige aegumise kuupäev</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Palun valige loetelust üks väärtus</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Palun märkige väärtus</string>
 	<string name="gc.general.paymentProductFields.zip.label">Postiindeks</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Postiindeks</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Kaardid</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Konto omaniku nimi</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Konto number</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Teine aegumise viivis</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Arve</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Online-arveldus Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Rahakott/Kiosk</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI Korduv</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

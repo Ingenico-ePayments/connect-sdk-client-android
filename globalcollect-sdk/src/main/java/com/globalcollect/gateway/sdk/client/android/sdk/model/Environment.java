@@ -12,12 +12,9 @@ public class Environment {
 	
 	// Enum which contains all possible environments
 	public enum EnvironmentType  {
-		Production,
-		PreProduction,
-		Sandbox,
-		Integration,
-		DevelopmentNami,
-		DevelopmentIsaac;
+			Production,
+			PreProduction,
+			Sandbox
 	}
 	
 	private String c2SBaseUrl;

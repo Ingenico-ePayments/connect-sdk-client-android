@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Machaguo mengi ya malipo yamegunduliwa</string>
+	<string name="gc.general.cobrands.fullText">Kadi nyingine hutumia chapa nyingi za biashara kuchakata malipo yako. Unaweza kuchagua chapa ya biashara ya kadi yako unayopendelea. </string>
+	<string name="gc.general.cobrands.introText">Kadi hii ina machaguo mengi ya malipo, tafadhali chagua chaguo lako unalopendelea.</string>
+	<string name="gc.general.cobrands.readmore">Je, machaguo mengi ya malipo ni nini?</string>
+	<string name="gc.general.cobrands.selectbrand">Teua chaguo lako unalopendelea</string>
+	<string name="gc.general.cobrands.toggleCobrands">Machaguo mengi ya malipo yamegunduliwa</string>
+	<string name="gc.general.errors.image.altText">Onyo</string>
+	<string name="gc.general.errors.incorrectMerchantId">Hitilafu ya kiufundi imetokea na kutuzuia kukuonyesha maagizo sahihi ya kukamilisha malipo yako: Merchant ID si sahihi. Tafadhali jaribu tena au jaribu mbinu nyingine ya malipo au wasiliana na kampuni unayonunua kutoka kwayo.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">Hitilafu ya kiufundi imetokea tulipojaribu kuonyesha maagizo ya kukamilisha malipo yako. Tafadhali jaribu tena au jaribu mbinu nyingine ya malipo.</string>
+	<string name="gc.general.errors.invalidSubdomain">Hitilafu ya kiufundi imetokea kutokana na hitilafu ya usanidi: kikoa kidogo si sahihi. Tafadhali jaribu tena au jaribu mbinu nyingine ya malipo.</string>
+	<string name="gc.general.errors.techicalProblem">Hitilafu ya kiufundi imetokea tulipojaribu kuchakata malipo yako. Tafadhali jaribu tena au jaribu mbinu nyingine ya malipo.</string>
+	<string name="gc.general.errors.title">Hitilafu ya malipo</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Mmiliki wa akaunti</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Nambari ya akaunti</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Kiwango cha hela</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Nambari ya akaunti ya benki</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Msimbo wa benki</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Jina la benki</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Picha ya msimbo upau ya kuonyesha eneo unalolipa.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Msimbo upau</string>
 	<string name="gc.general.instructionFields.CITY.label">Jiji</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Nambari ya kandarasi</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Nambari ya rejeleo</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">Kitambulisho maalum</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Msimbo wa swift</string>
+	<string name="gc.general.paymentProcessing">Tunachakata malipo yako. Tafadhali subiri. Inaweza kuchukua sekunde kadhaa kuchakata malipo yako.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Jina la mmiliki wa akaunti</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Nambari ya akaunti</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Jiji</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Tafadhali weka msimbo wako wa  usalama kama ilivyoonyeshwa katika picha</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">Anwani ya barua pepe</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Chagua benki yako</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Nambari ya simu</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Nambari ya simu</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Kumbuka maelezo yangu kwa ununuzi wa baadaye</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Ukitia tiki kisanduku hiki maelezo yako ya malipo yatahifadhiwa kwa ununuzi wa baadaye.s</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Msimbo wa jimbo</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Msimbo wa jimbo</string>
 	<string name="gc.general.paymentProductFields.street.label">Barabara</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Barabara</string>
 	<string name="gc.general.paymentProductFields.surname.label">Jina la ukoo</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Jina la ukoo</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Kadi uliyoweka haitumiki. Tafadhali weka kadi nyingine au jaribu mbinu nyingine ya malipo.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Tafadhali toa anwani sahihi ya barua pepe</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Tafadhali toa tarehe sahihi ya mwisho</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Tafadhali teua moja  ya nambari kutoka kwenye orodha</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Tafadhali toa nambari</string>
 	<string name="gc.general.paymentProductFields.zip.label">Msimbo wa zip</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Msimbo wa zip</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Kadi </string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Jina la mmiliki wa akaunti</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Nambari ya akaunti</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Ada ya ziada ya tarehe ya pili ya mwisho</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Ankara</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Braspag ya deni la mtandaoni </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Wallet/Kiosk</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI Recurring</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

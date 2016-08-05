@@ -39,8 +39,8 @@ public class RenderAccountOnFileHelper {
 	/**
 	 * Renders the account on file with the default renderer, or with the custom renderer when that is set.
 	 */
-	public void renderAccountOnFile(AccountOnFile accountOnFile, PaymentProduct product, ViewGroup parent) {
-		renderer.renderAccountOnFile(accountOnFile, product, parent);
+	public void renderAccountOnFile(AccountOnFile accountOnFile, String productId, ViewGroup parent) {
+		renderer.renderAccountOnFile(accountOnFile, productId, parent);
 	}
 	
 }

@@ -1,7 +1,21 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;import java.security.InvalidParameterException;import android.view.View;import android.view.ViewGroup;import android.widget.LinearLayout;import android.widget.LinearLayout.LayoutParams;import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
+package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
+
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
+
+import java.security.InvalidParameterException;
+
 
 /**
- * Helper class for rendering a PaymentProductField * 
+ * Helper class for rendering a PaymentProductField
+ * 
  * Copyright 2014 Global Collect Services B.V
  *
  */
@@ -12,7 +26,10 @@ public class RenderInputFieldHelper {
 	private ViewGroup parentView;
 	
 	// Default renderer for tooltips on all fields
-	private RenderTooltipInterface tooltipRenderer = new RenderTooltip();		// Default renderer for tooltips on all fields	private RenderLabelInterface labelRenderer = new RenderLabel();
+	private RenderTooltipInterface tooltipRenderer = new RenderTooltip();
+	
+	// Default renderer for tooltips on all fields
+	private RenderLabelInterface labelRenderer = new RenderLabel();
 	
 	// Flag to determine if the first focus is set
 	private Boolean isFocusSet = false;
@@ -49,18 +66,27 @@ public class RenderInputFieldHelper {
 	 * @param renderer, the RenderInputFieldInterface which determines how the PaymentProductField is rendered 
 	 * @param field, the PaymentProductField which is rendered
 	 * @param accountOnFile, the selected accountOnFile that contains previous payment data
-	 * @param paymentRequest, the paymentRequest which contains all entered user input
+	 * @param inputDataPersister, the paymentRequest which contains all entered user input
 	 */
-	public void renderField(RenderInputFieldInterface renderer, PaymentProductField field, PaymentProduct selectedProduct, 
-						    AccountOnFile accountOnFile, PaymentRequest paymentRequest, C2sPaymentProductContext context) {
+	public void renderField(RenderInputFieldInterface renderer, PaymentProductField field, BasicPaymentItem selectedProduct,
+							AccountOnFile accountOnFile, InputDataPersister inputDataPersister, PaymentContext paymentContext) {
 	
 		if (renderer != null) {
 			
 			// Create new row
 			LinearLayout rowView = new LinearLayout(parentView.getContext());
-			rowView.setOrientation(LinearLayout.VERTICAL);			rowView.setPadding(0,20,0,0);						// Render label			labelRenderer.renderLabel(field, selectedProduct, rowView);						// Create new row entry			LinearLayout rowContentView = new LinearLayout(parentView.getContext());			rowContentView.setOrientation(LinearLayout.HORIZONTAL);			
+			rowView.setOrientation(LinearLayout.VERTICAL);
+			rowView.setPadding(0,20,0,0);
+			
+			// Render label
+			labelRenderer.renderLabel(field, selectedProduct, rowView);
+			
+			// Create new row entry
+			LinearLayout rowContentView = new LinearLayout(parentView.getContext());
+			rowContentView.setOrientation(LinearLayout.HORIZONTAL);
+			
 			// Render field in row and set a tag so we can look it up later
-			View view = renderer.renderField(field, selectedProduct, rowContentView, accountOnFile, paymentRequest, context);
+			View view = renderer.renderField(field, selectedProduct, rowContentView, accountOnFile, inputDataPersister, paymentContext);
 			view.setTag(field.getId());
 			
 			// Set focus on the first field
@@ -72,7 +98,9 @@ public class RenderInputFieldHelper {
 			// Render tooltip in row
 			if (view.isEnabled()) {
 				tooltipRenderer.renderTooltip(field.getId(), selectedProduct, rowContentView);
-			}						rowView.addView(rowContentView);
+			}
+			
+			rowView.addView(rowContentView);
 		
 			// Add row to parentView
 			LayoutParams rowParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);

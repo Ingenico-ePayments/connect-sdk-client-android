@@ -1,5 +1,16 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.dialog;import android.app.AlertDialog;import android.app.Dialog;import android.app.ProgressDialog;import android.content.Context;import android.content.DialogInterface;import android.content.DialogInterface.OnClickListener;
-/** * Copyright 2014 Global Collect Services B.V * */
+package com.globalcollect.gateway.sdk.client.android.exampleapp.dialog;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+
+
+/**
+ * Copyright 2014 Global Collect Services B.V
+ *
+ */
 public class DialogUtil {
 	
 	
@@ -7,7 +18,7 @@ public class DialogUtil {
 	 * Shows an AlertDialog with the given parameters
 	 * @param context, Context where the AlertDialog is added to
 	 * @param title, the title of the AlertDialog
-	 * @param  message, the message of the AlertDialog
+	 * @param message, the message of the AlertDialog
 	 * @param buttonText, the buttontext of the AlertDialog
 	 */
 	public AlertDialog showAlertDialog(Context context, String title, String message, String buttonText) {

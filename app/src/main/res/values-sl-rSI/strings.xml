@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Zaznanih je več načinov plačila</string>
+	<string name="gc.general.cobrands.fullText">Nekatere kartice za obdelavo plačila uporabljajo več blagovnih znamk. Izberete lahko prednostno blagovno znamko kartice.</string>
+	<string name="gc.general.cobrands.introText">Ta kartica omogoča več načinov plačila. Izberite želeni način.</string>
+	<string name="gc.general.cobrands.readmore">Kaj pomeni več načinov plačila?</string>
+	<string name="gc.general.cobrands.selectbrand">Izberite želeni način.</string>
+	<string name="gc.general.cobrands.toggleCobrands">Zaznanih je več načinov plačila</string>
+	<string name="gc.general.errors.image.altText">Opozorilo</string>
+	<string name="gc.general.errors.incorrectMerchantId">Prišlo je do tehnične napake, ki preprečuje prikaz pravilnih navodil za dokončanje plačila: nepravilen ID trgovca. Izberite drug način plačila ali pa se obrnite na podjetje, pri katerem opravljate nakup.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">Pri poskusu prikaza navodil za dokončanje plačila je prišlo do tehnične napake. Poskusite znova ali pa izberite drug način plačila.</string>
+	<string name="gc.general.errors.invalidSubdomain">Do tehnične napake je prišlo zaradi napake pri konfiguraciji:  poddomena ni veljavna. Poskusite znova ali pa izberite drug način plačila.</string>
+	<string name="gc.general.errors.techicalProblem">Med obdelavo plačila je prišlo do tehnične napake. Poskusite znova ali pa izberite drug način plačila.</string>
+	<string name="gc.general.errors.title">Napaka pri plačilu</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Imetnik računa</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Številka računa</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Znesek</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Številka bančnega računa</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Bančna koda</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Ime banke</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Slika črtne kode za prikaz na lokaciji, kjer se izvaja plačilo.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Črtna koda</string>
 	<string name="gc.general.instructionFields.CITY.label">Mesto</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Številka pogodbe</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Številka sklica</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">Posebna ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Koda SWIFT</string>
+	<string name="gc.general.paymentProcessing">Poteka obdelava vašega plačila. Prosimo, počakajte. Obdelava vašega plačila lahko traja nekaj sekund.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Ime imetnika računa</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Številka računa</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Mesto</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Prosimo, vnesite varnostno kodo, kot je prikazano na sliki</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">E-poštni naslov</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Izberite svojo banko</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefonska številka</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefonska številka</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Zapomni si moje podatke za prihodnje nakupe</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Če potrdite to polje, bodo vaši plačilni podatki shranjeni za prihodnje nakupe.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Koda države</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Koda države</string>
 	<string name="gc.general.paymentProductFields.street.label">Ulica</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Ulica</string>
 	<string name="gc.general.paymentProductFields.surname.label">Priimek</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Priimek</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Kartica, ki ste jo vnesli, ni podprta. Vnesite drugo kartico ali pa izberite drug način plačila.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Prosimo, vnesite veljaven e-poštni naslov</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Prosimo, vnesite veljaven datum poteka veljavnosti</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Prosimo, izberite eno izmed vrednosti na seznamu</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Prosimo, vnesite vrednost</string>
 	<string name="gc.general.paymentProductFields.zip.label">Poštna številka</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Poštna številka</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Kartice</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Ime imetnika računa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Številka računa</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Doplačilo po poteku veljavnosti</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Račun</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Spletna obremenitev Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">Denarnica/kiosk QIWI</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI, ponavljajoči se</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

@@ -13,12 +13,14 @@ import java.util.List;
  * Copyright 2014 Global Collect Services B.V
  *
  */
-public class PaymentProduct extends BasicPaymentProduct implements Serializable {
+public class PaymentProduct extends BasicPaymentProduct implements PaymentItem, Serializable {
 
 	private static final long serialVersionUID = -8362704974696989741L;
+
+
 	private boolean hasBeenSorted = false;
 	
-	private List<PaymentProductField> fields = new ArrayList<PaymentProductField>();
+	private List<PaymentProductField> fields = new ArrayList<>();
 
 	public List<PaymentProductField> getPaymentProductFields() {
 		sortList();

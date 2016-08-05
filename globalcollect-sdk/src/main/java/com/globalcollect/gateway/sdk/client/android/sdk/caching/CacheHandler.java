@@ -11,7 +11,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResp
 
 /**
  * Handles all cache related functionality
- * The cache is stored on on internal storage
+ * The cache is stored on internal storage
  * 
  * Copyright 2014 Global Collect Services B.V
  *
@@ -49,28 +49,9 @@ public class CacheHandler {
 		return fileReader.getIinResponsesFromCache();
 	}
 	
-	
+
 	/**
-	 * Adds a IinDetailsResponse to the cache
-	 *  
-	 * @param partialCreditCardNumber, entered partial creditcardnumber
-	 * @param iinResponse, the IinDetailsResponse which is added to the cache
-	 */
-	public void addIinResponseToCache(String partialCreditCardNumber, IinDetailsResponse iinResponse) {
-		
-		if (partialCreditCardNumber == null) {
-			throw new InvalidParameterException("Error adding iinresponse to cache, partialCreditCardNumber may not be null");
-		}
-		if (iinResponse == null) {
-			throw new InvalidParameterException("Error adding iinresponse to cache, iinResponse may not be null");
-		}
-			
-		fileWriter.storeIinResponseInCache(partialCreditCardNumber, iinResponse);
-	}
-	
-	
-	/**
-	 * Retrieves an Image to the Internal Storage
+	 * Retrieves an Image from the Internal Storage
 	 * 
 	 * @param paymentProductId, the identifier of the image to retrieve
 	 * 

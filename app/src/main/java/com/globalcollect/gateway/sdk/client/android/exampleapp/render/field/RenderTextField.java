@@ -1,5 +1,4 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
-import java.security.InvalidParameterException;
 
 import android.text.InputFilter;
 import android.text.method.PasswordTransformationMethod;
@@ -10,12 +9,13 @@ import android.widget.EditText;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.translation.Translator;
 import com.globalcollect.gateway.sdk.client.android.sdk.formatter.StringFormatter;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
+
+import java.security.InvalidParameterException;
 
 
 /**
@@ -28,8 +28,8 @@ public class RenderTextField implements RenderInputFieldInterface {
 	
 
 	@Override
-	public View renderField(PaymentProductField field, PaymentProduct selectedPaymentProduct, 
-							ViewGroup rowView, AccountOnFile account, PaymentRequest paymentRequest, C2sPaymentProductContext context) {
+	public View renderField(PaymentProductField field, BasicPaymentItem selectedPaymentProduct,
+							ViewGroup rowView, AccountOnFile account, InputDataPersister inputDataPersister, PaymentContext paymentContext) {
 		
 		
 		if (field == null) {
@@ -41,19 +41,21 @@ public class RenderTextField implements RenderInputFieldInterface {
 		if (rowView == null) {
 			throw new InvalidParameterException("Error rendering textfield, rowView may not be null");
 		}
-		if (paymentRequest == null) {
+		if (inputDataPersister == null) {
 			throw new InvalidParameterException("Error rendering textfield, paymentRequest may not be null");
 		}
 		
 		// Create new EditText and set its style, restrictions, mask and keyboardtype
 		EditText editText = new EditText(rowView.getContext());
 		editText.setTextAppearance(rowView.getContext(), R.style.TextField);
-		
-		// Set maxLength for field
-		Integer maxLength = field.getDataRestrictions().getValidator().getLength().getMaxLength();
-		if (maxLength > 0) {
-			editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
-			editText.setEms(maxLength);
+
+		if (field.getDataRestrictions().getValidator().getLength() != null) {
+			// Set maxLength for field
+			Integer maxLength = field.getDataRestrictions().getValidator().getLength().getMaxLength();
+			if (maxLength > 0) {
+				editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
+				editText.setEms(maxLength);
+			}
 		}
 		
 		Translator translator = new Translator(rowView.getContext());
@@ -93,7 +95,8 @@ public class RenderTextField implements RenderInputFieldInterface {
 		if (field.getDisplayHints().getMask() != null ) {
 			maskLength = field.getDisplayHints().getMask().replace("{", "").replace("}", "").length();
 			editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maskLength)});
-		} else {
+		} else if (field.getDataRestrictions().getValidator().getLength() != null) {
+
 			maskLength = field.getDataRestrictions().getValidator().getLength().getMaxLength();
 		}
 		
@@ -118,10 +121,10 @@ public class RenderTextField implements RenderInputFieldInterface {
 			}
 		}
 		
-		editText.addTextChangedListener(new FieldInputTextWatcher(paymentRequest, field.getId(), maskLength, editText, addMasking, (ViewGroup)rowView));
-		
-		// get paymentproductvalue from paymentrequest
-		String paymentProductValue = paymentRequest.getValue(field.getId());
+		editText.addTextChangedListener(new FieldInputTextWatcher(inputDataPersister, field.getId(), maskLength, editText, addMasking, (ViewGroup)rowView));
+
+		// get input information from inputDataPersister
+		String paymentProductValue = inputDataPersister.getValue(field.getId());
 		if(paymentProductValue != null && account == null){
 			editText.setText(paymentProductValue);
 		}

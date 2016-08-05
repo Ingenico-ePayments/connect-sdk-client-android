@@ -19,10 +19,9 @@ import com.google.gson.annotations.SerializedName;
  *
  */
 public class PaymentProductField implements Serializable {
-	
-	private static final long serialVersionUID = 5683877936253376459L;
-	
-	
+
+	private static final long serialVersionUID = 7731107337899853223L;
+
 	public enum Type {
 		
 		@SerializedName("String")
@@ -94,8 +93,7 @@ public class PaymentProductField implements Serializable {
 	 * @return
 	 */
 	public List<ValidationErrorMessage> validateValue(String value) {
-		
-		
+
 		// Validate this field
 		errorMessageIds.clear();
 		
@@ -117,7 +115,6 @@ public class PaymentProductField implements Serializable {
 			}
 		}
 
-		
 		return errorMessageIds;
 	}
 	

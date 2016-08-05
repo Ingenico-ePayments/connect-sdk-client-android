@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Flera betalningsalternativ har upptäckts</string>
+	<string name="gc.general.cobrands.fullText">Vissa kort använder flera varumärken för att bearbeta din betalning. Du kan välja önskat kortvarumärke</string>
+	<string name="gc.general.cobrands.introText">Detta kort har flera betalningsalternativ, välj önskat alternativ.</string>
+	<string name="gc.general.cobrands.readmore">Vad innebär flera betalningsalternativ?</string>
+	<string name="gc.general.cobrands.selectbrand">Välj önskat alternativ</string>
+	<string name="gc.general.cobrands.toggleCobrands">Flera betalningsalternativ har upptäckts</string>
+	<string name="gc.general.errors.image.altText">Varning</string>
+	<string name="gc.general.errors.incorrectMerchantId">Ett tekniskt fel uppstod vilket förhindrade oss från att visa dig rätt instruktioner för att slutföra din betalning: en felaktig Handlar-ID. Välj en annan betalningsmetod eller kontakta företaget du köper från.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">Ett tekniskt fel uppstod när vi försökte visa instruktionerna för att slutföra din betalning. Försök igen eller välj en annan betalningsmetod.</string>
+	<string name="gc.general.errors.invalidSubdomain">Ett tekniskt fel uppstod på grund av ett konfigurationsfel: underdomänen är inte giltig. Försök igen eller välj en annan betalningsmetod.</string>
+	<string name="gc.general.errors.techicalProblem">Ett tekniskt fel uppstod när vi bearbetade din betalning. Försök igen eller välj en annan betalningsmetod.</string>
+	<string name="gc.general.errors.title">Betalningen misslyckades</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Kontoinnehavare</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Kontonummer</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Belopp</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Bankkontonummer</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Bankkod</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Banknamn</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Streckkodsbild som ska visas på platsen där du betalar.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Streckkod</string>
 	<string name="gc.general.instructionFields.CITY.label">Ort</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Kontraktsnummer</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Referensnummer</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">Special-ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift-kod</string>
+	<string name="gc.general.paymentProcessing">Vi bearbetar din betalning. Vänta. Det kan ta flera sekunder att bearbeta din betalning.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Kontoinnehavarens namn</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Kontonummer</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Ort</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Ange din säkerhetskod som visat på bilden</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">E-postadress</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Välj din bank</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefonnummer</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefonnummer</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Kom ihåg mina uppgifter för framtida köp</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Om du markerar denna ruta kommer din betalningsinformation att sparas för framtida köp.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Delstatskod</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Delstatskod</string>
 	<string name="gc.general.paymentProductFields.street.label">Gata</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Gata</string>
 	<string name="gc.general.paymentProductFields.surname.label">Förnamn</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Förnamn</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Kortet du har angivit accepteras inte. Ange ett annat kort eller välj en annan betalningsmetod.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Ange en giltig e-postadress</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Ange ett giltig förfallodatum</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Välj ett av värdena från listan</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Ange ett värde</string>
 	<string name="gc.general.paymentProductFields.zip.label">Postnummer</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Postnummer</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Kort</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Kontoinnehavarens namn</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Kontonummer</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Sekundär förseningsavgift</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Faktura</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Online-debitering Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Wallet/Kiosk</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI återkommande</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

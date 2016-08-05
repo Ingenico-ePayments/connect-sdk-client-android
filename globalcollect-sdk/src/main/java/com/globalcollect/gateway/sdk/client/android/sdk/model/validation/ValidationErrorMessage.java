@@ -1,5 +1,6 @@
 package com.globalcollect.gateway.sdk.client.android.sdk.model.validation;
 
+import java.io.Serializable;
 import java.security.InvalidParameterException;
 
 /**
@@ -8,7 +9,9 @@ import java.security.InvalidParameterException;
  * Copyright 2014 Global Collect Services B.V
  * 
  */
-public class ValidationErrorMessage {
+public class ValidationErrorMessage implements Serializable {
+
+	private static final long serialVersionUID = 5842038484067693459L;
 
 	private String errorMessage;
 	private String paymentProductFieldId;

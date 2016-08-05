@@ -1,14 +1,10 @@
 package com.globalcollect.gateway.sdk.client.android.sdk.session;
 
-import java.io.Serializable;
-import java.security.InvalidParameterException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.content.Context;
 
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductGroupsAsyncTask;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.ConvertAmountAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.ConvertAmountAsyncTask.OnAmountConvertedListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.IinLookupAsyncTask;
@@ -17,42 +13,57 @@ import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProduct
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask.OnPaymentProductCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductDirectoryAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductDirectoryAsyncTask.OnPaymentProductDirectoryCallCompleteListener;
-import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductsAsyncTask;
-import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductsAsyncTask.OnPaymentProductsCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductGroupsAsyncTask.OnBasicPaymentProductGroupsCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask.OnBasicPaymentProductsCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PublicKeyAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PublicKeyAsyncTask.OnPublicKeyLoadedListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.C2sPaymentProductContext;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductCacheKey;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.CountryCode;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.CurrencyCode;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentItemCacheKey;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItems;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentItem;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProducts;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts;
 import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSessionEncryptionHelper.OnPaymentRequestPreparedListener;
+
+import java.io.Serializable;
+import java.security.InvalidParameterException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * GcSession contains all methods needed for making a payment
  * 
  * Copyright 2014 Global Collect Services B.V
- * 
  *
  */
-public class GcSession implements OnPaymentProductsCallCompleteListener, OnIinLookupCompleteListener, OnPaymentProductCallCompleteListener, Serializable {
-	
-	
-	private static final long serialVersionUID = 7689574166886898950L;
-	
+public class GcSession implements OnBasicPaymentProductsCallCompleteListener, OnIinLookupCompleteListener, OnPaymentProductCallCompleteListener, OnBasicPaymentProductGroupsCallCompleteListener, OnPaymentProductGroupCallCompleteListener, OnBasicPaymentItemsCallCompleteListener, Serializable {
+
+	private static final long serialVersionUID = 686891053207055508L;
+
 	// Cache which contains all paymentproducts that are loaded from the GC gateway
-	private Map<PaymentProductCacheKey, PaymentProduct> paymentProductMapping = new HashMap<PaymentProductCacheKey, PaymentProduct>();
-	
-	// Paymentproducts returned from the GC gateway
-	private PaymentProducts paymentProducts;
-	
+	private Map<PaymentItemCacheKey, BasicPaymentItem> basicPaymentItemMapping = new HashMap<>();
+	private Map<PaymentItemCacheKey, PaymentItem> paymentItemMapping = new HashMap<>();
+
 	// Communicator used for communicating with the GC gateway
 	private C2sCommunicator communicator;
 	
 	// C2sPaymentProductContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
-	private C2sPaymentProductContext c2sContext;	
+	private PaymentContext paymentContext;
 	
 	// Flag to determine if the iinlookup is beeing executed,
 	// so it wont be fired everytime a character is typed in the edittext while there is another call beeing executed
@@ -80,80 +91,200 @@ public class GcSession implements OnPaymentProductsCallCompleteListener, OnIinLo
 		}
 		return new GcSession(communicator);
 	}
-	
-	
+
+
 	/**
-	 * Gets PaymentProducts for the given PaymentRequest
-	 * 
-	 * @param context, used for reading device metada which is send to the GC gateway 
-	 * @param c2sContext, C2sPaymentProductContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
-	 * @param listener, OnPaymentProductsCallComplete which will be called by the PaymentProductsAsyncTask when the PaymentProducts are loaded
-	 * 
-	 */
-	public void getPaymentProducts(Context context, C2sPaymentProductContext c2sContext, OnPaymentProductsCallCompleteListener listener) {
-		
+	 * Gets all basitPaymentItems for a given payment context
+	 *
+	 * @param context Used for reading device metadata which is send to the GC gateway
+	 * @param paymentContext PaymentContext which contains all neccessary payment info to retrieve the allowed payment items
+	 * @param listener Listener that will be called when the lookup is done
+	 * @param groupPaymentProducts boolean that controls whether the basicPaymentItem call will group the retrieved payment items; true for grouping, false otherwise
+     */
+	public void getBasicPaymentItems(Context context, PaymentContext paymentContext, OnBasicPaymentItemsCallCompleteListener listener, boolean groupPaymentProducts) {
+
 		if (context == null ) {
 			throw new InvalidParameterException("Error getting paymentproduct, context may not be null");
 		}
-		if (c2sContext == null ) {
-			throw new InvalidParameterException("Error getting paymentproducts, c2sContext may not be null");
+		if (paymentContext == null ) {
+			throw new InvalidParameterException("Error getting paymentproducts, paymentContext may not be null");
 		}
 		if (listener == null ) {
 			throw new InvalidParameterException("Error getting paymentproducts, listener may not be null");
 		}
-		
-		this.c2sContext = c2sContext;
-		
-		// Add OnPaymentProductsCallComplete listener and this class to list of listeners so we can store the paymentproducts here
-		List<OnPaymentProductsCallCompleteListener> listeners = new ArrayList<OnPaymentProductsCallCompleteListener>();
+
+		this.paymentContext = paymentContext;
+
+		// Add OnBasicPaymentItemsCallCompleteListener and this class to list of listeners so we can store the paymentproducts here
+		List<OnBasicPaymentItemsCallCompleteListener> listeners = new ArrayList<>();
 		listeners.add(this);
 		listeners.add(listener);
-		
+
 		// Start the task which gets paymentproducts
-		PaymentProductsAsyncTask task = new PaymentProductsAsyncTask(context, c2sContext, communicator, listeners);
+		BasicPaymentItemsAsyncTask task = new BasicPaymentItemsAsyncTask(context, paymentContext, communicator, listeners, groupPaymentProducts);
+		task.execute();
+	}
+
+
+	/**
+	 * Gets BasicPaymentProducts for the given PaymentRequest
+	 *
+	 * @param context, used for reading device metadata which is send to the GC gateway
+	 * @param paymentContext, PaymentContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
+	 * @param listener, OnPaymentProductsCallComplete which will be called by the BasicPaymentProductsAsyncTask when the BasicPaymentProducts are loaded
+	 *
+	 */
+	public void getBasicPaymentProducts(Context context, PaymentContext paymentContext, OnBasicPaymentProductsCallCompleteListener listener) {
+
+		if (context == null ) {
+			throw new InvalidParameterException("Error getting paymentproduct, context may not be null");
+		}
+		if (paymentContext == null ) {
+			throw new InvalidParameterException("Error getting paymentproducts, paymentContext may not be null");
+		}
+		if (listener == null ) {
+			throw new InvalidParameterException("Error getting paymentproducts, listener may not be null");
+		}
+
+		this.paymentContext = paymentContext;
+
+		// Add OnBasicPaymentProductsCallCompleteListener and this class to list of listeners so we can store the paymentproducts here
+		List<OnBasicPaymentProductsCallCompleteListener> listeners = new ArrayList<OnBasicPaymentProductsCallCompleteListener>();
+		listeners.add(this);
+		listeners.add(listener);
+
+		// Start the task which gets paymentproducts
+		BasicPaymentProductsAsyncTask task = new BasicPaymentProductsAsyncTask(context, paymentContext, communicator, listeners);
 		task.execute();
 	}
 	
-	
+
 	/**
 	 * Gets PaymentProduct with fields from the GC gateway
-	 * 
-	 * @param context, used for reading device metada which is send to the GC gateway 
+	 *
+	 * @param context, used for reading device metada which is send to the GC gateway
 	 * @param productId, the productId of the product which needs to be retrieved from the GC gateway
-	 * @param c2sContext, C2sPaymentProductContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
- 	 * @param listener, listener which will be called by the AsyncTask when the PaymentProduct with fields is retrieved
- 	 * 
+	 * @param paymentContext, PaymentContext which contains all neccesary data for doing call to the GC gateway to retrieve BasicPaymentProducts
+	 * @param listener, listener which will be called by the AsyncTask when the PaymentProduct with fields is retrieved
+	 *
 	 */
-	public void getPaymentProduct(Context context, String productId, C2sPaymentProductContext c2sContext, OnPaymentProductCallCompleteListener listener) {
-		
+	public void getPaymentProduct(Context context, String productId, PaymentContext paymentContext, OnPaymentProductCallCompleteListener listener) {
+
 		if (context == null ) {
 			throw new InvalidParameterException("Error getting paymentproduct, context may not be null");
 		}
 		if (productId == null ) {
-			throw new InvalidParameterException("Error getting paymentproduct, productId may not be null");
+			throw new InvalidParameterException("Error getting paymentproduct, groupId may not be null");
+		}
+		if (paymentContext == null) {
+			throw new InvalidParameterException(("Error getting paymentproduct, paymentContext may not be null"));
 		}
 		if (listener == null ) {
 			throw new InvalidParameterException("Error getting paymentproduct, listener may not be null");
 		}
-		
-		this.c2sContext = c2sContext;
-		
+
+		this.paymentContext = paymentContext;
+
+		// Create the cache key for this paymentProduct
+		PaymentItemCacheKey key = createPaymentItemCacheKey(paymentContext, productId);
+
 		// If the paymentProduct is already in the cache, call the listener with that paymentproduct
-		if (paymentProductMapping.containsKey(productId)) {
-			listener.onPaymentProductCallComplete(paymentProductMapping.get(productId));
+		if (paymentItemMapping.containsKey(key)) {
+			PaymentProduct cachedPP = (PaymentProduct) paymentItemMapping.get(key);
+			listener.onPaymentProductCallComplete(cachedPP);
 		} else {
-			
+
 			// Add OnPaymentProductsCallComplete listener and this class to list of listeners so we can store the paymentproduct here
 			List<OnPaymentProductCallCompleteListener> listeners = new ArrayList<OnPaymentProductCallCompleteListener>();
 			listeners.add(this);
 			listeners.add(listener);
-			
+
 			// Do the call to the GC gateway
-			PaymentProductAsyncTask task = new PaymentProductAsyncTask(context, productId, c2sContext, communicator, listeners);
+			PaymentProductAsyncTask task = new PaymentProductAsyncTask(context, productId, paymentContext, communicator, listeners);
 			task.execute();
 		}
-	}	
-	
+	}
+
+
+	/**
+	 * Gets BasicPaymentProducts for the given PaymentRequest
+	 *
+	 * @param context, used for reading device metada which is send to the GC gateway
+	 * @param paymentContext, C2sPaymentProductContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
+	 * @param listener, OnPaymentProductsCallComplete which will be called by the BasicPaymentProductsAsyncTask when the BasicPaymentProducts are loaded
+	 *
+	 */
+	public void getBasicPaymentProductGroups(Context context, PaymentContext paymentContext, OnBasicPaymentProductGroupsCallCompleteListener listener) {
+
+		if (context == null ) {
+			throw new InvalidParameterException("Error getting paymentProductGroups, context may not be null");
+		}
+		if (paymentContext == null ) {
+			throw new InvalidParameterException("Error getting paymentProductGroups, paymentContext may not be null");
+		}
+		if (listener == null ) {
+			throw new InvalidParameterException("Error getting paymentProductGroups, listener may not be null");
+		}
+
+		this.paymentContext = paymentContext;
+
+		// Add OnBasicPaymentProductGroupsCallCompleteListener and this class to list of listeners so we can store the paymentProductGroups here
+		List<OnBasicPaymentProductGroupsCallCompleteListener> listeners = new ArrayList<>();
+		listeners.add(this);
+		listeners.add(listener);
+
+		// Start the task which gets paymentproducts
+		BasicPaymentProductGroupsAsyncTask task = new BasicPaymentProductGroupsAsyncTask(context, paymentContext, communicator, listeners);
+		task.execute();
+	}
+
+
+	/**
+	 * Gets PaymentProductGroup with fields from the GC gateway
+	 *
+	 * @param context, used for reading device metada which is send to the GC gateway
+	 * @param groupId, the productId of the group which needs to be retrieved from the GC gateway
+	 * @param paymentContext, PaymentContext which contains all necessary data for doing call to the GC gateway to retrieve PaymentProductGroup
+	 * @param listener, listener which will be called by the AsyncTask when the PaymentProductGroup with fields is retrieved
+	 *
+	 */
+	public void getPaymentProductGroup(Context context, String groupId, PaymentContext paymentContext, OnPaymentProductGroupCallCompleteListener listener) {
+
+		if (context == null ) {
+			throw new InvalidParameterException("Error getting paymentproduct, context may not be null");
+		}
+		if (groupId == null ) {
+			throw new InvalidParameterException("Error getting paymentproduct, groupId may not be null");
+		}
+		if (paymentContext == null) {
+			throw new InvalidParameterException(("Error getting paymentproduct, paymentContext may not be null"));
+		}
+		if (listener == null ) {
+			throw new InvalidParameterException("Error getting paymentproduct, listener may not be null");
+		}
+
+		this.paymentContext = paymentContext;
+
+		// Create the cache key for this paymentProductGroup
+		PaymentItemCacheKey key = createPaymentItemCacheKey(paymentContext, groupId);
+
+		// If the paymentProductGroup is already in the cache, call the listener with that paymentProductGroup
+		if (paymentItemMapping.containsKey(key)) {
+			PaymentProductGroup cachedPPG = (PaymentProductGroup) paymentItemMapping.get(key);
+			listener.onPaymentProductGroupCallComplete(cachedPPG);
+		} else {
+
+			// Add OnPaymentProductsCallComplete listener and this class to list of listeners so we can store the paymentproduct here
+			List<OnPaymentProductGroupCallCompleteListener> listeners = new ArrayList<>();
+			listeners.add(this);
+			listeners.add(listener);
+
+			// Do the call to the GC gateway
+			PaymentProductGroupAsyncTask task = new PaymentProductGroupAsyncTask(context, groupId, paymentContext, communicator, listeners);
+			task.execute();
+		}
+	}
+
 
 	/**
 	 * Gets PaymentProductDirectory from the GC gateway
@@ -165,7 +296,7 @@ public class GcSession implements OnPaymentProductsCallCompleteListener, OnIinLo
 	 * @param listener, listener which will be called by the AsyncTask when the PaymentProductDirectory with fields is retrieved
  	 * 
 	 */
-	public void getDirectoryForPaymentProductId(String productId, String currencyCode, String countryCode, Context context, OnPaymentProductDirectoryCallCompleteListener listener) {
+	public void getDirectoryForPaymentProductId(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context, OnPaymentProductDirectoryCallCompleteListener listener) {
 
     	if (productId == null) {
 			throw new InvalidParameterException("Error getting PaymentProductDirectory, productId may not be null");
@@ -187,18 +318,18 @@ public class GcSession implements OnPaymentProductsCallCompleteListener, OnIinLo
 		task.execute();
 	}
 
-	
 
 	/**
 	 * Gets the IinDetails for a given partialCreditCardNumber
-	 * 
-	 * @param context, used for reading device metada which is send to the GC gateway 
+	 *
+	 * @param context, used for reading device metada which is send to the GC gateway
 	 * @param partialCreditCardNumber, entered partial creditcardnumber for which the IinDetails will be retrieved
 	 * @param listener, listener which will be called by the AsyncTask when the IIN result is retrieved
-	 * 
+	 * @param paymentContext, payment information for which the IinDetails will be retrieved
+	 *
 	 */
-	public void getIinDetails(Context context, String partialCreditCardNumber, OnIinLookupCompleteListener listener) {
-		
+	public void getIinDetails(Context context, String partialCreditCardNumber, OnIinLookupCompleteListener listener, PaymentContext paymentContext) {
+
 		if (context == null ) {
 			throw new InvalidParameterException("Error getting iinDetails, context may not be null");
 		}
@@ -207,23 +338,23 @@ public class GcSession implements OnPaymentProductsCallCompleteListener, OnIinLo
 		}
 		if (listener == null ) {
 			throw new InvalidParameterException("Error getting iinDetails, listener may not be null");
-		}		
-		
+		}
+
 		// Add OnPaymentProductsCallComplete listener and this class to list of listeners so we can reset the iinLookupPending flag
 		List<OnIinLookupCompleteListener> listeners = new ArrayList<OnIinLookupCompleteListener>();
 		listeners.add(this);
 		listeners.add(listener);
-		
+
 		if (!iinLookupPending) {
-			
-			IinLookupAsyncTask task = new IinLookupAsyncTask(context, partialCreditCardNumber, communicator, paymentProducts, listeners);
+
+			IinLookupAsyncTask task = new IinLookupAsyncTask(context, partialCreditCardNumber, communicator, listeners, paymentContext);
 			task.execute();
-			
+
 			iinLookupPending = true;
 		}
 	}
-		
-	
+
+
 	/**
 	 * Retrieves the publickey from the GC gateway
 	 * 
@@ -319,21 +450,52 @@ public class GcSession implements OnPaymentProductsCallCompleteListener, OnIinLo
 	
 	/**
 	 * Utility methods for getting clientSessionId
-	 * @param clientSessionId
 	 */
 	public String getClientSessionId() {
 		return clientSessionId;
 	}
-	
-	
+
+
+	private PaymentItemCacheKey createPaymentItemCacheKey(PaymentContext paymentContext, String paymentItemId) {
+
+		// Create the cache key for this retrieved BasicPaymentitem
+		return new PaymentItemCacheKey(paymentContext.getAmountOfMoney().getAmount(),
+				paymentContext.getCountryCode(),
+				paymentContext.getAmountOfMoney().getCurrencyCode(),
+				paymentContext.isRecurring(),
+				paymentItemId);
+	}
+
+	private void cacheBasicPaymentItem(BasicPaymentItem basicPaymentItem) {
+		// Add basicPaymentItem to the basicPaymentItemMapping cache
+		if (basicPaymentItem != null) {
+
+			// Create the cache key for and put it in the cache
+			PaymentItemCacheKey key = createPaymentItemCacheKey(paymentContext, basicPaymentItem.getId());
+			basicPaymentItemMapping.put(key, basicPaymentItem);
+		}
+	}
+
+	private void cachePaymentItem(PaymentItem paymentItem) {
+		// Add paymentItem to the paymentItemMapping cache
+		if (paymentItem != null) {
+
+			// Create the cache key for this retrieved PaymentItem
+			PaymentItemCacheKey key = createPaymentItemCacheKey(paymentContext, paymentItem.getId());
+			paymentItemMapping.put(key, paymentItem);
+		}
+	}
+
 	/**
-	 * Listener for retrieved paymentproducts from the GC gateway
+	 * Listener for retrieved basicpaymentproducts from the GC gateway
 	 */
 	@Override
-	public void onPaymentProductsCallComplete(PaymentProducts paymentProducts) {
-		
-		// Store the paymentProducts
-		this.paymentProducts = paymentProducts;
+	public void onBasicPaymentProductsCallComplete(BasicPaymentProducts basicPaymentProducts) {
+
+		// Store the loaded basicPaymentProducts in the cache
+		for (BasicPaymentProduct paymentProduct: basicPaymentProducts.getBasicPaymentProducts()) {
+			cacheBasicPaymentItem(paymentProduct);
+		}
 	}
 	
 	
@@ -343,28 +505,55 @@ public class GcSession implements OnPaymentProductsCallCompleteListener, OnIinLo
 	@Override
 	public void onPaymentProductCallComplete(PaymentProduct paymentProduct) {
 		
-		// Add paymentProduct to the paymentProductMapping cache
-		if (paymentProduct != null) {
-			
-			// Create the cache key for this retrieved PaymentProduct
-			PaymentProductCacheKey key = new PaymentProductCacheKey(c2sContext.getTotalAmount(), 
-																	c2sContext.getCountryCode().name(), 
-																	c2sContext.getCurrencyCode().name(), 
-																	c2sContext.isRecurring(), 
-																	paymentProduct.getId());
-			paymentProductMapping.put(key, paymentProduct);
+		// Store the loaded paymentProduct in the cache
+		cachePaymentItem(paymentProduct);
+	}
+
+
+	/**
+	 * Listener for retrieved basicpaymentproductgroups from the GC gateway
+     */
+	@Override
+	public void onBasicPaymentProductGroupsCallComplete(BasicPaymentProductGroups basicPaymentProductGroups) {
+
+		// Store the loaded basicPaymentProductGroups in the cache
+		for (BasicPaymentProductGroup paymentProductGroup: basicPaymentProductGroups.getBasicPaymentProductGroups()) {
+			cacheBasicPaymentItem(paymentProductGroup);
 		}
 	}
-	
-	
-	
-	
+
+
+	/**
+	 * Listener for retrieved paymentproductgroup from the GC gateway
+     */
+	@Override
+	public void onPaymentProductGroupCallComplete(PaymentProductGroup paymentProductGroup) {
+
+		// Store the loaded paymentProductGroup in the cache
+		cachePaymentItem(paymentProductGroup);
+	}
+
+
+	/**
+	 * Listener for retrieved paymentitems from the GC gateway
+     */
+	@Override
+	public void onBasicPaymentItemsCallComplete(BasicPaymentItems basicPaymentItems) {
+
+		if (basicPaymentItems != null) {
+			// Store the loaded basicPaymentItems in the cache
+			for (BasicPaymentItem basicPaymentItem : basicPaymentItems.getBasicPaymentItems()) {
+				cacheBasicPaymentItem(basicPaymentItem);
+			}
+		}
+	}
+
+
 	/**
 	 * Listener for retrieved iindetails from the GC gateway
 	 */
 	@Override
 	public void onIinLookupComplete(IinDetailsResponse response) {
 		iinLookupPending = false;
-		
 	}
 }

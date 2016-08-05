@@ -124,7 +124,25 @@
 			        android:text="Payment is recurring"/>
 			    
 			</LinearLayout>
-		    
+
+			<LinearLayout
+				android:layout_marginTop="10dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal" >
+
+				<CheckBox
+					android:id="@+id/group_paymentproducts"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Group payment products"/>
+
+			</LinearLayout>
+
 		    <Button
 		        android:layout_marginTop="10dp"
 		        android:layout_width="match_parent"

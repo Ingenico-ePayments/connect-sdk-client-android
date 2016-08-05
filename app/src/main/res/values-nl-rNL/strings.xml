@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Meerdere betaalopties gedetecteerd</string>
+	<string name="gc.general.cobrands.fullText">Bij sommige kaarten worden meerdere merken gebruikt voor het verwerken van uw betaling. U kunt het kaartmerk van uw voorkeur selecteren</string>
+	<string name="gc.general.cobrands.introText">Er bestaan meerdere betaalopties voor deze kaart. Selecteer de gewenste optie.</string>
+	<string name="gc.general.cobrands.readmore">Wat zijn meerdere betaalopties?</string>
+	<string name="gc.general.cobrands.selectbrand">Selecteer de gewenste optie</string>
+	<string name="gc.general.cobrands.toggleCobrands">Meerdere betaalopties gedetecteerd</string>
+	<string name="gc.general.errors.image.altText">Waarschuwing</string>
+	<string name="gc.general.errors.incorrectMerchantId">We kunnen de juiste instructies voor het afronden van uw betaling niet weergeven vanwege een technische fout: een onjuiste handelaars-id. Probeer een andere betaalmethode of neem contact op met het bedrijf waarbij u deze aankoop probeert te doen.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">Er is een technische fout opgetreden bij het weergeven van de instructies voor het afronden van uw betaling. Probeer het opnieuw of probeer een andere betaalmethode.</string>
+	<string name="gc.general.errors.invalidSubdomain">Er is een technische fout opgetreden als gevolg van een configuratiefout:  het subdomein is niet geldig. Probeer het opnieuw of probeer een andere betaalmethode.</string>
+	<string name="gc.general.errors.techicalProblem">Er is een technische fout opgetreden tijdens het verwerken van uw betaling. Probeer het opnieuw of probeer een andere betaalmethode.</string>
+	<string name="gc.general.errors.title">Betaling mislukt</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Rekeninghouder</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Rekeningnummer</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Bedrag</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Bankrekeningnummer</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Bankcode</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Naam bank</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Barcode om te tonen op de locatie waarvoor u betaalt.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Streepjescode</string>
 	<string name="gc.general.instructionFields.CITY.label">Stad</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Contractnummer</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Referentienummer</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">Speciale ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swiftcode</string>
+	<string name="gc.general.paymentProcessing">Uw betaling wordt verwerkt. Een ogenblik geduld. Het verwerken van uw betaling kan enkele seconden duren. </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Naam rekeninghouder</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Jan Jansen</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Rekeningnummer</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Stad</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Voer uw veiligheidscode in zoals afgebeeld</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">E-mailadres</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Selecteer uw bank</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefoonnummer</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefoonnummer</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Onthoud mijn gegevens voor toekomstige aankopen</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Als u dit vakje aanvinkt, wordt uw betaalinformatie opgeslagen voor toekomstige aankopen.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Code staat</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Code staat</string>
 	<string name="gc.general.paymentProductFields.street.label">Straat</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Straat</string>
 	<string name="gc.general.paymentProductFields.surname.label">Achternaam</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Achternaam</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">De kaart die u hebt ingevoerd, wordt niet ondersteund. Voer een andere kaart in of probeer een andere betaalmethode.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Voer een geldig e-mailadres in a.u.b.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Voer een geldige vervaldatum in a.u.b.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Selecteer een van de waarden uit de lijst a.u.b.</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Vul een waarde in a.u.b.</string>
 	<string name="gc.general.paymentProductFields.zip.label">Postcode</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Postcode</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Credit kaarten</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Naam rekeninghouder</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Rekeningnummer</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Secundaire vervaldatum toeslag</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Factuur</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Online debit Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Wallet/Kiosk</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI Doorlopend</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

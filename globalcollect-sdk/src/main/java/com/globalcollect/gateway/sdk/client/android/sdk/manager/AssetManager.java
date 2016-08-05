@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.security.InvalidParameterException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
@@ -21,8 +22,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.EnvironmentType;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Size;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProducts;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 import com.google.gson.reflect.TypeToken;
 
 
@@ -116,10 +116,10 @@ public class AssetManager implements OnImageLoadedListener {
 	 * Update the logos for the given paymentProducts if there is a new version
 	 * 
 	 * @param region, region determines what baseurl is used for loading images
-	 * @param region, environment determines what baseurl is used for loading images
-	 * @param paymentProducts, PaymentProducts for which the logo will be updated if there is a new version
+	 * @param environment, environment determines what baseurl is used for loading images
+	 * @param basicPaymentItems, PaymentProductSelectables for which the logo will be updated if there is a new version
 	 */
-	public void updateLogos(Region region, EnvironmentType environment, PaymentProducts paymentProducts, Size size) {
+	public void updateLogos(Region region, EnvironmentType environment, List<BasicPaymentItem> basicPaymentItems, Size size) {
 		
 		// Get the map containg all logos per paymentProductId from the preferences 
 		Type listType = new TypeToken<Map<String, String>>() {}.getType();
@@ -135,10 +135,10 @@ public class AssetManager implements OnImageLoadedListener {
 			logoMapping = readInitialLogoMapping();
 		}
 		
-		if (logoMapping != null && paymentProducts != null) {
+		if (logoMapping != null && basicPaymentItems != null) {
 		
-			// Loop trough all PaymentProducts to see if their logo must be updated
-			for (BasicPaymentProduct product : paymentProducts.getPaymentProducts()) {
+			// Loop trough all BasicPaymentProducts to see if their logo must be updated
+			for (BasicPaymentItem product : basicPaymentItems) {
 				
 				String url = logoMapping.get(product.getId());
 					
@@ -184,11 +184,11 @@ public class AssetManager implements OnImageLoadedListener {
 	 * 
 	 * @param region, region determines what baseurl is used for loading images
 	 * @param environment, environment determines what baseurl is used for loading images
-	 * @param logomapping, map containing mapping with url's and paymentproductid
+	 * @param logoMapping, map containing mapping with url's and paymentproductid
 	 * @param product, this products image is loaded
 	 * @param size, can be used to retrieve images of certain size
 	 */
-	private void getImageFromUrl(Region region, EnvironmentType environment, Map<String, String> logoMapping, BasicPaymentProduct product, Size size) {
+	private void getImageFromUrl(Region region, EnvironmentType environment, Map<String, String> logoMapping, BasicPaymentItem product, Size size) {
 		
 		// Determine the complete url
 		String logoUrl = product.getDisplayHints().getLogoUrl();
@@ -220,6 +220,4 @@ public class AssetManager implements OnImageLoadedListener {
 			preferences.storeInSharedPreferences(Constants.PREFERENCES_LOGO_MAP, logoMapping, context);
 		}
 	}
-	
-	
 }

@@ -30,7 +30,7 @@ public class StringFormatter implements Serializable {
 			return null;
 		}
 		
-		// if users press the back button
+		// if users press the backspace button
 		if (oldValue.length() > value.length()) {
 			return new FormatResult(value, null);
 		}
@@ -38,7 +38,7 @@ public class StringFormatter implements Serializable {
 		// Get value and cursorIndex
 		value = (String) getMaskOrGetCursorIndex(mask, value, cursorIndex, true);
 		cursorIndex = (Integer) getMaskOrGetCursorIndex(mask, value, cursorIndex, false);
-		
+
 		return new FormatResult(value, cursorIndex);
 	}
 	
@@ -72,8 +72,7 @@ public class StringFormatter implements Serializable {
 				isInMask++;
 			} else {
 				
-				
-				
+
 				// if character between {{ and }}, add character at the same position of the value
 				if(isInMask == 2){
 					

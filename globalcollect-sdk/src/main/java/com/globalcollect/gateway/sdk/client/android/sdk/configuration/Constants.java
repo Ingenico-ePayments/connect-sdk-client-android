@@ -9,11 +9,13 @@ public class Constants {
 	
 	/** SDK version **/
 	public final static String SDK_IDENTIFIER = "Android/v1.0";
-	
+
 	/** List of possible paths on the Global Collect Gateway  **/
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTS_PATH = "[cid]/products";
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_PATH  = "[cid]/products/[pid]";
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_DIRECTORY_PATH  = "[cid]/products/[pid]/directory";
+	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTGROUPS_PATH = "[cid]/productgroups";
+	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTGROUP_PATH = "[cid]/productgroups/[gid]";
 	public final static String GC_GATEWAY_CONVERT_AMOUNT_PATH = "[cid]/services/convert/amount";
 	public final static String GC_GATEWAY_IIN_LOOKUP_PATH = "[cid]/services/getIINdetails";
 	public final static String GC_GATEWAY_PUBLIC_KEY_PATH = "[cid]/crypto/publickey";

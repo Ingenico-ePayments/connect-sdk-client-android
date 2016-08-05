@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">گزینه‌های متعدد پرداخت شناسایی شد</string>
+	<string name="gc.general.cobrands.fullText">بعضی از کارت‌ها از نام‌های تجاری متعدد برای پردازش پرداخت شما استفاده می‌کنند. می‌توانید نام تجاری ترجیحی کارت خود را انتخاب کنید</string>
+	<string name="gc.general.cobrands.introText">این کارت دارای گزینه‌های متعدد پرداخت می‌باشد، لطفاً گزینه ترجیحی خود را انتخاب کنید.</string>
+	<string name="gc.general.cobrands.readmore">گزینه‌های متعدد پرداخت چیستند؟</string>
+	<string name="gc.general.cobrands.selectbrand">گزینه ترجیحی خود را انتخاب کنید</string>
+	<string name="gc.general.cobrands.toggleCobrands">گزینه‌های متعدد پرداخت شناسایی شد</string>
+	<string name="gc.general.errors.image.altText">هشدار</string>
+	<string name="gc.general.errors.incorrectMerchantId">یک خطای فنی رخ داده است که اجازه نمی‌دهد دستورالعمل‌های صحیح مربوط به نهایی کردن پرداخت شما را نمایش دهیم: شناسه معامله‌گر نادرست است. لطفاً روش پرداخت دیگری را امتحان کنید یا با شرکتی که از آن خرید می‌نمایید تماس بگیرید.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">هنگام تلاش برای نمایش دستورالعمل‌های مربوط به نهایی کردن پرداخت شما یک خطای فنی رخ داد. لطفاً دوباره تلاش کنید یا روش پرداخت دیگری را امتحان نمایید.</string>
+	<string name="gc.general.errors.invalidSubdomain">یک خطای فنی به دلیل خطای پیکربندی رخ داد:  دامنه فرعی معتبر نیست. لطفاً دوباره تلاش کنید یا روش پرداخت دیگری را امتحان نمایید.</string>
+	<string name="gc.general.errors.techicalProblem">هنگام تلاش برای پردازش پرداخت شما یک خطای فنی رخ داد. لطفاً دوباره تلاش کنید یا روش پرداخت دیگری را امتحان نمایید.</string>
+	<string name="gc.general.errors.title">پرداخت ناموفق</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">صاحب حساب</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">شماره حساب</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">مبلغ</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">شماره حساب بانکی</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">کد بانک</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">نام بانک</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">تصویر بارکد جهت نمایش در محلی که پرداخت را انجام می‌دهید.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">بارکد</string>
 	<string name="gc.general.instructionFields.CITY.label">شهر</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">شماره قرارداد</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">شماره ارجاع</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">شناسه خاص</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">کد Swift</string>
+	<string name="gc.general.paymentProcessing">در حال پردازش پرداخت شما هستیم. لطفاً صبر کنید. پردازش پرداخت شما ممکن است چند ثانیه طول بکشد. </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">نام صاحب حساب</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">شماره حساب</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">شهر</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">لطفاً کد امنیتی خود را طبق تصویر وارد کنید</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">آدرس ایمیل</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">بانک خود را انتخاب کنید</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">شماره تلفن</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">شماره تلفن</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">ذخیره مشخصات من برای خریدهای آتی</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">اگر این کادر را تیک بزنید، اطلاعات پرداخت شما برای خریدهای آتی ذخیره می‌شود.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">کد ایالت</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">کد ایالت</string>
 	<string name="gc.general.paymentProductFields.street.label">خیابان</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">خیابان</string>
 	<string name="gc.general.paymentProductFields.surname.label">نام خانوادگی</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">نام خانوادگی</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">کارتی که وارد کرده‌اید پشتیبانی نمی‌شود. لطفاً کارت دیگری را وارد کنید یا روش پرداخت دیگری را امتحان نمایید.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">لطفاً یک آدرس ایمیل معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">لطفاً یک تاریخ انقضای معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">لطفاً یکی از مقادیر داخل فهرست را انتخاب کنید</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">لطفاً مقداری را اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.zip.label">کد پستی</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">کد پستی</string>
+	<string name="gc.general.paymentProductGroups.cards.name">کارت‌ها</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">نام صاحب حساب</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">شماره حساب</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">هزینه بالاسری انقضای ثانویه</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">صورت‌حساب</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">آگهی بدهکار آنلاین Braspag </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Wallet/Kiosk</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI مکرر</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>

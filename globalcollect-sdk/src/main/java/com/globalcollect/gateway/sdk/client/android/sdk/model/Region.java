@@ -26,23 +26,11 @@ public enum Region {
 			    new Environment(EnvironmentType.PreProduction,    
 			       		 		"https://api-eu-preprod.globalcollect.com/client/v1/", 	
 			       		 		"https://assets.pay1.preprod.poweredbyglobalcollect.com"),
-			        		 		 
-			    new Environment(EnvironmentType.Sandbox, 		   
-			       		 		"https://api-eu-sandbox.globalcollect.com/client/v1/", 	
-			       		 		"https://assets.pay1.sandbox.poweredbyglobalcollect.com"),
-			         
-			    new Environment(EnvironmentType.Integration, 	   
-			       		 		"https://int-test-api.gcsip.nl:4443/client/v1/", 
-			       		 		"https://assets.int-test-rpp.gcsip.nl:4443"),
-			        		 		 
-			    new Environment(EnvironmentType.DevelopmentNami,  
-			       		 		"https://nami-test-api.gcsip.nl:4443/client/v1/", 		
-			       		 		"https://assets.nami-test-rpp.gcsip.nl:4443"),
-			        		 		 
-			    new Environment(EnvironmentType.DevelopmentIsaac, 
-			       		 		"http://gc-ci-dev.isaac.local:7003/client/v1/",
-			       		 		"http://rpp.gc-ci-dev.isaac.local:7003/")
-    ))),
+
+				new Environment(EnvironmentType.Sandbox,
+								"https://api-eu-sandbox.globalcollect.com/client/v1/",
+								"https://assets.pay1.sandbox.poweredbyglobalcollect.com")
+			))),
 				  
 	US(new ArrayList<Environment>(Arrays.asList(
 			
@@ -56,19 +44,7 @@ public enum Region {
 				        		 		 
 			    new Environment(EnvironmentType.Sandbox, 		   
 			    				"https://api-us-sandbox.globalcollect.com/client/v1/", 	
-				       		 	"https://assets.pay2.sandbox.poweredbyglobalcollect.com"),
-				         
-			    new Environment(EnvironmentType.Integration, 	   
-				       		 	"https://int-test-api.gcsip.nl:4443/client/v1/", 
-				       		 	"https://assets.int-test-rpp.gcsip.nl:4443"),
-				        		 		 
-			    new Environment(EnvironmentType.DevelopmentNami,  
-				       		 	"https://nami-test-api.gcsip.nl:4443/client/v1/", 		
-				       		 	"https://assets.nami-test-rpp.gcsip.nl:4443"),
-				        		 		 
-			    new Environment(EnvironmentType.DevelopmentIsaac,  
-				       		 	"http://gc-ci-dev.isaac.local:7003/client/v1/", 			
-				       		 	"http://rpp.gc-ci-dev.isaac.local:7003/")
+				       		 	"https://assets.pay2.sandbox.poweredbyglobalcollect.com")
 	)));
 
 	

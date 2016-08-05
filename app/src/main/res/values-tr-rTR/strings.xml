@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<string name="gc.general.cobrands.detected">Birden çok ödeme seçeneği tespit edildi</string>
+	<string name="gc.general.cobrands.fullText">Bazı kartlar ödemenizi işleme almak için birden çok marka kullanır. Tercih ettiğiniz kart markasını seçebilirsiniz</string>
+	<string name="gc.general.cobrands.introText">Bu kart birden çok ödeme seçeneğine sahip, lütfen tercih ettiğiniz seçeneği seçin.</string>
+	<string name="gc.general.cobrands.readmore">Birden çok ödeme seçeneği ne anlama geliyor?</string>
+	<string name="gc.general.cobrands.selectbrand">Tercih ettiğiniz seçeneği seçin</string>
+	<string name="gc.general.cobrands.toggleCobrands">Birden çok ödeme seçeneği tespit edildi</string>
+	<string name="gc.general.errors.image.altText">Uyarı</string>
+	<string name="gc.general.errors.incorrectMerchantId">Ödemenizi sonlandırmaya ilişkin talimatları size göstermemizi engelleyen teknik bir hata meydana geldi: yanlış Satıcı kimliği. Lütfen başka bir ödeme yöntemi deneyin veya satın aldığınız firma ile iletişime geçin.</string>
+	<string name="gc.general.errors.instructions.renderingProblem">Ödemenizi sonlandırmaya ilişkin talimatları göstermeye çalışırken teknik bir hata meydana geldi. Lütfen tekrar deneyin veya başka bir ödeme şekli kullanın.</string>
+	<string name="gc.general.errors.invalidSubdomain">Bir konfigürasyon hatası nedeniyle teknik bir hata meydana geldi: Alt alan geçerli değil. Lütfen tekrar deneyin veya başka bir ödeme şekli kullanın.</string>
+	<string name="gc.general.errors.techicalProblem">Ödemenizi işleme almayı denerken teknik bir hata meydana geldi. Lütfen tekrar deneyin veya başka bir ödeme şekli kullanın.</string>
+	<string name="gc.general.errors.title">Ödemede hata</string>
 	<string name="gc.general.instructionFields.ACCOUNTHOLDER.label">Hesap sahibi</string>
 	<string name="gc.general.instructionFields.ACCOUNTNUMBER.label">Hesap numarası</string>
 	<string name="gc.general.instructionFields.AMOUNT.label">Tutar</string>
 	<string name="gc.general.instructionFields.BANKACCOUNTNUMBER.label">Banka hesap numarası</string>
+	<string name="gc.general.instructionFields.BANKCODE.label">Banka kodu</string>
 	<string name="gc.general.instructionFields.BANKNAME.label">Banka adı</string>
+	<string name="gc.general.instructionFields.BARCODE.altText">Ödediğiniz yerde göstereceğiniz barkod resmi.</string>
 	<string name="gc.general.instructionFields.BARCODE.label">Barkod</string>
 	<string name="gc.general.instructionFields.CITY.label">Şehir</string>
 	<string name="gc.general.instructionFields.CONTRACTNUMBER.label">Sözleşme numarası</string>
@@ -18,6 +32,7 @@
 	<string name="gc.general.instructionFields.REFERENCENUMBER.label">Referans numarası</string>
 	<string name="gc.general.instructionFields.SPECIALID.label">Özel tanımlama kodu</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift kodu</string>
+	<string name="gc.general.paymentProcessing">Ödemenizi işleme alıyoruz. Lütfen bekleyin. Ödemenizi işleme almak birkaç saniye sürebilir. </string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Hesap sahibinin adı</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Hesap numarası</string>
@@ -36,7 +51,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Şehir</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_v1.png</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Lütfen resimde görünen güvenlik kodunu girin</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">E-posta adresi</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -54,12 +69,15 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Bankanızı seçin</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefon numarası</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefon numarası</string>
+	<string name="gc.general.paymentProductFields.rememberMe.label">Sonraki alışverişlerimde bilgilerimi hatırla</string>
+	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Bu kutuyu işaretlerseniz, ödeme bilgileriniz sonraki alışverişlerinizde kullanılmak üzere saklanacaktır.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Eyalet kodu</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Eyalet kodu</string>
 	<string name="gc.general.paymentProductFields.street.label">Cadde</string>
 	<string name="gc.general.paymentProductFields.street.placeholder">Cadde</string>
 	<string name="gc.general.paymentProductFields.surname.label">Soyadı</string>
 	<string name="gc.general.paymentProductFields.surname.placeholder">Soyadı</string>
+	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Girdiğiniz kart desteklenmiyor. Lütfen başka bir kart girin veya başka bir ödeme yöntemi deneyin.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Lütfen geçerli bir e-posta adresi girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Lütfen geçerli bir son kullanma tarihi girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Lütfen listedeki değerlerden birini seçin</string>
@@ -70,6 +88,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Lütfen bir değer girin</string>
 	<string name="gc.general.paymentProductFields.zip.label">Posta kodu</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Posta kodu</string>
+	<string name="gc.general.paymentProductGroups.cards.name">Kartlar</string>
 	<string name="gc.general.paymentProducts.1.name">Visa</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.ACCOUNTHOLDER.label">Hesap sahibinin adı</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKACCOUNTNUMBER.label">Hesap numarası</string>
@@ -87,7 +106,7 @@
 	<string name="gc.general.paymentProducts.125.name">JCB</string>
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_128_v1.png</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -120,12 +139,14 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">İkincil son kullanma ek ücreti</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
-	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_2_v1.png</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
 	<string name="gc.general.paymentProducts.201.name">Fatura</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">/templates/master/global/css/img/ppimages/ppf_cvv_3_v1.png</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -178,9 +199,9 @@
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Braspag ile internet üzerinden ödeme </string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Wallet/Kiosk</string>
-	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8580.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.8583.name">QIWI Tekrarlı Ödeme</string>
-	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">+7 *** *** ** **</string>
+	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
