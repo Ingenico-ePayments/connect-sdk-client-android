@@ -20,10 +20,10 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.FormatResult;
 public class FieldInputTextWatcher implements TextWatcher {
 	
 	
-	// PaymentRequest is the object where all entered values are stored for a field
+	// InputDataPersister is the object where all entered values are stored for a field
 	private InputDataPersister inputDataPersister;
 	
-	// PaymentProductFieldid needed for storing values in the paymentRequest
+	// PaymentProductFieldid needed for storing values in the inputDataPersister
 	private String paymentProductFieldId;
 	
 	// EditText of which the input is changed

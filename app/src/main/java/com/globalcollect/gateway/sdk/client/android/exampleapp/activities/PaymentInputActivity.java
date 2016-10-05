@@ -24,8 +24,6 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.render.iinlookup.
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.iinlookup.RenderIinCoBranding;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.shoppingcart.RenderShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.validation.RenderValidationHelper;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.render.validation.RenderValidationMessage;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.render.validation.RenderValidationMessageInterface;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.IinLookupAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask.OnPaymentProductCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
@@ -49,6 +47,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSessionEncrypt
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -59,11 +58,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class PaymentInputActivity extends ShoppingCartActivity implements OnPaymentRequestPreparedListener, OnPaymentProductCallCompleteListener, IinLookupAsyncTask.OnIinLookupCompleteListener {
 
 	// The postfix of the cardnumber field for which IIN lookup is added
-	private final String CARDNUMBER_POSTFIX = "cardNumber";
+	private static final String CARDNUMBER_POSTFIX = "cardNumber";
 
 	// Error message ID's of messages that have to do with the IINLookup
-	private final String NOT_ALLOWED_IN_CONTEXT_ERROR_ID = "allowedInContext";
-	private final String LUHN_ERROR_ID = "luhn";
+	private static final String NOT_ALLOWED_IN_CONTEXT_ERROR_ID = "allowedInContext";
+	private static final String LUHN_ERROR_ID = "luhn";
 
 	// ProgressDialog used for showing and hiding dialogs
 	private ProgressDialog progressDialog;
@@ -74,7 +73,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 	// The viewgroups to which all fields, tooltips and errormessages are rendered
 	private ViewGroup renderInputFieldsLayout;
 
-	// TextField in which the IIN details are rendered
+	// TextField in which the customer types his Credit Card number
 	private EditText iinEditText;
 
 	private IinDetailsResponse iinDetailsResponse;
@@ -137,6 +136,11 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		PaymentItem pps 			 = (PaymentItem) intent.getSerializableExtra(Constants.INTENT_SELECTED_ITEM);
 		inputDataPersister.setPaymentItem(pps);
 
+		// If a single paymentProduct is selected, store it in the request.
+		if (pps instanceof PaymentProduct) {
+			paymentRequest.setPaymentProduct((PaymentProduct) pps);
+		}
+
 		// Render the shoppingcart details
 		shoppingCartRenderer = new RenderShoppingCart(paymentContext, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());
 
@@ -158,13 +162,15 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 				// Store the last known payment product in the payment request
 				paymentRequest.setPaymentProduct((PaymentProduct) inputDataPersister.getPaymentItem());
+			} else {
+				// FIXME: inputDataPersister can be null here!
 			}
 
 			// Retrieve the iin information, in order to load the coBrands if necessary
 			iinDetailsResponse = (IinDetailsResponse) savedInstanceState.getSerializable("iinDetailsResponse");
 
 			// Retrieve the error message information, in order to load possible error messages
-			validationRenderHelper.setValidationMessages((ArrayList<ValidationErrorMessage>) savedInstanceState.getSerializable("errorMessageIds"));
+			validationRenderHelper.setValidationMessages((List<ValidationErrorMessage>) savedInstanceState.getSerializable("errorMessageIds"));
 		}
 
 
@@ -191,7 +197,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		validateAndStoreInput();
 
 		// If there is unvalid input, render error messages
-		if (validationRenderHelper.getValidationMessages().size() > 0) {
+		if (!validationRenderHelper.getValidationMessages().isEmpty()) {
 
 			// Render the invalid fields
 			validationRenderHelper.renderValidationMessages(inputDataPersister.getPaymentItem());
@@ -236,30 +242,25 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 			if (accountOnFile != null) {
 
-				boolean fieldInAccountOnFile = false;
+				KeyValuePair attribute = findAttributeById(accountOnFile.getAttributes(), field.getId());
 
-				for (KeyValuePair attribute: accountOnFile.getAttributes()) {
-					if (attribute.getKey().equals(field.getId())) {
-						fieldInAccountOnFile = true;
+				if (attribute != null) {
 
-						// If editing is allowed for this field, and it has actually been editted, we have to store the new value
-						// in the PaymentRequest, so the stored account on file can be updated.
-						// Otherwise the account on file has not changed, and we should not store the value in the PaymentRequest
-						if (attribute.isEditingAllowed() && !getUnmaskedValueFromField(field).equals(attribute.getValue())) {
-							storeNonEmptyFieldValue(field);
-						} else if (attribute.isEditingAllowed()) {
-							// Editting is allowed, but the value is not altered. It may be possible however that an unvalid value
-							// had already made it into the paymentRequest, so that value should be removed from the request
-							paymentRequest.removeValue(field.getId());
-						}
+					// If editing is allowed for this field, and it has actually been editted, the value needs to be stored
+					// in the PaymentRequest, so the account on file can be updated on the server.
+					// Otherwise the account on file has not changed, and the value should not be stored in the PaymentRequest
+					if (attribute.isEditingAllowed() && !getUnmaskedValueFromField(field).equals(attribute.getValue())) {
+						storeNonEmptyFieldValue(field);
+					} else if (attribute.isEditingAllowed()) {
+						// Editting is allowed, but the value is not altered. It may be possible however that an unvalid value
+						// had already made it into the paymentRequest, so that value should be removed from the request
+						paymentRequest.removeValue(field.getId());
 					}
-				}
+				} else {
 
-				// If a field is not in the account on file, it's value should be stored in the PaymentRequest
-				if (!fieldInAccountOnFile) {
+					// If a field is not in the account on file, it's value should be stored in the PaymentRequest
 					storeNonEmptyFieldValue(field);
 				}
-
 			} else {
 				// If there is no Account on File, we know that the data will definitely be have to be in the PaymentRequest
 				storeNonEmptyFieldValue(field);
@@ -272,9 +273,18 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		}
 	}
 
+	private KeyValuePair findAttributeById(List<KeyValuePair> attributes, String fieldId) {
+		for (KeyValuePair attribute: attributes) {
+			if (attribute.getKey().equals(fieldId)) {
+				return attribute;
+			}
+		}
+		return null;
+	}
+
 	private void storeNonEmptyFieldValue(PaymentProductField field) {
 		String value = getUnmaskedValueFromField(field);
-		if (value != null && !value.equals("")) {
+		if (value != null && !value.isEmpty()) {
 			paymentRequest.setValue(field.getId(), value);
 		}
 	}
@@ -307,10 +317,10 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 		AccountOnFile accountOnFile = paymentRequest.getAccountOnFile();
 
-		// Loop trough all validationrules from all fields on the paymentProduct
+		// Loop trough all validationrules from all fields on the paymentItem
 		for (PaymentProductField field : paymentItem.getPaymentProductFields()) {
 
-			// See if a field isn't in the accountOnFile for this paymentproduct
+			// See if a field isn't in the accountOnFile for this paymentItem
 			Boolean isFieldInAccountOnFile = false;
 			for (AccountOnFile ppAccountOnFile : paymentItem.getAccountsOnFile()) {
 
@@ -353,7 +363,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		// Hide the hardcoded rendered tooltiptexts
 		fieldRenderer.hideTooltipTexts((ViewGroup) findViewById(R.id.rememberLayoutParent));
 
-		// Hide all validationmessages
+		// Hide all
 		validationRenderHelper.hideValidationMessages();
 	}
 
@@ -385,7 +395,10 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 		// Show remember me checkbox when allow storing as account on file
 		if (paymentRequest.getPaymentProduct() != null) {
-			if (!paymentRequest.getPaymentProduct().autoTokenized() && paymentRequest.getPaymentProduct().allowsTokenization() && paymentRequest.getAccountOnFile() == null) {
+			if (Boolean.FALSE.equals(paymentRequest.getPaymentProduct().autoTokenized()) && 		// Not already automatically tokenized?
+					Boolean.TRUE.equals(paymentRequest.getPaymentProduct().allowsTokenization()) && // Tokenization allowed?
+					paymentRequest.getAccountOnFile() == null) {									// AccountOnFile not already set?
+
 				ViewGroup rememberLayout = (ViewGroup) findViewById(R.id.rememberLayout);
 
 				// Remove any tooltipimages that are potentially already in the view
@@ -416,7 +429,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 			final List<IinDetail> coBrands = iinDetailsResponse.getCoBrands();
 
 			// Remove all cobrands that cannot be payed with
-			if (coBrands != null) {
+			if (coBrands != null && !coBrands.isEmpty()) {
 
 				// Create a list to store all allowed paymentProducts
 				final List<BasicPaymentItem> paymentProductsAllowedInContext = new ArrayList<>(4);
@@ -435,6 +448,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 									paymentProductsAllowedInContext.add(paymentProduct);
 								}
 								if (count.decrementAndGet() < 1) {
+									// All of the payment products have been retrieved
 									renderCoBrands(paymentProductsAllowedInContext);
 								}
 							}
@@ -533,6 +547,13 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		}
 	}
 
+	private void removeDrawableInEditText() {
+		if (isIinImageShowing) {
+			isIinImageShowing = false;
+			iinEditText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
+		}
+	}
+
 
 	/**
 	 * Listener for Paymentproduct
@@ -570,7 +591,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		// Depending on the response from the merchant server, redirect to one of the following pages:
 		// 
 		// - Successful page if the payment is done
-		// - Unsuccesful page when the payment result is unsuccessful, you must suplly a paymentProductId and an errorcode which will be translated
+		// - Unsuccesful page when the payment result is unsuccessful, you must supply a paymentProductId and an errorcode which will be translated
 		// - Webview page to show an instructions page, or to go to a third party payment page
 		//
 		// Successful and Unsuccessful results have to be redirected to PaymentResultActivity
@@ -601,12 +622,6 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		startActivity(paymentResultIntent);
 	}
 
-	private void removeIinImage() {
-		if (isIinImageShowing) {
-			isIinImageShowing = false;
-			iinEditText.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
-		}
-	}
 
 	/**
 	 * Listener for the iinDetailsCall. This call is triggered when the user typed in 6 or more digits of its credit card number.
@@ -620,14 +635,17 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 			return;
 		}
 
+		// Store the new iinDetailsResponse, that belongs to the Credit Card number of the new brand
+		this.iinDetailsResponse = iinResponse;
+
 		// Remove the logo if the status returned == UNKNOWN or no valid status at all
-		if (iinResponse == null || iinResponse.getStatus() == IinStatus.UNKNOWN) {
+		if (iinResponse.getStatus() == IinStatus.UNKNOWN) {
 
 			// Show the user that the entered credit card number is not a valid one
 			validationRenderHelper.renderValidationMessage(new ValidationErrorMessage(LUHN_ERROR_ID, CARDNUMBER_POSTFIX, null), inputDataPersister.getPaymentItem());
 
 			// In this case there is no recognised card, so remove the iinImage
-			removeIinImage();
+			removeDrawableInEditText();
 
 			// Also there are no coBrands, remove a possible cobrand notification as well
 			coBrandRenderer.removeIinCoBrandNotification(renderInputFieldsLayout, CARDNUMBER_POSTFIX);
@@ -652,7 +670,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 			validationRenderHelper.renderValidationMessage(new ValidationErrorMessage(NOT_ALLOWED_IN_CONTEXT_ERROR_ID, CARDNUMBER_POSTFIX, null), inputDataPersister.getPaymentItem());
 
 			// Remove the image of the payment product (if there is one)
-			removeIinImage();
+			removeDrawableInEditText();
 
 			// Also there are no coBrands, remove a possible cobrand notification as well
 			coBrandRenderer.removeIinCoBrandNotification(renderInputFieldsLayout, CARDNUMBER_POSTFIX);
@@ -660,9 +678,6 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		}
 
 		// Else: the iinResponse returned with status SUPPORTED
-
-		// Store the new iinDetailsResponse, that belongs to the Credit Card number of the new brand
-		this.iinDetailsResponse = iinResponse;
 
 		// Remove possible error message since the iin lookup now returned a successful value
 		validationRenderHelper.removeValidationMessage((ViewGroup) iinEditText.getParent(), CARDNUMBER_POSTFIX);

@@ -39,7 +39,7 @@ public class RenderTooltip implements RenderTooltipInterface {
 		final String tooltipText = translator.getPaymentProductFieldTooltipText(selectedPaymentProduct.getId(), fieldId);
 		final Integer drawableId = translator.getPaymentProductFieldTooltipImage(selectedPaymentProduct.getId(), fieldId);
 		
-		if (tooltipText != null && !tooltipText.isEmpty() && !tooltipText.startsWith(translator.BAD_TRANSLATION_KEY_MARKER)) {
+		if (tooltipText != null && !tooltipText.isEmpty() && !Translator.isBadTranslationKey(tooltipText)) {
 			
 			// Add the questionmark tooltip image after the inputfield
 			ImageView tooltipImage = new ImageView(rowView.getContext());

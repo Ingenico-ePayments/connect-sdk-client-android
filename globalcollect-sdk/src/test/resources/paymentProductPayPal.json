@@ -1,0 +1,14 @@
+{
+  "allowsRecurring" : true,
+  "allowsTokenization" : false,
+  "autoTokenized" : false,
+  "displayHints" : {
+    "displayOrder" : 2,
+    "label" : "PayPal",
+    "logo" : "templates/master/global/css/img/ppimages/pp_logo_840_v1.png"
+  },
+  "fields" : [ ],
+  "id" : 840,
+  "mobileIntegrationLevel" : "OPTIMISED_SUPPORT",
+  "paymentMethod" : "redirect"
+}

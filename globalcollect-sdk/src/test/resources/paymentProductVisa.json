@@ -1,0 +1,137 @@
+{
+  "accountsOnFile" : [ {
+    "attributes" : [ {
+      "key" : "alias",
+      "value" : "************1111",
+      "status" : "READ_ONLY"
+    }, {
+      "key" : "firstName",
+      "value" : "Wile",
+      "status" : "READ_ONLY"
+    }, {
+      "key" : "surname",
+      "value" : "E. Coyote",
+      "status" : "READ_ONLY"
+    }, {
+      "key" : "cardholderName",
+      "value" : "Wile E. Coyote",
+      "status" : "READ_ONLY"
+    }, {
+      "key" : "cardNumber",
+      "value" : "************1111",
+      "status" : "READ_ONLY"
+    }, {
+      "key" : "expiryDate",
+      "value" : "0120",
+      "status" : "CAN_WRITE"
+    } ],
+    "displayHints" : {
+      "labelTemplate" : [ {
+        "attributeKey" : "alias",
+        "mask" : "{{9999}} {{9999}} {{9999}} {{9999}} {{999}}"
+      } ],
+      "logo" : "templates/master/global/css/img/ppimages/pp_logo_1_v1.png"
+    },
+    "id" : 0,
+    "paymentProductId" : 1
+  } ],
+  "allowsRecurring" : true,
+  "allowsTokenization" : true,
+  "autoTokenized" : false,
+  "displayHints" : {
+    "displayOrder" : 23,
+    "label" : "Visa",
+    "logo" : "templates/master/global/css/img/ppimages/pp_logo_1_v1.png"
+  },
+  "fields" : [ {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "length" : {
+          "maxLength" : 19,
+          "minLength" : 12
+        },
+        "luhn" : {
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 10,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Card number",
+      "mask" : "{{9999}} {{9999}} {{9999}} {{9999}} {{999}}",
+      "obfuscate" : false,
+      "placeholderLabel" : "**** **** **** ****",
+      "preferredInputType" : "IntegerKeyboard"
+    },
+    "id" : "cardNumber",
+    "type" : "numericstring"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "expirationDate" : {
+        },
+        "length" : {
+          "maxLength" : 4,
+          "minLength" : 4
+        },
+        "regularExpression" : {
+          "regularExpression" : "^(?:0[1-9]|1[0-2])[0-9]{2}$"
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 20,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Expiry date",
+      "mask" : "{{99}}/{{99}}",
+      "obfuscate" : false,
+      "placeholderLabel" : "MM/YY",
+      "preferredInputType" : "IntegerKeyboard"
+    },
+    "id" : "expiryDate",
+    "type" : "expirydate"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : false,
+      "validators" : {
+        "length" : {
+          "maxLength" : 4,
+          "minLength" : 3
+        },
+        "regularExpression" : {
+          "regularExpression" : "^[0-9]{3}[0-9]?$"
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : true,
+      "displayOrder" : 24,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "CVV",
+      "mask" : "{{9999}}",
+      "obfuscate" : false,
+      "placeholderLabel" : "123",
+      "preferredInputType" : "IntegerKeyboard",
+      "tooltip" : {
+        "image" : "templates/master/global/css/img/ppimages/ppf_cvv_v1.png",
+        "label" : "Please enter your security code as shown in the image"
+      }
+    },
+    "id" : "cvv",
+    "type" : "numericstring"
+  } ],
+  "id" : 1,
+  "mobileIntegrationLevel" : "OPTIMISED_SUPPORT",
+  "paymentMethod" : "card",
+  "paymentProductGroup" : "cards"
+}

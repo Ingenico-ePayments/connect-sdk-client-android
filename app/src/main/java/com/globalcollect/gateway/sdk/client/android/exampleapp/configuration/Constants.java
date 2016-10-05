@@ -5,6 +5,9 @@ package com.globalcollect.gateway.sdk.client.android.exampleapp.configuration;
  *
  */
 public class Constants {
+
+	/** Application Identifier, used for identifying the application in network calls **/
+	public static String APPLICATION_IDENTIFIER			 = "Android Example Application/v1.0";
 	
 	/** Intent data keys **/
 	public static String INTENT_CONTEXT					 = "context";

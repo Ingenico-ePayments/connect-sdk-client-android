@@ -19,8 +19,8 @@ public enum Region {
 	
 	EU(new ArrayList<Environment>(Arrays.asList(
 			
-				new Environment(EnvironmentType.Production, 	   
-								"https://api-eu.globalcollect.com/client/v1/", 			
+				new Environment(EnvironmentType.Production,
+								"https://api-eu.globalcollect.com/client/v1/",
 			        		 	"https://assets.pay1.poweredbyglobalcollect.com"),
 			        		 		 
 			    new Environment(EnvironmentType.PreProduction,    

@@ -13,22 +13,22 @@ import android.content.Context;
 public class Translator {
 
 	// Prefixes for loading validation and tooltip translations
-	private final String TRANSLATION_PREFIX_PRODUCTFIELD	= "gc.general.paymentProductFields.";
-	private final String TRANSLATION_PREFIX_VALIDATION 	 	= "gc.general.paymentProductFields.validationErrors.";
-	private final String TRANSLATION_PREFIX_PRODUCT		 	= "gc.general.paymentProducts.";
-	private final String TRANSLATION_PREFIX_PRODUCTGROUP	= "gc.general.paymentProductGroups.";
-	private final String TRANSLATION_PREFIX_COBRAND			= "gc.general.cobrands.";
+	private static final String TRANSLATION_PREFIX_PRODUCTFIELD	= "gc.general.paymentProductFields.";
+	private static final String TRANSLATION_PREFIX_VALIDATION 	 	= "gc.general.paymentProductFields.validationErrors.";
+	private static final String TRANSLATION_PREFIX_PRODUCT		 	= "gc.general.paymentProducts.";
+	private static final String TRANSLATION_PREFIX_PRODUCTGROUP	= "gc.general.paymentProductGroups.";
+	private static final String TRANSLATION_PREFIX_COBRAND			= "gc.general.cobrands.";
 	
 	// Postfixes for loading validation and tooltip translations
-	private final String TRANSLATION_POSTFIX_NAME		 	= ".name";
-	private final String TRANSLATION_POSTFIX_LABEL		 	= ".label";
-	private final String TRANSLATION_POSTFIX_TOOLTIP_TEXT 	= ".tooltipText";
-	private final String TRANSLATION_POSTFIX_TOOLTIP_IMAGE	= ".tooltipImage";
-	private final String TRANSLATION_POSTFIX_PRODUCTFIELD 	= ".paymentProductFields.";
-	private final String TRANSLATION_POSTFIX_PLACEHOLDER 	= ".placeholder";
+	private static final String TRANSLATION_POSTFIX_NAME		 	= ".name";
+	private static final String TRANSLATION_POSTFIX_LABEL		 	= ".label";
+	private static final String TRANSLATION_POSTFIX_TOOLTIP_TEXT 	= ".tooltipText";
+	private static final String TRANSLATION_POSTFIX_TOOLTIP_IMAGE	= ".tooltipImage";
+	private static final String TRANSLATION_POSTFIX_PRODUCTFIELD 	= ".paymentProductFields.";
+	private static final String TRANSLATION_POSTFIX_PLACEHOLDER 	= ".placeholder";
 
 	// Marker for keys that could not be found
-	public final  String BAD_TRANSLATION_KEY_MARKER			= "???";
+	public static final  String BAD_TRANSLATION_KEY_MARKER			= "???";
 		
 	// Context used for loading resources from strings.xml
 	private Context context;
@@ -128,7 +128,7 @@ public class Translator {
 		// Check for an overridden version first
 		String translationKeyOverride = TRANSLATION_PREFIX_PRODUCT + paymentProductId + TRANSLATION_POSTFIX_PRODUCTFIELD + paymentProductFieldId + TRANSLATION_POSTFIX_LABEL;
 
-		if (!translateString(translationKeyOverride).startsWith(BAD_TRANSLATION_KEY_MARKER)){
+		if (!isBadTranslationKey(translateString(translationKeyOverride))){
 			return translateString(translationKeyOverride);
 		}
 		return translateString(TRANSLATION_PREFIX_PRODUCTFIELD + paymentProductFieldId + TRANSLATION_POSTFIX_LABEL);
@@ -154,7 +154,7 @@ public class Translator {
 		// Check for an overridden version first
 		String translationKeyOverride = TRANSLATION_PREFIX_PRODUCT + paymentProductId + TRANSLATION_POSTFIX_PRODUCTFIELD + paymentProductFieldId + TRANSLATION_POSTFIX_PLACEHOLDER;
 
-		if (!translateString(translationKeyOverride).startsWith(BAD_TRANSLATION_KEY_MARKER)){
+		if (!isBadTranslationKey(translateString(translationKeyOverride))){
 			return translateString(translationKeyOverride);
 		}
 		return translateString(TRANSLATION_PREFIX_PRODUCTFIELD + paymentProductFieldId + TRANSLATION_POSTFIX_PLACEHOLDER);
@@ -191,7 +191,7 @@ public class Translator {
 		// Check for an overridden version first
 		String translationKeyOverride = TRANSLATION_PREFIX_PRODUCT + paymentProductId + TRANSLATION_POSTFIX_PRODUCTFIELD + paymentProductFieldId + TRANSLATION_POSTFIX_TOOLTIP_TEXT;
 		
-		if (!translateString(translationKeyOverride).startsWith(BAD_TRANSLATION_KEY_MARKER)){
+		if (!isBadTranslationKey(translateString(translationKeyOverride))){
 			return translateString(translationKeyOverride);
 		}
 	
@@ -218,7 +218,7 @@ public class Translator {
 		// Find the belonging Drawable
 		String translationKeyOverride = TRANSLATION_PREFIX_PRODUCT + paymentProductId + TRANSLATION_POSTFIX_PRODUCTFIELD + paymentProductFieldId + TRANSLATION_POSTFIX_TOOLTIP_IMAGE;
 
-		if (!translateString(translationKeyOverride).startsWith(BAD_TRANSLATION_KEY_MARKER)) {
+		if (!isBadTranslationKey(translateString(translationKeyOverride))) {
 
 			Integer drawableId = context.getResources().getIdentifier(translateString(translationKeyOverride), "drawable", context.getPackageName());
 
@@ -229,7 +229,7 @@ public class Translator {
 
 		String translationKeyDefault = TRANSLATION_PREFIX_PRODUCTFIELD + paymentProductFieldId + TRANSLATION_POSTFIX_TOOLTIP_IMAGE;
 
-		if (!translateString(translationKeyDefault).startsWith(BAD_TRANSLATION_KEY_MARKER)) {
+		if (!isBadTranslationKey(translateString(translationKeyDefault))) {
 
 			Integer drawableId = context.getResources().getIdentifier(translateString(translationKeyDefault), "drawable", context.getPackageName());
 
@@ -261,6 +261,10 @@ public class Translator {
 	    } else {
 	        return context.getResources().getString(resourceId);
 	    }
+	}
+
+	public static boolean isBadTranslationKey(String key) {
+		return key.startsWith(BAD_TRANSLATION_KEY_MARKER);
 	}
 	
 }

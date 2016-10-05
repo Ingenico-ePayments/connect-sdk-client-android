@@ -35,10 +35,10 @@ import com.google.gson.reflect.TypeToken;
 public class AssetManager implements OnImageLoadedListener {
 	
 	// Name of cache in preferences
-	private final String LOGO_MAPPING_FILENAME = "initial_logo_mapping.list";
+	private static final String LOGO_MAPPING_FILENAME = "initial_logo_mapping.list";
 	
 	// Prefix for logo images
-	private final String LOGO_PREFIX = "pp_logo_";
+	private static final String LOGO_PREFIX = "pp_logo_";
 	
 	// Singleton instance
 	private static AssetManager INSTANCE;
@@ -54,7 +54,7 @@ public class AssetManager implements OnImageLoadedListener {
 	
 	/**
 	 * Private constructor for Singleton purposes
-	 * 
+	 *
 	 * @param context, needed for reading and writing files
 	 */
 	private AssetManager(Context context) {
@@ -70,14 +70,14 @@ public class AssetManager implements OnImageLoadedListener {
 	 * 
 	 * @return AssetManager singleton instance
 	 */
-	public static AssetManager getInstance(Context context) {
+	public static synchronized AssetManager getInstance(Context context) {
 		
 		if (context == null) {
 			throw new InvalidParameterException("Error creating AssetManager, context may not be null");
 		}
 		
 		if (INSTANCE == null) {
-			INSTANCE = new AssetManager(context); 
+			INSTANCE = new AssetManager(context.getApplicationContext());
 		}
 		return INSTANCE;
 	}
@@ -143,7 +143,7 @@ public class AssetManager implements OnImageLoadedListener {
 				String url = logoMapping.get(product.getId());
 					
 				// Check if the logo url is different for the paymentproduct
-				if (url == null || (url != null && !url.equals(product.getDisplayHints().getLogo()))) {
+				if (url == null || !url.equals(product.getDisplayHints().getLogoUrl())) {
 					
 					// Update the image
 					getImageFromUrl(region, environment, logoMapping, product, size);

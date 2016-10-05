@@ -67,39 +67,20 @@ public class IinDetailsResponse implements Serializable {
 		}
 
 		IinDetailsResponse otherResponse = (IinDetailsResponse)o;
-		if ((otherResponse.getStatus() != null ^ status != null) ||
-				(otherResponse.getCoBrands() != null ^ coBrands != null) ||
-				(otherResponse.getCountryCode() != null ^ countryCode != null) ||
-				(otherResponse.getPaymentProductId() != null ^ paymentProductId != null)) {
-			return false;
-		}
-
-		if (otherResponse.getStatus() != null && !otherResponse.getStatus().equals(status)) {
-			return false;
-		}
-
-		if (otherResponse.getCoBrands() != null && !otherResponse.getCoBrands().equals(coBrands)) {
-			return false;
-		}
-
-		if (otherResponse.getCountryCode() != null && !otherResponse.getCountryCode().equals(countryCode)) {
-			return false;
-		}
-
-		if (otherResponse.getPaymentProductId() != null && !otherResponse.getPaymentProductId().equals(paymentProductId)) {
-			return false;
-		}
-
-		return otherResponse.isAllowedInContext() == isAllowedInContext;
+		return (status != null ? status.equals(otherResponse.status) : otherResponse.status == null) &&
+				(coBrands != null ? coBrands.equals(otherResponse.coBrands) : otherResponse.coBrands == null) &&
+				(countryCode != null ? countryCode.equals(otherResponse.countryCode) : otherResponse.countryCode == null) &&
+				(paymentProductId != null ? paymentProductId.equals(otherResponse.paymentProductId) : otherResponse.paymentProductId == null) &&
+				isAllowedInContext == otherResponse.isAllowedInContext();
 	}
 
 	@Override
 	public int hashCode() {
 		int hash = 17;
-		hash = 31 * hash + status.hashCode();
-		hash = 31 * hash + paymentProductId.hashCode();
-		hash = 31 * hash + countryCode.hashCode();
-		hash = 31 * hash + coBrands.hashCode();
+		hash = 31 * hash + (status != null ? status.hashCode() : 0);
+		hash = 31 * hash + (paymentProductId != null ? paymentProductId.hashCode() : 0);
+		hash = 31 * hash + (countryCode != null ? countryCode.hashCode() : 0);
+		hash = 31 * hash + (coBrands != null ? coBrands.hashCode() : 0);
 		hash = 31 * hash + Boolean.valueOf(isAllowedInContext).hashCode();
 		return hash;
 	}

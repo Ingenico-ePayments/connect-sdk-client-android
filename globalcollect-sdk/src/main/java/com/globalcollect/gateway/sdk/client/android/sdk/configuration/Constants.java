@@ -8,7 +8,9 @@ package com.globalcollect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 	
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "Android/v1.0";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v2.1.0";
+	/** SDK creator **/
+	public final static String SDK_CREATOR = "Ingenico";
 
 	/** List of possible paths on the Global Collect Gateway  **/
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTS_PATH = "[cid]/products";

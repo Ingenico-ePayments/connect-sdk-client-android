@@ -52,7 +52,7 @@ public class StringFormatter implements Serializable {
 	 * @param getMask
 	 * @return mask or cursorIndex
 	 */
-	private Object getMaskOrGetCursorIndex(String mask, String value, Integer cursorIndex, Boolean getMask){
+	private Object getMaskOrGetCursorIndex(String mask, String value, int cursorIndex, boolean getMask){
 		
 		if (mask == null || value == null) {
 			return null;

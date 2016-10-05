@@ -45,9 +45,7 @@ public class PaymentRequest implements Serializable {
 	 * Get the value of tokenize
 	 */
 	public Boolean getTokenize(){
-	
 		return tokenize;
-	
 	}
 	
 	/**
@@ -55,9 +53,7 @@ public class PaymentRequest implements Serializable {
 	 * @param tokenize
 	 */
 	public void setTokenize(Boolean tokenize){
-		
 		this.tokenize = tokenize;
-	
 	}
 	
 		
@@ -70,34 +66,45 @@ public class PaymentRequest implements Serializable {
 	public List<ValidationErrorMessage> validate() {
 		
 		errorMessageIds.clear();
+
+		if (paymentProduct == null) {
+			throw new NullPointerException("Error validating PaymentRequest, please set a paymentProduct first.");
+		}
 		
 		// Loop trough all validationrules from all fields on the paymentProduct
 		for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
-			
-			// See if a field isn't in the accountOnFile for this paymentproduct
-			Boolean isFieldInAccountOnFileAndNotAltered = false;
-			for (AccountOnFile ppAccountOnFile : paymentProduct.getAccountsOnFile()) {
-				
-				// Match only the account which is selected
-				if (accountOnFile != null && accountOnFile.getId().equals(ppAccountOnFile.getId())) {
-					for (KeyValuePair pair : accountOnFile.getAttributes()) {
-						if (pair.getKey().equals(field.getId()) && 				// Field is in account on file
-								(!pair.isEditingAllowed() || 					// Not altered
-										(getValue(field.getId()) == null))) { 	// Not altered; Unaltered values should not be in the request
-							isFieldInAccountOnFileAndNotAltered = true;
-						}
-					}
-				}
-			}
-			
+
 			// Validate the field with its value
-			if (!isFieldInAccountOnFileAndNotAltered) {
+			if (!isFieldInAccountOnFileAndNotAltered(field)) {
 				errorMessageIds.addAll(field.validateValue(getValue(field.getId())));
 			}
 		}
 		return errorMessageIds;
 	}
 
+	private boolean isFieldInAccountOnFileAndNotAltered(PaymentProductField field) {
+		if (accountOnFile != null && paymentProductHasAccountOnFile(paymentProduct.getAccountsOnFile())) {
+			for (KeyValuePair pair : accountOnFile.getAttributes()) {
+				if (pair.getKey().equals(field.getId()) &&               // Field is in account on file
+						(!pair.isEditingAllowed() ||                     // Not altered
+								(getValue(field.getId()) == null))) {    // Not altered; Unaltered values should not be in the request
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	private boolean paymentProductHasAccountOnFile(List<AccountOnFile> accountsOnFile) {
+		if (paymentProduct != null) {
+			for (AccountOnFile ppAccountOnFile : paymentProduct.getAccountsOnFile()) {
+				if (accountOnFile.getId().equals(ppAccountOnFile.getId())) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 	/**
 	 * Add value to the paymentproductfields map
@@ -231,14 +238,9 @@ public class PaymentRequest implements Serializable {
 					unMaskedFieldValues.put(key, value);
 
 					break;
-
 				}
-
 			}
-
-
 		}
-
 		return unMaskedFieldValues;
 	}
 
@@ -265,7 +267,6 @@ public class PaymentRequest implements Serializable {
 				}
 			}
 		}
-
 		return maskedFieldValues;
 	}
 
@@ -288,7 +289,7 @@ public class PaymentRequest implements Serializable {
 		Map<String, String> newFieldValues = new HashMap<String, String>();
 		
 		// Loop trough all new fields and see of they match the fieldvalues id
-		if (paymentProduct != null && paymentProduct.getPaymentProductFields() != null) {
+		if (paymentProduct.getPaymentProductFields() != null) {
 			for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
 				
 				for (Entry<String, String> valueEntry : fieldValues.entrySet()) {

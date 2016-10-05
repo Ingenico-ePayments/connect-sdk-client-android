@@ -1,0 +1,83 @@
+{
+  "allowsRecurring" : false,
+  "allowsTokenization" : false,
+  "autoTokenized" : false,
+  "displayHints" : {
+    "displayOrder" : 11,
+    "label" : "Factuur",
+    "logo" : "templates/master/global/css/img/ppimages/pp_logo_201_v1.png"
+  },
+  "fields" : [ {
+    "dataRestrictions" : {
+      "isRequired" : false,
+      "validators" : {
+        "length" : {
+          "maxLength" : 9,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 1,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Code staat",
+      "obfuscate" : false,
+      "placeholderLabel" : "Code staat",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "stateCode",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "length" : {
+          "maxLength" : 40,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 20,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Stad",
+      "obfuscate" : false,
+      "placeholderLabel" : "Stad",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "city",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : false,
+      "validators" : {
+        "length" : {
+          "maxLength" : 50,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 600,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Straat",
+      "obfuscate" : false,
+      "placeholderLabel" : "Straat",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "street",
+    "type" : "string"
+  } ],
+  "id" : 201,
+  "mobileIntegrationLevel" : "OPTIMISED_SUPPORT",
+  "paymentMethod" : "invoice"
+}

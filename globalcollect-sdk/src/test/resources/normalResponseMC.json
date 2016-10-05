@@ -1,0 +1,12 @@
+{
+  "coBrands" : [ {
+    "isAllowedInContext" : true,
+    "paymentProductId" : 3
+  }, {
+    "isAllowedInContext" : true,
+    "paymentProductId" : 119
+  } ],
+  "countryCode" : "US",
+  "isAllowedInContext" : true,
+  "paymentProductId" : 3
+}

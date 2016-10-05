@@ -50,13 +50,15 @@ public class C2sCommunicator implements Serializable {
 
 	// Tag for logging
 	private static final String TAG = C2sCommunicator.class.getName();
-	
+
+	private static final Gson gson = new Gson();
+
 	// Strings used for adding headers to requests
-	private final String HTTP_HEADER_SESSION_ID = "Authorization";
-	private final String HTTP_HEADER_METADATA 	= "X-GCS-ClientMetaInfo";
+	private static final String HTTP_HEADER_SESSION_ID = "Authorization";
+	private static final String HTTP_HEADER_METADATA = "X-GCS-ClientMetaInfo";
 	
 	// Maximum amount of chars which is used for getting PaymentProductId by CreditCardNumber
-	private final Integer MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP 	= 6;
+	private static final int MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP = 6;
 	
 	// Configuration needed for communicating with the GC gateway
 	private C2sCommunicatorConfiguration configuration;
@@ -72,8 +74,8 @@ public class C2sCommunicator implements Serializable {
 	
 	/** 
 	 * Get C2sCommunicator instance
-	 * @param configuration
-	 * @return
+	 * @param configuration configuration which is used to establish a connection with the GC gateway
+	 * @return the instance of this class
 	 */
 	public static C2sCommunicator getInstance(C2sCommunicatorConfiguration configuration) {
 		
@@ -128,8 +130,7 @@ public class C2sCommunicator implements Serializable {
 				logResponse(connection, responseBody);
 			}
 
-	        Gson gson = new Gson();
-			BasicPaymentProducts basicPaymentProducts = gson.fromJson(responseBody, BasicPaymentProducts.class);
+	        BasicPaymentProducts basicPaymentProducts = gson.fromJson(responseBody, BasicPaymentProducts.class);
 
 			// Set the logos for all paymentproducts
 			for(BasicPaymentProduct paymentProduct : basicPaymentProducts.getBasicPaymentProducts()) {
@@ -153,7 +154,9 @@ public class C2sCommunicator implements Serializable {
 					connection.getInputStream().close();
 					connection.disconnect();
 				}
-			} catch (IOException e) {}
+			} catch (IOException e) {
+				Log.i(TAG, "Error while getting paymentproducts:" + e.getMessage());
+			}
 		}
 	}
 
@@ -201,7 +204,6 @@ public class C2sCommunicator implements Serializable {
 				logResponse(connection, responseBody);
 			}
 
-			Gson gson = new Gson();
 			return gson.fromJson(responseBody, PaymentProduct.class);
 
 		} catch (CommunicationException e) {
@@ -216,7 +218,9 @@ public class C2sCommunicator implements Serializable {
 					connection.getInputStream().close();
 					connection.disconnect();
 				}
-			} catch (IOException e) {}
+			} catch (IOException e) {
+				Log.i(TAG, "Error while getting paymentproduct:" + e.getMessage());
+			}
 		}
 	}
 
@@ -265,7 +269,6 @@ public class C2sCommunicator implements Serializable {
 				logResponse(connection, responseBody);
 			}
 
-			Gson gson = new Gson();
 			BasicPaymentProductGroups basicPaymentProductGroups = gson.fromJson(responseBody, BasicPaymentProductGroups.class);
 
 			// Set the logos for all BasicPaymentProductGroups
@@ -290,7 +293,9 @@ public class C2sCommunicator implements Serializable {
 					connection.getInputStream().close();
 					connection.disconnect();
 				}
-			} catch (IOException e) {}
+			} catch (IOException e) {
+				Log.i(TAG, "Error while getting paymentProductGroups:" + e.getMessage());
+			}
 		}
 	}
 
@@ -336,7 +341,6 @@ public class C2sCommunicator implements Serializable {
 				logResponse(connection, responseBody);
 			}
 
-			Gson gson = new Gson();
 			return gson.fromJson(responseBody, PaymentProductGroup.class);
 
 		} catch (CommunicationException e) {
@@ -351,7 +355,9 @@ public class C2sCommunicator implements Serializable {
 					connection.getInputStream().close();
 					connection.disconnect();
 				}
-			} catch (IOException e) {}
+			} catch (IOException e) {
+				Log.i(TAG, "Error while getting paymentProductGroup: " + e.getMessage());
+			}
 		}
 	}
 
@@ -406,7 +412,6 @@ public class C2sCommunicator implements Serializable {
 				logResponse(connection, responseBody);
 			}
 
-			Gson gson = new Gson();
 			return gson.fromJson(responseBody, PaymentProductDirectoryResponse.class);
 
 		} catch (CommunicationException e) {
@@ -421,7 +426,9 @@ public class C2sCommunicator implements Serializable {
 					connection.getInputStream().close();
 					connection.disconnect();
 				}
-			} catch (IOException e) {}
+			} catch (IOException e) {
+				Log.i(TAG, "Error while getting paymentproduct directory:" + e.getMessage());
+			}
 		}
 	}	
 	
@@ -455,7 +462,6 @@ public class C2sCommunicator implements Serializable {
 			String url = configuration.getBaseUrl() + paymentProductPath;
 
 			// Serialise the IinDetailsRequest to json, so it can be added to the postbody
-			Gson gson = new Gson();
 			IinDetailsRequest iinRequest = new IinDetailsRequest(partialCreditCardNumber, paymentContext);
 			String iinRequestJson = gson.toJson(iinRequest);
 
@@ -482,7 +488,9 @@ public class C2sCommunicator implements Serializable {
 					connection.getInputStream().close();
 					connection.disconnect();
 				}
-			} catch (IOException e) {}
+			} catch (IOException e) {
+				Log.i(TAG, "Error while getting PaymentProductIdByCreditCardNumber response:" + e.getMessage());
+			}
 		}
 	}
 
@@ -513,7 +521,6 @@ public class C2sCommunicator implements Serializable {
 				logResponse(connection, responseBody);
 			}
 
-			Gson gson = new Gson();
 			return gson.fromJson(responseBody, PublicKeyResponse.class);
 			
 		} catch (CommunicationException e) {
@@ -528,7 +535,9 @@ public class C2sCommunicator implements Serializable {
 					connection.getInputStream().close();
 					connection.disconnect();
 				}
-			} catch (IOException e) {}
+			} catch (IOException e) {
+				Log.i(TAG, "Error getting Public key response:" + e.getMessage());
+			}
 		}
 	}
 	
@@ -553,6 +562,9 @@ public class C2sCommunicator implements Serializable {
 		}
 		if (target == null) {
 			throw new InvalidParameterException("Error converting amount, target may not be null");
+		}
+		if (context == null) {
+			throw new InvalidParameterException("Error converting amount, context may not be null");
 		}
 
 		HttpURLConnection connection = null;
@@ -580,7 +592,6 @@ public class C2sCommunicator implements Serializable {
 				logResponse(connection, responseBody);
 			}
 
-			Gson gson = new Gson();
 			ConvertedAmountResponse convertedAmountResponse = gson.fromJson(responseBody, ConvertedAmountResponse.class);
 
 			return convertedAmountResponse.getConvertedAmount();
@@ -597,7 +608,9 @@ public class C2sCommunicator implements Serializable {
 					connection.getInputStream().close();
 					connection.disconnect();
 				}
-			} catch (IOException e) {}
+			} catch (IOException e) {
+				Log.i(TAG, "Error converting amount:" + e.getMessage());
+			}
 		}
 	}
 
@@ -741,7 +754,9 @@ public class C2sCommunicator implements Serializable {
 			if (writer != null) {
 				try {
 					writer.close();
-				} catch (IOException e) {}
+				} catch (IOException e) {
+					Log.i(TAG, "doHTTPPostRequest, IOException while closing connection " + e.getMessage());
+				}
 			}
 		}
 	}
@@ -755,11 +770,6 @@ public class C2sCommunicator implements Serializable {
 
 	/**
 	 * Logs all request headers, url and body
-	 *
-	 * @param connection
-	 * @param postBody
-	 *
-	 * @throws IOException
 	 */
 	private void logRequest(HttpURLConnection connection, String postBody) {
 
@@ -781,9 +791,6 @@ public class C2sCommunicator implements Serializable {
 
 	/**
 	 * Logs all response headers, statuscode and body
-	 *
-	 * @param connection
-	 * @param responseBody
 	 *
 	 * @throws IOException
      */

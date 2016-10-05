@@ -26,14 +26,14 @@ public class EncryptUtil {
 	
 	
 	// AES Encryption setting
-	private final String AES_ALGORITHM_TYPE = "AES";
-	private final String AES_ALGORITHM_MODE = "AES/CBC/PKCS5Padding";
+	private static final String AES_ALGORITHM_TYPE = "AES";
+	private static final String AES_ALGORITHM_MODE = "AES/CBC/PKCS5Padding";
 		
 	// HMAC calculation setting
-	private final String HMAC_ALGORITHM_TYPE = "HmacSHA512";
+	private static final String HMAC_ALGORITHM_TYPE = "HmacSHA512";
 		
 	// RSA Encryption settings
-	private final String RSA_ALGORITHM_MODE = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
+	private static final String RSA_ALGORITHM_MODE = "RSA/ECB/OAEPWithSHA-1AndMGF1Padding";
 	
 	
 	

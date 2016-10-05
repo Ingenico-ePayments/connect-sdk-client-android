@@ -111,39 +111,36 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 			String buttonTxt = getString(R.string.gc_general_error_no_connection_button);
 			alertDialogShowing = dialogUtil.showAlertDialog(this, title, msg, buttonTxt, this);
 			
-		} else {
-			
-			if (savedInstanceState == null) {
+		} else if (savedInstanceState == null) {
 								
-				// Get Metadata from device and SDK
-				@SuppressWarnings("unused")
-				Map<String, String> metadata = GcUtil.getMetadata(getApplicationContext());
-				
-				// Send call to the merchant containing the metadata to start a checkout session
-				// This should return the String customerId and String clientSessionId
-				// Initialize GcSession with those values				
-				
-				// We instead use the given values from the startPage
-				String clientSessionId = intent.getStringExtra(Constants.MERCHANT_CLIENT_SESSION_IDENTIFIER);
-				String customerId = intent.getStringExtra(Constants.MERCHANT_CUSTOMER_IDENTIFIER);
-				region = Region.valueOf(intent.getStringExtra(Constants.MERCHANT_REGION));
-				environment = EnvironmentType.valueOf(intent.getStringExtra(Constants.MERCHANT_ENVIRONMENT));
-			
-				// Instantiate the GcSession
-				session = C2sCommunicatorConfiguration.initWithClientSessionId(clientSessionId, customerId, region, environment);
+			// Get Metadata from device and SDK
+			@SuppressWarnings("unused")
+			Map<String, String> metadata = GcUtil.getMetadata(getApplicationContext());
 
-				// Show load indicator
-				showLoadIndicator();
+			// Send call to the merchant containing the metadata to start a checkout session
+			// This should return the String customerId and String clientSessionId
+			// Initialize GcSession with those values
 
-				// Determine whether BasicPaymentProductGroups need to be loaded
-				groupPaymentProducts = intent.getBooleanExtra(Constants.INTENT_GROUP_PAYMENTPRODUCTS, false);
+			// We instead use the given values from the startPage
+			String clientSessionId = intent.getStringExtra(Constants.MERCHANT_CLIENT_SESSION_IDENTIFIER);
+			String customerId = intent.getStringExtra(Constants.MERCHANT_CUSTOMER_IDENTIFIER);
+			region = Region.valueOf(intent.getStringExtra(Constants.MERCHANT_REGION));
+			environment = EnvironmentType.valueOf(intent.getStringExtra(Constants.MERCHANT_ENVIRONMENT));
 
-				// Get the paymentProductSelectables that need to be rendered on this Activity
-				session.getBasicPaymentItems(getApplicationContext(), paymentContext, this, groupPaymentProducts);
+			// Instantiate the GcSession
+			session = C2sCommunicatorConfiguration.initWithClientSessionId(clientSessionId, customerId, region, environment, Constants.APPLICATION_IDENTIFIER);
 
-				// Render the shoppingcart details
-				shoppingCartRenderer = new RenderShoppingCart(paymentContext, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());
-			}
+			// Show load indicator
+			showLoadIndicator();
+
+			// Determine whether BasicPaymentProductGroups need to be loaded
+			groupPaymentProducts = intent.getBooleanExtra(Constants.INTENT_GROUP_PAYMENTPRODUCTS, false);
+
+			// Get the paymentProductSelectables that need to be rendered on this Activity
+			session.getBasicPaymentItems(getApplicationContext(), paymentContext, this, groupPaymentProducts);
+
+			// Render the shoppingcart details
+			shoppingCartRenderer = new RenderShoppingCart(paymentContext, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());
 		}
 	}
 
@@ -159,7 +156,7 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 	public void onBasicPaymentItemsCallComplete(BasicPaymentItems basicPaymentItems) {
 
 		// Check the basicPaymentItems for null or empty
-		if (basicPaymentItems == null || basicPaymentItems.getBasicPaymentItems() == null || basicPaymentItems.getBasicPaymentItems().size() == 0) {
+		if (basicPaymentItems == null || basicPaymentItems.getBasicPaymentItems() == null || basicPaymentItems.getBasicPaymentItems().isEmpty()) {
 
 			// If there were errors getting the payment product slectables, show error message
 			showPaymentProductsErrorDialog();
@@ -211,7 +208,7 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 		}
 
 		// Check if there are accountsOnFile, then set their container and header to visible
-		if (loadedBasicPaymentItems.getAccountsOnFile().size() > 0) {
+		if (!loadedBasicPaymentItems.getAccountsOnFile().isEmpty()) {
 
 			findViewById(R.id.listAccountsOnFileHeader).setVisibility(View.VISIBLE);
 			findViewById(R.id.listAccountsOnFile).setVisibility(View.VISIBLE);
@@ -230,24 +227,20 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 	public void onPaymentProductSelected(View view) {
 
  		// See if a paymentproductselectable was selected, or an accountonfile
-		if (view.getTag() instanceof BasicPaymentItem) {
+		if (view.getTag() instanceof BasicPaymentProduct) {
+			// Add selected paymentproduct to the intent
+			BasicPaymentProduct product = (BasicPaymentProduct) view.getTag();
+			getPaymentProductInputFields(product.getId());
 
-			if (view.getTag() instanceof BasicPaymentProduct) {
-				// Add selected paymentproduct to the intent
-				BasicPaymentProduct product = (BasicPaymentProduct) view.getTag();
-				getPaymentProductInputFields(product.getId());
+			// Remove old accountOnFile if present, as to restoreinstance
+			paymentRequest.removeAccountOnFile();
+		} else if (view.getTag() instanceof BasicPaymentProductGroup) {
+			// Add selected paymentproductgroup to the intent
+			BasicPaymentProductGroup group = (BasicPaymentProductGroup) view.getTag();
+			getPaymentProductGroupInputFields(group.getId());
 
-				// Remove old accountOnFile if present, as to restoreinstance
-				paymentRequest.removeAccountOnFile();
-			} else if (view.getTag() instanceof BasicPaymentProductGroup) {
-				// Add selected paymentproductgroup to the intent
-				BasicPaymentProductGroup group = (BasicPaymentProductGroup) view.getTag();
-				getPaymentProductGroupInputFields(group.getId());
-
-				// Remove old accountOnFile if present, as to restoreinstance
-				paymentRequest.removeAccountOnFile();
-			}
-
+			// Remove old accountOnFile if present, as to restoreinstance
+			paymentRequest.removeAccountOnFile();
 		} else if (view.getTag() instanceof AccountOnFile) {
 
 			// Get the chosen AccountOnFile, and it's belonging paymentproduct
@@ -301,40 +294,26 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	@Override
 	public void onPaymentProductCallComplete(PaymentProduct paymentProduct) {
-		
-		if (paymentProduct == null) {
-			
-			showPaymentProductDetailsErrorDialog();
-		} else { 
-		
-			if (paymentProduct.getPaymentProductFields().isEmpty()) {
-				
-				// Do a redirect here, now showing result screen as a dummy screen
-		 		startResultActivity();
-			} else {
-
-				// Ask the user for its payment details in the next activity
-				startPaymentInputActivity(paymentProduct);
-			}
-		}
+		handlePaymentItemCallBack(paymentProduct);
 	}
 
 	@Override
 	public void onPaymentProductGroupCallComplete(PaymentProductGroup paymentProductGroup) {
-		if (paymentProductGroup == null) {
+		handlePaymentItemCallBack(paymentProductGroup);
+	}
+
+	private void handlePaymentItemCallBack(PaymentItem paymentItem) {
+		if (paymentItem == null) {
 
 			showPaymentProductDetailsErrorDialog();
+		} else if (paymentItem.getPaymentProductFields().isEmpty()) {
+
+			// Do a redirect here, now showing result screen as a dummy screen
+			startResultActivity();
 		} else {
 
-			if (paymentProductGroup.getPaymentProductFields().isEmpty()) {
-
-				// Do a redirect here, now showing result screen as a dummy screen
-				startResultActivity();
-			} else {
-
-				// Ask the user for its payment details in the next activity
-				startPaymentInputActivity(paymentProductGroup);
-			}
+			// Ask the user for its payment details in the next activity
+			startPaymentInputActivity(paymentItem);
 		}
 	}
 

@@ -28,14 +28,14 @@ public class Encryptor {
 	private static final String TAG = Encryptor.class.getName();
 	
 	// ContentEncryptionKey byte[] size = 512 bits
-	private final Integer CONTENT_ENCRYPTION_KEY_SIZE = 64;
+	private static final int CONTENT_ENCRYPTION_KEY_SIZE = 64;
 	
 	// Initialization Vector byte[] size = 128 bits
-	private final Integer INITIALIZATION_VECTOR = 16;
+	private static final int INITIALIZATION_VECTOR = 16;
 	
 	// Protected Header settings
-	private final String PROTECTED_HEADER_ALG = "RSA-OAEP";
-	private final String PROTECTED_HEADER_ENC = "A256CBC-HS512";	
+	private static final String PROTECTED_HEADER_ALG = "RSA-OAEP";
+	private static final String PROTECTED_HEADER_ENC = "A256CBC-HS512";
 
     // PublicKeyResponse which holds the GC Gateway public key
  	private PublicKeyResponse publicKeyResponse;

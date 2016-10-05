@@ -1,0 +1,39 @@
+{
+  "allowsRecurring" : false,
+  "allowsTokenization" : false,
+  "autoTokenized" : false,
+  "displayHints" : {
+    "displayOrder" : 35,
+    "label" : "iDEAL",
+    "logo" : "templates/master/global/css/img/ppimages/pp_logo_809_v1.png"
+  },
+  "fields" : [ {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "fixedList" : {
+          "allowedValues" : [ "INGBNL2A" ]
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 1,
+      "formElement" : {
+        "type" : "list",
+        "valueMapping" : [ {
+          "displayName" : "Issuer Simulation V3 - ING",
+          "value" : "INGBNL2A"
+        } ]
+      },
+      "label" : "Selecteer uw bank",
+      "obfuscate" : false,
+      "placeholderLabel" : "Selecteer uw bank"
+    },
+    "id" : "issuerId",
+    "type" : "string"
+  } ],
+  "id" : 809,
+  "mobileIntegrationLevel" : "OPTIMISED_SUPPORT",
+  "paymentMethod" : "redirect"
+}

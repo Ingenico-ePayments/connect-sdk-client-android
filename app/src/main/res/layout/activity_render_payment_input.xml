@@ -76,10 +76,11 @@
 			    	android:text="@string/gc.page.paymentProductDetails.cancelButton" />
 	
 			</LinearLayout>
-			
+
 		</LinearLayout>
-	</ScrollView>		
-		
+
+	</ScrollView>
+
 	<include layout="@layout/activity_footer"/>
 
 </LinearLayout>

@@ -37,14 +37,14 @@ public class IinDetail implements Serializable {
         }
 
         IinDetail otherDetail = (IinDetail)o;
-        return otherDetail.getPaymentProductId().equals(paymentProductId) &&
-                otherDetail.isAllowedInContext() == isAllowedInContext;
+        return (paymentProductId != null ? paymentProductId.equals(otherDetail.getPaymentProductId()) : otherDetail.paymentProductId == null) &&
+                isAllowedInContext() == otherDetail.isAllowedInContext();
     }
 
     @Override
     public int hashCode() {
         int hash = 17;
-        hash = 31 * hash + paymentProductId.hashCode();
+        hash = 31 * hash + (paymentProductId != null ? paymentProductId.hashCode() : 0);
         hash = 31 * hash + Boolean.valueOf(isAllowedInContext).hashCode();
         return hash;
     }

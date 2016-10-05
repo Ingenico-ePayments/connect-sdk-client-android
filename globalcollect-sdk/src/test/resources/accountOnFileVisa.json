@@ -1,0 +1,36 @@
+{
+  "attributes" : [ {
+    "key" : "alias",
+    "value" : "************1111",
+    "status" : "READ_ONLY"
+  }, {
+    "key" : "firstName",
+    "value" : "Wile",
+    "status" : "READ_ONLY"
+  }, {
+    "key" : "surname",
+    "value" : "E. Coyote",
+    "status" : "READ_ONLY"
+  }, {
+    "key" : "cardholderName",
+    "value" : "Wile E. Coyote",
+    "status" : "READ_ONLY"
+  }, {
+    "key" : "cardNumber",
+    "value" : "************1111",
+    "status" : "READ_ONLY"
+  }, {
+    "key" : "expiryDate",
+    "value" : "0120",
+    "status" : "CAN_WRITE"
+  } ],
+  "displayHints" : {
+    "labelTemplate" : [ {
+      "attributeKey" : "alias",
+      "mask" : "{{9999}} {{9999}} {{9999}} {{9999}} {{999}}"
+    } ],
+    "logo" : "templates/master/global/css/img/ppimages/pp_logo_1_v1.png"
+  },
+  "id" : 0,
+  "paymentProductId" : 1
+}

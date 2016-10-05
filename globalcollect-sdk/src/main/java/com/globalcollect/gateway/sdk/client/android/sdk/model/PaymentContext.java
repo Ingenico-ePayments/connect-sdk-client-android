@@ -17,7 +17,7 @@ public class PaymentContext implements Serializable {
     private CountryCode countryCode;
     private boolean isRecurring;
 
-    public PaymentContext() {};
+    public PaymentContext() {}
 
     public PaymentContext(AmountOfMoney amountOfMoney, CountryCode countryCode, boolean isRecurring) {
         this.countryCode = countryCode;

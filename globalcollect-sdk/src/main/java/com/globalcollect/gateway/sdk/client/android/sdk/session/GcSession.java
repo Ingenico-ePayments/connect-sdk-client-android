@@ -394,8 +394,9 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 		if (listener == null ) {
 			throw new InvalidParameterException("Error preparing pamyentrequest, listener may not be null");
 		}
-		
-		GcSessionEncryptionHelper gcSessionEncryptionHelper = new GcSessionEncryptionHelper(context, paymentRequest, clientSessionId, listener);
+
+		Map<String, String>  metaData = communicator.getMetadata(context);
+		GcSessionEncryptionHelper gcSessionEncryptionHelper = new GcSessionEncryptionHelper(paymentRequest, clientSessionId, metaData, listener);
 		
 		// Execute the getPublicKey, which will trigger the listener in the GcSessionEncryptionHelper
 		getPublicKey(context, gcSessionEncryptionHelper);
