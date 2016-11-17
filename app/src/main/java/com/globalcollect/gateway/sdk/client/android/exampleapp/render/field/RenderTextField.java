@@ -121,7 +121,7 @@ public class RenderTextField implements RenderInputFieldInterface {
 			}
 		}
 		
-		editText.addTextChangedListener(new FieldInputTextWatcher(inputDataPersister, field.getId(), maskLength, editText, addMasking, (ViewGroup)rowView));
+		editText.addTextChangedListener(new FieldInputTextWatcher(inputDataPersister, field.getId(), editText, addMasking));
 
 		// get input information from inputDataPersister
 		String paymentProductValue = inputDataPersister.getValue(field.getId());

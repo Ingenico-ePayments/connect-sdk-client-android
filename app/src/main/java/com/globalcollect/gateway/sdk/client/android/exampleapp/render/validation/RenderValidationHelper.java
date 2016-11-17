@@ -73,16 +73,6 @@ public class RenderValidationHelper {
 		validationMessageRenderer = renderer;
 	}
 
-//	private boolean isValidationShowingForField() {
-//		boolean messageShownForThisField = false;
-//		for (ValidationErrorMessage invalidFieldShown : validationMessages) {
-//			if (invalidFieldShown.getPaymentProductFieldId().equals(validationResult.getPaymentProductFieldId())) {
-//				messageShownForThisField = true;
-//			}
-//		}
-//		return messageShownForThisField;
-//	}
-	
 	/**
 	 * Renders validationmessage for every invalid field in the invalidFields list
 	 * @param paymentItem, the paymentItem for which to render the validationMessages

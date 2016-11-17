@@ -474,7 +474,6 @@ public class C2sCommunicator implements Serializable {
 				logResponse(connection, responseBody);
 			}
 
-			//IinDetailsResponse iinResponse = gson.fromJson(new InputStreamReader(connection.getInputStream()), IinDetailsResponse.class);
 			IinDetailsResponse iinResponse = gson.fromJson(responseBody, IinDetailsResponse.class);
 
 			return iinResponse;

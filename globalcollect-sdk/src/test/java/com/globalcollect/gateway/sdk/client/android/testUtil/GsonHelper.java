@@ -7,8 +7,6 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 
 /**
- * FIXME: set javadoc
- *
  * Copyright 2014 Global Collect Services B.V
  *
  */

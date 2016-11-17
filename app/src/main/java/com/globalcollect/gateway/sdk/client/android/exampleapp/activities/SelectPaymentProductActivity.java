@@ -113,9 +113,9 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 			
 		} else if (savedInstanceState == null) {
 								
-			// Get Metadata from device and SDK
+			// Get Metadata from device and SDK; ipAdress is not a required part of the MetaData
 			@SuppressWarnings("unused")
-			Map<String, String> metadata = GcUtil.getMetadata(getApplicationContext());
+			Map<String, String> metadata = GcUtil.getMetadata(getApplicationContext(), Constants.APPLICATION_IDENTIFIER, null);
 
 			// Send call to the merchant containing the metadata to start a checkout session
 			// This should return the String customerId and String clientSessionId

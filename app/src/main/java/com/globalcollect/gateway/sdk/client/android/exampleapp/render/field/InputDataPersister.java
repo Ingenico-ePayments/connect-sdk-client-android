@@ -29,8 +29,9 @@ public class InputDataPersister implements Serializable {
     // FieldId of the field that had focus on the moment of persisting
     private String focusFieldId;
 
-    // Cursor position within the focused field on the moment of persisting
-    private int cursorPosition;
+    // Cursor position within the focused field on the moment of persisting; make the default -1 to
+    // indicate that the cursorposition has not been set.
+    private int cursorPosition = -1;
 
 
     public void setPaymentItem(PaymentItem paymentItem) {
@@ -83,12 +84,34 @@ public class InputDataPersister implements Serializable {
         return null;
     }
 
+    /**
+     * Gets the masked value of the String that is in the specified input field. This method can be
+     * used to continiually apply the correct mask to user input.
+     *
+     * @param paymentProductFieldId the Id of the field that needs to be masked.
+     * @param value the value that the mask will be applied to.
+     * @param oldValue the value that was in the edit text, before characters were removed or added.
+     * @param start the index of the start of the change.
+     * @param count the number of characters that were removed.
+     * @param after the number of characters that were added.
+     */
+    public FormatResult getMaskedValue(String paymentProductFieldId, String newValue, String oldValue, int start, int count, int after) {
+        // Loop trough all fields and format the matching field value.
+        for (PaymentProductField field : paymentItem.getPaymentProductFields()) {
+            if (field.getId().equals(paymentProductFieldId)) {
+                return field.applyMask(newValue, oldValue, start, count, after);
+            }
+        }
+
+        return null;
+    }
+
 
     /**
      * Add value to the values map
      *
-     * @param paymentProductFieldId
-     * @param value
+     * @param paymentProductFieldId the id of the field for which the value is added
+     * @param value the value that will be added
      */
     public void setValue(String paymentProductFieldId, String value) {
 

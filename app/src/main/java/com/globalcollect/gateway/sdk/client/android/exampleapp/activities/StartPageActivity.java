@@ -36,7 +36,7 @@ public class StartPageActivity extends Activity{
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_startpage);
-		
+
 		// Get all values for Region spinner
 		List<Region> spinnerArrayRegion = new ArrayList<Region>(EnumSet.allOf(Region.class));
 	    

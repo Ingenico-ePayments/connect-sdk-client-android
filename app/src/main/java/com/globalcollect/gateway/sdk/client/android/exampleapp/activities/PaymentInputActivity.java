@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -162,8 +163,6 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 				// Store the last known payment product in the payment request
 				paymentRequest.setPaymentProduct((PaymentProduct) inputDataPersister.getPaymentItem());
-			} else {
-				// FIXME: inputDataPersister can be null here!
 			}
 
 			// Retrieve the iin information, in order to load the coBrands if necessary
@@ -391,6 +390,17 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 		// Create iinRenderer which is used for rendering iin lookup logo
 		attachIINLookup(inputDataPersister.getPaymentItem(), renderIinLogo);
+
+		// If a switch has been performed, we need to make sure that the cursor does not jump to the
+		// end, hence we need to put it back where it belongs. Also set the focus to the input field
+		if (inputDataPersister.getCursorPosition() >= 0) {
+			iinEditText.setSelection(inputDataPersister.getCursorPosition());
+			// Reset the cursor position to -1, since we do not need it any more.
+			inputDataPersister.setCursorPosition(-1);
+
+			InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+			imm.showSoftInput(iinEditText, InputMethodManager.SHOW_IMPLICIT);
+		}
 
 
 		// Show remember me checkbox when allow storing as account on file
@@ -705,6 +715,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		// Hence we need to switch the view to the brand that corresponds to the newly entered number.
 		// The "onPaymentProductCallComplete" method, that will be called after the lookup for the new paymentproduct is done,
 		// will take care of updating the view
+		inputDataPersister.setCursorPosition(iinEditText.getSelectionStart());
 		session.getPaymentProduct(PaymentInputActivity.this, iinResponse.getPaymentProductId(), paymentContext, PaymentInputActivity.this);
 	}
 

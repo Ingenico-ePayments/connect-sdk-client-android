@@ -117,7 +117,10 @@ public class PaymentProductField implements Serializable {
 
 		return errorMessageIds;
 	}
-	
+
+	public FormatResult applyMask(String newValue, String oldValue, int start, int count, int after) {
+		return formatter.applyMask(displayHints.getMask(), newValue, oldValue, start, count, after);
+	}
 	
 	/**
 	 * Applies mask on a given string and calculates the new cursorindex for the given newValue and oldValue
