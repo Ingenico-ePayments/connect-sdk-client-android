@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">インターネットに接続されていないようです。接続を確認してから、もう一度お試しください。</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">インターネット接続エラー</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">現在、利用可能なお支払い方法がありません。</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">支払い方法がありません</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">このお支払い方法の利用限度額を超えています。他のお支払い方法を選択するか、ご注文を変更してください。</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">注文変更</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">別の方法を試す</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">利用限度超過</string>
+	<string name="gc.app.general.loading.body">お待ちください…</string>
+	<string name="gc.app.general.loading.title">ロード中</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">ただいまお支払いを処理しております。どうぞお待ちください。お支払い処理完了までにはしばらくかかることがあります。</string>
+	<string name="gc.app.general.paymentProcessing.title">お客様の支払いを処理中です。 </string>
+	<string name="gc.app.general.securePaymentText">セキュアペイメント</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">アイテム</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">アイテム</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">送料</string>
+	<string name="gc.app.general.shoppingCart.subtotal">小計</string>
+	<string name="gc.app.general.shoppingCart.title">お客様のオーダー</string>
+	<string name="gc.app.general.shoppingCart.total">合計</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">キャンセル</string>
+	<string name="gc.app.paymentProductDetails.payButton">支払う</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">今後購入するときのために、MY詳細を保存する</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">このボックスにチェックを入れると、今後購入された際に利用できるようお客様の支払情報が保存されます。 </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">以前に使用した口座</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">支払い製品を選択</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">その他の支払い製品</string>
+	<string name="gc.app.privacy.title">プライバシーポリシー</string>
+	<string name="gc.app.result.failed.bodyText">お客様の支払いを処理することができませんでした。この購入を続行するには、代替の支払い方法を選択してください。</string>
+	<string name="gc.app.result.failed.title">お客様の支払いが失敗しました</string>
+	<string name="gc.app.result.selectOther">別の方法を試す</string>
+	<string name="gc.app.result.success.bodyText">お客様の支払いが正常に行われました。 </string>
+	<string name="gc.app.result.success.title">お客様の支払いステータス</string>
 	<string name="gc.general.cobrands.detected">お支払い方法には複数の選択肢があります。</string>
 	<string name="gc.general.cobrands.fullText">お支払いを処理するブランドを複数持つカードもあり、お好みのカードブランドを選択できます。</string>
 	<string name="gc.general.cobrands.introText">このカードでのお支払い方法には複数の選択肢があります。お好みのものを選択してください。</string>
 	<string name="gc.general.cobrands.readmore">支払い方法の複数の選択肢とは？</string>
 	<string name="gc.general.cobrands.selectbrand">お好みのものを選択してください。</string>
 	<string name="gc.general.cobrands.toggleCobrands">お支払い方法には複数の選択肢があります。</string>
+	<string name="gc.general.errors.clientDateTime">このお支払いを正しく処理できるよう、ご利用のデバイスの日時設定を確認してください。</string>
 	<string name="gc.general.errors.image.altText">警告</string>
 	<string name="gc.general.errors.incorrectMerchantId">技術的問題が発生したため、お支払い完了手続きを継続することができませんでした：業者IDが正しくありません。別のお支払い方法をお選びいただくか、販売業者にご連絡ください。</string>
 	<string name="gc.general.errors.instructions.renderingProblem">お支払い完了手続きを継続する際に技術的問題が発生しました。もう一度やり直していただくか、別のお支払い方法をお選びください。</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">銀行を選択</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">電話番号</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">電話番号</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">今後購入するときのために、MY詳細を保存する</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">このボックスにチェックを入れると、今後購入された際に利用できるようお客様の支払情報が保存されます。</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">州コード</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">州コード</string>
 	<string name="gc.general.paymentProductFields.street.label">通り</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">有効なメールアドレスを入力してください</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">有効な有効期限を入力してください</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">リストから値の1つを選択してください</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">有効なカード番号を入力してください</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">{minLength}から{maxLength}文字以内で数値を入力してください</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">{maxLength}文字で数値を入力してください</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">{maxLength}文字の最大値を入力してください</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">{maxLength}文字以内で数値を入力してください</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">有効なカード番号を入力してください</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">{minValue}と{maxValue}の間の値を入力してください </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">正しいフォーマットの値を入力してください</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">お客様の支払照会は</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">照会番号</string>
 	<string name="gc.general.paymentProducts.705.name">自動引き落としイギリス</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">照会番号</string>
-	<string name="gc.general.paymentProducts.707.name">自動引き落としスイス</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">お客様の支払照会は</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">照会番号</string>
 	<string name="gc.general.paymentProducts.715.name">反復自動引き落としイギリス</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">お客様の支払照会は</string>
-	<string name="gc.general.paymentProducts.717.name">反復自動引き落としスイス</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">オーダーID</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">お客様の支払照会は</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA自動引き落とし</string>

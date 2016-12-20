@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Očitno ni povezave z internetom. Preverite in poskusite znova.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">V redu</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Napaka internetne povezave</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Trenutno na voljo ni nobenih plačilnih produktov.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Ni razpoložljivih plačilnih produktov</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Pri tem plačilu ste presegli omejitev porabe. Poskusite z drugim načinom plačila ali pa spremenite svoje naročilo.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Spremeni naročilo</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Uporabi drug način</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Omejitev porabe presežena</string>
+	<string name="gc.app.general.loading.body">Prosimo, počakajte ...</string>
+	<string name="gc.app.general.loading.title">Nalaganje</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Poteka obdelava vašega plačila. Prosimo, počakajte. Obdelava vašega plačila lahko traja nekaj sekund.</string>
+	<string name="gc.app.general.paymentProcessing.title">Vaše plačilo je v obdelavi. </string>
+	<string name="gc.app.general.securePaymentText">Varno plačevanje</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">postavke</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">postavka</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Stroški pošiljanja</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Vmesna vsota</string>
+	<string name="gc.app.general.shoppingCart.title">Vaše naročilo</string>
+	<string name="gc.app.general.shoppingCart.total">Skupaj</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Prekliči</string>
+	<string name="gc.app.paymentProductDetails.payButton">Plačaj</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Zapomni si moje podatke za prihodnje nakupe</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Če potrdite to polje, bodo vaši plačilni podatki shranjeni za prihodnje nakupe. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Že uporabljeni računi</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Izberite plačilni produkt</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Drugi plačilni produkti</string>
+	<string name="gc.app.privacy.title">Politika zasebnosti</string>
+	<string name="gc.app.result.failed.bodyText">Vašega plačila nismo mogli obdelati. Če želite nadaljevati s tem nakupom, izberite drug način plačila.</string>
+	<string name="gc.app.result.failed.title">Vaše plačilo ni uspelo</string>
+	<string name="gc.app.result.selectOther">Uporabi drug način</string>
+	<string name="gc.app.result.success.bodyText">Vaše plačilo je uspešno. </string>
+	<string name="gc.app.result.success.title">Vaš status plačila</string>
 	<string name="gc.general.cobrands.detected">Zaznanih je več načinov plačila</string>
 	<string name="gc.general.cobrands.fullText">Nekatere kartice za obdelavo plačila uporabljajo več blagovnih znamk. Izberete lahko prednostno blagovno znamko kartice.</string>
 	<string name="gc.general.cobrands.introText">Ta kartica omogoča več načinov plačila. Izberite želeni način.</string>
 	<string name="gc.general.cobrands.readmore">Kaj pomeni več načinov plačila?</string>
 	<string name="gc.general.cobrands.selectbrand">Izberite želeni način.</string>
 	<string name="gc.general.cobrands.toggleCobrands">Zaznanih je več načinov plačila</string>
+	<string name="gc.general.errors.clientDateTime">Potrdite, ali sta datum in čas naprave, ki jo uporabljate za plačevanje, pravilno nastavljena.</string>
 	<string name="gc.general.errors.image.altText">Opozorilo</string>
 	<string name="gc.general.errors.incorrectMerchantId">Prišlo je do tehnične napake, ki preprečuje prikaz pravilnih navodil za dokončanje plačila: nepravilen ID trgovca. Izberite drug način plačila ali pa se obrnite na podjetje, pri katerem opravljate nakup.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Pri poskusu prikaza navodil za dokončanje plačila je prišlo do tehnične napake. Poskusite znova ali pa izberite drug način plačila.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Izberite svojo banko</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefonska številka</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefonska številka</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Zapomni si moje podatke za prihodnje nakupe</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Če potrdite to polje, bodo vaši plačilni podatki shranjeni za prihodnje nakupe.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Koda države</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Koda države</string>
 	<string name="gc.general.paymentProductFields.street.label">Ulica</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Prosimo, vnesite veljaven e-poštni naslov</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Prosimo, vnesite veljaven datum poteka veljavnosti</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Prosimo, izberite eno izmed vrednosti na seznamu</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Prosimo, vnesite veljavno številko kartice</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vnesite vrednost z med {minLength} in {maxLength} znaki</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Vnesite vrednost s točno {maxLength} znaki</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Prosimo, vnesite vrednost z največ {maxLength} znaki</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Vnesite vrednost z največ {maxLength} znaki</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Prosimo, vnesite veljavno številko kartice</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Prosimo, vnesite vrednost med {minValue} in {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Prosimo, vnesite pravilno obliko vrednosti</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Vaš sklic za plačilo je</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Številka sklica</string>
 	<string name="gc.general.paymentProducts.705.name">Neposredna obremenitev za Združeno kraljestvo</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Številka sklica</string>
-	<string name="gc.general.paymentProducts.707.name">Neposredna obremenitev za Švico</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Vaš sklic za plačilo je</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Številka sklica</string>
 	<string name="gc.general.paymentProducts.715.name">Ponavljajoče se direktne obremenitve za Združeno kraljestvo</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Vaš sklic za plačilo je</string>
-	<string name="gc.general.paymentProducts.717.name">Ponavljajoče se direktne obremenitve za Švico</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">ID naročila</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Vaš sklic za plačilo je</string>
 	<string name="gc.general.paymentProducts.770.name">Direktna obremenitev SEPA</string>

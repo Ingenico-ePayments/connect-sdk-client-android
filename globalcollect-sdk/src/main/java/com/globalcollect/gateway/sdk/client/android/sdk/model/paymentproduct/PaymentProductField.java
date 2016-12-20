@@ -24,10 +24,10 @@ public class PaymentProductField implements Serializable {
 
 	public enum Type {
 		
-		@SerializedName("String")
+		@SerializedName("string")
 		STRING, 
 		
-		@SerializedName("Integer")
+		@SerializedName("integer")
 		INTEGER,
 		
 		@SerializedName("numericstring")
@@ -125,10 +125,10 @@ public class PaymentProductField implements Serializable {
 	/**
 	 * Applies mask on a given string and calculates the new cursorindex for the given newValue and oldValue
 	 * 
-	 * @param mask
-	 * @param newValue
-	 * @param oldValue
-	 * 
+	 * @param newValue the value in the textfield after the user typed a character
+	 * @param oldValue the value in the textfield before the user typed a character
+	 * @param cursorIndex the current cursorindex
+	 *
 	 * @return FormatResult containing formatted string and cursorindex 
 	 */
 	public FormatResult applyMask(String newValue, String oldValue, Integer cursorIndex) {
@@ -138,8 +138,7 @@ public class PaymentProductField implements Serializable {
 	/**
 	 * Applies mask on a given string 
 	 * 
-	 * @param mask
-	 * @param value
+	 * @param value the String that will be formatted
 	 * 
 	 * @return FormatResult containing formatted string and cursorindex 
 	 */
@@ -152,8 +151,7 @@ public class PaymentProductField implements Serializable {
 	/**
 	 * Removes mask on a given string 
 	 * 
-	 * @param mask
-	 * @param value
+	 * @param value the String for which the mask will be removed
 	 * 
 	 * @return String containing deFormatted string 
 	 */

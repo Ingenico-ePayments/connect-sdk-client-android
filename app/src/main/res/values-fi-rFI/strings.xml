@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Vaikuttaa, ettei käytössä ole Internet-yhteyttä. Tarkista asia ja yritä uudelleen.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Internet-yhteysvirhe</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Ei maksutuotteita saatavilla tällä hetkellä.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Ei maksutuotteita saatavilla</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Olet ylittänyt tämän maksutavan käyttörajan. Kokeile jotain toista maksutapaa tai muuta tilausta.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Muuta tilausta</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Kokeile toista menetelmää</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Käyttöraja ylitetty</string>
+	<string name="gc.app.general.loading.body">Odota...</string>
+	<string name="gc.app.general.loading.title">Ladataan</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Maksuasi käsitellään. Odota. Maksun käsittely voi kestää useita sekunteja. </string>
+	<string name="gc.app.general.paymentProcessing.title">Olemme käsittelemässä maksuasi. </string>
+	<string name="gc.app.general.securePaymentText">Turvattu maksu</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">kohteet</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">kohde</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Lähetyskulut</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Välisumma</string>
+	<string name="gc.app.general.shoppingCart.title">Tilauksesi</string>
+	<string name="gc.app.general.shoppingCart.total">Yhteensä</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Peruuta</string>
+	<string name="gc.app.paymentProductDetails.payButton">Maksa</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Muista yksityiskohtaiset tietoni tulevaisuuden hankintoja varten</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Jos ruksaat tämän ruudun, maksutietosi tallennetaan tulevaisuuden hankintoja varten. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Aikaisemmin käytettyjä tilejä</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Valitse maksutuote</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Muut maksutuotteet</string>
+	<string name="gc.app.privacy.title">Tietosuojalauseke</string>
+	<string name="gc.app.result.failed.bodyText">Emme ole pystyneet käsittelemään maksuasi. Tämän hankinnan jatkamiseksi valitse vaihtoehtoinen maksumenetelmä.</string>
+	<string name="gc.app.result.failed.title">Makusi suorittaminen epäonnistui</string>
+	<string name="gc.app.result.selectOther">Kokeile toista menetelmää</string>
+	<string name="gc.app.result.success.bodyText">Maksusi on onnistunut. </string>
+	<string name="gc.app.result.success.title">Maksun statuksesi</string>
 	<string name="gc.general.cobrands.detected">Useita maksuvaihtoehtoja</string>
 	<string name="gc.general.cobrands.fullText">Jotkin korteista käyttävät maksujen käsittelyssä useita korttimerkkejä. Voit valita haluamasi korttimerkin</string>
 	<string name="gc.general.cobrands.introText">Tällä kortilla on useita maksuvaihtoehtoja, valitse haluamasi.</string>
 	<string name="gc.general.cobrands.readmore">Mitä tarkoittaa, että kortilla on useita maksuvaihtoehtoja?</string>
 	<string name="gc.general.cobrands.selectbrand">Valitse haluamasi vaihtoehto</string>
 	<string name="gc.general.cobrands.toggleCobrands">Useita maksuvaihtoehtoja</string>
+	<string name="gc.general.errors.clientDateTime">Vahvista, onko maksamiseen käyttämäsi laitteen päivämäärä ja kellonaika asetettu oikein.</string>
 	<string name="gc.general.errors.image.altText">Varoitus</string>
 	<string name="gc.general.errors.incorrectMerchantId">Tapahtui tekninen virhe, joka esti meitä näyttämästä sinulle oikeita ohjeita maksusi viimeistelyä varten: virheellinen kauppiastunnus. Kokeile jotain toista maksutapaa tai ota yhteyttä yritykseen, jolta olet ostamassa.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Yrittäessämme näyttää ohjeet maksusi viimeistelyä varten tapahtui tekninen virhe. Yritä uudelleen tai kokeile jotain toista maksutapaa.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Valitse pankkisi</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Puhelinnumero</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Puhelinnumero</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Muista yksityiskohtaiset tietoni tulevaisuuden hankintoja varten</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Jos ruksaat tämän ruudun, maksutietosi tallennetaan tulevaisuuden hankintoja varten.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Valtion koodi</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Valtion koodi</string>
 	<string name="gc.general.paymentProductFields.street.label">Katu</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Anna voimassa oleva sähköpostiosoite</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Anna voimassa oleva päättymispäivä</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Valitse yksi arvo listasta</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Anna voimassa olevan kortin numero</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Anna arvo, jossa on {minLength} – {maxLength} merkkiä</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Anna arvo, jossa on tasan {maxLength} merkkiä</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Valitse maksimi {maxLength} merkkien määrä</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Anna arvo, jossa on enintään {maxLength} merkkiä</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Anna voimassa olevan kortin numero</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Anna arvo väliltä {minValue} ja {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Anna oikean formaatin arvo</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Sinun maksuviitteesi on</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Viitenumero</string>
 	<string name="gc.general.paymentProducts.705.name">Suoraveloitus</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Viitenumero</string>
-	<string name="gc.general.paymentProducts.707.name">Suoraveloitus Sveitsi</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Sinun maksuviitteesi on</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Viitenumero</string>
 	<string name="gc.general.paymentProducts.715.name">Toistuva suoraveloitus Iso-Britannia</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Sinun maksuviitteesi on</string>
-	<string name="gc.general.paymentProducts.717.name">Toistuva suoraveloitus Sveitsi</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">Tilauksen tunnus</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Sinun maksuviitteesi on</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA-suoraveloitus</string>

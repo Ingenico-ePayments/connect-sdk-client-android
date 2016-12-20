@@ -24,7 +24,7 @@
 			android:id="@+id/totalCostLabel"
            	android:layout_width="wrap_content"
            	android:layout_height="wrap_content"
-           	android:text="@string/gc.page.shoppingCart.total"
+           	android:text="@string/gc.app.general.shoppingCart.total"
            	android:layout_alignParentLeft="true"
            	style="@style/TotalCostLayoutText" />
 		
@@ -58,7 +58,7 @@
 	    <TextView
            	android:layout_width="wrap_content"
            	android:layout_height="wrap_content"
-           	android:text="@string/gc.page.shoppingCart.title"
+           	android:text="@string/gc.app.general.shoppingCart.title"
            	style="@style/TotalCostLayoutText"
 	        android:layout_gravity="center_vertical" />
 		
@@ -72,7 +72,7 @@
 		    <TextView
 	           	android:layout_width="wrap_content"
 	           	android:layout_height="wrap_content"
-	           	android:text="@string/gc.page.shoppingCart.total"
+	           	android:text="@string/gc.app.general.shoppingCart.total"
 	           	style="@style/TotalCostLayoutText"
 	           	android:layout_alignParentLeft="true"/>
 		
@@ -114,7 +114,7 @@
     	    android:layout_width="wrap_content"
     	    android:layout_height="wrap_content"
     	    android:layout_gravity="center"
-    	    android:text="@string/gc.general.header.secure.payment"
+    	    android:text="@string/gc.app.general.securePaymentText"
     	    style="@style/SecureMessage" />
 
 	</LinearLayout>

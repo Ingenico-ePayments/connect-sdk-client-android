@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_weight="0"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="com.globalcollect.gateway.sdk.client.android.activities.ConfirmationActivity"
+        tools:ignore="MergeRootFrame" >
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            style="@style/WhiteLayout">
+
+            <include layout="@layout/activity_header" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/listAccountsOnFileDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    android:src="@drawable/line" />
+
+                <!--
+                    This FrameLayout is a placeholder for the Google Wallet selection details UI and will
+                    be provided by a fragment at runtime.
+                -->
+                <FrameLayout
+                    android:id="@+id/dynamic_wallet_masked_wallet_fragment"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <fragment
+                    android:id="@+id/full_wallet_confirmation_button_fragment"
+                    android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.fragments.FullWalletConfirmationButtonFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <include layout="@layout/activity_footer" />
+
+</LinearLayout>

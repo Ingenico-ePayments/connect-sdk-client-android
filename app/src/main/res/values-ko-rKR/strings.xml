@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">인터넷 연결을 찾을 수 없습니다. 인터넷 연결을 확인한 후 다시 시도하세요.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">예</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">인터넷 연결 오류</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">현재 결제 가능한 상품이 없습니다.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">결제 가능한 상품 없음</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">이 결제에 허용된 시간이 초과되었습니다. 다른 결제 방법을 이용하거나 주문을 변경하세요.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">주문 변경</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">다른 방법 시도</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">허용 시간 초과</string>
+	<string name="gc.app.general.loading.body">잠시만 기다려 주세요...</string>
+	<string name="gc.app.general.loading.title">로딩 중</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">결제가 진행되고 있습니다. 잠시만 기다려주십시오. 결제 진행에 몇 초가 걸릴 수 있습니다. </string>
+	<string name="gc.app.general.paymentProcessing.title">지불을 처리 중입니다. </string>
+	<string name="gc.app.general.securePaymentText">보안 지불</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">품목</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">품목</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">배송비</string>
+	<string name="gc.app.general.shoppingCart.subtotal">소계</string>
+	<string name="gc.app.general.shoppingCart.title">귀하의 주문</string>
+	<string name="gc.app.general.shoppingCart.total">총액</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">취소</string>
+	<string name="gc.app.paymentProductDetails.payButton">지불</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">향후 구매를 위해 내 세부 정보 기억</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">이 상자에 체크하면 향후 구매를 위해 귀하의 지불 정보가 저장됩니다. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">전에 사용한 계좌</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">지불 상품 선택</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">다른 지불 상품</string>
+	<string name="gc.app.privacy.title">개인정보 보호정책</string>
+	<string name="gc.app.result.failed.bodyText">지불을 처리하지 못했습니다. 이 구매를 계속하려면 다른 지불 방법을 선택해 주십시오.</string>
+	<string name="gc.app.result.failed.title">지불 실패</string>
+	<string name="gc.app.result.selectOther">다른 방법 시도</string>
+	<string name="gc.app.result.success.bodyText">지불에 성공했습니다. </string>
+	<string name="gc.app.result.success.title">지불 상태</string>
 	<string name="gc.general.cobrands.detected">여러 가지 결제 옵션 이용 가능</string>
 	<string name="gc.general.cobrands.fullText">일부 카드는 결제를 진행하며 여러 가지 브랜드를 이용하고 있습니다. 선호하는 카드 브랜드를 선택해 주십시오.</string>
 	<string name="gc.general.cobrands.introText">이 카드는 여러 가지 결제 옵션 이용이 가능합니다. 선호하는 옵션을 선택해 주십시오.</string>
 	<string name="gc.general.cobrands.readmore">여러 가지 결제 옵션이란 무엇입니까?</string>
 	<string name="gc.general.cobrands.selectbrand">원하는 옵션을 선택하시기 바랍니다.</string>
 	<string name="gc.general.cobrands.toggleCobrands">여러 가지 결제 옵션 이용 가능</string>
+	<string name="gc.general.errors.clientDateTime">결제에 이용하는 장치의 날짜와 시간이 정확히 설정되어 있는지 확인하세요.</string>
 	<string name="gc.general.errors.image.altText">주의</string>
 	<string name="gc.general.errors.incorrectMerchantId">정확한 결제 완료 안내를 보여드리는 과정에서 기술적인 문제가 발생했습니다: 정확하지 않은 판매자 ID 다른 결제 수단을 이용하거나 판매점에 연락하시기 바랍니다.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">결제 완료 안내를 보여드리는 과정에서 기술적인 문제가 발생했습니다. 다시 시도하거나 다른 결제 수단을 이용해 주십시오.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">은행을 선택하십시오</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">전화번호</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">전화번호</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">향후 구매를 위해 내 세부 정보 기억</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">이 상자에 체크하면 향후 구매를 위해 귀하의 지불 정보가 저장됩니다.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">주(State) 코드</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">주(State) 코드</string>
 	<string name="gc.general.paymentProductFields.street.label">거리</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">유효한 이메일 주소를 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">유효한 만료일을 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">목록에서 1개의 값을 선택하십시오</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">유효한 카드 번호를 입력하십시오</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">{minLength}~{maxLength} 사이 값을 입력하세요.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">정확히 maxLength}자로 값을 입력하세요</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">최대 글자수 {maxLength}자에 해당하는 값을 입력하십시오</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">최대 {maxLength}자로 값을 입력하세요</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">유효한 카드 번호를 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">{minValue}와(과) {maxValue} 사이의 값을 입력하십시오 </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">올바른 형식의 값을 입력하십시오</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">귀하의 지불 참조 번호:</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">참조 번호</string>
 	<string name="gc.general.paymentProducts.705.name">은행 자동 납부(영국)</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">참조 번호</string>
-	<string name="gc.general.paymentProducts.707.name">은행 자동 납부(스위스)</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">귀하의 지불 참조 번호:</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">참조 번호</string>
 	<string name="gc.general.paymentProducts.715.name">정기 은행 자동 납부(영국)</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">귀하의 지불 참조 번호:</string>
-	<string name="gc.general.paymentProducts.717.name">정기 은행 자동 납부(스위스)</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">주문 ID</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">귀하의 지불 참조 번호:</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA 은행 자동 납부</string>

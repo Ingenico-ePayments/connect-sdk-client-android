@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Возможно, подключение к Интернету отсутствует. Проверьте подключение и повторите попытку.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">ОК</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Ошибка подключения к Интернету</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">В данный момент нет доступных платежных инструментов.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Нет доступных платежных инструментов</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Вы превысили расходный лимит для данного платежа. Воспользуйтесь другим способом оплаты или измените заказ.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Изменить заказ</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Повторите, используя другой способ оплаты</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Превышен расходный лимит</string>
+	<string name="gc.app.general.loading.body">Пожалуйста, подождите...</string>
+	<string name="gc.app.general.loading.title">Загрузка</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Мы обрабатываем Ваш платеж. Пожалуйста, подождите. Обработка платежа может занять несколько секунд.</string>
+	<string name="gc.app.general.paymentProcessing.title">Мы обрабатываем ваш платеж. </string>
+	<string name="gc.app.general.securePaymentText">Безопасные платежи</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">элементы</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">элемент</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Стоимость доставки</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Промежуточный итог</string>
+	<string name="gc.app.general.shoppingCart.title">Ваш заказ</string>
+	<string name="gc.app.general.shoppingCart.total">Итог</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Отмена</string>
+	<string name="gc.app.paymentProductDetails.payButton">Оплатить</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Запомнить указанные данные для будущих покупок</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Если вы поставите галочку в этом пункте, ваши платежные реквизиты останутся в системе для будущих покупок. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Используемые ранее аккаунты</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Выберите платежный инструмент</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Другие платежные инструменты</string>
+	<string name="gc.app.privacy.title">Политика конфиденциальности</string>
+	<string name="gc.app.result.failed.bodyText">Мы не смогли обработать ваш платеж. Выберите другой способ оплаты, чтобы оплатить эту покупку.</string>
+	<string name="gc.app.result.failed.title">Платеж не выполнен</string>
+	<string name="gc.app.result.selectOther">Повторите, используя другой способ оплаты</string>
+	<string name="gc.app.result.success.bodyText">Платеж произведен успешно. </string>
+	<string name="gc.app.result.success.title">Ваш статус оплаты</string>
 	<string name="gc.general.cobrands.detected">Обнаружено несколько опций оплаты</string>
 	<string name="gc.general.cobrands.fullText">Некоторые карты используют несколько брендов для обработки платежа. Вы можете выбрать предпочтительный бренд для оплаты с карты</string>
 	<string name="gc.general.cobrands.introText">Данная карта поддерживает несколько опций оплаты, выберите предпочтительную опцию.</string>
 	<string name="gc.general.cobrands.readmore">Что имеется в виду под «несколькими опциями оплаты»?</string>
 	<string name="gc.general.cobrands.selectbrand">Выберите предпочтительную опцию</string>
 	<string name="gc.general.cobrands.toggleCobrands">Обнаружено несколько опций оплаты</string>
+	<string name="gc.general.errors.clientDateTime">Проверьте правильность настройки даты и времени на устройстве, которое используете для оплаты.</string>
 	<string name="gc.general.errors.image.altText">Предупреждение</string>
 	<string name="gc.general.errors.incorrectMerchantId">Возникла техническая ошибка, не позволяющая отобразить соответствующие инструкции при завершении платежа: неверный ID продавца. Выберите другой способ оплаты или свяжитесь с компанией-продавцом.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Возникла техническая ошибка при отображении инструкций на последнем этапе проведения платежа. Повторите попытку или выберите другой способ оплаты.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Выберите ваш банк</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Номер телефона</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Номер телефона</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Запомнить указанные данные для будущих покупок</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Если вы поставите галочку в этом пункте, ваши платежные реквизиты останутся в системе для будущих покупок.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Код штата</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Код штата</string>
 	<string name="gc.general.paymentProductFields.street.label">Улица</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Введите действительный адрес эл. почты</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Введите действительную дату истечения срока действия</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Выберите одно значение из списка</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Укажите действительный номер карты</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Укажите значение в диапазоне от {minLength} до {maxLength} символов.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Укажите значение, содержащее {maxLength} символа (ов)</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Введите значение, содержащее максимум {maxLength} символов</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Укажите значение, содержащее не более {maxLength} символов</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Укажите действительный номер карты</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Укажите значение в диапазоне от {minValue} до {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Введите значение в правильном формате</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Ваш идентификатор платежа —</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Идентификационный номер</string>
 	<string name="gc.general.paymentProducts.705.name">Прямое дебетование, Великобритания</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Идентификационный номер</string>
-	<string name="gc.general.paymentProducts.707.name">Прямое дебетование, Швейцария</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Ваш идентификатор платежа —</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Идентификационный номер</string>
 	<string name="gc.general.paymentProducts.715.name">Периодические платежи в форме прямого дебетования, Великобритания</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Ваш идентификатор платежа —</string>
-	<string name="gc.general.paymentProducts.717.name">Периодические платежи в форме прямого дебетования, Швейцария</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">Идентификатор заказа</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Ваш идентификатор платежа —</string>
 	<string name="gc.general.paymentProducts.770.name">Прямое дебетование в Единой зоне платежей в евро (SEPA)</string>

@@ -7,5 +7,6 @@
 */build/docs
 */build/libs
 */build/poms
+*/build/generated
 local.properties
-.iml
+*.iml

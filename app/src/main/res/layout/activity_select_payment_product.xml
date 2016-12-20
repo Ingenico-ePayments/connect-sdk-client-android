@@ -26,7 +26,7 @@
 			    android:id="@+id/listAccountsOnFileHeader"
 				android:layout_width="wrap_content"
 		    	android:layout_height="wrap_content"
-	        	android:text="@string/gc.general.header.choose.paymentproduct.accountsonfile.header"
+	        	android:text="@string/gc.app.paymentProductSelection.accountsOnFileTitle"
 	        	android:visibility="gone"
 	        	style="@style/ListHeaderText" />
 			
@@ -52,7 +52,7 @@
 			<TextView
 				android:layout_width="wrap_content"
 		    	android:layout_height="wrap_content"
-	        	android:text="@string/gc.general.header.choose.paymentproduct.header"
+	        	android:text="@string/gc.app.paymentProductSelection.paymentProductsTitle"
 	        	style="@style/ListHeaderText" />
 			
 			<ImageView

@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">ऐसा लगता है कि इंटरनेट से कनेक्शन नहीं है, इसलिए कृपया इसकी जाँच करें और फिर से कोशिश करें।</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">ओके</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">इंटरनेट कनेक्शन त्रुटि</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">इस समय कोई भुगतान उत्पाद उपलब्ध नहीं हैं।</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">कोई भुगतान उत्पाद उपलब्ध नहीं हैं</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">आपने इस भुगतान के लिए खर्च करने की सीमा को पार कर लिया है। कृपया भुगतान का कोई अन्य तरीका आज़माएं, या अपना ऑर्डर बदलें।</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">ऑर्डर बदलें</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">अन्य विधि को आज़माएं</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">खर्च करने की सीमा पार की जा चुकी है</string>
+	<string name="gc.app.general.loading.body">कृपया प्रतीक्षा करें..</string>
+	<string name="gc.app.general.loading.title">लोड हो रहा है</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">हम आपके भुगतान को प्रोसेस कर रहे हैं। कृपया प्रतीक्षा करें। आपके भुगतान को प्रोसेस करने के लिए कई सेकेंड लग सकते हैं। </string>
+	<string name="gc.app.general.paymentProcessing.title">हम आपके भुगतान को प्रोसेस कर रहे हैं। </string>
+	<string name="gc.app.general.securePaymentText">सुरक्षित भुगतान</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">मदें</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">मद</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">भेजने की लागत</string>
+	<string name="gc.app.general.shoppingCart.subtotal">उप-जोड़</string>
+	<string name="gc.app.general.shoppingCart.title">आपका ऑर्डर</string>
+	<string name="gc.app.general.shoppingCart.total">योग</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">रद्द करें</string>
+	<string name="gc.app.paymentProductDetails.payButton">भुगतान करें</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">भविष्य की खरीदों के लिए मेरे ब्यौरे याद रखें</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">यदि आप इस खाने पर निशान लगाते हैं तो आपकी भुगतान सूचना भावी खरीदों के लिए स्टोर हो जाएगी। </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">पहले से इस्तेमाल किए गए खाते</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">भुगतान उत्पाद का चयन करें</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">अन्य भुगतान उत्पाद</string>
+	<string name="gc.app.privacy.title">निजता नीति</string>
+	<string name="gc.app.result.failed.bodyText">हम आपके भुगतान को प्रोसेस नहीं कर सके। इस खरीद को जारी रखने के लिए, कृपया वैकल्पिक भुगतान विधि को चुनें।</string>
+	<string name="gc.app.result.failed.title">आपका भुगतान विफल हो गया</string>
+	<string name="gc.app.result.selectOther">अन्य विधि को आज़माएं</string>
+	<string name="gc.app.result.success.bodyText">आपका भुगतान हो गया है। </string>
+	<string name="gc.app.result.success.title">आपकी भुगतान स्थिति</string>
 	<string name="gc.general.cobrands.detected">अनेक भुगतान विकल्पों का पता लगाया गया</string>
 	<string name="gc.general.cobrands.fullText">कुछ कार्ड आपके भुगतान को प्रोसेस करने के लिए अनेक ब्रांडों का इस्तेमाल करते हैं। आप अपने वरीयताप्राप्त कार्ड ब्रांड को चुन सकते हैं</string>
 	<string name="gc.general.cobrands.introText">इस कार्ड में अनेक भुगतान विकल्प हैं, कृपया अपने वरीयताप्राप्त विकल्प को चुनें।</string>
 	<string name="gc.general.cobrands.readmore">अनेक भुगतान विकल्प क्या हैं?</string>
 	<string name="gc.general.cobrands.selectbrand">अपने वरीयताप्राप्त विकल्प का चयन करें</string>
 	<string name="gc.general.cobrands.toggleCobrands">अनेक भुगतान विकल्पों का पता लगाया गया</string>
+	<string name="gc.general.errors.clientDateTime">कृपया पुष्टि करें कि क्या उस उपकरण की तारीख और समय को सही तरीके से सेट किया गया है जिसका आप यह भुगतान करने के लिए उपयोग कर रहे हैं।</string>
 	<string name="gc.general.errors.image.altText">चेतावनी</string>
 	<string name="gc.general.errors.incorrectMerchantId">एक तकनीकी त्रुटि हुई जिसने हमें आपके भुगतान को अंतिम रूप देने के लिए आपको सही निर्देश दिखाने से रोक दिया: गलत मर्चेंट आईडी। कृपया भुगतान की अन्य विधि आज़माएं या उस कंपनी से संपर्क करें जिससे आप खरीदारी कर रहे हैं।</string>
 	<string name="gc.general.errors.instructions.renderingProblem">जब हमने आपके भुगतान को अंतिम रूप देने के लिए निर्देश दिखाने की कोशिश की तो एक तकनीकी त्रुटि हुई। कृपया फिर से प्रयास करें या भुगतान की अन्य विधि को आज़माएं।</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">अपना बैंक चुनें</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">फोन संख्या</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">फोन संख्या</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">भविष्य की खरीदों के लिए मेरे ब्यौरे याद रखें</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">यदि आप इस खाने पर निशान लगाते हैं तो आपकी भुगतान सूचना भावी खरीदों के लिए स्टोर हो जाएगी।</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">कोड बताएं</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">कोड बताएं</string>
 	<string name="gc.general.paymentProductFields.street.label">गली</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">कृपया एक मान्य ईमेल पता प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">कृपया एक मान्य समाप्ति तारीख प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">कृपया सूची के मानों में से एक मान (value) चुनें</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">कृपया एक मान्य कार्ड संख्या प्रदान करें</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">कृपया {minLength} और {maxLength} कैरेक्टरों के बीच का मूल्य प्रदान करें</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">कृपया ठीक {maxLength} कैरेक्टरों का मूल्य प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">कृपया अधिकतम {maxLength} वर्णों का मान प्रदान करें</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">कृपया अधिकतम {maxLength} कैरेक्टरों का मूल्य प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">कृपया एक मान्य कार्ड संख्या प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">कृपया {minValue} और {maxValue} के बीच का कोई मान प्रदान करें </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">कृपया सही स्वरूप का मान प्रदान करें</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">आपका भुगतान संदर्भ है</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">संदर्भ संख्या</string>
 	<string name="gc.general.paymentProducts.705.name">प्रत्यक्ष डेबिट युनाइटेड किंगडम</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">संदर्भ संख्या</string>
-	<string name="gc.general.paymentProducts.707.name">प्रत्यक्ष डेबिट स्विट्ज़रलैंड</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">आपका भुगतान संदर्भ है</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">संदर्भ संख्या</string>
 	<string name="gc.general.paymentProducts.715.name">रिकरिंग प्रत्यक्ष डेबिट युनाइटेड किंगडम</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">आपका भुगतान संदर्भ है</string>
-	<string name="gc.general.paymentProducts.717.name">रिकरिंग प्रत्यक्ष डेबिट स्विट्ज़रलैंड</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">ऑर्डर ID</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">आपका भुगतान संदर्भ है</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA प्रत्यक्ष डेबिट</string>

@@ -207,25 +207,9 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 			// Show load indicator
 			DialogUtil dialog = new DialogUtil();
-			String title = getString(R.string.gc_page_paymentProductDetails_loading_title);
-			String msg = getString(R.string.gc_page_paymentProductDetails_loading_text);
+			String title = getString(R.string.gc_app_general_loading_title);
+			String msg = getString(R.string.gc_app_general_loading_body);
 			progressDialog = dialog.showProgressDialog(this, title, msg);
-
-			// Get the encrypted data blob from the gcSession, this must be sent to the merchant
-			@SuppressWarnings("unused")
-			OnPaymentRequestPreparedListener listener = new OnPaymentRequestPreparedListener() {
-
-				@Override
-				public void onPaymentRequestPrepared(PreparedPaymentRequest preparedPaymentRequest) {
-
-					if (preparedPaymentRequest == null || preparedPaymentRequest.getEncryptedFields() == null) {
-						// Indicate that an error has occurred.
-					}
-					// Submit the information contained in the encrypted
-					// payment request represented by preparedPaymentRequest
-					// to the GlobalCollect platform via your server.
-				}
-			};
 
 			session.preparePaymentRequest(paymentRequest, getApplicationContext(), this);
 		}
@@ -418,7 +402,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 				rememberLayout.setVisibility(View.VISIBLE);
 
 				RenderTooltip renderTooltip = new RenderTooltip();
-				renderTooltip.renderTooltip("rememberMe", paymentRequest.getPaymentProduct(), (ViewGroup) findViewById(R.id.rememberLayout));
+				renderTooltip.renderRememberMeTooltip(this, (ViewGroup) findViewById(R.id.rememberLayout));
 			}
 		}
 

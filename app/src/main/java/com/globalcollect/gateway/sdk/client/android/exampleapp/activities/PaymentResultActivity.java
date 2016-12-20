@@ -25,8 +25,8 @@ public class PaymentResultActivity extends ShoppingCartActivity {
 		
 		// Get information from the intent
 		Intent intent = getIntent();
-		ShoppingCart shoppingCart 			= (ShoppingCart)			 intent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
-		PaymentContext context    = (PaymentContext)  intent.getSerializableExtra(Constants.INTENT_CONTEXT);
+		ShoppingCart shoppingCart = (ShoppingCart)		intent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
+		PaymentContext context    = (PaymentContext)	intent.getSerializableExtra(Constants.INTENT_CONTEXT);
 		
 		// Render the shoppingcart details
 		shoppingCartRenderer = new RenderShoppingCart(context, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());	
@@ -42,8 +42,8 @@ public class PaymentResultActivity extends ShoppingCartActivity {
 			
 		if (errorMessage == null) {
 			// Show success translated texts
-			String successfulTitle = getString(R.string.gc_page_paymentSuccess_title);
-			String successfulDescription = getString(R.string.gc_page_paymentSuccess_bodyText);
+			String successfulTitle = getString(R.string.gc_app_result_success_title);
+			String successfulDescription = getString(R.string.gc_app_result_success_bodyText);
 			
 			paymentResultTitle.setText(successfulTitle);
 			paymentResultDescription.setText(successfulDescription);
@@ -51,7 +51,8 @@ public class PaymentResultActivity extends ShoppingCartActivity {
 		} else {
 			
 			// Show errormessage translated texts			
-			paymentResultTitle.setText(getString(R.string.gc_page_paymentFailed_title));
+			paymentResultTitle.setText(getString(R.string.gc_app_result_failed_title));
+			paymentResultDescription.setText(getString(R.string.gc_app_result_failed_bodyText));
 		}
 	}
 	

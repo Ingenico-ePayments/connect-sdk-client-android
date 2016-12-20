@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Nampaknya tiada sambungan ke Internet, jadi sila sahkan dan cuba semula.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Ralat sambungan Internet</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Tiada produk pembayaran tersedia pada masa ini.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Produk pembayaran tidak tersedia</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Anda telah melebihi had perbelanjaan untuk pembayaran ini. Sila cuba kaedah pembayaran lain atau tukar pesanan anda.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Tukar pesanan</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Cuba kaedah lain</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Melebihi had perbelanjaan</string>
+	<string name="gc.app.general.loading.body">Sila tunggu..</string>
+	<string name="gc.app.general.loading.title">Memuatkan</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Kami sedang memproses pembayaran anda. Sila tunggu. Pemprosesan pembayaran akan mengambil masa beberapa saat.</string>
+	<string name="gc.app.general.paymentProcessing.title">Kami sedang memproses pembayaran anda. </string>
+	<string name="gc.app.general.securePaymentText">Pembayaran selamat</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">item</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">item</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Kos penghantaran</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Jumlah kecil</string>
+	<string name="gc.app.general.shoppingCart.title">Pesanan anda</string>
+	<string name="gc.app.general.shoppingCart.total">Jumlah</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Batal</string>
+	<string name="gc.app.paymentProductDetails.payButton">Bayar</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Ingat butiran saya untuk pembelian akan datang</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Jika anda menandakan kotak ini, maklumat pembayaran anda akan disimpan untuk pembelian akan datang. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Akaun yang digunakan dahulu</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Pilih produk pembayaran</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Produk pembayaran lain</string>
+	<string name="gc.app.privacy.title">Dasar privasi</string>
+	<string name="gc.app.result.failed.bodyText">Kami tidak dapat memproses pembayaran anda. Untuk meneruskan pembelian ini, sila pilih kaedah pembayaran lain.</string>
+	<string name="gc.app.result.failed.title">Pembayaran anda gagal</string>
+	<string name="gc.app.result.selectOther">Cuba kaedah lain</string>
+	<string name="gc.app.result.success.bodyText">Pembayaran anda telah berjaya. </string>
+	<string name="gc.app.result.success.title">Status pembayaran anda</string>
 	<string name="gc.general.cobrands.detected">Pilihan pembayaran berbilang dikesan</string>
 	<string name="gc.general.cobrands.fullText">Sesetengah kad menggunakan beberapa jenama untuk memproses pembayaran anda. Anda boleh memilih jenama kad yang anda ingini</string>
 	<string name="gc.general.cobrands.introText">Kad ini mempunyai beberapa pilihan pembayaran, sila pilih pilihan yang anda ingini.</string>
 	<string name="gc.general.cobrands.readmore">Apa itu pilihan pembayaran berbilang?</string>
 	<string name="gc.general.cobrands.selectbrand">Pilih pilihan yang anda ingini</string>
 	<string name="gc.general.cobrands.toggleCobrands">Pilihan pembayaran berbilang dikesan</string>
+	<string name="gc.general.errors.clientDateTime">Sila sahkan sama ada tarikh dan masa peranti yang anda gunakan untuk membuat pembayaran ini ditetapkan dengan betul.</string>
 	<string name="gc.general.errors.image.altText">Amaran</string>
 	<string name="gc.general.errors.incorrectMerchantId">Ralat teknikal berlaku dan kami tidak dapat menunjukkan arahan yang betul untuk memuktamadkan pembayaran anda: ID Pedagang salah. Sila cuba kaedah pembayaran lain atau hubungi syarikat penjual.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Ralat teknikal berlaku semasa kami cuba menunjukkan arahan untuk memuktamadkan pembayaran anda. Sila cuba semula atau cuba kaedah pembayaran lain.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Pilih bank anda</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Nombor telefon</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Nombor telefon</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Ingat butiran saya untuk pembelian akan datang</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Jika anda menandakan kotak ini, maklumat pembayaran anda akan disimpan untuk pembelian akan datang.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Kod negeri</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Kod negeri</string>
 	<string name="gc.general.paymentProductFields.street.label">Jalan</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Sila berikan alamat e-mel yang sah</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Sila berikan tarikh tamat tempoh yang sah</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Sila pilih salah satu nilai daripada senarai</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Sila berikan nombor kad yang sah</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Sila berikan satu nilai antara {minLength} hingga {maxLength} aksara</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Sila berikan satu nilai {maxLength} aksara sahaja</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Sila berikan nilai yang mempunyai {maxLength} aksara maksimum</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Sila berikan satu nilai maksimum {maxLength} aksara</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Sila berikan nombor kad yang sah</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Sila berikan nilai antara {minValue} dan {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Sila berikan nilai dalam format yang betul</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Rujukan pembayaran anda ialah</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Nombor rujukan</string>
 	<string name="gc.general.paymentProducts.705.name">Debit terus United Kingdom</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Nombor rujukan</string>
-	<string name="gc.general.paymentProducts.707.name">Debit terus Switzerland</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Rujukan pembayaran anda ialah</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Nombor rujukan</string>
 	<string name="gc.general.paymentProducts.715.name">Debit terus berulang United Kingdom</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Rujukan pembayaran anda ialah</string>
-	<string name="gc.general.paymentProducts.717.name">Debit terus berulang Switzerland</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">ID Pesanan</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Rujukan pembayaran anda ialah</string>
 	<string name="gc.general.paymentProducts.770.name">Debit terus SEPA</string>

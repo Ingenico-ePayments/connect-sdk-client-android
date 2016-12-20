@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Šķiet, nav savienojuma ar internetu. Pārbaudiet savienojumu un mēģiniet vēlreiz!</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">JĀ</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Interneta savienojuma kļūda</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Šobrīd nav pieejamu maksājuma produktu. </string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Nav pieejamu maksājuma produktu.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Jūs šim maksājumam esat pārsniedzis izdevumu limitu.  Lūdzu, izmēģiniet citu maksāšanas metodi vai mainiet pasūtījumu.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Mainīt pasūtījumu</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Izmēģiniet citu paņēmienu</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Pārsniegts izdevumu limits.</string>
+	<string name="gc.app.general.loading.body">Lūdzu, uzgaidiet...</string>
+	<string name="gc.app.general.loading.title">Notiek ielāde</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Mēs apstrādājam jūsu maksājumu. Lūdzu, uzgaidiet. Jūsu maksājuma apstrāde var ilgt vairākas sekundes.</string>
+	<string name="gc.app.general.paymentProcessing.title">Notiek jūsu maksājuma apstrāde. </string>
+	<string name="gc.app.general.securePaymentText">Drošs maksājums</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">vienumi</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">vienums</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Piegādes izmaksas</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Apakšsumma</string>
+	<string name="gc.app.general.shoppingCart.title">Jūsu pasūtījums</string>
+	<string name="gc.app.general.shoppingCart.total">Kopā</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Atcelt</string>
+	<string name="gc.app.paymentProductDetails.payButton">Maksāt</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Atcerēties manus datus turpmākiem pirkumiem</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Ja atzīmēsit šo lodziņu, jūsu maksājuma informācija tiks saglabāta turpmākiem pirkumiem. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Iepriekš izmantotie konti</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Atlasīt maksājuma produktu</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Citi maksājuma produkti</string>
+	<string name="gc.app.privacy.title">Konfidencialitātes politika</string>
+	<string name="gc.app.result.failed.bodyText">Nevarēja apstrādāt jūsu maksājumu. Lai turpinātu šo iegādes procesu, lūdzu, atlasiet citu maksāšanas paņēmienu.</string>
+	<string name="gc.app.result.failed.title">Jūsu maksājums neizdevās.</string>
+	<string name="gc.app.result.selectOther">Izmēģiniet citu paņēmienu</string>
+	<string name="gc.app.result.success.bodyText">Jūsu maksājums ir veiksmīgs. </string>
+	<string name="gc.app.result.success.title">Jūsu maksājuma statuss</string>
 	<string name="gc.general.cobrands.detected">Atpazītas vairākas maksāšanas iespējas</string>
 	<string name="gc.general.cobrands.fullText">Dažās kartēs ir izmantoti vairāki zīmoli, lai apstrādātu jūsu maksājumu. Jūs varat izvēlēties savu iecienītāko kartes zīmolu.</string>
 	<string name="gc.general.cobrands.introText">Šai kartei ir vairākas maksāšanas iespējas, lūdzu, izvēlieties savu iecienītāko iespēju.</string>
 	<string name="gc.general.cobrands.readmore">Ko nozīmē vairākas maksāšanas iespējas?</string>
 	<string name="gc.general.cobrands.selectbrand">Izvēlieties savu iecienītāko iespēju.</string>
 	<string name="gc.general.cobrands.toggleCobrands">Atpazītas vairākas maksāšanas iespējas</string>
+	<string name="gc.general.errors.clientDateTime">Lūdzu, pārliecinieties, ka ierīcē, kuru izmantojat šī maksājuma veikšanai, ir iestatīts pareizs datums un laiks.</string>
 	<string name="gc.general.errors.image.altText">Brīdinājums</string>
 	<string name="gc.general.errors.incorrectMerchantId">Radusies tehniska kļūme, kas mums neļauj jums parādīt pareizās norādes par jūsu maksājuma pabeigšanu: nepareizs tirgotāja ID. Lūdzu, mēģiniet izmantot citu maksāšanas veidu vai sazinieties ar uzņēmumu, no kura iegādājaties preci.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Mēģinot parādīt norādes par maksājuma pabeigšanu, radusies tehniska kļūme. Lūdzu, mēģiniet vēlreiz vai mēģiniet izmantot citu maksāšanas veidu.</string>
@@ -51,6 +90,7 @@
 	<string name="gc.general.paymentProductFields.city.placeholder">Pilsēta</string>
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipText">Lūdzu, ievadiet drošības kodu, kas parādīts attēlā</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">E-pasta adrese</string>
 	<string name="gc.general.paymentProductFields.emailAddress.placeholder">you@domain.com</string>
@@ -68,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Atlasīt savu banku</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Tālruņa numurs</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Tālruņa numurs</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Atcerēties manus datus turpmākiem pirkumiem</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Ja atzīmēsit šo lodziņu, jūsu maksājuma informācija tiks saglabāta turpmākiem pirkumiem.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Valsts kods</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Valsts kods</string>
 	<string name="gc.general.paymentProductFields.street.label">Iela</string>
@@ -80,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Lūdzu, norādiet derīgu e-pasta adresi</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Lūdzu, norādiet derīgu beigu datumu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Lūdzu, atlasiet kādu no vērtībām šajā sarakstā</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Lūdzu, norādiet derīgu kartes numuru</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Lūdzu, norādiet vērtību no {minLength} līdz {maxLength} zīmēm.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Lūdzu, norādiet vērtību ar tieši {maxLength} zīmēm.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Lūdzu, norādiet vērtību, kuras rakstzīmju skaits nepārsniedz {maxLength}</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Lūdzu, norādiet vērtību, kuras zīmju skaits nepārsniedz {maxLength}.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Lūdzu, norādiet derīgu kartes numuru</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Lūdzu, norādiet vērtību, kas atrodas robežās no {minValue} līdz {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Lūdzu, norādiet vērtību pareizā formātā</string>
@@ -146,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -171,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Jūsu maksājuma atsauce ir</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Atsauces numurs</string>
 	<string name="gc.general.paymentProducts.705.name">Tiešais debets Apvienotajā Karalistē</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Atsauces numurs</string>
-	<string name="gc.general.paymentProducts.707.name">Tiešais debets Šveicē</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Jūsu maksājuma atsauce ir</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Atsauces numurs</string>
 	<string name="gc.general.paymentProducts.715.name">Tiešais atkārtotais debets Apvienotajā Karalistē</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Jūsu maksājuma atsauce ir</string>
-	<string name="gc.general.paymentProducts.717.name">Tiešais atkārtotais debets Šveicē</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">Pasūtījuma ID</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Jūsu maksājuma atsauce ir</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA tiešais debets</string>
@@ -204,5 +244,4 @@
 	<string name="gc.general.paymentProducts.861.name">AliPay</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
 </resources>

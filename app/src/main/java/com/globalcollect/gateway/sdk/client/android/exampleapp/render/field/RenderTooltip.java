@@ -1,4 +1,6 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
+
+import android.content.Context;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.translation.Translator;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
+
 ;
 
 /** 
@@ -32,24 +35,37 @@ public class RenderTooltip implements RenderTooltipInterface {
 	@Override
 	public void renderTooltip(final String fieldId, BasicPaymentItem selectedPaymentProduct, final ViewGroup rowView) {
 		
-		
 		// Check if the translated tooltip text is in the translationsfile.
 		// If not, don't show the tooltip
 		Translator translator = new Translator(rowView.getContext());
 		final String tooltipText = translator.getPaymentProductFieldTooltipText(selectedPaymentProduct.getId(), fieldId);
 		final Integer drawableId = translator.getPaymentProductFieldTooltipImage(selectedPaymentProduct.getId(), fieldId);
-		
+
+		renderTooltip(fieldId, tooltipText, drawableId, rowView);
+	}
+	
+	public void renderRememberMeTooltip(Context context, final ViewGroup rowView) {
+
+		// Check if the translated tooltip text is in the translationsfile.
+		// If not, don't show the tooltip
+		final String tooltipText = context.getString(R.string.gc_app_paymentProductDetails_rememberMe_tooltip);
+
+		renderTooltip("rememberMe", tooltipText, null, rowView);
+	}
+
+	private void renderTooltip(final String fieldId, final String tooltipText, final Integer drawableId, final ViewGroup rowView) {
+
 		if (tooltipText != null && !tooltipText.isEmpty() && !Translator.isBadTranslationKey(tooltipText)) {
-			
+
 			// Add the questionmark tooltip image after the inputfield
 			ImageView tooltipImage = new ImageView(rowView.getContext());
 			tooltipImage.setBackgroundResource(R.drawable.ic_action_about);
 			tooltipImage.setClickable(true);
-			
+
 			// Set layoutparams and add it to parentView
 			LayoutParams tooltipLayoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 			tooltipLayoutParams.gravity = Gravity.CENTER_VERTICAL;
-			
+
 			// This is a renderfix for rendering after a checkbox.
 			for (int childCount = 0; childCount < rowView.getChildCount(); childCount++) {
 				View child = rowView.getChildAt(childCount);
@@ -60,15 +76,15 @@ public class RenderTooltip implements RenderTooltipInterface {
 
 			// Add a tag, so we can find the view
 			tooltipImage.setTag(fieldId);
-			
+
 			rowView.addView(tooltipImage, tooltipLayoutParams);
-			
+
 			// Add onClickListener for the tooltip image
 			tooltipImage.setOnClickListener(new View.OnClickListener() {
-				
+
 				@Override
 				public void onClick(View view) {
-					
+
 					// Check if the clicked tooltip is already showing it's text
 					// If so remove it, or else show it
 					View parentViewGroup = (ViewGroup)rowView.getParent();
@@ -82,9 +98,7 @@ public class RenderTooltip implements RenderTooltipInterface {
 			});
 		}
 	}
-	
-	
-	
+
 	/**
 	 * Removes the View tooltipTextView
 	 * @param tooltipTextView, the view to be removed

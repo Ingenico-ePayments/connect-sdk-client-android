@@ -15,7 +15,7 @@
         
     	<ImageView
     	    android:id="@+id/paymentProductLogo"
-	   	    android:layout_width="62dp"
+	   	    android:layout_width="75dp"
     	    android:layout_height="50dp"
     	    android:layout_marginLeft="15dp" 
     	    style="@style/listViewRowPaymentProductLogo" />

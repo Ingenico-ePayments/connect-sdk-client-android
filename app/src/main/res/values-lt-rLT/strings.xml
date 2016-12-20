@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Nėra ryšio su internetu. Prašome patikrinti ryšį ir bandyti kartą.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">Gerai</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Interneto ryšio klaida</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Nėra produktų mokėjimui šiuo metu.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Nėra produktų mokėjimui</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Viršijote išlaidų limitą, skirtą šiam mokėjimui. Pasirinkite kitą mokėjimo būdą arba pakeiskite užsakymą.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Keisti užsakymą</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Bandykite kitą metodą</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Viršytas išlaidų limitas</string>
+	<string name="gc.app.general.loading.body">Prašome palaukti...</string>
+	<string name="gc.app.general.loading.title">Įkeliama</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Apdorojame jūsų mokėjimą. Palaukite. Gali užtrukti keletą sekundžių, kol apdorosime jūsų mokėjimą. </string>
+	<string name="gc.app.general.paymentProcessing.title">Mes apdorojame jūsų užsakymą. </string>
+	<string name="gc.app.general.securePaymentText">Saugus mokėjimas</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">elementai</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">elementas</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Pristatymo kaina</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Tarpinė suma</string>
+	<string name="gc.app.general.shoppingCart.title">Jūsų užsakymas</string>
+	<string name="gc.app.general.shoppingCart.total">Iš viso:</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Atšaukti</string>
+	<string name="gc.app.paymentProductDetails.payButton">Mokėti</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Įsiminti mano duomenis kitiems pirkimams</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Jei pažymėsite šį langelį, jūsų mokėjimo informacija bus įrašyta kitiems pirkimams. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Prieš tai naudotos sąskaitos</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Pasirinkti mokėjimo produktą</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Kiti mokėjimo produktai</string>
+	<string name="gc.app.privacy.title">Privatumo politika</string>
+	<string name="gc.app.result.failed.bodyText">Mums nepavyko apdoroti jūsų užsakymo. Norėdami tęsti šį pirkimą, pasirinkite alternatyvų mokėjimo metodą.</string>
+	<string name="gc.app.result.failed.title">Jūsų mokėjimo atlikti nepavyko</string>
+	<string name="gc.app.result.selectOther">Bandykite kitą metodą</string>
+	<string name="gc.app.result.success.bodyText">Jūsų mokėjimas buvo atšauktas. </string>
+	<string name="gc.app.result.success.title">Jūsų mokėjimo būsena</string>
 	<string name="gc.general.cobrands.detected">Aptiktos kelios mokėjimo parinktys</string>
 	<string name="gc.general.cobrands.fullText">Kai kurios kortelės jūsų mokėjimams apdoroti pasitelkia keletą prekių ženklų. Galite pasirinkti norimą kortelės prekės ženklą</string>
 	<string name="gc.general.cobrands.introText">Šioje kortelėje yra keletas mokėjimo parinkčių, išsirinkite norimą parinktį.</string>
 	<string name="gc.general.cobrands.readmore">Kokios yra kelios mokėjimo parinktys?</string>
 	<string name="gc.general.cobrands.selectbrand">Pasirinkite norimą parinktį</string>
 	<string name="gc.general.cobrands.toggleCobrands">Aptiktos kelios mokėjimo parinktys</string>
+	<string name="gc.general.errors.clientDateTime">Kad galėtumėte atlikti šį mokėjimą, prašome patikrinti, ar naudojamo prietaiso data ir laikas yra nustatyti teisingai.</string>
 	<string name="gc.general.errors.image.altText">Įspėjimas</string>
 	<string name="gc.general.errors.incorrectMerchantId">Dėl įvykusios techninės klaidos negalėjome parodyti jums tinkamų instrukcijų, kaip baigti mokėjimą. Išbandykite kitą mokėjimo metodą arba susisiekite su įmone, iš kurios perkate.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Bandant parodyti instrukcijas, kaip baigti mokėjimą, įvyko techninė klaida. Bandykite mokėti iš naujo arba rinktis kitą mokėjimo metodą.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Pasirinkti savo banką</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefono numeris</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefono numeris</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Įsiminti mano duomenis kitiems pirkimams</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Jei pažymėsite šį langelį, jūsų mokėjimo informacija bus įrašyta kitiems pirkimams.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Valstijos kodas</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Valstijos kodas</string>
 	<string name="gc.general.paymentProductFields.street.label">Gatvė</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Nurodykite galiojantį el. pašto adresą</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Nurodykite tinkamą galiojimo datą</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Pasirinkite vieną iš sąrašo verčių</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Nurodykite galiojantį kortelės numerį</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Nurodykite vertę tarp {minLength} ir {maxLength} simbolių</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Nurodykite tikslią {maxLength} simbolių vertę</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Pasirinkite vertę, sudarytą daugiausiai iš {maxLength} ženklų</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Nurodykite maksimalią {maxLength} simbolių vertę</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Nurodykite galiojantį kortelės numerį</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Nurodykite vertę nuo {minValue} iki {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Nurodykite tinkamo formato vertę</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Jūsų mokėjimo nuoroda yra</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Nuorodos numeris</string>
 	<string name="gc.general.paymentProducts.705.name">Tiesioginis debetas Jungtinė Karalystė</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Nuorodos numeris</string>
-	<string name="gc.general.paymentProducts.707.name">Tiesioginis debitas Šveicarija</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Jūsų mokėjimo nuoroda yra</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Nuorodos numeris</string>
 	<string name="gc.general.paymentProducts.715.name">Periodinis tiesioginis debetas Jungtinė Karalystė</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Jūsų mokėjimo nuoroda yra</string>
-	<string name="gc.general.paymentProducts.717.name">Periodinis tiesioginis debitas Šveicarija</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">Užsakymo kodas</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Jūsų mokėjimo nuoroda yra</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA tiesioginis debetas</string>

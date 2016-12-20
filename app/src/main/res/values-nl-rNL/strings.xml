@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Het lijkt erop dat er geen verbinding is met het internet. Controleer de verbinding en probeer het nogmaals.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">Oké</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Fout internetverbinding</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Op dit moment zijn er geen betaalproducten beschikbaar.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Geen betaalproducten beschikbaar</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">U hebt de uitgavelimiet voor deze betaling overschreden. Probeer een andere betalingsmethode of wijzig uw bestelling.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Wijzig bestelling</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Probeer een andere methode</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Uitgavelimiet overschreden</string>
+	<string name="gc.app.general.loading.body">Even geduld a.u.b...</string>
+	<string name="gc.app.general.loading.title">Aan het laden</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Uw betaling wordt verwerkt. Een ogenblik geduld. Het verwerken van uw betaling kan enkele seconden duren. </string>
+	<string name="gc.app.general.paymentProcessing.title">Wij verwerken uw betaling. </string>
+	<string name="gc.app.general.securePaymentText">Veilige betaling</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">items</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">item</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Verzendkosten</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Subtotaal</string>
+	<string name="gc.app.general.shoppingCart.title">Uw opdracht</string>
+	<string name="gc.app.general.shoppingCart.total">Totaal</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Annuleren</string>
+	<string name="gc.app.paymentProductDetails.payButton">Betalen</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Onthoud mijn gegevens voor toekomstige aankopen</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Als u dit vakje aanvinkt, wordt uw betaalinformatie opgeslagen voor toekomstige aankopen. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Eerder gebruikte rekeningen</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Selecteer betalingsproduct</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Andere betalingsproducten</string>
+	<string name="gc.app.privacy.title">Privacy beleid</string>
+	<string name="gc.app.result.failed.bodyText">Wij hebben uw betaling niet kunnen verwerken. Selecteer een andere betaalwijze om door te gaan met deze aankoop.</string>
+	<string name="gc.app.result.failed.title">Uw betaling is mislukt</string>
+	<string name="gc.app.result.selectOther">Probeer een andere methode</string>
+	<string name="gc.app.result.success.bodyText">Uw betaling is gelukt. </string>
+	<string name="gc.app.result.success.title">Uw betalingsstatus</string>
 	<string name="gc.general.cobrands.detected">Meerdere betaalopties gedetecteerd</string>
 	<string name="gc.general.cobrands.fullText">Bij sommige kaarten worden meerdere merken gebruikt voor het verwerken van uw betaling. U kunt het kaartmerk van uw voorkeur selecteren</string>
 	<string name="gc.general.cobrands.introText">Er bestaan meerdere betaalopties voor deze kaart. Selecteer de gewenste optie.</string>
 	<string name="gc.general.cobrands.readmore">Wat zijn meerdere betaalopties?</string>
 	<string name="gc.general.cobrands.selectbrand">Selecteer de gewenste optie</string>
 	<string name="gc.general.cobrands.toggleCobrands">Meerdere betaalopties gedetecteerd</string>
+	<string name="gc.general.errors.clientDateTime">Controleer of de tijd en datum van het apparaat waarmee u deze betaling doet goed zijn ingesteld.</string>
 	<string name="gc.general.errors.image.altText">Waarschuwing</string>
 	<string name="gc.general.errors.incorrectMerchantId">We kunnen de juiste instructies voor het afronden van uw betaling niet weergeven vanwege een technische fout: een onjuiste handelaars-id. Probeer een andere betaalmethode of neem contact op met het bedrijf waarbij u deze aankoop probeert te doen.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Er is een technische fout opgetreden bij het weergeven van de instructies voor het afronden van uw betaling. Probeer het opnieuw of probeer een andere betaalmethode.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Selecteer uw bank</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefoonnummer</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefoonnummer</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Onthoud mijn gegevens voor toekomstige aankopen</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Als u dit vakje aanvinkt, wordt uw betaalinformatie opgeslagen voor toekomstige aankopen.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Code staat</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Code staat</string>
 	<string name="gc.general.paymentProductFields.street.label">Straat</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Voer een geldig e-mailadres in a.u.b.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Voer een geldige vervaldatum in a.u.b.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Selecteer een van de waarden uit de lijst a.u.b.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Voer een geldig kaartnummer in a.u.b.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vul een waarde in tussen de {minLength} en {maxLength} karakters</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Vul een waarde in van precies {maxLength} karakters</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Voer een waarde van maximaal {maxLength} tekens in</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Vul een waarde in van maximaal {maxLength} karakters</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Voer een geldig kaartnummer in a.u.b.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Voer een waarde in tussen {minValue} en {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Voer een waarde met het juiste formaat in a.u.b.</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Uw betalingsreferentie is</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Referentienummer</string>
 	<string name="gc.general.paymentProducts.705.name">Automatische incasso Verenigd Koninkrijk</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Referentienummer</string>
-	<string name="gc.general.paymentProducts.707.name">Automatische incasso Zwitserland</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Uw betalingsreferentie is</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Referentienummer</string>
 	<string name="gc.general.paymentProducts.715.name">Doorlopende Automatische incasso Verenigd Koninkrijk</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Uw betalingsreferentie is</string>
-	<string name="gc.general.paymentProducts.717.name">Doorlopende automatische incasso Zwitserland</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">ID bestelling</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Uw betalingsreferentie is</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA direct debit</string>

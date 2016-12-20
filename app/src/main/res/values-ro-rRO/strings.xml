@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Se pare că nu există conexiune la internet; vă rugăm să verificați și să încercați din nou.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Eroare conexiune internet</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Momentan nu există produse de plată disponibile.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Nu există produse de plată disponibile</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Ați depășit limita de cheltuieli pentru această plată. Vă rugăm să încercați o nouă metodă de plată sau să schimbați comanda.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Schimbare comandă</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Încercaţi altă metodă</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Limită de cheltuieli depășită</string>
+	<string name="gc.app.general.loading.body">Vă rugăm așteptați...</string>
+	<string name="gc.app.general.loading.title">Se încarcă</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Plata dvs. este în procesare. Vă rugăm aşteptaţi. Procesarea plăţii poate dura mai multe secunde.</string>
+	<string name="gc.app.general.paymentProcessing.title">Procesăm plata dvs. </string>
+	<string name="gc.app.general.securePaymentText">Plată securizată</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">articole</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">articol</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Costuri de livrare</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Subtotal</string>
+	<string name="gc.app.general.shoppingCart.title">Comanda dvs.</string>
+	<string name="gc.app.general.shoppingCart.total">Total</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Anulare</string>
+	<string name="gc.app.paymentProductDetails.payButton">Plătiţi</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Doresc memorarea detaliilor mele pentru achiziţii viitoare</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Dacă bifaţi această casetă, informaţiile dvs. de plată vor fi memorate pentru achiziţii viitoare. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Conturi utilizate anterior</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Selectaţi produsul de plată</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Alte produse de plată</string>
+	<string name="gc.app.privacy.title">Politica de confidenţialitate</string>
+	<string name="gc.app.result.failed.bodyText">Nu am putut procesa plata dvs. Pentru a continua această achiziţie, selectaţi o metodă de plată alternativă.</string>
+	<string name="gc.app.result.failed.title">Plata dvs. nu a reuşit</string>
+	<string name="gc.app.result.selectOther">Încercaţi altă metodă</string>
+	<string name="gc.app.result.success.bodyText">Plata dvs. a fost efectuată cu succes. </string>
+	<string name="gc.app.result.success.title">Starea plăţii dvs.</string>
 	<string name="gc.general.cobrands.detected">Am detectat mai multe opţiuni de plată</string>
 	<string name="gc.general.cobrands.fullText">Unele carduri utilizează mai multe mărci de card pentru procesarea plăţii. Puteţi alege marca de card preferată</string>
 	<string name="gc.general.cobrands.introText">Acest card dispune de mai multe opţiuni de plată, vă rugăm să alegeţi opţiunea preferată.</string>
 	<string name="gc.general.cobrands.readmore">Ce înseamnă mai multe opţiuni de plată?</string>
 	<string name="gc.general.cobrands.selectbrand">Selectaţi opţiunea preferată</string>
 	<string name="gc.general.cobrands.toggleCobrands">Am detectat mai multe opţiuni de plată</string>
+	<string name="gc.general.errors.clientDateTime">Vă rugăm să confirmați dacă data și ora dispozitivului pe care îl folosiți pentru a face această plată sunt confgurate corect.</string>
 	<string name="gc.general.errors.image.altText">Avertisment</string>
 	<string name="gc.general.errors.incorrectMerchantId">A intervenit o eroare tehnică care ne împiedică să vă arătăm instrucţiunile corecte pentru finalizarea plăţii: identificator de comerciant incorect. Vă rugăm să  încercaţi un alt mod de plată, sau luaţi legătura cu compania de la care cumpăraţi.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">A intervenit o eroare tehnică în timp ce încercam să vă arătăm instrucţiunile pentru finalizarea plăţii. Vă rugăm să încercaţi din nou, sau încercaţi un alt mod de plată.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Selectaţi banca</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Număr de telefon</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Număr de telefon</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Doresc memorarea detaliilor mele pentru achiziţii viitoare</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Dacă bifaţi această casetă, informaţiile dvs. de plată vor fi memorate pentru achiziţii viitoare.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Cod judeţ</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Cod judeţ</string>
 	<string name="gc.general.paymentProductFields.street.label">Strada</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Furnizaţi o adresă de e-mail validă</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Furnizaţi o dată de expirare validă</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Selectaţi una din valorile din listă</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Furnizaţi un număr de card valid</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vă rugăm să ne oferiți o valoare între {minLength} și {maxLength} caractere</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Vă rugăm să ne oferiți o valoare de exact {maxLength} caractere</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Furnizaţi o valoare din maxim {maxLength} caractere</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Vă rugăm să ne oferiți o valoare de maximum {maxLength} caractere</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Furnizaţi un număr de card valid</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Furnizaţi o valoare între {minValue} şi {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Furnizaţi o valoare în format corect</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Referinţa plăţii dvs. este</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Număr de referinţă</string>
 	<string name="gc.general.paymentProducts.705.name">Debit direct Marea Britanie</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Număr de referinţă</string>
-	<string name="gc.general.paymentProducts.707.name">Debit direct Elveţia</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Referinţa plăţii dvs. este</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Număr de referinţă</string>
 	<string name="gc.general.paymentProducts.715.name">Debit direct recurent Marea Britanie</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Referinţa plăţii dvs. este</string>
-	<string name="gc.general.paymentProducts.717.name">Debit direct recurent Elveţia</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">ID comandă</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Referinţa plăţii dvs. este</string>
 	<string name="gc.general.paymentProducts.770.name">Debit direct SEPA</string>

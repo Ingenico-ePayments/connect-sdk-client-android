@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Det verkar inte finnas någon internetuppkoppling. Kontrollera detta och försök på nytt.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Fel på internetuppkoppling</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Just nu finns det inte några betalningsprodukter tillgängliga.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Inga betalningsprodukter tillgängliga</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Du har överskridit utgiftsgränsen för denna betalning. Försök med en annan betalningsmetod eller ändra din beställning.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Ändra beställning</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Försök med en annan metod</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Utgiftsgräns överskriden</string>
+	<string name="gc.app.general.loading.body">Vänta...</string>
+	<string name="gc.app.general.loading.title">Laddar</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Vi bearbetar din betalning. Vänta. Det kan ta flera sekunder att bearbeta din betalning.</string>
+	<string name="gc.app.general.paymentProcessing.title">Vi bearbetar din betalning. </string>
+	<string name="gc.app.general.securePaymentText">Säker betalning</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">artiklar</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">artikel</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Fraktkostnad</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Delsumma</string>
+	<string name="gc.app.general.shoppingCart.title">Din beställning</string>
+	<string name="gc.app.general.shoppingCart.total">Summa</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Avbryt</string>
+	<string name="gc.app.paymentProductDetails.payButton">Betala</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Kom ihåg mina uppgifter för framtida köp</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Om du markerar denna ruta kommer din betalningsinformation att sparas för framtida köp. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Tidigare använda konton</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Välj betalprodukt</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Andra betalprodukter</string>
+	<string name="gc.app.privacy.title">Integritetspolicy</string>
+	<string name="gc.app.result.failed.bodyText">Vi har inte kunnat behandla din betalning. För att fortsätta med köpet, välj en alternativ betalningsmetod.</string>
+	<string name="gc.app.result.failed.title">Din betalning misslyckades</string>
+	<string name="gc.app.result.selectOther">Försök med en annan metod</string>
+	<string name="gc.app.result.success.bodyText">Din betalning har utförts. </string>
+	<string name="gc.app.result.success.title">Din betalningsstatus</string>
 	<string name="gc.general.cobrands.detected">Flera betalningsalternativ har upptäckts</string>
 	<string name="gc.general.cobrands.fullText">Vissa kort använder flera varumärken för att bearbeta din betalning. Du kan välja önskat kortvarumärke</string>
 	<string name="gc.general.cobrands.introText">Detta kort har flera betalningsalternativ, välj önskat alternativ.</string>
 	<string name="gc.general.cobrands.readmore">Vad innebär flera betalningsalternativ?</string>
 	<string name="gc.general.cobrands.selectbrand">Välj önskat alternativ</string>
 	<string name="gc.general.cobrands.toggleCobrands">Flera betalningsalternativ har upptäckts</string>
+	<string name="gc.general.errors.clientDateTime">Verifiera huruvida datum och tid på enheten som du använder för denna betalning är korrekt inställda.</string>
 	<string name="gc.general.errors.image.altText">Varning</string>
 	<string name="gc.general.errors.incorrectMerchantId">Ett tekniskt fel uppstod vilket förhindrade oss från att visa dig rätt instruktioner för att slutföra din betalning: en felaktig Handlar-ID. Välj en annan betalningsmetod eller kontakta företaget du köper från.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Ett tekniskt fel uppstod när vi försökte visa instruktionerna för att slutföra din betalning. Försök igen eller välj en annan betalningsmetod.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Välj din bank</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefonnummer</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefonnummer</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Kom ihåg mina uppgifter för framtida köp</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Om du markerar denna ruta kommer din betalningsinformation att sparas för framtida köp.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Delstatskod</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Delstatskod</string>
 	<string name="gc.general.paymentProductFields.street.label">Gata</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Ange en giltig e-postadress</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Ange ett giltig förfallodatum</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Välj ett av värdena från listan</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Ange ett giltig kortnummer</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Ange ett värde med mellan {minLength} och {maxLength} tecken</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Ange ett värde med exakt {maxLength} tecken</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Ange ett värde med maximalt {maxLength} tecken</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Ange ett värde med högst {maxLength} tecken</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Ange ett giltig kortnummer</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Ange ett värde mellan {minValue} och {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Ange ett värde med korrekt format</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Din betalningsreferens är</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Referensnummer</string>
 	<string name="gc.general.paymentProducts.705.name">Autogiro Storbritannien</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Referensnummer</string>
-	<string name="gc.general.paymentProducts.707.name">Autogiro Schweiz</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Din betalningsreferens är</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Referensnummer</string>
 	<string name="gc.general.paymentProducts.715.name">Återkommande autogiro Storbritannien</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Din betalningsreferens är</string>
-	<string name="gc.general.paymentProducts.717.name">Återkommande autogiro Schweiz</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">Beställnings-ID</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Din betalningsreferens är</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA autogiro</string>

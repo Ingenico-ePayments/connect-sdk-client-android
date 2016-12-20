@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Φαίνεται ότι δεν υπάρχει σύνδεση στο internet. Ελέγξτε την και προσπαθήστε ξανά.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">ΟΚ</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Σφάλμα σύνδεσης στο internet</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Αυτή τη στιγμή δεν υπάρχουν διαθέσιμες επιλογές πληρωμής.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Δεν υπάρχουν διαθέσιμες επιλογές πληρωμής</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Έχετε υπερβεί το όριο δαπανών για αυτή την πληρωμή. Δοκιμάστε άλλον τρόπο πληρωμής ή αλλάξτε την παραγγελία σας.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Αλλαγή παραγγελίας</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Δοκιμάστε άλλον τρόπο</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Υπέρβαση ορίου δαπανών</string>
+	<string name="gc.app.general.loading.body">Περιμένετε...</string>
+	<string name="gc.app.general.loading.title">Γίνεται φόρτωση</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Επεξεργαζόμαστε την πληρωμή σας. Παρακαλούμε περιμένετε. Μπορεί να χρειαστούν μερικά δευτερόλεπτα για την επεξεργασία της πληρωμής σας. </string>
+	<string name="gc.app.general.paymentProcessing.title">Επεξεργαζόμαστε την πληρωμή σας. </string>
+	<string name="gc.app.general.securePaymentText">Ασφαλής πληρωμή</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">είδη</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">είδος</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Έξοδα αποστολής</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Υποσύνολο</string>
+	<string name="gc.app.general.shoppingCart.title">Η παραγγελία σας</string>
+	<string name="gc.app.general.shoppingCart.total">Σύνολο</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Ακύρωση</string>
+	<string name="gc.app.paymentProductDetails.payButton">Πληρώστε</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Απομνημόνευση των στοιχείων μου για μελλοντικές αγορές</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Εάν σημειώσετε αυτό το πλαίσιο, οι πληροφορίες πληρωμής σας θα αποθηκευτούν για μελλοντικές αγορές. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Παλαιότερα χρησιμοποιημένοι λογαριασμοί</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Επιλογή προϊόντος πληρωμής</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Άλλα προϊόντα πληρωμής</string>
+	<string name="gc.app.privacy.title">Πολιτική απορρήτου</string>
+	<string name="gc.app.result.failed.bodyText">Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας. Για να συνεχίσετε με αυτήν την αγορά, επιλέξτε εναλλακτικό τρόπο πληρωμής.</string>
+	<string name="gc.app.result.failed.title">Η πληρωμή σας απέτυχε</string>
+	<string name="gc.app.result.selectOther">Δοκιμάστε άλλον τρόπο</string>
+	<string name="gc.app.result.success.bodyText">Η πληρωμή σας ολοκληρώθηκε με επιτυχία. </string>
+	<string name="gc.app.result.success.title">Η κατάσταση πληρωμής σας</string>
 	<string name="gc.general.cobrands.detected">Εντοπίστηκαν πολλαπλές δυνατότητες πληρωμής</string>
 	<string name="gc.general.cobrands.fullText">Για ορισμένες κάρτες παρέχονται πολλαπλές υπηρεσίες επεξεργασίας της πληρωμής σας. Μπορείτε να επιλέξετε την υπηρεσία που προτιμάτε</string>
 	<string name="gc.general.cobrands.introText">Αυτή η κάρτα έχει πολλαπλές δυνατότητες πληρωμής. Επιλέξτε τη δυνατότητα πληρωμής που προτιμάτε.</string>
 	<string name="gc.general.cobrands.readmore">Τι είναι οι πολλαπλές δυνατότητες πληρωμής;</string>
 	<string name="gc.general.cobrands.selectbrand">Επιλέξτε τη δυνατότητα πληρωμής που προτιμάτε</string>
 	<string name="gc.general.cobrands.toggleCobrands">Εντοπίστηκαν πολλαπλές δυνατότητες πληρωμής</string>
+	<string name="gc.general.errors.clientDateTime">Επιβεβαιώστε ότι η ημερομηνία και η ώρα της συσκευής που χρησιμοποιείτε για αυτή την πληρωμή έχουν ρυθμιστεί σωστά.</string>
 	<string name="gc.general.errors.image.altText">Προειδοποίηση</string>
 	<string name="gc.general.errors.incorrectMerchantId">Παρουσιάστηκε τεχνικό σφάλμα που μας εμποδίζει να σας δείξουμε τις οδηγίες ολοκλήρωσης της πληρωμής σας: λανθασμένο αναγνωριστικό εμπόρου. Επιλέξτε άλλον τρόπο πληρωμής ή επικοινωνήστε με την εταιρεία από όπου κάνετε την αγορά.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Παρουσιάστηκε τεχνικό σφάλμα καθώς προσπαθούσαμε να σας δείξουμε τις οδηγίες ολοκλήρωσης της πληρωμής σας. Προσπαθήστε ξανά ή επιλέξτε άλλον τρόπο πληρωμής.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Επιλέξτε τράπεζα</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Αριθμός τηλεφώνου</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Αριθμός τηλεφώνου</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Απομνημόνευση των στοιχείων μου για μελλοντικές αγορές</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Εάν σημειώσετε αυτό το πλαίσιο, οι πληροφορίες πληρωμής σας θα αποθηκευτούν για μελλοντικές αγορές.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Κωδικός πολιτείας</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Κωδικός πολιτείας</string>
 	<string name="gc.general.paymentProductFields.street.label">Οδός</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Συμπληρώστε μια έγκυρη διεύθυνση email</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Συμπληρώστε μια έγκυρη ημερομηνία λήξης</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Επιλέξτε μία από τις τιμές της λίστας</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Συμπληρώστε έναν έγκυρο αριθμό κάρτας</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Δώστε μια τιμή μεταξύ {minLength} και {maxLength} χαρακτήρων</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Δώστε μια τιμή ακριβώς {maxLength} χαρακτήρων</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Συμπληρώστε μια τιμή με {maxLength} χαρακτήρες το ανώτατο</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Δώστε μια τιμή έως {maxLength} χαρακτήρων</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Συμπληρώστε έναν έγκυρο αριθμό κάρτας</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Συμπληρώστε μια τιμή μεταξύ {minValue} και {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Συμπληρώστε μια τιμή με τη σωστή μορφή</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Ο αριθμός πληρωμής σας είναι</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Αριθμός αναφοράς</string>
 	<string name="gc.general.paymentProducts.705.name">Πάγια εντολή, Ηνωμένο Βασίλειο</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Αριθμός αναφοράς</string>
-	<string name="gc.general.paymentProducts.707.name">Πάγια εντολή, Ελβετία</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Ο αριθμός πληρωμής σας είναι</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Αριθμός αναφοράς</string>
 	<string name="gc.general.paymentProducts.715.name">Επαναλαμβανόμενη πάγια εντολή, Ηνωμένο Βασίλειο</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Ο αριθμός πληρωμής σας είναι</string>
-	<string name="gc.general.paymentProducts.717.name">Επαναλαμβανόμενη πάγια εντολή, Ελβετία</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">Αναγνωριστικό παραγγελίας</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Ο αριθμός πληρωμής σας είναι</string>
 	<string name="gc.general.paymentProducts.770.name">Πάγια εντολή SEPA</string>

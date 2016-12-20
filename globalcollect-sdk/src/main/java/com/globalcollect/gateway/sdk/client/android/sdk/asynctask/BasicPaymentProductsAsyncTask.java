@@ -8,8 +8,11 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
+import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 /**
  * AsyncTask which loads all BasicPaymentProducts from the GC Gateway
@@ -18,7 +21,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.Bas
  *
  */
 public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, BasicPaymentProducts> implements Callable<BasicPaymentProducts> {
-	
+
 	// The listener which will be called by the AsyncTask when the BasicPaymentProducts are loaded
 	private List<OnBasicPaymentProductsCallCompleteListener> listeners;
 	
@@ -31,11 +34,10 @@ public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, Basic
 	// Communicator which does the communication to the GC gateway
 	private C2sCommunicator communicator;
 
-
 	/**
 	 * Constructor
 	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param paymentContext, request which contains all neccesary data for doing call to the GC gateway to get paymentproducts
+	 * @param paymentContext, request which contains all necessary data for doing call to the GC gateway to get paymentproducts
 	 * @param communicator, Communicator which does the communication to the GC gateway
 	 * @param listeners, list of listeners which will be called by the AsyncTask when the BasicPaymentProducts are loaded
 	 */
@@ -60,14 +62,12 @@ public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, Basic
 		this.listeners = listeners;
 	}
 
-
     @Override
     protected BasicPaymentProducts doInBackground(String... params) {
 
     	return getBasicPaymentProductsInBackground();
     }
 
-    
     @Override
     protected void onPostExecute(BasicPaymentProducts basicPaymentProducts) {
     	if (listeners != null) {
@@ -78,7 +78,6 @@ public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, Basic
 		}
     }
 
-
 	@Override
 	public BasicPaymentProducts call() throws Exception {
 
@@ -87,9 +86,40 @@ public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, Basic
 	}
 
 	private BasicPaymentProducts getBasicPaymentProductsInBackground() {
-		return communicator.getBasicPaymentProducts(paymentContext, context);
+		BasicPaymentProducts basicPaymentProducts = communicator.getBasicPaymentProducts(paymentContext, context);
+
+		if (basicPaymentProducts != null && basicPaymentProducts.getBasicPaymentProducts() != null) {
+
+			// Filter Apple pay
+			removePaymentProduct(basicPaymentProducts, Constants.PAYMENTPRODUCTID_APPLEPAY);
+
+			if (containsPaymentProduct(basicPaymentProducts, Constants.PAYMENTPRODUCTID_ANDROIDPAY)) {
+				if (!AndroidPayUtil.isAndroidPayAllowed(context, paymentContext, communicator)) {
+					removePaymentProduct(basicPaymentProducts, Constants.PAYMENTPRODUCTID_ANDROIDPAY);
+				}
+			}
+
+		}
+		return basicPaymentProducts;
 	}
 
+	private void removePaymentProduct(BasicPaymentProducts basicPaymentProducts, String paymentProductId) {
+		for (BasicPaymentProduct paymentProduct: basicPaymentProducts.getBasicPaymentProducts()) {
+			if (paymentProduct.getId().equals(paymentProductId)) {
+				basicPaymentProducts.getBasicPaymentProducts().remove(paymentProduct);
+				break;
+			}
+		}
+	}
+
+	private boolean containsPaymentProduct(BasicPaymentProducts basicPaymentProducts, String paymentProductId) {
+		for (BasicPaymentProduct paymentProduct: basicPaymentProducts.getBasicPaymentProducts()) {
+			if (paymentProduct.getId().equals(paymentProductId)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	/**
      * Interface for OnBasicPaymentProductsCallComplete listener

@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">İnternet bağlantısı yok gibi gözüküyor, lütfen bu durumu kontrol edin ve tekrar deneyin.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">Tamam</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">İnternet bağlantı hatası</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Şu anda ödeme yapılabilecek ürün mevcut değil.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Ödeme yapılabilecek ürün mevcut değil</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Bu ödeme için harcama limitini aştınız. Lütfen başka bir ödeme yöntemi deneyin veya siparişinizi değiştirin.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Siparişi değiştir</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Başka bir yöntem dene</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Harcama limiti aşıldı</string>
+	<string name="gc.app.general.loading.body">Lütfen bekleyin...</string>
+	<string name="gc.app.general.loading.title">Yüklüyor</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Ödemenizi işleme alıyoruz. Lütfen bekleyin. Ödemenizi işleme almak birkaç saniye sürebilir. </string>
+	<string name="gc.app.general.paymentProcessing.title">Ödemenizi işlemlerinizi gerçekleştiriyoruz. </string>
+	<string name="gc.app.general.securePaymentText">Güvenli ödeme</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">ürün</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">ürün</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Kargo masrafı</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Alt toplam</string>
+	<string name="gc.app.general.shoppingCart.title">Siparişiniz</string>
+	<string name="gc.app.general.shoppingCart.total">Toplam</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">İptal</string>
+	<string name="gc.app.paymentProductDetails.payButton">Öde</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Sonraki alışverişlerimde bilgilerimi hatırla</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Bu kutuyu işaretlerseniz, ödeme bilgileriniz sonraki alışverişlerinizde kullanılmak üzere saklanacaktır. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Önceden kullanılan hesaplar</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Ödeme ürününü seçin</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Diğer ödeme ürünleri</string>
+	<string name="gc.app.privacy.title">Gizlilik ilkesi</string>
+	<string name="gc.app.result.failed.bodyText">Ödeme işlemlerinizi gerçekleştiremedik. Bu alışverişe devam etmek için lütfen başka bir ödeme yöntemi seçin.</string>
+	<string name="gc.app.result.failed.title">Ödemeniz başarısız oldu</string>
+	<string name="gc.app.result.selectOther">Başka bir yöntem dene</string>
+	<string name="gc.app.result.success.bodyText">Ödemeniz başarıyla tamamlandı. </string>
+	<string name="gc.app.result.success.title">Ödeme durumunuz</string>
 	<string name="gc.general.cobrands.detected">Birden çok ödeme seçeneği tespit edildi</string>
 	<string name="gc.general.cobrands.fullText">Bazı kartlar ödemenizi işleme almak için birden çok marka kullanır. Tercih ettiğiniz kart markasını seçebilirsiniz</string>
 	<string name="gc.general.cobrands.introText">Bu kart birden çok ödeme seçeneğine sahip, lütfen tercih ettiğiniz seçeneği seçin.</string>
 	<string name="gc.general.cobrands.readmore">Birden çok ödeme seçeneği ne anlama geliyor?</string>
 	<string name="gc.general.cobrands.selectbrand">Tercih ettiğiniz seçeneği seçin</string>
 	<string name="gc.general.cobrands.toggleCobrands">Birden çok ödeme seçeneği tespit edildi</string>
+	<string name="gc.general.errors.clientDateTime">Lütfen bu ödemeyi yapmak için kullandığınız cihazın tarihi ve saatinin doğru ayarlandığını onaylayın.</string>
 	<string name="gc.general.errors.image.altText">Uyarı</string>
 	<string name="gc.general.errors.incorrectMerchantId">Ödemenizi sonlandırmaya ilişkin talimatları size göstermemizi engelleyen teknik bir hata meydana geldi: yanlış Satıcı kimliği. Lütfen başka bir ödeme yöntemi deneyin veya satın aldığınız firma ile iletişime geçin.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Ödemenizi sonlandırmaya ilişkin talimatları göstermeye çalışırken teknik bir hata meydana geldi. Lütfen tekrar deneyin veya başka bir ödeme şekli kullanın.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Bankanızı seçin</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefon numarası</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefon numarası</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Sonraki alışverişlerimde bilgilerimi hatırla</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Bu kutuyu işaretlerseniz, ödeme bilgileriniz sonraki alışverişlerinizde kullanılmak üzere saklanacaktır.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Eyalet kodu</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Eyalet kodu</string>
 	<string name="gc.general.paymentProductFields.street.label">Cadde</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Lütfen geçerli bir e-posta adresi girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Lütfen geçerli bir son kullanma tarihi girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Lütfen listedeki değerlerden birini seçin</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Lütfen geçerli bir kart numarası girin</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Lütfen {minLength} ve {maxLength} karakter arasında bir değer girin</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Lütfen tam olarak {maxLength} karakter girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Lütfen en fazla {maxLength} karakterden oluşan bir değer girin</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Lütfen maksimum {maxLength} karakter girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Lütfen geçerli bir kart numarası girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Lütfen {minValue} ile {maxValue} arasında bir değer girin </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Lütfen girdiğiniz değerin doğru formatta olmasına dikkat edin</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Ödeme referansınız</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Referans numarası</string>
 	<string name="gc.general.paymentProducts.705.name">Birleşik Krallık için hesaptan doğrudan ödeme</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Referans numarası</string>
-	<string name="gc.general.paymentProducts.707.name">İsviçre için hesaptan doğrudan ödeme</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Ödeme referansınız</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Referans numarası</string>
 	<string name="gc.general.paymentProducts.715.name">Birleşik Krallık için hesaptan doğrudan tekrarlı ödeme</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Ödeme referansınız</string>
-	<string name="gc.general.paymentProducts.717.name">İsviçre için hesaptan doğrudan tekrarlı ödeme</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">Sipariş tanımlama kodu</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Ödeme referansınız</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA hesaptan doğrudan ödeme</string>

@@ -43,7 +43,7 @@
 						android:layout_width="match_parent"
 						android:layout_height="wrap_content"
 						android:layout_weight="1"
-						android:text="@string/gc.page.paymentProductDetails.rememberMe"
+						android:text="@string/gc.app.paymentProductDetails.rememberMe"
 						style="@style/RememberMeCheckbox" />
 					
 				</LinearLayout>
@@ -63,7 +63,7 @@
 				    android:layout_weight="1"
 				  
 				    android:onClick="submitInputFields"
-				    android:text="@string/gc.page.paymentProductDetails.payButton" />
+				    android:text="@string/gc.app.paymentProductDetails.payButton" />
 		        
 			    <Button
 				    android:id="@+id/cancelText"
@@ -73,7 +73,7 @@
 			    	android:layout_weight="1"
 			    	
 			    	android:onClick="backToPaymentProductScreen"
-			    	android:text="@string/gc.page.paymentProductDetails.cancelButton" />
+			    	android:text="@string/gc.app.paymentProductDetails.cancelButton" />
 	
 			</LinearLayout>
 

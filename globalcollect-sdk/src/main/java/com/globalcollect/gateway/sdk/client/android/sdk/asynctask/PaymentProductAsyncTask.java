@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
+import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 
@@ -67,15 +68,20 @@ public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProd
 		this.communicator = communicator;
 		this.listeners = listeners;
 	}
-    
 
     @Override
     protected PaymentProduct doInBackground(String... params) {
-    	
-    	// Load the PaymentProduct from the GC gateway
-    	PaymentProduct result = communicator.getPaymentProduct(productId, context, paymentContext);
-    	
-    	return result;
+
+		if (productId.equals(Constants.PAYMENTPRODUCTID_APPLEPAY)
+				|| ((productId.equals(Constants.PAYMENTPRODUCTID_ANDROIDPAY) && !AndroidPayUtil.isAndroidPayAllowed(context, paymentContext, communicator)))) {
+
+			// Android Pay is not allowed for the current payment, so the payment product should not be retrieved.
+			return null;
+		} else {
+
+			// Load the PaymentProduct from the GC gateway
+			return communicator.getPaymentProduct(productId, context, paymentContext);
+		}
     }
 
     

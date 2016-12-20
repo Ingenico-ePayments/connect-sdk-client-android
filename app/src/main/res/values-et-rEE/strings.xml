@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Tundub, et internetiühendus puudub, seega palun kontrollige seda ja proovige uuesti.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Internetiühenduse viga</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Maksetooteid pole seekord saadaval.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Maksetooteid pole saadaval</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Olete ületanud oma limiidi selle makse jaoks. Palun proovige teis maksevahendit või muutke oma tellimust.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Muuda tellimust</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Proovige teist makseviisi</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Makselimiit ületatud</string>
+	<string name="gc.app.general.loading.body">Palun oodake..</string>
+	<string name="gc.app.general.loading.title">Laen</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Me töötleme teie makset. Palun oodake. Teie makse töötlemiseks kulub mõni sekund. </string>
+	<string name="gc.app.general.paymentProcessing.title">Teie makse on töötluses. </string>
+	<string name="gc.app.general.securePaymentText">Turvaline maksmine</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">toodet</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">toode</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Saatekulu</string>
+	<string name="gc.app.general.shoppingCart.subtotal">vahesumma</string>
+	<string name="gc.app.general.shoppingCart.title">Teie tellimus</string>
+	<string name="gc.app.general.shoppingCart.total">Kokku</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Tühista</string>
+	<string name="gc.app.paymentProductDetails.payButton">Maksa</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Jäta minu andmed meelde järgimste ostude jaoks</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Kui teete sellesse kasti märke, talletub teie makse informatsioon järgmiste ostude jaoks. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Varem kasutatud kontod</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Valige makseviis</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Teised makseviisid</string>
+	<string name="gc.app.privacy.title">Privaatsuspoliitika</string>
+	<string name="gc.app.result.failed.bodyText">Teie makse töötlemine ebaõnnestus. Selle ostu jätkamiseks valige palun mõni teine makseviis.</string>
+	<string name="gc.app.result.failed.title">Teie makse ebaõnnestus.</string>
+	<string name="gc.app.result.selectOther">Proovige teist makseviisi</string>
+	<string name="gc.app.result.success.bodyText">Teie makse on edukas. </string>
+	<string name="gc.app.result.success.title">Teie makse olek</string>
 	<string name="gc.general.cobrands.detected">Tuvastati mitu maksevalikut</string>
 	<string name="gc.general.cobrands.fullText">Mõned kaardid kasutavad teie makse töötlemiseks mitmeid kaubamärke. Saate valida oma eelistatud kaardi kaubamärgi</string>
 	<string name="gc.general.cobrands.introText">Teie kaardil on mitu maksevalikut, palun valige eelistatud valik.</string>
 	<string name="gc.general.cobrands.readmore">Mida tähendab mitu maksevalikut?</string>
 	<string name="gc.general.cobrands.selectbrand">Valige oma eelistatud valik.</string>
 	<string name="gc.general.cobrands.toggleCobrands">Tuvastati mitu maksevalikut</string>
+	<string name="gc.general.errors.clientDateTime">Palun kinnitage, et makse tegemiseks kasutatava seadme kuupäev ja kellaaeg on õiged.</string>
 	<string name="gc.general.errors.image.altText">Hoiatus</string>
 	<string name="gc.general.errors.incorrectMerchantId">Teie makse lõpetamiseks õigete juhiste näitamisel tekkis tehniline viga: vale kaupmehe ID-number. Palun proovige muud makseviisi või võtke ühendust müügiettevõttega.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Teie makse lõpetamiseks juhiste näitamisel tekkis tehniline viga. Palun proovige uuesti või proovige muud makseviisi.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Valige oma pank</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefoni number</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefoni number</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Jäta minu andmed meelde järgimste ostude jaoks</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Kui teete sellesse kasti märke, talletub teie makse informatsioon järgmiste ostude jaoks.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Riigi kood</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Riigi kood</string>
 	<string name="gc.general.paymentProductFields.street.label">Tänav</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Palun märkige õige meiliaadress</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Palun märkige õige aegumise kuupäev</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Palun valige loetelust üks väärtus</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Palun märkige õige kaardi number</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Palun sisestage tähemärkide arv, mis oleks vahemikus {minLength} ja {maxLength}</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Palun sisestage täpselt {maxLength} tähemärki</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Palun märkige maksimaalne märkide {maxLength} väärtus</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Palun sisestage maksimaalselt {maxLength} tähemärki</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Palun märkige õige kaardi number</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Palun märkige väärtus vahemikus {minValue} ja {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Palun märkige õige formaadi väärtus</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Teie makse viide on</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Viitenumber</string>
 	<string name="gc.general.paymentProducts.705.name">Otsearveldus Ühendkuningriik</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Viitenumber</string>
-	<string name="gc.general.paymentProducts.707.name">Otsearveldus Šveits</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Teie makse viide on</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Viitenumber</string>
 	<string name="gc.general.paymentProducts.715.name">Korduv otsearveldus Ühendkunigriik</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Teie makse viide on</string>
-	<string name="gc.general.paymentProducts.717.name">Korduv otsearveldus Šveits</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">Tellimuse ID</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Teie makse viide on</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA otsearveldus</string>

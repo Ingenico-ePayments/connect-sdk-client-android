@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Zdá se, že není k dispozici připojení k internetu. Ověřte to prosím a zkuste to znovu.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Chyba připojení k internetu</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">V tuto chvíli nejsou k dispozici žádné platební produkty.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Žádné platební produkty nejsou k dispozici</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Překročili jste limit výdajů pro tuto platbu. Zkuste prosím jinou platební metodu nebo objednávku změňte.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Změnit objednávku</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Zkusit jiný způsob platby</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Překročen limit výdajů</string>
+	<string name="gc.app.general.loading.body">Čekejte prosím...</string>
+	<string name="gc.app.general.loading.title">Načítání</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Zpracováváme Vaši platbu. Čekejte, prosím. Zpracování Vaší platby může trvat několik sekund. </string>
+	<string name="gc.app.general.paymentProcessing.title">Vaše platba se zpracovává. </string>
+	<string name="gc.app.general.securePaymentText">Bezpečná platba</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">položek</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">položka</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Náklady na odeslání</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Mezisoučet</string>
+	<string name="gc.app.general.shoppingCart.title">Vaše objednávka</string>
+	<string name="gc.app.general.shoppingCart.total">Celkem</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Zrušit</string>
+	<string name="gc.app.paymentProductDetails.payButton">Zaplatit</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Zapamatovat si moje údaje pro další nákupy</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Pokud zaškrtnete toto políčko, vaše platební údaje budou uloženy pro další nákupy. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Dříve použité účty</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Vyberte platební produkt</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Ostatní platební produkty</string>
+	<string name="gc.app.privacy.title">Zásady ochrany osobních údajů</string>
+	<string name="gc.app.result.failed.bodyText">Vaši platbu jsme nemohli zpracovat. Pokud chcete pokračovat v tomto nákupu, zvolte jiný způsob platby.</string>
+	<string name="gc.app.result.failed.title">Vaše platba se nezdařila</string>
+	<string name="gc.app.result.selectOther">Zkusit jiný způsob platby</string>
+	<string name="gc.app.result.success.bodyText">Vaše platba proběhla úspěšně. </string>
+	<string name="gc.app.result.success.title">Váš stav platby</string>
 	<string name="gc.general.cobrands.detected">Detekováno několik možností platby</string>
 	<string name="gc.general.cobrands.fullText">Některé karty používají ke zpracování Vaší platby několik značek. Můžete si vybrat svou preferovanou značku karty.</string>
 	<string name="gc.general.cobrands.introText">Tato karta má několik možností platby, vyberte, prosím, možnost, kterou preferujete.</string>
 	<string name="gc.general.cobrands.readmore">Co znamená několik možností platby?</string>
 	<string name="gc.general.cobrands.selectbrand">Vyberte svou preferovanou možnost</string>
 	<string name="gc.general.cobrands.toggleCobrands">Detekováno několik možností platby</string>
+	<string name="gc.general.errors.clientDateTime">Ověřte prosím, zda jsou správně nastaveny datum a čas k provedení této platby.</string>
 	<string name="gc.general.errors.image.altText">Varování</string>
 	<string name="gc.general.errors.incorrectMerchantId">Došlo k technické chybě, která nám zabránila zobrazit správné instrukce pro finalizaci Vaší platby: nesprávné ID obchodníka. Zkuste, prosím, jinou platební metodu nebo kontaktujte firmu, u které jste nakoupili.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Když jsme se pokusili zobrazit instrukce pro finalizaci Vaší platby, došlo k technické chybě. Zkuste to, prosím, znovu nebo zkuste jinou platební metodu.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Vyberte banku</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefonní číslo</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefonní číslo</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Zapamatovat si moje údaje pro další nákupy</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Pokud zaškrtnete toto políčko, vaše platební údaje budou uloženy pro další nákupy.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Kód státu</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Kód státu</string>
 	<string name="gc.general.paymentProductFields.street.label">Ulice</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Zadejte platný e-mail</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Zadejte platné datum expirace</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Vyberte alespoň jednu hodnotu ze seznamu</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Zadejte platné číslo karty</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Uveďte prosím hodnotu v délce {minLength} až {maxLength} znaků</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Uveďte prosím hodnotu v délce přesně {maxLength} znaků</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Zadejte hodnotu o délce maximálně {maxLength} znaků</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Uveďte prosím hodnotu v délce maximálně {maxLength} znaků</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Zadejte platné číslo karty</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Zadejte hodnotu mezi {minValue} a {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Zadejte hodnotu ve správném formátu</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Vaše referenční číslo platby je</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Referenční číslo</string>
 	<string name="gc.general.paymentProducts.705.name">Inkaso Spojené království</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Referenční číslo</string>
-	<string name="gc.general.paymentProducts.707.name">Inkaso Švýcarsko</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Vaše referenční číslo platby je</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Referenční číslo</string>
 	<string name="gc.general.paymentProducts.715.name">Opakující se inkaso Spojené království</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Vaše referenční číslo platby je</string>
-	<string name="gc.general.paymentProducts.717.name">Opakující se inkaso Švýcarsko</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">ID objednávky</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Vaše referenční číslo platby je</string>
 	<string name="gc.general.paymentProducts.770.name">Inkaso SEPA</string>

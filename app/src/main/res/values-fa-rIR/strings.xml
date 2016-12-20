@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">به‌نظر می‌رسد اتصال به اینترنت وجود ندارد، بنابراین لطفاً این مسئله را بررسی نموده و دوباره امتحان کنید.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">تأیید</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">خطای اتصال اینترنت</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">هیچ محصول پرداختی در حال حاضر موجود نیست.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">هیچ محصول پرداختی موجود نیست</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">شما از سقف مخارج برای این پرداخت تجاوز کرده‌اید. لطفاً روش پرداخت دیگری را امتحان کنید، یا سفارش‌تان را تغییر دهید.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">تغییر سفارش</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">استفاده از روش دیگر</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">از سقف مخارج تجاوز شده است</string>
+	<string name="gc.app.general.loading.body">لطفاً صبر کنید...</string>
+	<string name="gc.app.general.loading.title">بارگذاری</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">در حال پردازش پرداخت شما هستیم. لطفاً صبر کنید. پردازش پرداخت شما ممکن است چند ثانیه طول بکشد. </string>
+	<string name="gc.app.general.paymentProcessing.title">پرداخت شما در دست رسیدگی است. </string>
+	<string name="gc.app.general.securePaymentText">پرداخت امن</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">موارد</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">مورد</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">هزینه حمل</string>
+	<string name="gc.app.general.shoppingCart.subtotal">جمع جزء</string>
+	<string name="gc.app.general.shoppingCart.title">سفارش شما</string>
+	<string name="gc.app.general.shoppingCart.total">جمع کل</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">لغو</string>
+	<string name="gc.app.paymentProductDetails.payButton">پرداخت</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">ذخیره مشخصات من برای خریدهای آتی</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">اگر این کادر را تیک بزنید، اطلاعات پرداخت شما برای خریدهای آتی ذخیره می‌شود. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">حساب‌هایی که قبلاً مورد استفاده قرار گرفته است</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">انتخاب محصول پرداخت</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">سایر محصولات پرداخت</string>
+	<string name="gc.app.privacy.title">خط مشی حریم خصوصی</string>
+	<string name="gc.app.result.failed.bodyText">رسیدگی به پرداخت شما مقدور نیست. لطفاً برای ادامه این خرید، روش پرداخت دیگری را انتخاب کنید.</string>
+	<string name="gc.app.result.failed.title">پرداخت شما انجام نشد</string>
+	<string name="gc.app.result.selectOther">استفاده از روش دیگر</string>
+	<string name="gc.app.result.success.bodyText">پرداخت شما با موفقیت انجام شد. </string>
+	<string name="gc.app.result.success.title">وضعیت پرداخت شما</string>
 	<string name="gc.general.cobrands.detected">گزینه‌های متعدد پرداخت شناسایی شد</string>
 	<string name="gc.general.cobrands.fullText">بعضی از کارت‌ها از نام‌های تجاری متعدد برای پردازش پرداخت شما استفاده می‌کنند. می‌توانید نام تجاری ترجیحی کارت خود را انتخاب کنید</string>
 	<string name="gc.general.cobrands.introText">این کارت دارای گزینه‌های متعدد پرداخت می‌باشد، لطفاً گزینه ترجیحی خود را انتخاب کنید.</string>
 	<string name="gc.general.cobrands.readmore">گزینه‌های متعدد پرداخت چیستند؟</string>
 	<string name="gc.general.cobrands.selectbrand">گزینه ترجیحی خود را انتخاب کنید</string>
 	<string name="gc.general.cobrands.toggleCobrands">گزینه‌های متعدد پرداخت شناسایی شد</string>
+	<string name="gc.general.errors.clientDateTime">لطفاً بررسی کنید تاریخ و زمان دستگاهی که از آن برای انجام این پرداخت استفاده می‌کنید، به‌درستی تنظیم شده باشد.</string>
 	<string name="gc.general.errors.image.altText">هشدار</string>
 	<string name="gc.general.errors.incorrectMerchantId">یک خطای فنی رخ داده است که اجازه نمی‌دهد دستورالعمل‌های صحیح مربوط به نهایی کردن پرداخت شما را نمایش دهیم: شناسه معامله‌گر نادرست است. لطفاً روش پرداخت دیگری را امتحان کنید یا با شرکتی که از آن خرید می‌نمایید تماس بگیرید.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">هنگام تلاش برای نمایش دستورالعمل‌های مربوط به نهایی کردن پرداخت شما یک خطای فنی رخ داد. لطفاً دوباره تلاش کنید یا روش پرداخت دیگری را امتحان نمایید.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">بانک خود را انتخاب کنید</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">شماره تلفن</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">شماره تلفن</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">ذخیره مشخصات من برای خریدهای آتی</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">اگر این کادر را تیک بزنید، اطلاعات پرداخت شما برای خریدهای آتی ذخیره می‌شود.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">کد ایالت</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">کد ایالت</string>
 	<string name="gc.general.paymentProductFields.street.label">خیابان</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">لطفاً یک آدرس ایمیل معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">لطفاً یک تاریخ انقضای معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">لطفاً یکی از مقادیر داخل فهرست را انتخاب کنید</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">لطفاً یک شماره کارت معتبر اعلام کنید</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">لطفاً مقداری بین {minLength} و {maxLength} کاراکتر ارائه دهید</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">لطفاً مقداری دقیقاً معادل {maxLength} کاراکتر ارائه دهید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">لطفاً مقداری را به طول حداکثر {maxLength} کاراکتر اعلام کنید</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">لطفاً مقداری حداکثر معادل {maxLength} کاراکتر ارائه دهید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">لطفاً یک شماره کارت معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">لطفاً مقداری را بین {minValue} تا {maxValue} اعلام کنید </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">لطفاً مقداری را با فرمت صحیح اعلام کنید</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">شماره ارجاع پرداخت شما:</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">شماره ارجاع</string>
 	<string name="gc.general.paymentProducts.705.name">آگهی بدهکار مستقیم انگلستان</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">شماره ارجاع</string>
-	<string name="gc.general.paymentProducts.707.name">آگهی بدهکار مستقیم سوئیس</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">شماره ارجاع پرداخت شما:</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">شماره ارجاع</string>
 	<string name="gc.general.paymentProducts.715.name">آگهی بدهکار مستقیم مکرر انگلستان</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">شماره ارجاع پرداخت شما:</string>
-	<string name="gc.general.paymentProducts.717.name">آگهی بدهکار مستقیم مکرر سوئیس</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">شناسه سفارش</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">شماره ارجاع پرداخت شما:</string>
 	<string name="gc.general.paymentProducts.770.name">آگهی بدهکار مستقیم SEPA</string>

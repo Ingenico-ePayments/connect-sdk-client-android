@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Úgy tűnik, nincs internetkapcsolat. Kérjük, ellenőrizze, majd próbálja újra.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Internetkapcsolati hiba</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">Jelenleg nincsenek elérhető fizetőeszközök.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">Nincsenek elérhető fizetőeszközök</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Túllépte a megengedett fizetési értékhatárt. Kérjük, válasszon ki egy másik fizetési módot, vagy módosítson a megrendelésen.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Megrendelés módosítása</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Másik módszer választása</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Fizetési értékhatár túllépve</string>
+	<string name="gc.app.general.loading.body">Kérem, várjon...</string>
+	<string name="gc.app.general.loading.title">Betöltés</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Fizetése feldolgozás alatt áll. Kérjük, várjon. A fizetése feldolgozása eltarthat néhány másodpercig. </string>
+	<string name="gc.app.general.paymentProcessing.title">A fizetési kérelem feldolgozása folyamatban van. </string>
+	<string name="gc.app.general.securePaymentText">Biztonsági fizetés</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">elemek</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">elem</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Szállítási díj</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Részösszeg</string>
+	<string name="gc.app.general.shoppingCart.title">Az Ön megrendelése</string>
+	<string name="gc.app.general.shoppingCart.total">Összesen</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Mégse</string>
+	<string name="gc.app.paymentProductDetails.payButton">Fizetés</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Adataim eltárolása jövőbeli vásárlásokhoz</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Ha bejelöli ezt a négyzetet, akkor a rendszer eltárolja a fizetési adatait a jövőbeli vásárlások megkönnyítése céljából. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Korábban használt számlák</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Fizetési termék kiválasztása</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Egyéb fizetési termékek</string>
+	<string name="gc.app.privacy.title">Adatvédelmi szabályzat</string>
+	<string name="gc.app.result.failed.bodyText">Fizetési kérelmét nem sikerült feldolgoznunk. A tranzakció folytatásához kérjük, hogy válasszon egy másik fizetési módot.</string>
+	<string name="gc.app.result.failed.title">Fizetési tranzakciója meghiúsult.</string>
+	<string name="gc.app.result.selectOther">Másik módszer választása</string>
+	<string name="gc.app.result.success.bodyText">Fizetése sikeres volt. </string>
+	<string name="gc.app.result.success.title">Az Ön fizetési állapota</string>
 	<string name="gc.general.cobrands.detected">Több fizetési lehetőség észlelve</string>
 	<string name="gc.general.cobrands.fullText">Egyes kártyáknál több kártyatípus áll rendelkezésre a fizetés feldolgozásához. Kiválaszthatja a kívánt kártyatípust</string>
 	<string name="gc.general.cobrands.introText">Ennél a kártyánál több fizetési lehetőség áll rendelkezésre. Kérjük, válassza ki, melyiket szeretné használni.</string>
 	<string name="gc.general.cobrands.readmore">Melyek a fizetési lehetőségek?</string>
 	<string name="gc.general.cobrands.selectbrand">Válassza ki a kívánt lehetőséget</string>
 	<string name="gc.general.cobrands.toggleCobrands">Több fizetési lehetőség észlelve</string>
+	<string name="gc.general.errors.clientDateTime">Kérjük, ellenőrizze, hogy a fizetéshez használt fizetőeszköz érvényességi ideje megfelelően szerepel.</string>
 	<string name="gc.general.errors.image.altText">Figyelmeztetés</string>
 	<string name="gc.general.errors.incorrectMerchantId">Technikai hiba történt, ami megakadályozta a fizetés megfelelő véglegesítési utasításainak megjelenítését: helytelen Kereskedő ID. Kérjük, próbálkozzon más fizetési móddal, vagy vegye fel a kapcsolatot a céggel, amelyiktől vásárol.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">A fizetés véglegesítési utasításainak megjelenítése közben technikai hiba történt. Kérjük, próbálkozzon újra vagy más fizetési móddal.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Válassza ki a bankját</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Telefonszám</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Telefonszám</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Adataim eltárolása jövőbeli vásárlásokhoz</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Ha bejelöli ezt a négyzetet, akkor a rendszer eltárolja a fizetési adatait a jövőbeli vásárlások megkönnyítése céljából.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Állam rövidítése</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Állam rövidítése</string>
 	<string name="gc.general.paymentProductFields.street.label">Utca és házszám</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Kérjük, hogy érvényes e-mail címet adjon meg</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Kérjük, hogy érvényes lejárati dátumot adjon meg</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Kérjük, hogy válasszon a listában szereplő értékek közül</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Kérjük, hogy érvényes kártyaszámot adjon meg</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Kérjük, {minLength} és {maxLength} karakter közötti értéket adjon meg.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Kérjük, pontosan {maxLength} karakter hosszúságú értéket adjon meg.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Kérjük, hogy maximum {maxLength} karakter hosszúságú értéket adjon meg</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Kérjük, legfeljebb {maxLength} karakter hosszúságú értéket adjon meg.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Kérjük, hogy érvényes kártyaszámot adjon meg</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Kérjük, hogy {minValue} és {maxValue} közötti értéket adjon meg </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Kérjük, hogy az értéket megfelelő formátumban adja meg</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Fizetési azonosítója</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Hivatkozási szám</string>
 	<string name="gc.general.paymentProducts.705.name">Beszedési megbízás – Egyesült Királyság</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Hivatkozási szám</string>
-	<string name="gc.general.paymentProducts.707.name">Beszedési megbízás – Svájc</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Fizetési azonosítója</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Hivatkozási szám</string>
 	<string name="gc.general.paymentProducts.715.name">Ismétlődő beszedési megbízás – Egyesült Királyság</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">Fizetési azonosítója</string>
-	<string name="gc.general.paymentProducts.717.name">Ismétlődő beszedési megbízás – Svájc</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">Megrendelésazonosító</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">Fizetési azonosítója</string>
 	<string name="gc.general.paymentProducts.770.name">SEPA beszedési megbízás</string>

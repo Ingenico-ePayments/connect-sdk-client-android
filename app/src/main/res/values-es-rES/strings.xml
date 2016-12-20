@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">Parece que no hay conexión a Internet, realice la comprobación y vuelva a intentarlo.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">Aceptar</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">Error de conexión a Internet</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">No hay productos de pago disponibles en este momento.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">No hay productos de pago disponibles</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">Ha superado el límite de gasto para este pago. Intente otro método de pago o cambie su pedido.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">Cambiar el pedido</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">Probar con otro método</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">Límite de gasto superado</string>
+	<string name="gc.app.general.loading.body">Espere...</string>
+	<string name="gc.app.general.loading.title">Cargando</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">Estamos procesando su pago. Por favor, espere. El procesamiento de su pago puede durar varios segundos.</string>
+	<string name="gc.app.general.paymentProcessing.title">Estamos procesando su pago. </string>
+	<string name="gc.app.general.securePaymentText">Pago seguro</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">artículos</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">artículo</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">Gastos de envío</string>
+	<string name="gc.app.general.shoppingCart.subtotal">Subtotal</string>
+	<string name="gc.app.general.shoppingCart.title">Su pedido</string>
+	<string name="gc.app.general.shoppingCart.total">Total</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">Cancelar</string>
+	<string name="gc.app.paymentProductDetails.payButton">Pagar</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">Recordar mis datos para futuras compras</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">Si marca esta casilla, la información de su pago se guardará para futuras compras. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">Cuentas usadas anteriormente</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">Seleccionar producto de pago</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">Otros productos de pago</string>
+	<string name="gc.app.privacy.title">Política de privacidad</string>
+	<string name="gc.app.result.failed.bodyText">No hemos podido procesar su pago. Para continuar con la compra, seleccione un método de pago alternativo.</string>
+	<string name="gc.app.result.failed.title">Su pago ha fallado</string>
+	<string name="gc.app.result.selectOther">Probar con otro método</string>
+	<string name="gc.app.result.success.bodyText">Su pago se ha realizado correctamente. </string>
+	<string name="gc.app.result.success.title">Estado de su pago</string>
 	<string name="gc.general.cobrands.detected">Se han detectado diversas opciones de pago</string>
 	<string name="gc.general.cobrands.fullText">Algunas tarjetas utilizan diversas marcas para procesar su pago. Usted puede elegir su marca de tarjeta preferida</string>
 	<string name="gc.general.cobrands.introText">Esta tarjeta tiene diversas opciones de pago, elija su opción preferida.</string>
 	<string name="gc.general.cobrands.readmore">¿Qué son las diversas opciones de pago?</string>
 	<string name="gc.general.cobrands.selectbrand">Seleccione su opción preferida</string>
 	<string name="gc.general.cobrands.toggleCobrands">Se han detectado diversas opciones de pago</string>
+	<string name="gc.general.errors.clientDateTime">Valide si la fecha y hora del dispositivo que utiliza para realizar este pago están bien configuradas.</string>
 	<string name="gc.general.errors.image.altText">Advertencia</string>
 	<string name="gc.general.errors.incorrectMerchantId">Ha ocurrido un error técnico que nos impide mostrarle las instrucciones correctas para finalizar su pago: ID de comerciante incorrecto. Pruebe con otro método de pago o póngase en contacto con la empresa en la que está realizando la compra.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Ha ocurrido un error técnico al intentar mostrar las instrucciones para finalizar su pago. Inténtelo de nuevo o pruebe con otro método de pago.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">Seleccione su banco</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">Teléfono</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">Teléfono</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">Recordar mis datos para futuras compras</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">Si marca esta casilla, la información de su pago se guardará para futuras compras.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">Código de estado</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">Código de estado</string>
 	<string name="gc.general.paymentProductFields.street.label">Calle</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Introduzca una dirección de e-mail válida</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Introduzca una fecha de vencimiento válida</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Seleccione uno de los valores en la lista</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Introduzca un número de tarjeta válido</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Introduzca un valor entre {minLength} y {maxLength} caracteres</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Introduzca un valor de exactamente {maxLength} caracteres</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Introduzca un valor máximo de {maxLength} caracteres</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">Introduzca un valor con un máximo de {maxLength} caracteres</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">Introduzca un número de tarjeta válido</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Introduzca un valor entre {minValue} y {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Introduzca un valor con el formato correcto</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">La referencia de su pago es</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Número de referencia</string>
 	<string name="gc.general.paymentProducts.705.name">Débito directo Reino Unido</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">Número de referencia</string>
-	<string name="gc.general.paymentProducts.707.name">Débito directo Suiza</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">La referencia de su pago es</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Número de referencia</string>
 	<string name="gc.general.paymentProducts.715.name">Débito directo recurrente Reino Unido</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">La referencia de su pago es</string>
-	<string name="gc.general.paymentProducts.717.name">Débito directo recurrente Suiza</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">ID del pedido</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">La referencia de su pago es</string>
 	<string name="gc.general.paymentProducts.770.name">Débito directo SEPA</string>

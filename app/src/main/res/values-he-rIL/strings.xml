@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<!--
+		This file was auto-generated from translations available in the Configuration Center.
+		Any manual changes may be overwritten.
+	-->
+
+	<string name="gc.app.general.errors.noInternetConnection.bodytext">נראה שאין חיבור לאינטרנט. בדוק את החיבור ונסה שוב.</string>
+	<string name="gc.app.general.errors.noInternetConnection.button">אישור</string>
+	<string name="gc.app.general.errors.noInternetConnection.title">שגיאה בחיבור לאינטרנט</string>
+	<string name="gc.app.general.errors.noPaymentproducts.bodyText">נכון לעכשיו אין מוצרי תשלום זמינים.</string>
+	<string name="gc.app.general.errors.noPaymentproducts.title">אין מוצרי תשלום זמינים</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.bodyText">חרגת ממגבלת ההוצאות שהוגדרה לתשלום זה. נסה שיטת תשלום אחרת או שנה את ההזמנה שלך.</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.changeOrder">שינוי הזמנה</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.button.tryOtherMethod">נסה שיטה אחרת</string>
+	<string name="gc.app.general.errors.spendingLimitExceeded.title">חריגה ממגבלת ההוצאות</string>
+	<string name="gc.app.general.loading.body">אנא המתן...</string>
+	<string name="gc.app.general.loading.title">טוען</string>
+	<string name="gc.app.general.paymentProcessing.bodyText">אנו מעבדים את התשלום. אנא המתן. ייתכן שעיבוד התשלום ייקח כמה שניות. </string>
+	<string name="gc.app.general.paymentProcessing.title">אנו מעבדים את התשלום שלך. </string>
+	<string name="gc.app.general.securePaymentText">תשלום מאובטח</string>
+	<string name="gc.app.general.shoppingCart.itemsIfMultiple">פריטים</string>
+	<string name="gc.app.general.shoppingCart.itemsIfOne">פריט</string>
+	<string name="gc.app.general.shoppingCart.shippingCost">מחיר משלוח</string>
+	<string name="gc.app.general.shoppingCart.subtotal">סיכום</string>
+	<string name="gc.app.general.shoppingCart.title">ההזמנה שלך</string>
+	<string name="gc.app.general.shoppingCart.total">סה"כ</string>
+	<string name="gc.app.paymentProductDetails.cancelButton">ביטול</string>
+	<string name="gc.app.paymentProductDetails.payButton">שלם</string>
+	<string name="gc.app.paymentProductDetails.rememberMe">זכור את הפרטים שלי עבור עסקאות עתידיות</string>
+	<string name="gc.app.paymentProductDetails.rememberMe.tooltip">אם תסמן תיבה זו, פרטי התשלום שלך יאוחסנו עבור רכישות עתידיות. </string>
+	<string name="gc.app.paymentProductSelection.accountsOnFileTitle">חשבונות שהשתמשת בהם בעבר</string>
+	<string name="gc.app.paymentProductSelection.pageTitle">בחר מוצר תשלום</string>
+	<string name="gc.app.paymentProductSelection.paymentProductsTitle">מוצרי תשלום נוספים</string>
+	<string name="gc.app.privacy.title">מדיניות פרטיות</string>
+	<string name="gc.app.result.failed.bodyText">לא הצלחנו לעבד את התשלום שלך. כדי להמשיך ברכישה זו, בחר שיטת תשלום אחרת.</string>
+	<string name="gc.app.result.failed.title">התשלום שלך נכשל</string>
+	<string name="gc.app.result.selectOther">נסה שיטה אחרת</string>
+	<string name="gc.app.result.success.bodyText">תשלומך בוצע בהצלחה. </string>
+	<string name="gc.app.result.success.title">מצב התשלום שלך</string>
 	<string name="gc.general.cobrands.detected">זוהו אמצעי תשלום מרובים</string>
 	<string name="gc.general.cobrands.fullText">יש כרטיסים המשתמשים במותגים שונים לצורך עיבוד התשלום. באפשרותך לבחור את מותג הכרטיס העדיף מבחינתך</string>
 	<string name="gc.general.cobrands.introText">בכרטיס זה יש אפשרויות תשלום רבות, בחר את השיטה העדיפה מבחינתך.</string>
 	<string name="gc.general.cobrands.readmore">מהן אפשרויות תשלום רבות?</string>
 	<string name="gc.general.cobrands.selectbrand">בחר את השיטה העדיפה מבחינתך</string>
 	<string name="gc.general.cobrands.toggleCobrands">זוהו אמצעי תשלום מרובים</string>
+	<string name="gc.general.errors.clientDateTime">ודא שהתאריך והזמן המוגדרים במכשיר שבו אתה משתמש לביצוע התשלום נכונים.</string>
 	<string name="gc.general.errors.image.altText">אזהרה</string>
 	<string name="gc.general.errors.incorrectMerchantId">אירעה תקלה טכנית המונעת מאיתנו להציג לך את ההנחיות הנכונות כדי לסיים את התשלום: מזהה הסוחר (Merchant ID) שגוי. אנא נסה להשתמש באמצעי תשלום אחר או פנה לחברה שממנה בוצעה הרכישה.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">כאשר ניסינו להציג את ההנחיות להשלמת התשלום אירעה תקלה טכנית. אנא נסה שוב או נסה להשתמש באמצעי תשלום אחר.</string>
@@ -69,8 +108,6 @@
 	<string name="gc.general.paymentProductFields.issuerId.placeholder">בחר את הבנק שלך</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.label">מספר טלפון</string>
 	<string name="gc.general.paymentProductFields.phoneNumber.placeholder">מספר טלפון</string>
-	<string name="gc.general.paymentProductFields.rememberMe.label">זכור את הפרטים שלי עבור עסקאות עתידיות</string>
-	<string name="gc.general.paymentProductFields.rememberMe.tooltipText">אם תסמן תיבה זו, פרטי התשלום שלך יאוחסנו עבור רכישות עתידיות.</string>
 	<string name="gc.general.paymentProductFields.stateCode.label">קוד מדינה</string>
 	<string name="gc.general.paymentProductFields.stateCode.placeholder">קוד מדינה</string>
 	<string name="gc.general.paymentProductFields.street.label">רחוב</string>
@@ -81,7 +118,11 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">נא הזן כתובת דואר אלקטרוני תקפה</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">נא הזן תאריך פקיעת תוקף חוקי</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">בחר אחד מהערכים ברשימה</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iin.label">ספק מספר כרטיס תקף</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">הזן ערך שאורכו בין {minLength} ל-{maxLength} תווים</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">הזן ערך שאורכו בדיוק {maxLength} תווים</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">ספק ערך בעל {maxLength} תווים לכל היותר</string>
+	<string name="gc.general.paymentProductFields.validationErrors.length.max.label">הזן ערך שאורכו לכל היותר {maxLength} תווים</string>
 	<string name="gc.general.paymentProductFields.validationErrors.luhn.label">ספק מספר כרטיס תקף</string>
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">ספק ערך בטווח שבין {minValue} לבין {maxValue} </string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">ספק ערך במבנה הנכון</string>
@@ -147,6 +188,8 @@
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
+	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.402.name">eCard</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
@@ -172,13 +215,9 @@
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">מספר הסימוכין של התשלום שלך הוא</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">מספר סימוכין</string>
 	<string name="gc.general.paymentProducts.705.name">חיוב ישיר בריטניה</string>
-	<string name="gc.general.paymentProducts.707.instructionFields.REFERENCENUMBER.label">מספר סימוכין</string>
-	<string name="gc.general.paymentProducts.707.name">חיוב ישיר שוויץ</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">מספר הסימוכין של התשלום שלך הוא</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">מספר סימוכין</string>
 	<string name="gc.general.paymentProducts.715.name">חיוב ישיר חוזר בריטניה</string>
-	<string name="gc.general.paymentProducts.717.instructionFields.REFERENCENUMBER.label">מספר הסימוכין של התשלום שלך הוא</string>
-	<string name="gc.general.paymentProducts.717.name">חיוב ישיר חוזר שוויץ</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.ORDERID.label">מזהה הזמנה</string>
 	<string name="gc.general.paymentProducts.770.instructionFields.PAYMENTREFERENCE.label">מספר הסימוכין של התשלום שלך הוא</string>
 	<string name="gc.general.paymentProducts.770.name">חיוב ישיר SEPA</string>

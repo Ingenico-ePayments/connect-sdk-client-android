@@ -2,6 +2,7 @@ package com.globalcollect.gateway.sdk.client.android.sdk.session;
 
 import android.content.Context;
 
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductPublicKeyAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductGroupsAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask;
@@ -18,6 +19,8 @@ import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProduct
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductGroupsAsyncTask.OnBasicPaymentProductGroupsCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask.OnBasicPaymentProductsCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductNetworksAsyncTask;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductNetworksAsyncTask.OnPaymentProductNetworksCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PublicKeyAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PublicKeyAsyncTask.OnPublicKeyLoadedListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
@@ -92,6 +95,13 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 		return new GcSession(communicator);
 	}
 
+
+	/**
+	 * Returns true when the application is running in production; false otherwise
+	 */
+	public boolean isEnvironmentTypeProduction() {
+		return communicator.isEnvironmentTypeProduction();
+	}
 
 	/**
 	 * Gets all basitPaymentItems for a given payment context
@@ -318,6 +328,24 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 		task.execute();
 	}
 
+	public void getPaymentProductNetworks(Context context, String productId, PaymentContext paymentContext, OnPaymentProductNetworksCallCompleteListener listener) {
+
+		if (context == null) {
+			throw new InvalidParameterException("Error getting PaymentProductNetworks, context may not be null");
+		}
+		if (productId == null) {
+			throw new InvalidParameterException("Error getting PaymentProductNetworks, productId may not be null");
+		}
+		if (paymentContext == null) {
+			throw new InvalidParameterException("Error getting PaymentProductNetworks, paymentContext may not be null");
+		}
+		if (listener == null) {
+			throw new InvalidParameterException("Error getting PaymentProductNetworks, listener may not be null");
+		}
+
+		PaymentProductNetworksAsyncTask task = new PaymentProductNetworksAsyncTask(context, productId, paymentContext, communicator, listener);
+		task.execute();
+	}
 
 	/**
 	 * Gets the IinDetails for a given partialCreditCardNumber
@@ -358,7 +386,7 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 	/**
 	 * Retrieves the publickey from the GC gateway
 	 * 
-	 * @param context, used for reading device metada which is send to the GC gateway 
+	 * @param context, used for reading device metadata which is send to the GC gateway
 	 * @param listener, OnPublicKeyLoaded listener which is called when the publickey is retrieved
 	 * 
 	 */
@@ -371,6 +399,29 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 			throw new InvalidParameterException("Error getting public key, listener may not be null");
 		}
 		PublicKeyAsyncTask task = new PublicKeyAsyncTask(context, communicator, listener);
+		task.execute();
+	}
+
+
+	/**
+	 * Retrieves the publickey for a specific payment product from the GC gateway
+	 *
+	 * @param context, used for reading device metadata, which is send to the GC gateway
+	 * @param listener, OnPaymentProductPublicKeyLoaded listener which is called when the Android pay public key is retrieved
+	 *
+	 */
+	public void getPaymentProductPublicKey(Context context, String productId, PaymentProductPublicKeyAsyncTask.OnPaymentProductPublicKeyLoadedListener listener) {
+
+		if (context == null ) {
+			throw new InvalidParameterException("Error getting payment product public key, context may not be null");
+		}
+		if (productId == null) {
+			throw new InvalidParameterException("Error getting payment product public key, productId may not be null");
+		}
+		if (listener == null ) {
+			throw new InvalidParameterException("Error getting payment product public key, listener may not be null");
+		}
+		PaymentProductPublicKeyAsyncTask task = new PaymentProductPublicKeyAsyncTask(context, productId, communicator, listener);
 		task.execute();
 	}
 

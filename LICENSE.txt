@@ -24,9 +24,9 @@ Copyright (c) 2014 Global Collect Services B.V.
 
 
 
-*** Notices for Google Gson Java library
+*** Notices for Google Gson Java library and fragment_full_wallet_confirmation_button.xml, FullWalletConfirmationButtonFragment
 
-Copyright 2014 Google Inc.
+Copyright (C) Google Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
