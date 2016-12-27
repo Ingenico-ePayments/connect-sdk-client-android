@@ -7,7 +7,7 @@ package com.globalcollect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 	
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v2.3.0";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v3.0.0";
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
 
@@ -34,7 +34,7 @@ public class Constants {
 	public final static String FILENAME_LOGO_PREFIX = "logo_logos";
 
 	/** Disable/Enable logging of all requests and responses made to the Global Collect Gateway **/
-	public final static Boolean ENABLE_REQUEST_LOGGING = false;
+	public final static Boolean ENABLE_REQUEST_LOGGING = true;
 
 	/** Time constant that should be used to determine if a call took to long to return **/
 	public static final int ACCEPTABLE_WAIT_TIME_IN_MILISECONDS = 10000;
@@ -42,5 +42,8 @@ public class Constants {
 	/** Payment product Id's of android and apple pay **/
 	public final static String PAYMENTPRODUCTID_APPLEPAY = "302";
 	public final static String PAYMENTPRODUCTID_ANDROIDPAY = "320";
-	
+
+	/** Android Pay field IDs **/
+	public static String ANDROID_PAY_TOKEN_FIELD_ID 				= "encryptedPaymentData";
+	public static String ANDROID_PAY_GOOGLE_TRANSACTION_ID_FIELD_ID = "transactionId";	
 }

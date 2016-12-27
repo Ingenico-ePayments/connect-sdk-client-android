@@ -25,12 +25,14 @@ import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask.OnPaymentProductCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductNetworksAsyncTask.OnPaymentProductNetworksCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductPublicKeyAsyncTask.OnPaymentProductPublicKeyLoadedListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicatorConfiguration;
 import com.globalcollect.gateway.sdk.client.android.sdk.exception.BadPaymentItemException;
 import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.EnvironmentType;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductNetworksResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductPublicKeyResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
@@ -65,7 +67,8 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 																				  OnPaymentProductGroupCallCompleteListener,
 																				  OnBasicPaymentItemsCallCompleteListener,
 																				  OnPaymentProductPublicKeyLoadedListener,
-																	              OnClickListener {
+																	              OnClickListener,
+																				  OnPaymentProductNetworksCallCompleteListener {
 	// Tag used for logging
 	private static final String TAG = SelectPaymentProductActivity.class.getName();
 
@@ -105,7 +108,11 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 	// Determines whether the paymentProducts that are loaded should be grouped in the view
 	private boolean groupPaymentProducts;
 
+	// Contains the Google API client that will be used to launch Android Pay
 	private GoogleApiClient googleApiClient;
+
+	// Will contain the payment product public key response
+	private PaymentProductPublicKeyResponse publicKeyResponse;
 	
 	
 	@Override
@@ -331,8 +338,8 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	private void startAndroidPay() {
 
-		// First retrieve the public key for making Android Pay calls; Android pay will be started
-		// from the getPaymentProductPublicKey callback: onPaymentProductPublicKeyLoaded
+		// First retrieve the public key for making Android Pay calls; The key will be received in the
+		// callback method: onPaymentProductPublicKeyLoaded.
 		session.getPaymentProductPublicKey(this,
 				com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_ANDROIDPAY,
 				this);
@@ -407,12 +414,30 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 	public void onPaymentProductPublicKeyLoaded(PaymentProductPublicKeyResponse response) {
 		if (response != null && response.getPublicKey() != null && !response.getPublicKey().isEmpty()) {
 
+			// Not only do we need the public key, but we also have to retrieve the available networks
+			// for Android Pay
+			session.getPaymentProductNetworks(this,
+					com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_ANDROIDPAY,
+					paymentContext,
+					this);
+			publicKeyResponse = response;
+
+		} else {
+			dialogUtil.dismissDialog(progressDialog);
+			showTechnicalErrorDialog();
+		}
+	}
+
+	@Override
+	public void onPaymentProductNetworksCallComplete(PaymentProductNetworksResponse response) {
+		if (response != null && response.getNetworks() != null && !response.getNetworks().isEmpty()) {
+
 			// Connect to the Google API in order to make Android Pay calls
 			googleApiClient = WalletUtil.generateGoogleApiClient(this, session);
 			googleApiClient.connect();
 
 			// Create a MaskedWalletRequest, that will retrieve the masked wallet from Google
-			MaskedWalletRequest maskedWalletRequest = WalletUtil.generateMaskedWalletRequest(paymentContext, shoppingCart, response.getPublicKey());
+			MaskedWalletRequest maskedWalletRequest = WalletUtil.generateMaskedWalletRequest(paymentContext, shoppingCart, publicKeyResponse.getPublicKey(), response.getNetworks());
 
 			// Hide the progressDialog before showing Android Pay
 			dialogUtil.dismissDialog(progressDialog);
@@ -422,6 +447,7 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 			// called.
 			Wallet.Payments.loadMaskedWallet(googleApiClient, maskedWalletRequest, Constants.MASKED_WALLET_RETURN_CODE);
 		} else {
+			dialogUtil.dismissDialog(progressDialog);
 			showTechnicalErrorDialog();
 		}
 	}

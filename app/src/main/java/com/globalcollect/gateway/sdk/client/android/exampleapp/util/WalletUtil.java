@@ -21,6 +21,7 @@ import com.google.android.gms.wallet.WalletConstants;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -85,7 +86,7 @@ public class WalletUtil {
         return cartTotal.setScale(2, RoundingMode.HALF_EVEN).toString();
     }
 
-    public static MaskedWalletRequest generateMaskedWalletRequest(PaymentContext paymentContext, ShoppingCart shoppingCart, String publicKey) {
+    public static MaskedWalletRequest generateMaskedWalletRequest(PaymentContext paymentContext, ShoppingCart shoppingCart, String publicKey, Collection<Integer> networks) {
 
         PaymentMethodTokenizationParameters parameters =
                 PaymentMethodTokenizationParameters.newBuilder()
@@ -100,6 +101,7 @@ public class WalletUtil {
                         .setCurrencyCode(paymentContext.getAmountOfMoney().getCurrencyCode().toString())
                         .setCart(generateCart(paymentContext, shoppingCart))
                         .setEstimatedTotalPrice(paymentContext.getAmountOfMoney().getAmount().toString())
+                        .addAllowedCardNetworks(networks)
                         .setPaymentMethodTokenizationParameters(parameters)
                         .build();
         return maskedWalletRequest;

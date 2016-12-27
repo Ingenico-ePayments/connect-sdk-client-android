@@ -15,6 +15,7 @@ import com.google.android.gms.wallet.IsReadyToPayRequest;
 import com.google.android.gms.wallet.Wallet;
 import com.google.android.gms.wallet.WalletConstants;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -41,13 +42,16 @@ public final class AndroidPayUtil {
         notNull(paymentContext);
         notNull(communicator);
 
-        if (isAndroidPayAllowed(Collections.<String>emptyList(), context, communicator)) {
+        if (isAndroidPayAllowed(Collections.<Integer>emptyList(), context, communicator)) {
 
             // Retrieve the networks that, in the current context, can be used for Android Pay
             PaymentProductNetworksResponse paymentProductNetworks = communicator.getPaymentProductNetworks(context, "320", paymentContext);
 
             if (paymentProductNetworks != null && paymentProductNetworks.getNetworks() != null) {
-                return !paymentProductNetworks.getNetworks().isEmpty() && isAndroidPayAllowed(paymentProductNetworks.getNetworks(), context, communicator);
+                return !paymentProductNetworks.getNetworks().isEmpty() && isAndroidPayAllowed(
+                        paymentProductNetworks.getNetworks(),
+                        context,
+                        communicator);
             } else {
                 Log.e(TAG, "Something went wrong when retrieving allowed networks!");
                 return false;
@@ -57,7 +61,7 @@ public final class AndroidPayUtil {
         }
     }
 
-    private static boolean isAndroidPayAllowed(List<String> networks, Context context, C2sCommunicator communicator) {
+    private static boolean isAndroidPayAllowed(Collection<Integer> networks, Context context, C2sCommunicator communicator) {
 
         GoogleApiClient client = new GoogleApiClient.Builder(context)
                 .addApi(Wallet.API, new Wallet.WalletOptions.Builder()
@@ -81,21 +85,10 @@ public final class AndroidPayUtil {
         }
     }
 
-    private static IsReadyToPayRequest createIsReadyToPayRequest(List<String> networks) {
+    private static IsReadyToPayRequest createIsReadyToPayRequest(Collection<Integer> networks) {
         IsReadyToPayRequest.Builder requestBuilder = IsReadyToPayRequest.newBuilder();
-        for (String network: networks) {
-            switch (network) {
-                case "VISA":
-                    requestBuilder.addAllowedCardNetwork(WalletConstants.CardNetwork.VISA); break;
-                case "MASTERCARD":
-                    requestBuilder.addAllowedCardNetwork(WalletConstants.CardNetwork.MASTERCARD); break;
-                case "AMEX":
-                    requestBuilder.addAllowedCardNetwork(WalletConstants.CardNetwork.AMEX); break;
-                case "DISCOVER":
-                    requestBuilder.addAllowedCardNetwork(WalletConstants.CardNetwork.DISCOVER); break;
-                default:
-                    throw new UnknownNetworkException("This network is not supported by Connect: " + network);
-            }
+        for (Integer network: networks) {
+            requestBuilder.addAllowedCardNetwork(network);
         }
         return requestBuilder.build();
     }

@@ -79,10 +79,6 @@ public class FullWalletConfirmationButtonFragment extends Fragment implements
      */
     public static final int REQUEST_CODE_RESOLVE_LOAD_FULL_WALLET = 1004;
 
-    /** Field names for Android Pay payment product, used to store the values in the PaymentRequest **/
-    public static final String TOKEN = "encryptedPaymentData";
-    public static final String GOOGLE_TRANSACTION_ID = "transactionId";
-
     protected GoogleApiClient mGoogleApiClient;
     protected ProgressDialog mProgressDialog;
 
@@ -275,8 +271,8 @@ public class FullWalletConfirmationButtonFragment extends Fragment implements
             //    tag: <string,base64>
             // }
             // See the Android Pay documentation for more information on how to decrypt the token.
-            paymentRequest.setValue(TOKEN, token.getToken());
-            paymentRequest.setValue(GOOGLE_TRANSACTION_ID, fullWallet.getGoogleTransactionId());
+            paymentRequest.setValue(com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.ANDROID_PAY_TOKEN_FIELD_ID, token.getToken());
+            paymentRequest.setValue(com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.ANDROID_PAY_GOOGLE_TRANSACTION_ID_FIELD_ID, fullWallet.getGoogleTransactionId());
 
             // Pretty-print the token to LogCat (newlines replaced with spaces).
             Log.d(TAG, "PaymentMethodToken:" + token.getToken().replace('\n', ' '));
