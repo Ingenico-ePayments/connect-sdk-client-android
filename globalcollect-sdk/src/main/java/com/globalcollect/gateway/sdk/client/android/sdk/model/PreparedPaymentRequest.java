@@ -35,6 +35,4 @@ public class PreparedPaymentRequest {
 	public String getEncryptedFields() {
 		return encryptedFields;
 	}
-	
-
 }

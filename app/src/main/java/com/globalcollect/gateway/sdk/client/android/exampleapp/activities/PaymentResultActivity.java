@@ -27,7 +27,7 @@ public class PaymentResultActivity extends ShoppingCartActivity {
 		Intent intent = getIntent();
 		ShoppingCart shoppingCart = (ShoppingCart)		intent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
 		PaymentContext context    = (PaymentContext)	intent.getSerializableExtra(Constants.INTENT_CONTEXT);
-		
+
 		// Render the shoppingcart details
 		shoppingCartRenderer = new RenderShoppingCart(context, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());	
 
@@ -44,7 +44,7 @@ public class PaymentResultActivity extends ShoppingCartActivity {
 			// Show success translated texts
 			String successfulTitle = getString(R.string.gc_app_result_success_title);
 			String successfulDescription = getString(R.string.gc_app_result_success_bodyText);
-			
+
 			paymentResultTitle.setText(successfulTitle);
 			paymentResultDescription.setText(successfulDescription);
 			

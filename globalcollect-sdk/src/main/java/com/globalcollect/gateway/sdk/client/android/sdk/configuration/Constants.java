@@ -7,7 +7,8 @@ package com.globalcollect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 	
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v3.0.0";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v3.1.0";
+
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
 
@@ -45,5 +46,9 @@ public class Constants {
 
 	/** Android Pay field IDs **/
 	public static String ANDROID_PAY_TOKEN_FIELD_ID 				= "encryptedPaymentData";
-	public static String ANDROID_PAY_GOOGLE_TRANSACTION_ID_FIELD_ID = "transactionId";	
+	public static String ANDROID_PAY_GOOGLE_TRANSACTION_ID_FIELD_ID = "transactionId";
+
+	/** Boleto Bancario product ID and Fiscal number field ID **/
+	public static String PAYMENTPRODUCTID_BOLETOBANCARIO 	= "1503";
+	public static String FISCAL_NUMBER_FIELD_ID				= "fiscalNumber";
 }

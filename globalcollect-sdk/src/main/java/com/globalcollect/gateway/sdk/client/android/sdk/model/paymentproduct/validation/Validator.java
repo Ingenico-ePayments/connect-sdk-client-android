@@ -11,12 +11,9 @@ import java.io.Serializable;
  *
  */
 public class Validator implements Serializable {
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6418298616282819004L;
-	
+
+	private static final long serialVersionUID = 8524174888810141991L;
+
 	private ExpirationDate expirationDate;
 	private EmailAddress emailAddress;
 	private FixedList fixedList;
@@ -24,6 +21,7 @@ public class Validator implements Serializable {
 	private Luhn luhn;
 	private Range range;
 	private RegularExpression regularExpression;
+	private BoletoBancarioRequiredness boletoBancarioRequiredness;
 	
 	/** Getters **/
 	public ExpirationDate getExpirationDate(){
@@ -52,6 +50,10 @@ public class Validator implements Serializable {
 	
 	public RegularExpression getRegularExpression(){
 		return regularExpression;
+	}
+
+	public BoletoBancarioRequiredness getBoletoBancarioRequiredness() {
+		return boletoBancarioRequiredness;
 	}
 	
 }

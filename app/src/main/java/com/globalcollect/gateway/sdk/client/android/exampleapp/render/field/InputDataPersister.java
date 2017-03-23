@@ -1,7 +1,6 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.model.FormatResult;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentItem;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
 
@@ -24,7 +23,7 @@ public class InputDataPersister implements Serializable {
     private Map<String, String> fieldValues = new HashMap<>();
 
     // Persist the "rememberme" choice of the user
-    private boolean remeberMe;
+    private boolean rememberMe;
 
     // FieldId of the field that had focus on the moment of persisting
     private String focusFieldId;
@@ -54,16 +53,17 @@ public class InputDataPersister implements Serializable {
     }
 
     /**
-     * Gets masked value for the given newValue and oldValue with the mask of the paymentProductField with paymentProductFieldId
+     * Gets the masked value of the String that is in the specified input field. This method can be
+     * used to apply the correct mask to user input with every change
      *
-     * @param paymentProductFieldId, the paymentProductField whose mask is used
-     * @param newValue, the value which is masked
-     * @param oldValue, the previous value, used for determining
-     *
-     * @return FormatResult which contains maskedvalue and cursorindex, or null if there is no paymentProductField found
+     * @param paymentProductFieldId the Id of the field that needs to be masked.
+     * @param newValue the value that the mask will be applied to.
+     * @param oldValue the value that was in the edit text, before characters were removed or added.
+     * @param start the index of the start of the change.
+     * @param count the number of characters that were removed.
+     * @param after the number of characters that were added.
      */
-    public FormatResult getMaskedValue(String paymentProductFieldId, String newValue, String oldValue, Integer cursorIndex) {
-
+    public FormatResult getMaskedValue(String paymentProductFieldId, String newValue, String oldValue, int start, int count, int after) {
         if (paymentProductFieldId == null) {
             throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, paymentProductFieldId may not be null");
         }
@@ -74,28 +74,6 @@ public class InputDataPersister implements Serializable {
             throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, oldValue may not be null");
         }
 
-        // Loop trough all fields and format the matching field value.
-        for (PaymentProductField field : paymentItem.getPaymentProductFields()) {
-            if (field.getId().equals(paymentProductFieldId)) {
-                return field.applyMask(newValue, oldValue, cursorIndex);
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * Gets the masked value of the String that is in the specified input field. This method can be
-     * used to continiually apply the correct mask to user input.
-     *
-     * @param paymentProductFieldId the Id of the field that needs to be masked.
-     * @param value the value that the mask will be applied to.
-     * @param oldValue the value that was in the edit text, before characters were removed or added.
-     * @param start the index of the start of the change.
-     * @param count the number of characters that were removed.
-     * @param after the number of characters that were added.
-     */
-    public FormatResult getMaskedValue(String paymentProductFieldId, String newValue, String oldValue, int start, int count, int after) {
         // Loop trough all fields and format the matching field value.
         for (PaymentProductField field : paymentItem.getPaymentProductFields()) {
             if (field.getId().equals(paymentProductFieldId)) {
@@ -144,11 +122,11 @@ public class InputDataPersister implements Serializable {
         this.cursorPosition = cursorPosition;
     }
 
-    public boolean isRemeberMe() {
-        return remeberMe;
+    public boolean isRememberMe() {
+        return rememberMe;
     }
 
-    public void setRemeberMe(boolean remeberMe) {
-        this.remeberMe = remeberMe;
+    public void setRememberMe(boolean rememberMe) {
+        this.rememberMe = rememberMe;
     }
 }

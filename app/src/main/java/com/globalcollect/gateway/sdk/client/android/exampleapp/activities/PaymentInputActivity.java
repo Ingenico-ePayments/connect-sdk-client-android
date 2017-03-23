@@ -6,9 +6,12 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -25,8 +28,9 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.render.iinlookup.
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.iinlookup.RenderIinCoBranding;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.shoppingcart.RenderShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.validation.RenderValidationHelper;
-import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.IinLookupAsyncTask;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.IinLookupAsyncTask.OnIinLookupCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask.OnPaymentProductCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.exception.BadPaymentItemException;
 import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
@@ -48,15 +52,17 @@ import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSessionEncrypt
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.FISCAL_NUMBER_FIELD_ID;
+import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_BOLETOBANCARIO;
 
 /**
  * Activity which renders all the inputfields of the selected paymentproduct
  * Copyright 2014 Global Collect Services B.V
  *
  */
-public class PaymentInputActivity extends ShoppingCartActivity implements OnPaymentRequestPreparedListener, OnPaymentProductCallCompleteListener, IinLookupAsyncTask.OnIinLookupCompleteListener {
+public class PaymentInputActivity extends ShoppingCartActivity implements OnPaymentRequestPreparedListener, OnPaymentProductCallCompleteListener, OnIinLookupCompleteListener {
 
 	// The postfix of the cardnumber field for which IIN lookup is added
 	private static final String CARDNUMBER_POSTFIX = "cardNumber";
@@ -64,6 +70,11 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 	// Error message ID's of messages that have to do with the IINLookup
 	private static final String NOT_ALLOWED_IN_CONTEXT_ERROR_ID = "allowedInContext";
 	private static final String LUHN_ERROR_ID = "luhn";
+
+	// Special fieldId's with regards to the Boleto Bancario payment product
+	public static String FIRSTNAME_FIELD_ID					= "firstName";
+	public static String SURNAME_FIELD_ID					= "surname";
+	public static String COMPANYNAME_FIELD_ID				= "companyName";
 
 	// ProgressDialog used for showing and hiding dialogs
 	private ProgressDialog progressDialog;
@@ -75,11 +86,13 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 	private ViewGroup renderInputFieldsLayout;
 
 	// TextField in which the customer types his Credit Card number
+	// FIXME: Technisch gezien misschien niet nodig
 	private EditText iinEditText;
 
 	private IinDetailsResponse iinDetailsResponse;
 
 	// Flag which keeps track if the IIN image is showing
+	// FIXME rename
 	private Boolean isIinImageShowing = false;
 
 	// Render classes for rendering fields, shoppingcartitems and validationmessages
@@ -101,6 +114,8 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 	// Checkbox to allow storing account on file
 	private CheckBox rememberMe;
 
+	// Boolean that keeps track of whether this page started as a grouped detail page
+	private boolean groupedPage = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -120,9 +135,9 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 			public void onCheckedChanged(CompoundButton buttonView,
 										 boolean isChecked) {
 				if (isChecked) {
-					inputDataPersister.setRemeberMe(true);
+					inputDataPersister.setRememberMe(true);
 				} else {
-					inputDataPersister.setRemeberMe(false);
+					inputDataPersister.setRememberMe(false);
 				}
 			}
 		});
@@ -138,8 +153,14 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		inputDataPersister.setPaymentItem(pps);
 
 		// If a single paymentProduct is selected, store it in the request.
+		// Also show the enabled pay button
 		if (pps instanceof PaymentProduct) {
 			paymentRequest.setPaymentProduct((PaymentProduct) pps);
+			activatePayButton();
+		} else {
+			// If NOT a single paymentProduct is selected (and therefore a group), hide the active pay button
+			deactivatePayButton();
+			groupedPage = true;
 		}
 
 		// Render the shoppingcart details
@@ -163,6 +184,13 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 				// Store the last known payment product in the payment request
 				paymentRequest.setPaymentProduct((PaymentProduct) inputDataPersister.getPaymentItem());
+
+				// Hide the inactive button and activate the active pay button
+				activatePayButton();
+
+			} else {
+				// Remove the active pay button and show the inactive button
+				deactivatePayButton();
 			}
 
 			// Retrieve the iin information, in order to load the coBrands if necessary
@@ -172,20 +200,35 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 			validationRenderHelper.setValidationMessages((List<ValidationErrorMessage>) savedInstanceState.getSerializable("errorMessageIds"));
 		}
 
-
 		// Render all inputfields; do not show the PaymentProductLogo in the Credit Card Edit Text, if it is not yet known what the brand is
 		if (inputDataPersister.getPaymentItem() instanceof PaymentProductGroup) {
 			renderInputFields(false);
+		} else if (inputDataPersister.getPaymentItem().getId().equals(PAYMENTPRODUCTID_BOLETOBANCARIO)) {
+			renderBoletoBancarioFields();
 		} else {
 			renderInputFields(true);
 		}
 	}
 
+	private void activatePayButton() {
+		Button payButton = (Button) findViewById(R.id.payNowButton);
+		payButton.setVisibility(View.VISIBLE);
+
+		payButton = (Button) findViewById(R.id.payNowButtonDisabled);
+		payButton.setVisibility(View.GONE);
+	}
+
+	private void deactivatePayButton() {
+		Button payButton = (Button) findViewById(R.id.payNowButtonDisabled);
+		payButton.setVisibility(View.VISIBLE);
+
+		payButton = (Button) findViewById(R.id.payNowButton);
+		payButton.setVisibility(View.GONE);
+	}
+
 
 	/**
 	 * Validates all the inputfields when the pay button is clicked
-	 *
-	 * @param view
 	 */
 	public void submitInputFields(View view) {
 
@@ -229,13 +272,13 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 				if (attribute != null) {
 
-					// If editing is allowed for this field, and it has actually been editted, the value needs to be stored
+					// If editing is allowed for this field, and it has actually been edited, the value needs to be stored
 					// in the PaymentRequest, so the account on file can be updated on the server.
 					// Otherwise the account on file has not changed, and the value should not be stored in the PaymentRequest
 					if (attribute.isEditingAllowed() && !getUnmaskedValueFromField(field).equals(attribute.getValue())) {
 						storeNonEmptyFieldValue(field);
 					} else if (attribute.isEditingAllowed()) {
-						// Editting is allowed, but the value is not altered. It may be possible however that an unvalid value
+						// Editing is allowed, but the value is not altered. It may be possible however that an unvalid value
 						// had already made it into the paymentRequest, so that value should be removed from the request
 						paymentRequest.removeValue(field.getId());
 					}
@@ -274,8 +317,8 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 	private void validateAndStoreInput() {
 
-		// If there is no PaymentProduct (but a PaymentProductGroup) in the inputDataPersister no payment
-		// can be done and hence no data can be stored, because it is not allowed to make a payment with a group.
+		// If there is a PaymentProduct (as opposed to a PaymentProductGroup) stored in the inputDataPersister
+		// we can store the payment information in the PaymentRequest and use its validation.
 		if (inputDataPersister.getPaymentItem() instanceof PaymentProduct) {
 
 			// Store the paymentProduct in the request
@@ -284,43 +327,11 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 			// Get current field information and store it in the Request
 			storeInputFieldDataInPaymentRequest();
 
-			// Validate the input in the Request and store the errors that come up
+			// Validate the input in the Request and store possible validation messages
 			validationRenderHelper.setValidationMessages(paymentRequest.validate());
 
 		} else {
-
-			// If there is no paymentProduct in the inputDetailsPersister, this must mean that not all data in the fields is valid
-			validateInputInActivity();
-		}
-	}
-
-	private void validateInputInActivity() {
-
-		PaymentItem paymentItem = inputDataPersister.getPaymentItem();
-
-		AccountOnFile accountOnFile = paymentRequest.getAccountOnFile();
-
-		// Loop trough all validationrules from all fields on the paymentItem
-		for (PaymentProductField field : paymentItem.getPaymentProductFields()) {
-
-			// See if a field isn't in the accountOnFile for this paymentItem
-			Boolean isFieldInAccountOnFile = false;
-			for (AccountOnFile ppAccountOnFile : paymentItem.getAccountsOnFile()) {
-
-				// Match only the account which is selected
-				if (accountOnFile != null && accountOnFile.getId().equals(ppAccountOnFile.getId())) {
-					for (KeyValuePair pair : accountOnFile.getAttributes()) {
-						if (pair.getKey().equals(field.getId())) {
-							isFieldInAccountOnFile = true;
-						}
-					}
-				}
-			}
-
-			// Validate the field with its value and add the first error id
-			if (!isFieldInAccountOnFile) {
-				validationRenderHelper.addToValidationMessages(field.validateValue(getUnmaskedValueFromField(field)));
-			}
+			throw new BadPaymentItemException("Pay has been clicked without a known payment product in the PaymentRequest!");
 		}
 	}
 
@@ -353,8 +364,6 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 	/**
 	 * Returns the user to the paymentproduction selectionscreen
 	 * Called when clicking the cancel button
-	 *
-	 * @param view
 	 */
 	public void backToPaymentProductScreen(View view) {
 		this.finish();
@@ -386,8 +395,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 			imm.showSoftInput(iinEditText, InputMethodManager.SHOW_IMPLICIT);
 		}
 
-
-		// Show remember me checkbox when allow storing as account on file
+		// Show remember me checkbox when storing as account on file is allowed
 		if (paymentRequest.getPaymentProduct() != null) {
 			if (Boolean.FALSE.equals(paymentRequest.getPaymentProduct().autoTokenized()) && 		// Not already automatically tokenized?
 					Boolean.TRUE.equals(paymentRequest.getPaymentProduct().allowsTokenization()) && // Tokenization allowed?
@@ -482,13 +490,6 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		}
 	}
 
-
-	/**
-	 * Adds IIN lookup functionality
-	 *
-	 * @param paymentItem
-	 * @param renderIinLogo
-	 */
 	public void attachIINLookup(PaymentItem paymentItem, Boolean renderIinLogo) {
 
 		for (PaymentProductField field : paymentItem.getPaymentProductFields()) {
@@ -514,7 +515,7 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 
 	/**
-	 * Draws an Image in the iinEditText field
+	 * Draws an Image in the Credit card number Text field
 	 *
 	 * @param productId, the product for which the image needs to be shown
 	 */
@@ -569,7 +570,6 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 		// Render the new paymentproductfields
 		renderInputFields(true);
-
 	}
 
 
@@ -624,8 +624,12 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 	@Override
 	public void onIinLookupComplete(IinDetailsResponse iinResponse) {
 
-		// The iinLookup did not return new details about the card, so it does not need to be handled.
+		// The iinLookup did not return new details about the card, check if the card number is supported
+		// And activate the Pay button if it is
 		if (iinResponse.equals(iinDetailsResponse)) {
+			if (iinResponse.getStatus().equals(IinStatus.SUPPORTED)) {
+				activatePayButton();
+			}
 			return;
 		}
 
@@ -643,6 +647,9 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 			// Also there are no coBrands, remove a possible cobrand notification as well
 			coBrandRenderer.removeIinCoBrandNotification(renderInputFieldsLayout, CARDNUMBER_POSTFIX);
+
+			// Disable the pay-button
+			deactivatePayButton();
 			return;
 		}
 
@@ -654,6 +661,11 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 			// Remove Cobrand notification if there are not enough digits to identify a brand
 			coBrandRenderer.removeIinCoBrandNotification(renderInputFieldsLayout, CARDNUMBER_POSTFIX);
+
+			// If grouping is enabled, disable the pay button
+			if (groupedPage) {
+				deactivatePayButton();
+			}
 			return;
 		}
 
@@ -668,6 +680,9 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 			// Also there are no coBrands, remove a possible cobrand notification as well
 			coBrandRenderer.removeIinCoBrandNotification(renderInputFieldsLayout, CARDNUMBER_POSTFIX);
+
+			// Disable the pay-button
+			deactivatePayButton();
 			return;
 		}
 
@@ -675,6 +690,9 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 
 		// Remove possible error message since the iin lookup now returned a successful value
 		validationRenderHelper.removeValidationMessage((ViewGroup) iinEditText.getParent(), CARDNUMBER_POSTFIX);
+
+		// Enable the pay button
+		activatePayButton();
 
 		// Find whether the brand, chosen by the user on the payment product selection screen, is in the IinResponse
 		// and whether the chosen product can be payed with in the current paymentcontext
@@ -701,6 +719,96 @@ public class PaymentInputActivity extends ShoppingCartActivity implements OnPaym
 		// will take care of updating the view
 		inputDataPersister.setCursorPosition(iinEditText.getSelectionStart());
 		session.getPaymentProduct(PaymentInputActivity.this, iinResponse.getPaymentProductId(), paymentContext, PaymentInputActivity.this);
+	}
+
+	// This method takes care of rendering and hiding the correct Boleto Bancario, based on the length of
+	// the FiscalNumber field. The logic is as such:
+	// If the fiscalNumber's length is 14 characters, the company name field is required and the
+	//		firstName and surname fields should be hidden
+	// If the fiscalNumber's length is 11 characters, the firstname and surname field are required and
+	//		the companyname field should be hidden.
+	// Up until 13 characters we will show the firstname and surname fields, only at 14 we will switch
+	//		to the company scenario.
+	private void renderBoletoBancarioFields() {
+
+		// First we need to be certain that we start with a clean sheet
+		renderInputFieldsLayout.removeAllViews();
+
+		// Render all fields, we'll hide fields that should not be shown later on
+		fieldRenderer.renderPaymentInputFields(inputDataPersister.getPaymentItem(), paymentRequest.getAccountOnFile(), inputDataPersister, paymentContext);
+
+		// Get the fiscal number field to add a textwatcher
+		EditText fiscalNumberEditText = (EditText) renderInputFieldsLayout.findViewWithTag(FISCAL_NUMBER_FIELD_ID);
+		fiscalNumberEditText.addTextChangedListener(new TextWatcher() {
+
+			private boolean was14;
+
+			@Override
+			public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+				int fiscalNumberLength = paymentRequest.getUnmaskedValue(FISCAL_NUMBER_FIELD_ID, charSequence.toString()).length();
+				was14 = fiscalNumberLength == 14;
+			}
+
+			@Override
+			public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+				// Not implemented
+			}
+
+			@Override
+			public void afterTextChanged(Editable editable) {
+				String fiscalNumber = editable.toString();
+				int fiscalNumberLength = paymentRequest.getUnmaskedValue(FISCAL_NUMBER_FIELD_ID, fiscalNumber).length();
+				if (fiscalNumberLength < 14 && was14 || fiscalNumberLength == 14) {
+					renderBoletoBancarioFields();
+				}
+			}
+		});
+
+		String fiscalNumber = fiscalNumberEditText.getText().toString();
+
+		int fiscalNumberLength = paymentRequest.getUnmaskedValue(FISCAL_NUMBER_FIELD_ID, fiscalNumber).length();
+
+		if (fiscalNumberLength < 14) {
+			// The length is under 14, this means that this is a personal number, therefore we need to
+			// hide the company name field
+			setBoletoBancarioPersonalFiscalNumber();
+		} else {
+			// Otherwise we have the fiscal number of a company
+			setBoletoBancarioCompanyFiscalNumber();
+		}
+
+		// Render possible showing error messages
+		validationRenderHelper.renderValidationMessages(inputDataPersister.getPaymentItem());
+	}
+
+	// Hides the companyName field and shows the firstname and surname field of the Boleto Bancario payment product
+	private void setBoletoBancarioPersonalFiscalNumber() {
+		View editTextField = renderInputFieldsLayout.findViewWithTag(COMPANYNAME_FIELD_ID);
+		View editTextFieldParent = (View) editTextField.getParent().getParent();
+		editTextFieldParent.setVisibility(View.GONE);
+
+		editTextField = renderInputFieldsLayout.findViewWithTag(FIRSTNAME_FIELD_ID);
+		editTextFieldParent = (View) editTextField.getParent().getParent();
+		editTextFieldParent.setVisibility(View.VISIBLE);
+
+		editTextField = renderInputFieldsLayout.findViewWithTag(SURNAME_FIELD_ID);
+		editTextFieldParent = (View) editTextField.getParent().getParent();
+		editTextFieldParent.setVisibility(View.VISIBLE);
+	}
+
+	// Shows the companyName field and hides the firstname and surname field of the Boleto Bancario payment product
+	private void setBoletoBancarioCompanyFiscalNumber() {
+		View editTextField = renderInputFieldsLayout.findViewWithTag(COMPANYNAME_FIELD_ID);
+		View editTextFieldParent = (View) editTextField.getParent().getParent();
+		editTextFieldParent.setVisibility(View.VISIBLE);
+
+		editTextField = renderInputFieldsLayout.findViewWithTag(FIRSTNAME_FIELD_ID);
+		editTextFieldParent = (View) editTextField.getParent().getParent();
+		editTextFieldParent.setVisibility(View.GONE);
+
+		editTextField = renderInputFieldsLayout.findViewWithTag(SURNAME_FIELD_ID);
+		editTextFieldParent = (View) editTextField.getParent().getParent();
+		editTextFieldParent.setVisibility(View.GONE);
 	}
 
 	@Override

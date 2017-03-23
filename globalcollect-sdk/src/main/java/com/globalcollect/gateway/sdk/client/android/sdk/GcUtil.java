@@ -152,7 +152,7 @@ public class GcUtil {
 	 * Returns base64 encoded map of metadata.
 	 * 
 	 * @param metadata, map of metadata which is base64 encoded
-	 * 
+	 *
 	 * @return String containing base64 url of json representation of the metadata 
 	 */
 	public static String getBase64EncodedMetadata(Map<String, String> metadata) {

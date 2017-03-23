@@ -75,7 +75,7 @@ public class EncryptUtil {
 	/**
 	 * Encrypts a given ContentEncryptionKey with a public key using RSA
 	 * @param contentEncryptionKey, the ContentEncryptionKey to be encrypted
-	 * @param key, the public key
+	 * @param publicKey, the public key
 	 * @return byte[] of encrypted ContentEncryptionKey
 	 * @throws EncryptDataException
 	 */
@@ -161,5 +161,4 @@ public class EncryptUtil {
 		 	throw new EncryptDataException("Error while encrypting data ", e);
 		}	
 	}
-
 }

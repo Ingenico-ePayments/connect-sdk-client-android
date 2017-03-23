@@ -41,5 +41,4 @@ public class Constants {
 	public final static String MERCHANT_ENVIRONMENT					= "merchant_environment";
 	public final static String MERCHANT_CURRENCY_CODE				= "merchant_currency_code";
 	public final static String PAYMENT_IS_RECURRING					= "payment_is_recurring";
-	
 }

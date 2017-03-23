@@ -70,9 +70,9 @@ public class ConfirmationActivity extends ShoppingCartActivity implements Dialog
                         R.style.WalletFragmentDetailsHeaderTextAppearance)
                 .setMaskedWalletDetailsBackgroundColor(Color.WHITE)
                 .setMaskedWalletDetailsButtonBackgroundResource(
-                        R.drawable.cancelbutton_style)
+                        R.drawable.disabled_button_style)
                 .setMaskedWalletDetailsButtonTextAppearance(
-                        R.style.Button);
+                        R.style.PrimaryButton);
 
         // [START wallet_fragment_options]
         WalletFragmentOptions walletFragmentOptions = WalletFragmentOptions.newBuilder()

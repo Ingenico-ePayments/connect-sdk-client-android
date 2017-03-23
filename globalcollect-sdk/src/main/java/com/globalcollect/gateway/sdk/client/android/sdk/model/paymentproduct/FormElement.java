@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 /**
- * POJO that represents an Formelement object
+ * POJO that represents a Formelement object
  * This class is filled by deserialising a JSON string from the GC gateway
  * The Formelements are used for determining whether it is a list or text input field
  * In case of list, it also has values inside the valuemapping
@@ -17,10 +17,7 @@ import com.google.gson.annotations.SerializedName;
  *
  */
 public class FormElement implements Serializable {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 7081218270681792356L;
 	
 	

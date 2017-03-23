@@ -71,12 +71,12 @@ public class PaymentRequest implements Serializable {
 			throw new NullPointerException("Error validating PaymentRequest, please set a paymentProduct first.");
 		}
 		
-		// Loop trough all validationrules from all fields on the paymentProduct
+		// Loop trough all validationrules of all fields on the paymentProduct
 		for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
 
 			// Validate the field with its value
 			if (!isFieldInAccountOnFileAndNotAltered(field)) {
-				errorMessageIds.addAll(field.validateValue(getValue(field.getId())));
+				errorMessageIds.addAll(field.validateValue(this));
 			}
 		}
 		return errorMessageIds;
@@ -184,25 +184,25 @@ public class PaymentRequest implements Serializable {
 	}
 
 	/**
-	 * Add value to the paymentproductfields map
+	 * Removes the mask of a given value
 	 *
-	 * @param paymentProductFieldId
-	 * @param newValue
+	 * @param paymentProductFieldId The ID of the field that the value belongs to
+	 * @param value The value that will be unmasked
 	 *
 	 * @return String with unmaskedvalue, or null if there is no no paymentProductField found
 	 */
-	public String getUnmaskedValue(String paymentProductFieldId, String newValue){
+	public String getUnmaskedValue(String paymentProductFieldId, String value){
 		if (paymentProductFieldId == null) {
 			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, paymentProductFieldId may not be null");
 		}
-		if (newValue == null) {
-			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, newValue may not be null");
+		if (value == null) {
+			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, value may not be null");
 		}
 
 		// Loop through all fields and deformat the matching field value.
 		for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
 			if (field.getId().equals(paymentProductFieldId)) {
-				return field.removeMask(newValue);
+				return field.removeMask(value);
 			}
 		}
 

@@ -33,7 +33,7 @@ public class RenderInputDelegate {
 	 * @param parentView, the ViewGroup to which all the rendered field are added
 	 */
 	public RenderInputDelegate(ViewGroup parentView) {
-		customRenderers = new HashMap<ListType, RenderInputFieldInterface>();
+		customRenderers = new HashMap<>();
 		renderField = new RenderInputFieldHelper(parentView);
 	}
 	
@@ -77,7 +77,7 @@ public class RenderInputDelegate {
 	public void renderPaymentInputFields(PaymentItem paymentItem, AccountOnFile accountOnFile, InputDataPersister inputDataPersister, PaymentContext paymentContext) {
 
 		if (paymentItem == null) {
-			throw new InvalidParameterException("Error rendering PaymentInputFields, basicPaymentItem may not be null");
+			throw new InvalidParameterException("Error rendering PaymentInputFields, paymentItem may not be null");
 		}
 
 		// Render all fields
@@ -114,5 +114,4 @@ public class RenderInputDelegate {
 			}
 		}
 	}
-		
 }

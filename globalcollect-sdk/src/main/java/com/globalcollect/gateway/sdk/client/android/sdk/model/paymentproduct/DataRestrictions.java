@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.validation.Validator;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.AbstractValidationRule;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleBoletoBancarioRequiredness;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleEmailAddress;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleExpirationDate;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleFixedList;
@@ -42,59 +43,68 @@ public class DataRestrictions implements Serializable {
 		validationRules.add(validationRule);
 	}
 	
-	public List<AbstractValidationRule> getValidationRules(){
+	public List<AbstractValidationRule> getValidationRules() {
 		validationRules.clear();
-		
-		if(validators.getExpirationDate() != null){
-			
+
+		if (validators.getExpirationDate() != null) {
 			AbstractValidationRule validationRule = new ValidationRuleExpirationDate("expirationDate", ValidationType.EXPIRATIONDATE);
 			validationRules.add(validationRule);
-			
+
 		}
-		
-		if (validators.getFixedList() != null){
-			
-			if (validators.getFixedList().getAllowedValues() != null){
+
+		if (validators.getFixedList() != null) {
+
+			if (validators.getFixedList().getAllowedValues() != null) {
 				AbstractValidationRule validationRule = new ValidationRuleFixedList(validators.getFixedList().getAllowedValues(), "fixedList", ValidationType.FIXEDLIST);
 				validationRules.add(validationRule);
 			}
 		}
-		
-		if (validators.getLength() != null){
+
+		if (validators.getLength() != null) {
+
 			if (validators.getLength().getMinLength() != null && validators.getLength().getMaxLength() != null) {
 				AbstractValidationRule validationRule = new ValidationRuleLength(validators.getLength().getMinLength(), validators.getLength().getMaxLength(), "length", ValidationType.LENGTH);
 				validationRules.add(validationRule);
 			}
 		}
-		
-		if (validators.getLuhn() != null){
+
+		if (validators.getLuhn() != null) {
 			AbstractValidationRule validationRule = new ValidationRuleLuhn("luhn", ValidationType.LUHN);
 			validationRules.add(validationRule);
 		}
-		
-		
-		if (validators.getRange() != null){
-			if (validators.getRange().getMinValue() != null && validators.getRange().getMaxValue() != null){
+
+
+		if (validators.getRange() != null) {
+
+			if (validators.getRange().getMinValue() != null && validators.getRange().getMaxValue() != null) {
 				AbstractValidationRule validationRule = new ValidationRuleRange(validators.getRange().getMinValue(), validators.getRange().getMaxValue(), "range", ValidationType.RANGE);
 				validationRules.add(validationRule);
 			}
 		}
-		
-		if (validators.getRegularExpression() != null){
-			if (validators.getRegularExpression().getRegularExpression() != null){
+
+		if (validators.getRegularExpression() != null) {
+
+			if (validators.getRegularExpression().getRegularExpression() != null) {
 				AbstractValidationRule validationRule = new ValidationRuleRegex(validators.getRegularExpression().getRegularExpression(), "regularExpression", ValidationType.REGULAREXPRESSION);
 				validationRules.add(validationRule);
 			}
 		}
-		
-		if (validators.getEmailAddress() != null){
+
+		if (validators.getEmailAddress() != null) {
 			AbstractValidationRule validationRule = new ValidationRuleEmailAddress("emailAddress", ValidationType.EMAILADDRESS);
 			validationRules.add(validationRule);
 		}
-		
+
+		if (validators.getBoletoBancarioRequiredness() != null) {
+
+			if (validators.getBoletoBancarioRequiredness().getFiscalNumberLength() != null) {
+				AbstractValidationRule validationRule = new ValidationRuleBoletoBancarioRequiredness(validators.getBoletoBancarioRequiredness().getFiscalNumberLength(), "boletobancariorequiredness", ValidationType.BOLETOBANCARIOREQUIREDNESS);
+				validationRules.add(validationRule);
+			}
+		}
+
 		return validationRules;
 	}
-	
 	
 	public Boolean isRequired() {
 		return isRequired;

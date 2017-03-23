@@ -22,9 +22,7 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.render.product.Re
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.shoppingcart.RenderShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.util.WalletUtil;
 import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
-import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask.OnPaymentProductCallCompleteListener;
-import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductNetworksAsyncTask.OnPaymentProductNetworksCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductPublicKeyAsyncTask.OnPaymentProductPublicKeyLoadedListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicatorConfiguration;
@@ -34,6 +32,13 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.Enviro
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductNetworksResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductPublicKeyResponse;
+import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask.OnPaymentProductCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicatorConfiguration;
+import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.EnvironmentType;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Size;
@@ -51,6 +56,15 @@ import com.google.android.gms.wallet.MaskedWallet;
 import com.google.android.gms.wallet.MaskedWalletRequest;
 import com.google.android.gms.wallet.Wallet;
 import com.google.android.gms.wallet.WalletConstants;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItems;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentItem;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
+import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSession;
 
 import java.security.InvalidParameterException;
 import java.util.List;
@@ -74,7 +88,7 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	// Contains all paymentRequest data
 	private PaymentRequest paymentRequest;
-	
+
 	// Contains payment info for doing a paymentproductslookup
 	private PaymentContext paymentContext;
 
@@ -86,16 +100,16 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	// DialogUtil used for showing (error) messages
 	private DialogUtil dialogUtil = new DialogUtil();
-	
+
 	// Keep track of the current showing dialog
 	private AlertDialog alertDialogShowing;
-	
+
 	// Shoppingcart which contains all shoppingcartitems
-	private ShoppingCart shoppingCart;	
-	
+	private ShoppingCart shoppingCart;
+
 	// GcSession object for getting data from the GC gateway
 	private GcSession session;
-	
+
 	// Region, used to determine to what endpoint must be communicated
 	private Region region;
 
@@ -113,32 +127,32 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	// Will contain the payment product public key response
 	private PaymentProductPublicKeyResponse publicKeyResponse;
-	
-	
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_select_payment_product);
-		
+
 		// Get the payment object for this paymentProduct, given by the retailer
-		Intent intent 	= getIntent();
-		paymentContext	= (PaymentContext)	intent.getSerializableExtra(Constants.INTENT_CONTEXT);
-		shoppingCart  	= (ShoppingCart)  	intent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
+		Intent intent = getIntent();
+		paymentContext = (PaymentContext) intent.getSerializableExtra(Constants.INTENT_CONTEXT);
+		shoppingCart = (ShoppingCart) intent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
 
 		// Create new paymentRequest
 		paymentRequest = new PaymentRequest();
-				
+
 		// Check if the user is connected to the internet, otherwise show an errordialog
 		CheckCommunication communicateUtil = new CheckCommunication();
 		if (!communicateUtil.isOnline(this)) {
-			String title 	 = getString(R.string.gc_app_general_errors_noInternetConnection_title);
-			String msg 		 = getString(R.string.gc_app_general_errors_noInternetConnection_bodytext);
+			String title = getString(R.string.gc_app_general_errors_noInternetConnection_title);
+			String msg = getString(R.string.gc_app_general_errors_noInternetConnection_bodytext);
 			String buttonTxt = getString(R.string.gc_app_general_errors_noInternetConnection_button);
 			alertDialogShowing = dialogUtil.showAlertDialog(this, title, msg, buttonTxt, this);
-			
+
 		} else if (savedInstanceState == null) {
-								
+
 			// Get Metadata from device and SDK; ipAdress is not a required part of the MetaData
 			@SuppressWarnings("unused")
 			Map<String, String> metadata = GcUtil.getMetadata(getApplicationContext(), Constants.APPLICATION_IDENTIFIER, null);
@@ -177,9 +191,9 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	private void showLoadIndicator() {
 
-		String title 	= getString(R.string.gc_app_general_loading_title);
-		String msg 		= getString(R.string.gc_app_general_loading_body);
-		progressDialog 	= dialogUtil.showProgressDialog(this, title, msg);
+		String title = getString(R.string.gc_app_general_loading_title);
+		String msg = getString(R.string.gc_app_general_loading_body);
+		progressDialog = dialogUtil.showProgressDialog(this, title, msg);
 	}
 
 
@@ -204,17 +218,17 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 		}
 	}
 
-	private void updateLogos(Region region, EnvironmentType environment, List<BasicPaymentItem> basicPaymentItems){
+	private void updateLogos(Region region, EnvironmentType environment, List<BasicPaymentItem> basicPaymentItems) {
 		// Update all paymentproduct logos
-    	AssetManager manager = AssetManager.getInstance(this);
+		AssetManager manager = AssetManager.getInstance(this);
 
-    	// if you want to specify the size of the logos you update, set resizedLogo to a size (width, height)
-    	Size resizedLogo = new Size(100,100);
+		// if you want to specify the size of the logos you update, set resizedLogo to a size (width, height)
+		Size resizedLogo = new Size(100, 100);
 
-    	// if you just want to get the default images, set
-        // resizedLogo = null;
+		// if you just want to get the default images, set
+		// resizedLogo = null;
 
-    	manager.updateLogos(region, environment, basicPaymentItems, resizedLogo);
+		manager.updateLogos(region, environment, basicPaymentItems, resizedLogo);
 	}
 
 
@@ -225,8 +239,8 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 		// Render all basic paymentitems and accounts on file
 		for (BasicPaymentItem basicPaymentItem : loadedBasicPaymentItems.getBasicPaymentItems()) {
 			RenderPaymentItem renderer = new RenderPaymentItem();
-			
-			renderer.renderPaymentItem(basicPaymentItem, (ViewGroup)findViewById(R.id.listPaymentProducts));
+
+			renderer.renderPaymentItem(basicPaymentItem, (ViewGroup) findViewById(R.id.listPaymentProducts));
 		}
 
 		// Check if there are accountsOnFile, then set their container and header to visible
@@ -239,16 +253,15 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 			// Render all accountsOnFile
 			for (AccountOnFile accountOnFile : loadedBasicPaymentItems.getAccountsOnFile()) {
 				RenderAccountOnFile accountRenderer = new RenderAccountOnFile();
-				accountRenderer.renderAccountOnFile(accountOnFile, accountOnFile.getPaymentProductId(), (ViewGroup)findViewById(R.id.listAccountsOnFile));
+				accountRenderer.renderAccountOnFile(accountOnFile, accountOnFile.getPaymentProductId(), (ViewGroup) findViewById(R.id.listAccountsOnFile));
 			}
 		}
-		
 		dialogUtil.dismissDialog(progressDialog);
 	}
 
 	public void onPaymentProductSelected(View view) {
 
- 		// See if a paymentproductselectable was selected, or an accountonfile
+		// See if a paymentproductselectable was selected, or an accountonfile
 		if (view.getTag() instanceof BasicPaymentProduct) {
 			// Add selected paymentproduct to the intent
 			BasicPaymentProduct product = (BasicPaymentProduct) view.getTag();
@@ -266,22 +279,22 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 		} else if (view.getTag() instanceof AccountOnFile) {
 
 			// Get the chosen AccountOnFile, and it's belonging paymentproduct
-			AccountOnFile account = (AccountOnFile)view.getTag();
-			
+			AccountOnFile account = (AccountOnFile) view.getTag();
+
 			// Add accountonfile to the paymentrequest
 			paymentRequest.setAccountOnFile(account);
-			
+
 			// Get the belonging product
 			getPaymentProductInputFields(account.getPaymentProductId());
-			
+
 		} else {
 			throw new InvalidParameterException("OnPaymentProductSelected error getting selected product");
 		}
-    }
+	}
 
 
 	private void getPaymentProductInputFields(String paymentProductId) {
-		if(paymentProductId == null){
+		if (paymentProductId == null) {
 			showTechnicalErrorDialog();
 		} else {
 			//Load the input fields for the Payment Input Activity
@@ -347,8 +360,8 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	private void startResultActivity() {
 		Intent resultInputIntent = new Intent(this, PaymentResultActivity.class);
-		resultInputIntent.putExtra(Constants.INTENT_CONTEXT        , paymentContext);
-		resultInputIntent.putExtra(Constants.INTENT_SHOPPINGCART   , shoppingCart);
+		resultInputIntent.putExtra(Constants.INTENT_CONTEXT, paymentContext);
+		resultInputIntent.putExtra(Constants.INTENT_SHOPPINGCART, shoppingCart);
 		startActivity(resultInputIntent);
 	}
 
@@ -360,11 +373,11 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 		// Add data to intent for next screen
 		IntentHelper intentHelper = new IntentHelper();
 		intentHelper.addSerialisedObjectToIntentBundle(Constants.INTENT_LOADED_PRODUCTS, paymentInputIntent, loadedBasicPaymentItems);
-		paymentInputIntent.putExtra(Constants.INTENT_PAYMENT_REQUEST , paymentRequest);
-		paymentInputIntent.putExtra(Constants.INTENT_CONTEXT         , paymentContext);
-		paymentInputIntent.putExtra(Constants.INTENT_SELECTED_ITEM	 , paymentItem);
-		paymentInputIntent.putExtra(Constants.INTENT_SHOPPINGCART    , shoppingCart);
-		paymentInputIntent.putExtra(Constants.INTENT_GC_SESSION      , session);
+		paymentInputIntent.putExtra(Constants.INTENT_PAYMENT_REQUEST, paymentRequest);
+		paymentInputIntent.putExtra(Constants.INTENT_CONTEXT, paymentContext);
+		paymentInputIntent.putExtra(Constants.INTENT_SELECTED_ITEM, paymentItem);
+		paymentInputIntent.putExtra(Constants.INTENT_SHOPPINGCART, shoppingCart);
+		paymentInputIntent.putExtra(Constants.INTENT_GC_SESSION, session);
 
 		// Start the intent
 		startActivity(paymentInputIntent);
@@ -372,38 +385,38 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
-		
+
 		// Save all the important data in the bundle
 		super.onSaveInstanceState(outState);
-		outState.putSerializable(Constants.BUNDLE_PAYMENT_REQUEST	, paymentRequest);
-		outState.putSerializable(Constants.BUNDLE_GC_SESSION		, session);
-		outState.putSerializable(Constants.BUNDLE_SHOPPING_CART		, shoppingCart);
-		outState.putSerializable(Constants.BUNDLE_PAYMENT_PRODUCTS	, loadedBasicPaymentItems);
-		
+		outState.putSerializable(Constants.BUNDLE_PAYMENT_REQUEST, paymentRequest);
+		outState.putSerializable(Constants.BUNDLE_GC_SESSION, session);
+		outState.putSerializable(Constants.BUNDLE_SHOPPING_CART, shoppingCart);
+		outState.putSerializable(Constants.BUNDLE_PAYMENT_PRODUCTS, loadedBasicPaymentItems);
+
 		// Dismiss all dialogs to prevent errors
-		dialogUtil.dismissDialog(alertDialogShowing);		
+		dialogUtil.dismissDialog(alertDialogShowing);
 		dialogUtil.dismissDialog(progressDialog);
 	}
-	
-			 
+
+
 	@SuppressWarnings("unchecked")
 	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
-		
+
 		// Restore the important data from the bundle
-		paymentRequest 	  	  			= (PaymentRequest)	    savedInstanceState.get(Constants.BUNDLE_PAYMENT_REQUEST);
-	    session 		  	  			= (GcSession)			savedInstanceState.get(Constants.BUNDLE_GC_SESSION);
-	    shoppingCart 		  			= (ShoppingCart)		savedInstanceState.get(Constants.BUNDLE_SHOPPING_CART);
-	    loadedBasicPaymentItems 		= (BasicPaymentItems) 	savedInstanceState.getSerializable(Constants.BUNDLE_PAYMENT_PRODUCTS);
-	    
-	    // Render the shoppingcart details
-	    shoppingCartRenderer = new RenderShoppingCart(paymentContext, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());
-	    
-	    // Render all paymentproducts
+		paymentRequest = (PaymentRequest) savedInstanceState.get(Constants.BUNDLE_PAYMENT_REQUEST);
+		session = (GcSession) savedInstanceState.get(Constants.BUNDLE_GC_SESSION);
+		shoppingCart = (ShoppingCart) savedInstanceState.get(Constants.BUNDLE_SHOPPING_CART);
+		loadedBasicPaymentItems = (BasicPaymentItems) savedInstanceState.getSerializable(Constants.BUNDLE_PAYMENT_PRODUCTS);
+
+		// Render the shoppingcart details
+		shoppingCartRenderer = new RenderShoppingCart(paymentContext, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());
+
+		// Render all paymentproducts
 		renderPaymentItems();
 	}
 
-	
+
 	@Override
 	public void onClick(DialogInterface dialog, int which) {
 		// When back button is pressed, finish this Activity
@@ -459,7 +472,7 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 		int errorCode = -1;
 		if (data != null) {
 			errorCode = data.getIntExtra(WalletConstants.EXTRA_ERROR_CODE, -1);
-			Log.e(this.getClass().getName(), "Errorcode: "+ errorCode);
+			Log.e(this.getClass().getName(), "Errorcode: " + errorCode);
 		}
 		switch (requestCode) {
 			case Constants.MASKED_WALLET_RETURN_CODE:
@@ -511,7 +524,8 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 			case WalletConstants.ERROR_CODE_SPENDING_LIMIT_EXCEEDED:
 				// may be recoverable if the user tries to lower their charge
 				// take the user back to the checkout page to try to handle
-				showSpendingLimitExceededErrorDialog(); break;
+				showSpendingLimitExceededErrorDialog();
+				break;
 			case WalletConstants.ERROR_CODE_INVALID_PARAMETERS:
 			case WalletConstants.ERROR_CODE_AUTHENTICATION_FAILURE:
 			case WalletConstants.ERROR_CODE_BUYER_ACCOUNT_ERROR:
@@ -528,10 +542,10 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 	}
 
 	private void showSpendingLimitExceededErrorDialog() {
-		String title	   = getString(R.string.gc_app_general_errors_spendingLimitExceeded_title);
-		String msg		   = getString(R.string.gc_app_general_errors_spendingLimitExceeded_bodyText);
-		String posButton   = getString(R.string.gc_app_general_errors_spendingLimitExceeded_button_changeOrder);
-		String negButton   = getString(R.string.gc_app_general_errors_spendingLimitExceeded_button_tryOtherMethod);
+		String title = getString(R.string.gc_app_general_errors_spendingLimitExceeded_title);
+		String msg = getString(R.string.gc_app_general_errors_spendingLimitExceeded_bodyText);
+		String posButton = getString(R.string.gc_app_general_errors_spendingLimitExceeded_button_changeOrder);
+		String negButton = getString(R.string.gc_app_general_errors_spendingLimitExceeded_button_tryOtherMethod);
 		alertDialogShowing = new AlertDialog.Builder(this)
 				.setTitle(title)
 				.setMessage(msg)
@@ -539,7 +553,7 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						// Send the user back to the webstore, so (s)he will be able to update her shoppingbag
-						Intent intent = new Intent (SelectPaymentProductActivity.this, StartPageActivity.class);
+						Intent intent = new Intent(SelectPaymentProductActivity.this, StartPageActivity.class);
 						intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 						startActivity(intent);
 					}
@@ -557,9 +571,9 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	private void showTechnicalErrorDialog() {
 		// If there were errors getting whilst paying with Android Pay, show an error message
-		String title 	   = getString(R.string.gc_general_errors_title);
-		String msg 		   = getString(R.string.gc_general_errors_techicalProblem);
-		String buttonTxt   = getString(R.string.gc_app_general_errors_noInternetConnection_button);
+		String title = getString(R.string.gc_general_errors_title);
+		String msg = getString(R.string.gc_general_errors_techicalProblem);
+		String buttonTxt = getString(R.string.gc_app_general_errors_noInternetConnection_button);
 		alertDialogShowing = dialogUtil.showAlertDialog(this, title, msg, buttonTxt, this);
 	}
 }

@@ -118,18 +118,29 @@
        <item name="android:layout_marginLeft">10dp</item>
    	</style>
  	
-    <style name="Button" parent="@android:style/TextAppearance.Widget.Button">
+    <style name="PrimaryButton" parent="@android:style/TextAppearance.Widget.Button">
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:layout_margin">14dp</item>
  	</style>
+
+    <style name="SecondaryButton" parent="@android:style/TextAppearance.Widget.Button">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:layout_margin">14dp</item>
+    </style>
  	
-    <style name="CancelButton" parent="Button">
-		
+    <style name="CancelButton" parent="SecondaryButton">
+		<item name="android:background">@android:color/transparent</item>
  	</style>
- 	
-    <style name="PayButton" parent="Button">
+
+    <style name="InactivePayButton" parent="PrimaryButton">
+
+    </style>
+
+    <style name="ActivePayButton" parent="PrimaryButton">
         <item name="android:background">@drawable/active_button_background</item>
  	</style>
  	

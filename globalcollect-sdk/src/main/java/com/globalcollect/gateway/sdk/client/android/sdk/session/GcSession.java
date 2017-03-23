@@ -425,7 +425,7 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 		task.execute();
 	}
 
-	
+
 	/**
 	 * Prepares a PreparedPaymentRequest from the current paymentRequest
 	 * 

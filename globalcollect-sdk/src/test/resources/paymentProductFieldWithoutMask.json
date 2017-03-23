@@ -1,0 +1,27 @@
+{
+  "dataRestrictions" : {
+    "isRequired" : false,
+    "validators" : {
+      "boletoBancarioRequiredness" : {
+        "fiscalNumberLength" : 11
+      },
+      "length" : {
+        "maxLength" : 15,
+        "minLength" : 0
+      }
+    }
+  },
+  "displayHints" : {
+    "alwaysShow" : true,
+    "displayOrder" : 2,
+    "formElement" : {
+      "type" : "text"
+    },
+    "label" : "First name",
+    "obfuscate" : false,
+    "placeholderLabel" : "First name",
+    "preferredInputType" : "StringKeyboard"
+  },
+  "id" : "firstName",
+  "type" : "string"
+}

@@ -103,7 +103,13 @@ public class RenderValidationHelper {
 			View view = parentView.findViewWithTag(validationResult.getPaymentProductFieldId());
 
 			// Render the validationMessage
-			String validationMessage = translator.getValidationMessage(validationResult.getErrorMessage());
+			String validationMessage;
+
+			if ("length".equals(validationResult.getErrorMessage()) && validationResult.getRule() instanceof ValidationRuleLength) {
+				validationMessage = getCorrectMessageForLength(validationResult);
+			} else {
+				validationMessage = translator.getValidationMessage(validationResult.getErrorMessage());
+			}
 
 			if (validationResult.getRule() != null) {
 				// Find the correct validationRule and format its message with variables attributes
@@ -144,6 +150,18 @@ public class RenderValidationHelper {
 			}
 
 			validationMessageRenderer.renderValidationMessage(validationMessage, (ViewGroup) view.getParent(), validationResult.getPaymentProductFieldId());
+		}
+	}
+
+	private String getCorrectMessageForLength (ValidationErrorMessage validationResult) {
+		ValidationRuleLength validationRuleLength = (ValidationRuleLength) validationResult.getRule();
+		if (validationRuleLength.getMaxLength().equals(validationRuleLength.getMinLength())) {
+			return translator.getValidationMessage("length.exact");
+		} else if ((validationRuleLength.getMinLength() == null || validationRuleLength.getMinLength().equals(0))
+				&& validationRuleLength.getMaxLength() != null) {
+			return translator.getValidationMessage("length.max");
+		} else {
+			return translator.getValidationMessage("length.between");
 		}
 	}
 

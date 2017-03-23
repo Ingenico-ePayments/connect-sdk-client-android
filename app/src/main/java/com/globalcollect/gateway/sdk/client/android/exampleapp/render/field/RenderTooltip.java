@@ -14,8 +14,6 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.translation.Translator;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 
-;
-
 /** 
  * This class implements the RenderTooltipInterface and 
  * handles the rendering of the tooltip for one paymentproductfield
@@ -56,7 +54,6 @@ public class RenderTooltip implements RenderTooltipInterface {
 	private void renderTooltip(final String fieldId, final String tooltipText, final Integer drawableId, final ViewGroup rowView) {
 
 		if (tooltipText != null && !tooltipText.isEmpty() && !Translator.isBadTranslationKey(tooltipText)) {
-
 			// Add the questionmark tooltip image after the inputfield
 			ImageView tooltipImage = new ImageView(rowView.getContext());
 			tooltipImage.setBackgroundResource(R.drawable.ic_action_about);

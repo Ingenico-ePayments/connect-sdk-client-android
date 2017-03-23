@@ -94,7 +94,7 @@ public class MaskTest extends AndroidTestCase {
 		String maskedValue = formatter.removeMask(maskExpiryDate, maskTestString5);
 		assertEquals("1234", maskedValue);
 	}
-	
+
 	@Test
 	public void testApplyMaskWithTextWatcherBeforeTextChangedInformationCreditCardNumberADDED() {
 		StringFormatter formatter = new StringFormatter();

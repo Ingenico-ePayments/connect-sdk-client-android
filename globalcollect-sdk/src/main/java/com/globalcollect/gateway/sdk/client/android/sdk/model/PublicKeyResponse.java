@@ -1,16 +1,15 @@
 package com.globalcollect.gateway.sdk.client.android.sdk.model;
 
-		import java.security.KeyFactory;
-		import java.security.NoSuchAlgorithmException;
-		import java.security.PublicKey;
-		import java.security.spec.InvalidKeySpecException;
-		import java.security.spec.X509EncodedKeySpec;
+import java.security.KeyFactory;
+import java.security.NoSuchAlgorithmException;
+import java.security.PublicKey;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.X509EncodedKeySpec;
 
-		import android.util.Base64;
-		import android.util.Log;
+import android.util.Base64;
+import android.util.Log;
 
-		import com.globalcollect.gateway.sdk.client.android.sdk.encryption.Encryptor;
-
+import com.globalcollect.gateway.sdk.client.android.sdk.encryption.Encryptor;
 
 /**
  * Pojo that holds the PublicKey call response from the GC gateway
@@ -44,13 +43,11 @@ public class PublicKeyResponse {
 		return keyId;
 	}
 
-
 	/**
 	 * Gets the PublicKey
 	 * @return PublicKey
 	 */
 	public PublicKey getPublicKey() {
-
 		// If parsedPublicKey is already parsed from the publicKey string return it.
 		if (parsedPublicKey != null) {
 			return parsedPublicKey;
@@ -75,10 +72,7 @@ public class PublicKeyResponse {
 			} catch (InvalidKeySpecException e) {
 				Log.i(TAG, "Error parsing publicKey response to public key, " + e.getMessage());
 			}
-
 		}
-
 		return null;
 	}
-
 }

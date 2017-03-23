@@ -22,7 +22,7 @@
 
     <Button
         android:id="@+id/button_place_order"
-        style="@style/PayButton"
+        style="@style/ActivePayButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="@string/gc.app.paymentProductDetails.payButton" />

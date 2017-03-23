@@ -27,9 +27,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.Bas
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
 import com.google.gson.Gson;
-
 import org.apache.commons.lang3.Validate;
-
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Serializable;
@@ -506,7 +504,7 @@ public class C2sCommunicator implements Serializable {
 			}
 		}
 	}
-	
+
 
 	/**
 	 * Get the IIN details for the entered partial creditcardnumber
@@ -663,7 +661,6 @@ public class C2sCommunicator implements Serializable {
 		}
 	}
 
-	
 	/**
 	 * Converts a given amount in cents from the given source currency to the given target currency 
 	 * 
