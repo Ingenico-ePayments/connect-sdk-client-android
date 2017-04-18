@@ -11,37 +11,38 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister.InputDataPersister;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.translation.Translator;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 
-/** 
- * This class implements the RenderTooltipInterface and 
+/**
+ * This class implements the RenderTooltipInterface and
  * handles the rendering of the tooltip for one paymentproductfield
- * 
+ *
  * Copyright 2014 Global Collect Services B.V
  *
  */
 public class RenderTooltip implements RenderTooltipInterface {
-	
+
 	// Tooltip layout dimensions
 	private final int TOOLTIP_MARGIN_TOP_CHECKBOX = 10;
-	
+
 	// Tooltip text layout dimensions
 	private final int TOOLTIP_TEXT_MARGIN = 9;
-	
-		
+
+
 	@Override
 	public void renderTooltip(final String fieldId, BasicPaymentItem selectedPaymentProduct, final ViewGroup rowView) {
-		
+
 		// Check if the translated tooltip text is in the translationsfile.
 		// If not, don't show the tooltip
-		Translator translator = new Translator(rowView.getContext());
+		Translator translator = Translator.getInstance(rowView.getContext());
 		final String tooltipText = translator.getPaymentProductFieldTooltipText(selectedPaymentProduct.getId(), fieldId);
 		final Integer drawableId = translator.getPaymentProductFieldTooltipImage(selectedPaymentProduct.getId(), fieldId);
 
 		renderTooltip(fieldId, tooltipText, drawableId, rowView);
 	}
-	
+
 	public void renderRememberMeTooltip(Context context, final ViewGroup rowView) {
 
 		// Check if the translated tooltip text is in the translationsfile.
@@ -101,22 +102,22 @@ public class RenderTooltip implements RenderTooltipInterface {
 	 * @param tooltipTextView, the view to be removed
 	 */
 	private void removeTooltipTextView(View tooltipTextView) {
-		
+
 		ViewGroup parentView = ((ViewGroup)tooltipTextView.getParent());
 		parentView.removeView(tooltipTextView);
 	}
 
-	
+
 	/**
 	 * Creates a tooltip textview and adds it under the rowView.
-	 * 
+	 *
 	 * @param tooltipText, the text that is shown on the screen
 	 * @param fieldId, the id of the belonging paymentproductfield, this is used for setting a unique tag on the textview
 	 * @param rowView, the view under who the textview is added
 	 * @param drawableId, this drawable is shown under the tooltiptext
 	 */
 	private void addTooltipTextView(String tooltipText, String fieldId, ViewGroup rowView, Integer drawableId) {
-		
+
 		// Create a new LinearLayout and add it under the rowView.
 		LinearLayout tooltipLayout = new LinearLayout(rowView.getContext());
 		tooltipLayout.setOrientation(LinearLayout.VERTICAL);
@@ -127,20 +128,20 @@ public class RenderTooltip implements RenderTooltipInterface {
 
 		// Create a new TextView and add it to the tooltipLayout
 		TextView tooltipTextView = new TextView(rowView.getContext());
-		tooltipTextView.setText(tooltipText);		
+		tooltipTextView.setText(tooltipText);
 		tooltipLayout.addView(tooltipTextView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 
 		// Check if there is an drawable to be shown
 		if (drawableId != null && drawableId > 0) {
-			
+
 			// Create a new ImageView and add it to the tooltipLayout
 			ImageView tooltipImageView = new ImageView(rowView.getContext());
 			tooltipImageView.setImageResource(drawableId);
 			tooltipLayout.addView(tooltipImageView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		}
-		
+
 		ViewGroup parentViewGroup = (ViewGroup)rowView.getParent();
 		parentViewGroup.addView(tooltipLayout, parentViewGroup.indexOfChild(rowView) +1, tooltipLayoutParams);
 	}
-	
+
 }

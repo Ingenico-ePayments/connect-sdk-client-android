@@ -4,14 +4,14 @@
 
     android:versionCode="1"
     android:versionName="1.0" >
-    
+
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  
+
 
     <application
         android:allowBackup="true"
@@ -39,7 +39,7 @@
                     android:host="www.globalcollect.com"
                     android:pathPrefix="/return"
                     android:scheme="globalcollect" />
-                
+
             </intent-filter>
         </activity>
         <activity
@@ -52,13 +52,15 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.PaymentInputActivity" />
+        <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivity" />
+        <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivityCreditCards" />
+        <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivityBoletoBancario" />
 
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />;
     </application>
-    
+
 
 
 </manifest>

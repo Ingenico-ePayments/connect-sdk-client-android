@@ -15,11 +15,9 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.CheckCommunication;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.dialog.DialogUtil;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.intent.IntentHelper;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.accountonfile.RenderAccountOnFile;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.product.RenderPaymentItem;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.render.shoppingcart.RenderShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.util.WalletUtil;
 import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask.OnPaymentProductCallCompleteListener;
@@ -32,13 +30,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.Enviro
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductNetworksResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductPublicKeyResponse;
-import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
-import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask.OnPaymentProductCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener;
-import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicatorConfiguration;
-import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.EnvironmentType;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Size;
@@ -56,24 +48,18 @@ import com.google.android.gms.wallet.MaskedWallet;
 import com.google.android.gms.wallet.MaskedWalletRequest;
 import com.google.android.gms.wallet.Wallet;
 import com.google.android.gms.wallet.WalletConstants;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItems;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentItem;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
-import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSession;
 
 import java.security.InvalidParameterException;
 import java.util.List;
 import java.util.Map;
 
+import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_BOLETOBANCARIO;
+
 
 /**
  * Activity which shows all the paymentproducts for a given merchant
- * 
+ *
  * Copyright 2014 Global Collect Services B.V
  *
  */
@@ -85,9 +71,6 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 																				  OnPaymentProductNetworksCallCompleteListener {
 	// Tag used for logging
 	private static final String TAG = SelectPaymentProductActivity.class.getName();
-
-	// Contains all paymentRequest data
-	private PaymentRequest paymentRequest;
 
 	// Contains payment info for doing a paymentproductslookup
 	private PaymentContext paymentContext;
@@ -116,6 +99,9 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 	// PaymentItem that was selected in this activity
 	private PaymentItem paymentItem;
 
+	// Possible selected AccountOnFile, to be added to the InputDetailIntent
+	private AccountOnFile accountOnFile;
+
 	// Environment, used to determine to what endpoint must be communicated
 	private EnvironmentType environment;
 
@@ -131,17 +117,15 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_select_payment_product);
+		// Initialize the shoppingcart
+		super.initialize(this);
 
 		// Get the payment object for this paymentProduct, given by the retailer
 		Intent intent = getIntent();
-		paymentContext = (PaymentContext) intent.getSerializableExtra(Constants.INTENT_CONTEXT);
+		paymentContext = (PaymentContext) intent.getSerializableExtra(Constants.INTENT_PAYMENT_CONTEXT);
 		shoppingCart = (ShoppingCart) intent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
-
-		// Create new paymentRequest
-		paymentRequest = new PaymentRequest();
 
 		// Check if the user is connected to the internet, otherwise show an errordialog
 		CheckCommunication communicateUtil = new CheckCommunication();
@@ -183,10 +167,12 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 			// Get the paymentProductSelectables that need to be rendered on this Activity
 			session.getBasicPaymentItems(getApplicationContext(), paymentContext, this, groupPaymentProducts);
-
-			// Render the shoppingcart details
-			shoppingCartRenderer = new RenderShoppingCart(paymentContext, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());
 		}
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
 	}
 
 	private void showLoadIndicator() {
@@ -267,25 +253,18 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 			BasicPaymentProduct product = (BasicPaymentProduct) view.getTag();
 			getPaymentProductInputFields(product.getId());
 
-			// Remove old accountOnFile if present, as to restoreinstance
-			paymentRequest.removeAccountOnFile();
 		} else if (view.getTag() instanceof BasicPaymentProductGroup) {
 			// Add selected paymentproductgroup to the intent
 			BasicPaymentProductGroup group = (BasicPaymentProductGroup) view.getTag();
 			getPaymentProductGroupInputFields(group.getId());
 
-			// Remove old accountOnFile if present, as to restoreinstance
-			paymentRequest.removeAccountOnFile();
 		} else if (view.getTag() instanceof AccountOnFile) {
 
 			// Get the chosen AccountOnFile, and it's belonging paymentproduct
-			AccountOnFile account = (AccountOnFile) view.getTag();
-
-			// Add accountonfile to the paymentrequest
-			paymentRequest.setAccountOnFile(account);
+			accountOnFile = (AccountOnFile) view.getTag();
 
 			// Get the belonging product
-			getPaymentProductInputFields(account.getPaymentProductId());
+			getPaymentProductInputFields(accountOnFile.getPaymentProductId());
 
 		} else {
 			throw new InvalidParameterException("OnPaymentProductSelected error getting selected product");
@@ -360,22 +339,27 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 	private void startResultActivity() {
 		Intent resultInputIntent = new Intent(this, PaymentResultActivity.class);
-		resultInputIntent.putExtra(Constants.INTENT_CONTEXT, paymentContext);
+		resultInputIntent.putExtra(Constants.INTENT_PAYMENT_CONTEXT, paymentContext);
 		resultInputIntent.putExtra(Constants.INTENT_SHOPPINGCART, shoppingCart);
 		startActivity(resultInputIntent);
 	}
 
 	private void startPaymentInputActivity() {
 
-		// Create intent for the paymentinputscreen
-		Intent paymentInputIntent = new Intent(this, PaymentInputActivity.class);
+		// Determine whether a "special" inputActivity is required
+		Intent paymentInputIntent;
+		if (paymentItem instanceof PaymentProductGroup && paymentItem.getId().equals("cards") || ((PaymentProduct) paymentItem).getPaymentMethod().equals("card")) {
+			paymentInputIntent = new Intent(this, DetailInputActivityCreditCards.class);
+		} else if (paymentItem.getId().equals(PAYMENTPRODUCTID_BOLETOBANCARIO)) {
+			paymentInputIntent = new Intent(this, DetailInputActivityBoletoBancario.class);
+		} else {
+			paymentInputIntent = new Intent(this, DetailInputActivity.class);
+		}
 
 		// Add data to intent for next screen
-		IntentHelper intentHelper = new IntentHelper();
-		intentHelper.addSerialisedObjectToIntentBundle(Constants.INTENT_LOADED_PRODUCTS, paymentInputIntent, loadedBasicPaymentItems);
-		paymentInputIntent.putExtra(Constants.INTENT_PAYMENT_REQUEST, paymentRequest);
-		paymentInputIntent.putExtra(Constants.INTENT_CONTEXT, paymentContext);
+		paymentInputIntent.putExtra(Constants.INTENT_PAYMENT_CONTEXT, paymentContext);
 		paymentInputIntent.putExtra(Constants.INTENT_SELECTED_ITEM, paymentItem);
+		paymentInputIntent.putExtra(Constants.INTENT_SELECTED_ACCOUNT_ON_FILE, accountOnFile);
 		paymentInputIntent.putExtra(Constants.INTENT_SHOPPINGCART, shoppingCart);
 		paymentInputIntent.putExtra(Constants.INTENT_GC_SESSION, session);
 
@@ -388,7 +372,6 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 		// Save all the important data in the bundle
 		super.onSaveInstanceState(outState);
-		outState.putSerializable(Constants.BUNDLE_PAYMENT_REQUEST, paymentRequest);
 		outState.putSerializable(Constants.BUNDLE_GC_SESSION, session);
 		outState.putSerializable(Constants.BUNDLE_SHOPPING_CART, shoppingCart);
 		outState.putSerializable(Constants.BUNDLE_PAYMENT_PRODUCTS, loadedBasicPaymentItems);
@@ -404,13 +387,9 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 
 		// Restore the important data from the bundle
-		paymentRequest = (PaymentRequest) savedInstanceState.get(Constants.BUNDLE_PAYMENT_REQUEST);
 		session = (GcSession) savedInstanceState.get(Constants.BUNDLE_GC_SESSION);
 		shoppingCart = (ShoppingCart) savedInstanceState.get(Constants.BUNDLE_SHOPPING_CART);
 		loadedBasicPaymentItems = (BasicPaymentItems) savedInstanceState.getSerializable(Constants.BUNDLE_PAYMENT_PRODUCTS);
-
-		// Render the shoppingcart details
-		shoppingCartRenderer = new RenderShoppingCart(paymentContext, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());
 
 		// Render all paymentproducts
 		renderPaymentItems();
@@ -484,8 +463,9 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 							// create the paymentRequest that can eventually be used to pay with, set
 							// Android Pay as the payment product
+							// FIXME: Moet dit met Request?
+							PaymentRequest paymentRequest = new PaymentRequest();
 							if (paymentItem instanceof PaymentProduct) {
-								paymentRequest = new PaymentRequest();
 								paymentRequest.setPaymentProduct((PaymentProduct) paymentItem);
 							} else {
 								throw new BadPaymentItemException("Expected paymentItem to be instance of PaymentProduct");
@@ -493,7 +473,7 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 							Intent confirmationPageIntent = new Intent(this, ConfirmationActivity.class);
 							confirmationPageIntent.putExtra(Constants.INTENT_GC_SESSION, session);
-							confirmationPageIntent.putExtra(Constants.INTENT_CONTEXT, paymentContext);
+							confirmationPageIntent.putExtra(Constants.INTENT_PAYMENT_CONTEXT, paymentContext);
 							confirmationPageIntent.putExtra(Constants.INTENT_SHOPPINGCART, shoppingCart);
 							confirmationPageIntent.putExtra(Constants.INTENT_MASKED_WALLET, maskedWallet);
 							confirmationPageIntent.putExtra(Constants.INTENT_PAYMENT_REQUEST, paymentRequest);

@@ -4,11 +4,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include layout="@layout/activity_header"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
     <ScrollView
-        android:layout_weight="0"
+        android:layout_weight="1"
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         tools:context="com.globalcollect.gateway.sdk.client.android.activities.ConfirmationActivity"
         tools:ignore="MergeRootFrame" >
 
@@ -18,9 +22,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             style="@style/WhiteLayout">
-
-            <include layout="@layout/activity_header" />
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,6 +62,9 @@
 
     </ScrollView>
 
-    <include layout="@layout/activity_footer" />
+    <include layout="@layout/activity_footer"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="0"/>
 
 </LinearLayout>

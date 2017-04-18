@@ -20,7 +20,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -37,7 +36,6 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Con
 import com.globalcollect.gateway.sdk.client.android.exampleapp.dialog.DialogUtil;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.util.WalletUtil;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PreparedPaymentRequest;
@@ -47,19 +45,12 @@ import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSessionEncrypt
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
-import com.google.android.gms.wallet.Cart;
 import com.google.android.gms.wallet.FullWallet;
 import com.google.android.gms.wallet.FullWalletRequest;
-import com.google.android.gms.wallet.LineItem;
 import com.google.android.gms.wallet.MaskedWallet;
 import com.google.android.gms.wallet.PaymentMethodToken;
 import com.google.android.gms.wallet.Wallet;
 import com.google.android.gms.wallet.WalletConstants;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * This is a fragment that handles the creating and sending of a {@link FullWalletRequest} using
@@ -101,7 +92,7 @@ public class FullWalletConfirmationButtonFragment extends Fragment implements
         mActivityLaunchIntent = getActivity().getIntent();
         mMaskedWallet = mActivityLaunchIntent.getParcelableExtra(Constants.INTENT_MASKED_WALLET);
         session = (GcSession) mActivityLaunchIntent.getSerializableExtra(Constants.INTENT_GC_SESSION);
-        paymentContext = (PaymentContext) mActivityLaunchIntent.getSerializableExtra(Constants.INTENT_CONTEXT);
+        paymentContext = (PaymentContext) mActivityLaunchIntent.getSerializableExtra(Constants.INTENT_PAYMENT_CONTEXT);
         paymentRequest = (PaymentRequest) mActivityLaunchIntent.getSerializableExtra(Constants.INTENT_PAYMENT_REQUEST);
         shoppingCart = (ShoppingCart) mActivityLaunchIntent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
 
@@ -331,7 +322,7 @@ public class FullWalletConfirmationButtonFragment extends Fragment implements
             // For now we fake here that the payment was succesful and go to the successful/unsuccessful page:
             Intent intent = new Intent(getActivity(), PaymentResultActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra(Constants.INTENT_CONTEXT, paymentContext);
+            intent.putExtra(Constants.INTENT_PAYMENT_CONTEXT, paymentContext);
             intent.putExtra(Constants.INTENT_SHOPPINGCART, shoppingCart);
             startActivity(intent);
         }

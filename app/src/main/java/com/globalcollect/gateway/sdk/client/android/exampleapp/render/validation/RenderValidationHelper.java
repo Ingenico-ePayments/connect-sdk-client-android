@@ -22,7 +22,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.Validat
 
 /**
  * Helper class for rendering validation messages
- * 
+ *
  * Copyright 2014 Global Collect Services B.V
  *
  */
@@ -30,43 +30,38 @@ public class RenderValidationHelper {
 
 	// Default renderer for validation errors on all fields
 	private RenderValidationMessageInterface validationMessageRenderer = new RenderValidationMessage();
-	
+
 	// The parent view to which all validationmessages are added
 	private ViewGroup parentView;
-	
-	// List which contains all validationMessages that may be rendered
-	private List<ValidationErrorMessage> validationMessages = new ArrayList<ValidationErrorMessage>();
-
 
 	private Set<String> fieldIdsOfErrorMessagesShowing = new HashSet<>(4);
-	
 
 	private Translator translator;
-	
-	
+
+
 	/**
-	 * Constructor 
+	 * Constructor
 	 * @param parentView, the ViewGroup to which all the rendered validationmessages are added
 	 */
-	public RenderValidationHelper(ViewGroup parentView, Context context) {
+	public RenderValidationHelper(ViewGroup parentView) {
 
 		if (parentView == null) {
 			throw new InvalidParameterException("Error creating Validator, parentView may not be null");
 		}
-		
+
 		this.parentView = parentView;
-		translator = new Translator(context);
+		translator = Translator.getInstance(parentView.getContext());
 	}
-	
-	
+
+
 	/**
 	 * Registers a custom validationmessage renderer
 	 * This renderer must implement the RenderValidationMessageInterface interface
-	 * 
+	 *
 	 * @param renderer, the custom renderer which will handle the show and hide of validationmessages
 	 */
 	public void registerCustomRenderer(RenderValidationMessageInterface renderer) {
-		
+
 		if (renderer == null) {
 			throw new InvalidParameterException("Error setting custom messageRenderer, renderer may not be null");
 		}
@@ -77,19 +72,19 @@ public class RenderValidationHelper {
 	 * Renders validationmessage for every invalid field in the invalidFields list
 	 * @param paymentItem, the paymentItem for which to render the validationMessages
 	 */
-	public void renderValidationMessages(PaymentItem paymentItem) {
+	public void renderValidationMessages(List<ValidationErrorMessage> validationErrorMessages, PaymentItem paymentItem) {
 
-		fieldIdsOfErrorMessagesShowing.clear();
+		if (validationErrorMessages != null) {
 
-		// Loop trough all the fields and see if the result is invalid
-		for (ValidationErrorMessage validationResult : validationMessages) {
-			renderValidationMessageOnScreen(validationResult, paymentItem);
+			// Loop trough all the fields and see if the result is invalid
+			for (ValidationErrorMessage validationResult : validationErrorMessages) {
+				renderValidationMessageOnScreen(validationResult, paymentItem);
+			}
 		}
 	}
 
 	public void renderValidationMessage(ValidationErrorMessage validationResult, PaymentItem paymentItem) {
 
-		validationMessages.add(validationResult);
 		renderValidationMessageOnScreen(validationResult, paymentItem);
 	}
 
@@ -111,7 +106,7 @@ public class RenderValidationHelper {
 				validationMessage = translator.getValidationMessage(validationResult.getErrorMessage());
 			}
 
-			if (validationResult.getRule() != null) {
+			if (validationResult.getRule() != null && paymentItem != null) {
 				// Find the correct validationRule and format its message with variables attributes
 				for (PaymentProductField field : paymentItem.getPaymentProductFields()) {
 					if (field.getId().equals(validationResult.getPaymentProductFieldId())) {
@@ -176,63 +171,61 @@ public class RenderValidationHelper {
 
 		validationMessageRenderer.removeValidationMessage(rowView, fieldId);
 
-		removeFromValidationMessages(fieldId);
 		fieldIdsOfErrorMessagesShowing.remove(fieldId);
 	}
-
-	private void removeFromValidationMessages(String fieldId) {
-
-		if (validationMessages != null) {
-			Iterator<ValidationErrorMessage> iterator = validationMessages.iterator();
-			while (iterator.hasNext()) {
-				ValidationErrorMessage vem = iterator.next();
-				if (vem.getPaymentProductFieldId().equals(fieldId)) {
-					iterator.remove();
-				}
-			}
-		}
-	}
+//
+//	private void removeFromValidationMessages(String fieldId) {
+//
+//		if (validationMessages != null) {
+//			Iterator<ValidationErrorMessage> iterator = validationMessages.iterator();
+//			while (iterator.hasNext()) {
+//				ValidationErrorMessage vem = iterator.next();
+//				if (vem.getPaymentProductFieldId().equals(fieldId)) {
+//					iterator.remove();
+//				}
+//			}
+//		}
+//	}
 
 	/**
 	 * Hides all visible validationmessages
 	 */
 	public void hideValidationMessages() {
-		
-		for (ValidationErrorMessage invalidField : validationMessages) {
-			View view = parentView.findViewWithTag(invalidField.getPaymentProductFieldId());
-			validationMessageRenderer.removeValidationMessage((ViewGroup)view.getParent(), invalidField.getPaymentProductFieldId());
+
+		for (String fieldId : fieldIdsOfErrorMessagesShowing) {
+			View view = parentView.findViewWithTag(fieldId);
+			validationMessageRenderer.removeValidationMessage((ViewGroup)view.getParent(), fieldId);
 		}
-		validationMessages.clear();
 		fieldIdsOfErrorMessagesShowing.clear();
 	}
-	
-	
+
+
 	/**
 	 * Formats message placeholders to Java format, eg {maxlength} to {0}
 	 * @param message
 	 * @return
 	 */
 	private String formatMessagePlaceHolders(String message) {
-		
+
 		int occurances = 0;
 		while (message.matches(".*\\{[a-zA-Z]+\\}.*")) {
-		
+
 			message = message.replaceFirst("\\{[a-zA-Z]+\\}", "{" + occurances + "}");
 			occurances ++;
-		}		
+		}
 		return message;
 	}
-
-	public List<ValidationErrorMessage> getValidationMessages() {
-		return validationMessages;
-	}
-
-	public void setValidationMessages(List<ValidationErrorMessage> validationMessages) {
-		this.validationMessages = validationMessages;
-	}
-
-	public void addToValidationMessages(List<ValidationErrorMessage> validationMessages) {
-		this.validationMessages.addAll(validationMessages);
-	}
+//
+//	public List<ValidationErrorMessage> getValidationMessages() {
+//		return validationMessages;
+//	}
+//
+//	public void setValidationMessages(List<ValidationErrorMessage> validationMessages) {
+//		this.validationMessages = validationMessages;
+//	}
+//
+//	public void addToValidationMessages(List<ValidationErrorMessage> validationMessages) {
+//		this.validationMessages.addAll(validationMessages);
+//	}
 
 }

@@ -12,17 +12,17 @@ import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSession;
 import java.security.InvalidParameterException;
 
 /**
- * Android TextWatcher that is put on Creditcardnumber fields so an IIN lookup can be done 
- * 
+ * Android TextWatcher that is put on Creditcardnumber fields so an IIN lookup can be done
+ *
  * Copyright 2014 Global Collect Services B.V
  *
  */
 public class IinLookupTextWatcher implements TextWatcher {
 
-	
-	// The GcSession which can retrieve the IIN details 
+
+	// The GcSession which can retrieve the IIN details
 	private GcSession session;
-	
+
 	// The listener which will be called by the AsyncTask
 	private OnIinLookupCompleteListener listener;
 
@@ -32,10 +32,10 @@ public class IinLookupTextWatcher implements TextWatcher {
 	// Payment context information that is sent with the IIN lookup
 	private PaymentContext paymentContext;
 
-	// Workaround for having twice called the afterTextChanged 
+	// Workaround for having twice called the afterTextChanged
 	private String previousEnteredValue = "";
-	
-	
+
+
 	/**
 	 * Constructor
 	 * @param session, GcSession for getting IinDetails
@@ -43,7 +43,7 @@ public class IinLookupTextWatcher implements TextWatcher {
 	 * @param paymentContext, Payment context that will be used in the request for getting IinDetails
 	 */
 	public IinLookupTextWatcher(Context context, GcSession session, OnIinLookupCompleteListener listener, PaymentContext paymentContext) {
-		
+
 		if (context == null) {
 			throw new InvalidParameterException("Error creating IinLookupTextWatcher, context may not be null");
 		}
@@ -56,36 +56,47 @@ public class IinLookupTextWatcher implements TextWatcher {
 		if (paymentContext == null) {
 			throw new InvalidParameterException("Error creating IinLookupTextWatcher, c2sContext may not be null");
 		}
-		
+
 		this.context = context;
 		this.session = session;
 		this.listener = listener;
 		this.paymentContext = paymentContext;
 	}
 
-	
+
 	@Override
 	public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 	}
-	
+
 
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 	}
 
-	
+
 	@Override
 	public void afterTextChanged(Editable s) {
-		
-		// Do nothing if the entered string is the same
-		if (!s.toString().equals(previousEnteredValue)) {
 
-			//Set the previousEnteredValue
-			previousEnteredValue = s.toString();
+		// Do nothing if not one of the first six digits changed
+		if (isOneOfFirstSixDigitsChanged(s.toString())) {
 
 			// Do iinlookup
 			String trimmedValue = s.toString().replace(" ", "");
 			session.getIinDetails(context, trimmedValue, listener, paymentContext);
+		}
+
+		//Set the previousEnteredValue
+		previousEnteredValue = s.toString();
+	}
+
+	private boolean isOneOfFirstSixDigitsChanged(String current) {
+		String trimmedPrevious = previousEnteredValue.replace(" ", "");
+		String trimmedCurrent = current.replace(" ", "");
+
+		if (trimmedPrevious.length() >= 6 && trimmedCurrent.length() >= 6) {
+			return !trimmedPrevious.substring(0, 6).equals(trimmedCurrent.substring(0, 6));
+		} else {
+			return true;
 		}
 	}
 

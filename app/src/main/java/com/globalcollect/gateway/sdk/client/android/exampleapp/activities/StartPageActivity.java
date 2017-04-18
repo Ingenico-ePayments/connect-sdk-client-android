@@ -209,7 +209,7 @@ public class StartPageActivity extends Activity{
 		Intent paymentIntent = new Intent(this, SelectPaymentProductActivity.class);
 		
 		// Attach the following objects to the paymentIntent 
-		paymentIntent.putExtra(Constants.INTENT_CONTEXT, paymentContext);
+		paymentIntent.putExtra(Constants.INTENT_PAYMENT_CONTEXT, paymentContext);
 		paymentIntent.putExtra(Constants.INTENT_SHOPPINGCART, cart);
 		paymentIntent.putExtra(Constants.MERCHANT_CLIENT_SESSION_IDENTIFIER, clientSessionIdentifier);
 		paymentIntent.putExtra(Constants.MERCHANT_CUSTOMER_IDENTIFIER, customerId);

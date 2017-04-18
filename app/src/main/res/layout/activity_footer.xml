@@ -4,11 +4,10 @@
     android:orientation="vertical"
     style="@style/FooterLayout"
     android:gravity="bottom"
-    android:layout_weight="1"
     android:layout_height="8dip">
 
 	<TextView
-	    android:gravity="center_horizontal"
+	    android:gravity="center_horizontal|center_vertical"
 	    android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/gc.app.privacy.title"

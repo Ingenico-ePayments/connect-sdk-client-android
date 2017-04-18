@@ -25,34 +25,12 @@ import java.io.Serializable;
 public class RenderShoppingCart implements Serializable {
 	
 	private static final long serialVersionUID = -6223291405311752991L;
-	
-	private ShoppingCart cart;
-	private PaymentContext paymentContext;
+
 	private View view;
 	
 	
-	/**
-	 * Constructor
-	 * @param paymentContext
-	 * @param cart
-	 * @param context
-	 */
-	public RenderShoppingCart(PaymentContext paymentContext, ShoppingCart cart, View view, Context context) {
-		
-		this.cart = cart;
+	public RenderShoppingCart(View view) {
 		this.view = view;
-		this.paymentContext = paymentContext;
-		
-		// Set the totalcost text on the header
-		TextView totalCost = (TextView)view.findViewById(R.id.totalCost);
-		TextView totalCostDetail = (TextView)view.findViewById(R.id.totalCostDetail);
-		
-		String formattedTotalAmount = cart.getTotalAmountFormatted(paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode());
-		totalCost.setText(formattedTotalAmount);
-		totalCostDetail.setText(formattedTotalAmount);
-		
-		// Render all shoppingcartitems
-		renderOrderDetails(context);
 	}
 	
 	
@@ -69,10 +47,23 @@ public class RenderShoppingCart implements Serializable {
 		view.findViewById(R.id.totalCostDetailsLayout).setVisibility(View.GONE);
 	}
 	
+	public void renderShoppingCart(PaymentContext paymentContext, ShoppingCart cart) {
+
+		// Set the totalcost text on the header
+		TextView totalCost = (TextView)view.findViewById(R.id.totalCost);
+		TextView totalCostDetail = (TextView)view.findViewById(R.id.totalCostDetail);
+
+		String formattedTotalAmount = cart.getTotalAmountFormatted(paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode());
+		totalCost.setText(formattedTotalAmount);
+		totalCostDetail.setText(formattedTotalAmount);
+
+		renderOrderDetails(cart, paymentContext);
+	}
 	
-	
-	private void renderOrderDetails(Context context) {
-		
+	private void renderOrderDetails(ShoppingCart cart, PaymentContext paymentContext) {
+
+		Context context = view.getContext();
+
 		// Get the shoppingcartview 
 		LinearLayout totalCostDetailsLayout = (LinearLayout)view.findViewById(R.id.totalCostDetailsLayout);
 		

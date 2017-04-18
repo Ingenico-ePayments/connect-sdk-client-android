@@ -13,7 +13,6 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.fragments.FullWal
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.render.shoppingcart.RenderShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import com.google.android.gms.wallet.MaskedWallet;
@@ -48,18 +47,22 @@ public class ConfirmationActivity extends ShoppingCartActivity implements Dialog
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_payment);
+        // Initialize the shoppingCart
+        super.initialize(this);
 
         // Get the payment object for this paymentProduct, given by the retailer
         Intent intent = getIntent();
-        paymentContext = (PaymentContext) intent.getSerializableExtra(Constants.INTENT_CONTEXT);
+        paymentContext = (PaymentContext) intent.getSerializableExtra(Constants.INTENT_PAYMENT_CONTEXT);
         shoppingCart = (ShoppingCart) intent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
         maskedWallet = (MaskedWallet) intent.getParcelableExtra(Constants.INTENT_MASKED_WALLET);
         paymentRequest = (PaymentRequest) intent.getParcelableExtra(Constants.INTENT_PAYMENT_REQUEST);;
 
-        // Render the shoppingcart details
-        shoppingCartRenderer = new RenderShoppingCart(paymentContext, shoppingCart, findViewById(R.id.headerLayout), getApplicationContext());
-
         createAndAddWalletFragment();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 
     private void createAndAddWalletFragment() {

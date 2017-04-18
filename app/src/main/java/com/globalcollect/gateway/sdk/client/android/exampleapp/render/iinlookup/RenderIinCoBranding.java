@@ -147,7 +147,7 @@ public class RenderIinCoBranding {
             ImageView paymentProductNameLogoImageView   = (ImageView)paymentProductLayout.findViewById(R.id.coBrandPaymentProductLogo);
 
             // Set the translated value
-            Translator translator = new Translator(coBrandTooltipLayout.getContext());
+            Translator translator = Translator.getInstance(coBrandTooltipLayout.getContext());
             paymentProductNameTextView.setText(translator.getPaymentProductName(basicPaymentItem.getId()));
 
             // Get the logo for the product and set it as the background
@@ -176,7 +176,7 @@ public class RenderIinCoBranding {
     }
 
     private String translate (String coBrandMessageId, Context context) {
-        Translator translator = new Translator(context);
+        Translator translator = Translator.getInstance(context);
         return translator.getCoBrandNotificationText(coBrandMessageId);
     }
 }

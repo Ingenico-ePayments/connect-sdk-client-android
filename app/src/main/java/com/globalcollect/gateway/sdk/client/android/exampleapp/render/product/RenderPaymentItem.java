@@ -48,7 +48,7 @@ public class RenderPaymentItem implements RenderPaymentItemInterface {
 		ImageView paymentProductNameLogoImageView = (ImageView)paymentProductLayout.findViewById(R.id.paymentProductLogo);
 
 		// Set the translated value
-		Translator translator = new Translator(parent.getContext());
+		Translator translator = Translator.getInstance(parent.getContext());
 		String translatedValue = (product instanceof BasicPaymentProduct) ? translator.getPaymentProductName(product.getId()) : translator.getPaymentProductGroupName(product.getId());
 		paymentProductNameTextView.setText(translatedValue);
 				

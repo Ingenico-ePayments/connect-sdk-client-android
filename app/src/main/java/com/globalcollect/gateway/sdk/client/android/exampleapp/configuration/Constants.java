@@ -1,5 +1,7 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.configuration;
 
+import com.globalcollect.gateway.sdk.client.android.sdk.formatter.StringFormatter;
+
 /**
  * Copyright 2014 Global Collect Services B.V
  *
@@ -8,9 +10,9 @@ public class Constants {
 
 	/** Application Identifier, used for identifying the application in network calls **/
 	public static String APPLICATION_IDENTIFIER			 = "Android Example Application/v1.0";
-	
+
 	/** Intent data keys **/
-	public final static String INTENT_CONTEXT					 = "context";
+	public final static String INTENT_PAYMENT_CONTEXT 			 = "paymentContext";
 	public final static String INTENT_PAYMENT_REQUEST			 = "paymentRequest";
 	public final static String INTENT_SHOPPINGCART 			 	 = "shoppingcart";
 	public final static String INTENT_MASKED_WALLET			 	 = "masked_wallet";
@@ -23,12 +25,15 @@ public class Constants {
 	public final static String INTENT_ERRORMESSAGE				 = "errorMessage";
 	public final static String INTENT_URL_WEBVIEW				 = "url";
 	public final static String INTENT_GROUP_PAYMENTPRODUCTS		 = "group_paymentproducts";
-	
+
 	/** Bundle data keys **/
-	public final static String BUNDLE_PAYMENT_PRODUCTS 	= "bundle_paymentproducts";
-	public final static String BUNDLE_GC_SESSION 		= "bundle_coresession";
-	public final static String BUNDLE_PAYMENT_REQUEST 	= "bundle_checkoutdetails";
-	public final static String BUNDLE_SHOPPING_CART 	= "bundle_shoppingcart";
+	public final static String BUNDLE_PAYMENT_PRODUCTS 			= "bundle_paymentproducts";
+	public final static String BUNDLE_GC_SESSION 				= "bundle_coresession";
+	public final static String BUNDLE_SHOPPING_CART 			= "bundle_shoppingcart";
+	public final static String BUNDLE_INPUTDATAPERSISTERR		= "bundle_inputdatapersister";
+	public final static String BUNDLE_INPUTVALIDATIONPERSISTER	= "bundle_inputvalidationpersister";
+	public final static String BUNDLE_IINDETAILSPERSISTER		= "bundle_iindetailspersister";
+	public final static String BUNDLE_RENDERED					= "bundle_rendered";
 
 	/** GoogleApi data keys **/
 	public final static String	PAYMENT_METHOD_TOKENIZATION_PARAMETER_PUBLIC_KEY = "publicKey";

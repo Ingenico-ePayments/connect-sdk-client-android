@@ -3,25 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    
-	<ScrollView 
-	    android:layout_weight="0"
+
+	<include layout="@layout/activity_header"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent" />
+
+	<ScrollView
+	    android:layout_weight="1"
 	    android:id="@+id/container"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
+	    android:layout_height="0dp"
 	    tools:context="com.globalcollect.gateway.sdk.client.android.activities.SelectPaymentProductActivity"
 	    tools:ignore="MergeRootFrame" >
-	    
-	    
+
+
 	    <LinearLayout
 		    android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:orientation="vertical"
 	        style="@style/WhiteLayout">
-	
-			<include layout="@layout/activity_header" />
-			
-			
+
 			<TextView
 			    android:id="@+id/listAccountsOnFileHeader"
 				android:layout_width="wrap_content"
@@ -29,7 +30,7 @@
 	        	android:text="@string/gc.app.paymentProductSelection.accountsOnFileTitle"
 	        	android:visibility="gone"
 	        	style="@style/ListHeaderText" />
-			
+
 			<ImageView
 			    android:id="@+id/listAccountsOnFileDivider"
 		        android:layout_width="match_parent"
@@ -37,7 +38,7 @@
 		        android:scaleType="fitXY"
 		        android:visibility="gone"
 		        android:src="@drawable/line" />
-			
+
 			<LinearLayout
 	        	android:id="@+id/listAccountsOnFile"
 	        	android:layout_width="match_parent"
@@ -45,22 +46,22 @@
 	        	android:background="#ffffff"
 	        	android:gravity="center_vertical"
 	        	android:orientation="vertical"
-	        	android:visibility="gone" 
+	        	android:visibility="gone"
 	        	android:paddingBottom="30dp"
 	        	/>
-			
+
 			<TextView
 				android:layout_width="wrap_content"
 		    	android:layout_height="wrap_content"
 	        	android:text="@string/gc.app.paymentProductSelection.paymentProductsTitle"
 	        	style="@style/ListHeaderText" />
-			
+
 			<ImageView
 		        android:layout_width="match_parent"
 		        android:layout_height="1dp"
 		        android:scaleType="fitXY"
 		        android:src="@drawable/line" />
-					
+
 			<LinearLayout
 	        	android:id="@+id/listPaymentProducts"
 	        	android:layout_width="match_parent"
@@ -71,6 +72,9 @@
 	    </LinearLayout>
 	</ScrollView>
 
-	<include layout="@layout/activity_footer" />
+	<include layout="@layout/activity_footer"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_weight="0"/>
 
 </LinearLayout>

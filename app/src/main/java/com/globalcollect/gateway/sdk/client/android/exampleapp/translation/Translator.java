@@ -1,6 +1,7 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.translation;
 import java.security.InvalidParameterException;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 
@@ -29,20 +30,27 @@ public class Translator {
 
 	// Marker for keys that could not be found
 	public static final  String BAD_TRANSLATION_KEY_MARKER			= "???";
-		
+
+	// We are storing the ApplicationContext, which is no memoryleak as it lives for as long as the
+	// application is around anyways.
+	@SuppressLint("StaticFieldLeak")
+	private static Translator INSTANCE;
+
 	// Context used for loading resources from strings.xml
 	private Context context;
-	
-	
-	/**
-	 * Constructor
-	 * @param context, the Android Context object needed for loading stringresources
-	 */
-	public Translator(Context context) {
-		
+
+	public static synchronized Translator getInstance(Context context) {
 		if (context == null) {
-			throw new InvalidParameterException("Error initialising Translator, context may not be null");
+			throw new InvalidParameterException("Error creating Translator, context may not be null.");
 		}
+
+		if (INSTANCE == null) {
+			INSTANCE = new Translator(context.getApplicationContext());
+		}
+		return INSTANCE;
+	}
+
+	private Translator(Context context) {
 		this.context = context;
 	}
 	

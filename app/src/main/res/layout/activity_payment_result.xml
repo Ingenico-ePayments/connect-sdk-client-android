@@ -1,22 +1,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+	<include layout="@layout/activity_header"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent" />
+
 	<ScrollView
-	    android:layout_weight="0"
+	    android:layout_weight="1"
 	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content" >
-	    
+	    android:layout_height="0dp" >
+
 		<LinearLayout
 		    android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:orientation="vertical"
 	        style="@style/WhiteLayout" >
-			
-		    <include layout="@layout/activity_header" />
-			        
+
 		    <TextView
 		        android:layout_marginLeft="20dp"
 		        android:layout_marginRight="20dp"
@@ -25,7 +26,7 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:textSize="25sp"/>
-		    
+
 		    <TextView
 		        android:layout_marginLeft="20dp"
 		        android:layout_marginRight="20dp"
@@ -34,11 +35,13 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:textSize="15sp"/>
-		        
 		</LinearLayout>
-		            
+
 	</ScrollView>
-	
-	<include layout="@layout/activity_footer" />
-	
+
+	<include layout="@layout/activity_footer"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_weight="0"/>
+
 </LinearLayout>
