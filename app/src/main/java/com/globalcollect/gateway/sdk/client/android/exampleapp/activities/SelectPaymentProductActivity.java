@@ -463,7 +463,6 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 							// create the paymentRequest that can eventually be used to pay with, set
 							// Android Pay as the payment product
-							// FIXME: Moet dit met Request?
 							PaymentRequest paymentRequest = new PaymentRequest();
 							if (paymentItem instanceof PaymentProduct) {
 								paymentRequest.setPaymentProduct((PaymentProduct) paymentItem);

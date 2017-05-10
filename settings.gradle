@@ -1,1 +1,1 @@
-include ':app', ':globalcollect-sdk'
+include ':app', ':globalcollect-sdk', ':globalcollect-sdk-integrationtest'

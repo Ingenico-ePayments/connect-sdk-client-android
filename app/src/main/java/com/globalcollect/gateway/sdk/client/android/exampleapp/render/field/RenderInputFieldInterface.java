@@ -21,8 +21,9 @@ public interface RenderInputFieldInterface {
 	 * This inputfield is added to the given ViewGroup
 	 *
 	 * @param field, PaymentProductField containing all data for the inputfield
-	 * @param selectedPaymentProduct, the selected PaymentProduct, used for getting the correct translations
+	 * @param inputDataPersister, the selected PaymentProduct, used for getting the correct translations
 	 * @param rowView, the ViewGroup to which the rendered inputfield is added
+	 * @param paymentContext, the paymentContext of the current payment
 	 *
 	 * @return the rendered view
 	 */

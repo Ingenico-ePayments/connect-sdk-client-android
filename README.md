@@ -7,7 +7,17 @@ The Android SDK comes with an example app that illustrates the use of the SDK an
 
 See the [Ingenico Connect Developer Hub](https://developer.globalcollect.com/documentation/sdk/mobile/android/) for more information on how to use the SDK.
 
-Installation
+Installation via Gradle
+------------
+
+Add a requirement to the SDK to your `build.gradle` file, where `x.y.z` is the version number:
+
+    dependencies {
+        // other dependencies
+        compile 'com.ingenico.connect.gateway:connect-sdk-client-android:x.y.z'
+    }
+
+Manual installation
 ------------
 
 To install the Android SDK and the example app, first download the code from GitHub.
@@ -31,3 +41,17 @@ To use the Android SDK in your own app, you need to add the `globalcollect-sdk` 
 9. Click on the `+` sign and select `Module dependency`.
 10.Select the `globalcollect-sdk` module and press `OK`.
 11. You now have access to use all the Android SDK classes.
+
+Running tests
+-------------
+
+The Android SDK comes with a set of integration tests. To run these tests, you will first need to modify file `globalcollect-sdk-integrationtest/src/test/resources/itconfiguration.properties`. This file is mostly complete, but you need to fill in the actual values for the following keys:
+* `connect.api.apiKeyId` for the API key id to use. This can be retrieved from the Configuration Center.
+* `connect.api.secretApiKey` for the secret API key to use. This can be retrieved from the Configuration Center.
+* `connect.api.merchantId` for your merchant ID.
+
+Besides these settings, you can also modify the settings for the [Java SDK](https://developer.globalcollect.com/documentation/sdk/server/java/), which is used to create the sessions and tokens needed to run the tests.
+
+Afterwards, you can run the tests as follows:
+1. Open the SDK in Android Studio. If you haven't opened it before, choose to import a project and browse to the Android SDK project.
+2. On the `Project` tab, open `globalcollect-sdk-integrationtest`, then `java`. Right click on the `com.globalcollect.gateway.sdk.client.android.integrationtest` package, and click on `Run 'Tests in 'com.globalcollect.ga...'`.

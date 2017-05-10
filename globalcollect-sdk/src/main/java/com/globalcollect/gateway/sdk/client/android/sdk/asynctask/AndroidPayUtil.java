@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
 import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
-import com.globalcollect.gateway.sdk.client.android.sdk.exception.UnknownNetworkException;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductNetworksResponse;
 import com.google.android.gms.common.api.BooleanResult;
@@ -17,7 +16,6 @@ import com.google.android.gms.wallet.WalletConstants;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.apache.commons.lang3.Validate.notNull;

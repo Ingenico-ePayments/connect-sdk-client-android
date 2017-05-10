@@ -77,7 +77,6 @@ public class DetailInputActivity extends ShoppingCartActivity implements GcSessi
         if (savedInstanceState != null) {
             initializeSavedInstanceStateData(savedInstanceState);
         }
-
     }
 
     private void loadAndInitializeIntentData() {
@@ -204,6 +203,7 @@ public class DetailInputActivity extends ShoppingCartActivity implements GcSessi
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
+        // Save the current avtive field and cursorposition
         View v = fieldView.getViewWithFocus();
         if (v instanceof EditText) {
             inputDataPersister.setFocusFieldId((String) v.getTag());
