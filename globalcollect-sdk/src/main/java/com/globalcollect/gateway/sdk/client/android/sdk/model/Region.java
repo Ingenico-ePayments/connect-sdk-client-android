@@ -16,36 +16,62 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.Enviro
  */
 public enum Region {
 
-
 	EU(new ArrayList<Environment>(Arrays.asList(
+			new Environment(EnvironmentType.Production,
+					"https://ams1.api-ingenico.com/client/v1/",
+					"https://assets.pay1.secured-by-ingenico.com"),
 
-				new Environment(EnvironmentType.Production,
-								"https://api-eu.globalcollect.com/client/v1/",
-			        		 	"https://assets.pay1.poweredbyglobalcollect.com"),
+			new Environment(EnvironmentType.PreProduction,
+					"https://ams1.preprod.api-ingenico.com/client/v1/",
+					"https://assets.pay1.preprod.secured-by-ingenico.com"),
 
-			    new Environment(EnvironmentType.PreProduction,
-			       		 		"https://api-eu-preprod.globalcollect.com/client/v1/",
-			       		 		"https://assets.pay1.preprod.poweredbyglobalcollect.com"),
-
-				new Environment(EnvironmentType.Sandbox,
-								"https://api-eu-sandbox.globalcollect.com/client/v1/",
-								"https://assets.pay1.sandbox.poweredbyglobalcollect.com")
+			new Environment(EnvironmentType.Sandbox,
+					"https://ams1.sandbox.api-ingenico.com/client/v1/",
+					"https://assets.pay1.sandbox.secured-by-ingenico.com")
 			))),
 
 	US(new ArrayList<Environment>(Arrays.asList(
+			new Environment(EnvironmentType.Production,
+					"https://us.api-ingenico.com/client/v1/",
+					"https://assets.pay2.secured-by-ingenico.com"),
 
-				new Environment(EnvironmentType.Production,
-								"https://api-us.globalcollect.com/client/v1/",
-					            "https://assets.pay2.poweredbyglobalcollect.com"),
+			new Environment(EnvironmentType.PreProduction,
+					"https://us.preprod.api-ingenico.com/client/v1/",
+					"https://assets.pay2.preprod.secured-by-ingenico.com"),
 
-			    new Environment(EnvironmentType.PreProduction,
-			    				"https://api-us-preprod.globalcollect.com/client/v1/",
-			    				"https://assets.pay2.preprod.poweredbyglobalcollect.com"),
+			new Environment(EnvironmentType.Sandbox,
+					"https://us.sandbox.api-ingenico.com/client/v1/",
+					"https://assets.pay2.sandbox.secured-by-ingenico.com")
+			))),
 
-			    new Environment(EnvironmentType.Sandbox,
-			    				"https://api-us-sandbox.globalcollect.com/client/v1/",
-				       		 	"https://assets.pay2.sandbox.poweredbyglobalcollect.com")
-	)));
+	AMS(new ArrayList<Environment>(Arrays.asList(
+			new Environment(EnvironmentType.Production,
+					"https://ams2.api-ingenico.com/client/v1/",
+					"https://assets.pay3.secured-by-ingenico.com"),
+
+			new Environment(EnvironmentType.PreProduction,
+					"https://ams2.preprod.api-ingenico.com/client/v1/",
+					"https://assets.pay3.preprod.secured-by-ingenico.com"),
+
+			new Environment(EnvironmentType.Sandbox,
+					"https://ams2.sandbox.api-ingenico.com/client/v1/",
+					"https://assets.pay3.sandbox.secured-by-ingenico.com")
+			))),
+
+	PAR(new ArrayList<Environment>(Arrays.asList(
+			new Environment(EnvironmentType.Production,
+					"https://par.api-ingenico.com/client/v1/",
+					"https://assets.pay4.secured-by-ingenico.com"),
+
+			new Environment(EnvironmentType.PreProduction,
+					"https://par-preprod.api-ingenico.com/client/v1/",
+					"https://assets.pay4.preprod.secured-by-ingenico.com"),
+
+			new Environment(EnvironmentType.Sandbox,
+					"https://par.sandbox.api-ingenico.com/client/v1/",
+					"https://assets.pay4.sandbox.secured-by-ingenico.com")
+			))),
+	;
 
 
 	// List of all environments for this Region
