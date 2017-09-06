@@ -8,14 +8,14 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.FormatResult;
 
 /**
  * Contains util methods for stringformatting
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class StringFormatter implements Serializable {
-	
+
 	private static final long serialVersionUID = -365568554479175934L;
-	
+
 	private enum ChangeType {
 		ADDED,
 		REMOVED,
@@ -270,11 +270,11 @@ public class StringFormatter implements Serializable {
 	 */
 	@Deprecated
 	public FormatResult applyMask(String mask, String value, String oldValue, Integer oldCursorIndex) {
-		
+
 		if (mask == null || value == null || oldValue == null){
 			return null;
 		}
-		
+
 		// if users press the backspace button
 		if (oldValue.length() > value.length()) {
 			return new FormatResult(value, null);
@@ -298,16 +298,16 @@ public class StringFormatter implements Serializable {
 	 * @return mask or cursorIndex
 	 */
 	private Object getMaskOrGetCursorIndex(String mask, String value, int cursorIndex, boolean getMask){
-		
+
 		if (mask == null || value == null) {
 			return null;
 		}
-		
+
 		String newValue = "";
-		
+
 		Integer isInMask = 0;
 		Integer index = 0;
-		
+
 		// loop over the mask characters
 		for(Integer i = 0; i < mask.length(); i++){
 			Character maskCharacter = mask.charAt(i);
@@ -319,27 +319,27 @@ public class StringFormatter implements Serializable {
 
 				// if character between {{ and }}, add character at the same position of the value
 				if(isInMask == 2){
-					
+
 					// if the index is higher than the value which has to be masked
 					// then break function
 					if(index >= value.length()){
 						break;
 					}
-					
-					
+
+
 					// If this is a valid character, add it to the formattedValue
 					if ((Character.toString(value.charAt(index)).
 							matches(convertMaskCharacterToRegex(maskCharacter.toString())))) {
-						
-						newValue += value.charAt(index); 
-						
+
+						newValue += value.charAt(index);
+
 					} else {
-						
+
 						// if characters are not equal, then go 1 step back in the mask (there has been added or removed something)
 						i--;
 					}
 					index++;
-					
+
 				// if character between {{}} blocks, then add mask values
 				} else if (isInMask == 0){
 
@@ -356,21 +356,21 @@ public class StringFormatter implements Serializable {
 					}
 
 					newValue += maskCharacter;
-					
+
 					if(index >= value.length()){
 						break;
 					}
 				}
 			}
 		}
-		
+
 		if(getMask){
 			return newValue;
 		} else {
 			return cursorIndex;
 		}
 	}
-	
+
 	/**
 	 * Applies the mask to the value. This method can be used if you want to mask a static String
 	 * @param mask the mask that should be applied to value
@@ -378,10 +378,10 @@ public class StringFormatter implements Serializable {
 	 * @return the masked value
 	 */
 	public String applyMask(String mask, String value){
-		
+
 		return (String) getMaskOrGetCursorIndex(mask, value, 0, true);
 	}
-	
+
 	/**
 	 * Removes the mask on a given value
 	 * @param mask the mask that is applied to the value
@@ -389,20 +389,20 @@ public class StringFormatter implements Serializable {
 	 * @return the unMasked value
 	 */
 	public String removeMask(String mask, String value){
-		
+
 		if (mask == null || value == null) {
 			return null;
 		}
-		
+
 		// First apply Mask on the value
 		// So this method will work if you put in any value (masked or unmasked)
 		value = applyMask(mask, value);
-		
+
 		String newValue = "";
-		
+
 		Integer isInMask = 0;
 		Integer index = 0;
-		
+
 		// loop over the mask characters
 		for(Integer i = 0; i < mask.length(); i++){
 			Character maskCharacter = mask.charAt(i);
@@ -420,14 +420,14 @@ public class StringFormatter implements Serializable {
 				}
 				index ++;
 			}
-			
+
 		}
-		
-		
+
+
 		return newValue;
 	}
-	
-	
+
+
 	/**
 	 * Replaces a maskcharacter with a regex so it can be used for matching
 	 * @param maskCharacter

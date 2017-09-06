@@ -11,9 +11,9 @@ import java.security.InvalidParameterException;
 
 
 /**
- * AsyncTask which executes an publickey lookup call to the GlobalCollect platform
+ * AsyncTask which executes an publickey lookup call to the Ingenico ePayments platform
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PaymentProductPublicKeyAsyncTask extends AsyncTask<String, Void, PaymentProductPublicKeyResponse> {
@@ -61,7 +61,7 @@ public class PaymentProductPublicKeyAsyncTask extends AsyncTask<String, Void, Pa
     @Override
     protected PaymentProductPublicKeyResponse doInBackground(String... params) {
 
-        // Do the call to the GlobalCollect platform
+        // Do the call to the Ingenico ePayments platform
         PaymentProductPublicKeyResponse response = communicator.getPaymentProductPublicKey(context, productId);
 
         return response;
@@ -80,7 +80,7 @@ public class PaymentProductPublicKeyAsyncTask extends AsyncTask<String, Void, Pa
      * Interface for OnPublicKeyLoaded listener
      * Is called from the BasicPaymentProductsAsyncTask when it has the publickey
      *
-     * Copyright 2014 Global Collect Services B.V
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnPaymentProductPublicKeyLoadedListener {

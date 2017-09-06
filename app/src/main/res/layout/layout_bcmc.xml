@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bcmcLayout"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/bcmcLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pp_logo_3012" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:text="@string/gc.general.paymentProducts.3012.introduction"
+        android:layout_alignParentLeft="true"
+        style="@style/TotalCostLayoutText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/gc.general.paymentProducts.3012.payWithAppLabel"
+        android:layout_alignParentLeft="true"
+        style="@style/TotalCostLayoutTextBold" />
+
+    <Button
+        android:id="@+id/payNowButton"
+        style="@style/ActivePayButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:onClick="openBCMCApp"
+        android:text="@string/gc.general.paymentProducts.3012.payWithAppButtonText" />
+
+    <include layout="@layout/activity_bcmc_divider" android:id="@+id/card_divider"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/gc.general.paymentProducts.3012.payWithCardLabel"
+        android:layout_alignParentLeft="true"
+        style="@style/TotalCostLayoutTextBold" />
+
+</LinearLayout>

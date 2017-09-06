@@ -16,21 +16,21 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 /**
  * AsyncTask which loads all BasicPaymentProducts from the GC Gateway
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, BasicPaymentProducts> implements Callable<BasicPaymentProducts> {
 
 	// The listener which will be called by the AsyncTask when the BasicPaymentProducts are loaded
 	private List<OnBasicPaymentProductsCallCompleteListener> listeners;
-	
+
 	// Context needed for reading stubbed BasicPaymentProducts
 	private Context context;
-	
+
 	// Contains all the information needed to communicate with the GC gateway to get paymentproducts
 	private PaymentContext paymentContext;
-	
+
 	// Communicator which does the communication to the GC gateway
 	private C2sCommunicator communicator;
 
@@ -124,8 +124,8 @@ public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, Basic
 	/**
      * Interface for OnBasicPaymentProductsCallComplete listener
      * Is called from the BasicPaymentProductsAsyncTask when it has the BasicPaymentProducts
-     * 
-     * Copyright 2014 Global Collect Services B.V
+     *
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnBasicPaymentProductsCallCompleteListener {

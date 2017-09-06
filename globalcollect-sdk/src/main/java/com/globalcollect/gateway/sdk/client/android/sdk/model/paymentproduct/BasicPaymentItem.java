@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  */
 public interface BasicPaymentItem extends Serializable {
 

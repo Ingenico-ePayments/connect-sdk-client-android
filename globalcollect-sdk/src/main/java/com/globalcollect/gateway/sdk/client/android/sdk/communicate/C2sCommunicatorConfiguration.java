@@ -13,9 +13,9 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
 import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSession;
 
 /**
- * Contains all configuration parameters needed for communicating with the GC gateway 
- * 
- * Copyright 2014 Global Collect Services B.V
+ * Contains all configuration parameters needed for communicating with the GC gateway
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class C2sCommunicatorConfiguration implements Serializable {
@@ -57,7 +57,7 @@ public class C2sCommunicatorConfiguration implements Serializable {
 	 * @param ipAddress, used to create device metadata; may be null
 	 */
 	public C2sCommunicatorConfiguration(String clientSessionId, String customerId, Region region, EnvironmentType environment, String appIdentifier, String ipAddress) {
-		
+
 		if (clientSessionId == null ) {
 			throw new InvalidParameterException("Error creating C2SCommunicatorConfiguration, clientSessionId may not be null");
 		}
@@ -73,7 +73,7 @@ public class C2sCommunicatorConfiguration implements Serializable {
 		if (appIdentifier == null) {
 			throw new InvalidParameterException("Error creating C2SCommunicatorConfiguration, appIdentifier may not be null");
 		}
-		
+
 		this.clientSessionId = clientSessionId;
 		this.customerId = customerId;
 		this.region = region;
@@ -81,16 +81,16 @@ public class C2sCommunicatorConfiguration implements Serializable {
 		this.appIdentifier = appIdentifier;
 		this.ipAddress = ipAddress;
 	}
-	
-	
+
+
 	/**
 	 * Convenience method for creating GcSession given the clientSessionId, customerId and region
-	 * 
+	 *
 	 * @param clientSessionId, used for identifying the customer on the GC gateway
-	 * @param customerId, used for sending calls to the GC gateway 
+	 * @param customerId, used for sending calls to the GC gateway
 	 * @param region, used to determine the correct baseurl
 	 * @param environment, used to determine the correct baseurl
-	 * 
+	 *
 	 * @return initialised GcSession
 	 * @deprecated use {@link #initWithClientSessionId(String, String, Region, EnvironmentType, String, String)} or {@link #initWithClientSessionId(String, String, Region, EnvironmentType, String)} instead.
 	 */
@@ -194,11 +194,11 @@ public class C2sCommunicatorConfiguration implements Serializable {
 	public String getClientSessionId() {
 		return clientSessionId;
 	}
-	
+
 	public String getCustomerId() {
 		return customerId;
 	}
-	
+
 	public Region getRegion() {
 		return region;
 	}
@@ -217,22 +217,22 @@ public class C2sCommunicatorConfiguration implements Serializable {
 	public String getIpAddress() {
 		return ipAddress;
 	}
-	
-	
+
+
 	/**
 	 * Determines the best baseUrl depending on the given region
-	 *  
+	 *
 	 * @return baseUrl for communicating
 	 */
 	public String getBaseUrl() {
 		return GcUtil.getC2SBaseUrlByRegion(region, environment);
-	}	
-	
-	
+	}
+
+
 	/**
 	 * Returns map of metadata of the device this SDK is running on
 	 * The map contains the SDK version, OS, OS version and screensize
-	 * 
+	 *
 	 * @return Map<String, String> containing key/values of metadata
 	 */
 	public  Map<String, String> getMetadata(Context context) {

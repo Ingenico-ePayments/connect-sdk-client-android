@@ -2,12 +2,12 @@ package com.globalcollect.gateway.sdk.client.android.sdk.model;
 
 /**
  * This enum contains a full list of all the currencycodes which global collect supports
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public enum CurrencyCode {
-	
+
 	// A - F
 	AED,
 	AFN,
@@ -54,7 +54,7 @@ public enum CurrencyCode {
 	EUR,
 	FJD,
 	FKP,
-	
+
 	// G - L
 	GBP,
 	GEL,
@@ -94,7 +94,7 @@ public enum CurrencyCode {
 	LSL,
 	LVL,
 	LYD,
-	
+
 	// M - R
 	MAD,
 	MDL,
@@ -129,7 +129,7 @@ public enum CurrencyCode {
 	RSD,
 	RUB,
 	RWF,
-	
+
 	// S - Z
 	SAR,
 	SBD,
@@ -170,6 +170,6 @@ public enum CurrencyCode {
 	ZAR,
 	ZMK,
 	ZWL
-	
-	
+
+
 }

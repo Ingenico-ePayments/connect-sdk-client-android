@@ -14,7 +14,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.encryption.Encryptor;
 /**
  * Pojo that holds the PublicKey call response from the GC gateway
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PublicKeyResponse {

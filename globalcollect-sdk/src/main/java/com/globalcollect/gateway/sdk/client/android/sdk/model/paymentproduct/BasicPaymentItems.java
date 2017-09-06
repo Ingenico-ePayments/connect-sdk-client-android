@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Pojo with convenience methods for getting BasicPaymentItem and AccountOnFile objects
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class BasicPaymentItems implements Serializable {

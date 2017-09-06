@@ -15,41 +15,41 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 
 /**
- * AsyncTask which loads an Image from a given url 
- *  
- * Copyright 2014 Global Collect Services B.V
+ * AsyncTask which loads an Image from a given url
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class LoadImageAsyncTask extends AsyncTask<String, Void, Drawable> {
-	
+
 	// The listener which will be called by the AsyncTask
 	private OnImageLoadedListener listener;
-		
+
 	// Image url which will be loaded
 	private String imageUrl;
-	
+
 	// Product id used for callback
 	private String productId;
-	
+
 	// Product id used for callback
 	private Map<String, String> logoMapping;
-	
+
 	private String url;
-	
+
 	// Context needed for parsing image to drawable
 	private Context context;
-	
+
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param imageUrl, url which will be loaded
 	 * @param productId, used for callback
 	 * @param context, needed for parsing image to drawable
 	 * @param listener, listener which will be called by the AsyncTask
 	 */
     public LoadImageAsyncTask(String imageUrl, String productId, Context context, Map<String, String> logoMapping, String url, OnImageLoadedListener listener) {
-    	
+
     	if (imageUrl == null) {
 			throw new InvalidParameterException("Error creating LoadImageAsyncTask, imageUrl may not be null");
 		}
@@ -68,7 +68,7 @@ public class LoadImageAsyncTask extends AsyncTask<String, Void, Drawable> {
     	if (listener == null) {
 			throw new InvalidParameterException("Error creating LoadImageAsyncTask, listener may not be null");
 		}
-    		
+
         this.imageUrl  = imageUrl;
         this.productId = productId;
         this.context   = context;
@@ -76,14 +76,14 @@ public class LoadImageAsyncTask extends AsyncTask<String, Void, Drawable> {
         this.url 	   = url;
         this.listener  = listener;
     }
-    
-    
+
+
     @Override
     protected Drawable doInBackground(String... params) {
-        
+
     	try {
     		Bitmap bitmap = BitmapFactory.decodeStream((InputStream)new URL(imageUrl).getContent(), null, null);
-    		
+
     		return new BitmapDrawable(context.getResources(), bitmap);
     	} catch (MalformedURLException e) {
     		return null;
@@ -92,17 +92,17 @@ public class LoadImageAsyncTask extends AsyncTask<String, Void, Drawable> {
 		}
     }
 
-    
+
     @Override
     protected void onPostExecute(Drawable image) {
     	listener.onImageLoaded(image, productId, logoMapping, url);
     }
-    
-    
+
+
     /**
      * Interface for OnImageLoaded listener
-     * 
-     * Copyright 2014 Global Collect Services B.V
+     *
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnImageLoadedListener {

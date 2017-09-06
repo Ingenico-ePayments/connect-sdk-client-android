@@ -4,9 +4,9 @@ package com.globalcollect.gateway.sdk.client.android.sdk.model.validation;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
 /**
- * Interface for ValidationRule 
- * 
- * Copyright 2014 Global Collect Services B.V
+ * Interface for ValidationRule
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public interface ValidationRule {
@@ -21,5 +21,5 @@ public interface ValidationRule {
 	public abstract boolean validate(String text);
 
 	public abstract boolean validate(PaymentRequest paymentRequest, String fieldId);
-	
+
 }

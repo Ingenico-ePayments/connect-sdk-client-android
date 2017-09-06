@@ -12,25 +12,25 @@ import java.security.InvalidParameterException;
 import java.util.List;
 
 /**
- * AsyncTask which loads a PaymentProduct with fields from the GC Gateway 
- * 
- * Copyright 2014 Global Collect Services B.V
+ * AsyncTask which loads a PaymentProduct with fields from the GC Gateway
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProduct> {
-	
+
 	// The listener which will be called by the AsyncTask when PaymentProduct with fields is retrieved
 	private List<OnPaymentProductCallCompleteListener> listeners;
-	
+
 	// Context needed for reading stubbed PaymentProduct
 	private Context context;
-	
+
 	// The productId for the product which need to be retrieved
 	private String productId;
-	
+
 	// Communicator which does the communication to the GC gateway
 	private C2sCommunicator communicator;
-	
+
 	// PaymentContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
 	private PaymentContext paymentContext;
 
@@ -84,22 +84,22 @@ public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProd
 		}
     }
 
-    
+
     @Override
     protected void onPostExecute(PaymentProduct paymentProduct) {
-    	
+
     	// Call listener callback
     	for (OnPaymentProductCallCompleteListener listener : listeners) {
     		listener.onPaymentProductCallComplete(paymentProduct);
     	}
     }
-    
-    
+
+
     /**
      * Interface for OnPaymentProductCallComplete listener
      * Is called from the PaymentProductAsyncTask when it has retrieved a PaymentProduct with fields
-     * 
-     * Copyright 2014 Global Collect Services B.V
+     *
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnPaymentProductCallCompleteListener {

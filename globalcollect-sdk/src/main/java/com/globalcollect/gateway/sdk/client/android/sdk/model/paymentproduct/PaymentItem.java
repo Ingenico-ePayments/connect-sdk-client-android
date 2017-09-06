@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by leon.stemerdink on 20-5-2016.
+ * Pojo that represents a paymentItem
+ *
+ * Copyright 2017 Global Collect Services B.V
  */
 public interface PaymentItem extends BasicPaymentItem, Serializable {
 

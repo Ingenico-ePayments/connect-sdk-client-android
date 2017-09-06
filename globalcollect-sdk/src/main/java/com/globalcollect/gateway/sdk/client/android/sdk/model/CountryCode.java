@@ -2,12 +2,12 @@ package com.globalcollect.gateway.sdk.client.android.sdk.model;
 
 /**
  * This enum contains a full list of all the countrycodes which global collect supports
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public enum CountryCode {
-	
+
 	// A - F
 	AF,
 	AX,
@@ -88,7 +88,7 @@ public enum CountryCode {
 	GF,
 	PF,
 	TF,
-	
+
 	// G - L
 	GA,
 	GM,
@@ -141,8 +141,8 @@ public enum CountryCode {
 	LI,
 	LT,
 	LU,
-	
-	
+
+
 	// M - R
 	MO,
 	MK,
@@ -199,8 +199,8 @@ public enum CountryCode {
 	RO,
 	RU,
 	RW,
-	
-	
+
+
 	// S - Z
 	BL,
 	SH,
@@ -268,5 +268,5 @@ public enum CountryCode {
 	YE,
 	ZM,
 	ZW
-	
+
 }

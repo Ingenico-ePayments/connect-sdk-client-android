@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * AsyncTask which loads a PaymentProductGroup with fields from the GC Gateway
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PaymentProductGroupAsyncTask extends AsyncTask<String, Void, PaymentProductGroup> {
@@ -91,7 +91,7 @@ public class PaymentProductGroupAsyncTask extends AsyncTask<String, Void, Paymen
      * Interface for OnPaymentProductGroupComplete listener
      * Is called from the PaymentProductGroupAsyncTask when it has retrieved a BasicPaymentProductGroup with fields
      *
-     * Copyright 2014 Global Collect Services B.V
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnPaymentProductGroupCallCompleteListener {

@@ -9,8 +9,8 @@ import java.util.List;
 /**
  * Pojo which holds the BasicPaymentProduct data and it's PaymentProductFields
  * This class is filled by deserialising a JSON string from the GC gateway
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PaymentProduct extends BasicPaymentProduct implements PaymentItem, Serializable {
@@ -19,16 +19,21 @@ public class PaymentProduct extends BasicPaymentProduct implements PaymentItem, 
 
 
 	private boolean hasBeenSorted = false;
-	
+
 	private List<PaymentProductField> fields = new ArrayList<>();
 
 	public List<PaymentProductField> getPaymentProductFields() {
 		sortList();
 		return fields;
-	}	
+	}
+
+	public void setPaymentProductFields(List<PaymentProductField> paymentProductFields) {
+		this.fields = paymentProductFields;
+		sortList();
+	}
 
 	public PaymentProductField getPaymentProductFieldById(String id) {
-	
+
 		for(PaymentProductField field : fields) {
 			if(field.getId().equals(id)) {
 				return field;
@@ -36,10 +41,10 @@ public class PaymentProduct extends BasicPaymentProduct implements PaymentItem, 
 		}
 		return null;
 	}
-	
-	
+
+
 	private void sortList(){
-		
+
 		if (!hasBeenSorted) {
 			Collections.sort(fields, new Comparator<PaymentProductField>() {
 			    public int compare(PaymentProductField field1, PaymentProductField field2) {
@@ -50,9 +55,9 @@ public class PaymentProduct extends BasicPaymentProduct implements PaymentItem, 
 				   Integer displayOrder1 = field1.getDisplayHints().getDisplayOrder();
 				   Integer displayOrder2 = field2.getDisplayHints().getDisplayOrder();
 
-				   if (displayOrder1 == displayOrder2) return 0;
 				   if (displayOrder1 == null) return -1;
 				   if (displayOrder2 == null) return 1;
+				   if (displayOrder1.equals(displayOrder2)) return 0;
 				   return displayOrder1.compareTo(displayOrder2);
 			    }
 			});

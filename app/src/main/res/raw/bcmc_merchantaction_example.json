@@ -1,0 +1,94 @@
+{
+  "actionType" : "SHOW_FORM",
+  "formFields" : [ {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "length" : {
+          "maxLength" : 19,
+          "minLength" : 16
+        },
+        "luhn" : {
+        },
+        "regularExpression" : {
+          "regularExpression" : "^[0-9]*$"
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 0,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Card number",
+      "mask" : "{{9999}} {{9999}} {{9999}} {{9999}} {{999}}",
+      "obfuscate" : false,
+      "placeholderLabel" : "**** **** **** ****",
+      "preferredInputType" : "IntegerKeyboard"
+    },
+    "id" : "cardNumber",
+    "type" : "numericstring"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "length" : {
+          "maxLength" : 35,
+          "minLength" : 0
+        },
+        "regularExpression" : {
+          "regularExpression" : "^[a-zA-ZàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßŠšŽžŸÿęĘ0-9 +_.=,:\\-\\[\\]\\/\\(\\)]*$"
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 1,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Cardholder name",
+      "obfuscate" : false,
+      "placeholderLabel" : "John Doe",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "cardholderName",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "expirationDate" : {
+        },
+        "regularExpression" : {
+          "regularExpression" : "^(0[1-9]|1[0-2])\\d\\d$"
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 2,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Expiry date",
+      "mask" : "{{99}}/{{99}}",
+      "obfuscate" : false,
+      "placeholderLabel" : "MM/YY",
+      "preferredInputType" : "IntegerKeyboard"
+    },
+    "id" : "expiryDate",
+    "type" : "expirydate"
+  } ],
+  "redirectData" : {
+    "RETURNMAC" : "d6e94016-e4d2-447c-8254-827f5c264c0e"
+  },
+  "showData" : [ {
+    "key" : "URLINTENT",
+    "value" : "BEPGenApp://DoTx?TransId=1example.com*P-XXXXXX$YYYYYY&Callback=MeAppXX://result"
+  }, {
+    "key" : "QRCODE",
+    "value" : "iVBORw0KGgoAAAANSUhEUgAAAMgAAADIAQAAAACFI5MzAAABbklEQVR42u2YQY7DIAxFzYpjcFNIbsoxsorH/xs66UizGY1kLxpVEeVtXOz/bSr62yMf8kdyiT1Fp1S96yyqBzZaDtIsxFP1lrWwDzZzkEPauaLGUZ6XlFTE3jzRXjOSk2kXrBMRJhk1qMzzzzqIJFTJ5YHzaN/1E0nWMwfD9x/x5juB5JIBiUwGbmtVf+cgZSfcNiAUaZByBoINRI0NSmRQzUmIb+MbJXLQnnMQ9IoDQkG8N52vL5WEE/MVRA3nq+gbUPA60XDCFkHnQwFayJwFchD2WNnOpx54S0EYMowY9Sgu33O7SzSxJURcaMmHTwFZCOruqPM7ajvO3WmjSfPAC+VLg2Fny0FQfSvJxkVevSScrKFJ6DHsbHuyiyd7eqI9Cy2wPW9goaS5+Y011iHq/riBxRK/5QwW4M2JfU1PaQj9z9xldiomGUG2i0/rVZOQV7aXu7zfwEKJq0Q63aVzQhlP/QSSz/9V/0u+AD34HM+MLLXXAAAAAElFTkSuQmCC"
+  } ]
+}

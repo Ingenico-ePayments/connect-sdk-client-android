@@ -13,7 +13,7 @@ import org.apache.commons.lang3.Validate;
 /**
  * AsyncTask which retrieves available payment networks for the specified productId from the GC Gateway
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PaymentProductNetworksAsyncTask  extends AsyncTask<String, Void, PaymentProductNetworksResponse> {
@@ -57,7 +57,7 @@ public class PaymentProductNetworksAsyncTask  extends AsyncTask<String, Void, Pa
     @Override
     protected PaymentProductNetworksResponse doInBackground(String... params) {
 
-        // Do the call to the GlobalCollect platform
+        // Do the call to the Ingenico ePayments platform
         return communicator.getPaymentProductNetworks(context, productId, paymentContext);
     }
 
@@ -75,7 +75,7 @@ public class PaymentProductNetworksAsyncTask  extends AsyncTask<String, Void, Pa
      * Is called from the PaymentProductNetworksAsyncTask when it has retrieved the networks that are
      * allowed for the current payment product
      *
-     * Copyright 2014 Global Collect Services B.V
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnPaymentProductNetworksCallCompleteListener {

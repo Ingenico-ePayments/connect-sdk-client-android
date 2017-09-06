@@ -1,13 +1,13 @@
 package com.globalcollect.gateway.sdk.client.android.sdk.configuration;
 
 /**
- * Copyright 2014 Global Collect Services B.V
- * 
+ * Copyright 2017 Global Collect Services B.V
+ *
  */
 public class Constants {
-	
+
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v3.2.0";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v3.3.0";
 
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
@@ -23,11 +23,12 @@ public class Constants {
 	public final static String GC_GATEWAY_CONVERT_AMOUNT_PATH = "[cid]/services/convert/amount";
 	public final static String GC_GATEWAY_IIN_LOOKUP_PATH = "[cid]/services/getIINdetails";
 	public final static String GC_GATEWAY_PUBLIC_KEY_PATH = "[cid]/crypto/publickey";
-	
+	public final static String GC_GATEWAY_THIRDPARTYSTATUS_PATH = "[cid]/payments/[paymentid]/thirdpartystatus";
+
 	/** SharedPreferences keys **/
 	public final static String PREFERENCES_NAME = "globalcollect.gateway.sdk.client.android.preferences";
 	public final static String PREFERENCES_LOGO_MAP = "payment_product_logos_map";
-	
+
 	/** File location settings **/
 	public final static String DIRECTORY_IINRESPONSES = "/files/";
 	public final static String FILENAME_IINRESPONSE_CACHE = "iinresponse.cache";
@@ -51,4 +52,7 @@ public class Constants {
 	/** Boleto Bancario product ID and Fiscal number field ID **/
 	public static String PAYMENTPRODUCTID_BOLETOBANCARIO 	= "1503";
 	public static String FISCAL_NUMBER_FIELD_ID				= "fiscalNumber";
+
+	/** BCMC payment product ID **/
+	public static String PAYMENTPRODUCTID_BCMC	= "3012";
 }

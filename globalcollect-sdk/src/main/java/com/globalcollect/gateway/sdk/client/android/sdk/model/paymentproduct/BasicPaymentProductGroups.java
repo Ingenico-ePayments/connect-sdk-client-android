@@ -14,7 +14,7 @@ import java.util.List;
  * Pojo with convenience methods for getting ProdcutGroup and AccountOnFile objects
  * This class is filled by deserialising a JSON string from the GC gateway
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class BasicPaymentProductGroups implements Serializable {

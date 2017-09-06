@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Junit Testclass which tests PaymentProductField apply-/removeMask methods with no Mask present
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 @RunWith(MockitoJUnitRunner.class)

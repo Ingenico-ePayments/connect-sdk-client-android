@@ -15,13 +15,13 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
 
 /**
  * GcSession contains all methods needed for making a payment
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class GcSessionEncryptionHelper implements  OnEncryptDataCompleteListener, OnPublicKeyLoadedListener {
-	
-	
+
+
 	private Context context;
 	private OnPaymentRequestPreparedListener listener;
 	private PaymentRequest paymentRequest;
@@ -38,7 +38,7 @@ public class GcSessionEncryptionHelper implements  OnEncryptDataCompleteListener
      */
 	@Deprecated
 	public GcSessionEncryptionHelper(Context context, PaymentRequest paymentRequest, String clientSessionId, OnPaymentRequestPreparedListener listener) {
-		
+
 		if (paymentRequest == null ) {
 			throw new InvalidParameterException("Error creating GcSessionEncryptionHelper, paymentRequest may not be null");
 		}
@@ -51,7 +51,7 @@ public class GcSessionEncryptionHelper implements  OnEncryptDataCompleteListener
 		if (listener == null ) {
 			throw new InvalidParameterException("Error creating GcSessionEncryptionHelper, listener may not be null");
 		}
-		
+
 		this.context = context;
 		this.clientSessionId = clientSessionId;
 		this.listener = listener;
@@ -85,8 +85,8 @@ public class GcSessionEncryptionHelper implements  OnEncryptDataCompleteListener
 		this.paymentRequest = paymentRequest;
 		this.metaData = metaData;
 	}
-	
-	
+
+
 	/**
 	 * Listener for loaded publickey from the GC gateway
 	 */
@@ -95,14 +95,14 @@ public class GcSessionEncryptionHelper implements  OnEncryptDataCompleteListener
 	     EncryptDataAsyncTask task = new EncryptDataAsyncTask(response, paymentRequest, clientSessionId, this);
 	     task.execute();
 	}
-	
-	
+
+
 	/**
 	 * Listener for encrypting data
 	 */
 	@Override
 	public void onEncryptDataComplete(String encryptedData) {
-				
+
 		// Call the OnPaymentRequestPrepared listener with the new PreparedPaymentRequest()
 		if (metaData != null && !metaData.isEmpty()) {
 			listener.onPaymentRequestPrepared(new PreparedPaymentRequest(encryptedData, GcUtil.getBase64EncodedMetadata(metaData)));
@@ -110,13 +110,13 @@ public class GcSessionEncryptionHelper implements  OnEncryptDataCompleteListener
 			listener.onPaymentRequestPrepared(new PreparedPaymentRequest(encryptedData, GcUtil.getBase64EncodedMetadata(context)));
 		}
 	}
-	
-	
+
+
 	 /**
      * Interface for OnPaymentRequestPrepared listener
      * Is called from the GcSession when it has encrypted the given paymentproductfields and composed the PreparedPaymentRequest object with them
-     * 
-     * Copyright 2014 Global Collect Services B.V
+     *
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnPaymentRequestPreparedListener {

@@ -16,7 +16,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
  */
 public class DetailInputViewBoletoBancarioImpl extends DetailInputViewImpl implements DetailInputViewBoletoBancario {
 
-    // Special fieldId's with regards to the Boleto Bancario payment product
+    // Id's of fields that require extra logic for their validation
     private static final String FIRSTNAME_FIELD_ID		= "firstName";
     private static final String SURNAME_FIELD_ID	    = "surname";
     private static final String COMPANYNAME_FIELD_ID    = "companyName";

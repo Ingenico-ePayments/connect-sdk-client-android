@@ -55,6 +55,8 @@
         <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivity" />
         <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivityCreditCards" />
         <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivityBoletoBancario" />
+        <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivityBCMC" />
+        <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.BCMCProcessingActivity" />
 
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"

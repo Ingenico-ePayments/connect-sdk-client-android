@@ -9,9 +9,9 @@ import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunica
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
 
 /**
- * AsyncTask which executes an publickey lookup call to the GlobalCollect platform
+ * AsyncTask which executes an publickey lookup call to the Ingenico ePayments platform
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyResponse> {
@@ -52,7 +52,7 @@ public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyRespons
     @Override
     protected PublicKeyResponse doInBackground(String... params) {
 
-    	// Do the call to the GlobalCollect platform
+    	// Do the call to the Ingenico ePayments platform
 		return communicator.getPublicKey(context);
     }
 
@@ -69,7 +69,7 @@ public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyRespons
      * Interface for OnPublicKeyLoaded listener
      * Is called from the BasicPaymentProductsAsyncTask when it has the publickey
      *
-     * Copyright 2014 Global Collect Services B.V
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnPublicKeyLoadedListener {

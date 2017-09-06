@@ -18,9 +18,9 @@ import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
 /**
- * Junit Testclass which tests validation functionality 
- * 
- * Copyright 2014 Global Collect Services B.V
+ * Junit Testclass which tests validation functionality
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 @RunWith(MockitoJUnitRunner.class)
@@ -28,11 +28,11 @@ public class ValidationTest extends AndroidTestCase {
 
 	private final String emailAddressValid = "aa@bb.com";
 	private final String emailAddressInvalid = "aa2bb.com";
-	
+
 	private final String expirationDateValid = "1125";
 	private final String expirationDateInvalid = "0000";
-	
-	
+
+
 	private final ArrayList<String> listEntries = new ArrayList<String>();
 	private final String validListOption = "1";
 	private final String invalidListOption = "a";
@@ -44,23 +44,23 @@ public class ValidationTest extends AndroidTestCase {
 
 	private final String validLuhnCheck = "4242424242424242";
 	private final String invalidLuhnCheck = "1142424242424242";
-	
+
 	private final String validRange = "1";
 	private final String invalidRange = "150";
-	
+
 	private final String regex = "\\d{2}[a-z]{2}[A-Z]{3}";
 	private final String validRegex = "11atAAB";
 	private final String invalidRegex = "abcabcabc";
-	
+
 	public ValidationTest() {
-		
+
 		// Fill the test listEntries
 		listEntries.add("1");
 		listEntries.add("2");
 		listEntries.add("3");
 	}
-	
-	
+
+
 	// Test emailaddress validator
 	@Test
 	public void testValidEmailAddress() {
@@ -73,7 +73,7 @@ public class ValidationTest extends AndroidTestCase {
 		ValidationRuleEmailAddress rule = new ValidationRuleEmailAddress("", ValidationType.EMAILADDRESS);
 		assertEquals(false, rule.validate(emailAddressInvalid));
 	}
-	
+
 
 	// Test expirationdate validator
 	@Test
@@ -87,7 +87,7 @@ public class ValidationTest extends AndroidTestCase {
 		ValidationRuleExpirationDate rule = new ValidationRuleExpirationDate("", ValidationType.EXPIRATIONDATE);
 		assertEquals(false, rule.validate(expirationDateInvalid));
 	}
-	
+
 
 	// Test fixed list validator
 	@Test
@@ -101,8 +101,8 @@ public class ValidationTest extends AndroidTestCase {
 		ValidationRuleFixedList rule = new ValidationRuleFixedList(listEntries, "", ValidationType.FIXEDLIST);
 		assertEquals(false, rule.validate(invalidListOption));
 	}
-	
-	
+
+
 	// Test length validator
 	@Test
 	public void testValidLength() {
@@ -115,8 +115,8 @@ public class ValidationTest extends AndroidTestCase {
 		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength, "", ValidationType.LENGTH);
 		assertEquals(false, rule.validate(invalidLength));
 	}
-	
-	
+
+
 	// Test luhn validator
 	@Test
 	public void testValidLuhn() {
@@ -129,8 +129,8 @@ public class ValidationTest extends AndroidTestCase {
 		ValidationRuleLuhn rule = new ValidationRuleLuhn("", ValidationType.LUHN);
 		assertEquals(false, rule.validate(invalidLuhnCheck));
 	}
-	
-	
+
+
 	// Test range validator
 	@Test
 	public void testValidRange() {
@@ -143,7 +143,7 @@ public class ValidationTest extends AndroidTestCase {
 		ValidationRuleRange rule = new ValidationRuleRange(minLength, maxLength,"", ValidationType.RANGE);
 		assertEquals(false, rule.validate(invalidRange));
 	}
-	
+
 	// Test regex validator
 	@Test
 	public void testValidRegex() {
@@ -156,6 +156,6 @@ public class ValidationTest extends AndroidTestCase {
 		ValidationRuleRegex rule = new ValidationRuleRegex(regex, "", ValidationType.RANGE);
 		assertEquals(false, rule.validate(invalidRegex));
 	}
-	
-	
+
+
 }

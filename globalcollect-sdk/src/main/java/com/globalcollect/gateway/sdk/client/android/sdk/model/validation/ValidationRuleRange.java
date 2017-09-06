@@ -8,30 +8,30 @@ import java.security.InvalidParameterException;
 
 /**
  * Validation rule for range
- *  
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class ValidationRuleRange extends AbstractValidationRule {
-	
+
 	private static final long serialVersionUID = 1199939638104378041L;
 
 	private static final String TAG = ValidationRuleRange.class.getName();
-	
+
 	private Integer minValue;
 	private Integer maxValue;
-	
+
 	public ValidationRuleRange(Integer minValue, Integer maxValue, String errorMessage, ValidationType type) {
 		super(errorMessage, type);
-		
+
 		if (minValue == null) {
 			throw new InvalidParameterException("Error initialising FieldValidationRuleRange, rangeFrom may not be null");
 		}
-		
+
 		if (maxValue == null) {
 			throw new InvalidParameterException("Error initialising FieldValidationRuleRange, rangeTo may not be null");
 		}
-		
+
 		this.minValue = minValue;
 		this.maxValue = maxValue;
 	}
@@ -47,11 +47,11 @@ public class ValidationRuleRange extends AbstractValidationRule {
 	@Deprecated
 	public boolean validate(String text) {
 		Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
-		
+
 		if (text == null) {
 			return false;
 		}
-		
+
 		try {
 			Integer enteredValue = Integer.parseInt(text);
 			return enteredValue > minValue && enteredValue < maxValue;
@@ -85,11 +85,11 @@ public class ValidationRuleRange extends AbstractValidationRule {
 			return false;
 		}
 	}
-	
+
 	public Integer getMinValue() {
 		return minValue;
 	}
-	
+
 	public Integer getMaxValue() {
 		return maxValue;
 	}

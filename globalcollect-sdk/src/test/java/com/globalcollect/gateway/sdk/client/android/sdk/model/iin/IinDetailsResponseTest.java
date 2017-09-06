@@ -14,7 +14,7 @@ import static com.globalcollect.gateway.sdk.client.android.testUtil.GsonHelper.f
 /**
  * Junit Testclass which tests iin details response equality
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 @RunWith(MockitoJUnitRunner.class)

@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 
 /**
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class GsonHelper {

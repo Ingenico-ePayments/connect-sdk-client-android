@@ -10,7 +10,7 @@ import java.security.InvalidParameterException;
 /**
  * Validation rule for boleto bancario requiredness
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class ValidationRuleBoletoBancarioRequiredness extends AbstractValidationRule {

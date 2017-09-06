@@ -4,9 +4,6 @@
     "paymentProductId" : 1
   }, {
     "isAllowedInContext" : true,
-    "paymentProductId" : 111
-  }, {
-    "isAllowedInContext" : true,
     "paymentProductId" : 122
   } ],
   "countryCode" : "99",

@@ -18,8 +18,8 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Represents a PaymentProductField object
  * This class is filled by deserialising a JSON string from the GC gateway
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PaymentProductField implements Serializable {
@@ -27,59 +27,59 @@ public class PaymentProductField implements Serializable {
 	private static final long serialVersionUID = 7731107337899853223L;
 
 	public enum Type {
-		
+
 		@SerializedName("string")
-		STRING, 
-		
+		STRING,
+
 		@SerializedName("integer")
 		INTEGER,
-		
+
 		@SerializedName("numericstring")
 		NUMERICSTRING,
-		
+
 		@SerializedName("expirydate")
 		EXPIRYDATE
-	
+
 	}
-	
-	
+
+
 	// Id of this field
 	private String id;
-	
+
 	// Type of this field for GC gateway
 	private Type type;
-	
+
 	// Contains hints for rendering this field
 	private DisplayHintsProductFields displayHints = new DisplayHintsProductFields();
-	
+
 	// Contains contraints for this field
 	private DataRestrictions dataRestrictions = new DataRestrictions();
-	
+
 	// Used for masking fields
 	private StringFormatter formatter = new StringFormatter();
-	
+
 	// List of all invalid field errormessages
 	private List<ValidationErrorMessage> errorMessageIds = new ArrayList<ValidationErrorMessage>();
-	
-	
+
+
 	/** Getters **/
 	public String getId() {
 		return id;
 	}
-	
+
 	public Type getType() {
 		return type;
 	}
-	
+
 	public DisplayHintsProductFields getDisplayHints() {
 		return displayHints;
 	}
-	
-	
+
+
 	public DataRestrictions getDataRestrictions() {
 		return dataRestrictions;
 	}
-	
+
 	private Boolean valueNullOrEmpty(String value){
 		if (value == null){
 			return true;
@@ -89,8 +89,8 @@ public class PaymentProductField implements Serializable {
 		}
 		return false;
 	}
-	
-	
+
+
 	/**
 	 * Gets all errormessagecodes for this field's value.
 	 * This list is filled after doing isValid() on this field
@@ -191,10 +191,10 @@ public class PaymentProductField implements Serializable {
 		}
 		return formatter.applyMask(mask, newValue, oldValue, start, count, after);
 	}
-	
+
 	/**
 	 * Applies mask on a given string and calculates the new cursorindex for the given newValue and oldValue
-	 * 
+	 *
 	 * @param newValue the value in the textfield after the user typed a character
 	 * @param oldValue the value in the textfield before the user typed a character
 	 * @param cursorIndex the current cursorindex
@@ -208,13 +208,13 @@ public class PaymentProductField implements Serializable {
 		}
 		return formatter.applyMask(mask, newValue, oldValue, cursorIndex);
 	}
-	
+
 	/**
-	 * Applies mask on a given string 
-	 * 
+	 * Applies mask on a given string
+	 *
 	 * @param value the String that will be formatted
 	 *
-	 * @return FormatResult containing formatted string and cursorindex 
+	 * @return FormatResult containing formatted string and cursorindex
 	 */
 	public String applyMask(String value){
 		String mask = displayHints.getMask();
@@ -224,13 +224,13 @@ public class PaymentProductField implements Serializable {
 		return formatter.applyMask(mask, value);
 	}
 
-	
+
 	/**
-	 * Removes mask on a given string 
-	 * 
+	 * Removes mask on a given string
+	 *
 	 * @param value the String for which the mask will be removed
 	 *
-	 * @return String containing deFormatted string 
+	 * @return String containing deFormatted string
 	 */
 	public String removeMask(String value){
 		String mask = displayHints.getMask();
@@ -238,6 +238,6 @@ public class PaymentProductField implements Serializable {
 			return value;
 		}
 		return formatter.removeMask(mask, value);
-	}	
-		
+	}
+
 }

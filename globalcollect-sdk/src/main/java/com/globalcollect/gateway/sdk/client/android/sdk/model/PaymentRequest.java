@@ -16,38 +16,38 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.Validat
 
 /**
  * Contains all payment request data needed for doing a payment
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PaymentRequest implements Serializable {
-	
+
 
 	private static final long serialVersionUID = 1553481971640554760L;
 
-	// Paymentproduct which the customer is using 
+	// Paymentproduct which the customer is using
 	private PaymentProduct paymentProduct;
-	
+
 	// Account On File which the customer has selected
 	private AccountOnFile accountOnFile;
-	
+
 	// All field values which the customer has entered
 	private Map<String, String> fieldValues = new HashMap<String, String>();
-	
-	// All validation errormessages for the entered values 
+
+	// All validation errormessages for the entered values
 	private List<ValidationErrorMessage> errorMessageIds = new ArrayList<ValidationErrorMessage>();
-	
+
 	// Used for storing account on file (true is storing)
 	private Boolean tokenize = false;
-	
-	
+
+
 	/**
 	 * Get the value of tokenize
 	 */
 	public Boolean getTokenize(){
 		return tokenize;
 	}
-	
+
 	/**
 	 * Set the value of tokenize
 	 * @param tokenize
@@ -55,22 +55,22 @@ public class PaymentRequest implements Serializable {
 	public void setTokenize(Boolean tokenize){
 		this.tokenize = tokenize;
 	}
-	
-		
+
+
 	/**
 	 * Validates all fields based on their value and their validationrules
 	 * If a field is prefilled from the account on file, but it has been altered, it will be validated.
-	 *  
+	 *
 	 * @return list of errorMessageIds
 	 */
 	public List<ValidationErrorMessage> validate() {
-		
+
 		errorMessageIds.clear();
 
 		if (paymentProduct == null) {
 			throw new NullPointerException("Error validating PaymentRequest, please set a paymentProduct first.");
 		}
-		
+
 		// Loop trough all validationrules of all fields on the paymentProduct
 		for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
 
@@ -108,31 +108,31 @@ public class PaymentRequest implements Serializable {
 
 	/**
 	 * Add value to the paymentproductfields map
-	 * 
+	 *
 	 * @param paymentProductFieldId
 	 * @param value
 	 */
 	public void setValue(String paymentProductFieldId, String value) {
-		
+
 		if (paymentProductFieldId == null) {
 			throw new InvalidParameterException("Error setting value on PaymentRequest, paymentProductFieldId may not be null");
 		}
 		if (value == null) {
 			throw new InvalidParameterException("Error setting value on PaymentRequest, value may not be null");
-		}		
-		
+		}
+
 		if (fieldValues.containsKey(paymentProductFieldId)) {
 			fieldValues.remove(paymentProductFieldId);
 		}
 		fieldValues.put(paymentProductFieldId, value);
 	}
-	
-	
-	/** 
-	 * Gets the value of given paymentProductFieldId 
+
+
+	/**
+	 * Gets the value of given paymentProductFieldId
 	 */
 	public String getValue(String paymentProductFieldId) {
-		
+
 		if (paymentProductFieldId == null) {
 			throw new InvalidParameterException("Error getting value from PaymentRequest, paymentProductFieldId may not be null");
 		}
@@ -275,73 +275,73 @@ public class PaymentRequest implements Serializable {
 
 
 	/**
-	 * Merges given paymentProduct.fieldvalues map with the current paymentproduct values 
-	 * 
+	 * Merges given paymentProduct.fieldvalues map with the current paymentproduct values
+	 *
 	 * @param paymentProduct
 	 */
 	public void mergePaymentRequest(PaymentProduct paymentProduct) {
-		
+
 		if (paymentProduct == null) {
 			throw new InvalidParameterException("Error merging PaymentRequest, paymentProduct may not be null");
 		}
-		
+
 		// Create new map which contains all values for fields who are also present in the new paymentproduct
 		Map<String, String> newFieldValues = new HashMap<String, String>();
-		
+
 		// Loop trough all new fields and see of they match the fieldvalues id
 		if (paymentProduct.getPaymentProductFields() != null) {
 			for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
-				
+
 				for (Entry<String, String> valueEntry : fieldValues.entrySet()) {
-					
+
 					if (field.getId().equals(valueEntry.getKey())) {
 						newFieldValues.put(valueEntry.getKey(), valueEntry.getValue());
 					}
 				}
 			}
 		}
-		
+
 		fieldValues = newFieldValues;
 	}
-	
-	
+
+
 	/**
 	 * Sets the PaymentProduct for which the customer is going to do a payment
-	 * 
+	 *
 	 * @param paymentProduct
 	 */
 	public void setPaymentProduct(PaymentProduct paymentProduct) {
-		
+
 		if (paymentProduct == null) {
 			throw new InvalidParameterException("Error setting paymentproduct, paymentProduct may not be null");
 		}
 		this.paymentProduct = paymentProduct;
 	}
-	
-	
+
+
 	/**
 	 * Sets which accountOnfile is selected on the paymentproduct selection page
-	 * 
+	 *
 	 * @param accountOnFile
 	 */
 	public void setAccountOnFile(AccountOnFile accountOnFile) {
-		
+
 		if (accountOnFile == null) {
 			throw new InvalidParameterException("Error setting accountOnFile, accountOnFile may not be null");
 		}
 		this.accountOnFile = accountOnFile;
 	}
-	
+
 	public void removeAccountOnFile(){
 		this.accountOnFile = null;
 	}
-	
-	
+
+
 	/** Getters **/
 	public PaymentProduct getPaymentProduct() {
 		return paymentProduct;
 	}
-	
+
 	public AccountOnFile getAccountOnFile() {
 		return accountOnFile;
 	}

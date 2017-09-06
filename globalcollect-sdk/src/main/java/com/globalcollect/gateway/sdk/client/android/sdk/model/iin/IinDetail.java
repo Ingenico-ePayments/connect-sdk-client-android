@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Pojo that contains IinDetail
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class IinDetail implements Serializable {

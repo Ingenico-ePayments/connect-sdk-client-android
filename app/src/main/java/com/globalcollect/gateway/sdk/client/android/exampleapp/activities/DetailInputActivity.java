@@ -22,7 +22,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.Pay
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationErrorMessage;
 import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSession;
-import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSessionEncryptionHelper;
+import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSessionEncryptionHelper.OnPaymentRequestPreparedListener;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ import java.util.List;
  *
  * Copyright 2017 Global Collect Services B.V
  */
-public class DetailInputActivity extends ShoppingCartActivity implements GcSessionEncryptionHelper.OnPaymentRequestPreparedListener {
+public class DetailInputActivity extends ShoppingCartActivity implements OnPaymentRequestPreparedListener {
 
     private DetailInputView fieldView;
 
@@ -44,7 +44,7 @@ public class DetailInputActivity extends ShoppingCartActivity implements GcSessi
 
     protected InputDataPersister inputDataPersister;
     protected PaymentContext paymentContext;
-    private ShoppingCart shoppingCart;
+    protected ShoppingCart shoppingCart;
 
     protected InputValidationPersister inputValidationPersister;
 
@@ -203,7 +203,7 @@ public class DetailInputActivity extends ShoppingCartActivity implements GcSessi
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        // Save the current avtive field and cursorposition
+        // Save the current active field and cursorposition
         View v = fieldView.getViewWithFocus();
         if (v instanceof EditText) {
             inputDataPersister.setFocusFieldId((String) v.getTag());

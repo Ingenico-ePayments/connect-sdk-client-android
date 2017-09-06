@@ -32,7 +32,7 @@ import java.util.concurrent.Future;
  * the BasicPaymentProductGroups. After both calls have been finished both responses are combined to create
  * a single BasicPaymentItems object.
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  */
 public class BasicPaymentItemsAsyncTask extends AsyncTask<String, Void, BasicPaymentItems> {
 
@@ -214,7 +214,7 @@ public class BasicPaymentItemsAsyncTask extends AsyncTask<String, Void, BasicPay
      * Interface for OnPaymentProductsCallComplete listener
      * Is called from the BasicPaymentProductsAsyncTask when it has the BasicPaymentProducts
      *
-     * Copyright 2014 Global Collect Services B.V
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnBasicPaymentItemsCallCompleteListener {

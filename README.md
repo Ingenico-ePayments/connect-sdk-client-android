@@ -3,9 +3,9 @@ Ingenico Connect - Android SDK
 
 The Ingenico Connect Android SDK provides a convenient way to support a large number of payment methods inside your Android app.
 It supports Gingerbread (Android version 2.3.3) and up out-of-the box.
-The Android SDK comes with an example app that illustrates the use of the SDK and the services provided by Ingenico ePayments on the GlobalCollect platform.
+The Android SDK comes with an example app that illustrates the use of the SDK and the services provided by Ingenico ePayments on the Ingenico ePayments platform.
 
-See the [Ingenico Connect Developer Hub](https://developer.globalcollect.com/documentation/sdk/mobile/android/) for more information on how to use the SDK.
+See the [Ingenico Connect Developer Hub](https://epayments.developer-ingenico.com/documentation/sdk/mobile/android/) for more information on how to use the SDK.
 
 Installation via Gradle
 ------------

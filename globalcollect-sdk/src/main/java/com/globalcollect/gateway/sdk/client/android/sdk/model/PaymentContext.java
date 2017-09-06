@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * Pojo that contains PaymentContext information
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PaymentContext implements Serializable {

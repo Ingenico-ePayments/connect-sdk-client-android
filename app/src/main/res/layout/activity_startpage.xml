@@ -25,7 +25,7 @@
 		    <TextView
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="To process a payment using the services provided by the GlobalCollect platform, the following information must be provided by a merchant. \n\nAfter providing the information requested below, this example app can process a payment."
+		        android:text="To process a payment using the services provided by the Ingenico ePayments platform, the following information must be provided by a merchant. \n\nAfter providing the information requested below, this example app can process a payment."
 		    	/>
 
 		    <TextView

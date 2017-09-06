@@ -23,11 +23,6 @@ public class PaymentResultActivity extends ShoppingCartActivity {
 		// Initialize the shoppingcart
 		super.initialize(this);
 
-		// Get information from the intent
-		Intent intent = getIntent();
-		ShoppingCart shoppingCart = (ShoppingCart)		intent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
-		PaymentContext paymentContext    = (PaymentContext)	intent.getSerializableExtra(Constants.INTENT_PAYMENT_CONTEXT);
-
 		// Set the correct result
 		TextView paymentResultTitle = (TextView) findViewById(R.id.payment_result_title);
 		TextView paymentResultDescription = (TextView) findViewById(R.id.payment_result_description);
@@ -52,6 +47,4 @@ public class PaymentResultActivity extends ShoppingCartActivity {
 			paymentResultDescription.setText(getString(R.string.gc_app_result_failed_bodyText));
 		}
 	}
-
-
 }

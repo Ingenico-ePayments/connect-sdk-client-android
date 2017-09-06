@@ -18,6 +18,8 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductDire
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductNetworksResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.ThirdPartyStatus;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.ThirdPartyStatusResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinDetailsRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
@@ -42,13 +44,13 @@ import java.util.Scanner;
 
 /**
  * Handles all communication with the Global Collect Gateway
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class C2sCommunicator implements Serializable {
-	
-	
+
+
 	private static final long serialVersionUID = 1780234270110278059L;
 
 	// Tag for logging
@@ -59,29 +61,29 @@ public class C2sCommunicator implements Serializable {
 	// Strings used for adding headers to requests
 	private static final String HTTP_HEADER_SESSION_ID = "Authorization";
 	private static final String HTTP_HEADER_METADATA = "X-GCS-ClientMetaInfo";
-	
+
 	// Maximum amount of chars which is used for getting PaymentProductId by CreditCardNumber
 	private static final int MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP = 6;
-	
+
 	// Configuration needed for communicating with the GC gateway
 	private C2sCommunicatorConfiguration configuration;
 
-	
+
 	/**
 	 * Creates the Communicator object which handles the communication with the Global Collect Gateway
 	 */
 	private C2sCommunicator(C2sCommunicatorConfiguration configuration) {
 		this.configuration = configuration;
 	}
-	
-	
-	/** 
+
+
+	/**
 	 * Get C2sCommunicator instance
 	 * @param configuration configuration which is used to establish a connection with the GC gateway
 	 * @return the instance of this class
 	 */
 	public static C2sCommunicator getInstance(C2sCommunicatorConfiguration configuration) {
-		
+
 		if (configuration == null ) {
 			throw new InvalidParameterException("Error creating C2sCommunicator instance, configuration may not be null");
 		}
@@ -99,27 +101,27 @@ public class C2sCommunicator implements Serializable {
 
 	/**
 	 * Retrieves a list of basicpaymentproducts from the GC gateway without any fields
-	 * 
+	 *
 	 * @param context, used for reading device metadata which is send to the GC gateway
 	 * @param paymentContext, payment information that is used to retrieve the correct payment products
 	 *
 	 * @return list of BasicPaymentProducts, or null when an error has occured
 	 */
 	public BasicPaymentProducts getBasicPaymentProducts(PaymentContext paymentContext, Context context) {
-		
+
 		if (paymentContext == null) {
 			throw new InvalidParameterException("Error getting BasicPaymentProducts, request may not be null");
 		}
 
 		HttpURLConnection connection = null;
-		
+
 		try {
-			
+
 			// Build the complete url which is called
 			String baseUrl = configuration.getBaseUrl();
 			String paymentProductPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTS_PATH.replace("[cid]", configuration.getCustomerId());
-			String completePath = baseUrl + paymentProductPath;			
-					
+			String completePath = baseUrl + paymentProductPath;
+
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
 			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
@@ -131,7 +133,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Add query string to complete path
 			completePath += queryString.toString();
-			
+
 			// Do the call and deserialise the result to BasicPaymentProducts
 			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
@@ -145,12 +147,12 @@ public class C2sCommunicator implements Serializable {
 
 			// Set the logos for all paymentproducts
 			for(BasicPaymentProduct paymentProduct : basicPaymentProducts.getBasicPaymentProducts()) {
-				
+
 				AssetManager manager = AssetManager.getInstance(context);
 				Drawable logo = manager.getLogo(paymentProduct.getId());
 				paymentProduct.getDisplayHints().setLogo(logo);
 			}
-			
+
 			return basicPaymentProducts;
 
 		} catch (CommunicationException e) {
@@ -174,15 +176,15 @@ public class C2sCommunicator implements Serializable {
 
 	/**
 	 * Retrieves a single paymentproduct from the GC gateway including all its fields
-	 * 
+	 *
 	 * @param productId, used to retrieve the PaymentProduct that is associated with this id
 	 * @param context, used for reading device metada which is send to the GC gateway
 	 * @param paymentContext, PaymentContext which contains all neccesary data to retrieve a paymentproduct
-	 * 
+	 *
 	 * @return PaymentProduct, or null when an error has occured
 	 */
 	public PaymentProduct getPaymentProduct(String productId, Context context, PaymentContext paymentContext) {
-		
+
 		if (productId == null) {
 			throw new InvalidParameterException("Error getting PaymentProduct, productId may not be null");
 		}
@@ -190,12 +192,12 @@ public class C2sCommunicator implements Serializable {
 		HttpURLConnection connection = null;
 
 		try {
-			
+
 			// Build the complete url which is called
 			String baseUrl = configuration.getBaseUrl();
 			String paymentProductPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_PATH.replace("[cid]", configuration.getCustomerId()).replace("[pid]", productId);
-			String completePath = baseUrl + paymentProductPath;			
-					
+			String completePath = baseUrl + paymentProductPath;
+
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
 			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
@@ -204,7 +206,7 @@ public class C2sCommunicator implements Serializable {
 			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
 			queryString.append("&").append(createCacheBusterParameter());
 			completePath += queryString.toString();
-			
+
 			// Do the call and deserialise the result to PaymentProduct
 			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 
@@ -375,16 +377,16 @@ public class C2sCommunicator implements Serializable {
 
 	/**
 	 * Retrieves a list of directories for a given paymentproduct
-	 *  
+	 *
 	 * @param productId, for which product must the lookup be done
 	 * @param currencyCode, for which currencyCode must the lookup be done
 	 * @param countryCode, for which countryCode must the lookup be done
-	 * @param context, used for reading device metada which is send to the GC gateway 
-	 * 
+	 * @param context, used for reading device metada which is send to the GC gateway
+	 *
 	 * @return PaymentProductDirectoryResponse, or null when an error has occured
 	 */
 	public PaymentProductDirectoryResponse getPaymentProductDirectory(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context) {
-		
+
 		if (productId == null) {
 			throw new InvalidParameterException("Error getting PaymentProduct directory, productId may not be null");
 		}
@@ -399,21 +401,21 @@ public class C2sCommunicator implements Serializable {
 		}
 
 		HttpURLConnection connection = null;
-		
+
 		try {
-			
+
 			// Build the complete url which is called
 			String baseUrl = configuration.getBaseUrl();
 			String paymentProductPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_DIRECTORY_PATH.replace("[cid]", configuration.getCustomerId()).replace("[pid]", productId);
-			String completePath = baseUrl + paymentProductPath;			
-					
+			String completePath = baseUrl + paymentProductPath;
+
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
 			queryString.append("?currencyCode=").append(currencyCode.name());
 			queryString.append("&countryCode=").append(countryCode.name());
 			queryString.append("&").append(createCacheBusterParameter());
 			completePath += queryString.toString();
-			
+
 			// Do the call and deserialise the result to PaymentProductDirectoryResponse
 			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
@@ -569,9 +571,9 @@ public class C2sCommunicator implements Serializable {
 
 	/**
 	 * Retrieves the publickey from the GC gateway
-	 * 
-	 * @param context, used for reading device metada which is send to the GC gateway 
-	 * 
+	 *
+	 * @param context, used for reading device metada which is send to the GC gateway
+	 *
 	 * @return PublicKeyResponse response , or null when an error has occured
 	 */
 	public PublicKeyResponse getPublicKey(Context context) {
@@ -579,11 +581,11 @@ public class C2sCommunicator implements Serializable {
 		HttpURLConnection connection = null;
 
 		try {
-			
+
 			// Construct the url for the PublicKey call
 			String paymentProductPath = Constants.GC_GATEWAY_PUBLIC_KEY_PATH.replace("[cid]", configuration.getCustomerId());
 			String url = configuration.getBaseUrl() + paymentProductPath;
-			
+
 			// Do the call and deserialise the result to PublicKeyResponse
 			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
@@ -594,7 +596,7 @@ public class C2sCommunicator implements Serializable {
 			}
 
 			return gson.fromJson(responseBody, PublicKeyResponse.class);
-			
+
 		} catch (CommunicationException e) {
 			Log.i(TAG, "Error getting Public key response:" + e.getMessage());
 			return null;
@@ -632,7 +634,7 @@ public class C2sCommunicator implements Serializable {
 			String paymentProductPath = Constants.GC_GATEWAY_PAYMENTPRODUCT_PUBLIC_KEY_PATH.replace("[cid]", configuration.getCustomerId()).replace("[pid]", productId);
 			String url = configuration.getBaseUrl() + paymentProductPath;
 
-			// Do the call and deserialise the result to PaymentProductPublicKeyResponse
+			// Do the call and deserialize the result to PaymentProductPublicKeyResponse
 			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
@@ -662,17 +664,62 @@ public class C2sCommunicator implements Serializable {
 	}
 
 	/**
-	 * Converts a given amount in cents from the given source currency to the given target currency 
-	 * 
+	 * Retrieves the ThirdPartyStatus for a given payment
+	 *
+	 *
+	 */
+	public ThirdPartyStatusResponse getThirdPartyStatus (Context context, String paymentId) {
+
+		HttpURLConnection connection = null;
+
+		try {
+
+			// Construct the url for the PublicKey call
+			String paymentProductPath = Constants.GC_GATEWAY_THIRDPARTYSTATUS_PATH.replace("[cid]", configuration.getCustomerId()).replace("[paymentid]", paymentId);
+			String url = configuration.getBaseUrl() + paymentProductPath;
+
+			// Do the call and deserialize the result to PaymentProductPublicKeyResponse
+			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
+			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+
+			// Log the response
+			if (Constants.ENABLE_REQUEST_LOGGING) {
+				logResponse(connection, responseBody);
+			}
+
+			return gson.fromJson(responseBody, ThirdPartyStatusResponse.class);
+
+		} catch (CommunicationException e) {
+			Log.i(TAG, "Error getting Payment Product Public key response:" + e.getMessage());
+			return null;
+		}  catch (Exception e) {
+			Log.i(TAG, "Error getting Payment Product Public key response:" + e.getMessage());
+			return null;
+		} finally {
+			try {
+				if (connection != null) {
+					connection.getInputStream().close();
+					connection.disconnect();
+				}
+			} catch (IOException e) {
+				Log.i(TAG, "Error getting Payment Product Public key response:" + e.getMessage());
+			}
+		}
+	}
+
+
+	/**
+	 * Converts a given amount in cents from the given source currency to the given target currency
+	 *
 	 * @param amount,  the amount in cents to be converted
 	 * @param source,  source currency
 	 * @param target,  target currency
 	 * @param context, needed for reading metadata
-	 * 
+	 *
 	 * @return converted amount
 	 */
 	public Long convertAmount (Long amount, String source, String target, Context context) {
-		
+
 		if (amount == null) {
 			throw new InvalidParameterException("Error converting amount, amount may not be null");
 		}
@@ -689,19 +736,19 @@ public class C2sCommunicator implements Serializable {
 		HttpURLConnection connection = null;
 
 		try {
-			
+
 			// Construct the url for the PublicKey call
 			String paymentProductPath = Constants.GC_GATEWAY_CONVERT_AMOUNT_PATH.replace("[cid]", configuration.getCustomerId());
-			String url = configuration.getBaseUrl() + paymentProductPath;			
-			
+			String url = configuration.getBaseUrl() + paymentProductPath;
+
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
 			queryString.append("?amount=").append(amount);
-			queryString.append("&source=").append(source);			
+			queryString.append("&source=").append(source);
 			queryString.append("&target=").append(target);
 			queryString.append("&").append(createCacheBusterParameter());
 			url += queryString.toString();
-			
+
 			// Do the call and deserialise the result to PublicKeyResponse
 			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
@@ -714,7 +761,7 @@ public class C2sCommunicator implements Serializable {
 			ConvertedAmountResponse convertedAmountResponse = gson.fromJson(responseBody, ConvertedAmountResponse.class);
 
 			return convertedAmountResponse.getConvertedAmount();
-			
+
 		} catch (CommunicationException e) {
 			Log.i(TAG, "Error converting amount:" + e.getMessage());
 			return null;
@@ -737,16 +784,16 @@ public class C2sCommunicator implements Serializable {
 	/**
 	 * Returns map of metadata of the device this SDK is running on
 	 * The map contains the SDK version, OS, OS version and screensize
-	 * 
-	 * @param context, used for reading device metada which is send to the GC gateway 
-	 * 
+	 *
+	 * @param context, used for reading device metada which is send to the GC gateway
+	 *
 	 * @return Map<String, String> containing key/values of metadata
 	 */
 	public Map<String, String> getMetadata(Context context) {
 		return configuration.getMetadata(context);
 	}
-	
-	
+
+
 	/**
 	 * Returns the region set in the configuration
 	 * @return
@@ -755,7 +802,7 @@ public class C2sCommunicator implements Serializable {
 		return configuration.getRegion();
 	}
 
-	
+
 	/**
 	 * Does a GET request with HttpURLConnection
 	 *
@@ -768,7 +815,7 @@ public class C2sCommunicator implements Serializable {
 	 * @throws CommunicationException
 	 */
 	private HttpURLConnection doHTTPGetRequest(String location, String clientSessionId, Map<String, String> metadata) throws CommunicationException {
-		
+
 		// Initialize the connection
 		try {
 			URL url = new URL(location);
@@ -806,16 +853,16 @@ public class C2sCommunicator implements Serializable {
 			throw new CommunicationException("IOException while opening connection " + e.getMessage(), e);
 		}
 	}
-	
-	
+
+
 	/**
 	 * Does a POST request with HttpClient
-	 * 
+	 *
 	 * @param location, url where the request is sent to
 	 * @param clientSessionId, used for identification on the GC gateway
 	 * @param metadata, map filled with metadata, which is added to the request
 	 * @param postBody, the content of the postbody
-	 * 
+	 *
 	 * @return HttpURLConnection, which contains the response of the request
 	 *
 	 * @throws CommunicationException

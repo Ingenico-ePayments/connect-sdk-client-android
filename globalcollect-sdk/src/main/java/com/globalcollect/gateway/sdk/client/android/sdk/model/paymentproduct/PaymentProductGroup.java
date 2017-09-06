@@ -10,7 +10,7 @@ import java.util.List;
  * Pojo which holds the BasicPaymentProductGroup data and it's PaymentProductFields
  * This class is filled by deserialising a JSON string from the GC gateway
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PaymentProductGroup extends BasicPaymentProductGroup implements PaymentItem, Serializable {

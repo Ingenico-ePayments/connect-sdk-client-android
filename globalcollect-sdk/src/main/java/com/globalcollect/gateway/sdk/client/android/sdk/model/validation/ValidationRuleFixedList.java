@@ -8,24 +8,24 @@ import java.util.List;
 
 /**
  * Validation rule for fixedlist
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class ValidationRuleFixedList extends AbstractValidationRule {
-	
+
 	private static final long serialVersionUID = -1388124383409175742L;
 
 	private static final String TAG = ValidationRuleFixedList.class.getName();
-	
+
 	private List<String> listValues;
-	
+
 	public ValidationRuleFixedList(List<String> listValues, String errorMessage, ValidationType type) {
-		
+
 		super(errorMessage, type);
 		this.listValues = listValues;
 	}
-	
+
 	public List<String> getListValues() {
 		return listValues;
 	}
@@ -40,14 +40,14 @@ public class ValidationRuleFixedList extends AbstractValidationRule {
 	@Deprecated
 	public boolean validate(String text) {
 		Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
-		
+
 		if (text == null) {
 			return false;
 		}
-		
+
 		// Loop through all allowed values and see if the text is one of them
 		for (String value : listValues) {
-			
+
 			if (value.equals(text)) {
 				return true;
 			}

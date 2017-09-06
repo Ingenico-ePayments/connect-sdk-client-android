@@ -11,13 +11,13 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 /**
  * Junit Testclass which tests masking and unmasking functionality
- *  
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 @RunWith(MockitoJUnitRunner.class)
 public class MaskTest extends AndroidTestCase {
-	
+
 	private static final String maskExpiryDate = "{{99}}-{{99}}";
 	private static final String maskCardNumber = "{{9999}} {{9999}} {{9999}} {{9999}} {{999}}";
 
@@ -72,7 +72,7 @@ public class MaskTest extends AndroidTestCase {
 		StringFormatter formatter = new StringFormatter();
 		String maskedValue = formatter.applyMask(maskExpiryDate, maskTestString3);
 		assertEquals("12-34", maskedValue);
-	}	
+	}
 
 	@Test
 	public void testMaskTooManyCharacters() {

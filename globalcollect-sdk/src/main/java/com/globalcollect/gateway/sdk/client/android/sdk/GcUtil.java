@@ -16,12 +16,12 @@ import com.google.gson.Gson;
 
 /**
  * Contains util methods for getting device metadata
- * 
- * Copyright 2014 Global Collect Services B.V
- * 
+ *
+ * Copyright 2017 Global Collect Services B.V
+ *
  */
 public class GcUtil {
-	
+
 	private static final EncryptUtil encryptUtil = new EncryptUtil();
 
 	// Metadata map keys
@@ -29,16 +29,16 @@ public class GcUtil {
 	private static final String METADATA_APP_IDENTIFIER      = "appIdentifier";
 	private static final String METADATA_SDK_IDENTIFIER      = "sdkIdentifier";
 	private static final String METADATA_SDK_CREATOR         = "sdkCreator";
-	
+
 	private static final String METADATA_SCREENSIZE          = "screenSize";
 	private static final String METADATA_DEVICE_BRAND        = "deviceBrand";
 	private static final String METADATA_DEVICE_TYPE         = "deviceType";
 	private static final String METADATA_IP_ADDRESS          = "ipAddress";
-	
+
 	/**
 	 * Returns map of metadata of the device this SDK is running on
 	 * The map contains the SDK version, OS, OS version and screensize
-	 * 
+	 *
 	 * @return Map<String, String> containing key/values of metadata
 	 * @deprecated use {@link #getMetadata(Context, String, String)} instead.
 	 */
@@ -76,8 +76,8 @@ public class GcUtil {
 		// Add SDK version
 		metaData.put(METADATA_SDK_IDENTIFIER, Constants.SDK_IDENTIFIER);
 		metaData.put(METADATA_SDK_CREATOR,    Constants.SDK_CREATOR);
-		
-		// Add screensize 
+
+		// Add screensize
 		WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 		DisplayMetrics metrics = new DisplayMetrics();
 		wm.getDefaultDisplay().getMetrics(metrics);
@@ -96,7 +96,7 @@ public class GcUtil {
 		return metaData;
 	}
 
-	
+
 	/**
 	 * Returns base64 encoded version of a map of metadata of the device this SDK is running on
 	 * The map contains the SDK version, OS, OS version and screensize
@@ -147,63 +147,63 @@ public class GcUtil {
 		return encodedData;
 	}
 
-	
+
 	/**
 	 * Returns base64 encoded map of metadata.
-	 * 
+	 *
 	 * @param metadata, map of metadata which is base64 encoded
 	 *
-	 * @return String containing base64 url of json representation of the metadata 
+	 * @return String containing base64 url of json representation of the metadata
 	 */
 	public static String getBase64EncodedMetadata(Map<String, String> metadata) {
-		
+
 		Gson gson = new Gson();
 		String jsonMetadata = gson.toJson(metadata);
 		String encodedData = new String(encryptUtil.base64UrlEncode(jsonMetadata.getBytes()));
-		
+
 		return encodedData;
 	}
-	
-	
+
+
 	/**
 	 * Determines the Base url given a Region
-	 * 
+	 *
 	 * @param region, which region to get the base url for
 	 * @param environment, which environment to get the base url for
 	 * @return base url for the GC gateway
 	 */
 	public static String getC2SBaseUrlByRegion(Region region, EnvironmentType environment) {
-		
+
 		if (region == null) {
 			throw new InvalidParameterException("Error getting client to server baseurl,  region may not be null");
 		}
-		
+
 		if (environment == null) {
 			throw new InvalidParameterException("Error getting client to server baseurl,  environment may not be null");
 		}
-		
+
 		// Check which region is selected
 		return region.getC2SBaseUrl(environment);
 	}
 
-	
+
 	/**
 	 * Determines the asset baseurl given a Region
-	 * 
+	 *
 	 * @param region, which region to get the baseurl for
 	 * @param environment, which environment to get the baseurl for
 	 * @return base url for loading assets
 	 */
 	public static String getAssetsBaseUrlByRegion(Region region, EnvironmentType environment) {
-		
+
 		if (region == null) {
 			throw new InvalidParameterException("Error getting AssetsBaseUrl,  region may not be null");
 		}
-		
+
 		if (environment == null) {
 			throw new InvalidParameterException("Error getting AssetsBaseUrl,  environment may not be null");
 		}
-		
+
 		// Check which region is selected
 		return region.getAssetBaseUrl(environment);
 	}

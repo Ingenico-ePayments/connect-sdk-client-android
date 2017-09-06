@@ -21,28 +21,28 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.Validat
  * POJO that represents an Data restrictions object
  * This class is filled by deserialising a JSON string from the GC gateway
  * The DataRestrictions are used for validating user input
- *  
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class DataRestrictions implements Serializable {
-	
+
 	private static final long serialVersionUID = -549503465906936684L;
-	
+
 	private Boolean isRequired;
-	
+
 	private List<AbstractValidationRule> validationRules = new ArrayList<AbstractValidationRule>();
-	
+
 	private Validator validators;
-	
+
 	public Validator getValidator(){
 		return validators;
 	}
-	
+
 	public void addValidationRule(AbstractValidationRule validationRule) {
 		validationRules.add(validationRule);
 	}
-	
+
 	public List<AbstractValidationRule> getValidationRules() {
 		validationRules.clear();
 
@@ -105,10 +105,10 @@ public class DataRestrictions implements Serializable {
 
 		return validationRules;
 	}
-	
+
 	public Boolean isRequired() {
 		return isRequired;
 	}
-	
-	
+
+
 }

@@ -59,9 +59,8 @@ public class DetailInputActivityCreditCards extends DetailInputActivity
     @Override
     public void onStart() {
         super.onStart();
-        fieldView.initializeCreditCardField();
         IinLookupTextWatcher iinLookupTextWatcher = new IinLookupTextWatcher(this, session, this, paymentContext);
-        fieldView.attachIINLookup(iinLookupTextWatcher);
+        fieldView.initializeCreditCardField(iinLookupTextWatcher);
 
         if (inputDataPersister.isPaymentProduct()) {
             fieldView.renderPaymentProductLogoInCreditCardField(inputDataPersister.getPaymentItem().getId());
@@ -89,7 +88,7 @@ public class DetailInputActivityCreditCards extends DetailInputActivity
         }
     }
 
-    // This function alters the view so that it is compliable with the IinStatus "UNKNOWN"
+    // This function alters the view so that it matches the IinStatus "UNKNOWN"
     private void handleIinStatusUnknown() {
         fieldView.renderLuhnValidationMessage();
         fieldView.removeDrawableInEditText();
@@ -97,7 +96,7 @@ public class DetailInputActivityCreditCards extends DetailInputActivity
         fieldView.deactivatePayButton();
     }
 
-    // This function alters the view so that it is compliable with the IinStatus "NOT_ENOUGH_DIGITS"
+    // This function alters the view so that it matches the IinStatus "NOT_ENOUGH_DIGITS"
     private void handleIinStatusNotEnoughDigits() {
         fieldView.removeCreditCardValidationMessage();
         fieldView.removeCoBrandNotification();
@@ -106,7 +105,7 @@ public class DetailInputActivityCreditCards extends DetailInputActivity
         }
     }
 
-    // This function alters the view so that it is compliable with the IinStatus "EXISTING_BUT_NOT_ALLOWED"
+    // This function alters the view so that it matches the IinStatus "EXISTING_BUT_NOT_ALLOWED"
     private void handleIinStatusExistingButNotAllowed() {
         fieldView.renderNotAllowedInContextValidationMessage();
         fieldView.removeDrawableInEditText();

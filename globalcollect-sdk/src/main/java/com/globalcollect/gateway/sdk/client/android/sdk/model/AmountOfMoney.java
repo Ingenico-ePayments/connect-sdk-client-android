@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * Pojo that contains money information for a payment
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  */
 public class AmountOfMoney implements Serializable{
 

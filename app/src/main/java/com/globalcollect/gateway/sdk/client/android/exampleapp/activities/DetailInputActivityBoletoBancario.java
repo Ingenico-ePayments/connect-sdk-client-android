@@ -10,7 +10,7 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.view.DetailInputV
 import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
 
 /**
- * DetailInputActivity which has some added logic for the Boleto Bancario Payment Product
+ * DetailInputActivity which has added logic for the Boleto Bancario Payment Product
  *
  * Copyright 2017 Global Collect Services B.V
  */

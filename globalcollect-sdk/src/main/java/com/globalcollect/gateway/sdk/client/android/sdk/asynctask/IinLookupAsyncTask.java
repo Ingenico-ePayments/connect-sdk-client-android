@@ -12,19 +12,19 @@ import java.security.InvalidParameterException;
 import java.util.List;
 
 /**
- * AsyncTask which executes an IIN lookup call to the GC gateway 
- * 
- * Copyright 2014 Global Collect Services B.V
+ * AsyncTask which executes an IIN lookup call to the GC gateway
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsResponse> {
-	
-	// Max nr of chars before doing a iin lookup 
+
+	// Max nr of chars before doing a iin lookup
 	private final Integer IIN_LOOKUP_NR_OF_CHARS = 6;
-	
+
 	// The listeners which will be called by the AsyncTask
 	private List<OnIinLookupCompleteListener> listeners;
-	
+
 	// Context needed for reading stubbed IinLookup
 	private Context context;
 
@@ -37,7 +37,7 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
 	// Payment context that is sent in the request
 	private PaymentContext paymentContext;
 
-	
+
 	/**
 	 * Constructor
 	 * @param context, used for reading stubbing data
@@ -46,7 +46,7 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
 	 * @param listeners, listeners which will be called by the AsyncTask when the IIN result is retrieved
 	 * @param paymentContext, payment data that is sent to the gc Gateway; May be null, but this will yield a limited response from the gateway
 	 */
-    public IinLookupAsyncTask(Context context, String partialCreditCardNumber, C2sCommunicator communicator, 
+    public IinLookupAsyncTask(Context context, String partialCreditCardNumber, C2sCommunicator communicator,
     						  List<OnIinLookupCompleteListener> listeners, PaymentContext paymentContext) {
     	if (context == null) {
 			throw new InvalidParameterException("Error creating IinLookupAsyncTask, context may not be null");
@@ -99,26 +99,26 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
 		}
 	}
 
-    
+
     @Override
     protected void onPostExecute(IinDetailsResponse response) {
-    	
+
     	// Call listener callbacks
     	for (OnIinLookupCompleteListener listener : listeners) {
     		listener.onIinLookupComplete(response);
     	}
     }
-    
-    
+
+
     /**
      * Interface for OnIinLookupComplete listener
      * Is called from the IinLookupAsyncTask when it has the result for the IinLookup
-     * 
-     * Copyright 2014 Global Collect Services B.V
+     *
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnIinLookupCompleteListener {
-    	
+
     	/**
     	 * Listener that is called when IIN lookup is done
     	 * @param response, the IinDetailsResponse returned by the GC gateway

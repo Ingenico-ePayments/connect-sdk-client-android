@@ -2,7 +2,7 @@ package com.globalcollect.gateway.sdk.client.android.sdk.exception;
 
 /**
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class BadPaymentItemException extends RuntimeException {

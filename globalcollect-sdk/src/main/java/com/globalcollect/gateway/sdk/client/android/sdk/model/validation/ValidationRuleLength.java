@@ -7,8 +7,8 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
 /**
  * Validation rule for length
- *  
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class ValidationRuleLength extends AbstractValidationRule {
@@ -16,15 +16,15 @@ public class ValidationRuleLength extends AbstractValidationRule {
 	private static final long serialVersionUID = 6453263230504247824L;
 
 	private static final String TAG = ValidationRuleLength.class.getName();
-	
+
 	private Integer minLength;
 	private Integer maxLength;
 	private Integer maskedMaxLength;
 
 	public ValidationRuleLength(Integer minLength, Integer maxLength, String errorMessage, ValidationType type) {
-		
+
 		super(errorMessage, type);
-		
+
 		this.minLength = minLength;
 		this.maxLength = maxLength;
 	}
@@ -39,9 +39,9 @@ public class ValidationRuleLength extends AbstractValidationRule {
 	@Deprecated
 	public boolean validate(String text) {
 		Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
-		
+
 		// Check if textsize >= minLength && textsize <= maxLength
-		return text.length() >= minLength && text.length() <= maxLength; 
+		return text.length() >= minLength && text.length() <= maxLength;
 	}
 
 	/**
@@ -65,15 +65,15 @@ public class ValidationRuleLength extends AbstractValidationRule {
 		// Check if textsize >= minLength && textsize <= maxLength
 		return text.length() >= minLength && text.length() <= maxLength;
 	}
-	
+
 	public Integer getMaxLength() {
 		return maxLength;
 	}
-	
+
 	public Integer getMinLength() {
 		return minLength;
 	}
-	
+
 	public Integer getMaskedMaxLength(){
 		return maskedMaxLength;
 	}

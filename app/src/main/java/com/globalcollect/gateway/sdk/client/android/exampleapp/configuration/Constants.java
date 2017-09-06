@@ -25,6 +25,7 @@ public class Constants {
 	public final static String INTENT_ERRORMESSAGE				 = "errorMessage";
 	public final static String INTENT_URL_WEBVIEW				 = "url";
 	public final static String INTENT_GROUP_PAYMENTPRODUCTS		 = "group_paymentproducts";
+	public final static String INTENT_BCMC_SHOWDATA				 = "bcmc_showdata";
 
 	/** Bundle data keys **/
 	public final static String BUNDLE_PAYMENT_PRODUCTS 			= "bundle_paymentproducts";
@@ -34,6 +35,7 @@ public class Constants {
 	public final static String BUNDLE_INPUTVALIDATIONPERSISTER	= "bundle_inputvalidationpersister";
 	public final static String BUNDLE_IINDETAILSPERSISTER		= "bundle_iindetailspersister";
 	public final static String BUNDLE_RENDERED					= "bundle_rendered";
+	public final static String BUNDLE_THIRDPARTYSTATUS			= "bundle_thirdpartystatus";
 
 	/** GoogleApi data keys **/
 	public final static String	PAYMENT_METHOD_TOKENIZATION_PARAMETER_PUBLIC_KEY = "publicKey";

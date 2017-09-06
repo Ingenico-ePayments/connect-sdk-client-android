@@ -5,9 +5,9 @@ import java.security.InvalidParameterException;
 
 /**
  * Pojo which holds the PaymentProductCachkey data
- * It's used to determine if a PaymentProduct should be retrieved from the GlobalCollect platform, or retrieved from the memory cache
- * 
- * Copyright 2014 Global Collect Services B.V
+ * It's used to determine if a PaymentProduct should be retrieved from the Ingenico ePayments platform, or retrieved from the memory cache
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class PaymentItemCacheKey implements Serializable {
@@ -19,10 +19,10 @@ public class PaymentItemCacheKey implements Serializable {
 	CurrencyCode currencyCode;
 	boolean isRecurring;
 	String paymentProductId;
-	
-	
+
+
 	public PaymentItemCacheKey(Long amount, CountryCode countryCode, CurrencyCode currencyCode, boolean isRecurring, String paymentProductId) {
-		
+
 		if (amount == null) {
 			throw new InvalidParameterException("Error creating PaymentItemCacheKey, amount may not be null");
 		}
@@ -35,31 +35,31 @@ public class PaymentItemCacheKey implements Serializable {
 		if (paymentProductId == null) {
 			throw new InvalidParameterException("Error creating PaymentItemCacheKey, paymentProductId may not be null");
 		}
-		
+
 		this.amount = amount;
 		this.countryCode = countryCode;
 		this.currencyCode = currencyCode;
 		this.isRecurring = isRecurring;
 		this.paymentProductId = paymentProductId;
 	}
-	
-	
+
+
 	public Long getAmount() {
 		return amount;
 	}
-	
+
 	public CountryCode getCountryCode() {
 		return countryCode;
 	}
-	
+
 	public CurrencyCode getCurrencyCode() {
 		return currencyCode;
 	}
-	
+
 	public String getPaymentProductId() {
 		return paymentProductId;
 	}
-	
+
 	public boolean getIsRecurring() {
 		return isRecurring;
 	}
@@ -77,8 +77,8 @@ public class PaymentItemCacheKey implements Serializable {
 
 		PaymentItemCacheKey otherKey = (PaymentItemCacheKey)o;
 		return otherKey.getAmount().equals(amount) &&
-			   otherKey.getCountryCode().equals(countryCode) && 
-			   otherKey.getCurrencyCode().equals(currencyCode) && 
+			   otherKey.getCountryCode().equals(countryCode) &&
+			   otherKey.getCurrencyCode().equals(currencyCode) &&
 			   otherKey.getPaymentProductId().equals(paymentProductId) &&
 			   otherKey.getIsRecurring() == isRecurring;
 	}

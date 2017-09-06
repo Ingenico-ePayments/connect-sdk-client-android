@@ -15,7 +15,7 @@ import java.util.concurrent.Callable;
 /**
  * AsyncTask which loads all BasicPaymentProductGroups from the GC Gateway
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class BasicPaymentProductGroupsAsyncTask extends AsyncTask<String, Void, BasicPaymentProductGroups> implements Callable<BasicPaymentProductGroups> {
@@ -92,7 +92,7 @@ public class BasicPaymentProductGroupsAsyncTask extends AsyncTask<String, Void, 
      * Interface for OnPaymentProductGroupsCallComplete listener
      * Is called from the BasicPaymentProductGroupsAsyncTask when it has the BasicPaymentProductGroups
      *
-     * Copyright 2014 Global Collect Services B.V
+     * Copyright 2017 Global Collect Services B.V
      *
      */
     public interface OnBasicPaymentProductGroupsCallCompleteListener {

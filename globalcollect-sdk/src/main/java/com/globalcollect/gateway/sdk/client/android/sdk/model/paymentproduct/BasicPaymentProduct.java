@@ -10,14 +10,14 @@ import java.util.List;
 /**
  * Pojo which holds the BasicPaymentProduct properties
  * This class is filled by deserialising a JSON string from the GC gateway
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 
 	private static final long serialVersionUID = -8362704974696989741L;
-	
+
 	private String id;
 	private String paymentMethod;
 	private String paymentProductGroup;
@@ -29,7 +29,7 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 	private Boolean usesRedirectionTo3rdParty;
 	private MobileIntegrationLevel mobileIntegrationLevel;
 	private DisplayHintsPaymentItem displayHints;
-	
+
 	// List containing all AccountOnFiles
 	private List<AccountOnFile> accountsOnFile = new ArrayList<AccountOnFile>();
 
@@ -38,7 +38,7 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 	public String getId(){
 		return id;
 	}
-	
+
 	public String getPaymentMethod() {
 		return paymentMethod;
 	}
@@ -46,31 +46,31 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 	public String getPaymentProductGroup() {
 		return paymentProductGroup;
 	}
-	
+
 	public Boolean allowsRecurring() {
 		return allowsRecurring;
 	}
-	
+
 	public Boolean allowsTokenization(){
 		return allowsTokenization;
 	}
-	
+
 	public Boolean autoTokenized() {
 		return autoTokenized;
 	}
-	
+
 	public Long getMinAmount(){
 		return minAmount;
 	}
-	
+
 	public Long getMaxAmount(){
 		return maxAmount;
 	}
-	
+
 	public Boolean usesRedirectionTo3rdParty(){
 		return usesRedirectionTo3rdParty;
 	}
-	
+
 	public MobileIntegrationLevel mobileIntegrationLevel(){
 		return mobileIntegrationLevel;
 	}
@@ -78,13 +78,13 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 	public List<AccountOnFile> getAccountsOnFile() {
 		return accountsOnFile;
 	}
-	
+
 	public AccountOnFile getAccountOnFileById(String accountOnFileId) {
 
 		if (accountOnFileId == null) {
 			throw new InvalidParameterException("Error getting AccountOnFile by id, accountOnFileId may not be null");
 		}
-		
+
 		for (AccountOnFile accountOnFile : accountsOnFile) {
 			if (accountOnFile.getId().toString().equals(accountOnFileId)) {
 				return accountOnFile;
@@ -92,7 +92,7 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 		}
 		return null;
 	}
-	
+
 	public DisplayHintsPaymentItem getDisplayHints(){
 		return displayHints;
 	}

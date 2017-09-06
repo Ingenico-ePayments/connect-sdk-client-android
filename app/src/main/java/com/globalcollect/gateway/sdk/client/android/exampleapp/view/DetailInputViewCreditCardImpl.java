@@ -36,15 +36,11 @@ public class DetailInputViewCreditCardImpl extends DetailInputViewImpl implement
     }
 
     @Override
-    public void initializeCreditCardField() {
+    public void initializeCreditCardField(IinLookupTextWatcher iinLookupTextWatcher) {
         creditCardField = (EditText) rootView.findViewWithTag(CREDIT_CARD_NUMBER_FIELD_ID);
         if (creditCardField == null) {
             throw new ViewNotInitializedException("CreditCardField has not been found, did you forget to render the inputfields?");
         }
-    }
-
-    @Override
-    public void attachIINLookup(IinLookupTextWatcher iinLookupTextWatcher) {
         creditCardField.addTextChangedListener(iinLookupTextWatcher);
     }
 

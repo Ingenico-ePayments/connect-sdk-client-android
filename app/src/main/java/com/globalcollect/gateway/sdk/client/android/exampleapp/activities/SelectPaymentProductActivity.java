@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.CheckCommunication;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.dialog.DialogUtil;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.model.MerchantAction;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.accountonfile.RenderAccountOnFile;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.product.RenderPaymentItem;
@@ -41,6 +43,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.Bas
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentItem;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
 import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSession;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -49,12 +52,19 @@ import com.google.android.gms.wallet.MaskedWalletRequest;
 import com.google.android.gms.wallet.Wallet;
 import com.google.android.gms.wallet.WalletConstants;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener;
+import com.google.gson.Gson;
 
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.Serializable;
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_ANDROIDPAY;
 import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_BOLETOBANCARIO;
+import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_BCMC;
 
 
 /**
@@ -313,10 +323,15 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 		if (paymentItem == null) {
 
 			showTechnicalErrorDialog();
-		} else if (paymentItem.getId().equals(com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_ANDROIDPAY)) {
+		} else if (paymentItem.getId().equals(PAYMENTPRODUCTID_ANDROIDPAY)) {
 
 			// Android pay requires a different flow even though it has fields
 			startAndroidPay();
+		} else if (paymentItem.getId().equals(PAYMENTPRODUCTID_BCMC)) {
+
+			// Even though BCMC does not return fields when retrieving the payment product, the
+			// PaymentInputActivity should render, as the inputfields will be retrieved in another manor.
+			startPaymentInputActivity();
 		} else if (paymentItem.getPaymentProductFields().isEmpty()) {
 
 			// Do a redirect here, now showing result screen as a dummy screen
@@ -332,9 +347,7 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 		// First retrieve the public key for making Android Pay calls; The key will be received in the
 		// callback method: onPaymentProductPublicKeyLoaded.
-		session.getPaymentProductPublicKey(this,
-				com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_ANDROIDPAY,
-				this);
+		session.getPaymentProductPublicKey(this, PAYMENTPRODUCTID_ANDROIDPAY, this);
 	}
 
 	private void startResultActivity() {
@@ -348,7 +361,23 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 
 		// Determine whether a "special" inputActivity is required
 		Intent paymentInputIntent;
-		if (paymentItem instanceof PaymentProductGroup && paymentItem.getId().equals("cards") || ((PaymentProduct) paymentItem).getPaymentMethod().equals("card")) {
+		if (paymentItem instanceof PaymentProduct && paymentItem.getId().equals(PAYMENTPRODUCTID_BCMC)) {
+			/**
+			 * If the user selected BCMC as their payment product, you should make a createPayment
+			 * call via your Server to Server API here. This will provide you with the correct Intent-,
+			 * QR-code- and PaymentProductField-data that is required to render the BCMC Input detail
+			 * activity. As this is an example application, we will load an example JSON as a resource.
+			 */
+			Reader reader = new InputStreamReader(getResources().openRawResource(R.raw.bcmc_merchantaction_example));
+			MerchantAction bcmcMerchantActionExample = new Gson().fromJson(reader, MerchantAction.class);
+
+			// Add the payment product fields from the merchantAction to the payment item, so that the
+			// DetailInputActivity can render them as usual.
+			((PaymentProduct) paymentItem).setPaymentProductFields(bcmcMerchantActionExample.getFormFields());
+
+			paymentInputIntent = new Intent(this, DetailInputActivityBCMC.class);
+			paymentInputIntent.putExtra(Constants.INTENT_BCMC_SHOWDATA, ((Serializable) bcmcMerchantActionExample.getShowData()));
+		} else if (paymentItem instanceof PaymentProductGroup && paymentItem.getId().equals("cards") || ((PaymentProduct) paymentItem).getPaymentMethod().equals("card")) {
 			paymentInputIntent = new Intent(this, DetailInputActivityCreditCards.class);
 		} else if (paymentItem.getId().equals(PAYMENTPRODUCTID_BOLETOBANCARIO)) {
 			paymentInputIntent = new Intent(this, DetailInputActivityBoletoBancario.class);
@@ -409,7 +438,7 @@ public class SelectPaymentProductActivity extends ShoppingCartActivity implement
 			// Not only do we need the public key, but we also have to retrieve the available networks
 			// for Android Pay
 			session.getPaymentProductNetworks(this,
-					com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_ANDROIDPAY,
+					PAYMENTPRODUCTID_ANDROIDPAY,
 					paymentContext,
 					this);
 			publicKeyResponse = response;

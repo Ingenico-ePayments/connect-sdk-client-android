@@ -13,9 +13,7 @@ import java.util.List;
  * Copyright 2014 Global Collect Services B.V
  */
 public interface DetailInputViewCreditCard extends DetailInputView {
-    void initializeCreditCardField();
-
-    void attachIINLookup(IinLookupTextWatcher iinLookupTextWatcher);
+    void initializeCreditCardField(IinLookupTextWatcher iinLookupTextWatcher);
 
     void renderLuhnValidationMessage();
 

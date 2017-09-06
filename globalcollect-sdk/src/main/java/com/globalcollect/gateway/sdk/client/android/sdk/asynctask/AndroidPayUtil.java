@@ -24,7 +24,7 @@ import static org.apache.commons.lang3.Validate.notNull;
  * Util class that makes calls to the Google Api Client. These calls should not be initiated from
  * outside an AsyncTask or other background threads.
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public final class AndroidPayUtil {

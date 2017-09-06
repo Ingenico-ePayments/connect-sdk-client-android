@@ -11,7 +11,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.Enviro
 /**
  * This enum contains the available regions for the endpoint and the logos location
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public enum Region {

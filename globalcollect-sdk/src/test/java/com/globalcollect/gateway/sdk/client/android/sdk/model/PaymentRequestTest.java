@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 /**
  * Junit Testclass which tests PaymentRequest
  *
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 @RunWith(MockitoJUnitRunner.class)

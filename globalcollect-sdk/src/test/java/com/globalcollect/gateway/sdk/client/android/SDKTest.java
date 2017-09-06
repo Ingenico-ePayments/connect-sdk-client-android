@@ -8,8 +8,8 @@ import org.junit.runners.Suite;
 
 /**
  * Android InstrumentationTestRunner used for running all the tests in the SDK
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 @RunWith(Suite.class)

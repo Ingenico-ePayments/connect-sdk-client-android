@@ -8,14 +8,14 @@ import java.util.List;
 
 /**
  * Pojo that contains the response for IIN lookup
- * 
- * Copyright 2014 Global Collect Services B.V
+ *
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class IinDetailsResponse implements Serializable {
-	
+
 	private static final long serialVersionUID = -4043745317792003304L;
-	
+
 	private String paymentProductId;
 	private CountryCode countryCode;
 	private boolean isAllowedInContext;
@@ -33,7 +33,7 @@ public class IinDetailsResponse implements Serializable {
 	public String getPaymentProductId() {
 		return paymentProductId;
 	}
-	
+
 	public IinStatus getStatus() {
 		return status;
 	}
