@@ -197,6 +197,7 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONDATE.label">二級到期日</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">二級逾期收費</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
+	<string name="gc.general.paymentProducts.163.name">Hiper</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>

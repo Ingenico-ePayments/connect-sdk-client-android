@@ -197,6 +197,7 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONDATE.label">Sekundärt förfallodatum</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Sekundär förseningsavgift</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
+	<string name="gc.general.paymentProducts.163.name">Hiper</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cardNumber.placeholder">**** ****** *****</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>

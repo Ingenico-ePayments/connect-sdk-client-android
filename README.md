@@ -50,7 +50,7 @@ The Android SDK comes with a set of integration tests. To run these tests, you w
 * `connect.api.secretApiKey` for the secret API key to use. This can be retrieved from the Configuration Center.
 * `connect.api.merchantId` for your merchant ID.
 
-Besides these settings, you can also modify the settings for the [Java SDK](https://developer.globalcollect.com/documentation/sdk/server/java/), which is used to create the sessions and tokens needed to run the tests.
+Besides these settings, you can also modify the settings for the [Java SDK](https://epayments.developer-ingenico.com/documentation/sdk/server/java/), which is used to create the sessions and tokens needed to run the tests.
 
 Afterwards, you can run the tests as follows:
 1. Open the SDK in Android Studio. If you haven't opened it before, choose to import a project and browse to the Android SDK project.
