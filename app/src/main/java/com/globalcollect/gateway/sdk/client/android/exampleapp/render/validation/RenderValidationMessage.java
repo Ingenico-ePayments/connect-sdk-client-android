@@ -19,12 +19,11 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
  */
 public class RenderValidationMessage implements RenderValidationMessageInterface {
 
+	// Prefix for validationmessage views
+	public static final String VALIDATION_MESSAGE_TAG_PREFIX = "validation_message_";
+
 	// Errormessage layout dimensions
 	private final int TOOLTIP_TEXT_MARGIN = 9;
-	
-	// Prefix for validationmessage views
-	private final String VALIDATION_MESSAGE_TAG_PREFIX = "validation_message_";
-
 	
 	@Override
 	public void renderValidationMessage(String validationMessage, ViewGroup rowView, String fieldId) {
@@ -39,11 +38,6 @@ public class RenderValidationMessage implements RenderValidationMessageInterface
 			throw new InvalidParameterException("Error rendering ValidationMessage, fieldId may not be null");
 		}
 
-		// Check if there is not already an error message of this kind showing in the ViewGroup
-		if (((ViewGroup) rowView.getParent()).findViewWithTag(VALIDATION_MESSAGE_TAG_PREFIX + fieldId) != null) {
-			return;
-		}
-	
 		// Create a new TextView and add it to the rowView
 		TextView validationMessageView = new TextView(rowView.getContext());
 		validationMessageView.setText(validationMessage);
@@ -55,19 +49,20 @@ public class RenderValidationMessage implements RenderValidationMessageInterface
 		
 		ViewGroup parentViewGroup = (ViewGroup)rowView.getParent();
 		parentViewGroup.addView(validationMessageView, parentViewGroup.indexOfChild(rowView) +1, layoutParams);
-		
 	}
 	
 	@Override
 	public void removeValidationMessage(ViewGroup rowView, String fieldId) {
-		
-		if (rowView == null ) {
-			throw new InvalidParameterException("Error removing ValidationMessage, rowView may not be null");
-		}
 		if (fieldId == null ) {
 			throw new InvalidParameterException("Error removing ValidationMessage, fieldId may not be null");
 		}
-		 
+
+		// If the field does not exist we can not remove the error message, however we do also not
+		// want to fail
+		if (rowView == null ) {
+			return;
+		}
+
 		ViewGroup parentViewGroup = (ViewGroup)rowView.getParent();
 		if (parentViewGroup != null) {
 			// Get the to be removed view and remove it

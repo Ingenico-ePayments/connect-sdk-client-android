@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCartItem;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.util.CurrencyUtil;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 
 /**
@@ -33,7 +34,7 @@ public class HeaderViewImpl implements HeaderView {
         TextView totalCost = (TextView)rootView.findViewById(R.id.totalCost);
         TextView totalCostDetail = (TextView)rootView.findViewById(R.id.totalCostDetail);
 
-        String formattedTotalAmount = shoppingCart.getTotalAmountFormatted(paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode());
+        String formattedTotalAmount = CurrencyUtil.formatAmount(shoppingCart.getTotalAmount(), paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode());
         totalCost.setText(formattedTotalAmount);
         totalCostDetail.setText(formattedTotalAmount);
 
@@ -78,7 +79,7 @@ public class HeaderViewImpl implements HeaderView {
 
             //Show the amount formatted
             TextView cost = new TextView(context);
-            cost.setText(item.getAmountFormatted(paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode()));
+            cost.setText(CurrencyUtil.formatAmount(item.getAmountInCents(), paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode()));
             cost.setTextAppearance(context, R.style.TotalCostLayoutSmallText);
             cost.setGravity(Gravity.RIGHT);
             layout.addView(cost, costParams);

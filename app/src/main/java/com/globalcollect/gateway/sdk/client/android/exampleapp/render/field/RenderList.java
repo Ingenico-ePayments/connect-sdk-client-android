@@ -8,9 +8,11 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.Spinner;
 
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister.InputDataPersister;
+import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductFieldDisplayElement;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.ValueMap;
 
 import java.security.InvalidParameterException;
@@ -58,7 +60,7 @@ public class RenderList implements RenderInputFieldInterface, AdapterView.OnItem
 
 		// Fill values
 		for (ValueMap valueMap : field.getDisplayHints().getFormElement().getValueMapping()){
-			values.add(valueMap.getDisplayName());
+			values.add(getDisplayNameFromDisplayElements(valueMap.getDisplayElements()));
 		}
 
 		// Make and set adapter to spinner
@@ -97,6 +99,15 @@ public class RenderList implements RenderInputFieldInterface, AdapterView.OnItem
 		return spinner;
 	}
 
+	private String getDisplayNameFromDisplayElements(List<PaymentProductFieldDisplayElement> displayElements) {
+		for (PaymentProductFieldDisplayElement paymentProductFieldDisplayElement : displayElements) {
+			if ("displayName".equals(paymentProductFieldDisplayElement.getId())) {
+				return paymentProductFieldDisplayElement.getValue();
+			}
+		}
+		return "";
+	}
+
 	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -107,7 +118,7 @@ public class RenderList implements RenderInputFieldInterface, AdapterView.OnItem
 		for (String listValue: values) {
 			if (listValue.equals(value)) {
 				for (ValueMap valueMap : field.getDisplayHints().getFormElement().getValueMapping()){
-					if (valueMap.getDisplayName().equals(value)){
+					if (getDisplayNameFromDisplayElements(valueMap.getDisplayElements()).equals(value)){
 						inputDataPersister.setValue(field.getId(), valueMap.getValue());
 						inputDataPersister.setFocusFieldId(field.getId());
 					}

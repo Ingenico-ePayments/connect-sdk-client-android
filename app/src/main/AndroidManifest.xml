@@ -26,10 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.SelectPaymentProductActivity"
-            android:label="@string/app_name" >
-        </activity>
         <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.PaymentResultActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -52,9 +48,11 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.PaymentProductSelectionActivity" />
         <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivity" />
         <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivityCreditCards" />
         <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivityBoletoBancario" />
+        <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivityAfterpay" />
         <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivityBCMC" />
         <activity android:name="com.globalcollect.gateway.sdk.client.android.exampleapp.activities.BCMCProcessingActivity" />
 

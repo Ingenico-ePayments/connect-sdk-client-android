@@ -69,7 +69,7 @@ public class GetPaymentProductDirectoryTest extends BaseAsyncTaskTest {
 
         Listener listener = new Listener(waitForAsyncTaskCallBack);
 
-        /// Create the PaymentProductDirectoryAsyncTask and start the test by running execute
+        // Create the PaymentProductDirectoryAsyncTask and start the test by running execute
         PaymentProductDirectoryAsyncTask paymentProductDirectoryAsyncTask = new PaymentProductDirectoryAsyncTask(
                 "809",
                 CurrencyCode.EUR,

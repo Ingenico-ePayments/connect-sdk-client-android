@@ -30,7 +30,7 @@
                 android:layout_marginLeft="14dp"
                 android:text="@string/gc.app.general.paymentProcessing.title"
                 android:layout_alignParentLeft="true"
-                style="@style/ProcessingActivityHeaderStyle" />
+                style="@style/ActivitySpecialHeaderStyle" />
 
             <LinearLayout
                 android:layout_width="match_parent"

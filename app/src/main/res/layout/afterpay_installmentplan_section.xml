@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="14dp"
+        android:padding="15dp"
+        style="@style/sectionBackground">
+
+        <Spinner
+            android:id="@+id/installmentplan_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/installment_errormessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            style="@style/ErrorMessage"
+            android:visibility="gone"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="true">
+
+            <TableRow
+                android:id="@+id/number_of_installments_row"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/number_of_installments_description"
+                    android:textColor="@color/cancel_button_color_gradient_1"
+                    android:layout_margin="2dp"
+                    android:text="@string/gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label"/>
+
+                <TextView
+                    android:id="@+id/number_of_installments"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:layout_margin="2dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/amount_per_installment_row"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/amount_per_installment_description"
+                    android:textColor="@color/cancel_button_color_gradient_1"
+                    android:layout_margin="2dp"
+                    android:text="@string/gc.general.paymentProductFields.installmentId.fields.installmentAmount.label"/>
+                <TextView
+                    android:id="@+id/amount_per_installment"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:layout_margin="2dp"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/interest_rate_row"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/interest_rate_description"
+                    android:textColor="@color/cancel_button_color_gradient_1"
+                    android:layout_margin="2dp"
+                    android:text="@string/gc.general.paymentProductFields.installmentId.fields.interestRate.label"/>
+                <TextView
+                    android:id="@+id/interest_rate"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:layout_margin="2dp"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/total_amount_row"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/total_amount_description"
+                    android:layout_margin="2dp"
+                    android:text="@string/gc.general.paymentProductFields.installmentId.fields.totalAmount.label"
+                    android:textColor="@color/cancel_button_color_gradient_1" />
+
+                <TextView
+                    android:id="@+id/total_amount"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:layout_margin="2dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TextView android:id="@+id/terms_and_conditions"
+                android:layout_marginTop="10dp"
+                android:text="@string/gc.general.paymentProductFields.installmentId.fields.secciUrl.label"/>
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

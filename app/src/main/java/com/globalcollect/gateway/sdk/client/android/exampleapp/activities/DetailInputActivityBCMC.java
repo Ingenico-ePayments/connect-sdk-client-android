@@ -11,8 +11,8 @@ import android.view.View;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.KeyValuePair;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.view.DetailInputViewBCMC;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.view.DetailInputViewBCMCImpl;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview.DetailInputViewBCMC;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview.DetailInputViewBCMCImpl;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.ThirdPartyStatusAsyncTask.OnThirdPartyStatusCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.ThirdPartyStatus;
 

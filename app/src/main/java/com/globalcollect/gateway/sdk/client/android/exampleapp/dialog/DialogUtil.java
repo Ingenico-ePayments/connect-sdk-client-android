@@ -8,11 +8,14 @@ import android.content.DialogInterface.OnClickListener;
 
 
 /**
- * Copyright 2014 Global Collect Services B.V
+ * Copyright 2017 Global Collect Services B.V
  *
  */
 public class DialogUtil {
-	
+
+	private DialogUtil () {
+
+	}
 	
 	/**
 	 * Shows an AlertDialog with the given parameters
@@ -21,11 +24,11 @@ public class DialogUtil {
 	 * @param message, the message of the AlertDialog
 	 * @param buttonText, the buttontext of the AlertDialog
 	 */
-	public AlertDialog showAlertDialog(Context context, String title, String message, String buttonText) {
+	public static AlertDialog showAlertDialog(Context context, String title, String message, String buttonText) {
 		return showAlertDialog(context, title, message, buttonText, null);
 	}
 	
-	public AlertDialog showAlertDialog(Context context, String title, String message, String buttonText, OnClickListener listener) {
+	public static AlertDialog showAlertDialog(Context context, String title, String message, String buttonText, OnClickListener listener) {
 		
 		// Create a new AlertDialog and set all texts
 		AlertDialog alertDialog = new AlertDialog.Builder(context).create();
@@ -52,7 +55,7 @@ public class DialogUtil {
 	 * @param message, the message of the ProgressDialog
 	 * @return ProgressDialog which you can use to hide it when neccessary
 	 */
-	public ProgressDialog showProgressDialog(Context context, String title, String message) {
+	public static ProgressDialog showProgressDialog(Context context, String title, String message) {
 		
 		// Create a new ProgressDialog and set all texts
 		ProgressDialog progressDialog = new ProgressDialog(context);
@@ -69,7 +72,7 @@ public class DialogUtil {
 	 * Hides the given dialog when its showing
 	 * @param dialog
 	 */
-	public void dismissDialog(Dialog dialog) {
+	public static void dismissDialog(Dialog dialog) {
 		if (dialog != null && dialog.isShowing()) {
 			dialog.dismiss();
 		}

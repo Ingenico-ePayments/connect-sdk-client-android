@@ -1,9 +1,8 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.view;
+package com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.annotation.IdRes;
-import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -35,7 +34,8 @@ public class DetailInputViewImpl implements DetailInputView {
     // The View in which the payment product fields will be rendered
     protected ViewGroup renderInputFieldsLayout;
 
-    private RenderInputDelegate fieldRenderer;
+    // RendererHelpers for the dynamic content
+    protected RenderInputDelegate fieldRenderer;
     protected RenderValidationHelper renderValidationHelper;
 
     private ProgressDialog progressDialog;
@@ -45,7 +45,7 @@ public class DetailInputViewImpl implements DetailInputView {
 
         renderInputFieldsLayout = (ViewGroup) rootView.findViewById(R.id.render_input_fields_layout);
         fieldRenderer = new RenderInputDelegate(renderInputFieldsLayout);
-        renderValidationHelper = new RenderValidationHelper(renderInputFieldsLayout);
+        renderValidationHelper = new RenderValidationHelper((ViewGroup) rootView);
     }
 
     @Override
@@ -53,15 +53,14 @@ public class DetailInputViewImpl implements DetailInputView {
                                      PaymentContext paymentContext,
                                      InputValidationPersister inputValidationPersister) {
         fieldRenderer.renderPaymentInputFields(inputDataPersister, paymentContext);
-        renderValidationHelper.renderValidationMessages(inputValidationPersister.getErrorMessages(), inputDataPersister.getPaymentItem());
+        renderValidationHelper.renderValidationMessages(inputValidationPersister, inputDataPersister.getPaymentItem());
     }
 
     @Override
     public void renderRememberMeCheckBox(boolean isChecked) {
-
         ViewGroup rememberLayout = (ViewGroup) rootView.findViewById(R.id.rememberLayout);
 
-        // Remove any tooltipimages that are potentially already in the view
+        // Remove the rememberme tooltip popup that is potentially already in the view
         View v = rememberLayout.findViewWithTag("rememberMe");
         rememberLayout.removeView(v);
 
@@ -95,12 +94,17 @@ public class DetailInputViewImpl implements DetailInputView {
     }
 
     @Override
-    public void renderValidationMessages(List<ValidationErrorMessage> validationErrorMessages, PaymentItem paymentItem) {
-        renderValidationHelper.renderValidationMessages(validationErrorMessages, paymentItem);
+    public void renderValidationMessage(ValidationErrorMessage validationResult, PaymentItem paymentItem) {
+        renderValidationHelper.renderValidationMessage(validationResult, paymentItem);
     }
 
     @Override
-    public void hideTooltipAndErrorViews() {
+    public void renderValidationMessages(InputValidationPersister inputValidationPersister, PaymentItem paymentItem) {
+        renderValidationHelper.renderValidationMessages(inputValidationPersister, paymentItem);
+    }
+
+    @Override
+    public void hideTooltipAndErrorViews(InputValidationPersister inputValidationPersister) {
         // Hide all dynamic rendered tooltiptexts
         fieldRenderer.hideTooltipTexts(renderInputFieldsLayout);
 
@@ -108,16 +112,14 @@ public class DetailInputViewImpl implements DetailInputView {
         fieldRenderer.hideTooltipTexts((ViewGroup) rootView.findViewById(R.id.rememberLayoutParent));
 
         // Hide all
-        renderValidationHelper.hideValidationMessages();
+        renderValidationHelper.hideValidationMessages(inputValidationPersister);
     }
 
     @Override
     public void showLoadDialog() {
-
-        DialogUtil dialog = new DialogUtil();
         String title = rootView.getContext().getString(R.string.gc_app_general_loading_title);
         String msg = rootView.getContext().getString(R.string.gc_app_general_loading_body);
-        progressDialog = dialog.showProgressDialog(rootView.getContext(), title, msg);
+        progressDialog = DialogUtil.showProgressDialog(rootView.getContext(), title, msg);
     }
 
     @Override

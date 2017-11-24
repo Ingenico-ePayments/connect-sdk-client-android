@@ -92,8 +92,8 @@
     	<item name="android:paddingRight">1dp</item>
 	</style>
 
-    <!-- BCMC text style declarations -->
-    <style name="ProcessingActivityHeaderStyle">
+    <!-- BanContact/Afterpay text style declarations -->
+    <style name="ActivitySpecialHeaderStyle">
         <item name="android:textSize">20sp</item>
     </style>
 
@@ -102,7 +102,6 @@
     </style>
 
 	<!-- Paymentscreen style declarations -->
-
 	<style name="WhiteLayout">
         <item name="android:background">#FFFFFF</item>
    	</style>
@@ -159,8 +158,8 @@
         <item name="android:textColor">#000000</item>
     </style>
 
-    <style name="QrCodeBackground" >
-        <item name="android:background">@drawable/qrcode_background</item>
+    <style name="sectionBackground" >
+        <item name="android:background">@drawable/special_section_background</item>
         <item name="android:layout_margin">14dp</item>
     </style>
 

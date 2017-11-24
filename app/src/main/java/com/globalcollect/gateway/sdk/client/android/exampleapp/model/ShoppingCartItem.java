@@ -43,35 +43,4 @@ public class ShoppingCartItem implements Serializable {
 	public Integer getQuantity() {
 		return quantity;
 	}
-	
-	public String getAmountFormatted(CountryCode countryCode, CurrencyCode currencyCode) {
-		
-		// Find the locale from the countryCode
-		Locale localeFromCountryCode = null;
-		for (Locale locale : Locale.getAvailableLocales()) {
-
-			if (countryCode.name().equals(locale.getCountry())) {
-				localeFromCountryCode = locale;
-			}
-		}
-		
-		// Convert currencyCode to currency
-		Currency currency = Currency.getInstance(currencyCode.name());
-		
-		if (localeFromCountryCode != null && currency != null) {
-			
-			// Make formatted amount
-			NumberFormat formatter = NumberFormat.getCurrencyInstance(localeFromCountryCode);
-			formatter.setCurrency(currency);
-			double doublePayment = ((double)amountInCents) / 100;
-			
-			formatter.setMinimumFractionDigits(2);
-			formatter.setMaximumFractionDigits(2);
-			formatter.setMinimumIntegerDigits(1);
-			return formatter.format(doublePayment);
-		}
-		
-		return null;
-	}
-
 }

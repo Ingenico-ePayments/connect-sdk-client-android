@@ -137,6 +137,14 @@ public class InputDataPersister implements Serializable {
         fieldValues.put(paymentProductFieldId, value);
     }
 
+    public void removeValue(String paymentProductFieldId) {
+         if (paymentProductFieldId == null) {
+             throw new InvalidParameterException("Error removing value on InputDataPersister, paymentProductFieldId may not be null");
+         }
+
+         fieldValues.remove(paymentProductFieldId);
+    }
+
     public String getFocusFieldId() {
         return focusFieldId;
     }

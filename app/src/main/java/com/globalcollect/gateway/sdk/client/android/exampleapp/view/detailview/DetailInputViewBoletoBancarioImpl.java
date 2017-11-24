@@ -1,4 +1,4 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.view;
+package com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview;
 
 import android.app.Activity;
 import android.support.annotation.IdRes;
@@ -21,22 +21,16 @@ public class DetailInputViewBoletoBancarioImpl extends DetailInputViewImpl imple
     private static final String SURNAME_FIELD_ID	    = "surname";
     private static final String COMPANYNAME_FIELD_ID    = "companyName";
 
-    private EditText fiscalNumberField;
-
     public DetailInputViewBoletoBancarioImpl(Activity activity, @IdRes int id) {
         super (activity, id);
     }
 
     @Override
-    public void initializeFiscalNumberField() {
-        fiscalNumberField = (EditText) rootView.findViewWithTag(Constants.FISCAL_NUMBER_FIELD_ID);
+    public void initializeFiscalNumberField(TextWatcher textWatcher) {
+        EditText fiscalNumberField = (EditText) rootView.findViewWithTag(Constants.FISCAL_NUMBER_FIELD_ID);
         if (fiscalNumberField == null) {
             throw new ViewNotInitializedException("CreditCardField has not been found, did you forget to render the inputfields?");
         }
-    }
-
-    @Override
-    public void addTextWatcherToFiscalNumberField(TextWatcher textWatcher) {
         fiscalNumberField.addTextChangedListener(textWatcher);
     }
 

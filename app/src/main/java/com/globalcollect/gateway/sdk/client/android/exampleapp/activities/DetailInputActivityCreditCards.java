@@ -9,8 +9,8 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Con
 import com.globalcollect.gateway.sdk.client.android.exampleapp.exception.IinStatusNotKnownException;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.iinlookup.IinLookupTextWatcher;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister.IinDetailsPersister;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.view.DetailInputViewCreditCard;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.view.DetailInputViewCreditCardImpl;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview.DetailInputViewCreditCard;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview.DetailInputViewCreditCardImpl;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.IinLookupAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinDetail;
@@ -90,7 +90,7 @@ public class DetailInputActivityCreditCards extends DetailInputActivity
 
     // This function alters the view so that it matches the IinStatus "UNKNOWN"
     private void handleIinStatusUnknown() {
-        fieldView.renderLuhnValidationMessage();
+        fieldView.renderLuhnValidationMessage(inputValidationPersister);
         fieldView.removeDrawableInEditText();
         fieldView.removeCoBrandNotification();
         fieldView.deactivatePayButton();
@@ -98,16 +98,16 @@ public class DetailInputActivityCreditCards extends DetailInputActivity
 
     // This function alters the view so that it matches the IinStatus "NOT_ENOUGH_DIGITS"
     private void handleIinStatusNotEnoughDigits() {
-        fieldView.removeCreditCardValidationMessage();
+        fieldView.removeCreditCardValidationMessage(inputValidationPersister);
         fieldView.removeCoBrandNotification();
         if (!inputDataPersister.isPaymentProduct()) {
             fieldView.deactivatePayButton();
         }
     }
 
-    // This function alters the view so that it matches the IinStatus "EXISTING_BUT_NOT_ALLOWED"
+    // This function alters the. view so that it matches the IinStatus "EXISTING_BUT_NOT_ALLOWED"
     private void handleIinStatusExistingButNotAllowed() {
-        fieldView.renderNotAllowedInContextValidationMessage();
+        fieldView.renderNotAllowedInContextValidationMessage(inputValidationPersister);
         fieldView.removeDrawableInEditText();
         fieldView.removeCoBrandNotification();
         fieldView.deactivatePayButton();
@@ -115,7 +115,7 @@ public class DetailInputActivityCreditCards extends DetailInputActivity
 
     // This function alters the view so that it is compliable with the IinStatus "EXISTING_BUT_NOT_ALLOWED"
     private void handleIinStatusSupported(IinDetailsResponse response) {
-        fieldView.removeCreditCardValidationMessage();
+        fieldView.removeCreditCardValidationMessage(inputValidationPersister);
         fieldView.activatePayButton();
 
         // Find whether the brand, chosen by the user on the payment product selection screen, is in the IinResponse

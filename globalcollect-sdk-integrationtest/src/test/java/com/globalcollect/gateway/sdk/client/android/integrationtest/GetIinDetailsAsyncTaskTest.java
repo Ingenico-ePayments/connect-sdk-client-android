@@ -89,7 +89,7 @@ public class GetIinDetailsAsyncTaskTest extends BaseAsyncTaskTest {
                 minimalValidPaymentContext);
         iinLookupAsyncTask.execute();
 
-        // Test that the IinLookup returns with status UNKNOW wiithin 'ASYNCTASK_CALLBACK_TEST_TIMEOUT_SEC' seconds
+        // Test that the IinLookup returns with status UNKNOW within 'ASYNCTASK_CALLBACK_TEST_TIMEOUT_SEC' seconds
         assertTrue(waitForAsyncCallBack.await(ASYNCTASK_CALLBACK_TEST_TIMEOUT_SEC, TimeUnit.SECONDS));
 
         // Retrieve the response from the callback and validate its status

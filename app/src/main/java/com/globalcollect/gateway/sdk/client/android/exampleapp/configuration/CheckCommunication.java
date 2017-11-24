@@ -1,5 +1,15 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.configuration;import java.security.InvalidParameterException;import android.app.Activity;import android.content.Context;import android.net.ConnectivityManager;import android.net.NetworkInfo;
-/** * Copyright 2014 Global Collect Services B.V *  */
+package com.globalcollect.gateway.sdk.client.android.exampleapp.configuration;
+import java.security.InvalidParameterException;
+
+import android.app.Activity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
+/**
+ * Copyright 2017 Global Collect Services B.V
+ * 
+ */
 public class CheckCommunication {
 	
 	/**
@@ -7,7 +17,7 @@ public class CheckCommunication {
 	 * @param activity
 	 * @return true if there is internet connectivity
 	 */
-	public boolean isOnline(Activity activity) {
+	public static boolean isOnline(Activity activity) {
 		
 		// Null check
 		if (activity == null) {

@@ -8,17 +8,18 @@ import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
 import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.sdk.exception.CommunicationException;
 import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductPublicKeyResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.ConvertedAmountResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CountryCode;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CurrencyCode;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.CustomerDetailsRequest;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductNetworksResponse;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductPublicKeyResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.ThirdPartyStatus;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.ThirdPartyStatusResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinDetailsRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
@@ -26,10 +27,13 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.Bas
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
 import com.google.gson.Gson;
+
 import org.apache.commons.lang3.Validate;
+
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Serializable;
@@ -370,6 +374,62 @@ public class C2sCommunicator implements Serializable {
 				}
 			} catch (IOException e) {
 				Log.i(TAG, "Error while getting paymentProductGroup: " + e.getMessage());
+			}
+		}
+	}
+
+
+	public CustomerDetailsResponse getCustomerDetails(String productId, CountryCode countryCode, List<KeyValuePair> values, Context context) {
+
+		if (productId == null) {
+			throw new InvalidParameterException("Error getting CustomerDetails, productId may not be null");
+		}
+		if (countryCode == null) {
+			throw new InvalidParameterException("Error getting CustomerDetails, countryCode may not be null");
+		}
+		if (values == null) {
+			throw new InvalidParameterException("Error getting CustomerDetails, values may not be null");
+		}
+
+		HttpURLConnection connection = null;
+
+		try {
+
+			// Construct the url for the getCustomerDetailsCall
+			String paymentProductPath = Constants.GC_GATEWAY_CUSTOMERDETAILS_PATH.replace("[cid]", configuration.getCustomerId()).replace("[pid]", productId);
+			String url = configuration.getBaseUrl() + paymentProductPath;
+
+			// Serialise the getCustomerDetailsRequest to json, so it can be added to the postbody
+			CustomerDetailsRequest customerDetailsRequest = new CustomerDetailsRequest(countryCode, values);
+			String customerDetailsRequestJson = gson.toJson(customerDetailsRequest);
+
+			// Do the call and deserialize the result to IinDetailsResponse
+			connection = doHTTPPostRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context), customerDetailsRequestJson);
+			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+
+			// Log the response
+			if (Constants.ENABLE_REQUEST_LOGGING) {
+				logResponse(connection, responseBody);
+			}
+
+			CustomerDetailsResponse customerDetailsResponse = gson.fromJson(responseBody, CustomerDetailsResponse.class);
+
+			return customerDetailsResponse;
+
+		} catch (CommunicationException e) {
+			Log.i(TAG, "Error while getting customer details:" + e.getMessage());
+			return null;
+		} catch (Exception e) {
+			Log.i(TAG, "Error while getting customer details:" + e.getMessage());
+			return null;
+		} finally {
+			try {
+				if (connection != null) {
+					connection.getInputStream().close();
+					connection.disconnect();
+				}
+			} catch (IOException e) {
+				Log.i(TAG, "Error while getting customer details:" + e.getMessage());
 			}
 		}
 	}

@@ -4,9 +4,9 @@
     android:shape="rectangle">
     
     <solid 
-        android:color="@color/tooltiptext_background_color" />
+        android:color="@color/special_section_background_color" />
 	<stroke 
-	    android:color="@color/tooltiptext_border_color" 
+	    android:color="@color/special_section_border_color"
 	    android:width="1dp" />
     <corners 
         android:radius="1dp" />

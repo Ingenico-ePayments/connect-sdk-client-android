@@ -76,15 +76,21 @@ public class RenderInputFieldHelper {
 
 			// Create new row
 			LinearLayout rowView = new LinearLayout(parentView.getContext());
+
 			rowView.setOrientation(LinearLayout.VERTICAL);
 			rowView.setPadding(0,20,0,0);
-
-			// Render label
-			labelRenderer.renderLabel(field, paymentItem, rowView);
 
 			// Create new row entry
 			LinearLayout rowContentView = new LinearLayout(parentView.getContext());
 			rowContentView.setOrientation(LinearLayout.HORIZONTAL);
+
+			// Render label, if a checkBox (Boolean field) is being rendered, we want the label to
+			// be in the row content view
+			if (renderer instanceof RenderBoolean) {
+				labelRenderer.renderLabel(field, paymentItem, rowContentView);
+			} else {
+				labelRenderer.renderLabel(field, paymentItem, rowView);
+			}
 
 			// Render field in row and set a tag so we can look it up later
 			View view = renderer.renderField(field, inputDataPersister, rowContentView, paymentContext);

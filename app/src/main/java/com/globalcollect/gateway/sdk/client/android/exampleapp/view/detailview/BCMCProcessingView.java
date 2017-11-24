@@ -1,4 +1,4 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.view;
+package com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview;
 
 /**
  * Interface for the BCMCProcessingActivity

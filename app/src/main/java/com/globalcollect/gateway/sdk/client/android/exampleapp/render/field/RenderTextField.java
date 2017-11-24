@@ -1,7 +1,7 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
 
-import android.os.Build;
 import android.text.InputFilter;
+import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,18 +75,18 @@ public class RenderTextField implements RenderInputFieldInterface {
 			case EMAIL_ADDRESS_KEYBOARD:
 				editText.setInputType(android.text.InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
 				break;
+			case DATE_PICKER:
+				editText.setInputType(InputType.TYPE_DATETIME_VARIATION_DATE);
 			default:
 				editText.setInputType(android.text.InputType.TYPE_CLASS_TEXT);
 				break;
 		}
-
 
 		// Check if this edittext should be obfuscated
 		if (field.getDisplayHints().isObfuscate()) {
 			editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
 		}
 
-		// Add OnTextChanged watcher for this inputfield
 		// Add mask functionality when a mask is set
 		Boolean addMasking = field.getDisplayHints().getMask() != null;
 
@@ -120,6 +120,7 @@ public class RenderTextField implements RenderInputFieldInterface {
 			}
 		}
 
+		// Add OnTextChanged watcher for this inputfield
 		editText.addTextChangedListener(new FieldInputTextWatcher(inputDataPersister, field.getId(), editText, addMasking));
 
 		// get input information from inputDataPersister

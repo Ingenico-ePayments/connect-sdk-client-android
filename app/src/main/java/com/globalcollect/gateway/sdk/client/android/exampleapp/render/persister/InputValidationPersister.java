@@ -1,16 +1,22 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister;
 
+import android.support.annotation.NonNull;
+
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationErrorMessage;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Helper class that takes care of validating the input and making sure that the data ends up
  * in the PaymentRequest
+ * Also helps persisting information about what fields are currently showing error messages
  *
  * Copyright 2017 Global Collect Services B.V
  */
@@ -18,12 +24,12 @@ public class InputValidationPersister implements Serializable {
 
     private static final long serialVersionUID = 4862313783204104738L;
 
-    private List<ValidationErrorMessage> errorMessages;
-
     private PaymentRequest paymentRequest;
 
-    public InputValidationPersister() {
+    private List<ValidationErrorMessage> errorMessages = new ArrayList<>();
 
+
+    public InputValidationPersister() {
         paymentRequest = new PaymentRequest();
     }
 

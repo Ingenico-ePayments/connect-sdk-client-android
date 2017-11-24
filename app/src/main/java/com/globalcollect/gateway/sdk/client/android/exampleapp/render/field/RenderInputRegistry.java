@@ -1,6 +1,7 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
 
 import java.util.HashMap;
+import java.util.List;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.FormElement.ListType;
 
@@ -20,16 +21,18 @@ public class RenderInputRegistry {
 	
 	/**
 	 * Constructor
-	 * @param customRenderer, this is the map with custom renderers
+	 * @param customRenderers, this is the map with custom renderers
 	 */
-	public RenderInputRegistry(HashMap<ListType, RenderInputFieldInterface> customRenderer) {
-		this.customRenderers = customRenderer;
+	public RenderInputRegistry(HashMap<ListType, RenderInputFieldInterface> customRenderers) {
+		this.customRenderers = customRenderers;
 		
 		// Fill the default renderersmap
 		defaultRenderers = new HashMap<ListType, RenderInputFieldInterface>();
 		defaultRenderers.put(ListType.TEXT, new RenderTextField());
 		defaultRenderers.put(ListType.LIST, new RenderList());
 		defaultRenderers.put(ListType.CURRENCY, new RenderCurrency());
+		defaultRenderers.put(ListType.DATE, new RenderDate());
+		defaultRenderers.put(ListType.BOOLEAN, new RenderBoolean());
 	}
 	
 	

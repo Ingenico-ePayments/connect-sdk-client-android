@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="30dp"
-        style="@style/QrCodeBackground">
+        style="@style/sectionBackground">
 
         <ImageView
             android:id="@+id/qrcode"

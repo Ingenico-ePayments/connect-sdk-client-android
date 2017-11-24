@@ -12,7 +12,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.CountryCode;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 
 /**
- * This class contains all the shoppingcart items
+ * This class contains shoppingcart items
  *  
  * Copyright 2014 Global Collect Services B.V
  *
@@ -24,13 +24,6 @@ public class ShoppingCart implements Serializable {
 	/** List with all ShoppingCartItems **/
 	private List<ShoppingCartItem> shoppingCartItems = new ArrayList<ShoppingCartItem>();
 
-	
-	public ShoppingCart() {
-		
-	}
-	
-	
-	
 	/**
 	 * Add a shoppingcartitem to the shoppingcart  
 	 * @param item
@@ -43,8 +36,7 @@ public class ShoppingCart implements Serializable {
 		
 		shoppingCartItems.add(item);
 	}
-	
-	
+
 	/**
 	 * Get all shoppingcart items
 	 * @return
@@ -66,43 +58,5 @@ public class ShoppingCart implements Serializable {
 		}
 		return totalAmount;
 	}
-	
-	
-	/**
-	 * Formats the amount based on the given locale and currency
-	 * @return the formatted amount
-	 */
-	public String getTotalAmountFormatted(CountryCode countryCode, CurrencyCode currencyCode) {
-		
-		// Find the locale from the countryCode
-		Locale localeFromCountryCode = null;
-		
-		for (Locale locale : Locale.getAvailableLocales()) {
 
-			if (countryCode.name().equals(locale.getCountry())) {
-				localeFromCountryCode = locale;
-				break;
-			}
-		}
-		
-		// Find the currency from the currencyCode
-		Currency currencyFromCurrencyCode = Currency.getInstance(currencyCode.name());
-		
-		
-		if (localeFromCountryCode != null && currencyFromCurrencyCode != null) {
-			
-			// Make formatted amount
-			NumberFormat formatter = NumberFormat.getCurrencyInstance(localeFromCountryCode);
-			formatter.setCurrency(currencyFromCurrencyCode);
-			double doublePayment = ((double)getTotalAmount()) / 100;
-			
-			formatter.setMinimumFractionDigits(2);
-			formatter.setMaximumFractionDigits(2);
-			formatter.setMinimumIntegerDigits(1);
-			return formatter.format(doublePayment);
-		} 
-		
-		return null;
-	}
-	
 }

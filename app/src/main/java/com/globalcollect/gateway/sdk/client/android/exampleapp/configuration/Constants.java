@@ -31,7 +31,7 @@ public class Constants {
 	public final static String BUNDLE_PAYMENT_PRODUCTS 			= "bundle_paymentproducts";
 	public final static String BUNDLE_GC_SESSION 				= "bundle_coresession";
 	public final static String BUNDLE_SHOPPING_CART 			= "bundle_shoppingcart";
-	public final static String BUNDLE_INPUTDATAPERSISTERR		= "bundle_inputdatapersister";
+	public final static String BUNDLE_INPUTDATAPERSISTER = "bundle_inputdatapersister";
 	public final static String BUNDLE_INPUTVALIDATIONPERSISTER	= "bundle_inputvalidationpersister";
 	public final static String BUNDLE_IINDETAILSPERSISTER		= "bundle_iindetailspersister";
 	public final static String BUNDLE_RENDERED					= "bundle_rendered";

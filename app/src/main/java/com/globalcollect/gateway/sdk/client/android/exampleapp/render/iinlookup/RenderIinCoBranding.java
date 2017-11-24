@@ -76,7 +76,7 @@ public class RenderIinCoBranding {
         final ViewGroup rowView = (ViewGroup) parentView.findViewWithTag(fieldId).getParent();
         TextView iinCoBrandNotificationView = new TextView(rowView.getContext());
         iinCoBrandNotificationView.setText(translate(DETECTED, context));
-        iinCoBrandNotificationView.setPaintFlags(iinCoBrandNotificationView.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
+        iinCoBrandNotificationView.setPaintFlags(iinCoBrandNotificationView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         iinCoBrandNotificationView.setGravity(Gravity.END);
         iinCoBrandNotificationView.setTag(VALIDATION_MESSAGE_TAG_PREFIX + fieldId);
         iinCoBrandNotificationView.setTextAppearance(rowView.getContext(), R.style.IinCoBrandNotification);
@@ -120,7 +120,7 @@ public class RenderIinCoBranding {
         // Create a new LinearLayout and add it under the rowView.
         LinearLayout coBrandTooltipLayout = new LinearLayout(rowView.getContext());
         coBrandTooltipLayout.setOrientation(LinearLayout.VERTICAL);
-        coBrandTooltipLayout.setBackgroundResource(R.drawable.tooltip_text_background);
+        coBrandTooltipLayout.setBackgroundResource(R.drawable.special_section_background);
         coBrandTooltipLayout.setTag(COBRAND_TOOLTIP_TAG_PREFIX + fieldId);
         LinearLayout.LayoutParams coBrandTooltipLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         coBrandTooltipLayoutParams.setMargins(TOOLTIP_TEXT_MARGIN, TOOLTIP_TEXT_MARGIN, TOOLTIP_TEXT_MARGIN, TOOLTIP_TEXT_MARGIN);

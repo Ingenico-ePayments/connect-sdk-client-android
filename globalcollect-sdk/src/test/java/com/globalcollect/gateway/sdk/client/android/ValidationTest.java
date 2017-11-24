@@ -1,9 +1,14 @@
 package com.globalcollect.gateway.sdk.client.android;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.test.AndroidTestCase;
 
+import com.globalcollect.gateway.sdk.client.android.sdk.model.FormatResult;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleEmailAddress;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleExpirationDate;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleFixedList;
@@ -64,98 +69,134 @@ public class ValidationTest extends AndroidTestCase {
 	// Test emailaddress validator
 	@Test
 	public void testValidEmailAddress() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("emailAddress", emailAddressValid);
 		ValidationRuleEmailAddress rule = new ValidationRuleEmailAddress("", ValidationType.EMAILADDRESS);
-		assertEquals(true, rule.validate(emailAddressValid));
+		assertEquals(true, rule.validate(paymentRequest, "emailAddress"));
 	}
 
 	@Test
 	public void testInvalidEmailAddress() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("emailAddress", emailAddressInvalid);
 		ValidationRuleEmailAddress rule = new ValidationRuleEmailAddress("", ValidationType.EMAILADDRESS);
-		assertEquals(false, rule.validate(emailAddressInvalid));
+		assertEquals(false, rule.validate(paymentRequest, "emailAddress"));
 	}
 
 
 	// Test expirationdate validator
 	@Test
 	public void testValidExpirationDate() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("expirationDate", expirationDateValid);
 		ValidationRuleExpirationDate rule = new ValidationRuleExpirationDate("", ValidationType.EXPIRATIONDATE);
-		assertEquals(true, rule.validate(expirationDateValid));
+		assertEquals(true, rule.validate(paymentRequest, "expirationDate"));
 	}
 
 	@Test
 	public void testInvalidExpirationDate() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("expirationDate", expirationDateInvalid);
 		ValidationRuleExpirationDate rule = new ValidationRuleExpirationDate("", ValidationType.EXPIRATIONDATE);
-		assertEquals(false, rule.validate(expirationDateInvalid));
+		assertEquals(false, rule.validate(paymentRequest, "expirationDate"));
 	}
 
 
 	// Test fixed list validator
 	@Test
 	public void testValidFixedList() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("fixedList", validListOption);
 		ValidationRuleFixedList rule = new ValidationRuleFixedList(listEntries, "", ValidationType.FIXEDLIST);
-		assertEquals(true, rule.validate(validListOption));
+		assertEquals(true, rule.validate(paymentRequest, "fixedList"));
 	}
 
 	@Test
 	public void testInvalidFixedList() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("fixedList", invalidListOption);
 		ValidationRuleFixedList rule = new ValidationRuleFixedList(listEntries, "", ValidationType.FIXEDLIST);
-		assertEquals(false, rule.validate(invalidListOption));
+		assertEquals(false, rule.validate(paymentRequest, "fixedList"));
 	}
 
 
 	// Test length validator
 	@Test
 	public void testValidLength() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("length", validLength);
 		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength, "", ValidationType.LENGTH);
-		assertEquals(true, rule.validate(validLength));
+		assertEquals(true, rule.validate(paymentRequest, "length"));
 	}
 
 	@Test
 	public void testInvalidLength() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("length", invalidLength);
 		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength, "", ValidationType.LENGTH);
-		assertEquals(false, rule.validate(invalidLength));
+		assertEquals(false, rule.validate(paymentRequest, "length"));
 	}
 
 
 	// Test luhn validator
 	@Test
 	public void testValidLuhn() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("luhn", validLuhnCheck);
 		ValidationRuleLuhn rule = new ValidationRuleLuhn("", ValidationType.LUHN);
-		assertEquals(true, rule.validate(validLuhnCheck));
+		assertEquals(true, rule.validate(paymentRequest, "luhn"));
 	}
 
 	@Test
 	public void testInvalidLuhn() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("luhn", invalidLuhnCheck);
 		ValidationRuleLuhn rule = new ValidationRuleLuhn("", ValidationType.LUHN);
-		assertEquals(false, rule.validate(invalidLuhnCheck));
+		assertEquals(false, rule.validate(paymentRequest, "luhn"));
 	}
 
 
 	// Test range validator
 	@Test
 	public void testValidRange() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("range", validRange);
 		ValidationRuleRange rule = new ValidationRuleRange(minLength, maxLength, "", ValidationType.RANGE);
-		assertEquals(true, rule.validate(validRange));
+		assertEquals(true, rule.validate(paymentRequest, "range"));
 	}
 
 	@Test
 	public void testInvalidRange() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("range", invalidRange);
 		ValidationRuleRange rule = new ValidationRuleRange(minLength, maxLength,"", ValidationType.RANGE);
-		assertEquals(false, rule.validate(invalidRange));
+		assertEquals(false, rule.validate(paymentRequest, "range"));
 	}
 
 	// Test regex validator
 	@Test
 	public void testValidRegex() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("regex", validRegex);
 		ValidationRuleRegex rule = new ValidationRuleRegex(regex, "", ValidationType.RANGE);
-		assertEquals(true, rule.validate(validRegex));
+		assertEquals(true, rule.validate(paymentRequest, "regex"));
 	}
 
 	@Test
 	public void testInValidRegex() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("regex", invalidRegex);
 		ValidationRuleRegex rule = new ValidationRuleRegex(regex, "", ValidationType.RANGE);
-		assertEquals(false, rule.validate(invalidRegex));
+		assertEquals(false, rule.validate(paymentRequest, "regex"));
 	}
 
 
+	private static final class TestPaymentRequest extends PaymentRequest {
+
+		@Override
+		public String getUnmaskedValue(String paymentProductFieldId, String value) {
+			// no actual payment product fields are available
+			return value;
+		}
+	}
 }

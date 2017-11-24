@@ -30,8 +30,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.activities.PaymentProductSelectionActivity;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.activities.PaymentResultActivity;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.activities.SelectPaymentProductActivity;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.dialog.DialogUtil;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
@@ -81,9 +81,6 @@ public class FullWalletConfirmationButtonFragment extends Fragment implements
     private PaymentContext paymentContext;
     private PaymentRequest paymentRequest;
     private ShoppingCart shoppingCart;
-
-    // DialogUtil used for showing (error) messages
-    private DialogUtil dialogUtil = new DialogUtil();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -198,7 +195,7 @@ public class FullWalletConfirmationButtonFragment extends Fragment implements
      * @param errorCode
      */
     protected void handleUnrecoverableGoogleWalletError(int errorCode) {
-        Intent intent = new Intent(getActivity(), SelectPaymentProductActivity.class);
+        Intent intent = new Intent(getActivity(), PaymentProductSelectionActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra(WalletConstants.EXTRA_ERROR_CODE, errorCode);
         startActivity(intent);
@@ -294,7 +291,7 @@ public class FullWalletConfirmationButtonFragment extends Fragment implements
         String title 	   = getString(R.string.gc_general_errors_title);
         String msg 		   = getString(R.string.gc_general_errors_techicalProblem);
         String buttonTxt   = getString(R.string.gc_app_general_errors_noInternetConnection_button);
-        dialogUtil.showAlertDialog(getActivity(), title, msg, buttonTxt, (android.content.DialogInterface.OnClickListener) getActivity());
+        DialogUtil.showAlertDialog(getActivity(), title, msg, buttonTxt, (android.content.DialogInterface.OnClickListener) getActivity());
     }
 
     @Override

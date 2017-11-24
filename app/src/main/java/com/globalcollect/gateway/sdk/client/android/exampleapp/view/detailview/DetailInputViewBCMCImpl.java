@@ -1,4 +1,4 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.view;
+package com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview;
 
 import android.app.Activity;
 import android.graphics.Bitmap;

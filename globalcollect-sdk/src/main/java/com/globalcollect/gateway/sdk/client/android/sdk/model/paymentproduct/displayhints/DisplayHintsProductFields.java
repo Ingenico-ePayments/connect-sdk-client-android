@@ -20,7 +20,6 @@ public class DisplayHintsProductFields implements Serializable {
 
 	/**
 	 * Enum containing all the possible input types
-	 * @author Pieter
 	 *
 	 */
 	public enum PreferredInputType {
@@ -34,7 +33,11 @@ public class DisplayHintsProductFields implements Serializable {
 		PHONE_NUMBER_KEYBOARD,
 
 		@SerializedName("EmailAddressKeyboard")
-		EMAIL_ADDRESS_KEYBOARD;
+		EMAIL_ADDRESS_KEYBOARD,
+
+		@SerializedName("DateKeyboard")
+		DATE_PICKER
+		;
 	}
 
 	private Boolean alwaysShow;
@@ -42,6 +45,7 @@ public class DisplayHintsProductFields implements Serializable {
 	private Integer displayOrder;
 	private String label;
 	private String placeholderLabel;
+	private String link;
 	private String mask;
 	private PreferredInputType preferredInputType;
 	private Tooltip tooltip;
@@ -63,6 +67,10 @@ public class DisplayHintsProductFields implements Serializable {
 
 	public String getPlaceholderLabel() {
 		return placeholderLabel;
+	}
+
+	public String getLink() {
+		return link;
 	}
 
 	public String getMask() {

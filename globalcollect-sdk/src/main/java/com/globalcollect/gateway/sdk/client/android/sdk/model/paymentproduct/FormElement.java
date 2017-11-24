@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
-
 /**
  * POJO that represents a Formelement object
  * This class is filled by deserialising a JSON string from the GC gateway
@@ -29,9 +28,15 @@ public class FormElement implements Serializable {
 		LIST,
 
 		@SerializedName("currency")
-		CURRENCY;
-	}
+		CURRENCY,
 
+		@SerializedName("date")
+		DATE,
+
+		@SerializedName("boolean")
+		BOOLEAN,
+		;
+	}
 
 	private ListType type;
 	private List<ValueMap> valueMapping = new ArrayList<ValueMap>();

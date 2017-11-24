@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+	android:id="@+id/payment_product_selection_view_layout">
 
 	<include layout="@layout/activity_header"
 		android:layout_height="wrap_content"
@@ -13,7 +14,7 @@
 	    android:id="@+id/container"
 	    android:layout_width="match_parent"
 	    android:layout_height="0dp"
-	    tools:context="com.globalcollect.gateway.sdk.client.android.activities.SelectPaymentProductActivity"
+	    tools:context="com.globalcollect.gateway.sdk.client.android.activities.PaymentProductSelectionActivity"
 	    tools:ignore="MergeRootFrame" >
 
 

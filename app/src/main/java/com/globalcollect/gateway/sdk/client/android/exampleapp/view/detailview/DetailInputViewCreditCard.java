@@ -1,8 +1,9 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.view;
+package com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview;
 
 import android.view.View;
 
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.iinlookup.IinLookupTextWatcher;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister.InputValidationPersister;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 
 import java.util.List;
@@ -15,11 +16,11 @@ import java.util.List;
 public interface DetailInputViewCreditCard extends DetailInputView {
     void initializeCreditCardField(IinLookupTextWatcher iinLookupTextWatcher);
 
-    void renderLuhnValidationMessage();
+    void renderLuhnValidationMessage(InputValidationPersister inputValidationPersister);
 
-    void renderNotAllowedInContextValidationMessage();
+    void renderNotAllowedInContextValidationMessage(InputValidationPersister inputValidationPersister);
 
-    void removeCreditCardValidationMessage();
+    void removeCreditCardValidationMessage(InputValidationPersister inputValidationPersister);
 
     void renderPaymentProductLogoInCreditCardField(String productId);
 

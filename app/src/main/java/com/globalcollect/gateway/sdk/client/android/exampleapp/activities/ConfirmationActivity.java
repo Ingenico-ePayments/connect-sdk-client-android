@@ -9,9 +9,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.widget.Toast;
 
-import com.globalcollect.gateway.sdk.client.android.exampleapp.fragments.FullWalletConfirmationButtonFragment;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Constants;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.fragments.FullWalletConfirmationButtonFragment;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;

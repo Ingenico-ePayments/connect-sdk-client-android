@@ -14,8 +14,8 @@
     <color name="cancel_button_color_gradient_2">#868686</color>
 
     <!-- Tooltip background colors  -->
-    <color name="tooltiptext_background_color">#f2f2f2</color>
-    <color name="tooltiptext_border_color">#cccccc</color>
+    <color name="special_section_background_color">#f2f2f2</color>
+    <color name="special_section_border_color">#cccccc</color>
 
     <!-- Payment product row colors -->
     <color name="row_color_default">#ffffff</color>

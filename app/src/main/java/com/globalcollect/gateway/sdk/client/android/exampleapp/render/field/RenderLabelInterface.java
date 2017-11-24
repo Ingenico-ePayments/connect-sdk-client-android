@@ -1,5 +1,6 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.render.field;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
@@ -21,6 +22,6 @@ public interface RenderLabelInterface {
 	 * @param selectedPaymentProduct, the selected PaymentProduct, used for getting the correct translations
 	 * @param rowView, the ViewGroup to which the rendered label is added
 	 */
-	public void renderLabel(PaymentProductField field, BasicPaymentItem selectedPaymentProduct, ViewGroup rowView);
+	public TextView renderLabel(PaymentProductField field, BasicPaymentItem selectedPaymentProduct, ViewGroup rowView);
 	
 }

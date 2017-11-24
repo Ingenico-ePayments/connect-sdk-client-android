@@ -5,8 +5,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.view.DetailInputViewBoletoBancario;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.view.DetailInputViewBoletoBancarioImpl;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview.DetailInputViewBoletoBancario;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview.DetailInputViewBoletoBancarioImpl;
 import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
 
 /**
@@ -30,7 +30,6 @@ public class DetailInputActivityBoletoBancario extends DetailInputActivity {
     @Override
     public void onStart() {
         super.onStart();
-        fieldView.initializeFiscalNumberField();
         addBoletoBancarioTextWatcher();
         performBoletoLogic();
     }
@@ -62,7 +61,7 @@ public class DetailInputActivityBoletoBancario extends DetailInputActivity {
             }
         };
 
-        fieldView.addTextWatcherToFiscalNumberField(textWatcher);
+        fieldView.initializeFiscalNumberField(textWatcher);
 
     }
 

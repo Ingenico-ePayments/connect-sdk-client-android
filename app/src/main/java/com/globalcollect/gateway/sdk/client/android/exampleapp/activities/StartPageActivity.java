@@ -205,8 +205,8 @@ public class StartPageActivity extends Activity{
 		AmountOfMoney amountOfMoney = new AmountOfMoney(cart.getTotalAmount(), currencyCode);
 		PaymentContext paymentContext = new PaymentContext(amountOfMoney, countryCode, isRecurring);
 		
-		// and show the SelectPaymentProductActivity
-		Intent paymentIntent = new Intent(this, SelectPaymentProductActivity.class);
+		// and show the PaymentProductSelectionActivity
+		Intent paymentIntent = new Intent(this, PaymentProductSelectionActivity.class);
 		
 		// Attach the following objects to the paymentIntent 
 		paymentIntent.putExtra(Constants.INTENT_PAYMENT_CONTEXT, paymentContext);

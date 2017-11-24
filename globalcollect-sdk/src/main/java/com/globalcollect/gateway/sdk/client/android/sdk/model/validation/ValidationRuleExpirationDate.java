@@ -37,6 +37,7 @@ public class ValidationRuleExpirationDate extends AbstractValidationRule {
 	@Override
 	@Deprecated
 	public boolean validate(String text) {
+		Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
 
 		if (text == null) {
 			return false;
@@ -86,7 +87,6 @@ public class ValidationRuleExpirationDate extends AbstractValidationRule {
 	 */
 	@Override
 	public boolean validate(PaymentRequest paymentRequest, String fieldId) {
-		Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
 
 		String text = paymentRequest.getValue(fieldId);
 

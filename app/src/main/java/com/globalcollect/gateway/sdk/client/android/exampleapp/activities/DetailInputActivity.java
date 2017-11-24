@@ -13,8 +13,8 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Con
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister.InputDataPersister;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister.InputValidationPersister;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.view.DetailInputView;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.view.DetailInputViewImpl;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview.DetailInputView;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview.DetailInputViewImpl;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PreparedPaymentRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
@@ -34,7 +34,7 @@ import java.util.List;
  */
 public class DetailInputActivity extends ShoppingCartActivity implements OnPaymentRequestPreparedListener {
 
-    private DetailInputView fieldView;
+    protected DetailInputViewImpl fieldView;
 
     protected GcSession session;
 
@@ -58,14 +58,12 @@ public class DetailInputActivity extends ShoppingCartActivity implements OnPayme
         // Initialize the shoppingcart
         super.initialize(this);
 
-        // Set 'rendered' to false, as we know that there is nothing rendered since onCreate has been called
+        // Set 'rendered' to false, as we know that nothing is rendered since onCreate has been called
         rendered = false;
 
-        // Create the fieldView that will take care of rendering the input fields, the pay/cancel button
-        // and the privacy footer
         fieldView = new DetailInputViewImpl(this, R.id.detail_input_view_layout_fields_and_buttons);
 
-        loadAndInitializeIntentData();
+        loadIntentData();
 
         inputDataPersister = new InputDataPersister(paymentItem);
         if (accountOnFile != null) {
@@ -77,9 +75,11 @@ public class DetailInputActivity extends ShoppingCartActivity implements OnPayme
         if (savedInstanceState != null) {
             initializeSavedInstanceStateData(savedInstanceState);
         }
+
+        renderDynamicContent();
     }
 
-    private void loadAndInitializeIntentData() {
+    private void loadIntentData() {
         Intent intent   = getIntent();
         session         = (GcSession)      intent.getSerializableExtra(Constants.INTENT_GC_SESSION);
         paymentItem     = (PaymentItem)    intent.getSerializableExtra(Constants.INTENT_SELECTED_ITEM);
@@ -93,8 +93,8 @@ public class DetailInputActivity extends ShoppingCartActivity implements OnPayme
     }
 
     private void initializeSavedInstanceStateData(@NonNull Bundle savedInstanceState) {
-        if (savedInstanceState.getSerializable(Constants.BUNDLE_INPUTDATAPERSISTERR) != null) {
-            inputDataPersister = (InputDataPersister) savedInstanceState.getSerializable(Constants.BUNDLE_INPUTDATAPERSISTERR);
+        if (savedInstanceState.getSerializable(Constants.BUNDLE_INPUTDATAPERSISTER) != null) {
+            inputDataPersister = (InputDataPersister) savedInstanceState.getSerializable(Constants.BUNDLE_INPUTDATAPERSISTER);
         }
         if (savedInstanceState.getSerializable(Constants.BUNDLE_INPUTVALIDATIONPERSISTER) != null) {
             inputValidationPersister = (InputValidationPersister) savedInstanceState.getSerializable(Constants.BUNDLE_INPUTVALIDATIONPERSISTER);
@@ -104,6 +104,9 @@ public class DetailInputActivity extends ShoppingCartActivity implements OnPayme
     @Override
     public void onStart() {
         super.onStart();
+    }
+
+    private void renderDynamicContent() {
         if (!rendered) {
             fieldView.renderDynamicContent(inputDataPersister, paymentContext, inputValidationPersister);
             initializeRememberMeCheckBox();
@@ -130,10 +133,11 @@ public class DetailInputActivity extends ShoppingCartActivity implements OnPayme
         }
     }
 
+    // The callback method for when the user presses "pay"
     public void submitInputFields(View v) {
         // Remove all validation error messages and tooltip texts, maybe re-render them when we know
         // that the input is still not correct
-        fieldView.hideTooltipAndErrorViews();
+        hideTooltipAndErrorViews();
 
         // Validate the input
         List<ValidationErrorMessage> errorMessages = inputValidationPersister.storeAndValidateInput(inputDataPersister);
@@ -147,16 +151,25 @@ public class DetailInputActivity extends ShoppingCartActivity implements OnPayme
 
         } else {
             // Render validation messages for the invalid fields
-            fieldView.renderValidationMessages(errorMessages, inputDataPersister.getPaymentItem());
-
+            renderValidationMessages();
         }
     }
 
+    protected void hideTooltipAndErrorViews() {
+        fieldView.hideTooltipAndErrorViews(inputValidationPersister);
+    }
+
+    protected void renderValidationMessages() {
+        fieldView.renderValidationMessages(inputValidationPersister, inputDataPersister.getPaymentItem());
+    }
+
+    // The callback method for when the user alters the rememberMe checkbox
     public void rememberMeClicked(View v) {
         CheckBox checkBox = (CheckBox) v;
         inputDataPersister.setRememberMe(checkBox.isChecked());
     }
 
+    // The callback method for when the user presses "cancel"
     public void backToPaymentProductScreen(View v) {
         this.finish();
     }
@@ -201,8 +214,6 @@ public class DetailInputActivity extends ShoppingCartActivity implements OnPayme
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
         // Save the current active field and cursorposition
         View v = fieldView.getViewWithFocus();
         if (v instanceof EditText) {
@@ -210,8 +221,10 @@ public class DetailInputActivity extends ShoppingCartActivity implements OnPayme
             inputDataPersister.setCursorPosition(((EditText) v).getSelectionStart());
         }
 
-        outState.putSerializable(Constants.BUNDLE_INPUTDATAPERSISTERR, inputDataPersister);
+        outState.putSerializable(Constants.BUNDLE_INPUTDATAPERSISTER, inputDataPersister);
         outState.putSerializable(Constants.BUNDLE_INPUTVALIDATIONPERSISTER, inputValidationPersister);
         outState.putBoolean(Constants.BUNDLE_RENDERED, rendered);
+
+        super.onSaveInstanceState(outState);
     }
 }

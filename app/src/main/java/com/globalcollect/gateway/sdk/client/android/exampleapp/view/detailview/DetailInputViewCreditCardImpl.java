@@ -1,4 +1,4 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.view;
+package com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -11,6 +11,7 @@ import android.widget.EditText;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.exception.ViewNotInitializedException;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.iinlookup.IinLookupTextWatcher;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.render.iinlookup.RenderIinCoBranding;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister.InputValidationPersister;
 import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationErrorMessage;
@@ -45,18 +46,18 @@ public class DetailInputViewCreditCardImpl extends DetailInputViewImpl implement
     }
 
     @Override
-    public void renderLuhnValidationMessage() {
+    public void renderLuhnValidationMessage(InputValidationPersister inputValidationPersister) {
         renderValidationHelper.renderValidationMessage(new ValidationErrorMessage("luhn", CREDIT_CARD_NUMBER_FIELD_ID, null), null);
     }
 
     @Override
-    public void renderNotAllowedInContextValidationMessage() {
+    public void renderNotAllowedInContextValidationMessage(InputValidationPersister inputValidationPersister) {
         renderValidationHelper.renderValidationMessage(new ValidationErrorMessage("allowedInContext", CREDIT_CARD_NUMBER_FIELD_ID, null), null);
     }
 
     @Override
-    public void removeCreditCardValidationMessage() {
-        renderValidationHelper.removeValidationMessage(renderInputFieldsLayout, CREDIT_CARD_NUMBER_FIELD_ID);
+    public void removeCreditCardValidationMessage(InputValidationPersister inputValidationPersister) {
+        renderValidationHelper.removeValidationMessage(renderInputFieldsLayout, CREDIT_CARD_NUMBER_FIELD_ID, inputValidationPersister);
     }
 
     @Override

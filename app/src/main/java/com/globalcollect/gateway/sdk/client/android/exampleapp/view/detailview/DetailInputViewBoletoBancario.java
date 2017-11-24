@@ -1,4 +1,4 @@
-package com.globalcollect.gateway.sdk.client.android.exampleapp.view;
+package com.globalcollect.gateway.sdk.client.android.exampleapp.view.detailview;
 
 import android.text.TextWatcher;
 
@@ -10,9 +10,7 @@ import android.text.TextWatcher;
  */
 public interface DetailInputViewBoletoBancario extends DetailInputView {
 
-    void initializeFiscalNumberField();
-
-    void addTextWatcherToFiscalNumberField(TextWatcher textWatcher);
+    void initializeFiscalNumberField(TextWatcher textWatcher);
 
     void setBoletoBancarioPersonalFiscalNumber();
 

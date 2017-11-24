@@ -2,6 +2,8 @@ package com.globalcollect.gateway.sdk.client.android.sdk.session;
 
 import android.content.Context;
 
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.CustomerDetailsAsyncTask;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.CustomerDetailsAsyncTask.OnCustomerDetailsCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductPublicKeyAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductPublicKeyAsyncTask.OnPaymentProductPublicKeyLoadedListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask;
@@ -37,6 +39,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.Bas
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentItem;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
@@ -300,6 +303,33 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 
 
 	/**
+	 * Gets the CustomerDetails from the GC gateway
+	 *
+	 * @param productId, the productId for which you want to look up customerDetails
+	 * @param countryCode, the country of the customer
+	 * @param values, the
+	 */
+	public void getCustomerDetails(Context context, String productId, CountryCode countryCode, List<KeyValuePair> values, OnCustomerDetailsCallCompleteListener listener) {
+
+		if (context == null) {
+			throw new InvalidParameterException("Error getting CustomerDetails, context may not be null");
+		}
+		if (productId == null) {
+			throw new InvalidParameterException("Error getting CustomerDetails, productId may not be null");
+		}
+		if (countryCode == null) {
+			throw new InvalidParameterException("Error getting CustomerDetails, countryCode may not be null");
+		}
+		if (values == null) {
+			throw new InvalidParameterException("Error getting CustomerDetails, values may not be null");
+		}
+
+		CustomerDetailsAsyncTask task = new CustomerDetailsAsyncTask(context, productId, countryCode, values, communicator, listener);
+		task.execute();
+	}
+
+
+	/**
 	 * Gets PaymentProductDirectory from the GC gateway
 	 *
 	 * @param productId, for which product must the lookup be done
@@ -320,11 +350,11 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
     	if (countryCode == null) {
 			throw new InvalidParameterException("Error getting PaymentProductDirectory, countryCode may not be null");
 		}
-		if (context == null ) {
-			throw new InvalidParameterException("Error getting PaymentProductDirectory, context may not be null");
-		}
 		if (listener == null ) {
 			throw new InvalidParameterException("Error getting PaymentProductDirectory, listener may not be null");
+		}
+		if (context == null ) {
+			throw new InvalidParameterException("Error getting PaymentProductDirectory, context may not be null");
 		}
 
 		PaymentProductDirectoryAsyncTask task = new PaymentProductDirectoryAsyncTask(productId, currencyCode, countryCode, context, communicator, listener);

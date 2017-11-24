@@ -11,7 +11,6 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister.InputDataPersister;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.translation.Translator;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 
@@ -121,7 +120,7 @@ public class RenderTooltip implements RenderTooltipInterface {
 		// Create a new LinearLayout and add it under the rowView.
 		LinearLayout tooltipLayout = new LinearLayout(rowView.getContext());
 		tooltipLayout.setOrientation(LinearLayout.VERTICAL);
-		tooltipLayout.setBackgroundResource(R.drawable.tooltip_text_background);
+		tooltipLayout.setBackgroundResource(R.drawable.special_section_background);
 		tooltipLayout.setTag(TOOLTIP_TAG + fieldId);
 		LayoutParams tooltipLayoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		tooltipLayoutParams.setMargins(TOOLTIP_TEXT_MARGIN, TOOLTIP_TEXT_MARGIN, TOOLTIP_TEXT_MARGIN, TOOLTIP_TEXT_MARGIN);

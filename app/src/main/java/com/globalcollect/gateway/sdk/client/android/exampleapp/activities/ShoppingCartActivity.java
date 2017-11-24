@@ -1,15 +1,13 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.activities;
+
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.render.shoppingcart.RenderShoppingCart;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.view.HeaderViewImpl;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 

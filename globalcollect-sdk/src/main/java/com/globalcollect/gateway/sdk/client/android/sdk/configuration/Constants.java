@@ -7,7 +7,7 @@ package com.globalcollect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v3.4.0";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v3.5.0";
 
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
@@ -18,6 +18,7 @@ public class Constants {
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_DIRECTORY_PATH = "[cid]/products/[pid]/directory";
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_NETWORKS_PATH = "[cid]/products/[pid]/networks";
 	public final static String GC_GATEWAY_PAYMENTPRODUCT_PUBLIC_KEY_PATH = "[cid]/products/[pid]/publicKey";
+	public final static String GC_GATEWAY_CUSTOMERDETAILS_PATH = "[cid]/products/[pid]/customerDetails";
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTGROUPS_PATH = "[cid]/productgroups";
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTGROUP_PATH = "[cid]/productgroups/[gid]";
 	public final static String GC_GATEWAY_CONVERT_AMOUNT_PATH = "[cid]/services/convert/amount";
@@ -41,6 +42,9 @@ public class Constants {
 	/** Time constant that should be used to determine if a call took to long to return **/
 	public static final int ACCEPTABLE_WAIT_TIME_IN_MILISECONDS = 10000;
 
+	/** Cards Group ID **/
+	public static String PAYMENTPRODUCTGROUPID_CARDS = "cards";
+
 	/** Payment product Id's of android and apple pay **/
 	public final static String PAYMENTPRODUCTID_APPLEPAY = "302";
 	public final static String PAYMENTPRODUCTID_ANDROIDPAY = "320";
@@ -53,6 +57,19 @@ public class Constants {
 	public static String PAYMENTPRODUCTID_BOLETOBANCARIO 	= "1503";
 	public static String FISCAL_NUMBER_FIELD_ID				= "fiscalNumber";
 
-	/** BCMC payment product ID **/
-	public static String PAYMENTPRODUCTID_BCMC	= "3012";
+	/** BanContact payment product ID **/
+	public static String PAYMENTPRODUCTID_BanContact = "3012";
+
+	/** @deprecated Use {@link #PAYMENTPRODUCTID_BanContact} instead **/
+	@Deprecated
+	public static String PAYMENTPRODUCTID_BCMC = "3012";
+
+	/** Afterpay Installments payment product ID and relevant field ID's**/
+	public static String PAYMENTPRODUCTID_AFTERPAY_INSTALLMENTS = "9000";
+	public static String PAYMENTPRODUCTID_AFTERPAY_INVOICE = "9001";
+	public static String INSTALLMENTPLAN_FIELD_ID = "installmentId";
+	public static String TERMSANDCONDITIONS_FIELD_ID = "termsAndConditions";
+
+	/** Link placeholder for label texts **/
+	public static String LINK_PLACEHOLDER = "{link}";
 }

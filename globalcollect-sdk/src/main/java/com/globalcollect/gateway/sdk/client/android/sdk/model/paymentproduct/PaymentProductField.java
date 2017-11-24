@@ -38,7 +38,14 @@ public class PaymentProductField implements Serializable {
 		NUMERICSTRING,
 
 		@SerializedName("expirydate")
-		EXPIRYDATE
+		EXPIRYDATE,
+
+		@SerializedName("boolean")
+		BOOLEAN,
+
+		@SerializedName("date")
+		DATE,
+
 
 	}
 
@@ -48,6 +55,9 @@ public class PaymentProductField implements Serializable {
 
 	// Type of this field for GC gateway
 	private Type type;
+
+	// Boolean that indicates whether the field is used for the lookup call regarding Afterpay
+	private Boolean usedForLookup;
 
 	// Contains hints for rendering this field
 	private DisplayHintsProductFields displayHints = new DisplayHintsProductFields();
@@ -62,6 +72,7 @@ public class PaymentProductField implements Serializable {
 	private List<ValidationErrorMessage> errorMessageIds = new ArrayList<ValidationErrorMessage>();
 
 
+
 	/** Getters **/
 	public String getId() {
 		return id;
@@ -71,10 +82,13 @@ public class PaymentProductField implements Serializable {
 		return type;
 	}
 
+	public Boolean getUsedForLookup() {
+		return usedForLookup;
+	}
+
 	public DisplayHintsProductFields getDisplayHints() {
 		return displayHints;
 	}
-
 
 	public DataRestrictions getDataRestrictions() {
 		return dataRestrictions;
@@ -223,7 +237,6 @@ public class PaymentProductField implements Serializable {
 		}
 		return formatter.applyMask(mask, value);
 	}
-
 
 	/**
 	 * Removes mask on a given string
