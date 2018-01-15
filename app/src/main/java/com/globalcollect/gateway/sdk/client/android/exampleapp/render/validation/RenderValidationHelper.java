@@ -159,8 +159,7 @@ public class RenderValidationHelper {
 		ValidationRuleLength validationRuleLength = (ValidationRuleLength) validationResult.getRule();
 		if (validationRuleLength.getMaxLength().equals(validationRuleLength.getMinLength())) {
 			return translator.getValidationMessage("length.exact");
-		} else if ((validationRuleLength.getMinLength() == null || validationRuleLength.getMinLength().equals(0))
-				&& validationRuleLength.getMaxLength() != null) {
+		} else if ((validationRuleLength.getMinLength() == null || validationRuleLength.getMinLength().equals(0))) {
 			return translator.getValidationMessage("length.max");
 		} else {
 			return translator.getValidationMessage("length.between");
