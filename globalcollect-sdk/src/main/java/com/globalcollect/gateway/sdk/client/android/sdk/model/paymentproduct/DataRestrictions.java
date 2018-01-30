@@ -14,6 +14,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.Validat
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleLuhn;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleRange;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleRegex;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleTermsAndConditions;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationType;
 
 
@@ -82,6 +83,11 @@ public class DataRestrictions implements Serializable {
 			}
 		}
 
+		if (validators.getTermsAndConditions() != null) {
+			AbstractValidationRule validationRule = new ValidationRuleTermsAndConditions("termsAndConditions", ValidationType.TERMSANDCONDITIONS);
+			validationRules.add(validationRule);
+		}
+
 		if (validators.getRegularExpression() != null) {
 
 			if (validators.getRegularExpression().getRegularExpression() != null) {
@@ -109,6 +115,5 @@ public class DataRestrictions implements Serializable {
 	public Boolean isRequired() {
 		return isRequired;
 	}
-
 
 }

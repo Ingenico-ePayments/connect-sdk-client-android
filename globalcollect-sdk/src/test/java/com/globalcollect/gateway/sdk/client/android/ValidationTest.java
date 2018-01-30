@@ -16,6 +16,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.Validat
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleLuhn;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleRange;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleRegex;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleTermsAndConditions;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationType;
 
 import org.junit.Test;
@@ -188,6 +189,24 @@ public class ValidationTest extends AndroidTestCase {
 		paymentRequest.setValue("regex", invalidRegex);
 		ValidationRuleRegex rule = new ValidationRuleRegex(regex, "", ValidationType.RANGE);
 		assertEquals(false, rule.validate(paymentRequest, "regex"));
+	}
+
+
+	// Test terms and conditions validator
+	@Test
+	public void testValidTermsAndConditions() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("termsAndConditions", Boolean.TRUE.toString());
+		ValidationRuleTermsAndConditions rule = new ValidationRuleTermsAndConditions("", ValidationType.TERMSANDCONDITIONS);
+		assertEquals(true, rule.validate(paymentRequest, "termsAndConditions"));
+	}
+
+	@Test
+	public void testInValidTermsAndConditions() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("termsAndConditions", "test");
+		ValidationRuleTermsAndConditions rule = new ValidationRuleTermsAndConditions("", ValidationType.TERMSANDCONDITIONS);
+		assertEquals(false, rule.validate(paymentRequest, "termsAndConditions"));
 	}
 
 

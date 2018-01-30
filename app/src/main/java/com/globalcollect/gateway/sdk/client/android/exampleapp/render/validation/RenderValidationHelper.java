@@ -148,7 +148,7 @@ public class RenderValidationHelper {
 			return false;
 		}
 
-		// Check if there is not already an error message of this kind showing for this field
+		// Check if there is not already an error message for this field
 		if (((ViewGroup) fieldView.getParent().getParent()).findViewWithTag(RenderValidationMessage.VALIDATION_MESSAGE_TAG_PREFIX + fieldId) != null) {
 			return false;
 		}

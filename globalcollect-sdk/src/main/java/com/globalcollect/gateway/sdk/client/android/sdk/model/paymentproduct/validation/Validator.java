@@ -22,6 +22,7 @@ public class Validator implements Serializable {
 	private Range range;
 	private RegularExpression regularExpression;
 	private BoletoBancarioRequiredness boletoBancarioRequiredness;
+	private TermsAndConditions termsAndConditions;
 
 	/** Getters **/
 	public ExpirationDate getExpirationDate(){
@@ -54,6 +55,10 @@ public class Validator implements Serializable {
 
 	public BoletoBancarioRequiredness getBoletoBancarioRequiredness() {
 		return boletoBancarioRequiredness;
+	}
+
+	public TermsAndConditions getTermsAndConditions() {
+		return termsAndConditions;
 	}
 
 }

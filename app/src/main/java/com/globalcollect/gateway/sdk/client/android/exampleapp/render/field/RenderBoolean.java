@@ -43,9 +43,13 @@ public class RenderBoolean implements RenderInputFieldInterface {
         checkBox.setOnCheckedChangeListener(createOnCheckedChangedListener(inputDataPersister, field.getId()));
 
         // Get input information from inputDataPersister
-        Boolean checked = Boolean.parseBoolean(inputDataPersister.getValue(field.getId()));
-        if (checked) {
-            checkBox.setChecked(true);
+        String value = inputDataPersister.getValue(field.getId());
+        if (value == null) {
+            // Store the value as "false" so that the checkbox will not be validated with an empty value
+            inputDataPersister.setValue(field.getId(), "false");
+            checkBox.setChecked(false);
+        } else {
+            checkBox.setChecked(Boolean.parseBoolean(value));
         }
 
         rowView.addView(checkBox, 0);
