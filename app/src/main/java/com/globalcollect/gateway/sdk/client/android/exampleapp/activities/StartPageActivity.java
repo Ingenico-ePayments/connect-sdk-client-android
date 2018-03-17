@@ -21,6 +21,8 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
 
@@ -57,8 +59,9 @@ public class StartPageActivity extends Activity{
 	    
 	    // Get all values for CountryCode spinner
 	    List<CountryCode> spinnerArrayCountry = new ArrayList<CountryCode>(EnumSet.allOf(CountryCode.class));
-	    
-	    // Make adapters of list and put it inside spinner
+		Collections.sort(spinnerArrayCountry);
+
+		// Make adapters of list and put it inside spinner
 	    ArrayAdapter<CountryCode> adapterCountry = new ArrayAdapter<CountryCode>(this, android.R.layout.simple_spinner_item, spinnerArrayCountry);
 	    adapterCountry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    Spinner spinnerCountry = (Spinner) findViewById(R.id.country_code);
@@ -68,6 +71,7 @@ public class StartPageActivity extends Activity{
 	    
 	    // Get all values for CurrencyCode spinner
 	    List<CurrencyCode> spinnerArrayCurrency = new ArrayList<CurrencyCode>(EnumSet.allOf(CurrencyCode.class));
+		Collections.sort(spinnerArrayCurrency);
 	    
 	    // Make adapters of list and put it inside spinner
 	    ArrayAdapter<CurrencyCode> adapterCurrency = new ArrayAdapter<CurrencyCode>(this, android.R.layout.simple_spinner_item, spinnerArrayCurrency);
