@@ -7,7 +7,7 @@ package com.globalcollect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v3.8.0";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v3.9.0";
 
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
