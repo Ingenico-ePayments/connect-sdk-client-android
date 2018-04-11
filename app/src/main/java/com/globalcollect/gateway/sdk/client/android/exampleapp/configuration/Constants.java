@@ -44,8 +44,7 @@ public class Constants {
 	/** Information from the merchant **/
 	public final static String MERCHANT_CLIENT_SESSION_IDENTIFIER	= "merchant_client_session_identifier";
 	public final static String MERCHANT_CUSTOMER_IDENTIFIER			= "merchant_customer_identifier";
-	public final static String MERCHANT_REGION						= "merchant_region";
-	public final static String MERCHANT_ENVIRONMENT					= "merchant_environment";
-	public final static String MERCHANT_CURRENCY_CODE				= "merchant_currency_code";
-	public final static String PAYMENT_IS_RECURRING					= "payment_is_recurring";
+	public final static String MERCHANT_CLIENT_API_URL				= "merchant_client_api_url";
+	public final static String MERCHANT_ASSET_URL					= "merchant_asset_url";
+	public final static String MERCHANT_ENVIRONMENT_IS_PRODUCTION	= "merchant_environmnent_is_production";
 }

@@ -13,7 +13,6 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.CountryCode;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CustomerDetailsRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductNetworksResponse;
@@ -99,9 +98,8 @@ public class C2sCommunicator implements Serializable {
 	 * Returns true if the EnvironmentType is set to production; otherwise false is returned.
      */
 	public boolean isEnvironmentTypeProduction() {
-		return configuration.getEnvironment() == Environment.EnvironmentType.Production;
+		return configuration.environmentIsProduction();
 	}
-
 
 	/**
 	 * Retrieves a list of basicpaymentproducts from the GC gateway without any fields
@@ -122,9 +120,9 @@ public class C2sCommunicator implements Serializable {
 		try {
 
 			// Build the complete url which is called
-			String baseUrl = configuration.getBaseUrl();
+			String clientApiUrl = configuration.getBaseUrl();
 			String paymentProductPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTS_PATH.replace("[cid]", configuration.getCustomerId());
-			String completePath = baseUrl + paymentProductPath;
+			String completePath = clientApiUrl + paymentProductPath;
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
@@ -198,9 +196,9 @@ public class C2sCommunicator implements Serializable {
 		try {
 
 			// Build the complete url which is called
-			String baseUrl = configuration.getBaseUrl();
+			String clientApiUrl = configuration.getBaseUrl();
 			String paymentProductPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_PATH.replace("[cid]", configuration.getCustomerId()).replace("[pid]", productId);
-			String completePath = baseUrl + paymentProductPath;
+			String completePath = clientApiUrl + paymentProductPath;
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
@@ -261,9 +259,9 @@ public class C2sCommunicator implements Serializable {
 		try {
 
 			// Build the complete url which is called
-			String baseUrl = configuration.getBaseUrl();
+			String clientApiUrl = configuration.getBaseUrl();
 			String paymentProductGroupsPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTGROUPS_PATH.replace("[cid]", configuration.getCustomerId());
-			String completePath = baseUrl + paymentProductGroupsPath;
+			String completePath = clientApiUrl + paymentProductGroupsPath;
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
@@ -336,9 +334,9 @@ public class C2sCommunicator implements Serializable {
 		try {
 
 			// Build the complete url which is called
-			String baseUrl = configuration.getBaseUrl();
+			String clientApiUrl = configuration.getBaseUrl();
 			String paymentProductPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTGROUP_PATH.replace("[cid]", configuration.getCustomerId()).replace("[gid]", groupId);
-			String completePath = baseUrl + paymentProductPath;
+			String completePath = clientApiUrl + paymentProductPath;
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
@@ -465,9 +463,9 @@ public class C2sCommunicator implements Serializable {
 		try {
 
 			// Build the complete url which is called
-			String baseUrl = configuration.getBaseUrl();
+			String clientApiUrl = configuration.getBaseUrl();
 			String paymentProductPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_DIRECTORY_PATH.replace("[cid]", configuration.getCustomerId()).replace("[pid]", productId);
-			String completePath = baseUrl + paymentProductPath;
+			String completePath = clientApiUrl + paymentProductPath;
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
@@ -526,9 +524,9 @@ public class C2sCommunicator implements Serializable {
 		try {
 
 			// Build the complete url which is called
-			String baseUrl = configuration.getBaseUrl();
+			String clientApiUrl = configuration.getBaseUrl();
 			String paymentProductPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_NETWORKS_PATH.replace("[cid]", configuration.getCustomerId()).replace("[pid]", productId);
-			String completePath = baseUrl + paymentProductPath;
+			String completePath = clientApiUrl + paymentProductPath;
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
@@ -858,6 +856,7 @@ public class C2sCommunicator implements Serializable {
 	 * Returns the region set in the configuration
 	 * @return
 	 */
+	@Deprecated
 	public Region getRegion () {
 		return configuration.getRegion();
 	}

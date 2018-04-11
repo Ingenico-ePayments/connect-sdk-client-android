@@ -5,6 +5,7 @@
     android:background="#FFFFFF">
     
     <LinearLayout
+		android:id="@+id/form_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -34,52 +35,55 @@
 		        android:text="Client Session Identifier:"
 		        android:layout_marginTop="10dp"/>
 		    
-		    <EditText
+		    <com.globalcollect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
 		        android:id="@+id/client_session_identifier"
 		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content" />
+		        android:layout_height="wrap_content"
+				android:inputType="text" />
 
 			<TextView
-		        android:layout_marginTop="10dp"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text="Customer Identifier:"/>
-		    
-		    <EditText
-		        android:id="@+id/customer_identifier"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-				/>
-		    
-		    <TextView
-		        android:layout_marginTop="10dp"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text="Region:"/>
-		    
-		    <Spinner
-		        android:id="@+id/region"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"/>
-		    
-		    <TextView
-		        android:layout_marginTop="10dp"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:text="Environment:"/>
-		    
-		    <Spinner
-		        android:id="@+id/environment"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"/>
-		    
+				android:layout_marginTop="10dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Customer Identifier:"/>
+
+			<com.globalcollect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
+				android:id="@+id/customer_identifier"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="text" />
+
+			<TextView
+				android:layout_marginTop="10dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Client API URL:"/>
+
+			<com.globalcollect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
+				android:id="@+id/client_api_url"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="text" />
+
+			<TextView
+				android:layout_marginTop="10dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Assets URL:"/>
+
+			<com.globalcollect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
+				android:id="@+id/asset_url"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="text" />
+
 		    <TextView
 		        android:layout_marginTop="10dp"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:text="Amount in cents:"/>
-		    
-		    <EditText
+
+		    <com.globalcollect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
 		        android:id="@+id/amount"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
@@ -140,6 +144,24 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="Group payment products"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_marginTop="10dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal" >
+
+				<CheckBox
+					android:id="@+id/environment_is_production"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Use Android Pay production wallet"/>
 
 			</LinearLayout>
 

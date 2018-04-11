@@ -50,8 +50,6 @@ public class AssetManager implements OnImageLoadedListener {
 	private Preferences preferences = new Preferences();
 	private CacheHandler cacheHandler;
 
-
-
 	/**
 	 * Private constructor for Singleton purposes
 	 *
@@ -62,12 +60,10 @@ public class AssetManager implements OnImageLoadedListener {
 		cacheHandler = new CacheHandler(context);
 	}
 
-
 	/**
 	 * Gets Singleton instance of this AssetManager
 	 *
 	 * @param context, needed for reading and writing files
-	 *
 	 * @return AssetManager singleton instance
 	 */
 	public static synchronized AssetManager getInstance(Context context) {
@@ -82,14 +78,12 @@ public class AssetManager implements OnImageLoadedListener {
 		return INSTANCE;
 	}
 
-
 	/**
 	 * Retrieves a logo for the given paymentProductId
 	 * First the diskcache is checked for this logo
 	 * If it doesn't exist there, the version in the app is returned
 	 *
 	 * @param paymentProductId, the paymentProductId for which the logo is returned
-	 *
 	 * @return Drawable logo
 	 */
 	public Drawable getLogo(String paymentProductId) {
@@ -110,23 +104,34 @@ public class AssetManager implements OnImageLoadedListener {
 		return null;
 	}
 
-
+	/**
+	 * Update the logos for the given paymentProducts if there is a new version
+	 *
+	 * @param region,            region determines what baseurl is used for loading images
+	 * @param environment,       environment determines what baseurl is used for loading images
+	 * @param basicPaymentItems, PaymentProductSelectables for which the logo will be updated if there is a new version
+	 * @deprecated use {@link #updateLogos(String, List, Size)}
+	 */
+	@Deprecated
+	public void updateLogos(Region region, EnvironmentType environment, List<BasicPaymentItem> basicPaymentItems, Size size) {
+		String assetBaseUrl = GcUtil.getAssetsBaseUrlByRegion(region, environment);
+		updateLogos(assetBaseUrl, basicPaymentItems, size);
+	}
 
 	/**
 	 * Update the logos for the given paymentProducts if there is a new version
 	 *
-	 * @param region, region determines what baseurl is used for loading images
-	 * @param environment, environment determines what baseurl is used for loading images
-	 * @param basicPaymentItems, PaymentProductSelectables for which the logo will be updated if there is a new version
+	 * @param assetUrl,				the asset url for loading images
+	 * @param basicPaymentItems, 	PaymentProductSelectables for which the logo will be updated if there is a new version
 	 */
-	public void updateLogos(Region region, EnvironmentType environment, List<BasicPaymentItem> basicPaymentItems, Size size) {
+	public void updateLogos(String assetUrl, List<BasicPaymentItem> basicPaymentItems, Size size) {
 
 		// Get the map containg all logos per paymentProductId from the preferences
 		Type listType = new TypeToken<Map<String, String>>() {}.getType();
 		Map<String, String> logoMapping = preferences.getMapFromSharedPreferences(Constants.PREFERENCES_LOGO_MAP,
-																				  context,
-																				  listType,
-																				  new HashMap<String, String>());
+				context,
+				listType,
+				new HashMap<String, String>());
 
 		// If there is no logo mapping in the preferences,
 		// Read the initial logo mapping from the LOGO_MAPPING_FILENAME file.
@@ -146,12 +151,11 @@ public class AssetManager implements OnImageLoadedListener {
 				if (url == null || !url.equals(product.getDisplayHints().getLogoUrl())) {
 
 					// Update the image
-					getImageFromUrl(region, environment, logoMapping, product, size);
+					getImageFromUrl(assetUrl, logoMapping, product, size);
 				}
 			}
 		}
 	}
-
 
 	/**
 	 * Parses the key/value map in the file LOGO_MAPPING_FILENAME to a Map containing all initial logo url per paymentproductId
@@ -162,39 +166,53 @@ public class AssetManager implements OnImageLoadedListener {
 
 		// Parse the LOGO_MAPPING_FILENAME as a properties file
 		Properties properties = new Properties();
-	    try {
-	    	InputStream inputStream =  context.getAssets().open(LOGO_MAPPING_FILENAME);
+		try {
+			InputStream inputStream = context.getAssets().open(LOGO_MAPPING_FILENAME);
 			properties.load(inputStream);
 		} catch (IOException e) {
 			return null;
 		}
 
-        // Fill the logoMapping with all entries
-	    Map<String, String> logoMapping = new HashMap<String, String>();
-        for (Entry<Object, Object> property : properties.entrySet()) {
-        	logoMapping.put((String)property.getKey(), (String)property.getValue());
-        }
+		// Fill the logoMapping with all entries
+		Map<String, String> logoMapping = new HashMap<String, String>();
+		for (Entry<Object, Object> property : properties.entrySet()) {
+			logoMapping.put((String) property.getKey(), (String) property.getValue());
+		}
 
-        return logoMapping;
+		return logoMapping;
 	}
-
 
 	/**
 	 * Loads an image from the products url
 	 *
-	 * @param region, region determines what baseurl is used for loading images
+	 * @param region,      region determines what baseurl is used for loading images
 	 * @param environment, environment determines what baseurl is used for loading images
 	 * @param logoMapping, map containing mapping with url's and paymentproductid
-	 * @param product, this products image is loaded
-	 * @param size, can be used to retrieve images of certain size
+	 * @param product,     this products image is loaded
+	 * @param size,        can be used to retrieve images of certain size
+	 * @deprecated use {@link #getImageFromUrl(String, Map, BasicPaymentItem, Size)}
 	 */
+	@Deprecated
 	private void getImageFromUrl(Region region, EnvironmentType environment, Map<String, String> logoMapping, BasicPaymentItem product, Size size) {
+		String assetBaseUrl = GcUtil.getAssetsBaseUrlByRegion(region, environment);
+		getImageFromUrl(assetBaseUrl, logoMapping, product, size);
+	}
+
+	/**
+	 * Loads an image from the products url
+	 *
+	 * @param assetUrl,		the asset url for loading images
+	 * @param logoMapping, 	map containing mapping with url's and paymentproductid
+	 * @param product,     	this products image is loaded
+	 * @param size,        	can be used to retrieve images of certain size
+	 */
+	private void getImageFromUrl(String assetUrl, Map<String, String> logoMapping, BasicPaymentItem product, Size size) {
 
 		// Determine the complete url
 		String logoUrl = product.getDisplayHints().getLogoUrl();
-		String completeUrl = GcUtil.getAssetsBaseUrlByRegion(region, environment) + logoUrl;
+		String completeUrl = assetUrl + logoUrl;
 
-		if (size != null){
+		if (size != null) {
 			//if you did specify the size, you just get the resized image
 			completeUrl += "?size=" + size.getWidth() + "x" + size.getHeight();
 		}
@@ -203,7 +221,6 @@ public class AssetManager implements OnImageLoadedListener {
 		LoadImageAsyncTask task = new LoadImageAsyncTask(completeUrl, product.getId(), context, logoMapping, logoUrl, this);
 		task.execute();
 	}
-
 
 	@Override
 	public void onImageLoaded(Drawable image, String productId, Map<String, String> logoMapping, String url) {

@@ -298,7 +298,9 @@
 	<string name="gc.general.paymentProducts.3120.name">KBC Online</string>
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
-	<string name="gc.general.paymentProducts.402.name">eCard</string>
+	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
+	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
+	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.500.instructionFields.BILLERID.label">Regningsudstederens ID</string>
@@ -345,7 +347,6 @@
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>
 	<string name="gc.general.paymentProducts.841.name">WebMoney</string>
 	<string name="gc.general.paymentProducts.843.name">Skrill</string>
-	<string name="gc.general.paymentProducts.845.name">CASHU</string>
 	<string name="gc.general.paymentProducts.849.name">Yandex Money</string>
 	<string name="gc.general.paymentProducts.855.name">Braspag, online debitering</string>
 	<string name="gc.general.paymentProducts.8580.name">QIWI Wallet/Kiosk</string>

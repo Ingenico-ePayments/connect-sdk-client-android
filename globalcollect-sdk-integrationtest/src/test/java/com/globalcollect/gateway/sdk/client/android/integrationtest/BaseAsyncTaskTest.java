@@ -6,14 +6,12 @@ import android.test.mock.MockResources;
 import com.globalcollect.gateway.sdk.client.android.integrationtest.TestUtil.GsonHelper;
 import com.globalcollect.gateway.sdk.client.android.integrationtest.sessions.SessionUtil;
 import com.globalcollect.gateway.sdk.client.android.integrationtest.sessions.TokenUtil;
-import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicatorConfiguration;
 import com.globalcollect.gateway.sdk.client.android.sdk.exception.CommunicationException;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.AmountOfMoney;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CountryCode;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CurrencyCode;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
@@ -49,7 +47,6 @@ import java.util.Map;
 import java.util.Properties;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
@@ -73,7 +70,6 @@ public class BaseAsyncTaskTest {
     static final int PREPAREPAYMENTREQUEST_CALLBACK_TEST_TIMEOUT_SEC = 10;
 
     private static Client client;
-    private static Environment.EnvironmentType environmentType;
     private static String clientBaseUrl;
 
     private static String testMerchantId;
@@ -104,7 +100,6 @@ public class BaseAsyncTaskTest {
         }
 
         testMerchantId = properties.getProperty("connect.api.merchantId");
-        environmentType = Environment.EnvironmentType.valueOf(properties.getProperty("connect.api.environmentType", "Sandbox"));
         clientBaseUrl = properties.getProperty("connect.api.client.endpoint");
 
         CommunicatorConfiguration communicatorConfiguration = new CommunicatorConfiguration(properties)
@@ -242,13 +237,10 @@ public class BaseAsyncTaskTest {
     private void createMockConfiguration(SessionResponse response) {
         String clientSessionId = response.getClientSessionId();
         String customerId = response.getCustomerId();
-        Region region = Region.valueOf(response.getRegion());
-        String baseUrl = clientBaseUrl != null ? clientBaseUrl : GcUtil.getC2SBaseUrlByRegion(region, environmentType);
 
         when(mockConfiguration.getClientSessionId()).thenReturn(clientSessionId);
         when(mockConfiguration.getCustomerId()).thenReturn(customerId);
-        when(mockConfiguration.getRegion()).thenReturn(region);
-        when(mockConfiguration.getBaseUrl()).thenReturn(baseUrl);
+        when(mockConfiguration.getBaseUrl()).thenReturn(clientBaseUrl);
         when(mockConfiguration.getMetadata(mockContext)).thenReturn(null);
     }
 
@@ -256,13 +248,9 @@ public class BaseAsyncTaskTest {
      * Create an invalid Uri that will return an http response code other than 200.
      */
     private void createInvalidMockConfiguration() {
-        Region region = Region.EU;
-        String baseUrl = clientBaseUrl != null ? clientBaseUrl : GcUtil.getC2SBaseUrlByRegion(region, environmentType);
-
         when(mockConfiguration.getClientSessionId()).thenReturn("Invalid");
         when(mockConfiguration.getCustomerId()).thenReturn("Invalid");
-        when(mockConfiguration.getRegion()).thenReturn(region);
-        when(mockConfiguration.getBaseUrl()).thenReturn(baseUrl);
+        when(mockConfiguration.getBaseUrl()).thenReturn(clientBaseUrl);
         when(mockConfiguration.getMetadata(mockContext)).thenReturn(null);
     }
 

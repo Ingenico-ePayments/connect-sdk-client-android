@@ -7,27 +7,33 @@ import java.security.InvalidParameterException;
  *
  * Copyright 2017 Global Collect Services B.V
  *
+ * @deprecated Environment and EnvironmentType are no longer used. Asset- and BaseUrl are
+ * retrieved via the "Create client session" call in the Server to Server API.
  */
+@Deprecated
 public class Environment {
 
-	// Enum which contains all possible environments
-	public enum EnvironmentType  {
-			Production,
-			PreProduction,
-			Sandbox
+	/**
+	 * @deprecated Environment and EnvironmentType are no longer used. Asset- and BaseUrl are
+	 * retrieved via the "Create client session" call in the Server to Server API.
+	 */
+	@Deprecated
+	public enum EnvironmentType {
+		Production,
+		PreProduction,
+		Sandbox
 	}
 
 	private String c2SBaseUrl;
 	private String assetBaseUrl;
 	private EnvironmentType environmentType;
 
-
 	/**
 	 * Constructor
 	 *
 	 * @param environmentType, which EnvironmentType are the c2SBaseUrl and assetBaseUrl for
-	 * @param c2SBaseUrl, the endpoint baseurl for this environment
-	 * @param assetBaseUrl, the asset baseurl for this environment
+	 * @param c2SBaseUrl,      the endpoint baseurl for this environment
+	 * @param assetBaseUrl,    the asset baseurl for this environment
 	 */
 	public Environment(EnvironmentType environmentType, String c2SBaseUrl, String assetBaseUrl) {
 
@@ -41,11 +47,10 @@ public class Environment {
 			throw new InvalidParameterException("Error creating Environment, assetBaseUrl may not be null");
 		}
 
-		this.assetBaseUrl =	assetBaseUrl;
-		this.c2SBaseUrl   = c2SBaseUrl;
-		this.environmentType  = environmentType;
+		this.assetBaseUrl = assetBaseUrl;
+		this.c2SBaseUrl = c2SBaseUrl;
+		this.environmentType = environmentType;
 	}
-
 
 	public String getAssetBaseUrl() {
 		return assetBaseUrl;
@@ -58,5 +63,4 @@ public class Environment {
 	public EnvironmentType getEnvironmentType() {
 		return environmentType;
 	}
-
 }

@@ -96,7 +96,6 @@ public class GcUtil {
 		return metaData;
 	}
 
-
 	/**
 	 * Returns base64 encoded version of a map of metadata of the device this SDK is running on
 	 * The map contains the SDK version, OS, OS version and screensize
@@ -164,14 +163,17 @@ public class GcUtil {
 		return encodedData;
 	}
 
-
 	/**
 	 * Determines the Base url given a Region
 	 *
 	 * @param region, which region to get the base url for
 	 * @param environment, which environment to get the base url for
 	 * @return base url for the GC gateway
+	 *
+	 * @deprecated Asset- and BaseUrl are no longer provided by the SDK. Use the server to server
+	 * "create client session" API to retrieve these URL's
 	 */
+	@Deprecated
 	public static String getC2SBaseUrlByRegion(Region region, EnvironmentType environment) {
 
 		if (region == null) {
@@ -186,14 +188,17 @@ public class GcUtil {
 		return region.getC2SBaseUrl(environment);
 	}
 
-
 	/**
 	 * Determines the asset baseurl given a Region
 	 *
 	 * @param region, which region to get the baseurl for
 	 * @param environment, which environment to get the baseurl for
 	 * @return base url for loading assets
+	 *
+	 * @deprecated Asset- and BaseUrl are no longer provided by the SDK. Use the server to server
+	 * "create client session" API to retrieve these URL's
 	 */
+	@Deprecated
 	public static String getAssetsBaseUrlByRegion(Region region, EnvironmentType environment) {
 
 		if (region == null) {

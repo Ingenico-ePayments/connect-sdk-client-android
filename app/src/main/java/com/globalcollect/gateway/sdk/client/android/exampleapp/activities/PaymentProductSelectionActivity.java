@@ -20,9 +20,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProduct
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicatorConfiguration;
 import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.EnvironmentType;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Size;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
@@ -72,8 +70,9 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
     // Parameters used to initialize the connection
     private String clientSessionId;
     private String customerId;
-    private Region region;
-    private EnvironmentType environmentType;
+    private String clientApiUrl;
+    private String assetUrl;
+    private boolean environmentIsProduction;
 
     // Variables required to retrieve the payment items that are available for payment
     private PaymentContext paymentContext;
@@ -110,8 +109,14 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
         }
 
         if (paymentItems == null) {
-            // Instantiate the GcSession
-            session = C2sCommunicatorConfiguration.initWithClientSessionId(clientSessionId, customerId, region, environmentType, Constants.APPLICATION_IDENTIFIER);
+            try {
+                // Instantiate the GcSession
+                session = C2sCommunicatorConfiguration.initWithClientSessionId(clientSessionId, customerId, clientApiUrl, assetUrl, environmentIsProduction, Constants.APPLICATION_IDENTIFIER);
+            } catch(InvalidParameterException e) {
+                Log.e(TAG, e.getMessage());
+                selectionView.showTechnicalErrorDialog(this);
+                return;
+            }
 
             selectionView.showLoadingIndicator();
             session.getBasicPaymentItems(getApplicationContext(), paymentContext, this, groupPaymentProducts);
@@ -137,8 +142,9 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
         Intent intent = getIntent();
         clientSessionId = intent.getStringExtra(Constants.MERCHANT_CLIENT_SESSION_IDENTIFIER);
         customerId = intent.getStringExtra(Constants.MERCHANT_CUSTOMER_IDENTIFIER);
-        region = Region.valueOf(intent.getStringExtra(Constants.MERCHANT_REGION));
-        environmentType = EnvironmentType.valueOf(intent.getStringExtra(Constants.MERCHANT_ENVIRONMENT));
+        clientApiUrl = intent.getStringExtra(Constants.MERCHANT_CLIENT_API_URL);
+        assetUrl = intent.getStringExtra(Constants.MERCHANT_ASSET_URL);
+        environmentIsProduction = intent.getBooleanExtra(Constants.MERCHANT_ENVIRONMENT_IS_PRODUCTION, false);
         paymentContext = (PaymentContext) intent.getSerializableExtra(Constants.INTENT_PAYMENT_CONTEXT);
         groupPaymentProducts = intent.getBooleanExtra(Constants.INTENT_GROUP_PAYMENTPRODUCTS, false);
         shoppingCart = (ShoppingCart) intent.getSerializableExtra(Constants.INTENT_SHOPPINGCART);
@@ -164,14 +170,14 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
 
             selectionView.renderDynamicContent(paymentItems);
 
-            updateLogos(region, environmentType, paymentItems.getBasicPaymentItems());
+            updateLogos(assetUrl, paymentItems.getBasicPaymentItems());
         } else {
             selectionView.showTechnicalErrorDialog(this);
         }
         selectionView.hideLoadingIndicator();
     }
 
-    private void updateLogos(Region region, EnvironmentType environment, List<BasicPaymentItem> basicPaymentItems) {
+    private void updateLogos(String assetUrl, List<BasicPaymentItem> basicPaymentItems) {
         // if you want to specify the size of the logos you update, set resizedLogo to a size (width, height)
         Size resizedLogo = new Size(100, 100);
 
@@ -179,7 +185,7 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
         // resizedLogo = null;
 
         AssetManager manager = AssetManager.getInstance(getApplicationContext());
-        manager.updateLogos(region, environment, basicPaymentItems, resizedLogo);
+        manager.updateLogos(assetUrl, basicPaymentItems, resizedLogo);
     }
 
     // The callback method for when a user selects a payment product

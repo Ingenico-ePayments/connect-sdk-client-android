@@ -13,7 +13,10 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.Environment.Enviro
  *
  * Copyright 2017 Global Collect Services B.V
  *
+ * @deprecated Region is no longer used. Asset- and BaseUrl are retrieved via the "Create client
+ * session" call in the Server to Server API.
  */
+@Deprecated
 public enum Region {
 
 	EU(new ArrayList<Environment>(Arrays.asList(
@@ -28,7 +31,7 @@ public enum Region {
 			new Environment(EnvironmentType.Sandbox,
 					"https://ams1.sandbox.api-ingenico.com/client/v1/",
 					"https://assets.pay1.sandbox.secured-by-ingenico.com")
-			))),
+	))),
 
 	US(new ArrayList<Environment>(Arrays.asList(
 			new Environment(EnvironmentType.Production,
@@ -42,7 +45,7 @@ public enum Region {
 			new Environment(EnvironmentType.Sandbox,
 					"https://us.sandbox.api-ingenico.com/client/v1/",
 					"https://assets.pay2.sandbox.secured-by-ingenico.com")
-			))),
+	))),
 
 	AMS(new ArrayList<Environment>(Arrays.asList(
 			new Environment(EnvironmentType.Production,
@@ -56,7 +59,7 @@ public enum Region {
 			new Environment(EnvironmentType.Sandbox,
 					"https://ams2.sandbox.api-ingenico.com/client/v1/",
 					"https://assets.pay3.sandbox.secured-by-ingenico.com")
-			))),
+	))),
 
 	PAR(new ArrayList<Environment>(Arrays.asList(
 			new Environment(EnvironmentType.Production,
@@ -70,34 +73,32 @@ public enum Region {
 			new Environment(EnvironmentType.Sandbox,
 					"https://par.sandbox.api-ingenico.com/client/v1/",
 					"https://assets.pay4.sandbox.secured-by-ingenico.com")
-			))),
-	;
-
+	)));
 
 	// List of all environments for this Region
 	private List<Environment> environments;
 
-
 	/**
 	 * Constructor
+	 *
 	 * @param environments, list of all environments for this Region
 	 */
 	private Region(List<Environment> environments) {
 		this.environments = environments;
 	}
 
-
 	/**
 	 * Get all environments
+	 *
 	 * @return List<Environment>
 	 */
 	public List<Environment> getEnvironments() {
 		return environments;
 	}
 
-
 	/**
 	 * Get the C2SBaseUrl based on the given environmentType
+	 *
 	 * @param environmentType, for which environment the C2SBaseUrl is requested
 	 * @return C2SBaseUrl for the given environmentType, returns null if it can't be found
 	 */
@@ -116,9 +117,9 @@ public enum Region {
 		return null;
 	}
 
-
 	/**
 	 * Get the AssetBaseUrl based on the given environmentType
+	 *
 	 * @param environmentType, for which environment the assetUrl is requested
 	 * @return AssetBaseUrl for the given environmentType, returns null if it can't be found
 	 */
@@ -130,5 +131,4 @@ public enum Region {
 		}
 		return null;
 	}
-
 }
