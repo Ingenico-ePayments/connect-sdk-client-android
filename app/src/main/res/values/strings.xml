@@ -299,6 +299,7 @@
 	<string name="gc.general.paymentProducts.3119.name">CBC Online</string>
 	<string name="gc.general.paymentProducts.3120.name">KBC Online</string>
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
+	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
@@ -339,6 +340,7 @@
 	<string name="gc.general.paymentProducts.801.name">ING Home’Pay</string>
 	<string name="gc.general.paymentProducts.802.name">Nordea E-payment</string>
 	<string name="gc.general.paymentProducts.805.name">Nordea E-payment</string>
+	<string name="gc.general.paymentProducts.806.name">Trustly</string>
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
