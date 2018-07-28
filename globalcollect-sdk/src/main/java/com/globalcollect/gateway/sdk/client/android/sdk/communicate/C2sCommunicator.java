@@ -2,6 +2,7 @@ package com.globalcollect.gateway.sdk.client.android.sdk.communicate;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.Log;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
@@ -36,14 +37,19 @@ import org.apache.commons.lang3.Validate;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Serializable;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.InvalidParameterException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
 
 /**
  * Handles all communication with the Global Collect Gateway
@@ -115,7 +121,7 @@ public class C2sCommunicator implements Serializable {
 			throw new InvalidParameterException("Error getting BasicPaymentProducts, request may not be null");
 		}
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -137,7 +143,7 @@ public class C2sCommunicator implements Serializable {
 			completePath += queryString.toString();
 
 			// Do the call and deserialise the result to BasicPaymentProducts
-			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
+			connection = doHTTPSGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -191,7 +197,7 @@ public class C2sCommunicator implements Serializable {
 			throw new InvalidParameterException("Error getting PaymentProduct, productId may not be null");
 		}
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -210,7 +216,7 @@ public class C2sCommunicator implements Serializable {
 			completePath += queryString.toString();
 
 			// Do the call and deserialise the result to PaymentProduct
-			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
+			connection = doHTTPSGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
@@ -254,7 +260,7 @@ public class C2sCommunicator implements Serializable {
 			throw new InvalidParameterException("Error getting BasicPaymentProductGroups, request may not be null");
 		}
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -276,7 +282,7 @@ public class C2sCommunicator implements Serializable {
 			completePath += queryString.toString();
 
 			// Do the call and deserialise the result to BasicPaymentProducts
-			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
+			connection = doHTTPSGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -329,7 +335,7 @@ public class C2sCommunicator implements Serializable {
 			throw new InvalidParameterException("Error getting paymentProductGroup, groupId may not be null");
 		}
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -348,7 +354,7 @@ public class C2sCommunicator implements Serializable {
 			completePath += queryString.toString();
 
 			// Do the call and deserialise the result to PaymentProduct
-			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
+			connection = doHTTPSGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -389,7 +395,7 @@ public class C2sCommunicator implements Serializable {
 			throw new InvalidParameterException("Error getting CustomerDetails, values may not be null");
 		}
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -402,7 +408,7 @@ public class C2sCommunicator implements Serializable {
 			String customerDetailsRequestJson = gson.toJson(customerDetailsRequest);
 
 			// Do the call and deserialize the result to IinDetailsResponse
-			connection = doHTTPPostRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context), customerDetailsRequestJson);
+			connection = doHTTPSPostRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context), customerDetailsRequestJson);
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -458,7 +464,7 @@ public class C2sCommunicator implements Serializable {
 			throw new InvalidParameterException("Error getting PaymentProduct directory, context may not be null");
 		}
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -475,7 +481,7 @@ public class C2sCommunicator implements Serializable {
 			completePath += queryString.toString();
 
 			// Do the call and deserialise the result to PaymentProductDirectoryResponse
-			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
+			connection = doHTTPSGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -519,7 +525,7 @@ public class C2sCommunicator implements Serializable {
 		Validate.notNull(productId);
 		Validate.notNull(paymentContext);
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -538,7 +544,7 @@ public class C2sCommunicator implements Serializable {
 			completePath += queryString.toString();
 
 			// Do the call and deserialise the result to PaymentProductNetworksResponse
-			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
+			connection = doHTTPSGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -586,7 +592,7 @@ public class C2sCommunicator implements Serializable {
 			partialCreditCardNumber = partialCreditCardNumber.substring(0, MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP);
 		}
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -599,7 +605,7 @@ public class C2sCommunicator implements Serializable {
 			String iinRequestJson = gson.toJson(iinRequest);
 
 			// Do the call and deserialise the result to IinDetailsResponse
-			connection = doHTTPPostRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context), iinRequestJson);
+			connection = doHTTPSPostRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context), iinRequestJson);
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -636,7 +642,7 @@ public class C2sCommunicator implements Serializable {
 	 */
 	public PublicKeyResponse getPublicKey(Context context) {
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -645,7 +651,7 @@ public class C2sCommunicator implements Serializable {
 			String url = configuration.getBaseUrl() + paymentProductPath;
 
 			// Do the call and deserialise the result to PublicKeyResponse
-			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
+			connection = doHTTPSGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -684,7 +690,7 @@ public class C2sCommunicator implements Serializable {
 	 */
 	public PaymentProductPublicKeyResponse getPaymentProductPublicKey(Context context, String productId) {
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -693,7 +699,7 @@ public class C2sCommunicator implements Serializable {
 			String url = configuration.getBaseUrl() + paymentProductPath;
 
 			// Do the call and deserialize the result to PaymentProductPublicKeyResponse
-			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
+			connection = doHTTPSGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -728,7 +734,7 @@ public class C2sCommunicator implements Serializable {
 	 */
 	public ThirdPartyStatusResponse getThirdPartyStatus (Context context, String paymentId) {
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -737,7 +743,7 @@ public class C2sCommunicator implements Serializable {
 			String url = configuration.getBaseUrl() + paymentProductPath;
 
 			// Do the call and deserialize the result to PaymentProductPublicKeyResponse
-			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
+			connection = doHTTPSGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -791,7 +797,7 @@ public class C2sCommunicator implements Serializable {
 			throw new InvalidParameterException("Error converting amount, context may not be null");
 		}
 
-		HttpURLConnection connection = null;
+		HttpsURLConnection connection = null;
 
 		try {
 
@@ -808,7 +814,7 @@ public class C2sCommunicator implements Serializable {
 			url += queryString.toString();
 
 			// Do the call and deserialise the result to PublicKeyResponse
-			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
+			connection = doHTTPSGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
 			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
 
 			// Log the response
@@ -863,22 +869,32 @@ public class C2sCommunicator implements Serializable {
 
 
 	/**
-	 * Does a GET request with HttpURLConnection
+	 * Does a GET request with HttpsURLConnection
 	 *
 	 * @param location, url where the request is sent to
 	 * @param clientSessionId, used for session identification on the GC gateway
 	 * @param metadata, map filled with metadata, which is added to the request
 	 *
-	 * @return HttpURLConnection, which contains the response of the request
+	 * @return HttpsURLConnection, which contains the response of the request
 	 *
 	 * @throws CommunicationException
 	 */
-	private HttpURLConnection doHTTPGetRequest(String location, String clientSessionId, Map<String, String> metadata) throws CommunicationException {
+	private HttpsURLConnection doHTTPSGetRequest(String location, String clientSessionId, Map<String, String> metadata) throws CommunicationException {
 
 		// Initialize the connection
 		try {
 			URL url = new URL(location);
-			HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+			HttpsURLConnection connection = (HttpsURLConnection)url.openConnection();
+
+			SSLContext sslContext = SSLContext.getInstance("TLS");
+			sslContext.init(null, null, null);
+			SSLSocketFactory noSSLv3Factory;
+			if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
+				noSSLv3Factory = new TLSSocketFactory(sslContext.getSocketFactory());
+			} else {
+				noSSLv3Factory = sslContext.getSocketFactory();
+			}
+			connection.setSSLSocketFactory(noSSLv3Factory);
 
 			// Add sessionId header
 			if (clientSessionId != null) {
@@ -903,14 +919,19 @@ public class C2sCommunicator implements Serializable {
 			return connection;
 
 		} catch (MalformedURLException e) {
-
-			Log.e(TAG, "doHTTPGetRequest, Unable to parse url " + location);
+			Log.e(TAG, "doHTTPSGetRequest, Unable to parse url " + location);
 			throw new CommunicationException("Unable to parse url " + location);
 		}  catch (IOException e) {
-
-			Log.e(TAG, "doHTTPGetRequest, IOException while opening connection " + e.getMessage());
+			Log.e(TAG, "doHTTPSGetRequest, IOException while opening connection " + e.getMessage());
 			throw new CommunicationException("IOException while opening connection " + e.getMessage(), e);
+		} catch (NoSuchAlgorithmException e) {
+			Log.e(TAG, "doHTTPSGetRequest, IOException while opening connection " + e.getMessage());
+			e.printStackTrace();
+		} catch (KeyManagementException e) {
+			Log.e(TAG, "doHTTPSGetRequest, IOException while opening connection " + e.getMessage());
+			e.printStackTrace();
 		}
+		return null;
 	}
 
 
@@ -922,18 +943,28 @@ public class C2sCommunicator implements Serializable {
 	 * @param metadata, map filled with metadata, which is added to the request
 	 * @param postBody, the content of the postbody
 	 *
-	 * @return HttpURLConnection, which contains the response of the request
+	 * @return HttpsURLConnection, which contains the response of the request
 	 *
 	 * @throws CommunicationException
 	 */
-	private HttpURLConnection doHTTPPostRequest(String location, String clientSessionId, Map<String, String> metadata, String postBody) throws CommunicationException {
+	private HttpsURLConnection doHTTPSPostRequest(String location, String clientSessionId, Map<String, String> metadata, String postBody) throws CommunicationException {
 
 
 		// Initialize the connection
 		OutputStreamWriter writer = null;
 		try {
 			URL url = new URL(location);
-			HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+			HttpsURLConnection connection = (HttpsURLConnection)url.openConnection();
+
+			SSLContext sslContext = SSLContext.getInstance("TLS");
+			sslContext.init(null, null, null);
+			SSLSocketFactory noSSLv3Factory;
+			if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
+				noSSLv3Factory = new TLSSocketFactory(sslContext.getSocketFactory());
+			} else {
+				noSSLv3Factory = sslContext.getSocketFactory();
+			}
+			connection.setSSLSocketFactory(noSSLv3Factory);
 
 			// Set request method to POST
 			connection.setRequestMethod("POST");
@@ -970,17 +1001,23 @@ public class C2sCommunicator implements Serializable {
 			return connection;
 
 		} catch (MalformedURLException e) {
-			Log.e(TAG, "doHTTPPostRequest, Unable to parse url " + location);
+			Log.e(TAG, "doHTTPSPostRequest, Unable to parse url " + location);
 			throw new CommunicationException("Unable to parse url " + location);
 		} catch (IOException e) {
-			Log.e(TAG, "doHTTPPostRequest, IOException while opening connection " + e.getMessage());
+			Log.e(TAG, "doHTTPSPostRequest, IOException while opening connection " + e.getMessage());
 			throw new CommunicationException("IOException while opening connection " + e.getMessage(), e);
-		}  finally {
+		} catch (NoSuchAlgorithmException e) {
+			Log.e(TAG, "doHTTPSPostRequest, IOException while opening connection " + e.getMessage());
+			throw new CommunicationException("IOException while opening connection " + e.getMessage(), e);
+		} catch (KeyManagementException e) {
+			Log.e(TAG, "doHTTPSPostRequest, IOException while opening connection " + e.getMessage());
+			throw new CommunicationException("IOException while opening connection " + e.getMessage(), e);
+		} finally {
 			if (writer != null) {
 				try {
 					writer.close();
 				} catch (IOException e) {
-					Log.i(TAG, "doHTTPPostRequest, IOException while closing connection " + e.getMessage());
+					Log.i(TAG, "doHTTPSPostRequest, IOException while closing connection " + e.getMessage());
 				}
 			}
 		}
@@ -996,7 +1033,7 @@ public class C2sCommunicator implements Serializable {
 	/**
 	 * Logs all request headers, url and body
 	 */
-	private void logRequest(HttpURLConnection connection, String postBody) {
+	private void logRequest(HttpsURLConnection connection, String postBody) {
 
 		String requestLog = "Request URL : " + connection.getURL() + "\n";
 		requestLog += "Request Method : " + connection.getRequestMethod() + "\n";
@@ -1019,7 +1056,7 @@ public class C2sCommunicator implements Serializable {
 	 *
 	 * @throws IOException
      */
-	private void logResponse(HttpURLConnection connection, String responseBody) throws IOException {
+	private void logResponse(HttpsURLConnection connection, String responseBody) throws IOException {
 
 		String responseLog = "Response URL : " + connection.getURL() + "\n";
 		responseLog += "Response Code : " + connection.getResponseCode() + "\n";
