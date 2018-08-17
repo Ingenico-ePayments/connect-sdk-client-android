@@ -231,6 +231,7 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Όνομα εταιρείας</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
+	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Ποσό</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Όνομα τράπεζας</string>
@@ -253,7 +254,7 @@
 	<string name="gc.general.paymentProducts.201.name">Τιμολόγιο</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
-	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v1</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v2</string>
 	<string name="gc.general.paymentProducts.3001.name">AIRPLUS</string>
 	<string name="gc.general.paymentProducts.3002.name">Accor Business Account</string>
 	<string name="gc.general.paymentProducts.3003.name">Alsolia</string>
@@ -298,6 +299,7 @@
 	<string name="gc.general.paymentProducts.3120.name">KBC Online</string>
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
+	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
 	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
