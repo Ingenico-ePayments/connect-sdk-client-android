@@ -2,6 +2,7 @@ package com.globalcollect.gateway.sdk.client.android.sdk.communicate;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.Log;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
@@ -40,10 +41,16 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.InvalidParameterException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
 
 /**
  * Handles all communication with the Global Collect Gateway
@@ -878,7 +885,8 @@ public class C2sCommunicator implements Serializable {
 		// Initialize the connection
 		try {
 			URL url = new URL(location);
-			HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+
+			HttpURLConnection connection = openConnection(url);
 
 			// Add sessionId header
 			if (clientSessionId != null) {
@@ -903,13 +911,17 @@ public class C2sCommunicator implements Serializable {
 			return connection;
 
 		} catch (MalformedURLException e) {
-
 			Log.e(TAG, "doHTTPGetRequest, Unable to parse url " + location);
 			throw new CommunicationException("Unable to parse url " + location);
 		}  catch (IOException e) {
-
 			Log.e(TAG, "doHTTPGetRequest, IOException while opening connection " + e.getMessage());
 			throw new CommunicationException("IOException while opening connection " + e.getMessage(), e);
+		} catch (KeyManagementException e) {
+			Log.e(TAG, "doHTTPPostRequest, KeyManagementException while opening connection " + e.getMessage());
+			throw new CommunicationException("KeyManagementException while opening connection " + e.getMessage(), e);
+		} catch (NoSuchAlgorithmException e) {
+			Log.e(TAG, "doHTTPPostRequest, NoSuchAlgorithmException while opening connection " + e.getMessage());
+			throw new CommunicationException("NoSuchAlgorithmException while opening connection " + e.getMessage(), e);
 		}
 	}
 
@@ -933,7 +945,8 @@ public class C2sCommunicator implements Serializable {
 		OutputStreamWriter writer = null;
 		try {
 			URL url = new URL(location);
-			HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+
+			HttpURLConnection connection = openConnection(url);
 
 			// Set request method to POST
 			connection.setRequestMethod("POST");
@@ -975,6 +988,12 @@ public class C2sCommunicator implements Serializable {
 		} catch (IOException e) {
 			Log.e(TAG, "doHTTPPostRequest, IOException while opening connection " + e.getMessage());
 			throw new CommunicationException("IOException while opening connection " + e.getMessage(), e);
+		} catch (KeyManagementException e) {
+			Log.e(TAG, "doHTTPPostRequest, KeyManagementException while opening connection " + e.getMessage());
+			throw new CommunicationException("KeyManagementException while opening connection " + e.getMessage(), e);
+		} catch (NoSuchAlgorithmException e) {
+			Log.e(TAG, "doHTTPPostRequest, NoSuchAlgorithmException while opening connection " + e.getMessage());
+			throw new CommunicationException("NoSuchAlgorithmException while opening connection " + e.getMessage(), e);
 		}  finally {
 			if (writer != null) {
 				try {
@@ -986,6 +1005,25 @@ public class C2sCommunicator implements Serializable {
 		}
 	}
 
+	private HttpURLConnection openConnection(URL url) throws IOException, KeyManagementException, NoSuchAlgorithmException {
+		HttpURLConnection connection;
+		if ("https".equalsIgnoreCase(url.getProtocol())) {
+			connection = (HttpsURLConnection) url.openConnection();
+			SSLContext sslContext = SSLContext.getInstance("TLS");
+			sslContext.init(null, null, null);
+			SSLSocketFactory noSSLv3Factory;
+			if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
+				noSSLv3Factory = new TLSSocketFactory(sslContext.getSocketFactory());
+			} else {
+				noSSLv3Factory = sslContext.getSocketFactory();
+			}
+			((HttpsURLConnection) connection).setSSLSocketFactory(noSSLv3Factory);
+		} else {
+			connection = (HttpURLConnection) url.openConnection();
+		}
+
+		return connection;
+	}
 
 	private String createCacheBusterParameter() {
 		String cacheBuster = "cacheBuster=" + new Date().getTime();
