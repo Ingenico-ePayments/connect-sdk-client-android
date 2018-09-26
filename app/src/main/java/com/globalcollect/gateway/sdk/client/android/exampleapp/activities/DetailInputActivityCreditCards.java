@@ -196,7 +196,8 @@ public class DetailInputActivityCreditCards extends DetailInputActivity
         fieldView.removeAllFieldViews();
         rendered = false;
 
-        // Call onStart to rerender all views
+        // Call renderDynamicContent and onStart to rerender all views
+        renderDynamicContent();
         onStart();
     }
 

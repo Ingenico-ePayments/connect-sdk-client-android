@@ -106,7 +106,7 @@ public class DetailInputActivity extends ShoppingCartActivity implements OnPayme
         super.onStart();
     }
 
-    private void renderDynamicContent() {
+    protected void renderDynamicContent() {
         if (!rendered) {
             fieldView.renderDynamicContent(inputDataPersister, paymentContext, inputValidationPersister);
             initializeRememberMeCheckBox();
