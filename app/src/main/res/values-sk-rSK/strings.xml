@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Rok</string>
 	<string name="gc.general.datetime.year.placeholder">Rok</string>
 	<string name="gc.general.errors.clientDateTime">Skontrolujte, že dátum a čas zariadenia, ktoré využívate na túto platbu, je správne.</string>
+	<string name="gc.general.errors.generalError">Vyskytol sa problém</string>
 	<string name="gc.general.errors.image.altText">Varovanie</string>
 	<string name="gc.general.errors.incorrectMerchantId">Vyskytla sa technická chyba, ktorá nám zabránila ukázať vám správne pokyny na finalizáciu vašej platby: nesprávne ID predajcu. Skúste iný spôsob platby alebo sa obráťte na spoločnosť, od ktorej nakupujete.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Pri pokuse o zobrazenie pokynov na finalizáciu platby sa vyskytla technická chyba. Skúste to znova alebo skúste využiť iný spôsob platby.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Špeciálne ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift kód</string>
 	<string name="gc.general.paymentProcessing">Spracúvame vašu platbu. Čakajte. Spracovanie vašej platby môže chvíľu trvať.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Zadajte platné číslo CPF alebo CNPJ (požadovaná dĺžka je 11, resp. 14 znakov).</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Meno majiteľa účtu</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Fero Mrkvička</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Číslo účtu</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Dokončené</string>
 	<string name="gc.general.paymentProducts.3012.processing">Vaša platba sa spracúva...Skontrolujte aplikáciu Bancontact.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Alebo otvorte aplikáciu na svojom telefóne. Kliknite na možnosť „Zaplatiť“ a naskenujte QR kód.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Otvorte aplikáciu v telefóne, kliknite na možnosť „Pay“ (Zaplatiť) a oskenujte QR kód.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Obnoviť stav platby</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Kliknite na nižšie uvedené tlačidlo a obnovte si stav platby.</string>
+	<string name="gc.general.paymentProducts.302.error">Vykonávanie platieb cez Apple Pay momentálne nie je možné. Ospravedlňujeme sa za komplikácie.</string>
+	<string name="gc.general.paymentProducts.302.header">Pripravuje sa služba Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">Používanie jazyka JavaScript vo vašom prehliadači je momentálne vypnuté. Keď je vypnuté používanie jazyka JavaScript, nemožno vykonávať platby cez Apple Pay. Zapnite používanie jazyka JavaScript a obnovte túto stránku.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Vykonávanie platieb cez Google Pay momentálne nie možné. Ospravedlňujeme sa za komplikácie.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">Používanie jazyka JavaScript vo vašom prehliadači je momentálne vypnuté. Keď je vypnuté používanie jazyka JavaScript, nemožno vykonávať platby cez Google Pay. Zapnite používanie jazyka JavaScript a obnovte túto stránku.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Pripravuje sa služba Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI, opakované</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Ako by ste chceli platiť?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Otvorte aplikáciu</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Začaté</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Autorizované</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Dokončené</string>
+	<string name="gc.general.paymentProducts.863.processing">Vaša platba sa spracováva... Skontrolujte aplikáciu WeChat.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Otvorte aplikáciu v telefóne, kliknutím na položku „Scan“ (Skenovať) oskenujte QR kód a kliknite na možnosť „Pay“ (Zaplatiť).</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Obnoviť stav platby</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Kliknite na nižšie uvedené tlačidlo a obnovte si stav platby.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ak sa nedarí vykonať platbu pomocou spôsobu platby uvedeného vyššie, ťuknite na položku „Cancel“ (Zrušiť) a vyberte inú možnosť platby.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Splátky AfterPay</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Súhlasím s {link} podmienkami používania</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">Faktúra AfterPay</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Súhlasím s {link} podmienkami používania</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Malo by to trvať iba niekoľko sekúnd</string>
 	<string name="gc.general.processing">Čakajte, prosím. O chvíľu budete môcť pokračovať k platbe</string>
 </resources>

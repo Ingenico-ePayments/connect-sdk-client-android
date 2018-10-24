@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Năm</string>
 	<string name="gc.general.datetime.year.placeholder">Năm</string>
 	<string name="gc.general.errors.clientDateTime">Vui lòng kiểm tra xem ngày và giờ của thiết bị bạn sử dụng để thực hiện giao dịch thanh toán này có được cài đặt chính xác không.</string>
+	<string name="gc.general.errors.generalError">Đã phát sinh lỗi nào đó</string>
 	<string name="gc.general.errors.image.altText">Cảnh báo</string>
 	<string name="gc.general.errors.incorrectMerchantId">Đã có sai sót kỹ thuật ngăn cản chúng tôi đưa ra các hướng dẫn phù hợp để hoàn thành thanh toán của quý khách: Tài khoản Giao dịch không đúng. Vui lòng thử phương thức thanh toán khác hoặc liên hệ với công ty quý khách mua hàng.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Đã có sai sót kỹ thuật trong lúc chúng tôi cố gắng đưa ra các hướng dẫn để hoàn thành thanh toán của quý khách. Vui lòng thử lại hoặc thử phương thức thanh toán khác.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">ID đặc biệt</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Mã Swift</string>
 	<string name="gc.general.paymentProcessing">Chúng tôi đang xử lý thanh toán của quý khách. Vui lòng chờ. Có thể mất vài giây để xử lý thanh toán của quý khách.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Vui lòng cung cấp giá trị hợp hệ gồm 11 đến 14 ký tự dành cho số CPF hoặc CNPJ của bạn.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Tên chủ tài khoản</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Số tài khoản</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Đã hoàn tất</string>
 	<string name="gc.general.paymentProducts.3012.processing">Thanh toán của bạn đang được xử lý.... Xin kiểm tra ứng dụng Bancontact của bạn.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Hoặc mở ứng dụng trên điện thoại, bấm \'Pay\' và quét mã QR.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Mở ứng dụng trên điện thoại của bạn, nhấp \'Thanh toán\' và quét mã QR.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Cập nhật hiện trạng thanh toán</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Bấm nút bên dưới để cập nhật hiện trạng thanh toán của bạn.</string>
+	<string name="gc.general.paymentProducts.302.error">Hiện không thể thanh toán bằng Apple Pay. Chúng tôi xin lỗi vì sự bất tiện này.</string>
+	<string name="gc.general.paymentProducts.302.header">Đang chuẩn bị Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">JavaScript hiện đã được tắt đi trong trình duyệt của bạn. Không thể thực hiện thanh toán bằng Apple Pay khi JavaScript tắt. Vui lòng bật JavaScript và làm mới trang này.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Hiện không thể thanh toán bằng Google Pay. Chúng tôi xin lỗi vì sự bất tiện này.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">JavaScript hiện đã được tắt đi trong trình duyệt của bạn. Không thể thực hiện thanh toán bằng Google Pay khi JavaScript tắt. Vui lòng bật JavaScript và làm mới trang này.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Đang chuẩn bị Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI Định Kỳ</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Bạn muốn thanh toán tiền?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Mở ứng dụng</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Đã bắt đầu</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Được cho phép</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Đã hoàn tất</string>
+	<string name="gc.general.paymentProducts.863.processing">Thanh toán của bạn đang được xử lý... Vui lòng kiểm tra ứng dụng WeChat của bạn.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Mở ứng dụng trên điện thoại của bạn, nhấp "quét" để quét mã QR và nhấp \'Thanh toán\'.</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Cập nhật hiện trạng thanh toán</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Bấm nút bên dưới để cập nhật hiện trạng thanh toán của bạn.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Khi bạn không thể thanh toán bằng phương thức thanh toán ở trên, vui lòng chạm \'Hủy\' và chọn sản phẩm thanh toán khác để hoàn tất việc thanh toán của bạn.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Trả Góp AfterPay</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Tôi chấp thuận các điều khoản và điều kiện của {link}</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">Hóa Đơn AfterPay</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Tôi chấp thuận các điều khoản và điều kiện của {link}</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Việc này sẽ chỉ mất vài giây</string>
 	<string name="gc.general.processing">Vui lòng chờ, bạn sẽ có thể tiếp tục tính tiền trong vòng vài giây</string>
 </resources>

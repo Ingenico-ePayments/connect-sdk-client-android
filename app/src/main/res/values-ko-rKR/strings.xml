@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">연</string>
 	<string name="gc.general.datetime.year.placeholder">연</string>
 	<string name="gc.general.errors.clientDateTime">결제에 이용하는 장치의 날짜와 시간이 정확히 설정되어 있는지 확인하세요.</string>
+	<string name="gc.general.errors.generalError">문제가 발생했습니다</string>
 	<string name="gc.general.errors.image.altText">주의</string>
 	<string name="gc.general.errors.incorrectMerchantId">정확한 결제 완료 안내를 보여드리는 과정에서 기술적인 문제가 발생했습니다: 정확하지 않은 판매자 ID 다른 결제 수단을 이용하거나 판매점에 연락하시기 바랍니다.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">결제 완료 안내를 보여드리는 과정에서 기술적인 문제가 발생했습니다. 다시 시도하거나 다른 결제 수단을 이용해 주십시오.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">특별 ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">스위프트 코드</string>
 	<string name="gc.general.paymentProcessing">결제가 진행되고 있습니다. 잠시만 기다려주십시오. 결제 진행에 몇 초가 걸릴 수 있습니다.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">CPF 또는 CNPJ 번호에 대한 11 또는 14개 문자의 유효한 값을 입력하십시오.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">예금주명</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">계좌 번호</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">완료됨</string>
 	<string name="gc.general.paymentProducts.3012.processing">결제가 처리 중입니다… Bancontact 앱을 확인하십시오.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">또는 휴대전화에서 앱을 열어 ‘Pay’를 클릭하고 QR 코드를 스캔합니다.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">폰에서 앱을 열고 \'결제\'를 클릭하고 QR 코드를 스캔하세요.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">결제 상태 새로 고침</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">결제 상태를 새로 고침 하려면 아래 버튼을 클릭하십시오.</string>
+	<string name="gc.general.paymentProducts.302.error">현재 Apple Pay를 이용하여 결제할 수 없습니다. 불편을 끼쳐드려 죄송합니다.</string>
+	<string name="gc.general.paymentProducts.302.header">Apple Pay 준비 중</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">브라우저에서 JavaScript가 꺼진 상태입니다. JavaScript를 끈 상태에서는 Apple Pay로 결제할 수 없습니다. JavaScript를 켜고 페이지를 새로고침하세요.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">현재 Google Pay를 이용하여 결제할 수 없습니다. 불편을 끼쳐드려 죄송합니다.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">브라우저에서 JavaScript가 꺼진 상태입니다. JavaScript를 끈 상태에서는 Google Pay로 결제할 수 없습니다. JavaScript를 켜고 페이지를 새로고침하세요.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Google Pay 준비 중</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI Recurring</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">어떻게 결제하시겠습니까?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">앱 열기</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">시작됨</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">승인됨</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">완료됨</string>
+	<string name="gc.general.paymentProducts.863.processing">결제 처리 중입니다… WeChat 앱을 확인하세요.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">폰에서 앱을 열고 "스캔"을 클릭하여 QR 코드를 스캔한 후 ‘결제’를 클릭하세요.</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">결제 상태 새로 고침</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">결제 상태를 새로 고침 하려면 아래 버튼을 클릭하십시오.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">위 결제 방법으로 결제할 수 없으면 \'취소\'를 탭하고 다른 결제 상품을 선택하여 결제를 완료하세요.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay 할부결제</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">본인은 {link} 이용 약관에 동의합니다</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay 인보이스</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">본인은 {link} 이용 약관에 동의합니다</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">이 과정은 몇 초면 완료됩니다</string>
 	<string name="gc.general.processing">잠시 기다리시면 몇 초 안에 체크아웃으로 진행합니다</string>
 </resources>

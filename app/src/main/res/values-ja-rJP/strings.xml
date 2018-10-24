@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">年</string>
 	<string name="gc.general.datetime.year.placeholder">年</string>
 	<string name="gc.general.errors.clientDateTime">このお支払いを正しく処理できるよう、ご利用のデバイスの日時設定を確認してください。</string>
+	<string name="gc.general.errors.generalError">エラーが発生しました</string>
 	<string name="gc.general.errors.image.altText">警告</string>
 	<string name="gc.general.errors.incorrectMerchantId">技術的問題が発生したため、お支払い完了手続きを継続することができませんでした：業者IDが正しくありません。別のお支払い方法をお選びいただくか、販売業者にご連絡ください。</string>
 	<string name="gc.general.errors.instructions.renderingProblem">お支払い完了手続きを継続する際に技術的問題が発生しました。もう一度やり直していただくか、別のお支払い方法をお選びください。</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">特別ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">SWIFTコード</string>
 	<string name="gc.general.paymentProcessing">ただいまお支払いを処理しております。どうぞお待ちください。お支払い処理完了までにはしばらくかかることがあります。</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">11桁または14桁の有効なCPFまたはCNPJ番号を入力してください。</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">口座名義人名</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">ジョン･ドウ</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">口座番号</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">完了されました</string>
 	<string name="gc.general.paymentProducts.3012.processing">お支払いを処理中です… お客様のBancontactアプリをご確認ください。</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">または携帯のアプリを開いて、［支払う］をクリックしてQRコードをスキャンします。</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">スマートフォンでアプリを立ち上げ、「支払い」を押し、QRコードをスキャンしてください。</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">お支払い状況を更新する</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">下のボタンをクリックしてお支払い状況を更新します。</string>
+	<string name="gc.general.paymentProducts.302.error">Apple Payでのお支払いは現在ご利用いただけません。ご不便をおかけして申し訳ありません。</string>
+	<string name="gc.general.paymentProducts.302.header">Apple Payyを準備中です</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">お使いのブラウザーでは現在JavaScriptが無効になっています。JavaScriptが無効では、Apple Payでのお支払いはご利用いただけません。JavaScriptを有効にし、このページを再度読み込んでください。</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Google Payでのお支払いは現在ご利用いただけません。ご不便をおかけして申し訳ありません。</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">お使いのブラウザーでは現在JavaScriptが無効になっています。JavaScriptが無効では、Google Payでのお支払いはご利用いただけません。JavaScriptを有効にし、このページを再度読み込んでください。</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Google Payを準備中です</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI反復</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">お支払い方法はどうなさいますか？</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">アプリを開く</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">開始されました</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">承認されました</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">完了されました</string>
+	<string name="gc.general.paymentProducts.863.processing">お支払いの処理中です…WeChatアプリを確認してください。</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">スマートフォンでアプリを立ち上げ、「QRコードのスキャン」を選んでスキャンを行い、「支払い」を押します。</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">お支払い状況を更新する</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">下のボタンをクリックしてお支払い状況を更新します。</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">上記の方法でお支払いができない場合は、「取り消し」を押し、他の方法を選択してお支払いを完了してください。</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPayの分割払い</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">私は {link} の利用規約に同意します</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay 請求書</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">私は {link} の利用規約に同意します</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">これには数秒しかかからないはずです。</string>
 	<string name="gc.general.processing">数秒後にご決済手続きを続けていただけるようになりますので、今しばらくお待ちください</string>
 </resources>

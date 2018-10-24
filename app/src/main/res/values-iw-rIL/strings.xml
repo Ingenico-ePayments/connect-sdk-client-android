@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">שנה</string>
 	<string name="gc.general.datetime.year.placeholder">שנה</string>
 	<string name="gc.general.errors.clientDateTime">ודא שהתאריך והזמן המוגדרים במכשיר שבו אתה משתמש לביצוע התשלום נכונים.</string>
+	<string name="gc.general.errors.generalError">משהו השתבש</string>
 	<string name="gc.general.errors.image.altText">אזהרה</string>
 	<string name="gc.general.errors.incorrectMerchantId">אירעה תקלה טכנית המונעת מאיתנו להציג לך את ההנחיות הנכונות כדי לסיים את התשלום: מזהה הסוחר (Merchant ID) שגוי. אנא נסה להשתמש באמצעי תשלום אחר או פנה לחברה שממנה בוצעה הרכישה.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">כאשר ניסינו להציג את ההנחיות להשלמת התשלום אירעה תקלה טכנית. אנא נסה שוב או נסה להשתמש באמצעי תשלום אחר.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">מזהה מיוחד</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">קוד Swift</string>
 	<string name="gc.general.paymentProcessing">אנו מעבדים את התשלום. אנא המתן. ייתכן שעיבוד התשלום ייקח כמה שניות.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">מסור ערך חוקי בן 11 או 14 תווים עבור מספר CPE או CNPJ שלך.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">שם בעל החשבון</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">פלוני אלמוני</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">מספר חשבון</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">הושלם</string>
 	<string name="gc.general.paymentProducts.3012.processing">מעבד את התשלום שלך… בדוק באפליקציה של Bancontact.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">לחלופין, פתח את האפליקציה בטלפון, לחץ על Pay (תשלום), וסרוק את קוד ה-QR.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">פתח את האפליקציה בטלפון, לחץ על Pay (שלם) וסרוק את קוד QR.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">רענן מצב תשלום</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">לחץ על הלחצן למטה כדי לרענן את מצב התשלום.</string>
+	<string name="gc.general.paymentProducts.302.error">לא ניתן כרגע לשלם עם Apple Pay. אנו מתנצלים על אי הנוחות.</string>
+	<string name="gc.general.paymentProducts.302.header">מכין את Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">JavaScript כבוי כרגע בדפדפן לא ניתן לשלם עם Apple Pay כאשר JavaScript כבוי. הפעל את JavaScript ורענן את הדף.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">לא ניתן כרגע לשלם עם Google Pay. אנו מתנצלים על אי הנוחות.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">JavaScript כבוי כרגע בדפדפן לא ניתן לשלם עם Google Pay כאשר JavaScript כבוי. הפעל את JavaScript ורענן את הדף.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">מכין את Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI חוזר</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">כיצד תרצה לשלם?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">פתח את האפליקציה</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">התחיל</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">אושר</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">הושלם</string>
+	<string name="gc.general.paymentProducts.863.processing">התשלום שלך מטופל כעת... בדוק את אפליקציית WeChat.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">פתח את האפליקציה בטלפון, לחץ על Scan (סרוק) כדי לסרוק את קוד QR, ולחץ על Pay (שלם).</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">רענן מצב תשלום</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">לחץ על הלחצן למטה כדי לרענן את מצב התשלום.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">אם לא ניתן לשלם בשיטת התשלום המוצעת למעלה, הקש על Cancel (ביטול) ובחר בשיטת תשלום אחרת כדי לסגור את עניין התשלום.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">תשלומים בAfterPay</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">אני מקבל את התנאים של {link}</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">חשבונית AfterPay</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">אני מקבל את התנאים של {link}</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">אין צורך ביותר ממספר שניות</string>
 	<string name="gc.general.processing">המתן, תוכל להמשיך לקופה בעוד מספר שניות</string>
 </resources>

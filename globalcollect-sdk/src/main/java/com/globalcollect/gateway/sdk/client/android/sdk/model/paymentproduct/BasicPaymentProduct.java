@@ -1,6 +1,9 @@
 package com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints.DisplayHintsPaymentItem;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.specificdata.PaymentProduct302SpecificData;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.specificdata.PaymentProduct320SpecificData;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.specificdata.PaymentProduct863SpecificData;
 
 import java.io.Serializable;
 import java.security.InvalidParameterException;
@@ -33,6 +36,10 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 	// List containing all AccountOnFiles
 	private List<AccountOnFile> accountsOnFile = new ArrayList<AccountOnFile>();
 
+	// Payment product specific data
+	private PaymentProduct302SpecificData paymentProduct302SpecificData;
+	private PaymentProduct320SpecificData paymentProduct320SpecificData;
+	private PaymentProduct863SpecificData paymentProduct863SpecificData;
 
 
 	public String getId(){
@@ -97,4 +104,15 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 		return displayHints;
 	}
 
+	public PaymentProduct302SpecificData getPaymentProduct302SpecificData() {
+		return paymentProduct302SpecificData;
+	}
+
+	public PaymentProduct320SpecificData getPaymentProduct320SpecificData() {
+		return paymentProduct320SpecificData;
+	}
+
+	public PaymentProduct863SpecificData getPaymentProduct863SpecificData() {
+		return paymentProduct863SpecificData;
+	}
 }

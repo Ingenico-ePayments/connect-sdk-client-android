@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">An</string>
 	<string name="gc.general.datetime.year.placeholder">An</string>
 	<string name="gc.general.errors.clientDateTime">Vă rugăm să confirmați dacă data și ora dispozitivului pe care îl folosiți pentru a face această plată sunt confgurate corect.</string>
+	<string name="gc.general.errors.generalError">S-a produs o eroare</string>
 	<string name="gc.general.errors.image.altText">Avertisment</string>
 	<string name="gc.general.errors.incorrectMerchantId">A intervenit o eroare tehnică care ne împiedică să vă arătăm instrucţiunile corecte pentru finalizarea plăţii: identificator de comerciant incorect. Vă rugăm să  încercaţi un alt mod de plată, sau luaţi legătura cu compania de la care cumpăraţi.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">A intervenit o eroare tehnică în timp ce încercam să vă arătăm instrucţiunile pentru finalizarea plăţii. Vă rugăm să încercaţi din nou, sau încercaţi un alt mod de plată.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">ID special</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Cod Swift</string>
 	<string name="gc.general.paymentProcessing">Plata dvs. este în procesare. Vă rugăm aşteptaţi. Procesarea plăţii poate dura mai multe secunde.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Vă rugăm să introduceți o valoare validă de 11 sau 14 caractere pentru numărul dumneavoastră CPF (registrul persoanelor fizice) sau CNPJ (registrul național al persoanelor juridice).</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Nume titular cont</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Număr cont</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Finalizat</string>
 	<string name="gc.general.paymentProducts.3012.processing">Plata dvs.se procesează… Vă rugăm să verificaţi aplicaţia dvs. Bancontact</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Sau deschideţi aplicaţia pe telefon, faceţi clic pe „Plăteşte” şi scanaţi codul QR.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Deschideți aplicația de pe telefonul dumneavoastră, faceți clic pe „Pay” (plătește) și scanați codul QR.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Reactualizare status plată</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Clic pe butonul de mai jos pentru reactualizarea statusului plăţii.</string>
+	<string name="gc.general.paymentProducts.302.error">Efectuarea plății cu Apple Pay nu este posibilă momentan. Ne cerem scuze pentru neplăceri.</string>
+	<string name="gc.general.paymentProducts.302.header">Se pregătește Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">JavaScript este oprită momentan în browser-ul dumneavoastră. Nu este posibilă efectuarea plății cu Apple Pay dacă JavaScript este oprit. Vă rugăm să activați JavaScript și să reîncărcați pagina.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Efectuarea plății cu Google Pay nu este posibilă momentan. Ne cerem scuze pentru neplăceri.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">JavaScript este oprită momentan în browser-ul dumneavoastră. Nu este posibilă efectuarea plății cu Google Pay dacă JavaScript este oprit. Vă rugăm să activați JavaScript și să reîncărcați pagina.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Se pregătește Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI recurent</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Cum doriţi să plătiţi?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Deschideţi aplicaţia</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Început</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Autorizat</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Finalizat</string>
+	<string name="gc.general.paymentProducts.863.processing">Plata dvs. este procesată... Vă rugăm să vă verificați aplicația WeChat.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Deschideți aplicația de pe telefonul dumneavoastră, faceți clic pe „scan” (scanare) pentru a scana codul QR și apoi faceți clic pe „Pay” (plătește).</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Reactualizare status plată</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Clic pe butonul de mai jos pentru reactualizarea statusului plăţii.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Atunci când nu puteți plăti utilizând metoda de plată de mai sus, vă rugăm să atingeți „Cancel” (anulare) și să selectați alt produs de plată pentru a vă finaliza plata.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Rate AfterPay</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Accept termenii şi condiţiile {link}</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">Factură AfterPay</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Accept termenii şi condiţiile {link}</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Această acțiune durează câteva secunde</string>
 	<string name="gc.general.processing">Vă rugăm așteptați, veți putea continua efectuarea plății în câteva secunde.</string>
 </resources>

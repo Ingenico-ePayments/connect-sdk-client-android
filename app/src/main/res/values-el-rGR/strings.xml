@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Έτος</string>
 	<string name="gc.general.datetime.year.placeholder">Έτος</string>
 	<string name="gc.general.errors.clientDateTime">Επιβεβαιώστε ότι η ημερομηνία και η ώρα της συσκευής που χρησιμοποιείτε για αυτή την πληρωμή έχουν ρυθμιστεί σωστά.</string>
+	<string name="gc.general.errors.generalError">Κάτι δεν πήγε καλά</string>
 	<string name="gc.general.errors.image.altText">Προειδοποίηση</string>
 	<string name="gc.general.errors.incorrectMerchantId">Παρουσιάστηκε τεχνικό σφάλμα που μας εμποδίζει να σας δείξουμε τις οδηγίες ολοκλήρωσης της πληρωμής σας: λανθασμένο αναγνωριστικό εμπόρου. Επιλέξτε άλλον τρόπο πληρωμής ή επικοινωνήστε με την εταιρεία από όπου κάνετε την αγορά.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Παρουσιάστηκε τεχνικό σφάλμα καθώς προσπαθούσαμε να σας δείξουμε τις οδηγίες ολοκλήρωσης της πληρωμής σας. Προσπαθήστε ξανά ή επιλέξτε άλλον τρόπο πληρωμής.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Ειδικό αναγνωριστικό</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Κωδικός Swift</string>
 	<string name="gc.general.paymentProcessing">Επεξεργαζόμαστε την πληρωμή σας. Παρακαλούμε περιμένετε. Μπορεί να χρειαστούν μερικά δευτερόλεπτα για την επεξεργασία της πληρωμής σας.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Για τον αριθμό σας CPF ή CNPJ, εισαγάγετε μια έγκυρη τιμή που να αποτελείται από 11 ή 14 χαρακτήρες.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Όνομα κατόχου λογαριασμού</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Αριθμός λογαριασμού</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Έχει ολοκληρωθεί</string>
 	<string name="gc.general.paymentProducts.3012.processing">Η πληρωμή σας είναι υπό επεξεργασία… Ελέγξτε την εφαρμογή Bancontact.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Ή ανοίξτε την εφαρμογή στο τηλέφωνό σας, πατήστε "Pay" (Πληρωμή) και σαρώστε τον κωδικό QR.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Ανοίξτε την εφαρμογή στο τηλέφωνό σας, κάντε κλικ στο «Πληρωμή» και σαρώστε τον κωδικό QR.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Ανανέωση κατάστασης πληρωμής</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Κάντε κλικ στο παρακάτω κουμπί για να ανανεωθεί η κατάσταση της πληρωμής σας.</string>
+	<string name="gc.general.paymentProducts.302.error">Η πληρωμή μέσω Apple Pay δεν είναι δυνατή αυτή τη στιγμή. Σας ζητούμε συγγνώμη για την αναστάτωση.</string>
+	<string name="gc.general.paymentProducts.302.header">Προετοιμασία Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">Το JavaScript είναι προς το παρόν απενεργοποιημένο στο πρόγραμμα περιήγησής σας. Εάν το JavaScript είναι απενεργοποιημένο, δεν είναι δυνατή η πληρωμή μέσω Apple Pay. Ενεργοποιήστε το JavaScript και πραγματοποιήστε ανανέωση σε αυτή τη σελίδα.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Η πληρωμή μέσω Google Pay δεν είναι δυνατή αυτή τη στιγμή. Σας ζητούμε συγγνώμη για την αναστάτωση.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">Το JavaScript είναι προς το παρόν απενεργοποιημένο στο πρόγραμμα περιήγησής σας. Εάν το JavaScript είναι απενεργοποιημένο, δεν είναι δυνατή η πληρωμή μέσω Google Pay. Ενεργοποιήστε το JavaScript και πραγματοποιήστε ανανέωση σε αυτή τη σελίδα.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Προετοιμασία Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI Επαναλαμβανόμενο</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Πώς θα θέλατε να πληρώσετε;</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Ανοίξτε την εφαρμογή σας</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Έχει ξεκινήσει</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Έχει εγκριθεί</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Έχει ολοκληρωθεί</string>
+	<string name="gc.general.paymentProducts.863.processing">Η πληρωμή σας βρίσκεται σε επεξεργασία... Ελέγξτε την εφαρμογή σας WeChat.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Ανοίξτε την εφαρμογή στο τηλέφωνό σας, κάντε κλικ στο «σάρωση» για να σαρώσετε τον κωδικό QR και κάντε κλικ στο «Πληρωμή».</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Ανανέωση κατάστασης πληρωμής</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Κάντε κλικ στο παρακάτω κουμπί για να ανανεωθεί η κατάσταση της πληρωμής σας.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Εάν δεν έχετε τη δυνατότητα να πληρώσετε με τον παραπάνω τρόπο πληρωμής, πατήστε «Ακύρωση» και επιλέξτε ένα άλλο μέσο πληρωμής για ολοκληρώσετε την πληρωμή σας.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Δόσεις AfterPay</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Αποδέχομαι τους όρους και τις προϋποθέσεις του {link}</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">Τιμολόγιο AfterPay</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Αποδέχομαι τους όρους και τις προϋποθέσεις του {link}</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Αυτό θα διαρκέσει μόνο λίγα δευτερόλεπτα</string>
 	<string name="gc.general.processing">Παρακαλούμε περιμένετε, θα μπορέσετε να ολοκληρώσετε την πληρωμή σας σε μερικά δευτερόλεπτα</string>
 </resources>

@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Year</string>
 	<string name="gc.general.datetime.year.placeholder">Year</string>
 	<string name="gc.general.errors.clientDateTime">โปรดตรวจสอบวันที่และเวลาในอุปกรณ์ที่คุณใช้เพื่อให้การชำระเงินนี้ถูกตั้งค่าได้อย่างถูกต้อง</string>
+	<string name="gc.general.errors.generalError">เกิดข้อผิดพลาดขึ้น</string>
 	<string name="gc.general.errors.image.altText">คำเตือน</string>
 	<string name="gc.general.errors.incorrectMerchantId">เกิดข้อผิดพลาดทางเทคนิคไม่ให้เราแสดงวิธีที่ถูกต้องเพื่อให้การชำระเงินของคุณเสร็จสมบูรณ์: รหัสร้านค้าไม่ถูกต้อง โปรดลองวิธีการชำระเงินแบบอื่นหรือติดต่อบริษัทที่คุณได้ซื้อสินค้า</string>
 	<string name="gc.general.errors.instructions.renderingProblem">เกิดข้อผิดพลาดทางเทคนิคในขณะที่เราพยายามแสดงวิธีการเพื่อให้การชำระเงินของคุณเสร็จสมบูรณ์ โปรดลองใหม่อีกครั้งหรือลองวิธีการชำระเงินแบบอื่น</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">หมายเลขประจำตัวพิเศษ</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">รหัส Swift Code</string>
 	<string name="gc.general.paymentProcessing">เรากำลังดำเนินการชำระเงินของคุณ โปรดรอ อาจใช้เวลาหลายวินาทีในการดำเนินการชำระเงิน</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">โปรดระบุค่า CPF ของคุณที่ถูกต้อง 11 หรือ 14 ตัว หรือหมายเลข CNPJ</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">ชื่อเจ้าของบัญชี</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">สมชาย ใจดี</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">หมายเลขบัญชี</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">สำเร็จเรียบร้อยแล้ว</string>
 	<string name="gc.general.paymentProducts.3012.processing">กำลังดำเนินการชำระเงินของคุณ… โปรดตรวจสอบแอปพลิเคชัน Bancontact ของคุณ</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">หรือเปิดแอปพลิเคชันบนโทรศัพท์ของคุณ คลิกคำว่า "ชำระเงิน" และสแกนรหัสคิวอาร์</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">เปิดแอปพลิเคชันบนโทรศัพท์ของคุณ คลิก “ชำระเงิน” และสแกนรหัส QR</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">รีเฟรชสถานะการชำระเงิน</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">คลิกปุ่มด้านล่างเพื่อรีเพรชสถานะการชำระเงินของคุณ</string>
+	<string name="gc.general.paymentProducts.302.error">ขณะนี้ไม่สามารถชำระเงินด้วย Apple Pay ได้ เราต้องขออภัยในความไม่สะดวก</string>
+	<string name="gc.general.paymentProducts.302.header">กำลังเปิด Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">ขณะนี้ JavaScript ถูกปิดใช้งานบนเบราเซอร์ของคุณ ไม่สามารถชำระเงินด้วย Apple Pay ได้หาก JavaScript ถูกปิดใช้งาน โปรดเปิดใช้งาน JavaScript และรีเฟรชหน้านี้</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">ขณะนี้ไม่สามารถชำระเงินด้วย Google Pay ได้ เราต้องขออภัยในความไม่สะดวก</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">ขณะนี้ JavaScript ถูกปิดใช้งานบนเบราเซอร์ของคุณ ไม่สามารถชำระเงินด้วย Google Pay ได้หาก JavaScript ถูกปิดใช้งาน โปรดเปิดใช้งาน JavaScript และรีเฟรชหน้านี้</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">กำลังเปิด Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI แบบประจำ</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">คุณต้องการชำระเงินอย่างไร</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">เปิดแอปพลิเคชันของคุณ</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">เริ่มต้นแล้ว</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">ได้รับการอนุญาต</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">สำเร็จเรียบร้อยแล้ว</string>
+	<string name="gc.general.paymentProducts.863.processing">กำลังประมวลผลการชำระเงินของคุณ โปรดตรวจสอบแอปพลิเคชัน WeChat ของคุณ</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">เปิดแอปพลิเคชันบนโทรศัพท์ของคุณ คลิก “สแกน” เพื่อสแกนรหัส QR และคลิก “ชำระเงิน”</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">รีเฟรชสถานะการชำระเงิน</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">คลิกปุ่มด้านล่างเพื่อรีเพรชสถานะการชำระเงินของคุณ</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">เมื่อคุณไม่สามารถชำระเงินด้วยวิธีชำระเงินข้างต้นได้ โปรดคลิก “ยกเลิก” และเลือกวิธีการชำระเงินแบบอื่นเพื่อชำระเงินของคุณ</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">งวด AfterPay</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">เรายอมรับข้อกำหนดและเงื่อนไขของ {link}</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">ใบแจ้งหนี้ AfterPay</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">เรายอมรับข้อกำหนดและเงื่อนไขของ {link}</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">ขั้นตอนนี้ใช้เวลาเพียงไม่กี่วินาทีเท่านั้น</string>
 	<string name="gc.general.processing">Please wait, you will be able to continue your checkout within a few seconds</string>
 </resources>

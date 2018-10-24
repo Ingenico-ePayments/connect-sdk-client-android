@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">سال</string>
 	<string name="gc.general.datetime.year.placeholder">سال</string>
 	<string name="gc.general.errors.clientDateTime">براہ کرم تصدیق کریں کہ آیا یہ ادائیگی کرنے کے لیے آپ جو آلہ استعمال کرتے ہیں اس کی تاریخ اور وقت درست طور پر سیٹ ہیں۔</string>
+	<string name="gc.general.errors.generalError">کچھ غلط ہو گیا ہے</string>
 	<string name="gc.general.errors.image.altText">تنبیہ</string>
 	<string name="gc.general.errors.incorrectMerchantId">ایک تکنیکی خرابی پیش آ گئی جس نے ہمیں آپ کو آپ کی ادائیگی کو حتمی شکل دینے کے لئے درست ہدایات ظاہر کرنے سے روک دیا: ایک نا درست مرچنٹ آئی ڈی۔ برائے مہربانی ادائیگی کا کوئی دوسرا طریقہ آزمائیں یا اس کمپنی سے رابطہ کریں جس سے آپ خرید رہے ہیں۔</string>
 	<string name="gc.general.errors.instructions.renderingProblem">جب ہم نے آپ کی ادائیگی کو حتمی شکل دینے کے لئے ہدایات ظاہر کرنے کی کوشش کی تو ایک تکنیکی خرابی پیش آ گئی۔ برائے مہربانی دوبارہ کوشش کریں یا ادائیگی کا کوئی دوسرا طریقہ آزمائیں۔</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">خصوصی آئی ڈی</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">سویفٹ کوڈ</string>
 	<string name="gc.general.paymentProcessing">ہم آپ کی ادائیگی پراسیس کر رہے ہیں۔ برائے مہربانی انتظار کریں۔ آپ کی ادائیگی پراسیس کرنے میں کئی سیکنڈز لگ سکتے ہیں۔</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">اپنے CPF یا CNPJ نمبر کے لیے 11 یا 14 حروف کی ایک درست قدر مہیا کریں۔</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">کھاتہ دار کا نام</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">جان ڈوئے</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">کھاتہ نمبر</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">مکمل ہو گئی</string>
 	<string name="gc.general.paymentProducts.3012.processing">آپ کی ادائیگی پر کارروائی ہو رہی ہے… براہ کرم اپنی Bancontact ایپ چیک کریں</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">یا اپنے فون پر ایپ کھولیں، ‎‘Pay’‎ (ادا کریں) پر کلک کریں اور QR کوڈ اسکین کریں۔</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">اپنے فون پر ایپ کھولیں، \'pay\' پر کلک کریں اور QR کوڈ سکین کریں۔</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">ادائیگی کا اسٹیٹس ریفریش کریں</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">اپنی ادائیگی کا اسٹیٹس ریفریش کرنے کے لیے نیچے بٹن پر کلک کریں۔</string>
+	<string name="gc.general.paymentProducts.302.error">Apple Pay کے ساتھ ادائیگی کرنا اس وقت ممکن نہیں ہے۔ زحمت کے لیے ہم معذرت خواہ ہیں۔</string>
+	<string name="gc.general.paymentProducts.302.header">Apple Pay تیار ہو رہا ہے</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">آپ کے براؤزر میں اس وقت JavaScript بند کیا ہوا ہے۔ JavaScript کے بند ہوتے ہوئے Apple Pay کے ساتھ ادائیگی کرنا ممکن نہیں ہے۔ براہِ کرم JavaScript چلائیں اور اس صفحے کو دوبارہ کھولیں۔</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Google Pay کے ساتھ ادائیگی کرنا اس وقت ممکن نہیں ہے۔ زحمت کے لیے ہم معذرت خواہ ہیں۔</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">آپ کے براؤزر میں اس وقت JavaScript بند کیا ہوا ہے۔ JavaScript کے بند ہوتے ہوئے Google Pay کے ساتھ ادائیگی کرنا ممکن نہیں ہے۔ براہِ کرم JavaScript چلائیں اور اس صفحے کو دوبارہ کھولیں۔</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Google Pay تیار ہو رہا ہے</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI  متواتر</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">الیپے (Alipay)</string>
+	<string name="gc.general.paymentProducts.863.introduction">آپ کس طرح ادا کرنا پسند کریں گے؟</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">اپنی ایپ کھولیں</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">اسٹارٹ ہو گئی</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">اجازت مل گئی</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">مکمل ہو گئی</string>
+	<string name="gc.general.paymentProducts.863.processing">آپ کی رقم کی ادائیگی پر کارروائی ہو رہی ہے۔۔۔ براہِ کرم اپنی WeChat ایپ دیکھیں۔</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">اپنے فون پر ایپ کھولیں، QR کوڈ سکین کرنے کے لیے "scan" پر کلک کریں اور \'pay\' پر کلک کریں۔</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">ادائیگی کا اسٹیٹس ریفریش کریں</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">اپنی ادائیگی کا اسٹیٹس ریفریش کرنے کے لیے نیچے بٹن پر کلک کریں۔</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">جب آپ مندرجہ بالا ادائیگی کا طریقہ استعمال کرتے ہوئے ادائیگی کرنے سے قاصر ہوں، تو براہِ کرم \'Cancel\' پر انگلی سے ضرب لگائیں اور اپنی رقم کی ادائیگی مکمل کرنے کے لیے کوئی اور ادائیگی والی پراڈکٹ منتخب کریں۔</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay کی قسطیں</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">مجھے  {link}‎ کی شرائط و ضوابط قبول ہیں</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay انوائس</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">مجھے  {link}‎ کی شرائط و ضوابط قبول ہیں</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">اس میں صرف چند سیکنڈ لگنے چاہیئیں</string>
 	<string name="gc.general.processing">برائے مہربانی انتظار فرمائیں، آپ چند سکنڈوں میں اپنا چیک آؤٹ جاری رکھ سکیں گے</string>
 </resources>

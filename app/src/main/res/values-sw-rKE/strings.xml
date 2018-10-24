@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Mwaka</string>
 	<string name="gc.general.datetime.year.placeholder">Mwaka</string>
 	<string name="gc.general.errors.clientDateTime">Tafadhali thibitisha ikiwa tarehe na wakati wa kifaa unachotumia kufanya malipo haya vimewekwa vizuri.</string>
+	<string name="gc.general.errors.generalError">Kuna hitilafu</string>
 	<string name="gc.general.errors.image.altText">Onyo</string>
 	<string name="gc.general.errors.incorrectMerchantId">Hitilafu ya kiufundi imetokea na kutuzuia kukuonyesha maagizo sahihi ya kukamilisha malipo yako: Merchant ID si sahihi. Tafadhali jaribu tena au jaribu mbinu nyingine ya malipo au wasiliana na kampuni unayonunua kutoka kwayo.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Hitilafu ya kiufundi imetokea tulipojaribu kuonyesha maagizo ya kukamilisha malipo yako. Tafadhali jaribu tena au jaribu mbinu nyingine ya malipo.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Kitambulisho maalum</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Msimbo wa swift</string>
 	<string name="gc.general.paymentProcessing">Tunachakata malipo yako. Tafadhali subiri. Inaweza kuchukua sekunde kadhaa kuchakata malipo yako.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Tafadhali weka nambari yako sahihi ya CPF au CNPJ yenye tarakimu 11 au 14.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Jina la mmiliki wa akaunti</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Nambari ya akaunti</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Imekamilishwa</string>
 	<string name="gc.general.paymentProducts.3012.processing">Malipo yako yanachakatwa… Tafadhali angalia programu yako Bancontact.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Au fungua programu kwenye simu yako, bofya ‘Lipa’ na uchanganue msimbo wa QR.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Fungua programu kwenye simu yako, bofya \'Lipa\' kisha uchanganue msimbo wa QR.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Onyesha upya hali ya malipo</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Bofya kitufe hapa chini ili uonyeshe upya hali yako ya malipo.</string>
+	<string name="gc.general.paymentProducts.302.error">Huwezi kulipa ukitumia Apple Pay kwa sasa. Tunaomba radhi kwa usumbufu wote.</string>
+	<string name="gc.general.paymentProducts.302.header">Inapakia Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">JavaScript imezimwa kwenye kivinjari chako. Huwezi kulipa ukitumia Apple Pay ukiwa umezima JavaScript. Tafadhali washa JavaScript kisha uonyeshe upya ukurasa huu.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Huwezi kulipa ukitumia Google Pay kwa sasa. Tunaomba radhi kwa usumbufu wote.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">JavaScript imezimwa kwenye kivinjari chako. Huwezi kulipa ukitumia Google Pay ukiwa umezima JavaScript. Tafadhali washa JavaScript kisha uonyeshe upya ukurasa huu.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Inapakia Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI Recurring</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Ungependa kulipa aje?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Fungua programu yako</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Imeanzishwa</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Imeidhinishwa</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Imekamilishwa</string>
+	<string name="gc.general.paymentProducts.863.processing">Malipo yako yanachakatwa...Tafadhali angalia programu yako ya WeChat.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Fungua programu kwenye simu yako, bofya "changanua" ili uchanganue msimbo wa QR kisha ubofye \'Lipa\'.</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Onyesha upya hali ya malipo</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Bofya kitufe hapa chini ili uonyeshe upya hali yako ya malipo.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ukishindwa kulipa ukitumia mbinu ya malipo iliyo hapo juu, tafadhali gusa \'Ghairi\' kisha uchague bidhaa nyingine ya malipo ili ukamilishe malipo yako.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Mafungu ya AfterPay</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Ninakubali sheria na masharti ya {link}</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">Ankara ya AfterPay</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Ninakubali sheria na masharti ya {link}</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Hii inafaa kuchukua sekunde chache tu</string>
 	<string name="gc.general.processing">Tafadhali subiri, utaweza kuendelea na malipo yako baada ya sekunde chache</string>
 </resources>

@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">年</string>
 	<string name="gc.general.datetime.year.placeholder">年</string>
 	<string name="gc.general.errors.clientDateTime">请核实您所使用设备的支付日期和时间是否正确。</string>
+	<string name="gc.general.errors.generalError">出现问题</string>
 	<string name="gc.general.errors.image.altText">警告</string>
 	<string name="gc.general.errors.incorrectMerchantId">发生技术错误，该错误阻止我们向您发送正确的指令，导致支付失败：错误的商户代码。请更改付款方式或联系您购买的商家。</string>
 	<string name="gc.general.errors.instructions.renderingProblem">当我们试图指导您完成支付时，一个技术错误出现了。请重试或更改付款方式。</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">特殊 ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift 代码</string>
 	<string name="gc.general.paymentProcessing">我们正在处理您的支付请求。请稍后。付款处理中，请等待几秒钟。</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">请为您的 CPF 或 CNPJ 号码提供 11 或 14 个字符的有效值。</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">帐户持有人姓名</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">帐号</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">已完成</string>
 	<string name="gc.general.paymentProducts.3012.processing">您的付款正在处理中… 请查看您的 Bancontact 应用程序。</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">或打开手机中的应用程序，点击“付款”并扫描二维码。</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">打开手机上的应用，点击“付款”，然后扫描二维码。</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">刷新付款状态</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">点击以下按钮刷新您的付款状态。</string>
+	<string name="gc.general.paymentProducts.302.error">目前无法使用 Apple Pay 付款。对于给您带来的不便我们表示抱歉。</string>
+	<string name="gc.general.paymentProducts.302.header">正在准备 Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">JavaScript 目前已在浏览器中关闭。无法在 JavaScript 关闭状态下使用 Apple Pay 付款。请打开 JavaScript 并刷新此页面。</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">目前无法使用 Google Pay 付款。对于给您带来的不便我们表示抱歉。</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">JavaScript 目前已在浏览器中关闭。无法在 JavaScript 关闭状态下使用 Google Pay 付款。请打开 JavaScript 并刷新此页面。</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">正在准备 Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI 定期支付</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">支付宝</string>
+	<string name="gc.general.paymentProducts.863.introduction">您想如何付款？</string>
+	<string name="gc.general.paymentProducts.863.name">微信支付</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">打开您的应用程序</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">已开始</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">已授权</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">已完成</string>
+	<string name="gc.general.paymentProducts.863.processing">正在处理您的付款... 请检查您的微信应用。</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">打开手机上的应用，点击“扫描”来扫描二维码，然后点击“付款”。</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">刷新付款状态</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">点击以下按钮刷新您的付款状态。</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">如果无法使用上述付款方式，请点击“取消”并选择其他付款产品来完成付款。</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay 分期付款</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">我接受 {link}的条款与条件</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay 发票</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">我接受 {link}的条款与条件</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">这只需要几秒钟</string>
 	<string name="gc.general.processing">请稍候，您将能够在几秒钟内继续结账</string>
 </resources>

@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Gads</string>
 	<string name="gc.general.datetime.year.placeholder">Gads</string>
 	<string name="gc.general.errors.clientDateTime">Lūdzu, pārliecinieties, ka ierīcē, kuru izmantojat šī maksājuma veikšanai, ir iestatīts pareizs datums un laiks.</string>
+	<string name="gc.general.errors.generalError">Darbība nav izdevusies</string>
 	<string name="gc.general.errors.image.altText">Brīdinājums</string>
 	<string name="gc.general.errors.incorrectMerchantId">Radusies tehniska kļūme, kas mums neļauj jums parādīt pareizās norādes par jūsu maksājuma pabeigšanu: nepareizs tirgotāja ID. Lūdzu, mēģiniet izmantot citu maksāšanas veidu vai sazinieties ar uzņēmumu, no kura iegādājaties preci.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Mēģinot parādīt norādes par maksājuma pabeigšanu, radusies tehniska kļūme. Lūdzu, mēģiniet vēlreiz vai mēģiniet izmantot citu maksāšanas veidu.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Papildu ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">SWIFT kods</string>
 	<string name="gc.general.paymentProcessing">Mēs apstrādājam jūsu maksājumu. Lūdzu, uzgaidiet. Jūsu maksājuma apstrāde var ilgt vairākas sekundes.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Lūdzu, ievadiet derīgu vērtību no 11 vai 14 simboliem, kas ir Jūsu CPF vai CNPJ numurs.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Konta īpašnieka vārds</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Konta numurs</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Pabeigts</string>
 	<string name="gc.general.paymentProducts.3012.processing">Jūsu maksājums tiek apstrādāts… Lūdzu, pārbaudiet savu Bancontact lietotni!</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Vai atveriet tālrunī lietotni, nospiediet “Maksāt“ un noskenējiet QR kodu.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Atveriet lietotni savā telefonā, klikšķiniet uz „Maksāt” un noskenējiet QR kodu.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Atjaunināt maksājuma statusu</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Nospiediet pogu zemāk, lai atjauninātu jūsu maksājuma statusu.</string>
+	<string name="gc.general.paymentProducts.302.error">Maksājumu veikšana ar Apple Pay šobrīd nav iespējama. Atvainojamies par sagādātajām neērtībām.</string>
+	<string name="gc.general.paymentProducts.302.header">Sagatavo Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">Šobrīd JavaScript Jūsu pārlūkā ir atspējots. Maksājumu veikšana ar Apple Pay nav iespējama, ja JavaScript ir atspējots. Lūdzu, iespējojiet JavaScript un atsvaidziniet šo lapu.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Maksājumu veikšana ar Google Pay šobrīd nav iespējama. Atvainojamies par sagādātajām neērtībām.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">Šobrīd JavaScript Jūsu pārlūkā ir atspējots. Maksājumu veikšana ar Google Pay nav iespējama, ja JavaScript ir atspējots. Lūdzu, iespējojiet JavaScript un atsvaidziniet šo lapu.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Sagatavo Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">Atkārtotais QIWI</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">AliPay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Kā jūs vēlaties maksāt?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Atveriet lietotni</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Uzsākts</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Apstiprināts</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Pabeigts</string>
+	<string name="gc.general.paymentProducts.863.processing">Jūsu maksājums tiek apstrādāts…Lūdzu, pārbaudiet savu WeChat lietotni.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Atveriet lietotni savā telefonā, klikšķiniet uz „skenēt”, lai noskenētu QR kodu, un izvēlieties opciju „Maksāt”.</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Atjaunināt maksājuma statusu</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Nospiediet pogu zemāk, lai atjauninātu jūsu maksājuma statusu.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ja nevarat veikt maksājumu, izmantojot augstāk minēto maksāšanas metodi, klikšķiniet uz „Atcelt” un maksājuma veikšanai izvēlieties citu maksāšanas produktu.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay maksājumi</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Es apstiprinu {link} noteikumus un nosacījumus</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay rēķins</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Es apstiprinu {link} noteikumus un nosacījumus</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Šai darbībai vajadzētu aizņemt tikai dažas sekundes</string>
 	<string name="gc.general.processing">Lūdzu, uzgaidiet! Varēsiet turpināt norēķināšanos pēc dažām sekundēm.</string>
 </resources>

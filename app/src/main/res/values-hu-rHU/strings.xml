@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Év</string>
 	<string name="gc.general.datetime.year.placeholder">Év</string>
 	<string name="gc.general.errors.clientDateTime">Kérjük, ellenőrizze, hogy a fizetéshez használt fizetőeszköz érvényességi ideje megfelelően szerepel.</string>
+	<string name="gc.general.errors.generalError">Hiba történt</string>
 	<string name="gc.general.errors.image.altText">Figyelmeztetés</string>
 	<string name="gc.general.errors.incorrectMerchantId">Technikai hiba történt, ami megakadályozta a fizetés megfelelő véglegesítési utasításainak megjelenítését: helytelen Kereskedő ID. Kérjük, próbálkozzon más fizetési móddal, vagy vegye fel a kapcsolatot a céggel, amelyiktől vásárol.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">A fizetés véglegesítési utasításainak megjelenítése közben technikai hiba történt. Kérjük, próbálkozzon újra vagy más fizetési móddal.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Különleges azonosító</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift-kód</string>
 	<string name="gc.general.paymentProcessing">Fizetése feldolgozás alatt áll. Kérjük, várjon. A fizetése feldolgozása eltarthat néhány másodpercig.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Kérjük, adja meg CPF- vagy CNPJ-számának 11 vagy 14 érvényes karakterét.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Számlatulajdonos neve</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Ismeretlen Személy</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Bankszámlaszám</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Teljesítve</string>
 	<string name="gc.general.paymentProducts.3012.processing">A befizetése feldolgozás alatt… Ellenőrizze Bancontact alkalmazását.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Vagy nyissa meg az alkalmazást a telefonján, koppintson a „Fizetés” lehetőségre, és olvassa be a QR-kódot.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Nyissa meg az alkalmazást telefonján, koppintson a „Fizetés” elemre, majd olvassa be a QR-kódot.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">A fizetési állapot frissítése</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Kattintson az alábbi gombra a fizetési állapota frissítéséhez.</string>
+	<string name="gc.general.paymentProducts.302.error">Jelenleg nem lehetséges az Apple Pay szolgáltatással történő fizetés. Elnézést kérünk a kényelmetlenségért!</string>
+	<string name="gc.general.paymentProducts.302.header">Az Apple Pay előkészítése</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">A JavaScript jelenleg ki van kapcsolva böngészőjében. Ha a JavaScript ki van kapcsolva, akkor nem tud az Apple Pay szolgáltatással fizetni. Kapcsolja be a JavaScriptet, és frissítse ezt az oldalt.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Jelenleg nem lehetséges a Google Pay szolgáltatással történő fizetés. Elnézést kérünk a kényelmetlenségért!</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">A JavaScript jelenleg ki van kapcsolva böngészőjében. Ha a JavaScript ki van kapcsolva, akkor nem tud a Google Pay szolgáltatással fizetni. Kapcsolja be a JavaScriptet, és frissítse ezt az oldalt.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">A Google Pay előkészítése</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI ismétlődő</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Hogyan szeretne fizetni?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Az alkalmazás megnyitása</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Megkezdve</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Jóváhagyva</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Teljesítve</string>
+	<string name="gc.general.paymentProducts.863.processing">Fizetési tranzakciójának feldolgozása folyamatban van… Ellenőrizze WeChat alkalmazását.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Nyissa meg az alkalmazást telefonján, koppintson a „Beolvasás” elemre a QR-kód beolvasásához, majd ezt követően koppintson a „Fizetés” elemre.</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">A fizetési állapot frissítése</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Kattintson az alábbi gombra a fizetési állapota frissítéséhez.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ha a fenti fizetési móddal nem tud fizetni, koppintson a „Mégse” elemre, és válasszon másik fizetőterméket a fizetés végrehajtásához.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay-törlesztőrészletek</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Elfogadom az {link} feltételeit és rendelkezéseit</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay számla</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Elfogadom az {link} feltételeit és rendelkezéseit</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Ez csupán néhány pillanatig tart</string>
 	<string name="gc.general.processing">Kérjük, várjon! Pár másodpercen belül folytathatja a fizetést.</string>
 </resources>

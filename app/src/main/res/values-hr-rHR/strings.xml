@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Godina</string>
 	<string name="gc.general.datetime.year.placeholder">Godina</string>
 	<string name="gc.general.errors.clientDateTime">Molimo vas da potvrdite jesu li datum i vrijeme na uređaju koji upotrebljavate za uplatu ispravni.</string>
+	<string name="gc.general.errors.generalError">Nešto nije u redu</string>
 	<string name="gc.general.errors.image.altText">Upozorenje</string>
 	<string name="gc.general.errors.incorrectMerchantId">Zbog tehničke pogreške nismo u mogućnosti pružiti vam ispravne upute za dovršavanje uplate: neispravni identifikacijski broj trgovca. Molimo vas da pokušate s drugim načinom plaćanja ili da kontaktirate tvrtku od koje kupujete.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Došlo je do tehničke pogreške dok smo vam pokušavali prikazati upute za dovršavanje uplate. Molimo vas da pokušate ponovno ili da odaberete drugi način plaćanja.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Poseban identifikacijski broj</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift oznaka</string>
 	<string name="gc.general.paymentProcessing">Vaša uplata se obrađuje. Pričekajte. Obrada vaše uplate može potrajati nekoliko sekundi.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Navedite važeću vrijednost od 11 ili 14 znakova za svoj CPF ili CNPJ broj.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Ime nositelja računa</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Ivan Horvat</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Broj računa</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Završeno</string>
 	<string name="gc.general.paymentProducts.3012.processing">Vaša se uplata obrađuje... Molimo da provjerite svoju aplikaciju Bancontact.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Ili otvorite aplikaciju na svojem mobitelu, odaberite oznaku „Pay” („Plati”) i skenirajte QR kôd.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Otvorite aplikaciju na svojem mobitelu, kliknite „Pay” („Plati”) pa skenirajte QR kôd.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Osvježite status plaćanja</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Odaberite donji gumb za osvježenje statusa plaćanja.</string>
+	<string name="gc.general.paymentProducts.302.error">Plaćanje putem usluge Apple Pay trenutačno nije moguće. Ispričavamo se zbog neugodnosti.</string>
+	<string name="gc.general.paymentProducts.302.header">Priprema usluge Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">JavaScript trenutačno je isključen u vašem pregledniku. Plaćanje putem usluge Apple Pay nije moguće ako je JavaScript isključen. Uključite JavaScript i osvježite stranicu.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Plaćanje putem usluge Google Pay trenutačno nije moguće. Ispričavamo se zbog neugodnosti.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">JavaScript trenutačno je isključen u vašem pregledniku. Plaćanje putem usluge Google Pay nije moguće ako je JavaScript isključen. Uključite JavaScript i osvježite stranicu.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Priprema usluge Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">periodična plaćanja tvrtke QIWI</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Kako želite platiti?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Otvorite aplikaciju</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Započeto</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Autorizirano</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Završeno</string>
+	<string name="gc.general.paymentProducts.863.processing">Vaša se uplata obrađuje... Provjerite svoju aplikaciju WeChat.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Otvorite aplikaciju na svojem mobitelu, kliknite „Scan” („Skeniranje”) da biste skenirali QR kôd pa kliknite „Pay” („Plati”).</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Osvježite status plaćanja</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Odaberite donji gumb za osvježenje statusa plaćanja.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ako ne možete izvršiti uplatu putem prethodnog načina plaćanja, dodirnite„Cancel” („Odustani”) pa odaberite drugi proizvod za plaćanje da biste dovršili plaćanje.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">obročno plaćanje AfterPay</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Prihvaćam odredbe i uvjete {link}</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay Invoice</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Prihvaćam odredbe i uvjete {link}</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">načina plaćanja AfterPay</string>
+	<string name="gc.general.preparing">Ovo bi trebalo potrajali svega nekoliko sekundi</string>
 	<string name="gc.general.processing">Molimo pričekajte, kupnja će se nastaviti za nekoliko sekundi</string>
 </resources>

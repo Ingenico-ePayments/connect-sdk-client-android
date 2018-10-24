@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Diena</string>
 	<string name="gc.general.datetime.year.placeholder">Diena</string>
 	<string name="gc.general.errors.clientDateTime">Kad galėtumėte atlikti šį mokėjimą, prašome patikrinti, ar naudojamo prietaiso data ir laikas yra nustatyti teisingai.</string>
+	<string name="gc.general.errors.generalError">Kažkas negerai</string>
 	<string name="gc.general.errors.image.altText">Įspėjimas</string>
 	<string name="gc.general.errors.incorrectMerchantId">Dėl įvykusios techninės klaidos negalėjome parodyti jums tinkamų instrukcijų, kaip baigti mokėjimą. Išbandykite kitą mokėjimo metodą arba susisiekite su įmone, iš kurios perkate.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Bandant parodyti instrukcijas, kaip baigti mokėjimą, įvyko techninė klaida. Bandykite mokėti iš naujo arba rinktis kitą mokėjimo metodą.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Specialus kodas</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift kodas</string>
 	<string name="gc.general.paymentProcessing">Apdorojame jūsų mokėjimą. Palaukite. Gali užtrukti keletą sekundžių, kol apdorosime jūsų mokėjimą.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Pateikite tinkamą CPF arba CNPJ numerio vertę, sudarytą iš 11 arba 14 ženklų.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Sąskaitos savininko pavadinimas</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Vardenis Pavardenis</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Sąskaitos Nr.</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Atlikta</string>
 	<string name="gc.general.paymentProducts.3012.processing">Mokėjimas apdorojamas… Patikrinkite „Bancontact“ programėlę.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Arba atidarykite programėlę telefone, paspauskite „Pay“ (mokėti) ir nuskaitykite QR kodą.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Atverkite programėlę telefone, spustelėkite „Pay“ (mokėti) ir nuskaitykite QR kodą.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Atnaujinkite mokėjimo būseną</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Paspauskite žemiau esantį mygtuką, kad atnaujintumėte mokėjimo būseną.</string>
+	<string name="gc.general.paymentProducts.302.error">Šiuo metu mokėti naudojant „Apple Pay“ negalima. Atsiprašome už nepatogumus.</string>
+	<string name="gc.general.paymentProducts.302.header">Ruošiama „Apple Pay“</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">Šiuo metu jūsų naršyklėje „JavaScript“ išjungta. Kai „JavaScript“ išjungta, mokėti naudojant „Apple Pay“ negalima. Įjunkite „JavaScript“ ir iš naujo įkelkite šį puslapį.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Šiuo metu mokėti naudojant „Google Pay“ negalima. Atsiprašome už nepatogumus.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">Šiuo metu jūsų naršyklėje „JavaScript“ išjungta. Kai „JavaScript“ išjungta, mokėti naudojant „Google Pay“ negalima. Įjunkite „JavaScript“ ir iš naujo įkelkite šį puslapį.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Ruošiama „Google Pay“</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI period</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">AliPay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Kokiu būdu norėtumėte mokėti?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Atidarykite programėlę</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Pradėta</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Patvirtinta</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Atlikta</string>
+	<string name="gc.general.paymentProducts.863.processing">Jūsų mokėjimas apdorojamas… Pasitikrinkite programėlę „WeChat“.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Atverkite programėlę telefone, spustelėkite „Scan“ (nuskaityti), kad nuskaitytumėte QR kodą, tada spustelėkite „Pay“ (mokėti).</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Atnaujinkite mokėjimo būseną</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Paspauskite žemiau esantį mygtuką, kad atnaujintumėte mokėjimo būseną.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Jei negalite sumokėti pirmiau nurodytu būdu, palieskite „Cancel“ (atšaukti) ir pasirinkite kitą mokėjimo priemonę mokėjimui atlikti.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">„AfterPay“ įmokos</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Sutinku su „{link}“ terminais ir sąlygomis</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">„AfterPay“ sąskaita-faktūra</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Sutinku su „{link}“ terminais ir sąlygomis</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Tai turėtų trukti kelias akimirkas</string>
 	<string name="gc.general.processing">Luktelėkite, galėsite išsiregistruoti po kelių sekundžių</string>
 </resources>

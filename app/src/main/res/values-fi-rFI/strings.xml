@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Vuosi</string>
 	<string name="gc.general.datetime.year.placeholder">Vuosi</string>
 	<string name="gc.general.errors.clientDateTime">Vahvista, onko maksamiseen käyttämäsi laitteen päivämäärä ja kellonaika asetettu oikein.</string>
+	<string name="gc.general.errors.generalError">Tapahtui virhe</string>
 	<string name="gc.general.errors.image.altText">Varoitus</string>
 	<string name="gc.general.errors.incorrectMerchantId">Tapahtui tekninen virhe, joka esti meitä näyttämästä sinulle oikeita ohjeita maksusi viimeistelyä varten: virheellinen kauppiastunnus. Kokeile jotain toista maksutapaa tai ota yhteyttä yritykseen, jolta olet ostamassa.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Yrittäessämme näyttää ohjeet maksusi viimeistelyä varten tapahtui tekninen virhe. Yritä uudelleen tai kokeile jotain toista maksutapaa.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Erityistunnus</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift-koodi</string>
 	<string name="gc.general.paymentProcessing">Maksuasi käsitellään. Odota. Maksun käsittely voi kestää useita sekunteja.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Anna kelvollinen CPF- tai CNPJ-numero, jossa on 11 tai 14 merkkiä.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Tilinomistajan nimi</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Tilinumero</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Valmis</string>
 	<string name="gc.general.paymentProducts.3012.processing">Maksuasi käsitellään… Tarkista Bancontact-sovelluksesi.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Tai avaa sovellus puhelimessasi, napsauta "Maksa" ja skannaa QR-koodi.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Avaa sovellus puhelimessasi, napsauta "Maksa" ja lue QR-koodi.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Päivitä maksun tila</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Päivitä maksun tila napsauttamalla alla olevaa painiketta.</string>
+	<string name="gc.general.paymentProducts.302.error">Maksaminen Apple Paylla ei ole tällä hetkellä mahdollista. Pahoittelemme aiheutunutta haittaa.</string>
+	<string name="gc.general.paymentProducts.302.header">Valmistellaan Apple Payta</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">JavaScript on poistettu käytöstä selaimessasi. Maksaminen Apple Paylla ei ole mahdollista, jos JavaScript ei ole käytössä. Ota JavaScript käyttöön ja päivitä tämä sivu.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Maksaminen Google Paylla ei ole tällä hetkellä mahdollista. Pahoittelemme aiheutunutta haittaa.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">JavaScript on poistettu käytöstä selaimessasi. Maksaminen Google Paylla ei ole mahdollista, jos JavaScript ei ole käytössä. Ota JavaScript käyttöön ja päivitä tämä sivu.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Valmistellaan Google Payta</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI Recurring</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Miten haluat maksaa?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Avaa sovellus</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Aloitettu</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Valtuutettu</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Valmis</string>
+	<string name="gc.general.paymentProducts.863.processing">Maksuasi käsitellään... Tarkista WeChat-sovellus.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Avaa sovellus puhelimessasi, lue QR-koodi napsauttamalla "lue" ja napsauta "Maksa".</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Päivitä maksun tila</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Päivitä maksun tila napsauttamalla alla olevaa painiketta.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Jos maksaminen edellä olevalla tavalla ei onnistu, napauta "peruuta" ja valitse jokin toinen maksutuote maksun suorittamiseksi.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay-erät</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Hyväksyn {link} ehdot</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay-lasku</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Hyväksyn {link} ehdot</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Tämän pitäisi kestää vain muutama sekunti</string>
 	<string name="gc.general.processing">Odota hetki, pääset jatkamaan tilausta muutaman sekunnin kuluttua</string>
 </resources>

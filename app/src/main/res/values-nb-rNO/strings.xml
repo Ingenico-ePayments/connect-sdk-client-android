@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">År</string>
 	<string name="gc.general.datetime.year.placeholder">År</string>
 	<string name="gc.general.errors.clientDateTime">Vennligst bekreft om datoen og klokkeslettet på enheten du brukte til å foreta denne betalingen, er riktig innstilt.</string>
+	<string name="gc.general.errors.generalError">Noe gikk galt.</string>
 	<string name="gc.general.errors.image.altText">Advarsel</string>
 	<string name="gc.general.errors.incorrectMerchantId">Det oppstod en teknisk feil som forhindret oss fra å vise deg de riktige instruksjonene for å fullføre betalingen din: en feil forhandler-ID. Vennligst prøv en annen betalingsmetode eller kontakt selskapet du kjøper fra.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Det oppstod en teknisk feil mens vi prøvde å vise instruksjonene for å fullføre betalingen din. Vennligst prøv på nytt eller prøv en annen betalingsmetode.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Spesial-ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift-kode</string>
 	<string name="gc.general.paymentProcessing">Vi behandler betalingen din. Vennligst vent. Det kan ta flere sekunder å behandle betalingen.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Oppgi en gyldig verdi på 11 eller 14 tegn for ditt CPF- eller CNPJ-nummer.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Kontoinnehavers navn</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Kontonummer</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Fullført</string>
 	<string name="gc.general.paymentProducts.3012.processing">Betalingen din blir behandlet … Vennligst sjekk Bancontact-appen.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Eller åpne appen på telefonen din, klikk på «Betale» og skann QR-koden.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Åpne appen på telefonen din, klikk på “Betal” og scan QR-koden.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Oppdater betalingsstatus</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Klikk på knappen nedenfor for å oppdatere betalingsstatusen din.</string>
+	<string name="gc.general.paymentProducts.302.error">Betaling med Apple Pay er for tiden ikke mulig. Vi beklager brydderiet.</string>
+	<string name="gc.general.paymentProducts.302.header">Forbereder Apple Pay</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">JavaScript er for tiden slått av i din nettleser. Betaling med Apple Pay er ikke mulig når JavaScript er slått av. Slå på JavaScript og last denne siden på nytt.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Betaling med Google Pay er for tiden ikke mulig. Vi beklager brydderiet.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">JavaScript er for tiden slått av i din nettleser. Betaling med Google Pay er ikke mulig når JavaScript er slått av. Slå på JavaScript og last denne siden på nytt.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Forbereder Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">Gjentatt QIWI</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Hvordan vil du betale?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Åpne appen</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Startet</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Autorisert</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Fullført</string>
+	<string name="gc.general.paymentProducts.863.processing">Betalingen din utføres nå... Sjekk WeChat appen din.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Åpne appen på telefonen din, klikk på “scan” for å scanne QR-koden og klikk på ‘Betal’.</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Oppdater betalingsstatus</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Klikk på knappen nedenfor for å oppdatere betalingsstatusen din.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Dersom du ikke kan betale med betalingsmåten nevnt over klikker du på ‘Avbryt’ og velger en annen betalingsmåte for å fullføre din betaling.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay-avdrag</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Jeg godtar vilkår og betingelser for {link}</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay-faktura</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Jeg godtar vilkår og betingelser for {link}</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Dette bør kun ta noen sekunder.</string>
 	<string name="gc.general.processing">Vennligst vent. Du vil bli sendt videre til kassen i løpet av få sekunder</string>
 </resources>

@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Aasta</string>
 	<string name="gc.general.datetime.year.placeholder">Aasta</string>
 	<string name="gc.general.errors.clientDateTime">Palun kinnitage, et makse tegemiseks kasutatava seadme kuupäev ja kellaaeg on õiged.</string>
+	<string name="gc.general.errors.generalError">Miski läks valesti</string>
 	<string name="gc.general.errors.image.altText">Hoiatus</string>
 	<string name="gc.general.errors.incorrectMerchantId">Teie makse lõpetamiseks õigete juhiste näitamisel tekkis tehniline viga: vale kaupmehe ID-number. Palun proovige muud makseviisi või võtke ühendust müügiettevõttega.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Teie makse lõpetamiseks juhiste näitamisel tekkis tehniline viga. Palun proovige uuesti või proovige muud makseviisi.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Spetsiaalne ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">SWIFT kood</string>
 	<string name="gc.general.paymentProcessing">Me töötleme teie makset. Palun oodake. Teie makse töötlemiseks kulub mõni sekund.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Palun sisestage oma kehtiv 11- või 14-kohaline CPF- või CNPJ-number.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Konto omaniku nimi</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Konto number</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Lõpetatud</string>
 	<string name="gc.general.paymentProducts.3012.processing">Teie makset töödeldakse… Palun kontrollige oma Bancontact rakendust.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Või avage rakendus oma telefonis, vajutage ‘Maksa’ ja skaneerige QR-kood.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Avage telefonis rakendus, toksake „Pay“ ja skannige QR-kood.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Makse staatuse värskendamine</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Vajutage all olevale nupule, et värskendada oma makse staatust.</string>
+	<string name="gc.general.paymentProducts.302.error">Apple Payga tasumine ei ole praegu võimalik. Palume vabandust ebamugavuste pärast.</string>
+	<string name="gc.general.paymentProducts.302.header">Apple Pay ettevalmistamine</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">Teie brauseris on JavaScript praegu keelatud. Kui JavaScript on keelatud, ei ole Apple Payga tasumine võimalik. Palun lubage JavaScript ja värskendage seda lehte.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Google Payga tasumine ei ole praegu võimalik. Palume vabandust ebamugavuste pärast.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">Teie brauseris on JavaScript praegu keelatud. Kui JavaScript on keelatud, ei ole Google Payga tasumine võimalik. Palun lubage JavaScript ja värskendage seda lehte.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Google Pay ettevalmistamine</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI Korduv</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Kuidas sooviksite maksta?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Avage oma rakendus</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Alustatud</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Kinnitatud</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Lõpetatud</string>
+	<string name="gc.general.paymentProducts.863.processing">Teie makset töödeldakse. Palun vaadake oma rakendusse WeChat.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Avage telefonis rakendus, toksake QR-koodi skannimiseks „Scan“ ja seejärel toksake „Pay“.</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Makse staatuse värskendamine</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Vajutage all olevale nupule, et värskendada oma makse staatust.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Kui te ei saa kirjeldatud maksemeetodit kasutades tasuda, toksake „Cancel“ ja valige makse sooritamiseks muu võimalus.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay osamaksed</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">Nõustun {link} tingimustega</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay arve</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">Nõustun {link} tingimustega</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">See peaks võtma aega vaid mõne sekundi</string>
 	<string name="gc.general.processing">Palun oodake, saate ostu sooritamist jätkata mõne sekundi pärast</string>
 </resources>

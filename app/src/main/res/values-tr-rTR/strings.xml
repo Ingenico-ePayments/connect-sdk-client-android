@@ -66,6 +66,7 @@
 	<string name="gc.general.datetime.year.label">Yıl</string>
 	<string name="gc.general.datetime.year.placeholder">Yıl</string>
 	<string name="gc.general.errors.clientDateTime">Lütfen bu ödemeyi yapmak için kullandığınız cihazın tarihi ve saatinin doğru ayarlandığını onaylayın.</string>
+	<string name="gc.general.errors.generalError">Bir yanlışlık oldu</string>
 	<string name="gc.general.errors.image.altText">Uyarı</string>
 	<string name="gc.general.errors.incorrectMerchantId">Ödemenizi sonlandırmaya ilişkin talimatları size göstermemizi engelleyen teknik bir hata meydana geldi: yanlış Satıcı kimliği. Lütfen başka bir ödeme yöntemi deneyin veya satın aldığınız firma ile iletişime geçin.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Ödemenizi sonlandırmaya ilişkin talimatları göstermeye çalışırken teknik bir hata meydana geldi. Lütfen tekrar deneyin veya başka bir ödeme şekli kullanın.</string>
@@ -94,6 +95,7 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Özel tanımlama kodu</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift kodu</string>
 	<string name="gc.general.paymentProcessing">Ödemenizi işleme alıyoruz. Lütfen bekleyin. Ödemenizi işleme almak birkaç saniye sürebilir.</string>
+	<string name="gc.general.paymentProduct.1503.errorMessage">Lütfen CPF veya CNPJ numaranız olarak 11 veya 14 karakterli ve geçerli bir değer verin.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Hesap sahibinin adı</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Hesap numarası</string>
@@ -275,8 +277,12 @@
 	<string name="gc.general.paymentProducts.3012.paymentStatus3">Tamamlandı</string>
 	<string name="gc.general.paymentProducts.3012.processing">Ödemeniz işleniyor… Lütfen Bancontact uygulamanızı kontrol edin.</string>
 	<string name="gc.general.paymentProducts.3012.qrCodeLabel">Veya telefonunuzdaki uygulamayı açın, “Öde” seçeneğine tıklayın ve QR kodunu tarayın.</string>
+	<string name="gc.general.paymentProducts.3012.qrCodeLabel.noButton">Telefonunuzda uygulamayı açın, ‘Öde’ düğmesine tıklayın ve kare kodu tarayın.</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentButtonText">Ödeme durumunu yenileyin</string>
 	<string name="gc.general.paymentProducts.3012.refreshPaymentLabel">Ödeme durumunuzu yenilemek için aşağıdaki düğmeyi tıklayın.</string>
+	<string name="gc.general.paymentProducts.302.error">Apple Pay ile ödeme yapmak şu anda mümkün değildir. Bu sorun nedeniyle özür dileriz.</string>
+	<string name="gc.general.paymentProducts.302.header">Apple Pay hazırlanıyor.</string>
+	<string name="gc.general.paymentProducts.302.javaScriptOff">JavaScript şu anda tarayıcınızda devre dışı. JavaScript devre dışı durumdayken Apple Pay ile ödeme yapmak mümkün değildir. Lütfen JavaScript’i etkinleştirin ve bu sayfayı yenileyin.</string>
 	<string name="gc.general.paymentProducts.302.name">Apple Pay</string>
 	<string name="gc.general.paymentProducts.3101.name">ANCV</string>
 	<string name="gc.general.paymentProducts.3103.name">CADO Carte</string>
@@ -300,7 +306,10 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.name">Android Pay</string>
+	<string name="gc.general.paymentProducts.320.error">Google Pay ile ödeme yapmak şu anda mümkün değildir. Bu sorun nedeniyle özür dileriz.</string>
+	<string name="gc.general.paymentProducts.320.javaScriptOff">JavaScript şu anda tarayıcınızda devre dışı. JavaScript devre dışı durumdayken Google Pay ile ödeme yapmak mümkün değildir. Lütfen JavaScript’i etkinleştirin ve bu sayfayı yenileyin.</string>
+	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
+	<string name="gc.general.paymentProducts.320.preparing">Google Pay hazırlanıyor</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
@@ -358,7 +367,19 @@
 	<string name="gc.general.paymentProducts.8583.name">QIWI Tekrarlı Ödeme</string>
 	<string name="gc.general.paymentProducts.8583.paymentProductFields.phoneNumber.placeholder">7 *** *** ** **</string>
 	<string name="gc.general.paymentProducts.861.name">Alipay</string>
+	<string name="gc.general.paymentProducts.863.introduction">Nasıl ödemek istersiniz?</string>
+	<string name="gc.general.paymentProducts.863.name">WeChat Pay</string>
+	<string name="gc.general.paymentProducts.863.payWithAppButtonText">Uygulamanızı açın</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus1">Başlatıldı</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus2">Onaylandı</string>
+	<string name="gc.general.paymentProducts.863.paymentStatus3">Tamamlandı</string>
+	<string name="gc.general.paymentProducts.863.processing">Ödemeniz gerçekleştiriliyor... Lütfen WeChat uygulamanızı kontrol edin.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel">Telefonunuzda uygulamayı açın, “tara” düğmesine tıklayarak kare kodu tarayın ve ‘Öde’ düğmesine tıklayın.</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Ödeme durumunu yenileyin</string>
+	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Ödeme durumunuzu yenilemek için aşağıdaki düğmeyi tıklayın.</string>
+	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Yukarıda belirtilen ödeme yöntemiyle ödeme yapamıyorsanız lütfen ‘İptal’ düğmesine tıklayın ve başka bir ödeme ürününü seçerek ödemenizi tamamlayın.</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay taksitleri</string>
 	<string name="gc.general.paymentProducts.9000.paymentProductFields.termsAndConditions.label">{link} şart ve koşullarını kabul ediyorum</string>
@@ -366,5 +387,6 @@
 	<string name="gc.general.paymentProducts.9001.name">AfterPay faturası</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.label">{link} şart ve koşullarını kabul ediyorum</string>
 	<string name="gc.general.paymentProducts.9001.paymentProductFields.termsAndConditions.link.label">AfterPay</string>
+	<string name="gc.general.preparing">Sadece birkaç saniye sürecektir</string>
 	<string name="gc.general.processing">Lütfen bekleyin, alışverişinizi tamamlamaya birkaç saniye içinde devam edebileceksiniz.</string>
 </resources>
