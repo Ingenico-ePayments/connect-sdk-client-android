@@ -34,6 +34,7 @@
 302=/templates/master/global/css/img/ppimages/pp_logo_302_v1.png
 320=/templates/master/global/css/img/ppimages/pp_logo_320_v1.png
 402=/templates/master/global/css/img/ppimages/pp_logo_402_v1.png
+420=/templates/master/global/css/img/ppimages/pp_logo_420_v1.png
 430=/templates/master/global/css/img/ppimages/pp_logo_430_v1.png
 500=/templates/master/global/css/img/ppimages/pp_logo_500_v1.png
 705=/templates/master/global/css/img/ppimages/pp_logo_705_v1.png
@@ -61,6 +62,8 @@
 855=/templates/master/global/css/img/ppimages/pp_logo_855_v1.png
 861=/templates/master/global/css/img/ppimages/pp_logo_861_v2.png
 863=/templates/master/global/css/img/ppimages/pp_logo_863_v1.png
+870=/templates/master/global/css/img/ppimages/pp_logo_870_v1.png
+880=/templates/master/global/css/img/ppimages/pp_logo_880_v1.png
 1400=/templates/master/global/css/img/ppimages/pp_logo_1400_v1.png
 1501=/templates/master/global/css/img/ppimages/pp_logo_1501_v1.png
 1503=/templates/master/global/css/img/ppimages/pp_logo_1503_v1.png
