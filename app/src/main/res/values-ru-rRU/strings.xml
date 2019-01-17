@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Специальный идентификатор</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Код SWIFT</string>
 	<string name="gc.general.paymentProcessing">Мы обрабатываем Ваш платеж. Пожалуйста, подождите. Обработка платежа может занять несколько секунд.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Укажите номер CPF или CNPJ, содержащий действительное значение с 11 или 14 символами.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Имя владельца счета</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Джон Доу</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Номер счета</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Введенная карта не поддерживается. Введите другую карту или выберите другой способ оплаты.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Введите действительный адрес эл. почты</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Введите действительную дату истечения срока действия</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Укажите номер CPF или CNPJ, содержащий действительное значение с 11 или 14 символами.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Выберите одно значение из списка</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Укажите действительный номер карты</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Укажите значение в диапазоне от {minLength} до {maxLength} символов.</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Одобрено</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Завершено</string>
 	<string name="gc.general.paymentProducts.863.processing">Ваш платеж обрабатывается… Проверьте приложение WeChat.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Откройте приложение на телефоне, нажмите «Сканировать», отсканируйте QR-код и нажмите «Оплатить».</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Откройте приложение на телефоне, нажмите «Сканировать», отсканируйте QR-код и нажмите «Оплатить».</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Обновить статус платежа</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Нажмите кнопку ниже, чтобы обновить статус вашего платежа.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Если вам не удается оплатить указанным способом, нажмите «Отмена» и выберите другой способ оплаты для проведения платежа.</string>

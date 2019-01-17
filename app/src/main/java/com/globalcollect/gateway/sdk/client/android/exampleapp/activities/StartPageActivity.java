@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.globalcollect.gateway.sdk.client.android.exampleapp.R;
@@ -51,6 +52,12 @@ public class StartPageActivity extends Activity {
 		}
 		String customerId = customerIdentifierEditText.getValue();
 
+		EditText merchantIdentifierEditText = ((EditText) findViewById(R.id.merchant_identifier));
+		String merchantId = merchantIdentifierEditText.getText().toString();
+
+		EditText merchantNameText = ((EditText) findViewById(R.id.merchant_name));
+		String merchantName = merchantNameText.getText().toString();
+
 		ValidationEditText clientApiUrlEditText = ((ValidationEditText) findViewById(R.id.client_api_url));
 		if (!clientApiUrlEditText.isValid()) {
 			return;
@@ -86,11 +93,13 @@ public class StartPageActivity extends Activity {
 		// and show the PaymentProductSelectionActivity
 		Intent paymentIntent = new Intent(this, PaymentProductSelectionActivity.class);
 
-		// Attach the following objects to the paymentIntent 
+		// Attach the following objects to the paymentIntent
 		paymentIntent.putExtra(Constants.INTENT_PAYMENT_CONTEXT, paymentContext);
 		paymentIntent.putExtra(Constants.INTENT_SHOPPINGCART, cart);
 		paymentIntent.putExtra(Constants.MERCHANT_CLIENT_SESSION_IDENTIFIER, clientSessionIdentifier);
 		paymentIntent.putExtra(Constants.MERCHANT_CUSTOMER_IDENTIFIER, customerId);
+		paymentIntent.putExtra(Constants.MERCHANT_MERCHANT_IDENTIFIER, merchantId);
+		paymentIntent.putExtra(Constants.MERCHANT_NAME, merchantName);
 		paymentIntent.putExtra(Constants.MERCHANT_CLIENT_API_URL, clientApiUrl);
 		paymentIntent.putExtra(Constants.MERCHANT_ASSET_URL, assetUrl);
 		paymentIntent.putExtra(Constants.MERCHANT_ENVIRONMENT_IS_PRODUCTION, environmentIsProduction);

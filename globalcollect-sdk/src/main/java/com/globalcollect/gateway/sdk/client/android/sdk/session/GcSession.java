@@ -4,8 +4,6 @@ import android.content.Context;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.CustomerDetailsAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.CustomerDetailsAsyncTask.OnCustomerDetailsCallCompleteListener;
-import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductPublicKeyAsyncTask;
-import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductPublicKeyAsyncTask.OnPaymentProductPublicKeyLoadedListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductGroupsAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask;
@@ -22,8 +20,6 @@ import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProduct
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductGroupsAsyncTask.OnBasicPaymentProductGroupsCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask.OnBasicPaymentProductsCallCompleteListener;
-import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductNetworksAsyncTask;
-import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductNetworksAsyncTask.OnPaymentProductNetworksCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PublicKeyAsyncTask;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PublicKeyAsyncTask.OnPublicKeyLoadedListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.ThirdPartyStatusAsyncTask;
@@ -64,18 +60,18 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 
 	private static final long serialVersionUID = 686891053207055508L;
 
-	// Cache which contains all paymentproducts that are loaded from the GC gateway
+	// Cache which contains all payment products that are loaded from the GC gateway
 	private Map<PaymentItemCacheKey, BasicPaymentItem> basicPaymentItemMapping = new HashMap<>();
 	private Map<PaymentItemCacheKey, PaymentItem> paymentItemMapping = new HashMap<>();
 
 	// Communicator used for communicating with the GC gateway
 	private C2sCommunicator communicator;
 
-	// C2sPaymentProductContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
+	// C2sPaymentProductContext which contains all necessary data for making a call to the GC gateway to retrieve payment products
 	private PaymentContext paymentContext;
 
 	// Flag to determine if the iinlookup is being executed,
-	// so it wont be fired everytime a character is typed in the edittext while there is another call beeing executed
+	// so it won't be fired every time a character is typed in the edittext while another call is being executed
 	private Boolean iinLookupPending = false;
 
 	// Used for identifying the customer on the GC gateway
@@ -361,25 +357,6 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 		task.execute();
 	}
 
-	public void getPaymentProductNetworks(Context context, String productId, PaymentContext paymentContext, OnPaymentProductNetworksCallCompleteListener listener) {
-
-		if (context == null) {
-			throw new InvalidParameterException("Error getting PaymentProductNetworks, context may not be null");
-		}
-		if (productId == null) {
-			throw new InvalidParameterException("Error getting PaymentProductNetworks, productId may not be null");
-		}
-		if (paymentContext == null) {
-			throw new InvalidParameterException("Error getting PaymentProductNetworks, paymentContext may not be null");
-		}
-		if (listener == null) {
-			throw new InvalidParameterException("Error getting PaymentProductNetworks, listener may not be null");
-		}
-
-		PaymentProductNetworksAsyncTask task = new PaymentProductNetworksAsyncTask(context, productId, paymentContext, communicator, listener);
-		task.execute();
-	}
-
 	/**
 	 * Gets the IinDetails for a given partialCreditCardNumber
 	 *
@@ -435,29 +412,6 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 		task.execute();
 	}
 
-
-	/**
-	 * Retrieves the publickey for a specific payment product from the GC gateway
-	 *
-	 * @param context, used for reading device metadata, which is send to the GC gateway
-	 * @param listener, OnPaymentProductPublicKeyLoaded listener which is called when the Android pay public key is retrieved
-	 *
-	 */
-	public void getPaymentProductPublicKey(Context context, String productId, OnPaymentProductPublicKeyLoadedListener listener) {
-
-		if (context == null ) {
-			throw new InvalidParameterException("Error getting payment product public key, context may not be null");
-		}
-		if (productId == null) {
-			throw new InvalidParameterException("Error getting payment product public key, productId may not be null");
-		}
-		if (listener == null ) {
-			throw new InvalidParameterException("Error getting payment product public key, listener may not be null");
-		}
-		PaymentProductPublicKeyAsyncTask task = new PaymentProductPublicKeyAsyncTask(context, productId, communicator, listener);
-		task.execute();
-	}
-
 	/**
 	 * Retrieves the ThirdPartyPaymentStatus of a payment that is being processed with a
 	 * third party. This call has been designed specifically for payment products that support
@@ -493,13 +447,13 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 	public void preparePaymentRequest(PaymentRequest paymentRequest, Context context, OnPaymentRequestPreparedListener listener) {
 
 		if (paymentRequest == null ) {
-			throw new InvalidParameterException("Error preparing pamyentrequest, paymentRequest may not be null");
+			throw new InvalidParameterException("Error preparing payment request, paymentRequest may not be null");
 		}
 		if (context == null ) {
-			throw new InvalidParameterException("Error preparing pamyentrequest, context may not be null");
+			throw new InvalidParameterException("Error preparing payment request, context may not be null");
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error preparing pamyentrequest, listener may not be null");
+			throw new InvalidParameterException("Error preparing payment request, listener may not be null");
 		}
 
 		Map<String, String>  metaData = communicator.getMetadata(context);

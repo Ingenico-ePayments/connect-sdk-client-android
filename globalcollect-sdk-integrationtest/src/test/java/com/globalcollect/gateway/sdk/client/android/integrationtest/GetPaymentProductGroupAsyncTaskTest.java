@@ -19,7 +19,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Test class for the retrieval of a payment product
+ * Test class for the retrieval of a payment product group
  *
  * Copyright 2014 Global Collect Services B.V
  *

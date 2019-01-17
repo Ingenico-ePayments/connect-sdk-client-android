@@ -41,7 +41,6 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 	private PaymentProduct320SpecificData paymentProduct320SpecificData;
 	private PaymentProduct863SpecificData paymentProduct863SpecificData;
 
-
 	public String getId(){
 		return id;
 	}

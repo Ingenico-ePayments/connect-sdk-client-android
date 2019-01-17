@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Özel tanımlama kodu</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift kodu</string>
 	<string name="gc.general.paymentProcessing">Ödemenizi işleme alıyoruz. Lütfen bekleyin. Ödemenizi işleme almak birkaç saniye sürebilir.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Lütfen CPF veya CNPJ numaranız olarak 11 veya 14 karakterli ve geçerli bir değer verin.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Hesap sahibinin adı</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Hesap numarası</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Girdiğiniz kart desteklenmiyor. Lütfen başka bir kart girin veya başka bir ödeme yöntemi deneyin.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Lütfen geçerli bir e-posta adresi girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Lütfen geçerli bir son kullanma tarihi girin</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Lütfen CPF veya CNPJ numaranız olarak 11 veya 14 karakterli ve geçerli bir değer verin.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Lütfen listedeki değerlerden birini seçin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Lütfen geçerli bir kart numarası girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Lütfen {minLength} ve {maxLength} karakter arasında bir değer girin</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Onaylandı</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Tamamlandı</string>
 	<string name="gc.general.paymentProducts.863.processing">Ödemeniz gerçekleştiriliyor... Lütfen WeChat uygulamanızı kontrol edin.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Telefonunuzda uygulamayı açın, “tara” düğmesine tıklayarak kare kodu tarayın ve ‘Öde’ düğmesine tıklayın.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Telefonunuzda uygulamayı açın, “tara” düğmesine tıklayarak kare kodu tarayın ve ‘Öde’ düğmesine tıklayın.</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Ödeme durumunu yenileyin</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Ödeme durumunuzu yenilemek için aşağıdaki düğmeyi tıklayın.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Yukarıda belirtilen ödeme yöntemiyle ödeme yapamıyorsanız lütfen ‘İptal’ düğmesine tıklayın ve başka bir ödeme ürününü seçerek ödemenizi tamamlayın.</string>

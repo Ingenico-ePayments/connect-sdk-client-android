@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">شناسه خاص</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">کد Swift</string>
 	<string name="gc.general.paymentProcessing">در حال پردازش پرداخت شما هستیم. لطفاً صبر کنید. پردازش پرداخت شما ممکن است چند ثانیه طول بکشد.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">مقداری معتبر متشکل از 11 یا 14 نویسه برای شماره CPF یا CNPJ خود ارائه کنید.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">نام صاحب حساب</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">شماره حساب</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">کارتی که وارد کرده‌اید پشتیبانی نمی‌شود. لطفاً کارت دیگری را وارد کنید یا روش پرداخت دیگری را امتحان نمایید.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">لطفاً یک آدرس ایمیل معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">لطفاً یک تاریخ انقضای معتبر اعلام کنید</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">مقداری معتبر متشکل از 11 یا 14 نویسه برای شماره CPF یا CNPJ خود ارائه کنید.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">لطفاً یکی از مقادیر داخل فهرست را انتخاب کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">لطفاً یک شماره کارت معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">لطفاً مقداری بین {minLength} و {maxLength} کاراکتر ارائه دهید</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">مجاز</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">انجام شده</string>
 	<string name="gc.general.paymentProducts.863.processing">پرداخت شما در مرحله پردازش است... برنامه WeChat خود را بررسی کنید.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">برنامه را در تلفن خود باز کنید، برای اسکن کردن کد QR بر روی «اسکن» (Scan) و سپس بر روی «پرداخت» (Pay) کلیک کنید.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">برنامه را در تلفن خود باز کنید، برای اسکن کردن کد QR بر روی «اسکن» (Scan) و سپس بر روی «پرداخت» (Pay) کلیک کنید.</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">بازآوری وضعیت پرداخت</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">برای بازآوری وضعیت پرداخت خود، بر روی دکمه زیر کلیک کنید.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">اگر نتوانید پرداخت را به روش پرداخت پیش-گفته انجام دهید، باید بر روی «لغو» (Cancel) تلنگر بزنید و روش پرداخت دیگری را برای تکمیل فرآیند پرداخت انتخاب کنید.</string>

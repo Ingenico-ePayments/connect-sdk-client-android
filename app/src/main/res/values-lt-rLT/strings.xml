@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Specialus kodas</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift kodas</string>
 	<string name="gc.general.paymentProcessing">Apdorojame jūsų mokėjimą. Palaukite. Gali užtrukti keletą sekundžių, kol apdorosime jūsų mokėjimą.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Pateikite tinkamą CPF arba CNPJ numerio vertę, sudarytą iš 11 arba 14 ženklų.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Sąskaitos savininko pavadinimas</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Vardenis Pavardenis</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Sąskaitos Nr.</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Jūsų įvesta kortelė nepalaikoma. Įveskite kitą kortelę arba bandykite rinktis kitą mokėjimo metodą.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Nurodykite galiojantį el. pašto adresą</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Nurodykite tinkamą galiojimo datą</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Pateikite tinkamą CPF arba CNPJ numerio vertę, sudarytą iš 11 arba 14 ženklų.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Pasirinkite vieną iš sąrašo verčių</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Nurodykite galiojantį kortelės numerį</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Nurodykite vertę tarp {minLength} ir {maxLength} simbolių</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Patvirtinta</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Atlikta</string>
 	<string name="gc.general.paymentProducts.863.processing">Jūsų mokėjimas apdorojamas… Pasitikrinkite programėlę „WeChat“.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Atverkite programėlę telefone, spustelėkite „Scan“ (nuskaityti), kad nuskaitytumėte QR kodą, tada spustelėkite „Pay“ (mokėti).</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Atverkite programėlę telefone, spustelėkite „Scan“ (nuskaityti), kad nuskaitytumėte QR kodą, tada spustelėkite „Pay“ (mokėti).</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Atnaujinkite mokėjimo būseną</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Paspauskite žemiau esantį mygtuką, kad atnaujintumėte mokėjimo būseną.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Jei negalite sumokėti pirmiau nurodytu būdu, palieskite „Cancel“ (atšaukti) ir pasirinkite kitą mokėjimo priemonę mokėjimui atlikti.</string>

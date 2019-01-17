@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Ειδικό αναγνωριστικό</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Κωδικός Swift</string>
 	<string name="gc.general.paymentProcessing">Επεξεργαζόμαστε την πληρωμή σας. Παρακαλούμε περιμένετε. Μπορεί να χρειαστούν μερικά δευτερόλεπτα για την επεξεργασία της πληρωμής σας.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Για τον αριθμό σας CPF ή CNPJ, εισαγάγετε μια έγκυρη τιμή που να αποτελείται από 11 ή 14 χαρακτήρες.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Όνομα κατόχου λογαριασμού</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Αριθμός λογαριασμού</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Η κάρτα που εισαγάγατε δεν υποστηρίζεται. Εισαγάγετε άλλη κάρτα ή επιλέξτε άλλον τρόπο πληρωμής.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Συμπληρώστε μια έγκυρη διεύθυνση email</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Συμπληρώστε μια έγκυρη ημερομηνία λήξης</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Για τον αριθμό σας CPF ή CNPJ, εισαγάγετε μια έγκυρη τιμή που να αποτελείται από 11 ή 14 χαρακτήρες.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Επιλέξτε μία από τις τιμές της λίστας</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Συμπληρώστε έναν έγκυρο αριθμό κάρτας</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Δώστε μια τιμή μεταξύ {minLength} και {maxLength} χαρακτήρων</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Έχει εγκριθεί</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Έχει ολοκληρωθεί</string>
 	<string name="gc.general.paymentProducts.863.processing">Η πληρωμή σας βρίσκεται σε επεξεργασία... Ελέγξτε την εφαρμογή σας WeChat.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Ανοίξτε την εφαρμογή στο τηλέφωνό σας, κάντε κλικ στο «σάρωση» για να σαρώσετε τον κωδικό QR και κάντε κλικ στο «Πληρωμή».</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Ανοίξτε την εφαρμογή στο τηλέφωνό σας, κάντε κλικ στο «σάρωση» για να σαρώσετε τον κωδικό QR και κάντε κλικ στο «Πληρωμή».</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Ανανέωση κατάστασης πληρωμής</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Κάντε κλικ στο παρακάτω κουμπί για να ανανεωθεί η κατάσταση της πληρωμής σας.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Εάν δεν έχετε τη δυνατότητα να πληρώσετε με τον παραπάνω τρόπο πληρωμής, πατήστε «Ακύρωση» και επιλέξτε ένα άλλο μέσο πληρωμής για ολοκληρώσετε την πληρωμή σας.</string>

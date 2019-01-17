@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">特殊 ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift 代碼</string>
 	<string name="gc.general.paymentProcessing">正在付款。請稍候。付款需要幾秒鐘。</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">您的 CPF 或 CNPJ 編號請提供 11 或 14 個字元的有效值。</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">帳戶持有人姓名</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">帳號</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">您所插入的卡不支持。請插入另一張卡或嘗試其他付款的方式。</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">請提供一個有效的電子郵件地址</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">請提供一個有效的到期日</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">您的 CPF 或 CNPJ 編號請提供 11 或 14 個字元的有效值。</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">請從列表中選擇一個值</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">請提供一個有效的身份證號碼</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">請提供一個{minLength}和{maxLength}字元之間的數值</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">已授權</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">已完成</string>
 	<string name="gc.general.paymentProducts.863.processing">您的付款正在處理中……請檢查您的微信應用程式。</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">在手機上開啟應用程式，按下「掃描」以掃描 QR 碼，然後按下「支付」。</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">在手機上開啟應用程式，按下「掃描」以掃描 QR 碼，然後按下「支付」。</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">重新整理付款狀態</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">點按下方的按鈕以重新整理您的付款狀態。</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">如果您無法使用上述方式付款，請按下「取消」，然後選擇其他付款方式以完成付款。</string>

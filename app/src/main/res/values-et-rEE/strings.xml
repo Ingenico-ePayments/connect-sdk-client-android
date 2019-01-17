@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Spetsiaalne ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">SWIFT kood</string>
 	<string name="gc.general.paymentProcessing">Me töötleme teie makset. Palun oodake. Teie makse töötlemiseks kulub mõni sekund.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Palun sisestage oma kehtiv 11- või 14-kohaline CPF- või CNPJ-number.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Konto omaniku nimi</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Konto number</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Sisestatud kaarti ei toetata. Palun sisestage muu kaart või proovige muud makseviisi.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Palun märkige õige meiliaadress</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Palun märkige õige aegumise kuupäev</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Palun sisestage oma kehtiv 11- või 14-kohaline CPF- või CNPJ-number.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Palun valige loetelust üks väärtus</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Palun märkige õige kaardi number</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Palun sisestage tähemärkide arv, mis oleks vahemikus {minLength} ja {maxLength}</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Kinnitatud</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Lõpetatud</string>
 	<string name="gc.general.paymentProducts.863.processing">Teie makset töödeldakse. Palun vaadake oma rakendusse WeChat.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Avage telefonis rakendus, toksake QR-koodi skannimiseks „Scan“ ja seejärel toksake „Pay“.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Avage telefonis rakendus, toksake QR-koodi skannimiseks „Scan“ ja seejärel toksake „Pay“.</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Makse staatuse värskendamine</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Vajutage all olevale nupule, et värskendada oma makse staatust.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Kui te ei saa kirjeldatud maksemeetodit kasutades tasuda, toksake „Cancel“ ja valige makse sooritamiseks muu võimalus.</string>

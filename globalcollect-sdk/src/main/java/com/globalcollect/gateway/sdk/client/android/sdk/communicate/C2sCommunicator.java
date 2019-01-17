@@ -16,8 +16,6 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.CustomerDetailsReq
 import com.globalcollect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductNetworksResponse;
-import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentProductPublicKeyResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Region;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.ThirdPartyStatusResponse;
@@ -31,8 +29,6 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.Key
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
 import com.google.gson.Gson;
-
-import org.apache.commons.lang3.Validate;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -510,68 +506,6 @@ public class C2sCommunicator implements Serializable {
 		}
 	}
 
-	/**
-	 * Retrieves a list of networks, which are allowed to be used with the payment product ID that is
-	 * provided.
-	 *
-	 * @param context, used to read the devices meta-data
-	 * @param productId, the productId for which the networks should be retrieved
-	 * @param paymentContext, the paymentcontext for which the networks should be checked
-	 *
-     * @return PaymentProductNetworksResponse, or null if an error occurred.
-     */
-	public PaymentProductNetworksResponse getPaymentProductNetworks(Context context, String productId, PaymentContext paymentContext) {
-
-		Validate.notNull(context);
-		Validate.notNull(productId);
-		Validate.notNull(paymentContext);
-
-		HttpURLConnection connection = null;
-
-		try {
-
-			// Build the complete url which is called
-			String clientApiUrl = configuration.getBaseUrl();
-			String paymentProductPath = Constants.GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_NETWORKS_PATH.replace("[cid]", configuration.getCustomerId()).replace("[pid]", productId);
-			String completePath = clientApiUrl + paymentProductPath;
-
-			// Add query parameters
-			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
-			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
-			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
-			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
-			queryString.append("&").append(createCacheBusterParameter());
-			completePath += queryString.toString();
-
-			// Do the call and deserialise the result to PaymentProductNetworksResponse
-			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
-
-			// Log the response
-			if (Constants.ENABLE_REQUEST_LOGGING) {
-				logResponse(connection, responseBody);
-			}
-			return gson.fromJson(responseBody, PaymentProductNetworksResponse.class);
-
-		} catch (CommunicationException e) {
-			Log.i(TAG, "Error while getting paymentproduct networks:" + e.getMessage());
-			return null;
-		} catch (Exception e) {
-			Log.i(TAG, "Error while getting paymentproduct networks:" + e.getMessage());
-			return null;
-		} finally {
-			try {
-				if (connection != null) {
-					connection.getInputStream().close();
-					connection.disconnect();
-				}
-			} catch (IOException e) {
-				Log.i(TAG, "Error while getting paymentproduct networks:" + e.getMessage());
-			}
-		}
-	}
-
 
 	/**
 	 * Get the IIN details for the entered partial creditcardnumber
@@ -676,54 +610,6 @@ public class C2sCommunicator implements Serializable {
 				}
 			} catch (IOException e) {
 				Log.i(TAG, "Error getting Public key response:" + e.getMessage());
-			}
-		}
-	}
-
-
-	/**
-	 * Retrieves the Payment Product publickey from the GC gateway
-	 *
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param productId, used to determine for which payment product to retrieve the public key
-	 *
-	 * @return PaymentProductPublicKeyResponse response , or null when an error has occured
-	 */
-	public PaymentProductPublicKeyResponse getPaymentProductPublicKey(Context context, String productId) {
-
-		HttpURLConnection connection = null;
-
-		try {
-
-			// Construct the url for the PublicKey call
-			String paymentProductPath = Constants.GC_GATEWAY_PAYMENTPRODUCT_PUBLIC_KEY_PATH.replace("[cid]", configuration.getCustomerId()).replace("[pid]", productId);
-			String url = configuration.getBaseUrl() + paymentProductPath;
-
-			// Do the call and deserialize the result to PaymentProductPublicKeyResponse
-			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
-
-			// Log the response
-			if (Constants.ENABLE_REQUEST_LOGGING) {
-				logResponse(connection, responseBody);
-			}
-
-			return gson.fromJson(responseBody, PaymentProductPublicKeyResponse.class);
-
-		} catch (CommunicationException e) {
-			Log.i(TAG, "Error getting Payment Product Public key response:" + e.getMessage());
-			return null;
-		}  catch (Exception e) {
-			Log.i(TAG, "Error getting Payment Product Public key response:" + e.getMessage());
-			return null;
-		} finally {
-			try {
-				if (connection != null) {
-					connection.getInputStream().close();
-					connection.disconnect();
-				}
-			} catch (IOException e) {
-				Log.i(TAG, "Error getting Payment Product Public key response:" + e.getMessage());
 			}
 		}
 	}

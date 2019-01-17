@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Poseban identifikacijski broj</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift oznaka</string>
 	<string name="gc.general.paymentProcessing">Vaša uplata se obrađuje. Pričekajte. Obrada vaše uplate može potrajati nekoliko sekundi.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Navedite važeću vrijednost od 11 ili 14 znakova za svoj CPF ili CNPJ broj.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Ime nositelja računa</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Ivan Horvat</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Broj računa</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Unesena kartica nije podržana. Molimo vas da unesete drugu karticu ili odaberete drugi način plaćanja.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Molimo da unesete valjanu adresu e-pošte</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Molimo da unesete važeći rok valjanosti</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Navedite važeću vrijednost od 11 ili 14 znakova za svoj CPF ili CNPJ broj.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Molimo da odaberete jednu od ponuđenih vrijednosti</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Molimo da unesete valjani broj kartice</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Molimo da unesete vrijednost između {minLength} i {maxLength} znakova</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Autorizirano</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Završeno</string>
 	<string name="gc.general.paymentProducts.863.processing">Vaša se uplata obrađuje... Provjerite svoju aplikaciju WeChat.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Otvorite aplikaciju na svojem mobitelu, kliknite „Scan” („Skeniranje”) da biste skenirali QR kôd pa kliknite „Pay” („Plati”).</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Otvorite aplikaciju na svojem mobitelu, kliknite „Scan” („Skeniranje”) da biste skenirali QR kôd pa kliknite „Pay” („Plati”).</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Osvježite status plaćanja</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Odaberite donji gumb za osvježenje statusa plaćanja.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ako ne možete izvršiti uplatu putem prethodnog načina plaćanja, dodirnite„Cancel” („Odustani”) pa odaberite drugi proizvod za plaćanje da biste dovršili plaćanje.</string>

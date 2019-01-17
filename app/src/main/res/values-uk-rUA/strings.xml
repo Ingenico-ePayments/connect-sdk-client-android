@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Спеціальний ідентифікатор</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift код</string>
 	<string name="gc.general.paymentProcessing">Триває обробка платежу. Зачекайте. Обробка платежу може тривати кілька секунд.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Укажіть дійсне значення свого номера CPF або CNPJ, яке має складатися з 11 або 14 символів.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Ім\'я власника рахунку</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Джон Доу</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Номер рахунку</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Вставлена картка не підтримується. Вставте іншу картку або скористайтеся іншим способом оплати.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Введіть дійсну адресу електронної пошти</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Введіть актуальний термін дії</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Укажіть дійсне значення свого номера CPF або CNPJ, яке має складатися з 11 або 14 символів.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Виберіть одне зі значень зі списку</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Введіть дійсний номер картки</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Укажіть значення довжиною від {minLength} до {maxLength} символів</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Авторизовано</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Завершено</string>
 	<string name="gc.general.paymentProducts.863.processing">Триває обробка платежу... Перевірте перебіг у своєму додатку WeChat.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Запустіть додаток на телефоні, натисніть «Сканувати», щоб відсканувати QR-код, а потім клацніть «Оплатити».</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Запустіть додаток на телефоні, натисніть «Сканувати», щоб відсканувати QR-код, а потім клацніть «Оплатити».</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Оновити статус платежу</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Натисніть кнопку нижче, щоб оновити статус платежу.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Якщо вам не вдається здійснити оплату за допомогою описаного вище способу, натисніть «Скасувати» та виберіть інший платіжний інструмент для здійснення платежу.</string>

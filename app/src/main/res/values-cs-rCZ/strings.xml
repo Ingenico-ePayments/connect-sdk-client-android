@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Zvláštní ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Kód SWIFT</string>
 	<string name="gc.general.paymentProcessing">Zpracováváme Vaši platbu. Čekejte, prosím. Zpracování Vaší platby může trvat několik sekund.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Zadejte platnou hodnotu o 11 až 14 znacích vašeho čísla CPF nebo CNPJ.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Jméno majitele účtu</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">Jan Novák</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Číslo účtu</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Karta, kterou jste zadali, není podporovaná. Zadejte, prosím, jinou kartu nebo zkuste jinou platební metodu.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Zadejte platný e-mail</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Zadejte platné datum expirace</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Zadejte platnou hodnotu o 11 až 14 znacích vašeho čísla CPF nebo CNPJ.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Vyberte alespoň jednu hodnotu ze seznamu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Zadejte platné číslo karty</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Uveďte prosím hodnotu v délce {minLength} až {maxLength} znaků</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Autorizováno</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Dokončeno</string>
 	<string name="gc.general.paymentProducts.863.processing">Vaše platba se zpracovává… Zkontrolujte aplikaci WeChat.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">V telefonu otevřete aplikaci a kliknutím na „naskenovat“ naskenujte QR kód a klikněte na „Zaplatit“.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">V telefonu otevřete aplikaci a kliknutím na „naskenovat“ naskenujte QR kód a klikněte na „Zaplatit“.</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Aktualizace stavu platby</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Pro aktualizaci informací o stavu platby klikněte na níže uvedené tlačítko.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Pokud nejste schopni zaplatit výše uvedenou platební metodou, klikněte na „Zrušit“ a pro dokončení platby vyberte jiný platební produkt.</string>

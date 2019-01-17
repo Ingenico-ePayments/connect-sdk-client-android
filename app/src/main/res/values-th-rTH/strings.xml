@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">หมายเลขประจำตัวพิเศษ</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">รหัส Swift Code</string>
 	<string name="gc.general.paymentProcessing">เรากำลังดำเนินการชำระเงินของคุณ โปรดรอ อาจใช้เวลาหลายวินาทีในการดำเนินการชำระเงิน</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">โปรดระบุค่า CPF ของคุณที่ถูกต้อง 11 หรือ 14 ตัว หรือหมายเลข CNPJ</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">ชื่อเจ้าของบัญชี</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">สมชาย ใจดี</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">หมายเลขบัญชี</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">คุณไม่สามารถชำระเงินด้วยบัตรที่คุณกรอกได้ โปรดกรอกข้อมูลบัตรอื่นหรือลองวิธีการชำระเงินแบบอื่น</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">กรุณาระบุอีเมลแอดเดรสที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">กรุณาระบุวันหมดอายุที่ถูกต้อง</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">โปรดระบุค่า CPF ของคุณที่ถูกต้อง 11 หรือ 14 ตัว หรือหมายเลข CNPJ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">กรุณาเลือกมาหนึ่งตัวเลือกจากรายการ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">กรุณาระบุเลขบัตรที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">โปรดให้ค่าตัวอักษรระหว่าง {minLength} และ {maxLength}</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">ได้รับการอนุญาต</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">สำเร็จเรียบร้อยแล้ว</string>
 	<string name="gc.general.paymentProducts.863.processing">กำลังประมวลผลการชำระเงินของคุณ โปรดตรวจสอบแอปพลิเคชัน WeChat ของคุณ</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">เปิดแอปพลิเคชันบนโทรศัพท์ของคุณ คลิก “สแกน” เพื่อสแกนรหัส QR และคลิก “ชำระเงิน”</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">เปิดแอปพลิเคชันบนโทรศัพท์ของคุณ คลิก “สแกน” เพื่อสแกนรหัส QR และคลิก “ชำระเงิน”</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">รีเฟรชสถานะการชำระเงิน</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">คลิกปุ่มด้านล่างเพื่อรีเพรชสถานะการชำระเงินของคุณ</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">เมื่อคุณไม่สามารถชำระเงินด้วยวิธีชำระเงินข้างต้นได้ โปรดคลิก “ยกเลิก” และเลือกวิธีการชำระเงินแบบอื่นเพื่อชำระเงินของคุณ</string>

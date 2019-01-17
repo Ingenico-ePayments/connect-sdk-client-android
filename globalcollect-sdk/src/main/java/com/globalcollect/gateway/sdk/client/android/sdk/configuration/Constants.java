@@ -7,7 +7,7 @@ package com.globalcollect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v4.3.0";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v4.4.0";
 
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
@@ -17,7 +17,6 @@ public class Constants {
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_PATH = "[cid]/products/[pid]";
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_DIRECTORY_PATH = "[cid]/products/[pid]/directory";
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_NETWORKS_PATH = "[cid]/products/[pid]/networks";
-	public final static String GC_GATEWAY_PAYMENTPRODUCT_PUBLIC_KEY_PATH = "[cid]/products/[pid]/publicKey";
 	public final static String GC_GATEWAY_CUSTOMERDETAILS_PATH = "[cid]/products/[pid]/customerDetails";
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTGROUPS_PATH = "[cid]/productgroups";
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCTGROUP_PATH = "[cid]/productgroups/[gid]";
@@ -47,11 +46,10 @@ public class Constants {
 
 	/** Payment product Id's of android and apple pay **/
 	public final static String PAYMENTPRODUCTID_APPLEPAY = "302";
-	public final static String PAYMENTPRODUCTID_ANDROIDPAY = "320";
+	public final static String PAYMENTPRODUCTID_GOOGLEPAY = "320";
 
-	/** Android Pay field IDs **/
-	public static String ANDROID_PAY_TOKEN_FIELD_ID 				= "encryptedPaymentData";
-	public static String ANDROID_PAY_GOOGLE_TRANSACTION_ID_FIELD_ID = "transactionId";
+	public final static int GOOGLE_API_VERSION = 2;
+	public final static String 	GOOGLE_PAY_TOKEN_FIELD_ID = "encryptedPaymentData";
 
 	/** Boleto Bancario product ID and Fiscal number field ID **/
 	public static String PAYMENTPRODUCTID_BOLETOBANCARIO 	= "1503";

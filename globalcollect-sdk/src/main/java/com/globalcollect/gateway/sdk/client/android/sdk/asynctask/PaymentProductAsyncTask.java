@@ -69,40 +69,43 @@ public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProd
 		this.listeners = listeners;
 	}
 
-    @Override
-    protected PaymentProduct doInBackground(String... params) {
+	@Override
+	protected PaymentProduct doInBackground(String... params) {
 
-		if (productId.equals(Constants.PAYMENTPRODUCTID_APPLEPAY)
-				|| ((productId.equals(Constants.PAYMENTPRODUCTID_ANDROIDPAY) && !AndroidPayUtil.isAndroidPayAllowed(context, paymentContext, communicator)))) {
+		if (productId.equals(Constants.PAYMENTPRODUCTID_APPLEPAY)) {
 
-			// Android Pay is not allowed for the current payment, so the payment product should not be retrieved.
+			// Apple pay is not supported for Android devices
 			return null;
 		} else {
 
-			// Load the PaymentProduct from the GC gateway
-			return communicator.getPaymentProduct(productId, context, paymentContext);
+			// Don't return Google Pay if it is not supported for the current payment.
+			PaymentProduct paymentProduct = communicator.getPaymentProduct(productId, context, paymentContext);
+			if (paymentProduct != null && (productId.equals(Constants.PAYMENTPRODUCTID_GOOGLEPAY) && !GooglePayUtil.isGooglePayAllowed(context, communicator, paymentProduct))) {
+				return null;
+			}
+			return paymentProduct;
 		}
-    }
+	}
 
 
-    @Override
-    protected void onPostExecute(PaymentProduct paymentProduct) {
+	@Override
+	protected void onPostExecute(PaymentProduct paymentProduct) {
 
-    	// Call listener callback
-    	for (OnPaymentProductCallCompleteListener listener : listeners) {
-    		listener.onPaymentProductCallComplete(paymentProduct);
-    	}
-    }
+		// Call listener callback
+		for (OnPaymentProductCallCompleteListener listener : listeners) {
+			listener.onPaymentProductCallComplete(paymentProduct);
+		}
+	}
 
 
-    /**
-     * Interface for OnPaymentProductCallComplete listener
-     * Is called from the PaymentProductAsyncTask when it has retrieved a PaymentProduct with fields
-     *
-     * Copyright 2017 Global Collect Services B.V
-     *
-     */
-    public interface OnPaymentProductCallCompleteListener {
-        public void onPaymentProductCallComplete(PaymentProduct paymentProduct);
-    }
+	/**
+	 * Interface for OnPaymentProductCallComplete listener
+	 * Is called from the PaymentProductAsyncTask when it has retrieved a PaymentProduct with fields
+	 *
+	 * Copyright 2017 Global Collect Services B.V
+	 *
+	 */
+	public interface OnPaymentProductCallCompleteListener {
+		public void onPaymentProductCallComplete(PaymentProduct paymentProduct);
+	}
 }

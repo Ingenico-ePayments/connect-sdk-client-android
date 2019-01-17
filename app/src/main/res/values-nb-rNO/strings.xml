@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Spesial-ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift-kode</string>
 	<string name="gc.general.paymentProcessing">Vi behandler betalingen din. Vennligst vent. Det kan ta flere sekunder å behandle betalingen.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Oppgi en gyldig verdi på 11 eller 14 tegn for ditt CPF- eller CNPJ-nummer.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Kontoinnehavers navn</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Kontonummer</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Kortet du oppga støttes ikke. Vennligst oppgi et annet kort eller prøve en annen betalingsmetode.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Vennligst oppgi en gyldig e-postadresse</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Vennligst oppgi en gyldig utløpsdato</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Oppgi en gyldig verdi på 11 eller 14 tegn for ditt CPF- eller CNPJ-nummer.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Vennligst velg en av verdiene fra listen</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Vennligst oppgi et gyldig kortnummer</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vennligst oppgi en verdi på mellom {minLength} og {maxLength} tegn</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Autorisert</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Fullført</string>
 	<string name="gc.general.paymentProducts.863.processing">Betalingen din utføres nå... Sjekk WeChat appen din.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Åpne appen på telefonen din, klikk på “scan” for å scanne QR-koden og klikk på ‘Betal’.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Åpne appen på telefonen din, klikk på “scan” for å scanne QR-koden og klikk på ‘Betal’.</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Oppdater betalingsstatus</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Klikk på knappen nedenfor for å oppdatere betalingsstatusen din.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Dersom du ikke kan betale med betalingsmåten nevnt over klikker du på ‘Avbryt’ og velger en annen betalingsmåte for å fullføre din betaling.</string>

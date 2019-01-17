@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">특별 ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">스위프트 코드</string>
 	<string name="gc.general.paymentProcessing">결제가 진행되고 있습니다. 잠시만 기다려주십시오. 결제 진행에 몇 초가 걸릴 수 있습니다.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">CPF 또는 CNPJ 번호에 대한 11 또는 14개 문자의 유효한 값을 입력하십시오.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">예금주명</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">계좌 번호</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">입력한 카드는 이용하실 수 없습니다. 다른 카드를 입력하거나 다른 결제 수단을 이용해 주십시오.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">유효한 이메일 주소를 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">유효한 만료일을 입력하십시오</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">CPF 또는 CNPJ 번호에 대한 11 또는 14개 문자의 유효한 값을 입력하십시오.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">목록에서 1개의 값을 선택하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">유효한 카드 번호를 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">{minLength}~{maxLength} 사이 값을 입력하세요.</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">승인됨</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">완료됨</string>
 	<string name="gc.general.paymentProducts.863.processing">결제 처리 중입니다… WeChat 앱을 확인하세요.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">폰에서 앱을 열고 "스캔"을 클릭하여 QR 코드를 스캔한 후 ‘결제’를 클릭하세요.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">폰에서 앱을 열고 "스캔"을 클릭하여 QR 코드를 스캔한 후 ‘결제’를 클릭하세요.</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">결제 상태 새로 고침</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">결제 상태를 새로 고침 하려면 아래 버튼을 클릭하십시오.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">위 결제 방법으로 결제할 수 없으면 \'취소\'를 탭하고 다른 결제 상품을 선택하여 결제를 완료하세요.</string>

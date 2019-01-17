@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">الرقم الخاص</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">رمز السويفت (جمعية الاتصالات المالية ما بين المصارف العالمية التي تتّبع نظام الرموز الدولية للتعرّف على العملات الأجنبية)</string>
 	<string name="gc.general.paymentProcessing">جار الآن معالجة عملية الدفع الخاصة بك. يرجى الانتظار. قد يستغرق الأمر عدة دقائق لمعالجة عملية الدفع الخاصة بك.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">يُرجى تقديم قيمة صحيحة مُكوّنة من 11 أو 14 حرفًا لـ CPF أو رقم CNPJ.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">اسم صاحب الحساب</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">جون دو</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">رقم الحساب</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">البطاقة التي أدخلتها غير مدعومة. يرجى إدخال بطاقة أخرى أو تجربة طريقة أخرى للدفع.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">يرجى تحديد عنوان بريد إلكتروني صحيح</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">يرجى تحديد تاريخ استحقاق صحيح</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">يُرجى تقديم قيمة صحيحة مُكوّنة من 11 أو 14 حرفًا لـ CPF أو رقم CNPJ.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">يرجى اختيار إحدى القيم الواردة في القائمة</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">يرجى تحديد رقم البطاقة الصحيح</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">يرجى تقديم قيمة تتراوح بين {minLength} و{maxLength} رمز</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">معتمد</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">مكتمل</string>
 	<string name="gc.general.paymentProducts.863.processing">يجري حاليًا إتمام عملية الدفع... يُرجى مراجعة تطبيق WeChat.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">افتح التطبيق على هاتفك، انقر "مسح ضوئي" لكي تمسح رمز الاستجابة السريعة ضوئيًا وانقر "دفع".</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">افتح التطبيق على هاتفك، انقر "مسح ضوئي" لكي تمسح رمز الاستجابة السريعة ضوئيًا وانقر "دفع".</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">تحديث حالة الدفع</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">انقر فوق الزر أدناه لتحديث حالة الدفع الخاصة بك.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">عندما لا تستطيع الدفع باستخدام طريقة الدفع الواردة أعلاه، يُرجى لمس "إلغاء" واختيار منتج دفع آخر لإتمام عملية الدفع.</string>

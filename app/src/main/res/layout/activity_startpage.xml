@@ -77,6 +77,30 @@
 				android:layout_height="wrap_content"
 				android:inputType="text" />
 
+			<TextView
+				android:layout_marginTop="10dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Merchant Identifier:"/>
+
+			<android.widget.EditText
+				android:id="@+id/merchant_identifier"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="text" />
+
+			<TextView
+				android:layout_marginTop="10dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Merchant Name:"/>
+
+			<android.widget.EditText
+				android:id="@+id/merchant_name"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:inputType="text" />
+
 		    <TextView
 		        android:layout_marginTop="10dp"
 		        android:layout_width="wrap_content"
@@ -161,7 +185,7 @@
 				<TextView
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="Use Android Pay production wallet"/>
+					android:text="Use Google Pay production wallet"/>
 
 			</LinearLayout>
 

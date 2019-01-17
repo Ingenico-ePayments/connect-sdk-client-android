@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">מזהה מיוחד</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">קוד Swift</string>
 	<string name="gc.general.paymentProcessing">אנו מעבדים את התשלום. אנא המתן. ייתכן שעיבוד התשלום ייקח כמה שניות.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">מסור ערך חוקי בן 11 או 14 תווים עבור מספר CPE או CNPJ שלך.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">שם בעל החשבון</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">פלוני אלמוני</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">מספר חשבון</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">אין תמיכה בכרטיס שהזנת. אנא הזן כרטיס אחר או השתמש באמצעי תשלום אחר.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">נא הזן כתובת דואר אלקטרוני תקפה</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">נא הזן תאריך פקיעת תוקף חוקי</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">מסור ערך חוקי בן 11 או 14 תווים עבור מספר CPE או CNPJ שלך.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">בחר אחד מהערכים ברשימה</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">ספק מספר כרטיס תקף</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">הזן ערך שאורכו בין {minLength} ל-{maxLength} תווים</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">אושר</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">הושלם</string>
 	<string name="gc.general.paymentProducts.863.processing">התשלום שלך מטופל כעת... בדוק את אפליקציית WeChat.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">פתח את האפליקציה בטלפון, לחץ על Scan (סרוק) כדי לסרוק את קוד QR, ולחץ על Pay (שלם).</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">פתח את האפליקציה בטלפון, לחץ על Scan (סרוק) כדי לסרוק את קוד QR, ולחץ על Pay (שלם).</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">רענן מצב תשלום</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">לחץ על הלחצן למטה כדי לרענן את מצב התשלום.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">אם לא ניתן לשלם בשיטת התשלום המוצעת למעלה, הקש על Cancel (ביטול) ובחר בשיטת תשלום אחרת כדי לסגור את עניין התשלום.</string>

@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">ID đặc biệt</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Mã Swift</string>
 	<string name="gc.general.paymentProcessing">Chúng tôi đang xử lý thanh toán của quý khách. Vui lòng chờ. Có thể mất vài giây để xử lý thanh toán của quý khách.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Vui lòng cung cấp giá trị hợp hệ gồm 11 đến 14 ký tự dành cho số CPF hoặc CNPJ của bạn.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Tên chủ tài khoản</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Số tài khoản</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Thẻ quý khách sử dụng không được hỗ trợ. Vui lòng dùng thẻ khác hoặc thử phương thức thanh toán khác.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Vui lòng cung cấp một địa chỉ email hợp lệ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Vui lòng cung cấp một ngày hết hạn hợp lệ</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Vui lòng cung cấp giá trị hợp hệ gồm 11 đến 14 ký tự dành cho số CPF hoặc CNPJ của bạn.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Vui lòng chọn một giá trị từ danh sách</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Vui lòng cung cấp một số thẻ hợp lệ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vui lòng cung cấp một giá trị từ {minLength} đến {maxLength} ký tự</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Được cho phép</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Đã hoàn tất</string>
 	<string name="gc.general.paymentProducts.863.processing">Thanh toán của bạn đang được xử lý... Vui lòng kiểm tra ứng dụng WeChat của bạn.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Mở ứng dụng trên điện thoại của bạn, nhấp "quét" để quét mã QR và nhấp \'Thanh toán\'.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Mở ứng dụng trên điện thoại của bạn, nhấp "quét" để quét mã QR và nhấp \'Thanh toán\'.</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Cập nhật hiện trạng thanh toán</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Bấm nút bên dưới để cập nhật hiện trạng thanh toán của bạn.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Khi bạn không thể thanh toán bằng phương thức thanh toán ở trên, vui lòng chạm \'Hủy\' và chọn sản phẩm thanh toán khác để hoàn tất việc thanh toán của bạn.</string>

@@ -1,5 +1,6 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.activities;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,16 +12,19 @@ import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Che
 import com.globalcollect.gateway.sdk.client.android.exampleapp.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.MerchantAction;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
-import com.globalcollect.gateway.sdk.client.android.exampleapp.util.AndroidPay;
+import com.globalcollect.gateway.sdk.client.android.exampleapp.util.GooglePay;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.view.selectionview.ProductSelectionView;
 import com.globalcollect.gateway.sdk.client.android.exampleapp.view.selectionview.ProductSelectionViewImpl;
 import com.globalcollect.gateway.sdk.client.android.sdk.GcUtil;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener;
+import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.GooglePayUtil;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask.OnPaymentProductCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener;
 import com.globalcollect.gateway.sdk.client.android.sdk.communicate.C2sCommunicatorConfiguration;
 import com.globalcollect.gateway.sdk.client.android.sdk.manager.AssetManager;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.PreparedPaymentRequest;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.Size;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
@@ -31,8 +35,15 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.Pay
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
 import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSession;
+import com.globalcollect.gateway.sdk.client.android.sdk.session.GcSessionEncryptionHelper;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.wallet.AutoResolveHelper;
+import com.google.android.gms.wallet.PaymentData;
 import com.google.android.gms.wallet.WalletConstants;
 import com.google.gson.Gson;
+import com.google.gson.JsonParser;
+
+import org.json.JSONObject;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -44,20 +55,24 @@ import java.util.Map;
 import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTGROUPID_CARDS;
 import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_AFTERPAY_INSTALLMENTS;
 import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_AFTERPAY_INVOICE;
-import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_ANDROIDPAY;
+import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_GOOGLEPAY;
 import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_BanContact;
 import static com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_BOLETOBANCARIO;
 
 /**
  * Activity that lists all the available payment options
  *
- * Copyright 2017 Global Collect Services B.V
+ * Copyright 2018 Global Collect Services B.V
  */
 public class PaymentProductSelectionActivity extends ShoppingCartActivity implements OnBasicPaymentItemsCallCompleteListener,
                                                                                      OnPaymentProductCallCompleteListener,
-                                                                                     OnPaymentProductGroupCallCompleteListener, DialogInterface.OnClickListener {
+                                                                                     OnPaymentProductGroupCallCompleteListener,
+                                                                                     GcSessionEncryptionHelper.OnPaymentRequestPreparedListener,
+                                                                                     DialogInterface.OnClickListener {
 
     private static final String TAG = PaymentProductSelectionActivity.class.getName();
+
+    private static final int LOAD_PAYMENT_DATA_REQUEST_CODE = 42;
 
     // The view belonging to this activity
     private ProductSelectionView selectionView;
@@ -70,6 +85,8 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
     // Parameters used to initialize the connection
     private String clientSessionId;
     private String customerId;
+    private String merchantId;
+    private String merchantName;
     private String clientApiUrl;
     private String assetUrl;
     private boolean environmentIsProduction;
@@ -77,12 +94,11 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
     // Variables required to retrieve the payment items that are available for payment
     private PaymentContext paymentContext;
     private boolean groupPaymentProducts;
+    private PaymentProduct paymentProduct;
 
     // Loaded payment product and selected Account On File information
     private BasicPaymentItems paymentItems;
     private AccountOnFile accountOnFile;
-
-    private AndroidPay androidPay;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -112,7 +128,7 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
             try {
                 // Instantiate the GcSession
                 session = C2sCommunicatorConfiguration.initWithClientSessionId(clientSessionId, customerId, clientApiUrl, assetUrl, environmentIsProduction, Constants.APPLICATION_IDENTIFIER);
-            } catch(InvalidParameterException e) {
+            } catch (InvalidParameterException e) {
                 Log.e(TAG, e.getMessage());
                 selectionView.showTechnicalErrorDialog(this);
                 return;
@@ -142,6 +158,8 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
         Intent intent = getIntent();
         clientSessionId = intent.getStringExtra(Constants.MERCHANT_CLIENT_SESSION_IDENTIFIER);
         customerId = intent.getStringExtra(Constants.MERCHANT_CUSTOMER_IDENTIFIER);
+        merchantId = intent.getStringExtra(Constants.MERCHANT_MERCHANT_IDENTIFIER);
+        merchantName = intent.getStringExtra(Constants.MERCHANT_NAME);
         clientApiUrl = intent.getStringExtra(Constants.MERCHANT_CLIENT_API_URL);
         assetUrl = intent.getStringExtra(Constants.MERCHANT_ASSET_URL);
         environmentIsProduction = intent.getBooleanExtra(Constants.MERCHANT_ENVIRONMENT_IS_PRODUCTION, false);
@@ -210,6 +228,7 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
 
     @Override
     public void onPaymentProductCallComplete(PaymentProduct paymentProduct) {
+        this.paymentProduct = paymentProduct;
         handlePaymentItemCallBack(paymentProduct);
     }
 
@@ -225,11 +244,11 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
             selectionView.hideLoadingIndicator();
             selectionView.showTechnicalErrorDialog(this);
 
-        } else if (PAYMENTPRODUCTID_ANDROIDPAY.equals(paymentItem.getId())) {
-            // Android pay requires a different flow even though it has fields. The fields should
+        } else if (PAYMENTPRODUCTID_GOOGLEPAY.equals(paymentItem.getId())) {
+            // Google pay requires a different flow even though it has fields. The fields should
             // not be shown to the user, but they will be filled after the user has completed the
-            // Android pay flow.
-            startAndroidPay((PaymentProduct) paymentItem);
+            // Google pay flow.
+            startGooglePay((PaymentProduct) paymentItem);
 
         } else if (PAYMENTPRODUCTID_BanContact.equals(paymentItem.getId())) {
             // The getPaymentProduct call does not yield fields for the BCMC payment product,
@@ -252,9 +271,10 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
         }
     }
 
-    private void startAndroidPay(PaymentProduct paymentItem) {
-        androidPay = new AndroidPay(selectionView, this, session, paymentContext, shoppingCart, paymentItem);
-        androidPay.start();
+    private void startGooglePay(PaymentProduct paymentProduct) {
+        GooglePay googlePay = new GooglePay(this, paymentContext, paymentProduct, merchantId, merchantName);
+        googlePay.start(session.isEnvironmentTypeProduction());
+        selectionView.hideLoadingIndicator();
     }
 
     private void retrievePaymentProductFieldsBcmc(PaymentItem bcmc) {
@@ -299,7 +319,7 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
             detailInputActivityIntent = new Intent(this, DetailInputActivityBoletoBancario.class);
 
         } else if (PAYMENTPRODUCTID_AFTERPAY_INSTALLMENTS.equals(paymentItem.getId()) ||
-                PAYMENTPRODUCTID_AFTERPAY_INVOICE.equals(paymentItem.getId())){
+                PAYMENTPRODUCTID_AFTERPAY_INVOICE.equals(paymentItem.getId())) {
             detailInputActivityIntent = new Intent(this, DetailInputActivityAfterpay.class);
 
         } else {
@@ -322,26 +342,84 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
         selectionView.hideLoadingIndicator();
     }
 
+    // Handle the result returned by the Google Pay client. In case the payment is successful,
+    // the payment result page is loaded.
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // retrieve the error code, if available
-        int errorCode = -1;
-        if (data != null) {
-            errorCode = data.getIntExtra(WalletConstants.EXTRA_ERROR_CODE, -1);
-            Log.e(this.getClass().getName(), "Errorcode: " + errorCode);
-        }
+        selectionView.showLoadingIndicator();
         switch (requestCode) {
-            case Constants.MASKED_WALLET_RETURN_CODE:
-                androidPay.handleOnActivityResult(resultCode, data, errorCode);
-                break;
-            case WalletConstants.RESULT_ERROR:
-                Log.e(TAG, "Something went wrong whilst retrieving the Masked Wallet; errorCode: " + errorCode);
-                selectionView.showTechnicalErrorDialog(this);
-                break;
-            default:
-                super.onActivityResult(requestCode, resultCode, data);
+            // value passed in AutoResolveHelper
+            case LOAD_PAYMENT_DATA_REQUEST_CODE:
+                switch (resultCode) {
+                    case Activity.RESULT_OK:
+                        PaymentData paymentData = PaymentData.getFromIntent(data);
+
+                        String jsonString = paymentData.toJson();
+                        try {
+                            JSONObject jsonJSON = new JSONObject(jsonString);
+
+                            JSONObject paymentMethodData = jsonJSON.getJSONObject("paymentMethodData");
+                            JSONObject tokenizationData = paymentMethodData.getJSONObject("tokenizationData");
+                            String token = tokenizationData.getString("token");
+
+                            String encryptedPaymentData = token;
+
+                            PaymentRequest paymentRequest = new PaymentRequest();
+                            paymentRequest.setPaymentProduct(paymentProduct);
+                            paymentRequest.setValue(com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.GOOGLE_PAY_TOKEN_FIELD_ID, encryptedPaymentData);
+                            paymentRequest.validate();
+
+                            session.preparePaymentRequest(paymentRequest, getApplicationContext(), this);
+                        } catch (Exception e) {
+                            Log.e(TAG, "Could not parse malformed JSON: \"" + jsonString + "\"");
+                        }
+
+                        break;
+                    case Activity.RESULT_CANCELED:
+                        Log.i(TAG, "Google Pay payment was cancelled");
+                        selectionView.hideLoadingIndicator();
+                        break;
+                    case AutoResolveHelper.RESULT_ERROR:
+                        Status status = AutoResolveHelper.getStatusFromIntent(data);
+                        Log.e(TAG, "Something went wrong whilst making a Google Pay payment; errorCode: " + status);
+                        selectionView.hideLoadingIndicator();
+                        selectionView.showTechnicalErrorDialog(this);
+                        break;
+                    default:
+                        selectionView.hideLoadingIndicator();
+                        selectionView.showTechnicalErrorDialog(this);
+                        Log.e(TAG, "Something went wrong whilst making a Google Pay payment");
+                }
                 break;
         }
+    }
+
+    @Override
+    public void onPaymentRequestPrepared(PreparedPaymentRequest preparedPaymentRequest) {
+        // Send the PreparedPaymentRequest to the merchant server, this contains a blob of encrypted values + base64encoded metadata
+        //
+        // Depending on the response from the merchant server, redirect to one of the following pages:
+        //
+        // - Successful page if the payment is done
+        // - Unsuccesful page when the payment result is unsuccessful, you must supply a paymentProductId and an errorcode which will be translated
+        // - Webview page to show an instructions page, or to go to a third party payment page
+        //
+        // Successful and Unsuccessful results have to be redirected to PaymentResultActivity
+
+        selectionView.hideLoadingIndicator();
+
+        // When the the payment result has come back, go to the successful/unsuccessful page:
+        Intent paymentResultIntent = new Intent(this, PaymentResultActivity.class);
+
+        //put shopping cart and payment request inside the intent
+        paymentResultIntent.putExtra(Constants.INTENT_SHOPPINGCART, shoppingCart);
+        paymentResultIntent.putExtra(Constants.INTENT_PAYMENT_CONTEXT, paymentContext);
+
+        // Add errormessage if there was an error
+        //String errorCode = "errorCode";
+        //paymentResultIntent.putExtra(Constants.INTENT_ERRORMESSAGE, null);
+
+        startActivity(paymentResultIntent);
     }
 
     @Override

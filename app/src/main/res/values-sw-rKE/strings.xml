@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Kitambulisho maalum</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Msimbo wa swift</string>
 	<string name="gc.general.paymentProcessing">Tunachakata malipo yako. Tafadhali subiri. Inaweza kuchukua sekunde kadhaa kuchakata malipo yako.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Tafadhali weka nambari yako sahihi ya CPF au CNPJ yenye tarakimu 11 au 14.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Jina la mmiliki wa akaunti</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Nambari ya akaunti</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Kadi uliyoweka haitumiki. Tafadhali weka kadi nyingine au jaribu mbinu nyingine ya malipo.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Tafadhali toa anwani sahihi ya barua pepe</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Tafadhali toa tarehe sahihi ya mwisho</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Tafadhali weka nambari yako sahihi ya CPF au CNPJ yenye tarakimu 11 au 14.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Tafadhali teua moja  ya nambari kutoka kwenye orodha</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Tafadhali toa nambari sahihi ya kadi</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Tafadhali weka thamani kati ya herufi {minLength} na {maxLength}</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Imeidhinishwa</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Imekamilishwa</string>
 	<string name="gc.general.paymentProducts.863.processing">Malipo yako yanachakatwa...Tafadhali angalia programu yako ya WeChat.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Fungua programu kwenye simu yako, bofya "changanua" ili uchanganue msimbo wa QR kisha ubofye \'Lipa\'.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Fungua programu kwenye simu yako, bofya "changanua" ili uchanganue msimbo wa QR kisha ubofye \'Lipa\'.</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Onyesha upya hali ya malipo</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Bofya kitufe hapa chini ili uonyeshe upya hali yako ya malipo.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ukishindwa kulipa ukitumia mbinu ya malipo iliyo hapo juu, tafadhali gusa \'Ghairi\' kisha uchague bidhaa nyingine ya malipo ili ukamilishe malipo yako.</string>

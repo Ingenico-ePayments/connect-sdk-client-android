@@ -12,7 +12,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts;
-import com.google.android.gms.common.api.GoogleApiClient;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 
 /**
  * AsyncTask which loads all BasicPaymentProducts from the GC Gateway
@@ -93,9 +93,12 @@ public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, Basic
 			// Filter Apple pay
 			removePaymentProduct(basicPaymentProducts, Constants.PAYMENTPRODUCTID_APPLEPAY);
 
-			if (containsPaymentProduct(basicPaymentProducts, Constants.PAYMENTPRODUCTID_ANDROIDPAY)) {
-				if (!AndroidPayUtil.isAndroidPayAllowed(context, paymentContext, communicator)) {
-					removePaymentProduct(basicPaymentProducts, Constants.PAYMENTPRODUCTID_ANDROIDPAY);
+			if (containsPaymentProduct(basicPaymentProducts, Constants.PAYMENTPRODUCTID_GOOGLEPAY)) {
+
+				BasicPaymentProduct googlePayPaymentProduct = getPaymentProduct(basicPaymentProducts, Constants.PAYMENTPRODUCTID_GOOGLEPAY);
+
+				if (!GooglePayUtil.isGooglePayAllowed(context, communicator, googlePayPaymentProduct)) {
+					removePaymentProduct(basicPaymentProducts, Constants.PAYMENTPRODUCTID_GOOGLEPAY);
 				}
 			}
 
@@ -120,6 +123,24 @@ public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, Basic
 		}
 		return false;
 	}
+
+	private BasicPaymentProduct getPaymentProduct(BasicPaymentProducts basicPaymentProducts, String paymentProductId) {
+
+		BasicPaymentProduct returnedPaymentProduct = null;
+
+		for (BasicPaymentProduct paymentProduct : basicPaymentProducts.getBasicPaymentProducts()) {
+			if (paymentProduct.getId().equals(paymentProductId)) {
+				returnedPaymentProduct =  paymentProduct;
+			}
+		}
+
+		if (returnedPaymentProduct == null) {
+			throw new IllegalStateException("Payment product not found");
+		}
+
+		return returnedPaymentProduct;
+	}
+
 
 	/**
      * Interface for OnBasicPaymentProductsCallComplete listener

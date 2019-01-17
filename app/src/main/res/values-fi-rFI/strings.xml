@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Erityistunnus</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift-koodi</string>
 	<string name="gc.general.paymentProcessing">Maksuasi käsitellään. Odota. Maksun käsittely voi kestää useita sekunteja.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Anna kelvollinen CPF- tai CNPJ-numero, jossa on 11 tai 14 merkkiä.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Tilinomistajan nimi</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Tilinumero</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Antamaasi korttia ei tueta. Anna jokin toinen kortti tai kokeile jotain toista maksutapaa.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Anna voimassa oleva sähköpostiosoite</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Anna voimassa oleva päättymispäivä</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Anna kelvollinen CPF- tai CNPJ-numero, jossa on 11 tai 14 merkkiä.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Valitse yksi arvo listasta</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Anna voimassa olevan kortin numero</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Anna arvo, jossa on {minLength} – {maxLength} merkkiä</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Valtuutettu</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Valmis</string>
 	<string name="gc.general.paymentProducts.863.processing">Maksuasi käsitellään... Tarkista WeChat-sovellus.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Avaa sovellus puhelimessasi, lue QR-koodi napsauttamalla "lue" ja napsauta "Maksa".</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Avaa sovellus puhelimessasi, lue QR-koodi napsauttamalla "lue" ja napsauta "Maksa".</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Päivitä maksun tila</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Päivitä maksun tila napsauttamalla alla olevaa painiketta.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Jos maksaminen edellä olevalla tavalla ei onnistu, napauta "peruuta" ja valitse jokin toinen maksutuote maksun suorittamiseksi.</string>

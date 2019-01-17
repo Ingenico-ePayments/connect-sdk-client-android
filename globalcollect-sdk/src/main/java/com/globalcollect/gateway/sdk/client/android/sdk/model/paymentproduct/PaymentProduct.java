@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Pojo which holds the BasicPaymentProduct data and it's PaymentProductFields
+ * Pojo which holds the BasicPaymentProduct data and its PaymentProductFields
  * This class is filled by deserialising a JSON string from the GC gateway
  *
  * Copyright 2017 Global Collect Services B.V

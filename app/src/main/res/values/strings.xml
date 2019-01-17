@@ -97,7 +97,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">Special ID</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Swift code</string>
 	<string name="gc.general.paymentProcessing">We are processing your payment. Please wait. It may take several seconds to process your payment.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Please provide a valid value of 11 or 14 characters for your CPF or CNPJ number.</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Account holder name</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Account number</string>
@@ -184,6 +183,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">The card you entered is not supported. Please enter another card or try another payment method.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Please provide a valid email address</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Please provide a valid expiration date</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Please provide a valid value of 11 or 14 characters for your CPF or CNPJ number.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Please select one of the values from the list</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Please provide a valid card number</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Please provide a value between {minLength} and {maxLength} characters</string>
@@ -376,7 +376,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Authorized</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Completed</string>
 	<string name="gc.general.paymentProducts.863.processing">Your payment is being processed… Please check your WeChat app.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Open the app on your phone, click "scan" to scan the QR code and click ‘Pay’.</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Open the app on your phone, click "scan" to scan the QR code and click ‘Pay’.</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Refresh payment status</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Click the button below to refresh your payment status.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">When you are unable to pay using the payment method above, please tap \'Cancel\' and select another payment product to complete your payment.</string>

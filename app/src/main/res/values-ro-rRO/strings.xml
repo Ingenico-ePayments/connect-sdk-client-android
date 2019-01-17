@@ -95,7 +95,6 @@
 	<string name="gc.general.instructionFields.SPECIALID.label">ID special</string>
 	<string name="gc.general.instructionFields.SWIFTCODE.label">Cod Swift</string>
 	<string name="gc.general.paymentProcessing">Plata dvs. este în procesare. Vă rugăm aşteptaţi. Procesarea plăţii poate dura mai multe secunde.</string>
-	<string name="gc.general.paymentProduct.1503.errorMessage">Vă rugăm să introduceți o valoare validă de 11 sau 14 caractere pentru numărul dumneavoastră CPF (registrul persoanelor fizice) sau CNPJ (registrul național al persoanelor juridice).</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.label">Nume titular cont</string>
 	<string name="gc.general.paymentProductFields.accountHolderName.placeholder">John Doe</string>
 	<string name="gc.general.paymentProductFields.accountNumber.label">Număr cont</string>
@@ -182,6 +181,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Cardul introdus nu este suportat. Vă rugăm să introduceţi un alt card, sau încercaţi un alt mod de plată.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Furnizaţi o adresă de e-mail validă</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Furnizaţi o dată de expirare validă</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Vă rugăm să introduceți o valoare validă de 11 sau 14 caractere pentru numărul dumneavoastră CPF (registrul persoanelor fizice) sau CNPJ (registrul național al persoanelor juridice).</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Selectaţi una din valorile din listă</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Furnizaţi un număr de card valid</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vă rugăm să ne oferiți o valoare între {minLength} și {maxLength} caractere</string>
@@ -374,7 +374,7 @@
 	<string name="gc.general.paymentProducts.863.paymentStatus2">Autorizat</string>
 	<string name="gc.general.paymentProducts.863.paymentStatus3">Finalizat</string>
 	<string name="gc.general.paymentProducts.863.processing">Plata dvs. este procesată... Vă rugăm să vă verificați aplicația WeChat.</string>
-	<string name="gc.general.paymentProducts.863.qrCodeLabel">Deschideți aplicația de pe telefonul dumneavoastră, faceți clic pe „scan” (scanare) pentru a scana codul QR și apoi faceți clic pe „Pay” (plătește).</string>
+	<string name="gc.general.paymentProducts.863.qrCodeLabel.noButton">Deschideți aplicația de pe telefonul dumneavoastră, faceți clic pe „scan” (scanare) pentru a scana codul QR și apoi faceți clic pe „Pay” (plătește).</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Reactualizare status plată</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Clic pe butonul de mai jos pentru reactualizarea statusului plăţii.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Atunci când nu puteți plăti utilizând metoda de plată de mai sus, vă rugăm să atingeți „Cancel” (anulare) și să selectați alt produs de plată pentru a vă finaliza plata.</string>
