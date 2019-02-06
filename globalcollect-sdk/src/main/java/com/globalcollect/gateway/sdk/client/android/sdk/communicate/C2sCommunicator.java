@@ -105,6 +105,13 @@ public class C2sCommunicator implements Serializable {
 	}
 
 	/**
+	 * @return The asset base URL
+	 */
+	public String getAssetUrl() {
+		return configuration.getAssetUrl();
+	}
+
+	/**
 	 * Retrieves a list of basicpaymentproducts from the GC gateway without any fields
 	 *
 	 * @param context, used for reading device metadata which is send to the GC gateway

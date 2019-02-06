@@ -188,7 +188,7 @@ public class PaymentProductSelectionActivity extends ShoppingCartActivity implem
 
             selectionView.renderDynamicContent(paymentItems);
 
-            updateLogos(assetUrl, paymentItems.getBasicPaymentItems());
+            updateLogos(session.getAssetUrl(), paymentItems.getBasicPaymentItems());
         } else {
             selectionView.showTechnicalErrorDialog(this);
         }

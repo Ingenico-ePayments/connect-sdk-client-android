@@ -106,6 +106,13 @@ public class GcSession implements OnBasicPaymentProductsCallCompleteListener, On
 	}
 
 	/**
+	 * Returns the asset base URL that was used to create the Session
+	 */
+	public String getAssetUrl() {
+		return communicator.getAssetUrl();
+	}
+
+	/**
 	 * Gets all basitPaymentItems for a given payment context
 	 *
 	 * @param context Used for reading device metadata which is send to the GC gateway
