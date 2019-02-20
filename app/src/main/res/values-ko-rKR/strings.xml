@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">이자율</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">월요금</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">할부 횟수</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI에 대해 더 읽기</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">시작 요금</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">지불 총액</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">결제 방식 선택</string>

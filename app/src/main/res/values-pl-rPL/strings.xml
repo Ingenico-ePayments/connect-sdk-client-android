@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Oprocentowanie</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Opłata miesięczna</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Liczba rat</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Więcej informacji o SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Opłata początkowa</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Całkowita kwota do zapłaty</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Wybierz plan</string>

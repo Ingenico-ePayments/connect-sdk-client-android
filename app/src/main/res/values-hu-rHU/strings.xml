@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Kamatláb</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Havidíj</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">A törlesztőrészletek száma</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">További információ a SECCI szolgáltatásról</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Belépési díj</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">A teljes fizetendő összeg</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Terv kiválasztása</string>

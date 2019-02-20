@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Επιτόκιο</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Μηνιαία αμοιβή</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Αριθμός δόσεων</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Διαβάστε περισσότερα σχετικά με το SECCI (Standard European Consumer Credit Information – Τυποποιημένες Ευρωπαϊκές Πληροφορίες Καταναλωτικής Πίστης)</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Αμοιβή έναρξης</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Συνολικό ποσό πληρωμής</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Επιλέξτε ένα πρόγραμμα</string>

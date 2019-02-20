@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Kamatna stopa</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Mjesečna naknada</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Broj obroka</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Odredbe i uvjeti prema Standardnoj europskoj informaciji o potrošačkom kreditu (SECCI)</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Saznajte više o SECCI-ju</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Naknada za pokretanje</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Ukupni iznos plaćanja</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Odaberite plan plaćanja</string>

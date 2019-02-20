@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Procentu likme</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Mēneša maksa</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Maksājumu skaits</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Lasīt vairāk par SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Sākummaksa</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Kopējā summa apmaksai</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Izvēlieties plānu</string>

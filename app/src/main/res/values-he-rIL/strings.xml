@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">שער הריבית</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">תעריף חודשי</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">מספר התשלומים</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">למידע נוסף על SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">תעריף התנעה</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">סה"כ לתשלום</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">בחר תוכנית</string>

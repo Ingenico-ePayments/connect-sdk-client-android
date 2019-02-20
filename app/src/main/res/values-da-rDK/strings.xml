@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Rentesats</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Månedligt gebyr</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Antal rater</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Læs mere om SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Opstartsgebyr</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">I alt at betale</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Vælg en plan</string>

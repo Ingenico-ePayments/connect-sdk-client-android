@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">نرخ بهره</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">هزینه ماهانه</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">تعداد اقساط</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">اطلاعات بیشتر درباره SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">هزینه راه اندازی</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">کل مبلغ قابل پرداخت</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">طرحی را انتخاب کنید</string>

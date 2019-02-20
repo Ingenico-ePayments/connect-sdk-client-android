@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Tipo de interés</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Tarifa mensual</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Número de plazos</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Leer más acerca de SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Tarifa inicial</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Importe total a pagar</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Seleccione un plan</string>

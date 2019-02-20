@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Zinsen</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Monatliche Gebühren</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Anzahl Teilzahlungen</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Mehr über SECCI lesen</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Aufschaltgebühren</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Zu bezahlender Gesamtbetrag</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Plan auswählen</string>

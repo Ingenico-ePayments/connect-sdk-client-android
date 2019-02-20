@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">利率</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">月額料金</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">お支払い回数</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCIに関する詳細を読む</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">契約時支払額</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">お支払い総額</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">プランを選択する</string>

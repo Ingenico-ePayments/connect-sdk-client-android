@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Miera úrokov</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Mesačný poplatok</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Počet splátok</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Podmienky SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Ďalšie informácie o SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Úvodný poplatok</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Celková suma na úhradu</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Vyberte si plán</string>

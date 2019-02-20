@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Kiwango cha riba</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">मासिक शुल्क</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Idadi ya mafungu</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Soma zaidi kuhusu SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">आरंभिक शुल्क</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Kiasi cha jumla kilicholipwa</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Chagua mpango</string>

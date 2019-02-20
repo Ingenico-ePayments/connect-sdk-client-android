@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">سعر الفائدة</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">الرسوم الشهرية</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">عدد الأقساط</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">اقرأ أكثر عن SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">رسوم الإنشاء</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">المبلغ الإجمالي المطلوب دفعه</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">حدد خطة</string>

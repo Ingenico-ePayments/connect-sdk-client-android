@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Räntesats</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Månadsavgift</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Antal omgångar</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Läs mer om SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Startavgift</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Totalt belopp att betala</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Välj en plan</string>

@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">利率</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">月費</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">分期數</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">了解更多關於 SECCI 的資訊</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">啟動費用</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">需支付總額</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">選擇計畫</string>

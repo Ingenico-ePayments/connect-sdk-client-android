@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Palūkanų norma</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Mėnesinis mokestis</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Įmokų skaičius</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Skaitykite daugiau apie SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Pradinis mokestis</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Mokėti iš viso</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Pasirinkite planą</string>

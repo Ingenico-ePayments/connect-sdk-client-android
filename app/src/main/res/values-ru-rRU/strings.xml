@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Процентная ставка</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Ежемесячный платеж</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Количество частичных платежей</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Подробнее о SECCI</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Первоначальный платеж</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Общая сумма к оплате</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Выбрать план</string>

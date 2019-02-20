@@ -155,7 +155,7 @@
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">ब्याज दर</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">मासिक शुल्क</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">किस्तों की संख्या</string>
-	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">SECCI के बारे में और पढ़ें</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">आरंभिक शुल्क</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">भुगतान की कुल राशि</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">प्लान चुनें</string>
