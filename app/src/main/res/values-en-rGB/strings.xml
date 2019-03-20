@@ -135,7 +135,7 @@
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipText">Please enter your security code as shown in the image</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipText">Please enter your CVV code as shown in the image</string>
 	<string name="gc.general.paymentProductFields.dateOfBirth.label">Date of birth</string>
 	<string name="gc.general.paymentProductFields.dateOfBirth.placeholder">dd-mm-yyyy</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">E-mail address</string>
@@ -214,6 +214,7 @@
 	<string name="gc.general.paymentProducts.128.name">Discover</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.label">CID</string>
 	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipImage">ppf_cvv_128_v1</string>
+	<string name="gc.general.paymentProducts.128.paymentProductFields.cvv.tooltipText">Please enter your CID code as shown in the image</string>
 	<string name="gc.general.paymentProducts.130.name">Carte Bancaire</string>
 	<string name="gc.general.paymentProducts.132.name">Diners Club</string>
 	<string name="gc.general.paymentProducts.135.name">Cabal</string>
@@ -253,10 +254,12 @@
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.label">CID</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.placeholder">1234</string>
 	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipImage">ppf_cvv_2_v1</string>
+	<string name="gc.general.paymentProducts.2.paymentProductFields.cvv.tooltipText">Please enter your CID code as shown in the image</string>
 	<string name="gc.general.paymentProducts.201.name">Invoice</string>
 	<string name="gc.general.paymentProducts.3.name">MasterCard</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.label">CVC2</string>
 	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipImage">ppf_cvv_3_v2</string>
+	<string name="gc.general.paymentProducts.3.paymentProductFields.cvv.tooltipText">Please enter your CVC2 code as shown in the image</string>
 	<string name="gc.general.paymentProducts.3001.name">AIRPLUS</string>
 	<string name="gc.general.paymentProducts.3002.name">Accor Business Account</string>
 	<string name="gc.general.paymentProducts.3003.name">Alsolia</string>
