@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">اعداد کپی شد.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">به‌نظر می‌رسد اتصال به اینترنت وجود ندارد، بنابراین لطفاً این مسئله را بررسی نموده و دوباره امتحان کنید.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">تأیید</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">خطای اتصال اینترنت</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">یک خطای فنی رخ داده است که اجازه نمی‌دهد دستورالعمل‌های صحیح مربوط به نهایی کردن پرداخت شما را نمایش دهیم: شناسه معامله‌گر نادرست است. لطفاً روش پرداخت دیگری را امتحان کنید یا با شرکتی که از آن خرید می‌نمایید تماس بگیرید.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">هنگام تلاش برای نمایش دستورالعمل‌های مربوط به نهایی کردن پرداخت شما یک خطای فنی رخ داد. لطفاً دوباره تلاش کنید یا روش پرداخت دیگری را امتحان نمایید.</string>
 	<string name="gc.general.errors.invalidSubdomain">یک خطای فنی به دلیل خطای پیکربندی رخ داد:  دامنه فرعی معتبر نیست. لطفاً دوباره تلاش کنید یا روش پرداخت دیگری را امتحان نمایید.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">زمانی که سعی می کردیم دستور شما را پردازش کنیم خطایی فنی رخ داد. لطفاً دوباره امتحان کنید.</string>
+	<string name="gc.general.errors.mandates.title">وضعیت دستور شما</string>
 	<string name="gc.general.errors.productUnavailable">محصولی که انتخاب کرده‌اید در حال حاضر موجود نیست، لطفاً محصول دیگری را انتخاب کنید.</string>
 	<string name="gc.general.errors.techicalProblem">هنگام تلاش برای پردازش پرداخت شما یک خطای فنی رخ داد. لطفاً دوباره تلاش کنید یا روش پرداخت دیگری را امتحان نمایید.</string>
 	<string name="gc.general.errors.title">پرداخت ناموفق</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">لطفاً یک تاریخ انقضای معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">مقداری معتبر متشکل از 11 یا 14 نویسه برای شماره CPF یا CNPJ خود ارائه کنید.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">لطفاً یکی از مقادیر داخل فهرست را انتخاب کنید</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">لطفا IBAN معتبر را وارد کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">لطفاً یک شماره کارت معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">لطفاً مقداری بین {minLength} و {maxLength} کاراکتر ارائه دهید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">لطفاً مقداری دقیقاً معادل {maxLength} کاراکتر ارائه دهید</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">کد شرکت</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">نام شرکت</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">شماره اقتصادی</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">نام پرداخت کننده</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

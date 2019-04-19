@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Номер скопирован.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Возможно, подключение к Интернету отсутствует. Проверьте подключение и повторите попытку.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">ОК</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Ошибка подключения к Интернету</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Возникла техническая ошибка, не позволяющая отобразить соответствующие инструкции при завершении платежа: неверный ID продавца. Выберите другой способ оплаты или свяжитесь с компанией-продавцом.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Возникла техническая ошибка при отображении инструкций на последнем этапе проведения платежа. Повторите попытку или выберите другой способ оплаты.</string>
 	<string name="gc.general.errors.invalidSubdomain">Произошла техническая ошибка, связанная с ошибкой конфигурации: недопустимый поддомен. Повторите попытку или выберите другой способ оплаты.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Во время обработки вашего распоряжения произошел технический сбой. Повторите попытку.</string>
+	<string name="gc.general.errors.mandates.title">Статус вашего распоряжения</string>
 	<string name="gc.general.errors.productUnavailable">Выбранный вами продукт сейчас недоступен, пожалуйста, выберите другой продукт.</string>
 	<string name="gc.general.errors.techicalProblem">В процессе обработки Вашего платежа возникла техническая ошибка. Повторите попытку или выберите другой способ оплаты.</string>
 	<string name="gc.general.errors.title">Не удалось провести платеж</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Введите действительную дату истечения срока действия</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Укажите номер CPF или CNPJ, содержащий действительное значение с 11 или 14 символами.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Выберите одно значение из списка</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Введите действительный IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Укажите действительный номер карты</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Укажите значение в диапазоне от {minLength} до {maxLength} символов.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Укажите значение, содержащее {maxLength} символа (ов)</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Код компании</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Название компании</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Номер налогоплательщика</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Имя плательщика</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

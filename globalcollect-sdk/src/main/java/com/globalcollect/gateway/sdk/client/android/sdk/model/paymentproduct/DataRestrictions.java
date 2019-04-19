@@ -10,6 +10,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.Validat
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleEmailAddress;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleExpirationDate;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleFixedList;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleIBAN;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleLength;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleLuhn;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleRange;
@@ -59,6 +60,11 @@ public class DataRestrictions implements Serializable {
 				AbstractValidationRule validationRule = new ValidationRuleFixedList(validators.getFixedList().getAllowedValues(), "fixedList", ValidationType.FIXEDLIST);
 				validationRules.add(validationRule);
 			}
+		}
+
+		if (validators.getIBAN() != null) {
+			AbstractValidationRule validationRule = new ValidationRuleIBAN("iban", ValidationType.IBAN);
+			validationRules.add(validationRule);
 		}
 
 		if (validators.getLength() != null) {

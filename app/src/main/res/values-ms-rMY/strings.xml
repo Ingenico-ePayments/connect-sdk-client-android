@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Nombor sudah disalin.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Nampaknya tiada sambungan ke Internet, jadi sila sahkan dan cuba semula.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Ralat sambungan Internet</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Ralat teknikal berlaku dan kami tidak dapat menunjukkan arahan yang betul untuk memuktamadkan pembayaran anda: ID Pedagang salah. Sila cuba kaedah pembayaran lain atau hubungi syarikat penjual.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Ralat teknikal berlaku semasa kami cuba menunjukkan arahan untuk memuktamadkan pembayaran anda. Sila cuba semula atau cuba kaedah pembayaran lain.</string>
 	<string name="gc.general.errors.invalidSubdomain">Ralat teknikal berlaku disebabkan ralat konfigurasi: subdomain tidak sah. Sila cuba semula atau cuba kaedah pembayaran lain.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Ralat teknikal berlaku ketika kami cuba memproses mandat anda. Sila cuba lagi.</string>
+	<string name="gc.general.errors.mandates.title">Status mandat anda</string>
 	<string name="gc.general.errors.productUnavailable">Produk yang anda pilih tidak tersedia pada masa ini, sila pilih yang lain.</string>
 	<string name="gc.general.errors.techicalProblem">Ralat teknikal berlaku semasa kami cuba memproses pembayaran anda. Sila cuba semula atau cuba kaedah pembayaran lain.</string>
 	<string name="gc.general.errors.title">Pembayaran gagal</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Sila berikan tarikh tamat tempoh yang sah</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Sila berikan nilai sah sebanyak 11 atau 14 aksara bagi nombor CPF atau CNPJ anda.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Sila pilih salah satu nilai daripada senarai</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Sila masukkan IBAN yang sah</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Sila berikan nombor kad yang sah</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Sila berikan satu nilai antara {minLength} hingga {maxLength} aksara</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Sila berikan satu nilai {maxLength} aksara sahaja</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Kod syarikat</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Nama syarikat</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Nombor fiskal</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Nama pembayar</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

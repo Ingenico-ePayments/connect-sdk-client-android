@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Numaralar kopyalandı.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">İnternet bağlantısı yok gibi gözüküyor, lütfen bu durumu kontrol edin ve tekrar deneyin.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">Tamam</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">İnternet bağlantı hatası</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Ödemenizi sonlandırmaya ilişkin talimatları size göstermemizi engelleyen teknik bir hata meydana geldi: yanlış Satıcı kimliği. Lütfen başka bir ödeme yöntemi deneyin veya satın aldığınız firma ile iletişime geçin.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Ödemenizi sonlandırmaya ilişkin talimatları göstermeye çalışırken teknik bir hata meydana geldi. Lütfen tekrar deneyin veya başka bir ödeme şekli kullanın.</string>
 	<string name="gc.general.errors.invalidSubdomain">Bir konfigürasyon hatası nedeniyle teknik bir hata meydana geldi: Alt alan geçerli değil. Lütfen tekrar deneyin veya başka bir ödeme şekli kullanın.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Talimatınızı gerçekleştirmeye çalışırken teknik bir problem oluştu. Lütfen tekrar deneyin.</string>
+	<string name="gc.general.errors.mandates.title">Talimatınızın durumu</string>
 	<string name="gc.general.errors.productUnavailable">Seçtiğiniz ürün şu anda mevcut değil, lütfen başka bir ürün seçin.</string>
 	<string name="gc.general.errors.techicalProblem">Ödemenizi işleme almayı denerken teknik bir hata meydana geldi. Lütfen tekrar deneyin veya başka bir ödeme şekli kullanın.</string>
 	<string name="gc.general.errors.title">Ödemede hata</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Lütfen geçerli bir son kullanma tarihi girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Lütfen CPF veya CNPJ numaranız olarak 11 veya 14 karakterli ve geçerli bir değer verin.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Lütfen listedeki değerlerden birini seçin</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Lütfen geçerli bir IBAN girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Lütfen geçerli bir kart numarası girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Lütfen {minLength} ve {maxLength} karakter arasında bir değer girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Lütfen tam olarak {maxLength} karakter girin</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Şirket kodu</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Şirket adı</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Vergi numarası</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Ödeyen kişinin adı</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

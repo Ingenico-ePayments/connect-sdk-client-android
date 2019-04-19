@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Skaitļi ir nokopēti.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Šķiet, nav savienojuma ar internetu. Pārbaudiet savienojumu un mēģiniet vēlreiz!</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">JĀ</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Interneta savienojuma kļūda</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Radusies tehniska kļūme, kas mums neļauj jums parādīt pareizās norādes par jūsu maksājuma pabeigšanu: nepareizs tirgotāja ID. Lūdzu, mēģiniet izmantot citu maksāšanas veidu vai sazinieties ar uzņēmumu, no kura iegādājaties preci.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Mēģinot parādīt norādes par maksājuma pabeigšanu, radusies tehniska kļūme. Lūdzu, mēģiniet vēlreiz vai mēģiniet izmantot citu maksāšanas veidu.</string>
 	<string name="gc.general.errors.invalidSubdomain">Sakarā ar konfigurācijas kļūdu radusies tehniska kļūme: apakšdomēns nav derīgs. Lūdzu, mēģiniet vēlreiz vai mēģiniet izmantot citu maksāšanas veidu.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Mēģinot apstrādāt Jūsu uzdevumu, radās tehniska kļūme. Lūdzu, mēģiniet vēlreiz.</string>
+	<string name="gc.general.errors.mandates.title">Jūsu uzdevuma statuss</string>
 	<string name="gc.general.errors.productUnavailable">Atlasītais izstrādājums pašlaik nav pieejams. Lūdzu, atlasiet citu.</string>
 	<string name="gc.general.errors.techicalProblem">Mēģinot apstrādāt jūsu maksājumu, radusies tehniska kļūme. Lūdzu, mēģiniet vēlreiz vai mēģiniet izmantot citu maksāšanas veidu.</string>
 	<string name="gc.general.errors.title">Maksājums nav izdevies</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Lūdzu, norādiet derīgu beigu datumu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Lūdzu, ievadiet derīgu vērtību no 11 vai 14 simboliem, kas ir Jūsu CPF vai CNPJ numurs.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Lūdzu, atlasiet kādu no vērtībām šajā sarakstā</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Ievadīt spēkā esošu IBAN numuru</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Lūdzu, norādiet derīgu kartes numuru</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Lūdzu, norādiet vērtību no {minLength} līdz {maxLength} zīmēm.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Lūdzu, norādiet vērtību ar tieši {maxLength} zīmēm.</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Uzņēmuma kods</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Uzņēmuma nosaukums</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Fiskālais numurs</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Maksātāja vārds</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

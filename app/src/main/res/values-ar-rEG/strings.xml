@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">يتم نسخ الأرقام.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">يبدو أنه لا يوجد اتصال بالإنترنت، لذا يرجى التحقق من ذلك وإعادة المحاولة.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">موافق.</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">خطأ في الاتصال بالإنترنت</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">حدث خطأ فني منعنا من عرض التعليمات الصحيحة لك حتى تنهي عملية الدفع: هوية التاجر غير صحيحة. يرجى تجربة طريقة أخرى للدفع أو الاتصال بالشركة التي قمت بالشراء منها.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">حدث خطأ فني أثناء محاولتنا إظهار التعليمات لإنهاء عملية الدفع الخاصة بك. يرجى إعادة المحاولة أو تجربة طريقة أخرى للدفع.</string>
 	<string name="gc.general.errors.invalidSubdomain">حدث خطأ فني بسبب خطأ في التهيئة:  النطاق الفرعي غير صالح. يرجى إعادة المحاولة أو تجربة طريقة أخرى للدفع.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">حدث خطأ فني ما بينما كنت تحاول معالجة الأمر الرسمي الخاص بك. يُرجى إعادة المحاولة.</string>
+	<string name="gc.general.errors.mandates.title">حالة الأمر الرسمي الخاص بك</string>
 	<string name="gc.general.errors.productUnavailable">المنتج الذي اخترته غير متاح حاليًا، يُرجى اختيار منتج آخر.</string>
 	<string name="gc.general.errors.techicalProblem">حدث خطأ فني أثناء محاولتنا تسيير عملية الدفع الخاصة بك. يرجى إعادة المحاولة أو تجربة طريقة أخرى للدفع.</string>
 	<string name="gc.general.errors.title">فشلت عملية الدفع</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">يرجى تحديد تاريخ استحقاق صحيح</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">يُرجى تقديم قيمة صحيحة مُكوّنة من 11 أو 14 حرفًا لـ CPF أو رقم CNPJ.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">يرجى اختيار إحدى القيم الواردة في القائمة</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">يرجى إدخال IBAN صحيح</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">يرجى تحديد رقم البطاقة الصحيح</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">يرجى تقديم قيمة تتراوح بين {minLength} و{maxLength} رمز</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">يرجى تقديم قيمة مكونة من {maxLength} رمز تمامًا</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">رمز الشركة</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">اسم الشركة</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">رقم القيد الضريبي</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">اسم القائم بالدفع</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

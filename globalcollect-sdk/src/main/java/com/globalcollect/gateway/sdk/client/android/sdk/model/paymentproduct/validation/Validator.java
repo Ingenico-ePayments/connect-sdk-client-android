@@ -16,6 +16,7 @@ public class Validator implements Serializable {
 
 	private ExpirationDate expirationDate;
 	private EmailAddress emailAddress;
+	private IBAN iban;
 	private FixedList fixedList;
 	private Length length;
 	private Luhn luhn;
@@ -36,6 +37,8 @@ public class Validator implements Serializable {
 	public FixedList getFixedList(){
 		return fixedList;
 	}
+
+	public IBAN getIBAN(){ return iban; }
 
 	public Length getLength(){
 		return length;

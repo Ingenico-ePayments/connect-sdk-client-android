@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">המספרים הועתקו.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">נראה שאין חיבור לאינטרנט. בדוק את החיבור ונסה שוב.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">אישור</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">שגיאה בחיבור לאינטרנט</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">אירעה תקלה טכנית המונעת מאיתנו להציג לך את ההנחיות הנכונות כדי לסיים את התשלום: מזהה הסוחר (Merchant ID) שגוי. אנא נסה להשתמש באמצעי תשלום אחר או פנה לחברה שממנה בוצעה הרכישה.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">כאשר ניסינו להציג את ההנחיות להשלמת התשלום אירעה תקלה טכנית. אנא נסה שוב או נסה להשתמש באמצעי תשלום אחר.</string>
 	<string name="gc.general.errors.invalidSubdomain">אירעה תקלה טכנית בעקבות שגיאת קונפיגורציה:  דומיין המשנה אינו חוקי. אנא נסה שוב או נסה להשתמש באמצעי תשלום אחר.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">אירעה שגיאה טכנית בזמן שניסינו לעבד את ההרשאה שלך. אנא נסה/י שוב.</string>
+	<string name="gc.general.errors.mandates.title">סטטוס ההרשאה שלך</string>
 	<string name="gc.general.errors.productUnavailable">המוצר שבחרת אינו זמין כרגע, בחר אחד אחר.</string>
 	<string name="gc.general.errors.techicalProblem">כאשר ניסינו לעבד את התשלום שלך אירעה תקלה טכנית. אנא נסה שוב או נסה להשתמש באמצעי תשלום אחר.</string>
 	<string name="gc.general.errors.title">תשלום שנכשל</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">נא הזן תאריך פקיעת תוקף חוקי</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">מסור ערך חוקי בן 11 או 14 תווים עבור מספר CPE או CNPJ שלך.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">בחר אחד מהערכים ברשימה</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">הקלד קוד IBAN תקף</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">ספק מספר כרטיס תקף</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">הזן ערך שאורכו בין {minLength} ל-{maxLength} תווים</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">הזן ערך שאורכו בדיוק {maxLength} תווים</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">קוד חברה</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">שם החברה</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">מספר פיסקלי</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">שם המשלם</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

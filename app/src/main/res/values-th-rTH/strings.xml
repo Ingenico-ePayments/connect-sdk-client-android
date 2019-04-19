@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">ตัวเลขถูกคัดลอก</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">ดูเหมือนว่าจะไม่มีการเชื่อมต่อกับอินเทอร์เน็ต โปรดตรวจสอบและลองอีกครั้ง</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">ตกลง</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">เกิดข้อผิดพลาดการเชื่อมต่ออินเทอร์เน็ต</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">เกิดข้อผิดพลาดทางเทคนิคไม่ให้เราแสดงวิธีที่ถูกต้องเพื่อให้การชำระเงินของคุณเสร็จสมบูรณ์: รหัสร้านค้าไม่ถูกต้อง โปรดลองวิธีการชำระเงินแบบอื่นหรือติดต่อบริษัทที่คุณได้ซื้อสินค้า</string>
 	<string name="gc.general.errors.instructions.renderingProblem">เกิดข้อผิดพลาดทางเทคนิคในขณะที่เราพยายามแสดงวิธีการเพื่อให้การชำระเงินของคุณเสร็จสมบูรณ์ โปรดลองใหม่อีกครั้งหรือลองวิธีการชำระเงินแบบอื่น</string>
 	<string name="gc.general.errors.invalidSubdomain">เกิดข้อผิดพลาดทางเทคนิคเนื่องจากการกำหนดค่าที่ผิดพลาด: โดเมนย่อยไม่ถูกต้อง โปรดลองใหม่อีกครั้งหรือลองวิธีการชำระเงินแบบอื่น</string>
+	<string name="gc.general.errors.mandates.technicalProblem">เกิดข้อผิดพลาดทางเทคนิคขณะที่เราพยายามประมวลคำสั่งของคุณ กรุณาลองใหม่อีกครั้ง</string>
+	<string name="gc.general.errors.mandates.title">สถานะคำสั่งของคุณ</string>
 	<string name="gc.general.errors.productUnavailable">The product you selected is currently not available, please select another one.</string>
 	<string name="gc.general.errors.techicalProblem">เกิดข้อผิดพลาดทางเทคนิคในขณะที่เราพยายามดำเนินการชำระเงินของคุณ โปรดลองใหม่อีกครั้งหรือลองวิธีการชำระเงินแบบอื่น</string>
 	<string name="gc.general.errors.title">ความล้มเหลวในการชำระเงิน</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">กรุณาระบุวันหมดอายุที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">โปรดระบุค่า CPF ของคุณที่ถูกต้อง 11 หรือ 14 ตัว หรือหมายเลข CNPJ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">กรุณาเลือกมาหนึ่งตัวเลือกจากรายการ</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">โปรดใส่หมายเลข IBAN ที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">กรุณาระบุเลขบัตรที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">โปรดให้ค่าตัวอักษรระหว่าง {minLength} และ {maxLength}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">โปรดให้ค่าของตัวอักษรที่แน่นอน {maxLength}</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">รหัสบริษัท</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">ชื่อบริษัท</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">หมายเลขการเงิน</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">ชื่อผู้จ่าย</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Številke so kopirane.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Očitno ni povezave z internetom. Preverite in poskusite znova.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">V redu</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Napaka internetne povezave</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Prišlo je do tehnične napake, ki preprečuje prikaz pravilnih navodil za dokončanje plačila: nepravilen ID trgovca. Izberite drug način plačila ali pa se obrnite na podjetje, pri katerem opravljate nakup.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Pri poskusu prikaza navodil za dokončanje plačila je prišlo do tehnične napake. Poskusite znova ali pa izberite drug način plačila.</string>
 	<string name="gc.general.errors.invalidSubdomain">Do tehnične napake je prišlo zaradi napake pri konfiguraciji:  poddomena ni veljavna. Poskusite znova ali pa izberite drug način plačila.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Med obdelavo vaše zahteve je prišlo do tehnične napake. Poskusite znova.</string>
+	<string name="gc.general.errors.mandates.title">Stanje vaše zahteve</string>
 	<string name="gc.general.errors.productUnavailable">Izbran izdelek trenutno ni na voljo, prosimo, izberite drug izdelek.</string>
 	<string name="gc.general.errors.techicalProblem">Med obdelavo plačila je prišlo do tehnične napake. Poskusite znova ali pa izberite drug način plačila.</string>
 	<string name="gc.general.errors.title">Napaka pri plačilu</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Prosimo, vnesite veljaven datum poteka veljavnosti</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Za številko CPF ali CNPJ navedite vrednost, dolgo 11 ali 14 znakov.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Prosimo, izberite eno izmed vrednosti na seznamu</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Prosimo, vnesite veljavno številko IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Prosimo, vnesite veljavno številko kartice</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vnesite vrednost z med {minLength} in {maxLength} znaki</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Vnesite vrednost s točno {maxLength} znaki</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Koda podjetja</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Ime podjetja</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Fiskalna številka</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Ime plačnika</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

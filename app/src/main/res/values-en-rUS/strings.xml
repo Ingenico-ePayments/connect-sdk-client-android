@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">The numbers have been copied.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">It seems there is no connection to the internet, please verify this and try again.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Internet connection error</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">A technical error occurred that prevented us from showing you the right instructions to finalize your payment: incorrect Merchant ID. Please try another payment method or contact the company you are buying from.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">A technical error occurred while we were trying to show the instructions to finalize your payment. Please try again or try another payment method.</string>
 	<string name="gc.general.errors.invalidSubdomain">A technical error occurred due to a configuration error: the subdomain is not valid. Please try again or try another payment method.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">A technical error occurred while we were trying to process your mandate. Please try again.</string>
+	<string name="gc.general.errors.mandates.title">Your mandate status</string>
 	<string name="gc.general.errors.productUnavailable">The product you selected is currently not available, please select another one.</string>
 	<string name="gc.general.errors.techicalProblem">A technical error occurred while we were trying to process your payment. Please try again or try another payment method.</string>
 	<string name="gc.general.errors.title">Payment failure</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Please provide a valid expiration date</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Please provide a valid value of 11 or 14 characters for your CPF or CNPJ number.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Please select one of the values from the list</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Please enter a valid IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Please provide a valid card number</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Please provide a value between {minLength} and {maxLength} characters</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Please provide a value of exactly {maxLength} characters</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Company code</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Company name</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Social security number</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Payer\'s name</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

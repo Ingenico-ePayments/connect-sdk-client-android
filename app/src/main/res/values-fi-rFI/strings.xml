@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Numerot on kopioitu.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Vaikuttaa, ettei käytössä ole Internet-yhteyttä. Tarkista asia ja yritä uudelleen.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Internet-yhteysvirhe</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Tapahtui tekninen virhe, joka esti meitä näyttämästä sinulle oikeita ohjeita maksusi viimeistelyä varten: virheellinen kauppiastunnus. Kokeile jotain toista maksutapaa tai ota yhteyttä yritykseen, jolta olet ostamassa.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Yrittäessämme näyttää ohjeet maksusi viimeistelyä varten tapahtui tekninen virhe. Yritä uudelleen tai kokeile jotain toista maksutapaa.</string>
 	<string name="gc.general.errors.invalidSubdomain">Tapahtui tekninen virhe, jonka aiheutti määritysvirhe:  alitoimialue ei kelpaa. Yritä uudelleen tai kokeile jotain toista maksutapaa.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Toimeksiantosi käsittelyn aikana tapahtui tekninen virhe. Yritä uudelleen.</string>
+	<string name="gc.general.errors.mandates.title">Toimeksiantosi tila</string>
 	<string name="gc.general.errors.productUnavailable">Valitsemasi tuote ei ole juuri nyt saatavilla. Valitse toinen tuote.</string>
 	<string name="gc.general.errors.techicalProblem">Maksusi käsittelyn aikana tapahtui tekninen virhe. Yritä uudelleen tai kokeile jotain toista maksutapaa.</string>
 	<string name="gc.general.errors.title">Maksu epäonnistui</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Anna voimassa oleva päättymispäivä</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Anna kelvollinen CPF- tai CNPJ-numero, jossa on 11 tai 14 merkkiä.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Valitse yksi arvo listasta</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Syötä kelvollinen IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Anna voimassa olevan kortin numero</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Anna arvo, jossa on {minLength} – {maxLength} merkkiä</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Anna arvo, jossa on tasan {maxLength} merkkiä</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Yhtiön tunnus</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Yhtiön nimi</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Verotuksen numero</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Maksajan nimi</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

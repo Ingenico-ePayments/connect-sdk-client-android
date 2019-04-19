@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Numerele sunt copiate.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Se pare că nu există conexiune la internet; vă rugăm să verificați și să încercați din nou.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Eroare conexiune internet</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">A intervenit o eroare tehnică care ne împiedică să vă arătăm instrucţiunile corecte pentru finalizarea plăţii: identificator de comerciant incorect. Vă rugăm să  încercaţi un alt mod de plată, sau luaţi legătura cu compania de la care cumpăraţi.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">A intervenit o eroare tehnică în timp ce încercam să vă arătăm instrucţiunile pentru finalizarea plăţii. Vă rugăm să încercaţi din nou, sau încercaţi un alt mod de plată.</string>
 	<string name="gc.general.errors.invalidSubdomain">A intervenit o eroare tehnică din cauza unei erori de configurare: subdomeniul nu este valid. Vă rugăm să încercaţi din nou, sau încercaţi un alt mod de plată.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">A apărut o eroare tehnică în timp ce încercam să vă procesăm mandatul. Încercați din nou.</string>
+	<string name="gc.general.errors.mandates.title">Starea mandatului dvs.</string>
 	<string name="gc.general.errors.productUnavailable">Produsul selectat nu este disponibil momentan, selectaţi alt produs.</string>
 	<string name="gc.general.errors.techicalProblem">A intervenit o eroare tehnică în timp ce încercam să procesăm plata dvs. Vă rugăm să încercaţi din nou, sau încercaţi un alt mod de plată.</string>
 	<string name="gc.general.errors.title">Plată nereuşită</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Furnizaţi o dată de expirare validă</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Vă rugăm să introduceți o valoare validă de 11 sau 14 caractere pentru numărul dumneavoastră CPF (registrul persoanelor fizice) sau CNPJ (registrul național al persoanelor juridice).</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Selectaţi una din valorile din listă</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Introduceți un IBAN valid</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Furnizaţi un număr de card valid</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vă rugăm să ne oferiți o valoare între {minLength} și {maxLength} caractere</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Vă rugăm să ne oferiți o valoare de exact {maxLength} caractere</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Cod companie</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Nume companie</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Număr fiscal</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Numele plătitorului</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

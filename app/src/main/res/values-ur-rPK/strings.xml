@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">نمبرز کاپی ہو گئے ہیں۔</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">ایسا لگتا ہے کہ انٹرنیٹ سے کنکشن نہیں ہے، لہذا براہ کرم اس کی توثیق کریں اور دوبارہ کوشش کریں۔</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">ٹھیک ہے</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">انٹرنیٹ کنکشن میں خرابی</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">ایک تکنیکی خرابی پیش آ گئی جس نے ہمیں آپ کو آپ کی ادائیگی کو حتمی شکل دینے کے لئے درست ہدایات ظاہر کرنے سے روک دیا: ایک نا درست مرچنٹ آئی ڈی۔ برائے مہربانی ادائیگی کا کوئی دوسرا طریقہ آزمائیں یا اس کمپنی سے رابطہ کریں جس سے آپ خرید رہے ہیں۔</string>
 	<string name="gc.general.errors.instructions.renderingProblem">جب ہم نے آپ کی ادائیگی کو حتمی شکل دینے کے لئے ہدایات ظاہر کرنے کی کوشش کی تو ایک تکنیکی خرابی پیش آ گئی۔ برائے مہربانی دوبارہ کوشش کریں یا ادائیگی کا کوئی دوسرا طریقہ آزمائیں۔</string>
 	<string name="gc.general.errors.invalidSubdomain">کنفگریشن کی کسی خامی کی وجہ سے کوئی تکنیکی خرابی پیش آگئی:  ذیلی ڈومین درست نہیں ہے۔ برائے مہربانی دوبارہ کوشش کریں یا ادائیگی کا کوئی دوسرا طریقہ آزمائیں۔</string>
+	<string name="gc.general.errors.mandates.technicalProblem">آپ کے مینڈیٹ پر ہمیں کارروائی کرنے کے دوران ایک تکنیکی خرابی پیش آ گئی۔ برائے مہربانی دوبارہ کوشش کریں۔</string>
+	<string name="gc.general.errors.mandates.title">آپ کے مینڈیٹ کی حالت</string>
 	<string name="gc.general.errors.productUnavailable">آپ نے جو پروڈکٹ منتخب کیا ہے وہ فی الحال دستیاب نہیں ہے، برائے مہربانی کوئی اور منتخب کریں۔</string>
 	<string name="gc.general.errors.techicalProblem">جب ہم نے آپ کی ادائیگی پراسیس کرنے کی کوشش کی تو ایک تکنیکی خرابی پیش آ گئی۔ برائے مہربانی دوبارہ کوشش کریں یا ادائیگی کا کوئی دوسرا طریقہ آزمائیں۔</string>
 	<string name="gc.general.errors.title">ادائیگی نا کام</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">براہ کرم کوئی درست تاریخ تنسیخ فراہم کریں</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">اپنے CPF یا CNPJ نمبر کے لیے 11 یا 14 حروف کی ایک درست قدر مہیا کریں۔</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">براہ کرم فہرست سے کوئی ایک عددی قیمت منتخب کریں</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">براہ کرم ایک درست IBAN درج کریں</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">براہ کرم کوئی درست کارڈ نمبر فراہم کریں</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">براہ کرم {minLength} اور {maxLength} حروف کے بیچ ایک درست قدر فراہم کریں</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">براہ کرم قطعی طور پر {maxLength} حروف کی ایک قدر فراہم کریں</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">کمپنی کوڈ</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">کمپنی کا نام</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">مالی نمبر</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">ادائیگی کنندہ کا نام</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

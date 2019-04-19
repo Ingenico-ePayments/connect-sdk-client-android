@@ -10,6 +10,7 @@ public enum ValidationType {
 	EXPIRATIONDATE,
 	EMAILADDRESS,
 	FIXEDLIST,
+	IBAN,
 	LENGTH,
 	LUHN,
 	RANGE,

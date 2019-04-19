@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Numbrid on kopeeritud.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Tundub, et internetiühendus puudub, seega palun kontrollige seda ja proovige uuesti.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Internetiühenduse viga</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Teie makse lõpetamiseks õigete juhiste näitamisel tekkis tehniline viga: vale kaupmehe ID-number. Palun proovige muud makseviisi või võtke ühendust müügiettevõttega.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Teie makse lõpetamiseks juhiste näitamisel tekkis tehniline viga. Palun proovige uuesti või proovige muud makseviisi.</string>
 	<string name="gc.general.errors.invalidSubdomain">Tehniline viga tekkis konfiguratsiooni vea tõttu:  alamdomeen ei ole kehtiv. Palun proovige uuesti või proovige muud makseviisi.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Teie korralduse käsitlemise ajal tekkis tehniline tõrge. Proovige uuesti.</string>
+	<string name="gc.general.errors.mandates.title">Teie korralduse olek</string>
 	<string name="gc.general.errors.productUnavailable">Valitud toode ei ole praegu saadaval, palun valige teine toode.</string>
 	<string name="gc.general.errors.techicalProblem">Teie makse töötlemisel tekkis tehniline viga. Palun proovige uuesti või proovige muud makseviisi.</string>
 	<string name="gc.general.errors.title">Maksehäire</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Palun märkige õige aegumise kuupäev</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Palun sisestage oma kehtiv 11- või 14-kohaline CPF- või CNPJ-number.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Palun valige loetelust üks väärtus</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Palun sisestage kehtiv IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Palun märkige õige kaardi number</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Palun sisestage tähemärkide arv, mis oleks vahemikus {minLength} ja {maxLength}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Palun sisestage täpselt {maxLength} tähemärki</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Ettevõtte kood</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Ettevõtte nimi</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Maksunumber</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Maksja nimi</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

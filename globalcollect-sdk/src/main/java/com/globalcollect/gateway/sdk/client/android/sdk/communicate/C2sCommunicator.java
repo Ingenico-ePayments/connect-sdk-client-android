@@ -216,6 +216,9 @@ public class C2sCommunicator implements Serializable {
 			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
 			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
 			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
+			if (paymentContext.isForceBasicFlow()!= null) {
+				queryString.append("&forceBasicFlow=").append(paymentContext.isForceBasicFlow());
+			}
 			queryString.append("&").append(createCacheBusterParameter());
 			completePath += queryString.toString();
 

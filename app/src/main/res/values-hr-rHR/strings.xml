@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Brojevi su kopirani.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Čini se da nema internetske veze. Provjerite vezu i pokušajte ponovno.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">U redu</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Greška u internetskoj vezi</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Zbog tehničke pogreške nismo u mogućnosti pružiti vam ispravne upute za dovršavanje uplate: neispravni identifikacijski broj trgovca. Molimo vas da pokušate s drugim načinom plaćanja ili da kontaktirate tvrtku od koje kupujete.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Došlo je do tehničke pogreške dok smo vam pokušavali prikazati upute za dovršavanje uplate. Molimo vas da pokušate ponovno ili da odaberete drugi način plaćanja.</string>
 	<string name="gc.general.errors.invalidSubdomain">Došlo je do tehničke pogreške zbog greške u konfiguraciji: poddomena nije valjana. Molimo vas da pokušate ponovno ili da odaberete drugi način plaćanja.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Došlo je do tehničke pogreške pri obradi naloga. Pokušajte ponovno.</string>
+	<string name="gc.general.errors.mandates.title">Status naloga</string>
 	<string name="gc.general.errors.productUnavailable">Odabrani proizvod trenutačno nije dostupan, molimo vas da odaberete drugi.</string>
 	<string name="gc.general.errors.techicalProblem">Došlo je do tehničke greške za vrijeme obrade uplate. Molimo vas da pokušate ponovno ili da odaberete drugi način plaćanja.</string>
 	<string name="gc.general.errors.title">Uplata nije uspjela</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Molimo da unesete važeći rok valjanosti</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Navedite važeću vrijednost od 11 ili 14 znakova za svoj CPF ili CNPJ broj.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Molimo da odaberete jednu od ponuđenih vrijednosti</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Unesite valjani IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Molimo da unesete valjani broj kartice</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Molimo da unesete vrijednost između {minLength} i {maxLength} znakova</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Molimo da unesete vrijednost koja sadržava točno {maxLength} znakova</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Oznaka tvrtke</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Naziv tvrtke</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Porezni broj</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Ime platitelja</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

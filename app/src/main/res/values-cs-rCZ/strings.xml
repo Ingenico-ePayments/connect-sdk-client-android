@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Čísla se zkopírovala.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Zdá se, že není k dispozici připojení k internetu. Ověřte to prosím a zkuste to znovu.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Chyba připojení k internetu</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Došlo k technické chybě, která nám zabránila zobrazit správné instrukce pro finalizaci Vaší platby: nesprávné ID obchodníka. Zkuste, prosím, jinou platební metodu nebo kontaktujte firmu, u které jste nakoupili.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Když jsme se pokusili zobrazit instrukce pro finalizaci Vaší platby, došlo k technické chybě. Zkuste to, prosím, znovu nebo zkuste jinou platební metodu.</string>
 	<string name="gc.general.errors.invalidSubdomain">Došlo k technické chybě v důsledku chyby konfigurace:  subdoména není platná. Zkuste to, prosím, znovu nebo zkuste jinou platební metodu.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Při zpracování vašeho platebního příkazu došlo k technické chybě. Zkuste to znovu.</string>
+	<string name="gc.general.errors.mandates.title">Stav vašeho platebního příkazu</string>
 	<string name="gc.general.errors.productUnavailable">Vámi vybraný produkt aktuálně není k dispozici, vyberte jiný.</string>
 	<string name="gc.general.errors.techicalProblem">Když jsme se pokusili zpracovat Vaši platbu, došlo k technické chybě. Zkuste to, prosím, znovu nebo zkuste jinou platební metodu.</string>
 	<string name="gc.general.errors.title">Chyba platby</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Zadejte platné datum expirace</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Zadejte platnou hodnotu o 11 až 14 znacích vašeho čísla CPF nebo CNPJ.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Vyberte alespoň jednu hodnotu ze seznamu</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Prosím zadejte platný IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Zadejte platné číslo karty</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Uveďte prosím hodnotu v délce {minLength} až {maxLength} znaků</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Uveďte prosím hodnotu v délce přesně {maxLength} znaků</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Kód společnosti</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Název společnosti</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">DIČ</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Jméno plátce</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

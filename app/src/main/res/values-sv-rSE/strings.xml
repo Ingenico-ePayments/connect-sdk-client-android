@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Siffrorna har kopierats.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Det verkar inte finnas någon internetuppkoppling. Kontrollera detta och försök på nytt.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Fel på internetuppkoppling</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Ett tekniskt fel uppstod vilket förhindrade oss från att visa dig rätt instruktioner för att slutföra din betalning: en felaktig Handlar-ID. Välj en annan betalningsmetod eller kontakta företaget du köper från.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Ett tekniskt fel uppstod när vi försökte visa instruktionerna för att slutföra din betalning. Försök igen eller välj en annan betalningsmetod.</string>
 	<string name="gc.general.errors.invalidSubdomain">Ett tekniskt fel uppstod på grund av ett konfigurationsfel: underdomänen är inte giltig. Försök igen eller välj en annan betalningsmetod.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Ett tekniskt fel uppstod medan ditt mandat behandlades. Vänligen försök igen.</string>
+	<string name="gc.general.errors.mandates.title">Din status för mandat</string>
 	<string name="gc.general.errors.productUnavailable">Produkten du valde är inte tillgänglig just nu. Välj en annan produkt.</string>
 	<string name="gc.general.errors.techicalProblem">Ett tekniskt fel uppstod när vi bearbetade din betalning. Försök igen eller välj en annan betalningsmetod.</string>
 	<string name="gc.general.errors.title">Betalningen misslyckades</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Ange ett giltig förfallodatum</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Ange ett giltigt värde med 11 eller 14 tecken för ditt CPF- eller CNPJ-nummer.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Välj ett av värdena från listan</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Vänligen ange en giltig IBAN-kod</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Ange ett giltig kortnummer</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Ange ett värde med mellan {minLength} och {maxLength} tecken</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Ange ett värde med exakt {maxLength} tecken</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Företagskod</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Företagsnamn</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Skattenummer</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Betalarens namn</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

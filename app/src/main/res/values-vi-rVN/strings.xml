@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Các số đã sao chép.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Có vẻ không có kết nối internet, do đó vui lòng kiểm tra vấn đề này và thử lại.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Lỗi kết nối Internet</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Đã có sai sót kỹ thuật ngăn cản chúng tôi đưa ra các hướng dẫn phù hợp để hoàn thành thanh toán của quý khách: Tài khoản Giao dịch không đúng. Vui lòng thử phương thức thanh toán khác hoặc liên hệ với công ty quý khách mua hàng.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Đã có sai sót kỹ thuật trong lúc chúng tôi cố gắng đưa ra các hướng dẫn để hoàn thành thanh toán của quý khách. Vui lòng thử lại hoặc thử phương thức thanh toán khác.</string>
 	<string name="gc.general.errors.invalidSubdomain">Đã có sai sót kỹ thuật do lỗi cấu hình:  tên miền phụ không đúng. Vui lòng thử lại hoặc thử phương thức thanh toán khác.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Bị lỗi kỹ thuật khi chúng tôi đang cố gắng xử lý ủy nhiệm của bạn. Vui lòng thử lại.</string>
+	<string name="gc.general.errors.mandates.title">Trạng thái ủy nhiệm của bạn</string>
 	<string name="gc.general.errors.productUnavailable">Sản phẩm bạn chọn hiện không khả dụng, vui lòng chọn một sản phẩm khác.</string>
 	<string name="gc.general.errors.techicalProblem">Đã có sai sót kỹ thuật trong lúc chúng tôi cố gắng xử lý thanh toán của quý khách. Vui lòng thử lại hoặc thử phương thức thanh toán khác.</string>
 	<string name="gc.general.errors.title">Thanh toán không thành công</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Vui lòng cung cấp một ngày hết hạn hợp lệ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Vui lòng cung cấp giá trị hợp hệ gồm 11 đến 14 ký tự dành cho số CPF hoặc CNPJ của bạn.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Vui lòng chọn một giá trị từ danh sách</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Xin nhập IBAN hợp lệ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Vui lòng cung cấp một số thẻ hợp lệ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vui lòng cung cấp một giá trị từ {minLength} đến {maxLength} ký tự</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Vui lòng cung cấp một giá trị có chính xác {maxLength} ký tự</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Mã công ty</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Tên công ty</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Số tài chính</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Tên người thanh toán</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

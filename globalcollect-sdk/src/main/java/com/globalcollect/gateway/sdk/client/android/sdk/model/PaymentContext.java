@@ -16,6 +16,7 @@ public class PaymentContext implements Serializable {
     private AmountOfMoney amountOfMoney;
     private CountryCode countryCode;
     private boolean isRecurring;
+    private Boolean forceBasicFlow;
 
     public PaymentContext() {}
 
@@ -44,5 +45,12 @@ public class PaymentContext implements Serializable {
     }
     public void setIsRecurring(Boolean isRecurring) {
         this.isRecurring = isRecurring;
+    }
+
+    public Boolean isForceBasicFlow() {
+        return forceBasicFlow;
+    }
+    public void setForceBasicFlow(Boolean forceBasicFlow) {
+        this.forceBasicFlow = forceBasicFlow;
     }
 }

@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">数字被复制。</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">无网络连接，请核实并再试一次。</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">OK（确定）</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">网络连接错误</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">发生技术错误，该错误阻止我们向您发送正确的指令，导致支付失败：错误的商户代码。请更改付款方式或联系您购买的商家。</string>
 	<string name="gc.general.errors.instructions.renderingProblem">当我们试图指导您完成支付时，一个技术错误出现了。请重试或更改付款方式。</string>
 	<string name="gc.general.errors.invalidSubdomain">因配置出错而引发的技术上的错误：子域名无效。请重试或更改付款方式。</string>
+	<string name="gc.general.errors.mandates.technicalProblem">我们在尝试处理您的授权时发生了技术错误。请重试。</string>
+	<string name="gc.general.errors.mandates.title">您的授权状态</string>
 	<string name="gc.general.errors.productUnavailable">您选择的产品当前不可用，请另外选择一个。</string>
 	<string name="gc.general.errors.techicalProblem">当我们试图处理您的付款申请时，一个技术错误出现了。请重试或更改付款方式。</string>
 	<string name="gc.general.errors.title">支付失败</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">请提供有效的失效日期</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">请为您的 CPF 或 CNPJ 号码提供 11 或 14 个字符的有效值。</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">请从列表中选择一个值</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">请输入有效的 IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">请提供有效的卡号</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">请输入一个{minLength}和{maxLength}字符之间的数值</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">请输入一个确切的{maxLength}字符</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">公司代码</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">公司名称</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">税务登记号</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">付款人姓名</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

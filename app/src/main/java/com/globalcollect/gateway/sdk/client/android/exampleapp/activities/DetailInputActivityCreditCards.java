@@ -221,6 +221,9 @@ public class DetailInputActivityCreditCards extends DetailInputActivity
     }
 
     private void retrieveNewPaymentProduct(String paymentProductId) {
+        if (paymentProductId.equals(com.globalcollect.gateway.sdk.client.android.sdk.configuration.Constants.PAYMENTPRODUCTID_BanContact)) {
+            paymentContext.setForceBasicFlow(true);
+        }
         session.getPaymentProduct(this.getApplicationContext(), paymentProductId, paymentContext, this);
     }
 

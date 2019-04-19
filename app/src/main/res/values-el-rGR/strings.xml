@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Οι αριθμοί αντιγράφηκαν.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Φαίνεται ότι δεν υπάρχει σύνδεση στο internet. Ελέγξτε την και προσπαθήστε ξανά.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">ΟΚ</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Σφάλμα σύνδεσης στο internet</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Παρουσιάστηκε τεχνικό σφάλμα που μας εμποδίζει να σας δείξουμε τις οδηγίες ολοκλήρωσης της πληρωμής σας: λανθασμένο αναγνωριστικό εμπόρου. Επιλέξτε άλλον τρόπο πληρωμής ή επικοινωνήστε με την εταιρεία από όπου κάνετε την αγορά.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Παρουσιάστηκε τεχνικό σφάλμα καθώς προσπαθούσαμε να σας δείξουμε τις οδηγίες ολοκλήρωσης της πληρωμής σας. Προσπαθήστε ξανά ή επιλέξτε άλλον τρόπο πληρωμής.</string>
 	<string name="gc.general.errors.invalidSubdomain">Παρουσιάστηκε τεχνικό σφάλμα λόγω σφάλματος διαμόρφωσης:  ο υποτομέας δεν είναι έγκυρος. Προσπαθήστε ξανά ή επιλέξτε άλλον τρόπο πληρωμής.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Προέκυψε κάποιο τεχνικό σφάλμα ενώ προσπαθούσαμε να επεξεργαστούμε την εντολή σας. Προσπαθήστε ξανά.</string>
+	<string name="gc.general.errors.mandates.title">Η κατάσταση της εντολής σας</string>
 	<string name="gc.general.errors.productUnavailable">Το προϊόν που επιλέξατε δεν είναι διαθέσιμο αυτή τη στιγμή, επιλέξτε κάποιο άλλο.</string>
 	<string name="gc.general.errors.techicalProblem">Παρουσιάστηκε τεχνικό σφάλμα καθώς προσπαθούσαμε να επεξεργαστούμε την πληρωμή σας. Προσπαθήστε ξανά ή επιλέξτε άλλον τρόπο πληρωμής.</string>
 	<string name="gc.general.errors.title">Σφάλμα πληρωμής</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Συμπληρώστε μια έγκυρη ημερομηνία λήξης</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Για τον αριθμό σας CPF ή CNPJ, εισαγάγετε μια έγκυρη τιμή που να αποτελείται από 11 ή 14 χαρακτήρες.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Επιλέξτε μία από τις τιμές της λίστας</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Εισαγάγετε έναν έγκυρο IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Συμπληρώστε έναν έγκυρο αριθμό κάρτας</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Δώστε μια τιμή μεταξύ {minLength} και {maxLength} χαρακτήρων</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Δώστε μια τιμή ακριβώς {maxLength} χαρακτήρων</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Κωδικός εταιρείας</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Όνομα εταιρείας</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Αριθμός φορολογικού μητρώου</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Όνομα πληρωτή</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

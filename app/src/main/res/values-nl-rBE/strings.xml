@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">De cijfers zijn gekopieerd.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Het lijkt erop dat er geen verbinding is met het internet. Controleer de verbinding en probeer het nogmaals.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">Oké</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Fout internetverbinding</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">We kunnen de juiste instructies voor het afronden van uw betaling niet weergeven vanwege een technische fout: een onjuiste handelaars-id. Probeer een andere betaalmethode of neem contact op met het bedrijf waarbij u deze aankoop probeert te doen.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Er is een technische fout opgetreden bij het weergeven van de instructies voor het afronden van uw betaling. Probeer het opnieuw of probeer een andere betaalmethode.</string>
 	<string name="gc.general.errors.invalidSubdomain">Er is een technische fout opgetreden als gevolg van een configuratiefout:  het subdomein is niet geldig. Probeer het opnieuw of probeer een andere betaalmethode.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Bij het verwerken van het mandaat is een technische fout opgetreden. Probeer het nog eens.</string>
+	<string name="gc.general.errors.mandates.title">Status van het mandaat</string>
 	<string name="gc.general.errors.productUnavailable">Het product dat u heeft geselecteerd is momenteel niet beschikbaar, selecteer een ander.</string>
 	<string name="gc.general.errors.techicalProblem">Er is een technische fout opgetreden tijdens het verwerken van uw betaling. Probeer het opnieuw of probeer een andere betaalmethode.</string>
 	<string name="gc.general.errors.title">Betaling mislukt</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Geef een geldige vervaldatum op</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Voor een geldig CPF- of CNPJ-nummer in van 11 of 14 cijfers.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Kies een van de waarden uit de lijst</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Vul een geldig IBAN-nummer in.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Geef een geldig kaartnummer op</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vul een waarde in tussen de {minLength} en {maxLength} karakters</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Vul een waarde in van precies {maxLength} karakters</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Bedrijfscode</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Bedrijfsnaam</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Fiscaal nummer</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Naam betaler</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>

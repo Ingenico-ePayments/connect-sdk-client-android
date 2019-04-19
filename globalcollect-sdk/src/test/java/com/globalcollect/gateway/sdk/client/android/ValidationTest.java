@@ -12,6 +12,7 @@ import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.Pay
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleEmailAddress;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleExpirationDate;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleFixedList;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleIBAN;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleLength;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleLuhn;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleRange;
@@ -47,6 +48,9 @@ public class ValidationTest extends AndroidTestCase {
 	private final Integer maxLength = 10;
 	private final String validLength = "abc";
 	private final String invalidLength = "abcabcabcabcabc";
+
+	private final String validIBAN = "GB33BUKB20201555555555";
+	private final String invalidIBAN = "GB94BARC20201530093459";
 
 	private final String validLuhnCheck = "4242424242424242";
 	private final String invalidLuhnCheck = "1142424242424242";
@@ -118,6 +122,24 @@ public class ValidationTest extends AndroidTestCase {
 		paymentRequest.setValue("fixedList", invalidListOption);
 		ValidationRuleFixedList rule = new ValidationRuleFixedList(listEntries, "", ValidationType.FIXEDLIST);
 		assertEquals(false, rule.validate(paymentRequest, "fixedList"));
+	}
+
+
+	// Test IBAN validator
+	@Test
+	public void testValidIBAN() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("IBAN", validIBAN);
+		ValidationRuleIBAN rule = new ValidationRuleIBAN("", ValidationType.IBAN);
+		assertEquals(true, rule.validate(paymentRequest, "IBAN"));
+	}
+
+	@Test
+	public void testInvalidIBAN() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("IBAN", invalidIBAN);
+		ValidationRuleIBAN rule = new ValidationRuleIBAN("", ValidationType.IBAN);
+		assertEquals(false, rule.validate(paymentRequest, "IBAN"));
 	}
 
 

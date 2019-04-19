@@ -5,6 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
+	<string name="gc.app.general.clipboard.feedback">Skaičiai nukopijuoti.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Nėra ryšio su internetu. Prašome patikrinti ryšį ir bandyti kartą.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">Gerai</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Interneto ryšio klaida</string>
@@ -71,6 +72,8 @@
 	<string name="gc.general.errors.incorrectMerchantId">Dėl įvykusios techninės klaidos negalėjome parodyti jums tinkamų instrukcijų, kaip baigti mokėjimą. Išbandykite kitą mokėjimo metodą arba susisiekite su įmone, iš kurios perkate.</string>
 	<string name="gc.general.errors.instructions.renderingProblem">Bandant parodyti instrukcijas, kaip baigti mokėjimą, įvyko techninė klaida. Bandykite mokėti iš naujo arba rinktis kitą mokėjimo metodą.</string>
 	<string name="gc.general.errors.invalidSubdomain">Techninė klaida įvyko dėl klaidingos konfigūracijos: netinkamas subdomenas. Bandykite mokėti iš naujo arba rinktis kitą mokėjimo metodą.</string>
+	<string name="gc.general.errors.mandates.technicalProblem">Bandant apdoroti jūsų pavedimą, įvyko techninė klaida. Bandykite dar kartą.</string>
+	<string name="gc.general.errors.mandates.title">Jūsų pavedimo būsena</string>
 	<string name="gc.general.errors.productUnavailable">Jūsų pasirinkto produkto šiuo metu nėra, pasirinkite kitą produktą.</string>
 	<string name="gc.general.errors.techicalProblem">Bandant apdoroti jūsų mokėjimą įvyko techninė klaida. Bandykite mokėti iš naujo arba rinktis kitą mokėjimo metodą.</string>
 	<string name="gc.general.errors.title">Sumokėti nepavyko</string>
@@ -183,6 +186,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Nurodykite tinkamą galiojimo datą</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Pateikite tinkamą CPF arba CNPJ numerio vertę, sudarytą iš 11 arba 14 ženklų.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Pasirinkite vieną iš sąrašo verčių</string>
+	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Įveskite galiojantį IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Nurodykite galiojantį kortelės numerį</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Nurodykite vertę tarp {minLength} ir {maxLength} simbolių</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Nurodykite tikslią {maxLength} simbolių vertę</string>
@@ -232,6 +236,9 @@
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYCODE.label">Bendrovės kodas</string>
 	<string name="gc.general.paymentProducts.1501.instructionFields.COMPANYNAME.label">Bendrovės pavadinimas</string>
 	<string name="gc.general.paymentProducts.1501.name">Western Union</string>
+	<string name="gc.general.paymentProducts.1503.bank.name">Banco do Brasil</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.CPFCNPJ.label">Fiskalinis numeris</string>
+	<string name="gc.general.paymentProducts.1503.instructionFields.PAYERNAME.label">Mokėtojo vardas ir pavardė</string>
 	<string name="gc.general.paymentProducts.1503.name">Boleto Bancário</string>
 	<string name="gc.general.paymentProducts.1503.paymentProductFields.zip.placeholder">00000-000</string>
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
