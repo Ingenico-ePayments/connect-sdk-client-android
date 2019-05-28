@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Vui lòng chọn một giá trị từ danh sách</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Xin nhập IBAN hợp lệ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Vui lòng cung cấp một số thẻ hợp lệ</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Vui lòng cung cấp một giá trị đúng định dạng</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Vui lòng cung cấp một giá trị từ {minLength} đến {maxLength} ký tự</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Vui lòng cung cấp một giá trị có chính xác {maxLength} ký tự</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Vui lòng cung cấp một giá trị tối đa {maxLength} ký tự</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

@@ -5,7 +5,7 @@
 		Any manual changes may be overwritten.
 	-->
 
-	<string name="gc.app.general.clipboard.feedback">Os números foram copiados.</string>
+	<string name="gc.app.general.clipboard.feedback">Os números são copiados.</string>
 	<string name="gc.app.general.errors.noInternetConnection.bodytext">Parece que não há conexão com a Internet, verifique a sua conexão e tente novamente.</string>
 	<string name="gc.app.general.errors.noInternetConnection.button">OK</string>
 	<string name="gc.app.general.errors.noInternetConnection.title">Erro de conexão com a Internet</string>
@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Selecione um dos valores da lista</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Insira um IBAN válido</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Indique um número de cartão válido</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Indique um valor com o formato correto</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Forneça um valor entre {minLength} e {maxLength} carateres</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Forneça um valor com exatamente {maxLength} carateres</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Indique um valor que tenha, no máximo, {maxLength} caracteres</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

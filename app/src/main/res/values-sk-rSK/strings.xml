@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Zvoľte si zo zoznamu niektorú hodnotu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Zadajte, prosím, platný IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Zadajte platné číslo karty</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Zadajte hodnotu správneho formátu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Zadajte hodnotu medzi {minLength} a {maxLength} znakmi</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Zadajte hodnotu pozostávajúcu presne z {maxLength} znakov</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Zadajte hodnotu pozostávajúcu maximálne z {maxLength} znakov</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort Überweisung</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

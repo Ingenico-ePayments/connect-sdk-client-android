@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Sila pilih salah satu nilai daripada senarai</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Sila masukkan IBAN yang sah</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Sila berikan nombor kad yang sah</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Sila berikan nilai dalam format yang betul</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Sila berikan satu nilai antara {minLength} hingga {maxLength} aksara</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Sila berikan satu nilai {maxLength} aksara sahaja</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Sila berikan nilai yang mempunyai {maxLength} aksara maksimum</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

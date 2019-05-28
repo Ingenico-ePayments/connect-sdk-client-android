@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Tafadhali teua moja  ya nambari kutoka kwenye orodha</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Tafadhali ingiza IBAN halali</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Tafadhali toa nambari sahihi ya kadi</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Tafadhali toa nambari yenye muundo sahihi</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Tafadhali weka thamani kati ya herufi {minLength} na {maxLength}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Tafadhali weka thamani ya herufi {maxLength}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Tafadhali toa nambari yenye herufi {maxLength} za juu zaidi</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">يرجى اختيار إحدى القيم الواردة في القائمة</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">يرجى إدخال IBAN صحيح</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">يرجى تحديد رقم البطاقة الصحيح</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">يرجى تحديد قيمة التنسيق الصحيح</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">يرجى تقديم قيمة تتراوح بين {minLength} و{maxLength} رمز</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">يرجى تقديم قيمة مكونة من {maxLength} رمز تمامًا</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">يرجى تحديد قيمة الحد الأقصى للرموز {maxLength}</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

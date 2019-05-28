@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">목록에서 1개의 값을 선택하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">유효한 IBAN을 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">유효한 카드 번호를 입력하십시오</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">올바른 형식의 값을 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">{minLength}~{maxLength} 사이 값을 입력하세요.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">정확히 maxLength}자로 값을 입력하세요</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">최대 글자수 {maxLength}자에 해당하는 값을 입력하십시오</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

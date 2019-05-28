@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Lūdzu, atlasiet kādu no vērtībām šajā sarakstā</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Ievadīt spēkā esošu IBAN numuru</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Lūdzu, norādiet derīgu kartes numuru</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Lūdzu, norādiet vērtību pareizā formātā</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Lūdzu, norādiet vērtību no {minLength} līdz {maxLength} zīmēm.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Lūdzu, norādiet vērtību ar tieši {maxLength} zīmēm.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Lūdzu, norādiet vērtību, kuras rakstzīmju skaits nepārsniedz {maxLength}</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

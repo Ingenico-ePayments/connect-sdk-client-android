@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">請從列表中選擇一個值</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">請輸入有效的 IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">請提供一個有效的身份證號碼</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">請提供一個格式正確的值</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">請提供一個{minLength}和{maxLength}字元之間的數值</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">請提供一個確切的{maxLength}字元</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">請提供最多 {maxLength} 個字元</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

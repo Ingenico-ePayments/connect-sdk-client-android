@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Valitse yksi arvo listasta</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Syötä kelvollinen IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Anna voimassa olevan kortin numero</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Anna oikean formaatin arvo</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Anna arvo, jossa on {minLength} – {maxLength} merkkiä</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Anna arvo, jossa on tasan {maxLength} merkkiä</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Valitse maksimi {maxLength} merkkien määrä</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

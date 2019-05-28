@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Bitte wählen Sie einen der Werte von der Liste</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Bitte eine gültige IBAN eingeben</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Bitte geben Sie eine gültige Kartennummer an</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Bitte geben Sie einen Wert im korrekten Format an</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Bitte einen Wert mit {minLength} bis {maxLength} Zeichen angeben</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Bitte einen Wert mit genau {maxLength} Zeichen angeben</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Bitte geben Sie einen Wert von höchstens {maxLength} Zeichen an</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

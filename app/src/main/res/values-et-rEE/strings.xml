@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Palun valige loetelust üks väärtus</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Palun sisestage kehtiv IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Palun märkige õige kaardi number</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Palun märkige õige formaadi väärtus</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Palun sisestage tähemärkide arv, mis oleks vahemikus {minLength} ja {maxLength}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Palun sisestage täpselt {maxLength} tähemärki</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Palun märkige maksimaalne märkide {maxLength} väärtus</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

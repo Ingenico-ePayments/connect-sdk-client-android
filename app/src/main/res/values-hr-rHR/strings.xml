@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Molimo da odaberete jednu od ponuđenih vrijednosti</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Unesite valjani IBAN</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Molimo da unesete valjani broj kartice</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Molimo da unesete vrijednost u ispravnom formatu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">Molimo da unesete vrijednost između {minLength} i {maxLength} znakova</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">Molimo da unesete vrijednost koja sadržava točno {maxLength} znakova</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">Molimo da unesete vrijednost od maksimalno {maxLength} znakova</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort Überweisung</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>

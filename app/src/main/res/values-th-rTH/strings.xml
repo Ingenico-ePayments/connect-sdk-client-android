@@ -188,6 +188,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">กรุณาเลือกมาหนึ่งตัวเลือกจากรายการ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">โปรดใส่หมายเลข IBAN ที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">กรุณาระบุเลขบัตรที่ถูกต้อง</string>
+	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">กรุณาระบุค่าที่อยู่ในรูปแบบที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.between.label">โปรดให้ค่าตัวอักษรระหว่าง {minLength} และ {maxLength}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.exact.label">โปรดให้ค่าของตัวอักษรที่แน่นอน {maxLength}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.length.label">กรุณาระบุค่าที่มีความยาวไม่เกิน {maxLength} อักขระ</string>
@@ -360,8 +361,6 @@
 	<string name="gc.general.paymentProducts.809.name">iDEAL</string>
 	<string name="gc.general.paymentProducts.810.name">eNETS</string>
 	<string name="gc.general.paymentProducts.816.name">giropay</string>
-	<string name="gc.general.paymentProducts.818.name">Danske Bank</string>
-	<string name="gc.general.paymentProducts.819.name">Aktia</string>
 	<string name="gc.general.paymentProducts.830.name">paysafecard</string>
 	<string name="gc.general.paymentProducts.836.name">Sofort</string>
 	<string name="gc.general.paymentProducts.840.name">PayPal</string>
