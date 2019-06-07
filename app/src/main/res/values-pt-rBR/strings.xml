@@ -254,6 +254,11 @@
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONDATE.label">Data de vencimento secundária</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.SECONDEXPIRATIONSURCHARGE.label">Taxa adicional de vencimento secundária</string>
 	<string name="gc.general.paymentProducts.1506.name">Pago Fácil</string>
+	<string name="gc.general.paymentProducts.1521.name">e-Pay</string>
+	<string name="gc.general.paymentProducts.1522.name">Tesco - paysbuy Cash</string>
+	<string name="gc.general.paymentProducts.1523.name">ATM Transfers Indonesia</string>
+	<string name="gc.general.paymentProducts.1524.name">DragonPay</string>
+	<string name="gc.general.paymentProducts.1526.name">7-11 MOLPay Cash</string>
 	<string name="gc.general.paymentProducts.163.name">Hiper</string>
 	<string name="gc.general.paymentProducts.164.name">MIR</string>
 	<string name="gc.general.paymentProducts.2.name">American Express</string>
