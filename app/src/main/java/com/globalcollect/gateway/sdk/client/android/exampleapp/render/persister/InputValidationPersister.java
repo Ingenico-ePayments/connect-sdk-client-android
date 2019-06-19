@@ -3,11 +3,16 @@ package com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister
 import android.support.annotation.NonNull;
 
 import com.globalcollect.gateway.sdk.client.android.sdk.model.PaymentRequest;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
+import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.validation.ValidationErrorMessage;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
+import java.security.InvalidAlgorithmParameterException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -51,15 +56,50 @@ public class InputValidationPersister implements Serializable {
 
     private void storeInputFieldDataInPaymentRequest(InputDataPersister inputDataPersister) {
         PaymentProduct paymentProduct = (PaymentProduct) inputDataPersister.getPaymentItem();
+        AccountOnFile accountOnFile = inputDataPersister.getAccountOnFile();
         for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
             String value = inputDataPersister.getValue(field.getId());
-            // Null elements should not be stored in the payment request, empty values however can occur
-            if (value == null) {
-                value = "";
+            // Don't add the value if it has not changed and is available in the provided Account on File
+            if (accountOnFile != null && isFieldInAccountOnFile(field.getId(), accountOnFile)
+                    && valueIsNotAltered(value, field, accountOnFile)) {
+                // The value was not altered with regards to the accountOnFile, but there may still
+                // be an altered value in the PaymentRequest, which is not correct
+                paymentRequest.removeValue(field.getId());
+                continue;
+            }
+
+            // Don't add empty field values
+            if (StringUtils.isEmpty(value)) {
+                // Also remove any data that may possibly have already been added to the Payment Request
+                paymentRequest.removeValue(field.getId());
+                continue;
             }
             paymentRequest.setValue(field.getId(), field.removeMask(value));
         }
         paymentRequest.setTokenize(inputDataPersister.isRememberMe());
+    }
+
+    private boolean isFieldInAccountOnFile(String fieldId, AccountOnFile accountOnFile) {
+        for (KeyValuePair keyValuePair : accountOnFile.getAttributes()) {
+            if (keyValuePair.getKey().equals(fieldId)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean valueIsNotAltered(String value, PaymentProductField field, AccountOnFile accountOnFile) {
+        // Assume the value is not altered if it is null in the inputDataPersister
+        if (value == null) {
+            return true;
+        }
+
+        for (KeyValuePair keyValuePair : accountOnFile.getAttributes()) {
+            if (keyValuePair.getKey().equals(field.getId())) {
+                return field.removeMask(value).equals(keyValuePair.getValue());
+            }
+        }
+        throw new IllegalStateException("No value found in Account on File for the provided FieldId");
     }
 
     public PaymentRequest getPaymentRequest() {

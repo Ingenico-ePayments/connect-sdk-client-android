@@ -125,7 +125,7 @@ public class RenderTextField implements RenderInputFieldInterface {
 
 		// get input information from inputDataPersister
 		String paymentProductValue = inputDataPersister.getValue(field.getId());
-		if(paymentProductValue != null && accountOnFile == null){
+		if(paymentProductValue != null){
 			editText.setText(paymentProductValue);
 		}
 

@@ -1,7 +1,5 @@
 package com.globalcollect.gateway.sdk.client.android.exampleapp.render.persister;
 
-import android.renderscript.ScriptGroup;
-
 import com.globalcollect.gateway.sdk.client.android.sdk.model.FormatResult;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
 import com.globalcollect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentItem;

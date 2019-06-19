@@ -71,7 +71,7 @@ public class RenderDate implements RenderInputFieldInterface {
 
         // get input information from inputDataPersister
         String setDate = inputDataPersister.getValue(field.getId());
-        if (setDate != null && accountOnFile == null) {
+        if (setDate != null) {
             setDateFromString(datePicker, setDate, listener);
         }
 

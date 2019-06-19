@@ -83,7 +83,7 @@ public class PaymentRequest implements Serializable {
 	}
 
 	private boolean isFieldInAccountOnFileAndNotAltered(PaymentProductField field) {
-		if (accountOnFile != null && paymentProductHasAccountOnFile(paymentProduct.getAccountsOnFile())) {
+		if (accountOnFile != null && paymentProductHasAccountOnFile()) {
 			for (KeyValuePair pair : accountOnFile.getAttributes()) {
 				if (pair.getKey().equals(field.getId()) &&               // Field is in account on file
 						(!pair.isEditingAllowed() ||                     // Not altered
@@ -95,7 +95,7 @@ public class PaymentRequest implements Serializable {
 		return false;
 	}
 
-	private boolean paymentProductHasAccountOnFile(List<AccountOnFile> accountsOnFile) {
+	private boolean paymentProductHasAccountOnFile() {
 		if (paymentProduct != null) {
 			for (AccountOnFile ppAccountOnFile : paymentProduct.getAccountsOnFile()) {
 				if (accountOnFile.getId().equals(ppAccountOnFile.getId())) {
