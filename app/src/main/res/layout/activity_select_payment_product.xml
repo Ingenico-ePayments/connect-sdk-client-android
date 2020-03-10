@@ -14,7 +14,7 @@
 	    android:id="@+id/container"
 	    android:layout_width="match_parent"
 	    android:layout_height="0dp"
-	    tools:context="com.globalcollect.gateway.sdk.client.android.activities.PaymentProductSelectionActivity"
+	    tools:context="com.ingenico.connect.gateway.sdk.client.android.activities.PaymentProductSelectionActivity"
 	    tools:ignore="MergeRootFrame" >
 
 

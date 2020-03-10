@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Nurodykite vertę nuo {minValue} iki {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Nurodykite tinkamo formato vertę</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Nurodykite vertę</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Nurodykite tinkamo formato vertę</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Nurodykite tinkamo formato vertę</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Patvirtinkite naudojimosi sąlygas</string>
 	<string name="gc.general.paymentProductFields.zip.label">Pašto indeksas</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Pašto indeksas</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Suma</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Banko pavadinimas</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Bendrovės pavadinimas</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Sutarties numeris</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Valiutos kodas</string>

@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Zadajte hodnotu medzi {minValue} a {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Zadajte hodnotu správneho formátu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Zadajte hodnotu</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Zadajte hodnotu správneho formátu</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Zadajte hodnotu správneho formátu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Odsúhlaste podmienky používania</string>
 	<string name="gc.general.paymentProductFields.zip.label">PSČ</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">PSČ</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Suma</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Názov banky</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Názov spoločnosti</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Číslo zmluvy</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Kód meny</string>

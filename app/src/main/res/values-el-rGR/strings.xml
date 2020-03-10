@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Συμπληρώστε μια τιμή μεταξύ {minValue} και {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Συμπληρώστε μια τιμή με τη σωστή μορφή</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Συμπληρώστε μια τιμή</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Συμπληρώστε μια τιμή με τη σωστή μορφή</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Συμπληρώστε μια τιμή με τη σωστή μορφή</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Παρακαλούμε αποδεχτείτε τους όρους και τις προϋποθέσεις</string>
 	<string name="gc.general.paymentProductFields.zip.label">Ταχυδρομικός κώδικας</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Ταχυδρομικός κώδικας</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Ποσό</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Όνομα τράπεζας</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Όνομα εταιρείας</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Αριθμός σύμβασης</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Κωδικός νομίσματος</string>

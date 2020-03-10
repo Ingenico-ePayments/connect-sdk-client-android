@@ -1,0 +1,140 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'signing'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.02'
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.android.gms:play-services-wallet:18.0.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'org.apache.commons:commons-lang3:3.9'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:1.10.19'
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    failOnError  false
+    source = android.sourceSets.main.java.sourceFiles
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += configurations.compile
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+signing {
+    sign configurations.archives
+}
+
+String skipReleaseSigningArg = "${project.hasProperty('skipReleaseSigning') ? project.property('skipReleaseSigning') : 'false'}"
+def skipReleaseSigning = false
+if (skipReleaseSigningArg.equalsIgnoreCase('true')) {
+    skipReleaseSigning = true
+}
+
+gradle.taskGraph.whenReady { taskGraph ->
+    if (!skipReleaseSigning && taskGraph.allTasks.any { it instanceof Sign }) {
+        def password = System.getProperty("signing.passphrase")
+        if (password == null) {
+            // Use Java 6's console to read from the console (no good for a CI environment)
+            Console console = System.console()
+            console.printf "\n\nWe have to sign some things in this build." +
+                           "\n\nPlease enter your signing details.\n\n"
+
+            password = console.readPassword("PGP Private Key Password: ")
+
+            console.printf "\nThanks.\n\n"
+        }
+
+        allprojects { ext."signing.keyId" = System.getProperty("signing.keyId") }
+        allprojects { ext."signing.secretKeyRingFile" = System.getProperty("signing.secretKeyRingFile") }
+        allprojects { ext."signing.password" = password }
+    }
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+def installer = install.repositories.mavenInstaller
+
+installer.beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+[installer]*.pom*.whenConfigured { pom ->
+    pom.project {
+        groupId = POM_GROUP_ID
+        artifactId = POM_ARTIFACT_ID
+        version = POM_VERSION
+        //packaging
+        name = POM_NAME
+        description = POM_DESCRIPTION
+        url = POM_URL
+
+        organization {
+            name = POM_ORGANIZATION_NAME
+            url = POM_ORGANIZATION_URL
+        }
+
+        licenses {
+            license {
+                name = POM_LICENSE_NAME
+                url = POM_LICENSE_URL
+            }
+        }
+
+        developers {
+            developer {
+                name = POM_DEVELOPER_NAME
+                email = POM_DEVELOPER_EMAIL
+                organization = POM_DEVELOPER_ORGANIZATION
+                organizationUrl = POM_DEVELOPER_ORGANIZATIONURL
+            }
+        }
+
+        issueManagement {
+            system = POM_ISSUEMANAGEMENT_SYSTEM
+            url = POM_ISSUEMANAGEMENT_URL
+        }
+
+        scm {
+            connection = POM_SCM_CONNECTION
+            developerConnection = POM_SCM_DEVELOPERCONNECTION
+            url = POM_SCM_URL
+        }
+    }
+}

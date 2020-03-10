@@ -35,7 +35,7 @@
 		        android:text="Client Session Identifier:"
 		        android:layout_marginTop="10dp"/>
 		    
-		    <com.globalcollect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
+		    <com.ingenico.connect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
 		        android:id="@+id/client_session_identifier"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
 				android:layout_height="wrap_content"
 				android:text="Customer Identifier:"/>
 
-			<com.globalcollect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
+			<com.ingenico.connect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
 				android:id="@+id/customer_identifier"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
 				android:layout_height="wrap_content"
 				android:text="Client API URL:"/>
 
-			<com.globalcollect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
+			<com.ingenico.connect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
 				android:id="@+id/client_api_url"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
 				android:layout_height="wrap_content"
 				android:text="Assets URL:"/>
 
-			<com.globalcollect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
+			<com.ingenico.connect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
 				android:id="@+id/asset_url"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
 		        android:layout_height="wrap_content"
 		        android:text="Amount in cents:"/>
 
-		    <com.globalcollect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
+		    <com.ingenico.connect.gateway.sdk.client.android.exampleapp.view.ValidationEditText
 		        android:id="@+id/amount"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"

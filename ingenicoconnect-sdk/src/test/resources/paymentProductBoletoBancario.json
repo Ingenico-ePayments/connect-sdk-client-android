@@ -1,0 +1,233 @@
+{
+  "deviceFingerprintEnabled" : false,
+  "allowsRecurring" : false,
+  "allowsTokenization" : false,
+  "autoTokenized" : false,
+  "displayHints" : {
+    "displayOrder" : 2,
+    "label" : "Boleto Bancário",
+    "logo" : "templates/master/global/css/img/ppimages/pp_logo_1503_v1.png"
+  },
+  "fields" : [ {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "regularExpression" : {
+          "regularExpression" : "^\\d{11}$|^\\d{14}$"
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 1,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Social security number",
+      "mask" : "{{99999999999999}}",
+      "obfuscate" : false,
+      "placeholderLabel" : "Fiscal number",
+      "preferredInputType" : "PhoneNumberKeyboard"
+    },
+    "id" : "fiscalNumber",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : false,
+      "validators" : {
+        "boletoBancarioRequiredness" : {
+          "fiscalNumberLength" : 11
+        },
+        "length" : {
+          "maxLength" : 15,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : true,
+      "displayOrder" : 2,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "First name",
+      "obfuscate" : false,
+      "placeholderLabel" : "First name",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "firstName",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : false,
+      "validators" : {
+        "boletoBancarioRequiredness" : {
+          "fiscalNumberLength" : 11
+        },
+        "length" : {
+          "maxLength" : 35,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : true,
+      "displayOrder" : 5,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Last name",
+      "obfuscate" : false,
+      "placeholderLabel" : "Last name",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "surname",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : false,
+      "validators" : {
+        "boletoBancarioRequiredness" : {
+          "fiscalNumberLength" : 14
+        },
+        "length" : {
+          "maxLength" : 40,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : true,
+      "displayOrder" : 6,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Company name",
+      "obfuscate" : false,
+      "placeholderLabel" : "Company name",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "companyName",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "length" : {
+          "maxLength" : 50,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 10,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Street",
+      "obfuscate" : false,
+      "placeholderLabel" : "Street",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "street",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : false,
+      "validators" : {
+        "length" : {
+          "maxLength" : 15,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 15,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Street address number",
+      "obfuscate" : false,
+      "placeholderLabel" : "Street address number",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "houseNumber",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "length" : {
+          "maxLength" : 8,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 20,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "Zip code",
+      "mask" : "{{99999}}-{{999}}",
+      "obfuscate" : false,
+      "placeholderLabel" : "Zip code",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "zip",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "length" : {
+          "maxLength" : 20,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 22,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "City",
+      "obfuscate" : false,
+      "placeholderLabel" : "City",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "city",
+    "type" : "string"
+  }, {
+    "dataRestrictions" : {
+      "isRequired" : true,
+      "validators" : {
+        "length" : {
+          "maxLength" : 2,
+          "minLength" : 0
+        }
+      }
+    },
+    "displayHints" : {
+      "alwaysShow" : false,
+      "displayOrder" : 25,
+      "formElement" : {
+        "type" : "text"
+      },
+      "label" : "State abbreviation",
+      "obfuscate" : false,
+      "placeholderLabel" : "State abbreviation",
+      "preferredInputType" : "StringKeyboard"
+    },
+    "id" : "stateCode",
+    "type" : "string"
+  } ],
+  "id" : 1503,
+  "mobileIntegrationLevel" : "BASIC_SUPPORT",
+  "paymentMethod" : "cash",
+  "usesRedirectionTo3rdParty" : false
+}

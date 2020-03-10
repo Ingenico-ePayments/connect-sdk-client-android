@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activities.DetailInputActivityAfterpay"
+    tools:context="com.ingenico.connect.gateway.sdk.client.android.exampleapp.activities.DetailInputActivityAfterpay"
     android:id="@+id/afterpay_search_section"
     android:orientation="vertical"
     android:layout_width="match_parent"

@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Vui lòng cung cấp một giá trị từ {minValue} đến {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Vui lòng cung cấp một giá trị đúng định dạng</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Vui lòng cung cấp một giá trị</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Vui lòng cung cấp một giá trị đúng định dạng</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Vui lòng cung cấp một giá trị đúng định dạng</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Xin chấp thuận các điều khoản và điều kiện</string>
 	<string name="gc.general.paymentProductFields.zip.label">Mã zip</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Mã zip</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Số tiền</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Tên ngân hàng</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Tên công ty</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Số hợp đồng</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Mã tiền tệ</string>

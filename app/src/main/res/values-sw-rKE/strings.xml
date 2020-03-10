@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Tafadhali toa nambari kati ya {minValue} na {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Tafadhali toa nambari yenye muundo sahihi</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Tafadhali toa nambari</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Tafadhali toa nambari yenye muundo sahihi</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Tafadhali toa nambari yenye muundo sahihi</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">कृपया नियम और शर्तें स्वीकार करें</string>
 	<string name="gc.general.paymentProductFields.zip.label">Msimbo wa zip</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Msimbo wa zip</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Kiwango cha hela</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Jina la benki</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Jina la kampuni</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Nambari ya kandarasi</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Msimbo wa sarafu</string>

@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">{minValue}와(과) {maxValue} 사이의 값을 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">올바른 형식의 값을 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">값을 입력하십시오</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">올바른 형식의 값을 입력하십시오</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">올바른 형식의 값을 입력하십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">약관 및 조건에 동의해주십시오</string>
 	<string name="gc.general.paymentProductFields.zip.label">우편번호</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">우편번호</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">금액</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">은행명</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">회사명</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">계약 번호</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">통화 코드</string>

@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">कृपया {minValue} और {maxValue} के बीच का कोई मान प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">कृपया सही स्वरूप का मान प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">कृपया कोई मान प्रदान करें</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">कृपया सही स्वरूप का मान प्रदान करें</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">कृपया सही स्वरूप का मान प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">कृपया नियम और शर्तें स्वीकार करें</string>
 	<string name="gc.general.paymentProductFields.zip.label">जिप कोड</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">जिप कोड</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">धनराशि</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">बैंक का नाम</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">कंपनी का नाम</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">अनुबन्ध संख्या</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">मुद्रा कोड</string>

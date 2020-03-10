@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Введіть значення між {minValue} та {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Введіть значення у правильному форматі</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Введіть значення</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Введіть значення у правильному форматі</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Введіть значення у правильному форматі</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Просимо прийняти умови</string>
 	<string name="gc.general.paymentProductFields.zip.label">Поштовий індекс</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Поштовий індекс</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Сума</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Назва банку</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Назва компанії</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Номер контракту</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Код валюти</string>

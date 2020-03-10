@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">請提供一個 {minValue} 至 {maxValue} 之間的值</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">請提供一個格式正確的值</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">請提供一個值</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">請提供一個格式正確的值</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">請提供一個格式正確的值</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">請接受條款和條件</string>
 	<string name="gc.general.paymentProductFields.zip.label">郵遞區號</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">郵遞區號</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">金額</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">銀行名稱</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">公司名稱</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">合同編號</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">貨幣代碼</string>

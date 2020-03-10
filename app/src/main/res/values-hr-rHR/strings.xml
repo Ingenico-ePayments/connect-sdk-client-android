@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Molimo da unesete vrijednost između {minValue} i {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Molimo da unesete vrijednost u ispravnom formatu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Molimo da unesete vrijednost</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Molimo da unesete vrijednost u ispravnom formatu</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Molimo da unesete vrijednost u ispravnom formatu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Molimo prihvatite odredbe i uvjete</string>
 	<string name="gc.general.paymentProductFields.zip.label">Poštanski broj</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Poštanski broj</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Iznos</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Naziv banke</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Naziv tvrtke</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Broj ugovora</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Oznaka valute</string>

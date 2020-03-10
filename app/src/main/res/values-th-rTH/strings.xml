@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">กรุณาระบุค่าที่อยู่ระหว่าง {minValue} กับ {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">กรุณาระบุค่าที่อยู่ในรูปแบบที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">กรุณาระบุค่า</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">กรุณาระบุค่าที่อยู่ในรูปแบบที่ถูกต้อง</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">กรุณาระบุค่าที่อยู่ในรูปแบบที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">โปรดยอมรับข้อกำหนดและเงื่อนไข</string>
 	<string name="gc.general.paymentProductFields.zip.label">รหัสไปรษณีย์</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">รหัสไปรษณีย์</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">จำนวนเงิน</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">ชื่อธนาคาร</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">ชื่อบริษัท</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">หมายเลขสัญญา</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">รหัสสกุลเงิน</string>

@@ -1,1 +1,1 @@
-include ':app', ':globalcollect-sdk', ':globalcollect-sdk-integrationtest'
+include ':app', ':ingenicoconnect-sdk', ':ingenicoconnect-sdk-integrationtest'

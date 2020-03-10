@@ -220,7 +220,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">No se admite la tarjeta que ha introducido. Introduzca otra tarjeta o pruebe con otro método de pago.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Introduzca una dirección de e-mail válida</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Introduzca una fecha de vencimiento válida</string>
-	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Proporcione un valor válido de 11 o 14 caracteres para su número de CNPJ O CPF.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Proporcione un valor válido de 11 o 14 caracteres para su número de CNPJ o CPF.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Seleccione uno de los valores en la lista</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Ingrese un IBAN válido</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Introduzca un número de tarjeta válido</string>
@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Introduzca un valor entre {minValue} y {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Introduzca un valor con el formato correcto</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Introduzca un valor</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Introduzca un valor con el formato correcto</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Introduzca un valor con el formato correcto</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Sírvase aceptar los siguientes términos y condiciones</string>
 	<string name="gc.general.paymentProductFields.zip.label">Código postal</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Código postal</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Importe</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Nombre del banco</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Nombre de la empresa</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Número de contrato</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Código de la divisa</string>

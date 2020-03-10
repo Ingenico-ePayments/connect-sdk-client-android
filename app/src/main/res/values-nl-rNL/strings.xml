@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Voer een waarde in tussen {minValue} en {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Voer een waarde met het juiste formaat in a.u.b.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Vul een waarde in a.u.b.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Voer een waarde met het juiste formaat in a.u.b.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Voer een waarde met het juiste formaat in a.u.b.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">U dient de algemene voorwaarden te accepteren</string>
 	<string name="gc.general.paymentProductFields.zip.label">Postcode</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Postcode</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Bedrag</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Naam bank</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Bedrijfsnaam</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Contractnummer</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Valutacode</string>

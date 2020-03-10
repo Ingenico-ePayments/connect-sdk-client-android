@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">ספק ערך בטווח שבין {minValue} לבין {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">ספק ערך במבנה הנכון</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">ספק ערך</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">ספק ערך במבנה הנכון</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">ספק ערך במבנה הנכון</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">נא לאשר את תנאי השימוש</string>
 	<string name="gc.general.paymentProductFields.zip.label">מיקוד</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">מיקוד</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">סכום</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">שם הבנק</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">שם החברה</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">מספר חוזה</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">קוד מטבע</string>

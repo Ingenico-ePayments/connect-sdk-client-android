@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Anna arvo väliltä {minValue} ja {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Anna oikean formaatin arvo</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Anna arvo</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Anna oikean formaatin arvo</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Anna oikean formaatin arvo</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Hyväksy ehdot</string>
 	<string name="gc.general.paymentProductFields.zip.label">Postinumero</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Postinumero</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Määrä</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Pankin nimi</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Yhtiön nimi</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Sopimusnumero</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Valuuttakoodi</string>

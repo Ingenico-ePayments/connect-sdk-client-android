@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Indicare un valore compreso tra {minValue} e {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Inserire l\'importo nel formato corretto</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Indicare un valore</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Inserire l\'importo nel formato corretto</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Inserire l\'importo nel formato corretto</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Si prega di accettare i termini e le condizioni</string>
 	<string name="gc.general.paymentProductFields.zip.label">Codice postale</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Codice postale</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Importo</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Nome della banca</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Nome della società</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Numero di contratto</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Codice valuta</string>

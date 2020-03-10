@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">لطفاً مقداری را بین {minValue} تا {maxValue} اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">لطفاً مقداری را با فرمت صحیح اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">لطفاً مقداری را اعلام کنید</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">لطفاً مقداری را با فرمت صحیح اعلام کنید</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">لطفاً مقداری را با فرمت صحیح اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">لطفا شرایط و ضوابط را بپذیرید</string>
 	<string name="gc.general.paymentProductFields.zip.label">کد پستی</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">کد پستی</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">مبلغ</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">نام بانک</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">نام شرکت</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">شماره قرارداد</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">کد ارز</string>

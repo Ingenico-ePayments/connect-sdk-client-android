@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Lūdzu, norādiet vērtību, kas atrodas robežās no {minValue} līdz {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Lūdzu, norādiet vērtību pareizā formātā</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Lūdzu, norādiet vērtību</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">Lūdzu, norādiet vērtību pareizā formātā</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">Lūdzu, norādiet vērtību pareizā formātā</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Lūdzu, piekrītiet noteikumiem un nosacījumiem</string>
 	<string name="gc.general.paymentProductFields.zip.label">Pasta indekss</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Pasta indekss</string>
@@ -282,7 +284,7 @@
 	<string name="gc.general.paymentProducts.1504.name">Konbini</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.AMOUNT.label">Daudzums</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.BANKNAME.label">Bankas nosaukums</string>
-	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label"></string>
+	<string name="gc.general.paymentProducts.1506.instructionFields.BARCODE.label">No need to translate this text (it\'s always empty)</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.COMPANYNAME.label">Uzņēmuma nosaukums</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CONTRACTNUMBER.label">Līguma numurs</string>
 	<string name="gc.general.paymentProducts.1506.instructionFields.CURRENCYCODE.label">Valūtas kods</string>

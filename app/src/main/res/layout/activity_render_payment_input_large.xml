@@ -27,7 +27,7 @@
 				tools:ignore="MergeRootFrame"
 				android:layout_weight="1"
 				android:scrollbars="none"
-				tools:context="com.globalcollect.gateway.sdk.client.android.activities.PaymentProductSelectionActivity" >
+				tools:context="com.ingenico.connect.gateway.sdk.client.android.activities.PaymentProductSelectionActivity" >
 
 				<LinearLayout
 					android:layout_width="fill_parent"

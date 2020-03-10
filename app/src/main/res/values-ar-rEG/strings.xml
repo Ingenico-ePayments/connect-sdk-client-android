@@ -233,6 +233,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">يرجى تحديد قيمة محصورة بين {minValue} و{maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">يرجى تحديد قيمة التنسيق الصحيح</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">يرجى تحديد قيمة</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName">يرجى تحديد قيمة التنسيق الصحيح</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber">يرجى تحديد قيمة التنسيق الصحيح</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">يرجى قبول الشروط والأحكام</string>
 	<string name="gc.general.paymentProductFields.zip.label">الرمز البريدي</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">الرمز البريدي</string>
