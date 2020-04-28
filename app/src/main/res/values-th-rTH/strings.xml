@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Mrs</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Title</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">คุณไม่สามารถชำระเงินด้วยบัตรที่คุณกรอกได้ โปรดกรอกข้อมูลบัตรอื่นหรือลองวิธีการชำระเงินแบบอื่น</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">กรุณาระบุค่าที่อยู่ในรูปแบบที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">กรุณาระบุอีเมลแอดเดรสที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">กรุณาระบุวันหมดอายุที่ถูกต้อง</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">โปรดระบุค่า CPF ของคุณที่ถูกต้อง 11 หรือ 14 ตัว หรือหมายเลข CNPJ</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">รหัสอ้างอิงการชำระเงินของท่านคือ</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">หมายเลขประจำตัวพิเศษ</string>
 	<string name="gc.general.paymentProducts.51.name">การโอนผ่านธนาคารในบราซิล (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">ชื่อเจ้าของบัญชี</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">หมายเลขบัญชี</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">เลขตรวจสอบของธนาคาร</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">รหัสธนาคาร</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">รหัสการจัดเรียง</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">รหัสอ้างอิงการชำระเงินของท่านคือ</string>
-	<string name="gc.general.paymentProducts.53.name">การโอนเงินผ่านธนาคาร</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">รหัสอ้างอิงการชำระเงินของท่านคือ</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">หมายเลขอ้างอิง</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">หมายเลขโทรศัพท์</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">งวด AfterPay</string>

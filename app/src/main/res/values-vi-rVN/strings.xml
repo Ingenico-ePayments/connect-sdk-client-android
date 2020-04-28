@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Bà</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Chức danh</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Thẻ quý khách sử dụng không được hỗ trợ. Vui lòng dùng thẻ khác hoặc thử phương thức thanh toán khác.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Vui lòng cung cấp một giá trị đúng định dạng</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Vui lòng cung cấp một địa chỉ email hợp lệ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Vui lòng cung cấp một ngày hết hạn hợp lệ</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Vui lòng cung cấp giá trị hợp hệ gồm 11 đến 14 ký tự dành cho số CPF hoặc CNPJ của bạn.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Tham chiếu thanh toán của bạn là</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">ID đặc biệt</string>
 	<string name="gc.general.paymentProducts.51.name">Chuyển Khoản Ngân Hàng Brazil (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Tên chủ tài khoản</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Số tài khoản</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Chữ số kiểm tra của ngân hàng</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Mã ngân hàng</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Mã phân loại</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Tham chiếu thanh toán của bạn là</string>
-	<string name="gc.general.paymentProducts.53.name">Chuyển Khoản Ngân Hàng</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Tham chiếu thanh toán của bạn là</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Số tham chiếu</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Số điện thoại di động</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Trả Góp AfterPay</string>

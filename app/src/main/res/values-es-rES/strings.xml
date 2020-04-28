@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Señora</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Título</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">No se admite la tarjeta que ha introducido. Introduzca otra tarjeta o pruebe con otro método de pago.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Introduzca un valor con el formato correcto</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Introduzca una dirección de e-mail válida</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Introduzca una fecha de vencimiento válida</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Introduzca un valor válido de entre 11 y 14 caracteres para su número de CPF o CNPJ.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">La referencia de su pago es</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">ID especial</string>
 	<string name="gc.general.paymentProducts.51.name">Transferencia bancaria Brasil (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Nombre del titular de la cuenta</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Número de cuenta</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Dígito de control del banco</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Código del banco</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Código de clasificación</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">La referencia de su pago es</string>
-	<string name="gc.general.paymentProducts.53.name">Transferencia bancaria</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">La referencia de su pago es</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Número de referencia</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Número de teléfono móvil</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Plazos de AfterPay</string>

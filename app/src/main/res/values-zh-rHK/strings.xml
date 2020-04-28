@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">女士</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">稱呼</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">您所插入的卡不支持。請插入另一張卡或嘗試其他付款的方式。</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">請提供一個格式正確的值</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">請提供一個有效的電子郵件地址</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">請提供一個有效的到期日</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">您的 CPF 或 CNPJ 編號請提供 11 或 14 個字元的有效值。</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">您的付款參考編號為</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">特殊 ID</string>
 	<string name="gc.general.paymentProducts.51.name">巴西銀行轉帳 (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">帳戶持有人姓名</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">帳號</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">銀行支票數位</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">銀行代碼</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">分行代碼</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">您的付款參考編號為</string>
-	<string name="gc.general.paymentProducts.53.name">銀行轉帳</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">您的付款參考編號為</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">參考號碼</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">行動電話號碼</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay 分期</string>

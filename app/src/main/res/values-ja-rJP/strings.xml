@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Mrs</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">敬称</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">情報を入力されたカードはご利用いただけないものです。他のカードの情報をご入力いただくか、別のお支払い方法をお選びください。</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">正しいフォーマットの値を入力してください</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">有効なメールアドレスを入力してください</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">有効な有効期限を入力してください</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">11桁または14桁の有効なCPFまたはCNPJ番号を入力してください。</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">お客様の支払照会は</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">特別ID</string>
 	<string name="gc.general.paymentProducts.51.name">銀行振り込みブラジル（Depósito Identificado）</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">口座名義人名</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">口座番号</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">銀行小切手の桁</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">銀行コード</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">分類コード</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">お客様の支払照会は</string>
-	<string name="gc.general.paymentProducts.53.name">銀行振り込み</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">お客様の支払照会は</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">照会番号</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">携帯電話番号</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPayの分割払い</string>

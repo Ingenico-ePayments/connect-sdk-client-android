@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">خانم</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">عنوان</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">کارتی که وارد کرده‌اید پشتیبانی نمی‌شود. لطفاً کارت دیگری را وارد کنید یا روش پرداخت دیگری را امتحان نمایید.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">لطفاً مقداری را با فرمت صحیح اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">لطفاً یک آدرس ایمیل معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">لطفاً یک تاریخ انقضای معتبر اعلام کنید</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">مقداری معتبر متشکل از 11 یا 14 نویسه برای شماره CPF یا CNPJ خود ارائه کنید.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">شماره ارجاع پرداخت شما:</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">شناسه خاص</string>
 	<string name="gc.general.paymentProducts.51.name">انتقال بانکی برزیل (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">نام صاحب حساب</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">شماره حساب</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">رقم کنترل بانک</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">کد بانک</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">کد شاخص</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">شماره ارجاع پرداخت شما:</string>
-	<string name="gc.general.paymentProducts.53.name">انتقال بانکی</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">شماره ارجاع پرداخت شما:</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">شماره ارجاع</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">شماره تلفن موبایل</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">اقساط AfterPay</string>

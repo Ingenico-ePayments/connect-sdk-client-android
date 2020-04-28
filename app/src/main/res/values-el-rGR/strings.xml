@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Κα</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Τίτλος</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Η κάρτα που εισαγάγατε δεν υποστηρίζεται. Εισαγάγετε άλλη κάρτα ή επιλέξτε άλλον τρόπο πληρωμής.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Συμπληρώστε μια τιμή με τη σωστή μορφή</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Συμπληρώστε μια έγκυρη διεύθυνση email</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Συμπληρώστε μια έγκυρη ημερομηνία λήξης</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Για τον αριθμό σας CPF ή CNPJ, εισαγάγετε μια έγκυρη τιμή που να αποτελείται από 11 ή 14 χαρακτήρες.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Ο αριθμός πληρωμής σας είναι</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Ειδικό αναγνωριστικό</string>
 	<string name="gc.general.paymentProducts.51.name">Τραπεζική μεταφορά, Βραζιλία (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Όνομα κατόχου λογαριασμού</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Αριθμός λογαριασμού</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Ψηφίο ελέγχου τράπεζας</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Κωδικός τράπεζας</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Σύντομος κωδικός</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Ο αριθμός πληρωμής σας είναι</string>
-	<string name="gc.general.paymentProducts.53.name">Τραπεζική μεταφορά</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Ο αριθμός πληρωμής σας είναι</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Αριθμός αναφοράς</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Αριθμός κινητού τηλεφώνου</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Δόσεις AfterPay</string>

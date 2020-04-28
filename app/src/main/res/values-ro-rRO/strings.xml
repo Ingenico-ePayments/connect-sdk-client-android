@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Dna</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Titlu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Cardul introdus nu este suportat. Vă rugăm să introduceţi un alt card, sau încercaţi un alt mod de plată.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Furnizaţi o valoare în format corect</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Furnizaţi o adresă de e-mail validă</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Furnizaţi o dată de expirare validă</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Vă rugăm să introduceți o valoare validă de 11 sau 14 caractere pentru numărul dumneavoastră CPF (registrul persoanelor fizice) sau CNPJ (registrul național al persoanelor juridice).</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Referinţa plăţii dvs. este</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">ID special</string>
 	<string name="gc.general.paymentProducts.51.name">Transfer bancar Brazilia (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Nume titular cont</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Număr cont</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Cifră cec bancar</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Cod bancă</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Cod de sortare</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Referinţa plăţii dvs. este</string>
-	<string name="gc.general.paymentProducts.53.name">Transfer bancar</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Referinţa plăţii dvs. este</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Număr de referinţă</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Numărul de telefon mobil</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Rate AfterPay</string>

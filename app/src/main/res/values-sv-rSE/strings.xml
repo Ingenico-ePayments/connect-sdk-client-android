@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Fru</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Titel</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Kortet du har angivit accepteras inte. Ange ett annat kort eller välj en annan betalningsmetod.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Ange ett värde med korrekt format</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Ange en giltig e-postadress</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Ange ett giltig förfallodatum</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Ange ett giltigt värde med 11 eller 14 tecken för ditt CPF- eller CNPJ-nummer.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Din betalningsreferens är</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Special-ID</string>
 	<string name="gc.general.paymentProducts.51.name">Banköverföring Brasilien (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Kontoinnehavarens namn</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Kontonummer</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Bankcheck-siffra</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Bankkod</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Clearingnummer</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Din betalningsreferens är</string>
-	<string name="gc.general.paymentProducts.53.name">Banköverföring</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Din betalningsreferens är</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Referensnummer</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Mobilnummer</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay-omgångar</string>

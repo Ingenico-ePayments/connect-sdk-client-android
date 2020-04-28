@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">גברת</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">תואר</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">אין תמיכה בכרטיס שהזנת. אנא הזן כרטיס אחר או השתמש באמצעי תשלום אחר.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">ספק ערך במבנה הנכון</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">נא הזן כתובת דואר אלקטרוני תקפה</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">נא הזן תאריך פקיעת תוקף חוקי</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">מסור ערך חוקי בן 11 או 14 תווים עבור מספר CPE או CNPJ שלך.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">מספר הסימוכין של התשלום שלך הוא</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">מזהה מיוחד</string>
 	<string name="gc.general.paymentProducts.51.name">העברה בנקאית לברזיל (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">שם בעל החשבון</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">מספר חשבון</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">ספרת ביקורת של הבנק</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">קוד הבנק</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">קוד מיון</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">מספר הסימוכין של התשלום שלך הוא</string>
-	<string name="gc.general.paymentProducts.53.name">העברה בנקאית</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">מספר הסימוכין של התשלום שלך הוא</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">מספר סימוכין</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">מספר טלפון נייד</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">‎+ 86*** **** ****‎</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">תשלומים בAfterPay</string>

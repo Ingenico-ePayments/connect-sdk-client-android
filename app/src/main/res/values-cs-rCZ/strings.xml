@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Paní</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Titul</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Karta, kterou jste zadali, není podporovaná. Zadejte, prosím, jinou kartu nebo zkuste jinou platební metodu.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Zadejte hodnotu ve správném formátu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Zadejte platný e-mail</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Zadejte platné datum expirace</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Zadejte platnou hodnotu o 11 až 14 znacích vašeho čísla CPF nebo CNPJ.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Vaše referenční číslo platby je</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Zvláštní ID</string>
 	<string name="gc.general.paymentProducts.51.name">Bankovní převod v Brazílii (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Jméno majitele účtu</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Číslo účtu</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Kontrolní číslice banky</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Kód banky</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Rozlišovací kód</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Vaše referenční číslo platby je</string>
-	<string name="gc.general.paymentProducts.53.name">Bankovní převod</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Vaše referenční číslo platby je</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Referenční číslo</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Číslo mobilního telefonu</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Splátky AfterPay</string>

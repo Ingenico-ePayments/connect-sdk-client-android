@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Asszony</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Megszólítás</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">A megadott kártya nem támogatott. Kérjük, adjon meg másik kártyát, vagy próbálkozzon más fizetési móddal.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Kérjük, hogy az értéket megfelelő formátumban adja meg</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Kérjük, hogy érvényes e-mail címet adjon meg</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Kérjük, hogy érvényes lejárati dátumot adjon meg</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Kérjük, adja meg CPF- vagy CNPJ-számának 11 vagy 14 érvényes karakterét.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Fizetési azonosítója</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Különleges azonosító</string>
 	<string name="gc.general.paymentProducts.51.name">Banki átutalás – Brazília (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Számlatulajdonos neve</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Bankszámlaszám</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Banki ellenőrző számjegy</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Banki kód</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Rövid kód</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Fizetési azonosítója</string>
-	<string name="gc.general.paymentProducts.53.name">Banki átutalás</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Fizetési azonosítója</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Hivatkozási szám</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Mobiltelefonszám</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay-törlesztőrészletek</string>

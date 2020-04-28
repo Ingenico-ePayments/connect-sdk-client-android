@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Pr</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Pöördumine</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Sisestatud kaarti ei toetata. Palun sisestage muu kaart või proovige muud makseviisi.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Palun märkige õige formaadi väärtus</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Palun märkige õige meiliaadress</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Palun märkige õige aegumise kuupäev</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Palun sisestage oma kehtiv 11- või 14-kohaline CPF- või CNPJ-number.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Teie makse viide on</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Spetsiaalne ID</string>
 	<string name="gc.general.paymentProducts.51.name">Brasiilia pangaülekanne (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Konto omaniku nimi</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Konto number</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Panga tšeki number</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Panga kood</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Liigi kood</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Teie makse viide on</string>
-	<string name="gc.general.paymentProducts.53.name">Pangaülekanne</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Teie makse viide on</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Viitenumber</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Mobiilinumber</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay osamaksed</string>

@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Ponia</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Kreipimosi forma</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Jūsų įvesta kortelė nepalaikoma. Įveskite kitą kortelę arba bandykite rinktis kitą mokėjimo metodą.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Nurodykite tinkamo formato vertę</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Nurodykite galiojantį el. pašto adresą</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Nurodykite tinkamą galiojimo datą</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Pateikite tinkamą CPF arba CNPJ numerio vertę, sudarytą iš 11 arba 14 ženklų.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Jūsų mokėjimo nuoroda yra</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Specialus kodas</string>
 	<string name="gc.general.paymentProducts.51.name">Banko pervedimas Brazilija (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Sąskaitos savininko pavadinimas</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Sąskaitos Nr.</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Banko kvito skaitmuo</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Banko kodas</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Rūšiavimo kodas</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Jūsų mokėjimo nuoroda yra</string>
-	<string name="gc.general.paymentProducts.53.name">Banko perlaida</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Jūsų mokėjimo nuoroda yra</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Nuorodos numeris</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Mobiliojo telefono numeris</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">„AfterPay“ įmokos</string>

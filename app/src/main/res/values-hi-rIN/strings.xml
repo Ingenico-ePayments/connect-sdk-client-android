@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">श्रीमती</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">टाइटल</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">आपके द्वारा डाला गया कार्ड सपोर्टेड नहीं है। कृपया कोई अन्य कार्ड डालें करें या भुगतान की अन्य विधि को आज़माएं।</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">कृपया सही स्वरूप का मान प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">कृपया एक मान्य ईमेल पता प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">कृपया एक मान्य समाप्ति तारीख प्रदान करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">कृपया अपने सीपीएफ या सीएनपीजे नंबर के लिए 11 या 14 वर्णों का वैध मान प्रदान करें।</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">आपका भुगतान संदर्भ है</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">विशेष ID</string>
 	<string name="gc.general.paymentProducts.51.name">बैंक ट्रांसफर ब्राजील (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">खाता धारक का नाम</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">खाता संख्या</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">बैंक चैक अंक</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">बैंक कोड</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">कोड छाँटें</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">आपका भुगतान संदर्भ है</string>
-	<string name="gc.general.paymentProducts.53.name">बैंक ट्रांसफर</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">आपका भुगतान संदर्भ है</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">संदर्भ संख्या</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">मोबाइल फोन संख्या</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay किस्तें</string>

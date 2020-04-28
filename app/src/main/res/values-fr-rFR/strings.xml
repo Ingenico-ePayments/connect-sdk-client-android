@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Mme</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Civilité</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">La carte dont vous avez saisi les informations n\'est pas prise en charge. Veuillez saisir les informations d\'une autre carte ou essayer un autre mode de paiement.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Veuillez indiquer une valeur dans le format correct</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Veuillez indiquer une adresse email valide</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Veuillez indiquer une date d\'expiration valide</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Veuillez saisir une valeur valide comprenant entre 11 et 14 caractères pour votre numéro CPF ou CNPJ.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Votre référence de paiement est</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Identifiant spécial</string>
 	<string name="gc.general.paymentProducts.51.name">Virement bancaire au Brésil (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Nom du titulaire du compte</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Numéro de compte</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Numéro de chèque bancaire</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Code banque</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Code guichet</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Votre référence de paiement est</string>
-	<string name="gc.general.paymentProducts.53.name">Virement bancaire</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Votre référence de paiement est</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Numéro de référence</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Numéro de téléphone portable</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Mensualités AfterPay</string>

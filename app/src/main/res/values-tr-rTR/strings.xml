@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Bayan</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Unvan</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Girdiğiniz kart desteklenmiyor. Lütfen başka bir kart girin veya başka bir ödeme yöntemi deneyin.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Lütfen girdiğiniz değerin doğru formatta olmasına dikkat edin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Lütfen geçerli bir e-posta adresi girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Lütfen geçerli bir son kullanma tarihi girin</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Lütfen CPF veya CNPJ numaranız olarak 11 veya 14 karakterli ve geçerli bir değer verin.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Ödeme referansınız</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Özel tanımlama kodu</string>
 	<string name="gc.general.paymentProducts.51.name">Brezilya için Banka Havalesi (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Hesap sahibinin adı</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Hesap numarası</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Tek haneli banka kontrol kodu</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Banka kodu</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Sıralama kodu</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Ödeme referansınız</string>
-	<string name="gc.general.paymentProducts.53.name">Banka Havalesi</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Ödeme referansınız</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Referans numarası</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Cep telefonu numarası</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay taksitleri</string>

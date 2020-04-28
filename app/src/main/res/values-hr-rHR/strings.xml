@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs"></string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Titula</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Unesena kartica nije podržana. Molimo vas da unesete drugu karticu ili odaberete drugi način plaćanja.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Molimo da unesete vrijednost u ispravnom formatu</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Molimo da unesete valjanu adresu e-pošte</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Molimo da unesete važeći rok valjanosti</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Navedite važeću vrijednost od 11 ili 14 znakova za svoj CPF ili CNPJ broj.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Vaš poziv na broj je</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Poseban identifikacijski broj</string>
 	<string name="gc.general.paymentProducts.51.name">Bank Transfer Brazil (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Ime nositelja računa</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Broj računa</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Broj bankovnog čeka</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Kôd banke</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Oznaka banke</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Vaš poziv na broj je</string>
-	<string name="gc.general.paymentProducts.53.name">Bank Transfer Argentina</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Vaš poziv na broj je</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Poziv na broj</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Broj mobilnog telefona</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">obročno plaćanje AfterPay</string>

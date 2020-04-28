@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">مسز</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">لقب</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">آپ نے جو کارڈ داخل کیا ہے وہ سپورٹ یافتہ نہیں ہے۔ برائے مہربانی کوئی دیگر کارڈ داخل کریں یا ادائیگی کا کوئی دوسرا طریقہ آزمائیں۔</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">براہ کرم درست فارمیٹ کی کوئی عددی قیمت فراہم کریں</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">براہ کرم کوئی درست ای میل پتہ فراہم کریں</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">براہ کرم کوئی درست تاریخ تنسیخ فراہم کریں</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">اپنے CPF یا CNPJ نمبر کے لیے 11 یا 14 حروف کی ایک درست قدر مہیا کریں۔</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">آپ کی ادائیگی کا حوالہ نمبر ہے</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">خصوصی آئی ڈی</string>
 	<string name="gc.general.paymentProducts.51.name">بینک ٹرانسفر برازیل (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">کھاتہ دار کا نام</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">کھاتہ نمبر</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">بینک چیک ڈیجٹ</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">بینک کوڈ</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">سارٹ کوڈ</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">آپ کی ادائیگی کا حوالہ نمبر ہے</string>
-	<string name="gc.general.paymentProducts.53.name">بینک ٹرانسفر</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">آپ کی ادائیگی کا حوالہ نمبر ہے</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">حوالہ نمبر</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">موبائل فون نمبر</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay کی قسطیں</string>

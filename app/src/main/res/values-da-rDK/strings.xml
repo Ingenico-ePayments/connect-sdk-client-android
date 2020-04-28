@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Fru</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Titel</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Dit kort kan desværre ikke bruges her. Prøv at indsætte et andet kort eller prøv med en anden betalingsmetode.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Angiv en værdi i det korrekte format</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Angiv en gyldig e-mail-adresse</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Angiv en gyldig udløbsdato</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Angiv en gyldig værdi på 11 eller 14 tegn til dit CPF- eller CNPJ-nummer.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Din betalingsreference er</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Special-ID</string>
 	<string name="gc.general.paymentProducts.51.name">Bankoverførsel, Brasilien (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Kontoindehaverens navn</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Kontonummer</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Bankens kontrolcifre</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Bankkode</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Sorteringskode</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Din betalingsreference er</string>
-	<string name="gc.general.paymentProducts.53.name">Bankoverførsel</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Din betalingsreference er</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Referencenummer</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Mobiltelefonnr.</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay rater</string>

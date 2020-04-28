@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Пані</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Назва</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Вставлена картка не підтримується. Вставте іншу картку або скористайтеся іншим способом оплати.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Введіть значення у правильному форматі</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Введіть дійсну адресу електронної пошти</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Введіть актуальний термін дії</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Укажіть дійсне значення свого номера CPF або CNPJ, яке має складатися з 11 або 14 символів.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Призначення платежу</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Спеціальний ідентифікатор</string>
 	<string name="gc.general.paymentProducts.51.name">Банківський переказ — Бразилія (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Ім\'я власника рахунку</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Номер рахунку</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Банківська контрольна цифра</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Код банку</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Номер відділення банку</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Призначення платежу</string>
-	<string name="gc.general.paymentProducts.53.name">Банківський переказ</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Призначення платежу</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Номер для посилання</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Номер мобільного телефону</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Періодичні платежі AfterPay</string>

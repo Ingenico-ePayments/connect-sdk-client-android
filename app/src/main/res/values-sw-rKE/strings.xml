@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Bi.</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Sifa</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Kadi uliyoweka haitumiki. Tafadhali weka kadi nyingine au jaribu mbinu nyingine ya malipo.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Tafadhali toa nambari yenye muundo sahihi</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Tafadhali toa anwani sahihi ya barua pepe</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Tafadhali toa tarehe sahihi ya mwisho</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Tafadhali weka nambari yako sahihi ya CPF au CNPJ yenye tarakimu 11 au 14.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Rejeleo la malipo yako ni</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Kitambulisho maalum</string>
 	<string name="gc.general.paymentProducts.51.name">Uhamisho wa Benki Brazil (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Jina la mmiliki wa akaunti</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Nambari ya akaunti</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Tarakimu ya hundi ya benki</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Msimbo wa benki</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Panga msimbo</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Rejeleo la malipo yako ni</string>
-	<string name="gc.general.paymentProducts.53.name">Uhamishaji wa Benki</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Rejeleo la malipo yako ni</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Nambari ya rejeleo</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Nambari ya simu ya mkononi</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">Mafungu ya AfterPay</string>

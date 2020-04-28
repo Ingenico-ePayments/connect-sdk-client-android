@@ -218,6 +218,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">Frau</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Anrede</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Die Karte, die Sie verwenden möchten, wird nicht unterstützt. Verwenden Sie bitte eine andere Karte oder wählen Sie eine andere Zahlungsmethode.</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Bitte geben sie einen Wert im korrekten Format an</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Bitte geben Sie eine gültige E-Mail-Adresse an</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Bitte geben Sie ein gültiges Ablaufdatum an</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Bitte geben Sie einen gültigen Wert für Ihre 11-stellige oder 14-stellige CPF- oder CNPJ-Nummer ein.</string>
@@ -382,13 +383,6 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.PAYMENTREFERENCE.label">Ihre Zahlungsreferenz lautet</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Sonderkennung</string>
 	<string name="gc.general.paymentProducts.51.name">Banküberweisung Brasilien (Depósito Identificado)</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.ACCOUNTHOLDER.label">Name des Kontoinhabers</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKACCOUNTNUMBER.label">Kontonummer</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCHECKDIGIT.label">Bank-Prüfziffer</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BANKCODE.label">Bankcode</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.BRANCHCODE.label">Bankleitzahl</string>
-	<string name="gc.general.paymentProducts.53.instructionFields.PAYMENTREFERENCE.label">Ihre Zahlungsreferenz lautet</string>
-	<string name="gc.general.paymentProducts.53.name">Banküberweisung</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Ihre Zahlungsreferenz lautet</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Referenznummer</string>
@@ -444,6 +438,7 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.label">Mobilfunknummer</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
+	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.9000.name">AfterPay Teilzahlungen</string>
