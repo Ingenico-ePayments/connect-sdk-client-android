@@ -76,27 +76,28 @@ public class IinLookupTextWatcher implements TextWatcher {
 	@Override
 	public void afterTextChanged(Editable s) {
 
-		// Do nothing if not one of the first six digits changed
-		if (isOneOfFirstSixDigitsChanged(s.toString())) {
+		// Strip the spaces that are added by Masking
+		String currentEnteredValue = s.toString().replace(" ", "");
+
+		// Retrieve IIN Details if the first 8 digits have changed, and the length of the current
+		// value is at least six.
+		// The IIN Lookup may return different results depending on the length of the initial
+		// digits, between length 6 and 8.
+		if (currentEnteredValue.length() >= 6 && isOneOfFirst8DigitsChanged(currentEnteredValue)) {
 
 			// Do iinlookup
-			String trimmedValue = s.toString().replace(" ", "");
-			session.getIinDetails(context, trimmedValue, listener, paymentContext);
+			session.getIinDetails(context, currentEnteredValue, listener, paymentContext);
 		}
 
-		//Set the previousEnteredValue
-		previousEnteredValue = s.toString();
+		// Update the previousEnteredValue
+		previousEnteredValue = currentEnteredValue;
 	}
 
-	private boolean isOneOfFirstSixDigitsChanged(String current) {
-		String trimmedPrevious = previousEnteredValue.replace(" ", "");
-		String trimmedCurrent = current.replace(" ", "");
+	private boolean isOneOfFirst8DigitsChanged(String currentEnteredValue) {
+		// Add some padding to make sure there are 8 characters to compare
+		String currentPadded = currentEnteredValue + "xxxxxxxx";
+		String previousPadded = previousEnteredValue + "xxxxxxxx";
 
-		if (trimmedPrevious.length() >= 6 && trimmedCurrent.length() >= 6) {
-			return !trimmedPrevious.substring(0, 6).equals(trimmedCurrent.substring(0, 6));
-		} else {
-			return true;
-		}
+		return !currentPadded.substring(0, 8).equals(previousPadded.substring(0, 8));
 	}
-
 }

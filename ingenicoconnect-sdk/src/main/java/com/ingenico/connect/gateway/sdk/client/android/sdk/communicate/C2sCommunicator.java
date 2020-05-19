@@ -69,7 +69,8 @@ public class C2sCommunicator implements Serializable {
 	private static final String HTTP_HEADER_METADATA = "X-GCS-ClientMetaInfo";
 
 	// Maximum amount of chars which is used for getting PaymentProductId by CreditCardNumber
-	private static final int MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP = 6;
+	private static final int MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP = 8;
+	private static final int MIN_CHARS_PAYMENT_PRODUCT_ID_LOOKUP = 6;
 
 	// Configuration needed for communicating with the GC gateway
 	private C2sCommunicatorConfiguration configuration;
@@ -533,8 +534,10 @@ public class C2sCommunicator implements Serializable {
 		}
 
 		// Trim partialCreditCardNumber to MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP digits
-		if (partialCreditCardNumber.length() > MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP) {
+		if (partialCreditCardNumber.length() >= MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP) {
 			partialCreditCardNumber = partialCreditCardNumber.substring(0, MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP);
+		} else if (partialCreditCardNumber.length() > MIN_CHARS_PAYMENT_PRODUCT_ID_LOOKUP) {
+			partialCreditCardNumber = partialCreditCardNumber.substring(0, MIN_CHARS_PAYMENT_PRODUCT_ID_LOOKUP);
 		}
 
 		HttpURLConnection connection = null;

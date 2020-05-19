@@ -19,6 +19,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -33,7 +34,7 @@ import static org.junit.Assert.assertTrue;
 public class GetIinDetailsAsyncTaskTest extends BaseAsyncTaskTest {
 
     @Test
-    public void testGetIinDetailsAsyncTaskSUPPORTEDWithValidRequest() throws InterruptedException, CommunicationException {
+    public void testGetIinDetailsAsyncTaskSUPPORTEDWithValidRequestNoCobrands() throws InterruptedException, CommunicationException {
 
         initializeValidMocksAndSession();
 
@@ -59,13 +60,51 @@ public class GetIinDetailsAsyncTaskTest extends BaseAsyncTaskTest {
         // Retrieve the iin details response from the listener
         IinDetailsResponse iinDetailsResponse = listener.getIinDetailsResponse();
 
-        validateResponseStatusSUPPORTED(iinDetailsResponse);
+        validateResponseStatusSUPPORTEDNoCobrands(iinDetailsResponse);
     }
 
-    private void validateResponseStatusSUPPORTED(IinDetailsResponse idr) {
+    private void validateResponseStatusSUPPORTEDNoCobrands(IinDetailsResponse idr) {
         assertEquals(idr.getStatus(), IinStatus.SUPPORTED);
         assertNotNull(idr.getPaymentProductId());
         assertNotNull(idr.getCoBrands());
+        assertTrue(idr.getCoBrands().isEmpty());
+    }
+
+    @Test
+    public void testGetIinDetailsAsyncTaskSUPPORTEDWithValidRequestWithCobrands() throws InterruptedException, CommunicationException {
+
+        initializeValidMocksAndSession();
+
+        final CountDownLatch waitForAsyncTaskCallBack = new CountDownLatch(1);
+
+        // Create the IinLookupAsyncTask and then begin the test by calling execute.
+        List<IinLookupAsyncTask.OnIinLookupCompleteListener> listeners = new ArrayList<>(1);
+        Listener listener = new Listener(waitForAsyncTaskCallBack);
+        listeners.add(listener);
+
+        IinLookupAsyncTask iinLookupAsyncTask = new IinLookupAsyncTask(
+                getContext(),
+                // Visa number
+                "401200XX",
+                getCommunicator(),
+                listeners,
+                minimalValidPaymentContext);
+        iinLookupAsyncTask.execute();
+
+        // Test that the response is received within 'ASYNCTASK_CALLBACK_TEST_TIMEOUT_SEC' seconds
+        assertTrue(waitForAsyncTaskCallBack.await(ASYNCTASK_CALLBACK_TEST_TIMEOUT_SEC, TimeUnit.SECONDS));
+
+        // Retrieve the iin details response from the listener
+        IinDetailsResponse iinDetailsResponse = listener.getIinDetailsResponse();
+
+        validateResponseStatusSUPPORTEDWithCobrands(iinDetailsResponse);
+    }
+
+    private void validateResponseStatusSUPPORTEDWithCobrands(IinDetailsResponse idr) {
+        assertEquals(idr.getStatus(), IinStatus.SUPPORTED);
+        assertNotNull(idr.getPaymentProductId());
+        assertNotNull(idr.getCoBrands());
+        assertFalse(idr.getCoBrands().isEmpty());
     }
 
     @Test

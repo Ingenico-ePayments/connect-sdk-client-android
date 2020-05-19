@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsResponse> {
 
-	// Max nr of chars before doing a iin lookup
-	private final Integer IIN_LOOKUP_NR_OF_CHARS = 6;
+	// Minimal nr of chars before doing a iin lookup
+	private final Integer IIN_LOOKUP_MIN_NR_OF_CHARS = 6;
 
 	// The listeners which will be called by the AsyncTask
 	private List<OnIinLookupCompleteListener> listeners;
@@ -68,13 +68,12 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
 		this.paymentContext = paymentContext;
     }
 
-
 	@Override
     protected IinDetailsResponse doInBackground(String... params) {
 
-    	// Check if partialCreditCardNumber >= IIN_LOOKUP_NR_OF_CHARS
+    	// Check if partialCreditCardNumber >= IIN_LOOKUP_MIN_NR_OF_CHARS
     	// If not return IinStatus.NOT_ENOUGH_DIGITS
-    	if (partialCreditCardNumber.length() < IIN_LOOKUP_NR_OF_CHARS) {
+    	if (partialCreditCardNumber.length() < IIN_LOOKUP_MIN_NR_OF_CHARS) {
     		return new IinDetailsResponse(IinStatus.NOT_ENOUGH_DIGITS);
     	}
 
