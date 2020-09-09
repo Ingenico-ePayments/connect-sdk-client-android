@@ -30,6 +30,7 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 	private Boolean allowsTokenization;
 	private Boolean autoTokenized;
 	private Boolean usesRedirectionTo3rdParty;
+	private Boolean allowsInstallments;
 	private MobileIntegrationLevel mobileIntegrationLevel;
 	private DisplayHintsPaymentItem displayHints;
 
@@ -75,6 +76,10 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 
 	public Boolean usesRedirectionTo3rdParty(){
 		return usesRedirectionTo3rdParty;
+	}
+
+	public Boolean allowsInstallments() {
+		return allowsInstallments;
 	}
 
 	public MobileIntegrationLevel mobileIntegrationLevel(){

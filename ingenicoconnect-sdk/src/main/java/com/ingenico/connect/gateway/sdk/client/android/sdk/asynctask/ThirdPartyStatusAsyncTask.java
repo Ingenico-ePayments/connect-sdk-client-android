@@ -54,6 +54,13 @@ public class ThirdPartyStatusAsyncTask extends AsyncTask<String, Void, ThirdPart
         return response.getThirdPartyStatus();
     }
 
+    @Override
+    protected void onPostExecute(ThirdPartyStatus thirdPartyStatus) {
+
+        // Call listener callback
+        listener.onThirdPartyStatusCallComplete(thirdPartyStatus);
+    }
+
     /**
      * Interface for OnThirdPartyStatusCallCompleteListener
      * Is called from the ThirdPartyStatusAsyncTask when it has retrieved a ThirdPartyStatus for the
