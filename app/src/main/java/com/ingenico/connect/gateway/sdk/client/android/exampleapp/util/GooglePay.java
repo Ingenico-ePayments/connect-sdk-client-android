@@ -133,6 +133,9 @@ public class GooglePay {
             transactionInfo.put("totalPriceStatus", "FINAL");
             transactionInfo.put("totalPrice", paymentContext.getAmountOfMoney().getAmount().toString());
             transactionInfo.put("currencyCode", paymentContext.getAmountOfMoney().getCurrencyCode().toString());
+            if (paymentProduct.getAcquirerCountry() != null) {
+                transactionInfo.put("countryCode", paymentProduct.getAcquirerCountry());
+            }
             paymentRequest.put("transactionInfo", transactionInfo);
         } catch (JSONException e) {
             Log.e(TAG, "Exception occurred while creating JSON object: " + e);

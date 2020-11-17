@@ -31,6 +31,7 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 	private Boolean autoTokenized;
 	private Boolean usesRedirectionTo3rdParty;
 	private Boolean allowsInstallments;
+	private String acquirerCountry;
 	private MobileIntegrationLevel mobileIntegrationLevel;
 	private DisplayHintsPaymentItem displayHints;
 
@@ -80,6 +81,10 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 
 	public Boolean allowsInstallments() {
 		return allowsInstallments;
+	}
+
+	public String getAcquirerCountry() {
+		return acquirerCountry;
 	}
 
 	public MobileIntegrationLevel mobileIntegrationLevel(){

@@ -26,6 +26,8 @@ public class BasicPaymentProductGroup implements BasicPaymentItem, Serializable 
     // List containing all AccountOnFiles
     private List<AccountOnFile> accountsOnFile = new ArrayList<AccountOnFile>();
 
+    private String acquirerCountry;
+
 
     public String getId(){
         return id;
@@ -51,5 +53,9 @@ public class BasicPaymentProductGroup implements BasicPaymentItem, Serializable 
 
     public DisplayHintsPaymentItem getDisplayHints(){
         return displayHints;
+    }
+
+    public String getAcquirerCountry() {
+        return acquirerCountry;
     }
 }

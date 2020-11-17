@@ -117,6 +117,7 @@
 	<string name="gc.general.paymentProductFields.cardNumber.placeholder">**** **** **** ****</string>
 	<string name="gc.general.paymentProductFields.cardholderName.label">Kortinhaltijan nimi</string>
 	<string name="gc.general.paymentProductFields.cardholderName.placeholder">John Doe</string>
+	<string name="gc.general.paymentProductFields.cardholderName.tooltipText">Syötä kortissa ilmoitettu kortinhaltijan nimi latinalaisin kirjaimin.</string>
 	<string name="gc.general.paymentProductFields.city.label">Kaupunki</string>
 	<string name="gc.general.paymentProductFields.city.placeholder">Kaupunki</string>
 	<string name="gc.general.paymentProductFields.companyName.label">Yhtiön nimi</string>
@@ -175,16 +176,24 @@
 	<string name="gc.general.paymentProductFields.houseNumber.placeholder">Asunnon numero</string>
 	<string name="gc.general.paymentProductFields.iban.label">IBAN</string>
 	<string name="gc.general.paymentProductFields.iban.placeholder">IBAN</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.daily.label">Päivittäinen</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.effectiveAnnualPercentageRate.label"></string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.frequency.label">Maksutiheys</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.installmentAmount.label">Erän summa</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.interestFree.label">Koroton</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.interestRate.label">Korko</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.monthly.label">Kuukausittainen</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.monthlyFee.label">Kuukausimaksu</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.numberOfInstallments.label">Erien määrä</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.quarterly.label">Neljännesvuosittainen</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.secciUrl.label">Lue lisää SECCIstä</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.startupFee.label">Aloitusmaksu</string>
 	<string name="gc.general.paymentProductFields.installmentId.fields.totalAmount.label">Maksettava kokonaissumma</string>
+	<string name="gc.general.paymentProductFields.installmentId.fields.weekly.label">Viikoittainen</string>
+	<string name="gc.general.paymentProductFields.installmentId.interestRate.tooltipText">Korko riippuu osamaksujen lukumäärästä. Korkosumma lisätään kuukausittaiseen osamaksuun.</string>
 	<string name="gc.general.paymentProductFields.installmentId.label">Valitse suunnitelma</string>
 	<string name="gc.general.paymentProductFields.installmentId.placeholder">Valitse suunnitelma</string>
+	<string name="gc.general.paymentProductFields.installmentId.selectedInstallmentPlan.label">Osamaksusuunnitelmasi</string>
 	<string name="gc.general.paymentProductFields.installmentId.selectionTextTemplate">{installmentAmount} {numberOfInstallments} erässä</string>
 	<string name="gc.general.paymentProductFields.installmentPlan.fields.installmentAmount">Erän summa</string>
 	<string name="gc.general.paymentProductFields.installmentPlan.fields.interestRate">Korko</string>
@@ -218,7 +227,7 @@
 	<string name="gc.general.paymentProductFields.title.options.mrs">[First name Surname]</string>
 	<string name="gc.general.paymentProductFields.title.placeholder">Titteli</string>
 	<string name="gc.general.paymentProductFields.validationErrors.allowedInContext.label">Antamaasi korttia ei tueta. Anna jokin toinen kortti tai kokeile jotain toista maksutapaa.</string>
-	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Anna oikean formaatin arvo</string>
+	<string name="gc.general.paymentProductFields.validationErrors.cardholderName.label">Anna nimi täsmälleen siten, kuin se on kirjoitettu korttiisi</string>
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Anna voimassa oleva sähköpostiosoite</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Anna voimassa oleva päättymispäivä</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Anna kelvollinen CPF- tai CNPJ-numero, jossa on 11 tai 14 merkkiä.</string>
@@ -234,9 +243,10 @@
 	<string name="gc.general.paymentProductFields.validationErrors.range.label">Anna arvo väliltä {minValue} ja {maxValue}</string>
 	<string name="gc.general.paymentProductFields.validationErrors.regularExpression.label">Anna oikean formaatin arvo</string>
 	<string name="gc.general.paymentProductFields.validationErrors.required.label">Anna arvo</string>
-	<string name="gc.general.paymentProductFields.validationErrors.residentIdName.label">Anna oikean formaatin arvo</string>
-	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">Anna oikean formaatin arvo</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdName.label">Anna nimi täsmälleen siten, kuin se on kirjoitettu asukkaan henkilökorttiisi</string>
+	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">Anna numero täsmälleen siten, kuin se on kirjoitettu asukkaan henkilökorttiisi</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Hyväksy ehdot</string>
+	<string name="gc.general.paymentProductFields.validationErrors.zip.label">Anna oikean formaatin arvo</string>
 	<string name="gc.general.paymentProductFields.zip.label">Postinumero</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Postinumero</string>
 	<string name="gc.general.paymentProductGroups.cards.name">Kortit</string>
@@ -246,7 +256,8 @@
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKCHECKDIGIT.label">Pankkishekin numero</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BANKCODE.label">Pankkikoodi</string>
 	<string name="gc.general.paymentProducts.11.instructionFields.BRANCHCODE.label">Pankkitunnus</string>
-	<string name="gc.general.paymentProducts.11.instructionFields.PAYMENTREFERENCE.label">Sinun maksuviitteesi on</string>
+	<string name="gc.general.paymentProducts.11.instructionFields.PAYMENTREFERENCE.label">Sinun maksuviitteesi on
+	</string>
 	<string name="gc.general.paymentProducts.11.name">Pankkisiirto</string>
 	<string name="gc.general.paymentProducts.114.name">Visa Debit</string>
 	<string name="gc.general.paymentProducts.117.name">Maestro</string>
@@ -373,7 +384,7 @@
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.500.instructionFields.BILLERID.label">Laskuttajan tunnus</string>
-	<string name="gc.general.paymentProducts.500.instructionFields.CUSTOMERPAYMENTREFERENCE.label">Tilin haltijan nimi</string>
+	<string name="gc.general.paymentProducts.500.instructionFields.CUSTOMERPAYMENTREFERENCE.label">Sinun maksuviitteesi on</string>
 	<string name="gc.general.paymentProducts.500.name">BPAY</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.ACCOUNTHOLDER.label">Tilin haltijan nimi</string>
 	<string name="gc.general.paymentProducts.51.instructionFields.BANKACCOUNTNUMBER.label">Tilinumero</string>
@@ -384,10 +395,12 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Erityinen tunnus</string>
 	<string name="gc.general.paymentProducts.51.name">Pankkisiirto Brasilia (Depósito Identificado)</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
-	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Sinun maksuviitteesi on</string>
+	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Sinun maksuviitteesi on
+	</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Viitenumero</string>
 	<string name="gc.general.paymentProducts.705.name">Suoraveloitus</string>
-	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Sinun maksuviitteesi on</string>
+	<string name="gc.general.paymentProducts.715.instructionFields.PAYMENTREFERENCE.label">Sinun maksuviitteesi on
+	</string>
 	<string name="gc.general.paymentProducts.715.instructionFields.REFERENCENUMBER.label">Viitenumero</string>
 	<string name="gc.general.paymentProducts.715.name">Toistuva suoraveloitus Iso-Britannia</string>
 	<string name="gc.general.paymentProducts.730.name">ACH</string>
@@ -441,7 +454,6 @@
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
-	<string name="gc.general.paymentProducts.884.name">FPX</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>
 	<string name="gc.general.paymentProducts.886.name">CIMB Clicks</string>
 	<string name="gc.general.paymentProducts.887.name">Bank Islam</string>

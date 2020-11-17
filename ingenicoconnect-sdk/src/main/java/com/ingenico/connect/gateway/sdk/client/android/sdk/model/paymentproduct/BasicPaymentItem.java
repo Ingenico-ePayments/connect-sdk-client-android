@@ -16,4 +16,6 @@ public interface BasicPaymentItem extends Serializable {
 
     public List<AccountOnFile> getAccountsOnFile();
 
+    public String getAcquirerCountry();
+
 }
