@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Оновити статус платежу</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Натисніть кнопку нижче, щоб оновити статус платежу.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Якщо вам не вдається здійснити оплату за допомогою описаного вище способу, натисніть «Скасувати» та виберіть інший платіжний інструмент для здійснення платежу.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Ім’я резидента </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Ім’я резидента </string>

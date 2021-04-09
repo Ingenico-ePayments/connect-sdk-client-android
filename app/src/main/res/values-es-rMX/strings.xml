@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Actualizar el estado de pago</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Haga clic en el botón de abajo para actualizar el estado de su pago.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Si no puede pagar con el método anterior, toque la opción \'Cancel\' y seleccione otro producto de pago para completar la transacción.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Nombre del Residente </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Nombre del Residente </string>

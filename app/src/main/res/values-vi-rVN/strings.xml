@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Cập nhật hiện trạng thanh toán</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Bấm nút bên dưới để cập nhật hiện trạng thanh toán của bạn.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Khi bạn không thể thanh toán bằng phương thức thanh toán ở trên, vui lòng chạm \'Hủy\' và chọn sản phẩm thanh toán khác để hoàn tất việc thanh toán của bạn.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Tên của cư dân </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Tên của cư dân </string>

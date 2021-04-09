@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">刷新付款状态</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">点击以下按钮刷新您的付款状态。</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">如果无法使用上述付款方式，请点击“取消”并选择其他付款产品来完成付款。</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">中国银联</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">居民姓名 </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">居民姓名 </string>

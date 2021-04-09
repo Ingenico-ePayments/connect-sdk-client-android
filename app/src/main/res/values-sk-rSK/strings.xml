@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Obnoviť stav platby</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Kliknite na nižšie uvedené tlačidlo a obnovte si stav platby.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ak sa nedarí vykonať platbu pomocou spôsobu platby uvedeného vyššie, ťuknite na položku „Cancel“ (Zrušiť) a vyberte inú možnosť platby.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Meno rezidenta </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Meno rezidenta </string>

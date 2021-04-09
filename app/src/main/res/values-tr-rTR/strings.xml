@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Ödeme durumunu yenileyin</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Ödeme durumunuzu yenilemek için aşağıdaki düğmeyi tıklayın.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Yukarıda belirtilen ödeme yöntemiyle ödeme yapamıyorsanız lütfen ‘İptal’ düğmesine tıklayın ve başka bir ödeme ürününü seçerek ödemenizi tamamlayın.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">İkamet edenin adı </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">İkamet edenin adı </string>

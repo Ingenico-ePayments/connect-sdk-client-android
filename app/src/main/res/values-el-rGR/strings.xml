@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Ανανέωση κατάστασης πληρωμής</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Κάντε κλικ στο παρακάτω κουμπί για να ανανεωθεί η κατάσταση της πληρωμής σας.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Εάν δεν έχετε τη δυνατότητα να πληρώσετε με τον παραπάνω τρόπο πληρωμής, πατήστε «Ακύρωση» και επιλέξτε ένα άλλο μέσο πληρωμής για ολοκληρώσετε την πληρωμή σας.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Όνομα κατοίκου </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Όνομα κατοίκου </string>

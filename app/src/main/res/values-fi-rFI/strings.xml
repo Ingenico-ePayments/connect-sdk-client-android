@@ -443,6 +443,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Päivitä maksun tila</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Päivitä maksun tila napsauttamalla alla olevaa painiketta.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Jos maksaminen edellä olevalla tavalla ei onnistu, napauta "peruuta" ja valitse jokin toinen maksutuote maksun suorittamiseksi.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Nimi henkilökortissa </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Nimi henkilökortissa </string>

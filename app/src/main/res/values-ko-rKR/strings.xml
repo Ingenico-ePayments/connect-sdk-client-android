@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">결제 상태 새로 고침</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">결제 상태를 새로 고침 하려면 아래 버튼을 클릭하십시오.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">위 결제 방법으로 결제할 수 없으면 \'취소\'를 탭하고 다른 결제 상품을 선택하여 결제를 완료하세요.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">거주자 이름 </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">거주자 이름 </string>

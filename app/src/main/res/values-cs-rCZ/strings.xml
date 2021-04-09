@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Aktualizace stavu platby</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Pro aktualizaci informací o stavu platby klikněte na níže uvedené tlačítko.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Pokud nejste schopni zaplatit výše uvedenou platební metodou, klikněte na „Zrušit“ a pro dokončení platby vyberte jiný platební produkt.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Jméno občana </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Jméno občana </string>

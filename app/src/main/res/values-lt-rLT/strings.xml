@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Atnaujinkite mokėjimo būseną</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Paspauskite žemiau esantį mygtuką, kad atnaujintumėte mokėjimo būseną.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Jei negalite sumokėti pirmiau nurodytu būdu, palieskite „Cancel“ (atšaukti) ir pasirinkite kitą mokėjimo priemonę mokėjimui atlikti.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Gyventojo vardas, pavardė </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Gyventojo vardas, pavardė </string>

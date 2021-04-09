@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">بازآوری وضعیت پرداخت</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">برای بازآوری وضعیت پرداخت خود، بر روی دکمه زیر کلیک کنید.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">اگر نتوانید پرداخت را به روش پرداخت پیش-گفته انجام دهید، باید بر روی «لغو» (Cancel) تلنگر بزنید و روش پرداخت دیگری را برای تکمیل فرآیند پرداخت انتخاب کنید.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">نام فرد مقیم </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">نام فرد مقیم </string>

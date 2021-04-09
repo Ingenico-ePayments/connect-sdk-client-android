@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">भुगतान स्थिति ताज़ा करें</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">अपनी भुगतान स्थिति ताज़ा करने के लिए नीचे दिए गए बटन पर क्लिक करें।</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">यदि आप उपरोक्त भुगतान विधि इस्तेमाल करके भुगतान में असमर्थ हैं, तो कृपया \'रद्द करें\' टैप करें और अपना भुगतान पूरा करने के लिए दूसरा भुगतान उत्पाद चुनें।</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">निवासी का नाम  </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">निवासी का नाम </string>

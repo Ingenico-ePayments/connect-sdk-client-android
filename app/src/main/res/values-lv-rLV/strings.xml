@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Atjaunināt maksājuma statusu</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Nospiediet pogu zemāk, lai atjauninātu jūsu maksājuma statusu.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ja nevarat veikt maksājumu, izmantojot augstāk minēto maksāšanas metodi, klikšķiniet uz „Atcelt” un maksājuma veikšanai izvēlieties citu maksāšanas produktu.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Rezidenta vārds </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Rezidenta vārds </string>

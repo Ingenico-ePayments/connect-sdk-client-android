@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Osveži stanje plačila</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Kliknite na spodnji gumb za osvežitev stanja plačila.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Kadar plačilo s prej navedeno metodo ni mogoče, tapnite »Prekliči« in za dokončanje plačila izberite drugo plačilno sredstvo.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Ime prebivalca </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Ime prebivalca </string>

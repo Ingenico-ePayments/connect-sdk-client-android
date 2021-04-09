@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Muat semula status pembayaran</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Klik butang di bawah untuk memuatkan semula status pembayaran anda.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Apabila anda tidak boleh membayar menggunakan kaedah pembayaran di atas, sila ketik ‘Batal’ dan pilih produk pembayaran yang lain untuk melengkapkan pembayaran anda.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Nama penduduk </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Nama penduduk </string>

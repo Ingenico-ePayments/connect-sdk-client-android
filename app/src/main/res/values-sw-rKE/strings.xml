@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Onyesha upya hali ya malipo</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Bofya kitufe hapa chini ili uonyeshe upya hali yako ya malipo.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ukishindwa kulipa ukitumia mbinu ya malipo iliyo hapo juu, tafadhali gusa \'Ghairi\' kisha uchague bidhaa nyingine ya malipo ili ukamilishe malipo yako.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Jina la mkaazi </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Jina la mkaazi </string>

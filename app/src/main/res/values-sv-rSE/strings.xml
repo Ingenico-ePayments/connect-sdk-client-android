@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Uppdatera betalningsstatus</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Klicka på knappen nedan för att uppdatera din betalningsstatus.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Om du inte kan betala med betalningsmetoden ovan klickar du på ”Avbryt” och väljer en annan betalningsprodukt för att slutföra din betalning.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Den stadigvarande bosatta personens namn </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Den stadigvarande bosatta personens namn </string>

@@ -440,6 +440,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">רענן מצב תשלום</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">לחץ על הלחצן למטה כדי לרענן את מצב התשלום.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">אם לא ניתן לשלם בשיטת התשלום המוצעת למעלה, הקש על Cancel (ביטול) ובחר בשיטת תשלום אחרת כדי לסגור את עניין התשלום.</string>
+	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">שם תושב </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">שם תושב </string>
