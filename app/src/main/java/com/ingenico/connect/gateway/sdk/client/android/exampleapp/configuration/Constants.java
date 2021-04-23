@@ -10,6 +10,7 @@ public class Constants {
 	public static String APPLICATION_IDENTIFIER			 = "Android Example Application/v1.0";
 
 	/** Intent data keys **/
+	public final static String INTENT_PAYMENT_ENCRYPTED_FIELDS   = "encryptedFields";
 	public final static String INTENT_PAYMENT_CONTEXT 			 = "paymentContext";
 	public final static String INTENT_PAYMENT_REQUEST			 = "paymentRequest";
 	public final static String INTENT_SHOPPINGCART 			 	 = "shoppingcart";

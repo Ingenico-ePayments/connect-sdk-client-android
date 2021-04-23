@@ -10,6 +10,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.Vali
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleLuhn;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleRange;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleRegex;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleResidentIdNumber;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleTermsAndConditions;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationType;
 
@@ -272,6 +273,49 @@ public class ValidationTest {
         ValidationRuleBoletoBancarioRequiredness rule = new ValidationRuleBoletoBancarioRequiredness(3, "", ValidationType.BOLETOBANCARIOREQUIREDNESS);
         assertFalse(rule.validate(paymentRequest, "companyName"));
     }
+
+    // Test the Resident ID Number validator
+	public void testRegularValue() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("residentIdNumber", "110101202011271168");
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		assertTrue(rule.validate(paymentRequest, "residentIdNumber"));
+	}
+
+	public void testValueEndingInX() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("residentIdNumber", "11010120201127836X");
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		assertTrue(rule.validate(paymentRequest, "residentIdNumber"));
+	}
+
+	public void testValueOfLenght15() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("residentIdNumber", "110101202011271");
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		assertTrue(rule.validate(paymentRequest, "residentIdNumber"));
+	}
+
+	public void testValueOfLenght16() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("residentIdNumber", "1101012020112711");
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		assertFalse(rule.validate(paymentRequest, "residentIdNumber"));
+	}
+
+	public void testValueContainingLetterLength15() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("residentIdNumber", "1101012a2011271");
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		assertFalse(rule.validate(paymentRequest, "residentIdNumber"));
+	}
+
+	public void testValueContainingLetterLength18() {
+		PaymentRequest paymentRequest = new TestPaymentRequest();
+		paymentRequest.setValue("residentIdNumber", "1a0101202011271168");
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		assertFalse(rule.validate(paymentRequest, "residentIdNumber"));
+	}
 
 	private static final class TestPaymentRequest extends PaymentRequest {
 

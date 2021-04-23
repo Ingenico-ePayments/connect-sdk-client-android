@@ -12,9 +12,6 @@ import java.io.Serializable;
  */
 public class RegularExpression implements Serializable {
 
-	/**
-	 *
-	 */
 	private static final long serialVersionUID = -1242536946684504857L;
 
 	private String regularExpression;

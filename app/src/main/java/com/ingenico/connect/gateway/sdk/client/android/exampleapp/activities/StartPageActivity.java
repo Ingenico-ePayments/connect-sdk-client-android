@@ -11,6 +11,9 @@ import android.widget.Spinner;
 
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.R;
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.configuration.Constants;
+import com.ingenico.connect.gateway.sdk.client.android.exampleapp.dialog.DialogUtil;
+import com.ingenico.connect.gateway.sdk.client.android.exampleapp.dialog.ParseJsonDialog;
+import com.ingenico.connect.gateway.sdk.client.android.exampleapp.model.SessionDetails;
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.model.ShoppingCartItem;
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.view.ValidationEditText;
@@ -31,22 +34,31 @@ import java.util.List;
  */
 public class StartPageActivity extends Activity {
 
+	ValidationEditText clientSessionIdentifierEditText;
+	ValidationEditText customerIdentifierEditText;
+	ValidationEditText clientApiUrlEditText;
+	ValidationEditText assetUrlEditText;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_startpage);
+
+		clientSessionIdentifierEditText = findViewById(R.id.client_session_identifier);
+		customerIdentifierEditText = findViewById(R.id.customer_identifier);
+		clientApiUrlEditText = findViewById(R.id.client_api_url);
+		assetUrlEditText = findViewById(R.id.asset_url);
+
 		loadData();
 	}
 
 	public void payButtonPressed(View view) {
 
-		ValidationEditText clientSessionIdentifierEditText = ((ValidationEditText) findViewById(R.id.client_session_identifier));
 		if (!clientSessionIdentifierEditText.isValid()) {
 			return;
 		}
 		String clientSessionIdentifier = clientSessionIdentifierEditText.getValue();
 
-		ValidationEditText customerIdentifierEditText = ((ValidationEditText) findViewById(R.id.customer_identifier));
 		if (!customerIdentifierEditText.isValid()) {
 			return;
 		}
@@ -58,19 +70,17 @@ public class StartPageActivity extends Activity {
 		EditText merchantNameText = ((EditText) findViewById(R.id.merchant_name));
 		String merchantName = merchantNameText.getText().toString();
 
-		ValidationEditText clientApiUrlEditText = ((ValidationEditText) findViewById(R.id.client_api_url));
 		if (!clientApiUrlEditText.isValid()) {
 			return;
 		}
 		String clientApiUrl = clientApiUrlEditText.getValue();
 
-		ValidationEditText assetUrlEditText = ((ValidationEditText) findViewById(R.id.asset_url));
 		if (!assetUrlEditText.isValid()) {
 			return;
 		}
 		String assetUrl = assetUrlEditText.getValue();
 
-		ValidationEditText amountEditText = ((ValidationEditText) findViewById(R.id.amount));
+		ValidationEditText amountEditText = findViewById(R.id.amount);
 		if (!amountEditText.isValid()) {
 			return;
 		}
@@ -107,6 +117,21 @@ public class StartPageActivity extends Activity {
 
 		// Start paymentIntent
 		startActivity(paymentIntent);
+	}
+
+	public void parseJsonButtonPressed(View view) {
+		DialogUtil.showJsonAlertDialog(this, sessionDetails -> {
+
+            assetUrlEditText.setText(sessionDetails.assetUrl);
+            clientApiUrlEditText.setText(sessionDetails.clientApiUrl);
+            clientSessionIdentifierEditText.setText(sessionDetails.clientSessionId);
+            customerIdentifierEditText.setText(sessionDetails.customerId);
+
+            assetUrlEditText.isValid();
+            clientApiUrlEditText.isValid();
+            clientSessionIdentifierEditText.isValid();
+            customerIdentifierEditText.isValid();
+        });
 	}
 
 	private void loadData() {

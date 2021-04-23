@@ -12,9 +12,6 @@ import java.io.Serializable;
  */
 public class ExpirationDate implements Serializable {
 
-	/**
-	 *
-	 */
 	private static final long serialVersionUID = -4759119724035738836L;
 
 }

@@ -12,9 +12,6 @@ import java.io.Serializable;
  */
 public class Luhn implements Serializable {
 
-	/**
-	 *
-	 */
 	private static final long serialVersionUID = -1145093943834460166L;
 
 }

@@ -15,6 +15,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.Vali
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleLuhn;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleRange;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleRegex;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleResidentIdNumber;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleTermsAndConditions;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationType;
 
@@ -113,6 +114,11 @@ public class DataRestrictions implements Serializable {
 				AbstractValidationRule validationRule = new ValidationRuleBoletoBancarioRequiredness(validators.getBoletoBancarioRequiredness().getFiscalNumberLength(), "boletobancariorequiredness", ValidationType.BOLETOBANCARIOREQUIREDNESS);
 				validationRules.add(validationRule);
 			}
+		}
+
+		if (validators.getResidentIdNumber() != null) {
+			AbstractValidationRule validationRule = new ValidationRuleResidentIdNumber("residentIdNumber", ValidationType.RESIDENTIDNUMBER);
+			validationRules.add(validationRule);
 		}
 
 		return validationRules;

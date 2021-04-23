@@ -12,9 +12,6 @@ import java.io.Serializable;
  */
 public class Length implements Serializable {
 
-	/**
-	 *
-	 */
 	private static final long serialVersionUID = -8127911803708372125L;
 
 	private Integer minLength;

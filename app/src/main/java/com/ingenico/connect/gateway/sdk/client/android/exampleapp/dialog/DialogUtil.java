@@ -78,5 +78,17 @@ public class DialogUtil {
 		}
 		
 	}
-	
+
+	/**
+	 * Shows a ParseJsonDialog with the given parameters
+	 * @param context, Context where the ProgressDialog is added to
+	 * @param listener, the listener that will receive the parsed results
+	 */
+	public static Dialog showJsonAlertDialog(Context context, ParseJsonDialog.JsonParsedListener listener) {
+		ParseJsonDialog dialog = new ParseJsonDialog(listener, context);
+		dialog.setTitle("Paste JSON");
+		dialog.show();
+
+		return dialog;
+	}
 }

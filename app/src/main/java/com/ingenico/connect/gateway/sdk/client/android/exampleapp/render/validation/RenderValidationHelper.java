@@ -92,7 +92,7 @@ public class RenderValidationHelper {
 		if ("length".equals(validationResult.getErrorMessage()) && validationResult.getRule() instanceof ValidationRuleLength) {
 			validationMessage = getCorrectMessageForLength(validationResult);
 		} else {
-			validationMessage = translator.getValidationMessage(validationResult.getErrorMessage());
+			validationMessage = translator.getValidationMessage(validationResult.getErrorMessage(), validationResult.getPaymentProductFieldId());
 		}
 
 		if (validationResult.getRule() != null && paymentItem != null) {

@@ -77,12 +77,7 @@ public class RenderAccountOnFile implements RenderAccountOnFileInterface {
 		// Set the logo via the AssetManager
 		AssetManager logoManager = AssetManager.getInstance(parent.getContext());
 		Drawable logo = logoManager.getLogo(productId);
-		
-		if (Build.VERSION.SDK_INT < 16) {
-			accountOnFileLogoImageView.setBackgroundDrawable(logo);
-		} else {
-			accountOnFileLogoImageView.setBackground(logo);
-		}		
+		accountOnFileLogoImageView.setBackground(logo);
 		
 		parent.addView(paymentProductLayout);
 	}	

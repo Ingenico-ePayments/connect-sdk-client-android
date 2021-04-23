@@ -53,18 +53,37 @@ public class Translator {
 	private Translator(Context context) {
 		this.context = context;
 	}
-	
-	
+
 	/**
-	 * Gets Validation message from the translations file
-	 * @param errorMessageId, the String which is to be translated
+	 * Gets a Validation message from the translations file
+	 * @param errorMessageId, the identifier for the errorMessage, used as default, not null
 	 * @return the translated value
 	 */
 	public String getValidationMessage(String errorMessageId) {
+		return getValidationMessage(errorMessageId, null);
+	}
+
+	/**
+	 * Gets a Validation message from the translations file
+	 * @param errorMessageId, the identifier for the errorMessage, used as default, not null
+	 * @param paymentProductFieldId, the identifier of the field for which to find the error message, may be null
+	 * @return the translated value
+	 */
+	public String getValidationMessage(String errorMessageId, String paymentProductFieldId) {
 		
 		if (errorMessageId == null) {
 			throw new InvalidParameterException("Error translating validation, errorMessageId may not be null");
 		}
+
+		// Find the field-specific translation first.
+		if (paymentProductFieldId != null) {
+			String translation = translateString(TRANSLATION_PREFIX_VALIDATION + paymentProductFieldId + TRANSLATION_POSTFIX_LABEL);
+			if (translation != null && !translation.startsWith(BAD_TRANSLATION_KEY_MARKER)) {
+				return translation;
+			}
+		}
+
+		// If the field-specific translation cannot be found, return the error message corresponding to the validation rule.
 		return translateString(TRANSLATION_PREFIX_VALIDATION + errorMessageId + TRANSLATION_POSTFIX_LABEL);
 	}
 	

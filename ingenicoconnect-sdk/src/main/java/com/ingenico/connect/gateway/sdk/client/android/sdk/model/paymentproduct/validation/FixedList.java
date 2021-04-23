@@ -14,9 +14,6 @@ import java.util.List;
  */
 public class FixedList implements Serializable {
 
-	/**
-	 *
-	 */
 	private static final long serialVersionUID = -7191166722186646029L;
 
 	private List<String> allowedValues = new ArrayList<String>();

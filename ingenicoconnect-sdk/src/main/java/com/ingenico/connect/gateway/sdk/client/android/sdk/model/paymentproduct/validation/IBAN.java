@@ -13,9 +13,6 @@ import java.io.Serializable;
 
 public class IBAN implements Serializable {
 
-	/**
-	 *
-	 */
 	private static final long serialVersionUID = -2599896096694861251L;
 
 }

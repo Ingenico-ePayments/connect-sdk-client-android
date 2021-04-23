@@ -203,6 +203,7 @@ public class DetailInputActivity extends ShoppingCartActivity implements OnPayme
         //put shopping cart and payment request inside the intent
         paymentResultIntent.putExtra(Constants.INTENT_SHOPPINGCART, shoppingCart);
         paymentResultIntent.putExtra(Constants.INTENT_PAYMENT_CONTEXT, paymentContext);
+        paymentResultIntent.putExtra(Constants.INTENT_PAYMENT_ENCRYPTED_FIELDS, preparedPaymentRequest.getEncryptedFields());
 
         // Add errormessage if there was an error
         //String errorCode = "errorCode";

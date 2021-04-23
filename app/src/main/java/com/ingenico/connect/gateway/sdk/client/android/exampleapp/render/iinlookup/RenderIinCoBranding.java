@@ -152,12 +152,7 @@ public class RenderIinCoBranding {
 
             // Get the logo for the product and set it as the background
             BitmapDrawable drawable = (BitmapDrawable)logoManager.getLogo(basicPaymentItem.getId());
-
-            if (Build.VERSION.SDK_INT < 16) {
-                paymentProductNameLogoImageView.setBackgroundDrawable(drawable);
-            } else {
-                paymentProductNameLogoImageView.setBackground(drawable);
-            }
+            paymentProductNameLogoImageView.setBackground(drawable);
 
             paymentProductLayout.setOnClickListener(listener);
             coBrandTooltipLayout.addView(paymentProductLayout);

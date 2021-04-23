@@ -24,6 +24,7 @@ public class Validator implements Serializable {
 	private RegularExpression regularExpression;
 	private BoletoBancarioRequiredness boletoBancarioRequiredness;
 	private TermsAndConditions termsAndConditions;
+	private ResidentIdNumber residentIdNumber;
 
 	/** Getters **/
 	public ExpirationDate getExpirationDate(){
@@ -64,4 +65,7 @@ public class Validator implements Serializable {
 		return termsAndConditions;
 	}
 
+	public ResidentIdNumber getResidentIdNumber() {
+		return residentIdNumber;
+	}
 }

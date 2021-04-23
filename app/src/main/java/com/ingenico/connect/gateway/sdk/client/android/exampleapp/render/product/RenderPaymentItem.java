@@ -51,12 +51,7 @@ public class RenderPaymentItem implements RenderPaymentItemInterface {
 		Translator translator = Translator.getInstance(parent.getContext());
 		String translatedValue = (product instanceof BasicPaymentProduct) ? translator.getPaymentProductName(product.getId()) : translator.getPaymentProductGroupName(product.getId());
 		paymentProductNameTextView.setText(translatedValue);
-				
-		if (Build.VERSION.SDK_INT < 16) {
-			paymentProductNameLogoImageView.setBackgroundDrawable(product.getDisplayHints().getLogo());
-		} else {
-			paymentProductNameLogoImageView.setBackground(product.getDisplayHints().getLogo());
-		}
+		paymentProductNameLogoImageView.setBackgroundDrawable(product.getDisplayHints().getLogo());
 		
 		parent.addView(paymentProductLayout);
 	}
