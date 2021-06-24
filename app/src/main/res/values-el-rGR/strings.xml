@@ -247,6 +247,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">Πληκτρολογήστε τον ακριβή αριθμό όπως αναγράφεται στην ταυτότητα μονίμου κατοίκου σας</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Παρακαλούμε αποδεχτείτε τους όρους και τις προϋποθέσεις</string>
 	<string name="gc.general.paymentProductFields.validationErrors.zip.label">Συμπληρώστε μια τιμή με τη σωστή μορφή</string>
+	<string name="gc.general.paymentProductFields.vpa.label">VPA</string>
+	<string name="gc.general.paymentProductFields.vpa.placeholder">VPA</string>
 	<string name="gc.general.paymentProductFields.zip.label">Ταχυδρομικός κώδικας</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Ταχυδρομικός κώδικας</string>
 	<string name="gc.general.paymentProductGroups.cards.name">Κάρτες</string>
@@ -450,6 +452,9 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
+	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
+	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
+	<string name="gc.general.paymentProducts.875.name">DANA</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>

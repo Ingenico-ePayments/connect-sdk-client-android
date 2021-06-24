@@ -111,8 +111,8 @@
 	<string name="gc.general.paymentProductFields.additionalInfo.placeholder">پتہ کی اضافی معلومات</string>
 	<string name="gc.general.paymentProductFields.bankCode.label">بینک کوڈ</string>
 	<string name="gc.general.paymentProductFields.bankCode.placeholder">بینک کوڈ</string>
-	<string name="gc.general.paymentProductFields.bic.label">BIC / سویفٹ کوڈ</string>
-	<string name="gc.general.paymentProductFields.bic.placeholder">BIC / سویفٹ کوڈ</string>
+	<string name="gc.general.paymentProductFields.bic.label">BIC / سویفٹ  کوڈ</string>
+	<string name="gc.general.paymentProductFields.bic.placeholder">BIC / سویفٹ  کوڈ</string>
 	<string name="gc.general.paymentProductFields.cardNumber.label">کارڈ نمبر</string>
 	<string name="gc.general.paymentProductFields.cardNumber.placeholder">**** **** **** ****</string>
 	<string name="gc.general.paymentProductFields.cardholderName.label">کارڈ ہولڈر کا نام</string>
@@ -247,6 +247,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">برائے مہربانی بعینہ وہی نمبر فراہم کریں جو آپ کے ریزیڈنٹ شناختی کارڈ پر تحریر ہو</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">براہ کرم شرائط و ضوابط قبول کریں</string>
 	<string name="gc.general.paymentProductFields.validationErrors.zip.label">براہ کرم درست فارمیٹ کی کوئی عددی قیمت فراہم کریں</string>
+	<string name="gc.general.paymentProductFields.vpa.label">VPA</string>
+	<string name="gc.general.paymentProductFields.vpa.placeholder">VPA</string>
 	<string name="gc.general.paymentProductFields.zip.label">ژپ کوڈ</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">ژپ کوڈ</string>
 	<string name="gc.general.paymentProductGroups.cards.name">کارڈز</string>
@@ -450,6 +452,9 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
+	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
+	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
+	<string name="gc.general.paymentProducts.875.name">DANA</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>

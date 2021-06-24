@@ -161,7 +161,7 @@
 	<string name="gc.general.paymentProductFields.cvv.label">CVV</string>
 	<string name="gc.general.paymentProductFields.cvv.placeholder">123</string>
 	<string name="gc.general.paymentProductFields.cvv.tooltipImage">ppf_cvv_v1</string>
-	<string name="gc.general.paymentProductFields.cvv.tooltipText">Tafadhali weka msimbo wako wa usalama kama ilivyoonyeshwa katika picha</string>
+	<string name="gc.general.paymentProductFields.cvv.tooltipText">Tafadhali weka msimbo wako wa  usalama kama ilivyoonyeshwa katika picha</string>
 	<string name="gc.general.paymentProductFields.dateOfBirth.label">Tarehe ya kuzaliwa</string>
 	<string name="gc.general.paymentProductFields.dateOfBirth.placeholder">ss-mm-mwaka</string>
 	<string name="gc.general.paymentProductFields.emailAddress.label">Anwani ya barua pepe</string>
@@ -231,7 +231,7 @@
 	<string name="gc.general.paymentProductFields.validationErrors.emailAddress.label">Tafadhali toa anwani sahihi ya barua pepe</string>
 	<string name="gc.general.paymentProductFields.validationErrors.expirationDate.label">Tafadhali toa tarehe sahihi ya mwisho</string>
 	<string name="gc.general.paymentProductFields.validationErrors.fiscalNumberBoletoBancario.label">Tafadhali weka nambari yako sahihi ya CPF au CNPJ yenye tarakimu 11 au 14.</string>
-	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Tafadhali teua moja ya nambari kutoka kwenye orodha</string>
+	<string name="gc.general.paymentProductFields.validationErrors.fixedList.label">Tafadhali teua moja  ya nambari kutoka kwenye orodha</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iban.label">Tafadhali ingiza IBAN halali</string>
 	<string name="gc.general.paymentProductFields.validationErrors.iin.label">Tafadhali toa nambari sahihi ya kadi</string>
 	<string name="gc.general.paymentProductFields.validationErrors.invalidContent.label">Tafadhali toa nambari yenye muundo sahihi</string>
@@ -247,6 +247,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">Tafadhali toa nambari kamili ilivyoandikwa kwenye Kadi ya Utambulisho wa Makaazi yako</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">कृपया नियम और शर्तें स्वीकार करें</string>
 	<string name="gc.general.paymentProductFields.validationErrors.zip.label">Tafadhali toa nambari yenye muundo sahihi</string>
+	<string name="gc.general.paymentProductFields.vpa.label">VPA</string>
+	<string name="gc.general.paymentProductFields.vpa.placeholder">VPA</string>
 	<string name="gc.general.paymentProductFields.zip.label">Msimbo wa zip</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Msimbo wa zip</string>
 	<string name="gc.general.paymentProductGroups.cards.name">Kadi</string>
@@ -450,6 +452,9 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
+	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
+	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
+	<string name="gc.general.paymentProducts.875.name">DANA</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>

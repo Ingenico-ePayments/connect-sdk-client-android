@@ -247,6 +247,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">Voer het nummer in precies zoals dat op uw identiteitskaart voor ingezetenen vermeld staat.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Accepteer de algemene voorwaarden</string>
 	<string name="gc.general.paymentProductFields.validationErrors.zip.label">Geef een waarde in het juiste formaat op</string>
+	<string name="gc.general.paymentProductFields.vpa.label">VPA</string>
+	<string name="gc.general.paymentProductFields.vpa.placeholder">VPA</string>
 	<string name="gc.general.paymentProductFields.zip.label">Postcode</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Postcode</string>
 	<string name="gc.general.paymentProductGroups.cards.name">Credit kaarten</string>
@@ -450,6 +452,9 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
+	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
+	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
+	<string name="gc.general.paymentProducts.875.name">DANA</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>

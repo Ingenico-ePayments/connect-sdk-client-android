@@ -247,6 +247,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">체류증/거주증에 기재된 숫자를 정확히 입력해 주십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">약관 및 조건에 동의해주십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.zip.label">올바른 형식의 값을 입력하십시오</string>
+	<string name="gc.general.paymentProductFields.vpa.label">VPA</string>
+	<string name="gc.general.paymentProductFields.vpa.placeholder">VPA</string>
 	<string name="gc.general.paymentProductFields.zip.label">우편번호</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">우편번호</string>
 	<string name="gc.general.paymentProductGroups.cards.name">카드</string>
@@ -450,6 +452,9 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
+	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
+	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
+	<string name="gc.general.paymentProducts.875.name">DANA</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>

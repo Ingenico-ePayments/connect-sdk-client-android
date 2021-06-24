@@ -247,6 +247,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">Indique el número tal y como está escrito en su tarjeta de identidad de residente</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Acepte los términos y condiciones.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.zip.label">Introduzca un valor con el formato correcto</string>
+	<string name="gc.general.paymentProductFields.vpa.label">VPA</string>
+	<string name="gc.general.paymentProductFields.vpa.placeholder">VPA</string>
 	<string name="gc.general.paymentProductFields.zip.label">Código postal</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Código postal</string>
 	<string name="gc.general.paymentProductGroups.cards.name">Tarjetas</string>
@@ -373,7 +375,7 @@
 	<string name="gc.general.paymentProducts.3124.name">Przelewy24</string>
 	<string name="gc.general.paymentProducts.3130.name">TWINT</string>
 	<string name="gc.general.paymentProducts.3131.name">Swiss Billing</string>
-	<string name="gc.general.paymentProducts.320.error">Ahora mismo no se puede pagar mediante Google Pay. Sentimos las molestias.</string>
+	<string name="gc.general.paymentProducts.320.error">Ahora mismo no se puede pagar mediante  Google Pay. Sentimos las molestias.</string>
 	<string name="gc.general.paymentProducts.320.javaScriptOff">JavaScript no está activado en su navegador. No es posible pagar con Google Pay si JavaScript está desactivado. Active JavaScript y refresque la página.</string>
 	<string name="gc.general.paymentProducts.320.name">Google Pay</string>
 	<string name="gc.general.paymentProducts.320.preparing">Preparando Google Pay</string>
@@ -450,6 +452,9 @@
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentMobilePhoneNumber.placeholder">+ 86*** **** ****</string>
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
+	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
+	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
+	<string name="gc.general.paymentProducts.875.name">DANA</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>
