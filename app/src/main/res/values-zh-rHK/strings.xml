@@ -442,6 +442,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">重新整理付款狀態</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">點按下方的按鈕以重新整理您的付款狀態。</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">如果您無法使用上述方式付款，請按下「取消」，然後選擇其他付款方式以完成付款。</string>
+	<string name="gc.general.paymentProducts.864.name">Alipay Recurring</string>
 	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">中國銀聯</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">居民姓名 </string>
@@ -455,6 +456,7 @@
 	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
 	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
 	<string name="gc.general.paymentProducts.875.name">DANA</string>
+	<string name="gc.general.paymentProducts.876.name">kakaopay</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>

@@ -442,6 +442,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Actualiser le statut de paiement</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Cliquez sur le bouton ci-dessous pour actualiser votre statut de paiement.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Si vous êtes dans l’incapacité de payer au moyen de la méthode ci-dessus, veuillez appuyer sur « Annuler » et sélectionner un autre moyen de paiement afin de finaliser la transaction.</string>
+	<string name="gc.general.paymentProducts.864.name">Alipay Recurring</string>
 	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Nom du résident </string>
@@ -455,6 +456,7 @@
 	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
 	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
 	<string name="gc.general.paymentProducts.875.name">DANA</string>
+	<string name="gc.general.paymentProducts.876.name">kakaopay</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>

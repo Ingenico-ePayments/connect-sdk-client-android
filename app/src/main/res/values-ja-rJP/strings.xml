@@ -442,6 +442,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">お支払い状況を更新する</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">下のボタンをクリックしてお支払い状況を更新します。</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">上記の方法でお支払いができない場合は、「取り消し」を押し、他の方法を選択してお支払いを完了してください。</string>
+	<string name="gc.general.paymentProducts.864.name">Alipay Recurring</string>
 	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">居住者名 </string>
@@ -455,6 +456,7 @@
 	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
 	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
 	<string name="gc.general.paymentProducts.875.name">DANA</string>
+	<string name="gc.general.paymentProducts.876.name">kakaopay</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>

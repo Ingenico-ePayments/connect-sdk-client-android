@@ -442,6 +442,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Cập nhật hiện trạng thanh toán</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Bấm nút bên dưới để cập nhật hiện trạng thanh toán của bạn.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Khi bạn không thể thanh toán bằng phương thức thanh toán ở trên, vui lòng chạm \'Hủy\' và chọn sản phẩm thanh toán khác để hoàn tất việc thanh toán của bạn.</string>
+	<string name="gc.general.paymentProducts.864.name">Alipay Recurring</string>
 	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Tên của cư dân </string>
@@ -455,6 +456,7 @@
 	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
 	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
 	<string name="gc.general.paymentProducts.875.name">DANA</string>
+	<string name="gc.general.paymentProducts.876.name">kakaopay</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>

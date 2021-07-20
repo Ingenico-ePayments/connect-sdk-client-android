@@ -442,6 +442,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentButtonText">Reactualizare status plată</string>
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Clic pe butonul de mai jos pentru reactualizarea statusului plăţii.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Atunci când nu puteți plăti utilizând metoda de plată de mai sus, vă rugăm să atingeți „Cancel” (anulare) și să selectați alt produs de plată pentru a vă finaliza plata.</string>
+	<string name="gc.general.paymentProducts.864.name">Alipay Recurring</string>
 	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Numele rezidentului </string>
@@ -455,6 +456,7 @@
 	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
 	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
 	<string name="gc.general.paymentProducts.875.name">DANA</string>
+	<string name="gc.general.paymentProducts.876.name">kakaopay</string>
 	<string name="gc.general.paymentProducts.880.name">SafetyPay Banking</string>
 	<string name="gc.general.paymentProducts.882.name">NetBanking</string>
 	<string name="gc.general.paymentProducts.885.name">Maybank2u</string>

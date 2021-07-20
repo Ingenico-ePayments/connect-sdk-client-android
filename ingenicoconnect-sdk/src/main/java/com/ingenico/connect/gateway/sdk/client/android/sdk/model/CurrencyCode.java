@@ -30,6 +30,7 @@ public enum CurrencyCode {
 	BSD,
 	BTN,
 	BWP,
+	BYN,
 	BYR,
 	BZD,
 	CAD,
