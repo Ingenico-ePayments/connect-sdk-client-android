@@ -20,8 +20,13 @@ public class DisplayHintsAccountOnFile implements Serializable {
 
 
 	private List<AccountOnFileDisplay> labelTemplate = new ArrayList<AccountOnFileDisplay>();
+	private String logo;
 
 	public List<AccountOnFileDisplay> getLabelTemplate(){
 		return labelTemplate;
+	}
+
+	public String getLogo() {
+		return logo;
 	}
 }

@@ -247,8 +247,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">체류증/거주증에 기재된 숫자를 정확히 입력해 주십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">약관 및 조건에 동의해주십시오</string>
 	<string name="gc.general.paymentProductFields.validationErrors.zip.label">올바른 형식의 값을 입력하십시오</string>
-	<string name="gc.general.paymentProductFields.vpa.label">VPA</string>
-	<string name="gc.general.paymentProductFields.vpa.placeholder">VPA</string>
+	<string name="gc.general.paymentProductFields.virtualPaymentAddress.label">VPA</string>
+	<string name="gc.general.paymentProductFields.virtualPaymentAddress.placeholder">VPA</string>
 	<string name="gc.general.paymentProductFields.zip.label">우편번호</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">우편번호</string>
 	<string name="gc.general.paymentProductGroups.cards.name">카드</string>
@@ -381,7 +381,10 @@
 	<string name="gc.general.paymentProducts.320.preparing">Google Pay 준비 중</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
+	<string name="gc.general.paymentProducts.4001.name">Rupay Credit</string>
+	<string name="gc.general.paymentProducts.4002.name">Rupay Debit</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
+	<string name="gc.general.paymentProducts.4101.name">UPI</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.500.instructionFields.BILLERID.label">청구인(Biller) ID</string>
@@ -443,7 +446,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">결제 상태를 새로 고침 하려면 아래 버튼을 클릭하십시오.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">위 결제 방법으로 결제할 수 없으면 \'취소\'를 탭하고 다른 결제 상품을 선택하여 결제를 완료하세요.</string>
 	<string name="gc.general.paymentProducts.864.name">Alipay Recurring</string>
-	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
+	<string name="gc.general.paymentProducts.865.name">Pay with your bank</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">거주자 이름 </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">거주자 이름 </string>
@@ -454,6 +457,7 @@
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
+	<string name="gc.general.paymentProducts.873.name">AlipayHK</string>
 	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
 	<string name="gc.general.paymentProducts.875.name">DANA</string>
 	<string name="gc.general.paymentProducts.876.name">kakaopay</string>

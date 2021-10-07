@@ -247,8 +247,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">Please provide the exact number as written on your Resident Identity Card</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Please accept the terms and conditions</string>
 	<string name="gc.general.paymentProductFields.validationErrors.zip.label">Please provide a value for the correct format</string>
-	<string name="gc.general.paymentProductFields.vpa.label">VPA</string>
-	<string name="gc.general.paymentProductFields.vpa.placeholder">VPA</string>
+	<string name="gc.general.paymentProductFields.virtualPaymentAddress.label">VPA</string>
+	<string name="gc.general.paymentProductFields.virtualPaymentAddress.placeholder">VPA</string>
 	<string name="gc.general.paymentProductFields.zip.label">Zip code</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Zip code</string>
 	<string name="gc.general.paymentProductGroups.cards.name">Cards</string>
@@ -381,7 +381,10 @@
 	<string name="gc.general.paymentProducts.320.preparing">Preparing Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
+	<string name="gc.general.paymentProducts.4001.name">Rupay Credit</string>
+	<string name="gc.general.paymentProducts.4002.name">Rupay Debit</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
+	<string name="gc.general.paymentProducts.4101.name">UPI</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.500.instructionFields.BILLERID.label">Biller ID</string>
@@ -443,7 +446,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Click the button below to refresh your payment status.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">When you are unable to pay using the payment method above, please tap \'Cancel\' and select another payment product to complete your payment.</string>
 	<string name="gc.general.paymentProducts.864.name">Alipay Recurring</string>
-	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
+	<string name="gc.general.paymentProducts.865.name">Pay with your bank</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Resident name </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Resident name </string>
@@ -454,6 +457,7 @@
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
+	<string name="gc.general.paymentProducts.873.name">AlipayHK</string>
 	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
 	<string name="gc.general.paymentProducts.875.name">DANA</string>
 	<string name="gc.general.paymentProducts.876.name">kakaopay</string>

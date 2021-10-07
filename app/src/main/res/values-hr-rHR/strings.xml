@@ -247,8 +247,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">Navedite broj točno onako kako je naveden na osobnoj iskaznici.</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">Molimo prihvatite odredbe i uvjete</string>
 	<string name="gc.general.paymentProductFields.validationErrors.zip.label">Molimo da unesete vrijednost u ispravnom formatu</string>
-	<string name="gc.general.paymentProductFields.vpa.label">VPA</string>
-	<string name="gc.general.paymentProductFields.vpa.placeholder">VPA</string>
+	<string name="gc.general.paymentProductFields.virtualPaymentAddress.label">VPA</string>
+	<string name="gc.general.paymentProductFields.virtualPaymentAddress.placeholder">VPA</string>
 	<string name="gc.general.paymentProductFields.zip.label">Poštanski broj</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">Poštanski broj</string>
 	<string name="gc.general.paymentProductGroups.cards.name">Kartice</string>
@@ -381,7 +381,10 @@
 	<string name="gc.general.paymentProducts.320.preparing">Priprema usluge Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
+	<string name="gc.general.paymentProducts.4001.name">Rupay Credit</string>
+	<string name="gc.general.paymentProducts.4002.name">Rupay Debit</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
+	<string name="gc.general.paymentProducts.4101.name">UPI</string>
 	<string name="gc.general.paymentProducts.420.name">kreditna kartica Inicis</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.500.instructionFields.BILLERID.label">Identifikacijski broj naplatitelja</string>
@@ -443,7 +446,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">Odaberite donji gumb za osvježenje statusa plaćanja.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">Ako ne možete izvršiti uplatu putem prethodnog načina plaćanja, dodirnite„Cancel” („Odustani”) pa odaberite drugi proizvod za plaćanje da biste dovršili plaćanje.</string>
 	<string name="gc.general.paymentProducts.864.name">Alipay Recurring</string>
-	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
+	<string name="gc.general.paymentProducts.865.name">Pay with your bank</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">Ime i prezime osobe </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">Ime i prezime osobe </string>
@@ -454,6 +457,7 @@
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
+	<string name="gc.general.paymentProducts.873.name">AlipayHK</string>
 	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
 	<string name="gc.general.paymentProducts.875.name">DANA</string>
 	<string name="gc.general.paymentProducts.876.name">kakaopay</string>

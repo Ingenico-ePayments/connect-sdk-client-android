@@ -247,8 +247,8 @@
 	<string name="gc.general.paymentProductFields.validationErrors.residentIdNumber.label">עליך לרשום את המספר המדויק כפי שהוא מופיע בתעודת הזהות שלך</string>
 	<string name="gc.general.paymentProductFields.validationErrors.termsAndConditions.label">נא לאשר את תנאי השימוש</string>
 	<string name="gc.general.paymentProductFields.validationErrors.zip.label">ספק ערך במבנה הנכון</string>
-	<string name="gc.general.paymentProductFields.vpa.label">VPA</string>
-	<string name="gc.general.paymentProductFields.vpa.placeholder">VPA</string>
+	<string name="gc.general.paymentProductFields.virtualPaymentAddress.label">VPA</string>
+	<string name="gc.general.paymentProductFields.virtualPaymentAddress.placeholder">VPA</string>
 	<string name="gc.general.paymentProductFields.zip.label">מיקוד</string>
 	<string name="gc.general.paymentProductFields.zip.placeholder">מיקוד</string>
 	<string name="gc.general.paymentProductGroups.cards.name">כרטיסים</string>
@@ -381,7 +381,10 @@
 	<string name="gc.general.paymentProducts.320.preparing">מכין את Google Pay</string>
 	<string name="gc.general.paymentProducts.3201.name">PostFinance Card</string>
 	<string name="gc.general.paymentProducts.3202.name">PostFinance e-finance</string>
+	<string name="gc.general.paymentProducts.4001.name">Rupay Credit</string>
+	<string name="gc.general.paymentProducts.4002.name">Rupay Debit</string>
 	<string name="gc.general.paymentProducts.402.name">e-Przelewy</string>
+	<string name="gc.general.paymentProducts.4101.name">UPI</string>
 	<string name="gc.general.paymentProducts.420.name">Inicis Credit Card</string>
 	<string name="gc.general.paymentProducts.430.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.500.instructionFields.BILLERID.label">מזהה הגוף המחייב</string>
@@ -443,7 +446,7 @@
 	<string name="gc.general.paymentProducts.863.refreshPaymentLabel">לחץ על הלחצן למטה כדי לרענן את מצב התשלום.</string>
 	<string name="gc.general.paymentProducts.863.wrongPaymentMethod">אם לא ניתן לשלם בשיטת התשלום המוצעת למעלה, הקש על Cancel (ביטול) ובחר בשיטת תשלום אחרת כדי לסגור את עניין התשלום.</string>
 	<string name="gc.general.paymentProducts.864.name">Alipay Recurring</string>
-	<string name="gc.general.paymentProducts.865.name">Instant Bank Transfer</string>
+	<string name="gc.general.paymentProducts.865.name">Pay with your bank</string>
 	<string name="gc.general.paymentProducts.869.name">China UnionPay</string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.label">שם תושב </string>
 	<string name="gc.general.paymentProducts.869.paymentProductFields.residentIdName.placeholder">שם תושב </string>
@@ -454,6 +457,7 @@
 	<string name="gc.general.paymentProducts.870.name">Boku</string>
 	<string name="gc.general.paymentProducts.871.name">GCash</string>
 	<string name="gc.general.paymentProducts.872.name">TrueMoney Wallet</string>
+	<string name="gc.general.paymentProducts.873.name">AlipayHK</string>
 	<string name="gc.general.paymentProducts.874.name">Touch \'n Go eWallet</string>
 	<string name="gc.general.paymentProducts.875.name">DANA</string>
 	<string name="gc.general.paymentProducts.876.name">kakaopay</string>
