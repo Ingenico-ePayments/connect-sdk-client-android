@@ -2,7 +2,6 @@ package com.ingenico.connect.gateway.sdk.client.android.integrationtest;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.CustomerDetailsAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.CommunicationException;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
 
@@ -47,7 +46,7 @@ public class CustomerDetailsAsyncTaskTest extends BaseAsyncTaskTest {
         CustomerDetailsAsyncTask customerDetailsAsyncTask = new CustomerDetailsAsyncTask(
                 getContext(),
                 "9000",
-                CountryCode.SE,
+                "SE",
                 values,
                 getCommunicator(),
                 listener);

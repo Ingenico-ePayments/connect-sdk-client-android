@@ -142,9 +142,9 @@ public class SessionPreparePaymentRequestTest extends BaseAsyncTaskTest {
         CreatePaymentRequest createPaymentRequest = new CreatePaymentRequest();
         AmountOfMoney amountOfMoney = new AmountOfMoney();
         amountOfMoney.setAmount(minimalValidPaymentContext.getAmountOfMoney().getAmount());
-        amountOfMoney.setCurrencyCode(minimalValidPaymentContext.getAmountOfMoney().getCurrencyCode().toString());
+        amountOfMoney.setCurrencyCode(minimalValidPaymentContext.getAmountOfMoney().getCurrencyCodeString());
         Address billingAddress = new Address();
-        billingAddress.setCountryCode(minimalValidPaymentContext.getCountryCode().toString());
+        billingAddress.setCountryCode(minimalValidPaymentContext.getCountryCodeString());
         Customer customer = new Customer();
         customer.setBillingAddress(billingAddress);
         Order order = new Order();

@@ -108,7 +108,7 @@ public class DetailInputActivityAfterpay extends DetailInputActivity implements 
         List<KeyValuePair> values = retrieveValuesFromSearchFields();
         session.getCustomerDetails(this.getApplicationContext(),
                 inputDataPersister.getPaymentItem().getId(),
-                paymentContext.getCountryCode(),
+                paymentContext.getCountryCodeString(),
                 values,
                 this);
     }
@@ -226,8 +226,8 @@ public class DetailInputActivityAfterpay extends DetailInputActivity implements 
                 String totalAmount = valueMap.getValueById(TOTAL_AMOUNT);
                 String secciUrl = valueMap.getValueById(SECCI_URL);
 
-                String installmentAmountFormatted = CurrencyUtil.formatAmount(Long.parseLong(installmentAmount), paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode());
-                String totalAmountFormatted = CurrencyUtil.formatAmount(Long.parseLong(totalAmount), paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode());
+                String installmentAmountFormatted = CurrencyUtil.formatAmount(Long.parseLong(installmentAmount), paymentContext.getCountryCodeString(), paymentContext.getAmountOfMoney().getCurrencyCodeString());
+                String totalAmountFormatted = CurrencyUtil.formatAmount(Long.parseLong(totalAmount), paymentContext.getCountryCodeString(), paymentContext.getAmountOfMoney().getCurrencyCodeString());
 
                 fieldView.updateInstallmentplanView(numberOfInstallments, installmentAmountFormatted, interestRate, totalAmountFormatted, secciUrl);
             }
@@ -408,7 +408,7 @@ public class DetailInputActivityAfterpay extends DetailInputActivity implements 
 
         @Override
         public String toString() {
-            String installmentAmountFormatted = CurrencyUtil.formatAmount(Long.parseLong(getValueById(INSTALLMENT_AMOUNT)), paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode());
+            String installmentAmountFormatted = CurrencyUtil.formatAmount(Long.parseLong(getValueById(INSTALLMENT_AMOUNT)), paymentContext.getCountryCodeString(), paymentContext.getAmountOfMoney().getCurrencyCodeString());
 
             Resources resources = getResources();
             String listTextTemplate = resources.getString(R.string.gc_general_paymentProductFields_installmentId_selectionTextTemplate);

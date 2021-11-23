@@ -4,20 +4,20 @@ import android.content.Context;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductGroupsAsyncTask;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask.OnBasicPaymentProductsCallCompleteListener;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.ConvertAmountAsyncTask;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PublicKeyAsyncTask;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.ThirdPartyStatusAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.CustomerDetailsAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.CustomerDetailsAsyncTask.OnCustomerDetailsCallCompleteListener;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.IinLookupAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.IinLookupAsyncTask.OnIinLookupCompleteListener;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask.OnPaymentProductCallCompleteListener;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PaymentProductDirectoryAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PaymentProductDirectoryAsyncTask.OnPaymentProductDirectoryCallCompleteListener;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask.OnBasicPaymentProductsCallCompleteListener;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PublicKeyAsyncTask;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.ThirdPartyStatusAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CurrencyCode;
@@ -25,16 +25,16 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentItemCacheKey;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItems;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentItem;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.session.SessionEncryptionHelper.OnPaymentRequestPreparedListener;
 
 import java.io.Serializable;
@@ -300,13 +300,22 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
+	 * @deprecated use {@link #getCustomerDetails(Context, String, String, List,OnCustomerDetailsCallCompleteListener)} instead.
+	 */
+
+	@Deprecated
+	public void getCustomerDetails(Context context, String productId, CountryCode countryCode, List<KeyValuePair> values, OnCustomerDetailsCallCompleteListener listener) {
+		getCustomerDetails(context, productId, countryCode.toString(), values, listener);
+	}
+
+	/**
 	 * Gets the CustomerDetails from the GC gateway
 	 *
 	 * @param productId, the productId for which you want to look up customerDetails
 	 * @param countryCode, the country of the customer
 	 * @param values, the
 	 */
-	public void getCustomerDetails(Context context, String productId, CountryCode countryCode, List<KeyValuePair> values, OnCustomerDetailsCallCompleteListener listener) {
+	public void getCustomerDetails(Context context, String productId, String countryCode, List<KeyValuePair> values, OnCustomerDetailsCallCompleteListener listener) {
 
 		if (context == null) {
 			throw new InvalidParameterException("Error getting CustomerDetails, context may not be null");
@@ -325,6 +334,14 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 		task.execute();
 	}
 
+	/**
+ 	 * @deprecated use {@link #getDirectoryForPaymentProductId(String, String, String, Context,OnPaymentProductDirectoryCallCompleteListener)} instead.
+	 */
+
+	@Deprecated
+	public void getDirectoryForPaymentProductId(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context, OnPaymentProductDirectoryCallCompleteListener listener) {
+		getDirectoryForPaymentProductId(productId, currencyCode.toString(), countryCode.toString(), context, listener);
+	}
 
 	/**
 	 * Gets PaymentProductDirectory from the GC gateway
@@ -334,17 +351,17 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	 * @param countryCode, for which countryCode must the lookup be done
 	 * @param context, used for reading device metada which is send to the GC gateway
 	 * @param listener, listener which will be called by the AsyncTask when the PaymentProductDirectory with fields is retrieved
- 	 *
 	 */
-	public void getDirectoryForPaymentProductId(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context, OnPaymentProductDirectoryCallCompleteListener listener) {
 
-    	if (productId == null) {
+	public void getDirectoryForPaymentProductId(String productId, String currencyCode, String countryCode, Context context, OnPaymentProductDirectoryCallCompleteListener listener) {
+
+		if (productId == null) {
 			throw new InvalidParameterException("Error getting PaymentProductDirectory, productId may not be null");
 		}
-    	if (currencyCode == null) {
-    		throw new InvalidParameterException("Error getting PaymentProductDirectory, currencyCode may not be null");
+		if (currencyCode == null) {
+			throw new InvalidParameterException("Error getting PaymentProductDirectory, currencyCode may not be null");
 		}
-    	if (countryCode == null) {
+		if (countryCode == null) {
 			throw new InvalidParameterException("Error getting PaymentProductDirectory, countryCode may not be null");
 		}
 		if (listener == null ) {
@@ -523,8 +540,8 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 		// Create the cache key for this retrieved BasicPaymentitem
 		return new PaymentItemCacheKey(paymentContext.getAmountOfMoney().getAmount(),
-				paymentContext.getCountryCode(),
-				paymentContext.getAmountOfMoney().getCurrencyCode(),
+				paymentContext.getCountryCodeString(),
+				paymentContext.getAmountOfMoney().getCurrencyCodeString(),
 				paymentContext.isRecurring(),
 				paymentItemId);
 	}

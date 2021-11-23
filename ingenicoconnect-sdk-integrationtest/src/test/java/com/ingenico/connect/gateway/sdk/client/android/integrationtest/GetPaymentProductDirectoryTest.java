@@ -2,8 +2,6 @@ package com.ingenico.connect.gateway.sdk.client.android.integrationtest;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PaymentProductDirectoryAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.CommunicationException;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
 
 import org.junit.Test;
@@ -39,8 +37,8 @@ public class GetPaymentProductDirectoryTest extends BaseAsyncTaskTest {
         // Create the PaymentProductDirectoryAsyncTask and start the test by running execute
         PaymentProductDirectoryAsyncTask paymentProductDirectoryAsyncTask = new PaymentProductDirectoryAsyncTask(
                 "809",
-                CurrencyCode.EUR,
-                CountryCode.NL,
+                "EUR",
+                "NL",
                 getContext(),
                 getCommunicator(),
                 listener);
@@ -72,8 +70,8 @@ public class GetPaymentProductDirectoryTest extends BaseAsyncTaskTest {
         // Create the PaymentProductDirectoryAsyncTask and start the test by running execute
         PaymentProductDirectoryAsyncTask paymentProductDirectoryAsyncTask = new PaymentProductDirectoryAsyncTask(
                 "809",
-                CurrencyCode.EUR,
-                CountryCode.NL,
+                "EUR",
+                "NL",
                 getContext(),
                 getCommunicator(),
                 listener);

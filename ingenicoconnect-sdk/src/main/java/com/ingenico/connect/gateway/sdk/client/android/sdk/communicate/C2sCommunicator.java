@@ -5,8 +5,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.Log;
 
-import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
+import com.google.gson.Gson;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.Util;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.CommunicationException;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.manager.AssetManager;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.ConvertedAmountResponse;
@@ -28,7 +29,6 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
-import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -137,10 +137,13 @@ public class C2sCommunicator implements Serializable {
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
+			queryString.append("?countryCode=").append(paymentContext.getCountryCodeString());
 			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
 			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
-			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCodeString());
+			if (paymentContext.getLocale() != null) {
+				queryString.append("&locale=").append(paymentContext.getLocale());
+			}
 			queryString.append("&hide=fields");
 			queryString.append("&").append(createCacheBusterParameter());
 
@@ -213,11 +216,14 @@ public class C2sCommunicator implements Serializable {
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
+			queryString.append("?countryCode=").append(paymentContext.getCountryCodeString());
 			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
 			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
-			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
-			if (paymentContext.isForceBasicFlow()!= null) {
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCodeString());
+			if (paymentContext.getLocale() != null) {
+				queryString.append("&locale=").append(paymentContext.getLocale());
+			}
+			if (paymentContext.isForceBasicFlow() != null) {
 				queryString.append("&forceBasicFlow=").append(paymentContext.isForceBasicFlow());
 			}
 			queryString.append("&").append(createCacheBusterParameter());
@@ -279,10 +285,13 @@ public class C2sCommunicator implements Serializable {
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
+			queryString.append("?countryCode=").append(paymentContext.getCountryCodeString());
 			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
 			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
-			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCodeString());
+			if (paymentContext.getLocale() != null) {
+				queryString.append("&locale=").append(paymentContext.getLocale());
+			}
 			queryString.append("&hide=fields");
 			queryString.append("&").append(createCacheBusterParameter());
 
@@ -354,10 +363,13 @@ public class C2sCommunicator implements Serializable {
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
+			queryString.append("?countryCode=").append(paymentContext.getCountryCodeString());
 			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
 			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
-			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCodeString());
+			if (paymentContext.getLocale() != null) {
+				queryString.append("&locale=").append(paymentContext.getLocale());
+			}
 			queryString.append("&").append(createCacheBusterParameter());
 			completePath += queryString.toString();
 
@@ -390,8 +402,16 @@ public class C2sCommunicator implements Serializable {
 		}
 	}
 
-
+	/**
+	 * @deprecated use {@link #getCustomerDetails(String, String, List, Context)} instead
+	 */
+	@Deprecated
 	public CustomerDetailsResponse getCustomerDetails(String productId, CountryCode countryCode, List<KeyValuePair> values, Context context) {
+		return getCustomerDetails(productId, countryCode.toString(), values, context);
+	}
+
+
+	public CustomerDetailsResponse getCustomerDetails(String productId, String countryCode, List<KeyValuePair> values, Context context) {
 
 		if (productId == null) {
 			throw new InvalidParameterException("Error getting CustomerDetails, productId may not be null");
@@ -446,6 +466,13 @@ public class C2sCommunicator implements Serializable {
 		}
 	}
 
+	/**
+	 * @deprecated use {@link #getPaymentProductDirectory(String, String, String, Context)} instead
+	 */
+	@Deprecated
+	public PaymentProductDirectoryResponse getPaymentProductDirectory(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context) {
+		return getPaymentProductDirectory(productId, currencyCode.toString(), countryCode.toString(), context);
+	}
 
 	/**
 	 * Retrieves a list of directories for a given paymentproduct
@@ -457,7 +484,7 @@ public class C2sCommunicator implements Serializable {
 	 *
 	 * @return PaymentProductDirectoryResponse, or null when an error has occured
 	 */
-	public PaymentProductDirectoryResponse getPaymentProductDirectory(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context) {
+	public PaymentProductDirectoryResponse getPaymentProductDirectory(String productId, String currencyCode, String countryCode, Context context) {
 
 		if (productId == null) {
 			throw new InvalidParameterException("Error getting PaymentProduct directory, productId may not be null");
@@ -483,8 +510,8 @@ public class C2sCommunicator implements Serializable {
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?currencyCode=").append(currencyCode.name());
-			queryString.append("&countryCode=").append(countryCode.name());
+			queryString.append("?currencyCode=").append(currencyCode);
+			queryString.append("&countryCode=").append(countryCode);
 			queryString.append("&").append(createCacheBusterParameter());
 			completePath += queryString.toString();
 

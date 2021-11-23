@@ -20,14 +20,23 @@ import java.util.List;
 public class CustomerDetailsAsyncTask extends AsyncTask<String, Void, CustomerDetailsResponse> {
 
     private String productId;
-    private CountryCode countryCode;
+    private String countryCode;
     private List<KeyValuePair> values;
     private Context context;
 
     private C2sCommunicator communicator;
     private OnCustomerDetailsCallCompleteListener listener;
 
+    /**
+     * @deprecated use {@link #CustomerDetailsAsyncTask(Context, String, String, List, C2sCommunicator, OnCustomerDetailsCallCompleteListener)} instead
+     */
+    @Deprecated
     public CustomerDetailsAsyncTask(Context context, String productId, CountryCode countryCode, List<KeyValuePair> values,
+                                    C2sCommunicator communicator, OnCustomerDetailsCallCompleteListener listener) {
+        this(context, productId, countryCode.toString(), values, communicator, listener);
+    }
+
+    public CustomerDetailsAsyncTask(Context context, String productId, String countryCode, List<KeyValuePair> values,
                                     C2sCommunicator communicator, OnCustomerDetailsCallCompleteListener listener) {
 
         if (context == null) {

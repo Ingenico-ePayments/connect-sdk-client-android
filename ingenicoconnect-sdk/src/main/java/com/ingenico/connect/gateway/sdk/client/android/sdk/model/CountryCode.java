@@ -4,8 +4,9 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
  * This enum is a full list of all Country Codes supported by the Ingenico Connect platform.
  *
  * Copyright 2018 Global Collect Services B.V
- *
+ * @deprecated This enum will be removed. Use 2-letter Country Code Strings instead, adhering to the ISO 3166-1 alpha-2 standard.
  */
+@Deprecated
 public enum CountryCode {
 	AD,
 	AE,

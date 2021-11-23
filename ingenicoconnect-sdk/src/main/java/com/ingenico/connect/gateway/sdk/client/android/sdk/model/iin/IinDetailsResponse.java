@@ -16,7 +16,7 @@ public class IinDetailsResponse implements Serializable {
 	private static final long serialVersionUID = -4043745317792003304L;
 
 	private String paymentProductId;
-	private CountryCode countryCode;
+	private String countryCode;
 	private boolean isAllowedInContext;
 	private List<IinDetail> coBrands;
 	private IinStatus status;
@@ -41,7 +41,20 @@ public class IinDetailsResponse implements Serializable {
 		this.status = status;
 	}
 
+	/**
+	 * @deprecated In the next major release, the type of countryCode will change to String.
+	 * Note that `null` will be returned when an unknown String value was set.
+	 */
+	@Deprecated
 	public CountryCode getCountryCode() {
+		try {
+			return CountryCode.valueOf(countryCode);
+		} catch (IllegalArgumentException e) {
+			return null;
+		}
+	}
+
+	public String getCountryCodeString(){
 		return countryCode;
 	}
 

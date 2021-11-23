@@ -4,28 +4,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Spinner;
-
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.R;
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.configuration.Constants;
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.dialog.DialogUtil;
-import com.ingenico.connect.gateway.sdk.client.android.exampleapp.dialog.ParseJsonDialog;
-import com.ingenico.connect.gateway.sdk.client.android.exampleapp.model.SessionDetails;
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.model.ShoppingCart;
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.model.ShoppingCartItem;
 import com.ingenico.connect.gateway.sdk.client.android.exampleapp.view.ValidationEditText;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.AmountOfMoney;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.List;
+import java.util.Currency;
+import java.util.Locale;
 
 /**
  * Dummy startpage to start payment
@@ -38,6 +28,8 @@ public class StartPageActivity extends Activity {
 	ValidationEditText customerIdentifierEditText;
 	ValidationEditText clientApiUrlEditText;
 	ValidationEditText assetUrlEditText;
+	ValidationEditText countryCodeEditText;
+	ValidationEditText currencyCodeEditText;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +40,8 @@ public class StartPageActivity extends Activity {
 		customerIdentifierEditText = findViewById(R.id.customer_identifier);
 		clientApiUrlEditText = findViewById(R.id.client_api_url);
 		assetUrlEditText = findViewById(R.id.asset_url);
+		countryCodeEditText = findViewById(R.id.country_code);
+		currencyCodeEditText = findViewById(R.id.currency_code);
 
 		loadData();
 	}
@@ -86,8 +80,16 @@ public class StartPageActivity extends Activity {
 		}
 		String amount = amountEditText.getValue();
 
-		CountryCode countryCode = CountryCode.valueOf(((Spinner) findViewById(R.id.country_code)).getSelectedItem().toString());
-		CurrencyCode currencyCode = CurrencyCode.valueOf(((Spinner) findViewById(R.id.currency_code)).getSelectedItem().toString());
+		if (!countryCodeEditText.isValid()) {
+			return;
+		}
+		String countryCode = countryCodeEditText.getValue();
+
+		if (!currencyCodeEditText.isValid()) {
+			return;
+		}
+		String currencyCode = currencyCodeEditText.getValue();
+
 
 		boolean isRecurring = ((CheckBox) findViewById(R.id.payment_is_recurring)).isChecked();
 		boolean groupPaymentProducts = ((CheckBox) findViewById(R.id.group_paymentproducts)).isChecked();
@@ -98,7 +100,7 @@ public class StartPageActivity extends Activity {
 
 		// Create the PaymentContext object
 		AmountOfMoney amountOfMoney = new AmountOfMoney(cart.getTotalAmount(), currencyCode);
-		PaymentContext paymentContext = new PaymentContext(amountOfMoney, countryCode, isRecurring);
+		PaymentContext paymentContext = new PaymentContext(amountOfMoney, countryCode, isRecurring, Locale.US);
 
 		// and show the PaymentProductSelectionActivity
 		Intent paymentIntent = new Intent(this, PaymentProductSelectionActivity.class);
@@ -135,26 +137,9 @@ public class StartPageActivity extends Activity {
 	}
 
 	private void loadData() {
-		// Get all values for CountryCode spinner
-		List<CountryCode> spinnerArrayCountry = new ArrayList<>(EnumSet.allOf(CountryCode.class));
-		Collections.sort(spinnerArrayCountry);
-
-		// Make adapters of list and put it inside spinner
-		ArrayAdapter<CountryCode> adapterCountry = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, spinnerArrayCountry);
-		adapterCountry.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		Spinner spinnerCountry = (Spinner) findViewById(R.id.country_code);
-		spinnerCountry.setAdapter(adapterCountry);
-		spinnerCountry.setSelection(adapterCountry.getPosition(CountryCode.US));
-
-		// Get all values for CurrencyCode spinner
-		List<CurrencyCode> spinnerArrayCurrency = new ArrayList<>(EnumSet.allOf(CurrencyCode.class));
-		Collections.sort(spinnerArrayCurrency);
-
-		// Make adapters of list and put it inside spinner
-		ArrayAdapter<CurrencyCode> adapterCurrency = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, spinnerArrayCurrency);
-		adapterCurrency.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		Spinner spinnerCurrency = (Spinner) findViewById(R.id.currency_code);
-		spinnerCurrency.setAdapter(adapterCurrency);
-		spinnerCurrency.setSelection(adapterCurrency.getPosition(CurrencyCode.EUR));
+		// prefill country and currency
+		Locale locale = Locale.getDefault();
+		countryCodeEditText.setText(locale.getCountry());
+		currencyCodeEditText.setText(Currency.getInstance(locale).toString());
 	}
 }

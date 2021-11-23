@@ -10,8 +10,6 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommun
 import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommunicatorConfiguration;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.CommunicationException;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.AmountOfMoney;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProduct;
@@ -60,8 +58,8 @@ import static org.mockito.Mockito.when;
 public class BaseAsyncTaskTest {
 
     static final PaymentContext minimalValidPaymentContext = new PaymentContext(
-            new AmountOfMoney(1000L, CurrencyCode.USD),
-            CountryCode.US,
+            new AmountOfMoney(1000L, "USD"),
+            "US",
             false
     );
 

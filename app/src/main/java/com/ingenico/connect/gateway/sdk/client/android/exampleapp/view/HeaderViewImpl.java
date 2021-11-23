@@ -34,7 +34,7 @@ public class HeaderViewImpl implements HeaderView {
         TextView totalCost = (TextView)rootView.findViewById(R.id.totalCost);
         TextView totalCostDetail = (TextView)rootView.findViewById(R.id.totalCostDetail);
 
-        String formattedTotalAmount = CurrencyUtil.formatAmount(shoppingCart.getTotalAmount(), paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode());
+        String formattedTotalAmount = CurrencyUtil.formatAmount(shoppingCart.getTotalAmount(), paymentContext.getCountryCodeString(), paymentContext.getAmountOfMoney().getCurrencyCodeString());
         totalCost.setText(formattedTotalAmount);
         totalCostDetail.setText(formattedTotalAmount);
 
@@ -79,7 +79,7 @@ public class HeaderViewImpl implements HeaderView {
 
             //Show the amount formatted
             TextView cost = new TextView(context);
-            cost.setText(CurrencyUtil.formatAmount(item.getAmountInCents(), paymentContext.getCountryCode(), paymentContext.getAmountOfMoney().getCurrencyCode()));
+            cost.setText(CurrencyUtil.formatAmount(item.getAmountInCents(), paymentContext.getCountryCodeString(), paymentContext.getAmountOfMoney().getCurrencyCodeString()));
             cost.setTextAppearance(context, R.style.TotalCostLayoutSmallText);
             cost.setGravity(Gravity.RIGHT);
             layout.addView(cost, costParams);

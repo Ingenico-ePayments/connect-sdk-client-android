@@ -3,8 +3,6 @@ package com.ingenico.connect.gateway.sdk.client.android.integrationtest;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.IinLookupAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.CommunicationException;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.AmountOfMoney;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinStatus;
@@ -221,8 +219,8 @@ public class GetIinDetailsAsyncTaskTest extends BaseAsyncTaskTest {
         listeners.add(listener);
 
         PaymentContext customPaymentContext = new PaymentContext(
-                new AmountOfMoney(1000L, CurrencyCode.USD),
-                CountryCode.US,
+                new AmountOfMoney(1000L, "USD"),
+                "US",
                 false);
         IinLookupAsyncTask iinLookupAsyncTask = new IinLookupAsyncTask(
                 getContext(),

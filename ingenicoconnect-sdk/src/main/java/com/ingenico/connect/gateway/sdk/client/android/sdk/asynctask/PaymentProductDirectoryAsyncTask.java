@@ -1,7 +1,5 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
 
-import java.security.InvalidParameterException;
-
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -9,6 +7,8 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommun
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
+
+import java.security.InvalidParameterException;
 
 /**
  * AsyncTask which executes an paymentproduct directory call to the Ingenico ePayments platform
@@ -30,9 +30,18 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
 	// The productId for the product which need to be retrieved
 	private String productId;
 
-	private CurrencyCode currencyCode;
-	private CountryCode countryCode;
+	private String currencyCode;
+	private String countryCode;
 
+	/**
+	 * @deprecated use {@link #PaymentProductDirectoryAsyncTask(String, String, String, Context, C2sCommunicator, OnPaymentProductDirectoryCallCompleteListener)} instead
+	 */
+	@Deprecated
+	public PaymentProductDirectoryAsyncTask(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context,
+											C2sCommunicator communicator, OnPaymentProductDirectoryCallCompleteListener listener) {
+
+		this(productId, currencyCode.toString(), countryCode.toString(), context, communicator, listener);
+	}
 
 	/**
 	 * Constructor
@@ -44,7 +53,7 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
 	 * @param communicator, Communicator which does the communication to the GC gateway
 	 * @param listener,     listener which will be called by the AsyncTask
 	 */
-    public PaymentProductDirectoryAsyncTask(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context,
+    public PaymentProductDirectoryAsyncTask(String productId, String currencyCode, String countryCode, Context context,
 											C2sCommunicator communicator, OnPaymentProductDirectoryCallCompleteListener listener) {
 
     	if (productId == null) {

@@ -4,8 +4,9 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
  * This enum is a full list of all Currency Codes supported by the Ingenico Connect platform.
  *
  * Copyright 2018 Global Collect Services B.V
- *
+ * @deprecated This enum will be removed. Use 3-letter Currency Code Strings instead, adhering to the ISO 4217 standard.
  */
+@Deprecated
 public enum CurrencyCode {
 	AED,
 	AFN,

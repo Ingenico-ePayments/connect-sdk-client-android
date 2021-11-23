@@ -132,7 +132,7 @@ public class GooglePay {
             JSONObject transactionInfo = new JSONObject();
             transactionInfo.put("totalPriceStatus", "FINAL");
             transactionInfo.put("totalPrice", paymentContext.getAmountOfMoney().getAmount().toString());
-            transactionInfo.put("currencyCode", paymentContext.getAmountOfMoney().getCurrencyCode().toString());
+            transactionInfo.put("currencyCode", paymentContext.getAmountOfMoney().getCurrencyCodeString());
             if (paymentProduct.getAcquirerCountry() != null) {
                 transactionInfo.put("countryCode", paymentProduct.getAcquirerCountry());
             }

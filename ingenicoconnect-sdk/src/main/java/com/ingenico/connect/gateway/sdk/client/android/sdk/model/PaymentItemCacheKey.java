@@ -15,13 +15,20 @@ public class PaymentItemCacheKey implements Serializable {
 	private static final long serialVersionUID = 930873231953051398L;
 
 	Long amount;
-	CountryCode countryCode;
-	CurrencyCode currencyCode;
+	String countryCode;
+	String currencyCode;
 	boolean isRecurring;
 	String paymentProductId;
 
-
+	/**
+	 * @deprecated use {@link #PaymentItemCacheKey(Long, String, String, boolean, String)} instead
+	 */
+	@Deprecated
 	public PaymentItemCacheKey(Long amount, CountryCode countryCode, CurrencyCode currencyCode, boolean isRecurring, String paymentProductId) {
+		this(amount, countryCode.toString(), currencyCode.toString(), isRecurring, paymentProductId);
+	}
+
+	public PaymentItemCacheKey(Long amount, String countryCode, String currencyCode, boolean isRecurring, String paymentProductId) {
 
 		if (amount == null) {
 			throw new InvalidParameterException("Error creating PaymentItemCacheKey, amount may not be null");
@@ -48,11 +55,36 @@ public class PaymentItemCacheKey implements Serializable {
 		return amount;
 	}
 
+	/**
+	 * @deprecated In the next major release, the type of countryCode will change to String.
+	 * Note that `null` will be returned when an unknown String value was set.
+	 */
+	@Deprecated
 	public CountryCode getCountryCode() {
+		try {
+			return CountryCode.valueOf(countryCode);
+		} catch (IllegalArgumentException e) {
+			return null;
+		}
+	}
+
+	public String getCountryCodeString() {
 		return countryCode;
 	}
 
+	/**
+	 * @deprecated In the next major release, the type of currencyCode will change to String.
+	 * Note that `null` will be returned when an unknown String value was set.
+	 */
 	public CurrencyCode getCurrencyCode() {
+		try {
+			return CurrencyCode.valueOf(currencyCode);
+		} catch (IllegalArgumentException e) {
+			return null;
+		}
+	}
+
+	public String getCurrencyCodeString() {
 		return currencyCode;
 	}
 
@@ -77,8 +109,8 @@ public class PaymentItemCacheKey implements Serializable {
 
 		PaymentItemCacheKey otherKey = (PaymentItemCacheKey)o;
 		return otherKey.getAmount().equals(amount) &&
-			   otherKey.getCountryCode().equals(countryCode) &&
-			   otherKey.getCurrencyCode().equals(currencyCode) &&
+			   otherKey.getCountryCodeString().equals(countryCode) &&
+			   otherKey.getCurrencyCodeString().equals(currencyCode) &&
 			   otherKey.getPaymentProductId().equals(paymentProductId) &&
 			   otherKey.getIsRecurring() == isRecurring;
 	}
