@@ -1,5 +1,21 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.manager;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
+
+import com.google.gson.reflect.TypeToken;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.Util;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.LoadImageAsyncTask;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.LoadImageAsyncTask.OnImageLoadedListener;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.caching.CacheHandler;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.caching.Preferences;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Environment.EnvironmentType;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Region;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Size;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
@@ -9,21 +25,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
-
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-
-import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.Util;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.LoadImageAsyncTask;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.LoadImageAsyncTask.OnImageLoadedListener;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.caching.CacheHandler;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.caching.Preferences;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Environment.EnvironmentType;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Region;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Size;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
-import com.google.gson.reflect.TypeToken;
 
 
 /**
@@ -228,13 +229,17 @@ public class AssetManager implements OnImageLoadedListener {
 		if (image != null) {
 
 			// Save/Update the image on the Internal Storage
-			cacheHandler.saveImageOnInternalStorage(productId, image);
+			try {
+				cacheHandler.saveImageOnInternalStorage(productId, image);
 
-			// Update the logo mapping in preferences
-			logoMapping.put(productId, url);
+				// Update the logo mapping in preferences
+				logoMapping.put(productId, url);
 
-			// Store the updated mapping
-			preferences.storeInSharedPreferences(Constants.PREFERENCES_LOGO_MAP, logoMapping, context);
+				// Store the updated mapping
+				preferences.storeInSharedPreferences(Constants.PREFERENCES_LOGO_MAP, logoMapping, context);
+			} catch (Exception exception) {
+				Log.e("AssetManager", "onImageLoaded failed", exception);
+			}
 		}
 	}
 }

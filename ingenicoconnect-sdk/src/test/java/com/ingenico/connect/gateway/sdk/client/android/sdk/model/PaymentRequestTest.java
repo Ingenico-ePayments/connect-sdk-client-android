@@ -32,7 +32,7 @@ public class PaymentRequestTest {
     public static Map<String, String> allValidValuesVisa = new HashMap<>();
     static {
         allValidValuesVisa.put("cardNumber", "4012000033330026");
-        allValidValuesVisa.put("expiryDate", "1220");
+        allValidValuesVisa.put("expiryDate", "1240");
         allValidValuesVisa.put("cvv", "123");
     }
 
@@ -46,7 +46,7 @@ public class PaymentRequestTest {
     public static Map<String, String> invalidCCNVisa = new HashMap<>();
     static {
         invalidCCNVisa.put("cardNumber", "401200");
-        invalidCCNVisa.put("expiryDate", "1220");
+        invalidCCNVisa.put("expiryDate", "1240");
         invalidCCNVisa.put("cvv", "123");
     }
 
@@ -59,7 +59,7 @@ public class PaymentRequestTest {
 
     public static Map<String, String> missingCCNVisa = new HashMap<>();
     static {
-        missingCCNVisa.put("expiryDate", "1220");
+        missingCCNVisa.put("expiryDate", "1240");
         missingCCNVisa.put("cvv", "123");
     }
 
@@ -162,17 +162,43 @@ public class PaymentRequestTest {
     }
 
     @Test
-    public void testValidateSucceedsForAccountOnFileVisa() {
+    public void TestValidAccountOnFile(){
         PaymentRequest accountOnFileVisaRequest = new PaymentRequest();
-        accountOnFileVisaRequest.setAccountOnFile(accountOnFileVisa);
         accountOnFileVisaRequest.setPaymentProduct(paymentProductVisa);
+        accountOnFileVisaRequest.setAccountOnFile(paymentProductVisa.getAccountsOnFile().get(0));
+        accountOnFileVisaRequest.setValue("expiryDate", "1230");
+        accountOnFileVisaRequest.setValue("cvv", "1234");
         assertTrue(accountOnFileVisaRequest.validate().isEmpty());
     }
 
     @Test
-    public void testValidateSucceedsForAccountOnFileVisaWithChangedFields() {
-        PaymentRequest accountOnFileVisaChangedValuesRequest = new PaymentRequest();
-        accountOnFileVisaChangedValuesRequest.setAccountOnFile(accountOnFileVisa);
+    public void TestInvalidCvvNumberAccountOnFile(){
+        PaymentRequest accountOnFileVisaRequest = new PaymentRequest();
+        accountOnFileVisaRequest.setPaymentProduct(paymentProductVisa);
+        accountOnFileVisaRequest.setAccountOnFile(paymentProductVisa.getAccountsOnFile().get(0));
+        accountOnFileVisaRequest.setValue("expiryDate", "1230");
+        accountOnFileVisaRequest.setValue("cvv", "  ");
+        assertFalse(accountOnFileVisaRequest.validate().isEmpty());
+    }
+
+    @Test
+    public void TestInvalidExpiryDateMustWriteAccountOnFile(){
+        PaymentRequest accountOnFileVisaRequest = new PaymentRequest();
+        accountOnFileVisaRequest.setPaymentProduct(paymentProductVisa);
+        accountOnFileVisaRequest.setAccountOnFile(paymentProductVisa.getAccountsOnFile().get(0));
+        accountOnFileVisaRequest.setValue("cvv", "1234");
+        accountOnFileVisaRequest.setValue("expiryDate", "1221");
+        assertFalse(accountOnFileVisaRequest.validate().isEmpty());
+    }
+
+    @Test
+    public void TestValidExpiryDateMustWriteAccountOnFile(){
+        PaymentRequest accountOnFileVisaRequest = new PaymentRequest();
+        accountOnFileVisaRequest.setPaymentProduct(paymentProductVisa);
+        accountOnFileVisaRequest.setAccountOnFile(paymentProductVisa.getAccountsOnFile().get(0));
+        accountOnFileVisaRequest.setValue("cvv", "2345");
+        accountOnFileVisaRequest.setValue("expiryDate", "1240");
+        assertTrue(accountOnFileVisaRequest.validate().isEmpty());
     }
 
     @Test

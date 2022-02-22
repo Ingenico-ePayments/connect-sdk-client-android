@@ -23,7 +23,7 @@
     }, {
       "key" : "expiryDate",
       "value" : "0120",
-      "status" : "CAN_WRITE"
+      "status" : "MUST_WRITE"
     } ],
     "displayHints" : {
       "labelTemplate" : [ {

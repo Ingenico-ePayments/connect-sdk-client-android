@@ -1,5 +1,11 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationErrorMessage;
+
 import java.io.Serializable;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
@@ -7,12 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationErrorMessage;
 
 /**
  * Contains all payment request data needed for doing a payment
@@ -74,6 +74,10 @@ public class PaymentRequest implements Serializable {
 		// Loop trough all validationrules of all fields on the paymentProduct
 		for (PaymentProductField field : paymentProduct.getPaymentProductFields()) {
 
+			if (isFieldStatusMustWriteAndEmpty(field)) {
+				errorMessageIds.add(new ValidationErrorMessage("required", field.getId(), null));
+			}
+
 			// Validate the field with its value
 			if (!isFieldInAccountOnFileAndNotAltered(field)) {
 				errorMessageIds.addAll(field.validateValue(this));
@@ -99,6 +103,17 @@ public class PaymentRequest implements Serializable {
 		if (paymentProduct != null) {
 			for (AccountOnFile ppAccountOnFile : paymentProduct.getAccountsOnFile()) {
 				if (accountOnFile.getId().equals(ppAccountOnFile.getId())) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	private boolean isFieldStatusMustWriteAndEmpty(PaymentProductField field) {
+		if (accountOnFile != null && paymentProductHasAccountOnFile()) {
+			for (KeyValuePair pair : accountOnFile.getAttributes()) {
+				if (pair.getKey().equals(field.getId()) && (pair.getStatus() == KeyValuePair.Status.MUST_WRITE) && (getValue(field.getId()) == null)) {
 					return true;
 				}
 			}
