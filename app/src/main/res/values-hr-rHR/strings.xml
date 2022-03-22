@@ -314,7 +314,7 @@
 	<string name="gc.general.paymentProducts.1508.name">RapiPago</string>
 	<string name="gc.general.paymentProducts.1511.name">Cobro Express</string>
 	<string name="gc.general.paymentProducts.1512.name">ServiPag</string>
-	<string name="gc.general.paymentProducts.1513.name">sencillito</string>
+	<string name="gc.general.paymentProducts.1513.name">Sencillito</string>
 	<string name="gc.general.paymentProducts.1515.name">OXXO</string>
 	<string name="gc.general.paymentProducts.1521.name">e-Pay</string>
 	<string name="gc.general.paymentProducts.1522.name">Tesco - paysbuy Cash</string>
@@ -428,6 +428,8 @@
 	<string name="gc.general.paymentProducts.51.instructionFields.SPECIALID.label">Poseban identifikacijski broj</string>
 	<string name="gc.general.paymentProducts.51.name">Bank Transfer Brazil (Depósito Identificado)</string>
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
+	<string name="gc.general.paymentProducts.6001.name">Magna</string>
+	<string name="gc.general.paymentProducts.6002.name">Redcompra</string>
 	<string name="gc.general.paymentProducts.6101.name">Banco do Brasil</string>
 	<string name="gc.general.paymentProducts.6102.name">Itaú</string>
 	<string name="gc.general.paymentProducts.6103.name">Banrisul</string>
@@ -435,6 +437,9 @@
 	<string name="gc.general.paymentProducts.6105.name">Pix</string>
 	<string name="gc.general.paymentProducts.6106.name">MercadoPago</string>
 	<string name="gc.general.paymentProducts.6107.name">PicPay</string>
+	<string name="gc.general.paymentProducts.6108.name">Klap</string>
+	<string name="gc.general.paymentProducts.6109.name">WebPay</string>
+	<string name="gc.general.paymentProducts.6201.name">OXXO Pay</string>
 	<string name="gc.general.paymentProducts.6501.name">SPEI</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Vaš poziv na broj je</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Poziv na broj</string>
