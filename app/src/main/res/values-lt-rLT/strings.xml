@@ -430,6 +430,11 @@
 	<string name="gc.general.paymentProducts.56.name">UnionPay</string>
 	<string name="gc.general.paymentProducts.6001.name">Magna</string>
 	<string name="gc.general.paymentProducts.6002.name">Redcompra</string>
+	<string name="gc.general.paymentProducts.6003.name">Lider</string>
+	<string name="gc.general.paymentProducts.6004.name">Creditel</string>
+	<string name="gc.general.paymentProducts.6005.name">OCA</string>
+	<string name="gc.general.paymentProducts.6006.name">Prex</string>
+	<string name="gc.general.paymentProducts.6007.name">Midinero</string>
 	<string name="gc.general.paymentProducts.6101.name">Banco do Brasil</string>
 	<string name="gc.general.paymentProducts.6102.name">Itaú</string>
 	<string name="gc.general.paymentProducts.6103.name">Banrisul</string>
@@ -439,7 +444,13 @@
 	<string name="gc.general.paymentProducts.6107.name">PicPay</string>
 	<string name="gc.general.paymentProducts.6108.name">Klap</string>
 	<string name="gc.general.paymentProducts.6109.name">WebPay</string>
+	<string name="gc.general.paymentProducts.6110.name">Nequi</string>
+	<string name="gc.general.paymentProducts.6111.name">PSE</string>
 	<string name="gc.general.paymentProducts.6201.name">OXXO Pay</string>
+	<string name="gc.general.paymentProducts.6202.name">Baloto</string>
+	<string name="gc.general.paymentProducts.6203.name">Efecty</string>
+	<string name="gc.general.paymentProducts.6204.name">SafetyPay Cash</string>
+	<string name="gc.general.paymentProducts.6205.name">PagoEfectivo</string>
 	<string name="gc.general.paymentProducts.6501.name">SPEI</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.PAYMENTREFERENCE.label">Jūsų mokėjimo nuoroda yra</string>
 	<string name="gc.general.paymentProducts.705.instructionFields.REFERENCENUMBER.label">Nuorodos numeris</string>
