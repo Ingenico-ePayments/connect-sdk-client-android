@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v5.8.3";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v5.8.4";
 
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
