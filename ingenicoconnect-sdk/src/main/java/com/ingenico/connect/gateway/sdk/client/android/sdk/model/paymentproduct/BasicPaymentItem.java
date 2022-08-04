@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints.DisplayHintsPaymentItem;
@@ -5,9 +9,6 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Copyright 2017 Global Collect Services B.V
- */
 public interface BasicPaymentItem extends Serializable {
 
     public String getId();

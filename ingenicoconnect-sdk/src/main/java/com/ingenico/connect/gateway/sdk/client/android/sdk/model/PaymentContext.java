@@ -1,14 +1,17 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 
 /**
  * Pojo that contains PaymentContext information
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class PaymentContext implements Serializable {
 
@@ -21,14 +24,6 @@ public class PaymentContext implements Serializable {
     private Locale locale;
 
     public PaymentContext() {}
-
-    /**
-     * @deprecated use {@link #PaymentContext(AmountOfMoney, String, boolean, Locale)}  instead
-     */
-    @Deprecated
-    public PaymentContext(AmountOfMoney amountOfMoney, CountryCode countryCode, boolean isRecurring) {
-        this(amountOfMoney, countryCode.toString(), isRecurring, null);
-    }
 
     public PaymentContext(AmountOfMoney amountOfMoney, String countryCode, boolean isRecurring) {
         this(amountOfMoney, countryCode, isRecurring, null);
@@ -48,28 +43,7 @@ public class PaymentContext implements Serializable {
         this.amountOfMoney = amountOfMoney;
     }
 
-    /**
-     * @deprecated In the next major release, the type of countryCode will change to String.
-     * Note that `null` will be returned when an unknown String value was set.
-     */
-    @Deprecated
-    public CountryCode getCountryCode() {
-        try {
-            return CountryCode.valueOf(countryCode);
-        } catch (IllegalArgumentException e) {
-            return null;
-        }
-    }
-
-    /**
-     * @deprecated use {@link #setCountryCode(String)} instead
-     */
-    @Deprecated
-    public void setCountryCode(CountryCode countryCode) {
-        this.countryCode = countryCode.name();
-    }
-
-    public String getCountryCodeString(){
+    public String getCountryCode(){
         return countryCode;
     }
 
@@ -97,5 +71,23 @@ public class PaymentContext implements Serializable {
 
     public void setLocale(Locale locale) {
         this.locale = locale;
+    }
+
+    public Map<String, String> convertToNetworkRequestParameters() {
+        HashMap<String, String> parameters = new HashMap<>();
+        parameters.put("countryCode", countryCode);
+        parameters.put("currencyCode", amountOfMoney.getCurrencyCode());
+        parameters.put("locale", locale.toString());
+        parameters.put("amount", amountOfMoney.getAmount().toString());
+        parameters.put("isRecurring", String.valueOf(isRecurring));
+        return parameters;
+    }
+
+    /**
+     * @deprecated use {@link #getCountryCode()} instead.
+     */
+    @Deprecated
+    public String getCountryCodeString() {
+        return countryCode;
     }
 }

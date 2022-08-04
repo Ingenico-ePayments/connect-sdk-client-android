@@ -1,19 +1,20 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
+
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.annotations.SerializedName;
 
 /**
  * POJO that represents a Formelement object
  * This class is filled by deserialising a JSON string from the GC gateway
  * The Formelements are used for determining whether it is a list or text input field
  * In case of list, it also has values inside the valuemapping
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class FormElement implements Serializable {
 

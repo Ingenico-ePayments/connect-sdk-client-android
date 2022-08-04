@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
@@ -15,9 +19,6 @@ import static org.junit.Assert.*;
 
 /**
  * Junit Testclass which tests PaymentRequest
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 @RunWith(MockitoJUnitRunner.class)
 public class PaymentRequestTest {

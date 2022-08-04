@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.communicate;
 
 import android.content.Context;
@@ -6,19 +10,17 @@ import android.os.Build;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.ClientApi;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.Util;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.CommunicationException;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.manager.AssetManager;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.ConvertedAmountResponse;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsRequest;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Region;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.ThirdPartyStatusResponse;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinDetailsRequest;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
@@ -36,7 +38,6 @@ import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.security.InvalidParameterException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
@@ -51,9 +52,10 @@ import javax.net.ssl.SSLSocketFactory;
 /**
  * Handles all communication with the Ingenico Connect Client API.
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated Use {@link ClientApi} instead.
  */
+
+@Deprecated
 public class C2sCommunicator implements Serializable {
 
 
@@ -92,7 +94,7 @@ public class C2sCommunicator implements Serializable {
 	public static C2sCommunicator getInstance(C2sCommunicatorConfiguration configuration) {
 
 		if (configuration == null ) {
-			throw new InvalidParameterException("Error creating C2sCommunicator instance, configuration may not be null");
+			throw new IllegalArgumentException("Error creating C2sCommunicator instance, configuration may not be null");
 		}
 		return new C2sCommunicator(configuration);
 	}
@@ -123,7 +125,7 @@ public class C2sCommunicator implements Serializable {
 	public BasicPaymentProducts getBasicPaymentProducts(PaymentContext paymentContext, Context context) {
 
 		if (paymentContext == null) {
-			throw new InvalidParameterException("Error getting BasicPaymentProducts, request may not be null");
+			throw new IllegalArgumentException("Error getting BasicPaymentProducts, request may not be null");
 		}
 
 		HttpURLConnection connection = null;
@@ -137,10 +139,10 @@ public class C2sCommunicator implements Serializable {
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(paymentContext.getCountryCodeString());
+			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
 			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
 			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
-			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCodeString());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
 			if (paymentContext.getLocale() != null) {
 				queryString.append("&locale=").append(paymentContext.getLocale());
 			}
@@ -202,7 +204,7 @@ public class C2sCommunicator implements Serializable {
 	public PaymentProduct getPaymentProduct(String productId, Context context, PaymentContext paymentContext) {
 
 		if (productId == null) {
-			throw new InvalidParameterException("Error getting PaymentProduct, productId may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProduct, productId may not be null");
 		}
 
 		HttpURLConnection connection = null;
@@ -216,10 +218,10 @@ public class C2sCommunicator implements Serializable {
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(paymentContext.getCountryCodeString());
+			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
 			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
 			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
-			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCodeString());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
 			if (paymentContext.getLocale() != null) {
 				queryString.append("&locale=").append(paymentContext.getLocale());
 			}
@@ -271,7 +273,7 @@ public class C2sCommunicator implements Serializable {
 	public BasicPaymentProductGroups getBasicPaymentProductGroups(PaymentContext paymentContext, Context context) {
 
 		if (paymentContext == null) {
-			throw new InvalidParameterException("Error getting BasicPaymentProductGroups, request may not be null");
+			throw new IllegalArgumentException("Error getting BasicPaymentProductGroups, request may not be null");
 		}
 
 		HttpURLConnection connection = null;
@@ -285,10 +287,10 @@ public class C2sCommunicator implements Serializable {
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(paymentContext.getCountryCodeString());
+			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
 			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
 			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
-			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCodeString());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
 			if (paymentContext.getLocale() != null) {
 				queryString.append("&locale=").append(paymentContext.getLocale());
 			}
@@ -349,7 +351,7 @@ public class C2sCommunicator implements Serializable {
 	public PaymentProductGroup getPaymentProductGroup(String groupId, Context context, PaymentContext paymentContext) {
 
 		if (groupId == null) {
-			throw new InvalidParameterException("Error getting paymentProductGroup, groupId may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductGroup, groupId may not be null");
 		}
 
 		HttpURLConnection connection = null;
@@ -363,10 +365,10 @@ public class C2sCommunicator implements Serializable {
 
 			// Add query parameters
 			StringBuilder queryString = new StringBuilder();
-			queryString.append("?countryCode=").append(paymentContext.getCountryCodeString());
+			queryString.append("?countryCode=").append(paymentContext.getCountryCode());
 			queryString.append("&amount=").append(paymentContext.getAmountOfMoney().getAmount());
 			queryString.append("&isRecurring=").append(paymentContext.isRecurring());
-			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCodeString());
+			queryString.append("&currencyCode=").append(paymentContext.getAmountOfMoney().getCurrencyCode());
 			if (paymentContext.getLocale() != null) {
 				queryString.append("&locale=").append(paymentContext.getLocale());
 			}
@@ -402,25 +404,17 @@ public class C2sCommunicator implements Serializable {
 		}
 	}
 
-	/**
-	 * @deprecated use {@link #getCustomerDetails(String, String, List, Context)} instead
-	 */
-	@Deprecated
-	public CustomerDetailsResponse getCustomerDetails(String productId, CountryCode countryCode, List<KeyValuePair> values, Context context) {
-		return getCustomerDetails(productId, countryCode.toString(), values, context);
-	}
-
 
 	public CustomerDetailsResponse getCustomerDetails(String productId, String countryCode, List<KeyValuePair> values, Context context) {
 
 		if (productId == null) {
-			throw new InvalidParameterException("Error getting CustomerDetails, productId may not be null");
+			throw new IllegalArgumentException("Error getting CustomerDetails, productId may not be null");
 		}
 		if (countryCode == null) {
-			throw new InvalidParameterException("Error getting CustomerDetails, countryCode may not be null");
+			throw new IllegalArgumentException("Error getting CustomerDetails, countryCode may not be null");
 		}
 		if (values == null) {
-			throw new InvalidParameterException("Error getting CustomerDetails, values may not be null");
+			throw new IllegalArgumentException("Error getting CustomerDetails, values may not be null");
 		}
 
 		HttpURLConnection connection = null;
@@ -467,14 +461,6 @@ public class C2sCommunicator implements Serializable {
 	}
 
 	/**
-	 * @deprecated use {@link #getPaymentProductDirectory(String, String, String, Context)} instead
-	 */
-	@Deprecated
-	public PaymentProductDirectoryResponse getPaymentProductDirectory(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context) {
-		return getPaymentProductDirectory(productId, currencyCode.toString(), countryCode.toString(), context);
-	}
-
-	/**
 	 * Retrieves a list of directories for a given paymentproduct
 	 *
 	 * @param productId, for which product must the lookup be done
@@ -487,16 +473,16 @@ public class C2sCommunicator implements Serializable {
 	public PaymentProductDirectoryResponse getPaymentProductDirectory(String productId, String currencyCode, String countryCode, Context context) {
 
 		if (productId == null) {
-			throw new InvalidParameterException("Error getting PaymentProduct directory, productId may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProduct directory, productId may not be null");
 		}
 		if (currencyCode == null) {
-			throw new InvalidParameterException("Error getting PaymentProduct directory, currencyCode may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProduct directory, currencyCode may not be null");
 		}
 		if (countryCode == null) {
-			throw new InvalidParameterException("Error getting PaymentProduct directory, countryCode may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProduct directory, countryCode may not be null");
 		}
 		if (context == null) {
-			throw new InvalidParameterException("Error getting PaymentProduct directory, context may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProduct directory, context may not be null");
 		}
 
 		HttpURLConnection connection = null;
@@ -557,7 +543,7 @@ public class C2sCommunicator implements Serializable {
 	public IinDetailsResponse getPaymentProductIdByCreditCardNumber(String partialCreditCardNumber, Context context, PaymentContext paymentContext) {
 
 		if (partialCreditCardNumber == null ) {
-			throw new InvalidParameterException("Error getting IinDetails, partialCreditCardNumber may not be null");
+			throw new IllegalArgumentException("Error getting IinDetails, partialCreditCardNumber may not be null");
 		}
 
 		// Trim partialCreditCardNumber to MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP digits
@@ -712,16 +698,16 @@ public class C2sCommunicator implements Serializable {
 	public Long convertAmount (Long amount, String source, String target, Context context) {
 
 		if (amount == null) {
-			throw new InvalidParameterException("Error converting amount, amount may not be null");
+			throw new IllegalArgumentException("Error converting amount, amount may not be null");
 		}
 		if (source == null) {
-			throw new InvalidParameterException("Error converting amount, source may not be null");
+			throw new IllegalArgumentException("Error converting amount, source may not be null");
 		}
 		if (target == null) {
-			throw new InvalidParameterException("Error converting amount, target may not be null");
+			throw new IllegalArgumentException("Error converting amount, target may not be null");
 		}
 		if (context == null) {
-			throw new InvalidParameterException("Error converting amount, context may not be null");
+			throw new IllegalArgumentException("Error converting amount, context may not be null");
 		}
 
 		HttpURLConnection connection = null;
@@ -783,17 +769,6 @@ public class C2sCommunicator implements Serializable {
 	public Map<String, String> getMetadata(Context context) {
 		return configuration.getMetadata(context);
 	}
-
-
-	/**
-	 * Returns the region set in the configuration
-	 * @return
-	 */
-	@Deprecated
-	public Region getRegion () {
-		return configuration.getRegion();
-	}
-
 
 	/**
 	 * Does a GET request with HttpURLConnection

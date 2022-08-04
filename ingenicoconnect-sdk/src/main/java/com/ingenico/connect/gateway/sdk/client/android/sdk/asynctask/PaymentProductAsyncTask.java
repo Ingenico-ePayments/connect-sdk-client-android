@@ -1,22 +1,31 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
 
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.ClientApi;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.GooglePayUtil;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiError;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
-import java.security.InvalidParameterException;
 import java.util.List;
 
 /**
  * AsyncTask which loads a PaymentProduct with fields from the GC Gateway
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated use {@link ClientApi#getPaymentProduct(String, Success, ApiError, Failure)} instead
  */
+
+@Deprecated
 public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProduct> {
 
 	// The listener which will be called by the AsyncTask when PaymentProduct with fields is retrieved
@@ -47,19 +56,19 @@ public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProd
 								   List<OnPaymentProductCallCompleteListener> listeners) {
 
 		if (context == null ) {
-			throw new InvalidParameterException("Error creating PaymentProductAsyncTask, context may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, context may not be null");
 		}
 		if (productId == null ) {
-			throw new InvalidParameterException("Error creating PaymentProductAsyncTask, productId may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, productId may not be null");
 		}
 		if (paymentContext == null ) {
-			throw new InvalidParameterException("Error creating PaymentProductAsyncTask, paymentContext may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, paymentContext may not be null");
 		}
 		if (communicator == null ) {
-			throw new InvalidParameterException("Error creating PaymentProductAsyncTask, communicator may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, communicator may not be null");
 		}
 		if (listeners == null ) {
-			throw new InvalidParameterException("Error creating PaymentProductAsyncTask, listener may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, listener may not be null");
 		}
 
 		this.context = context;
@@ -102,9 +111,9 @@ public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProd
 	 * Interface for OnPaymentProductCallComplete listener
 	 * Is called from the PaymentProductAsyncTask when it has retrieved a PaymentProduct with fields
 	 *
-	 * Copyright 2017 Global Collect Services B.V
-	 *
+	 * @deprecated use {@link ClientApi#getPaymentProduct(String, Success, ApiError, Failure)} instead
 	 */
+	@Deprecated
 	public interface OnPaymentProductCallCompleteListener {
 		public void onPaymentProductCallComplete(PaymentProduct paymentProduct);
 	}

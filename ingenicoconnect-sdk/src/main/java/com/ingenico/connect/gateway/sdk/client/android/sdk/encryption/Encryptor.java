@@ -1,4 +1,18 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.encryption;
+
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.EncryptDataException;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -6,22 +20,15 @@ import java.nio.charset.Charset;
 import java.security.interfaces.RSAPublicKey;
 import java.util.Arrays;
 
-import android.util.Log;
-
-import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.EncryptDataException;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 
 /**
  * Handles all Encryption related functionality
  * Uses the JOSE web encryption standard which can be found at
  * http://tools.ietf.org/html/draft-ietf-jose-json-web-encryption-29
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated This class will become internal to the SDK. Use {@link com.ingenico.connect.gateway.sdk.client.android.ConnectSDK#encryptPaymentRequest(PaymentRequest, Success, Failure)} for encryption instead.
  */
+@Deprecated
 public class Encryptor {
 
 	// Tag used for logging

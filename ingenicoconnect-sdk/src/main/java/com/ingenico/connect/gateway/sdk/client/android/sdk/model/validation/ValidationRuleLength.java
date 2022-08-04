@@ -1,7 +1,8 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
-
-
-import android.util.Log;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
@@ -9,9 +10,6 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Validation rule for length
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class ValidationRuleLength extends AbstractValidationRule {
 
@@ -29,21 +27,6 @@ public class ValidationRuleLength extends AbstractValidationRule {
 
 		this.minLength = minLength;
 		this.maxLength = maxLength;
-	}
-
-	/**
-	 * Validates that the text has the required length
-	 * @param text, the text to be validated
-     * @return True if the String is valid, false otherwise
-	 * @deprecated use {@link #validate(PaymentRequest, String)} instead
-     */
-	@Override
-	@Deprecated
-	public boolean validate(String text) {
-		Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
-
-		// Check if textsize >= minLength && textsize <= maxLength
-		return text.length() >= minLength && text.length() <= maxLength;
 	}
 
 	/**

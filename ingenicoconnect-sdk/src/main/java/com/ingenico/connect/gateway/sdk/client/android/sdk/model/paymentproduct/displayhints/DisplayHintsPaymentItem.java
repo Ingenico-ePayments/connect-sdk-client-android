@@ -1,18 +1,19 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.io.Serializable;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints;
 
 import android.graphics.drawable.Drawable;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * POJO that represents an DisplayHintsPaymentItem object
  * This class is filled by deserialising a JSON string from the GC gateway
  * Contains information for payment products
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class DisplayHintsPaymentItem implements Serializable{
 

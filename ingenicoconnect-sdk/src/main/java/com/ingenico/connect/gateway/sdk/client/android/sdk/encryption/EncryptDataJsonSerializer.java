@@ -1,13 +1,17 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.encryption;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.lang.reflect.Type;
-import java.util.Map.Entry;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.encryption;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
+
+import java.lang.reflect.Type;
+import java.util.Map.Entry;
 
 class EncryptDataJsonSerializer implements JsonSerializer<EncryptData> {
 

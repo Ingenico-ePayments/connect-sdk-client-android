@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin;
 
 import com.ingenico.connect.gateway.sdk.client.android.testUtil.GsonHelper;
@@ -11,9 +15,6 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Junit Testclass which tests iin details response equality
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 @RunWith(MockitoJUnitRunner.class)
 public class IinDetailsResponseTest {

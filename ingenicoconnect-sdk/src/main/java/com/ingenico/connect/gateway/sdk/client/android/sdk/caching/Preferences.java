@@ -1,20 +1,25 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.caching;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.lang.reflect.Type;
-import java.util.Map;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.caching;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.google.gson.Gson;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
+
+import java.lang.reflect.Type;
+import java.util.Map;
 
 /**
  * Handles all SharedPreferences related functionality
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated this class will be removed in a future release.
  */
+
+@Deprecated
 public class Preferences {
 
 

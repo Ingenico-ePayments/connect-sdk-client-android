@@ -1,22 +1,30 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
 
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.ingenico.connect.gateway.sdk.client.android.sdk.ClientApi;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinStatus;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiError;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
-import java.security.InvalidParameterException;
 import java.util.List;
 
 /**
  * AsyncTask which executes an IIN lookup call to the GC gateway
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated use {@link ClientApi#getIINDetails(String, Success, ApiError, Failure)} instead
  */
+
+@Deprecated
 public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsResponse> {
 
 	// Minimal nr of chars before doing a iin lookup
@@ -49,16 +57,16 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
     public IinLookupAsyncTask(Context context, String partialCreditCardNumber, C2sCommunicator communicator,
     						  List<OnIinLookupCompleteListener> listeners, PaymentContext paymentContext) {
     	if (context == null) {
-			throw new InvalidParameterException("Error creating IinLookupAsyncTask, context may not be null");
+			throw new IllegalArgumentException("Error creating IinLookupAsyncTask, context may not be null");
 		}
     	if (partialCreditCardNumber == null) {
-    		throw new InvalidParameterException("Error creating IinLookupAsyncTask, partialCreditCardNumber may not be null");
+    		throw new IllegalArgumentException("Error creating IinLookupAsyncTask, partialCreditCardNumber may not be null");
 		}
     	if (communicator == null ) {
-			throw new InvalidParameterException("Error creating PaymentProductAsyncTask, communicator may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, communicator may not be null");
 		}
     	if (listeners == null) {
-    		throw new InvalidParameterException("Error creating IinLookupAsyncTask, listeners may not be null");
+    		throw new IllegalArgumentException("Error creating IinLookupAsyncTask, listeners may not be null");
 		}
 
     	this.context = context;
@@ -113,9 +121,9 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
      * Interface for OnIinLookupComplete listener
      * Is called from the IinLookupAsyncTask when it has the result for the IinLookup
      *
-     * Copyright 2017 Global Collect Services B.V
-     *
+	 * @deprecated use {@link ClientApi#getIINDetails(String, Success, ApiError, Failure)} instead
      */
+    @Deprecated
     public interface OnIinLookupCompleteListener {
 
     	/**

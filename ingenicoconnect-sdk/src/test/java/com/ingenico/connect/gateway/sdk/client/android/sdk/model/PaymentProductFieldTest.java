@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
@@ -12,9 +16,6 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Junit Testclass which tests PaymentProductField apply-/removeMask methods with no Mask present
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 @RunWith(MockitoJUnitRunner.class)
 public class PaymentProductFieldTest {

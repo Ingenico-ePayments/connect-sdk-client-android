@@ -1,18 +1,19 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints;
+
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFileDisplay;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFileDisplay;
-
 /**
  * POJO that represents an DisplayHintsAccountOnFile object
  * This class is filled by deserialising a JSON string from the GC gateway
  * Contains a list with the values of the account on file
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class DisplayHintsAccountOnFile implements Serializable {
 

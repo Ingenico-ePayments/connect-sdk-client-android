@@ -1,14 +1,13 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import android.util.Log;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
 /**
  * Validation rule for China Resident ID number
- *
- * Copyright 2020 Global Collect Services B.V
- *
  */
 public class ValidationRuleResidentIdNumber extends AbstractValidationRule {
 
@@ -18,12 +17,6 @@ public class ValidationRuleResidentIdNumber extends AbstractValidationRule {
 
     public ValidationRuleResidentIdNumber(String errorMessage, ValidationType type) {
         super(errorMessage, type);
-    }
-
-    @Override
-    public boolean validate(String text) {
-        Log.e(TAG, "This method is deprecated and not implemented! It will always return false. Use <validate(PaymentRequest paymentRequest, String)> instead.");
-        return false;
     }
 
     /**

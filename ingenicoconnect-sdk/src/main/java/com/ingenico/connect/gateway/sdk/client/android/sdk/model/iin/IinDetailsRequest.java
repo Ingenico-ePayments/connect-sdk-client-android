@@ -1,15 +1,16 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin;
 
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.google.gson.annotations.SerializedName;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 
 import java.io.Serializable;
 
 /**
  * Pojo that contains the request for IIN lookup
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class IinDetailsRequest implements Serializable {
 

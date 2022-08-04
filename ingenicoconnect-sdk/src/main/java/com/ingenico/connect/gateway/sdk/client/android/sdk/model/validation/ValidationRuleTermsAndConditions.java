@@ -1,16 +1,13 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import android.util.Log;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
-import java.security.InvalidParameterException;
-
 /**
  * Validation rule for terms and conditions
- *
- * Copyright 2018 Global Collect Services B.V
- *
  */
 public class ValidationRuleTermsAndConditions extends AbstractValidationRule {
 
@@ -31,24 +28,13 @@ public class ValidationRuleTermsAndConditions extends AbstractValidationRule {
     @Override
     public boolean validate(PaymentRequest paymentRequest, String fieldId) {
         if (paymentRequest == null) {
-            throw new InvalidParameterException("Error validating, paymentRequest may not be null");
+            throw new IllegalArgumentException("Error validating, paymentRequest may not be null");
         }
         if (fieldId == null) {
-            throw new InvalidParameterException("Error validating, fieldId may not be null");
+            throw new IllegalArgumentException("Error validating, fieldId may not be null");
         }
 
         String value = paymentRequest.getValue(fieldId);
         return Boolean.parseBoolean(value);
-    }
-
-    /**
-     * @return <code>True</code>
-     * @deprecated use {@link #validate(PaymentRequest, String)} instead
-     */
-    @Override
-    @Deprecated
-    public boolean validate(String text) {
-        Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
-        return true;
     }
 }

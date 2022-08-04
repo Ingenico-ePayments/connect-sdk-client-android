@@ -1,11 +1,8 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.security.InvalidParameterException;
-import java.util.Map;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,12 +11,23 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 
+import com.ingenico.connect.gateway.sdk.client.android.sdk.ClientApi;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Map;
+
 /**
  * AsyncTask which loads an Image from a given url
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated use {@link ClientApi#getDrawableFromUrl(String, Success, Failure)} instead
  */
+
+@Deprecated
 public class LoadImageAsyncTask extends AsyncTask<String, Void, Drawable> {
 
 	// The listener which will be called by the AsyncTask
@@ -51,22 +59,22 @@ public class LoadImageAsyncTask extends AsyncTask<String, Void, Drawable> {
     public LoadImageAsyncTask(String imageUrl, String productId, Context context, Map<String, String> logoMapping, String url, OnImageLoadedListener listener) {
 
     	if (imageUrl == null) {
-			throw new InvalidParameterException("Error creating LoadImageAsyncTask, imageUrl may not be null");
+			throw new IllegalArgumentException("Error creating LoadImageAsyncTask, imageUrl may not be null");
 		}
     	if (productId == null) {
-			throw new InvalidParameterException("Error creating LoadImageAsyncTask, productId may not be null");
+			throw new IllegalArgumentException("Error creating LoadImageAsyncTask, productId may not be null");
 		}
     	if (context == null) {
-			throw new InvalidParameterException("Error creating LoadImageAsyncTask, context may not be null");
+			throw new IllegalArgumentException("Error creating LoadImageAsyncTask, context may not be null");
 		}
     	if (logoMapping == null) {
-			throw new InvalidParameterException("Error creating LoadImageAsyncTask, logoMapping may not be null");
+			throw new IllegalArgumentException("Error creating LoadImageAsyncTask, logoMapping may not be null");
 		}
     	if (url == null) {
-			throw new InvalidParameterException("Error creating LoadImageAsyncTask, url may not be null");
+			throw new IllegalArgumentException("Error creating LoadImageAsyncTask, url may not be null");
 		}
     	if (listener == null) {
-			throw new InvalidParameterException("Error creating LoadImageAsyncTask, listener may not be null");
+			throw new IllegalArgumentException("Error creating LoadImageAsyncTask, listener may not be null");
 		}
 
         this.imageUrl  = imageUrl;
@@ -102,9 +110,9 @@ public class LoadImageAsyncTask extends AsyncTask<String, Void, Drawable> {
     /**
      * Interface for OnImageLoaded listener
      *
-     * Copyright 2017 Global Collect Services B.V
-     *
+	 * @deprecated use {@link ClientApi#getDrawableFromUrl(String, Success, Failure)} instead
      */
+    @Deprecated
     public interface OnImageLoadedListener {
         void onImageLoaded(Drawable image, String productId, Map<String, String> logoMapping, String url);
     }

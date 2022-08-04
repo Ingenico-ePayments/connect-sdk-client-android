@@ -1,13 +1,8 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.caching;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.StreamCorruptedException;
-import java.security.InvalidParameterException;
-import java.util.Map;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.caching;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -19,13 +14,22 @@ import android.util.Log;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.StreamCorruptedException;
+import java.util.Map;
+
 
 /**
  * This class is responsible for writing files on disk who act as cache for certain data
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated this class will be removed in a future release.
  */
+
+@Deprecated
 class WriteInternalStorage {
 
 	// Tag for logging
@@ -56,10 +60,10 @@ class WriteInternalStorage {
 	public void storeIinResponseInCache(String partialCreditCardNumber, IinDetailsResponse iinResponse) {
 
 		if (partialCreditCardNumber == null) {
-			throw new InvalidParameterException("Error storing response in partialCreditCardNumber, context may not be null");
+			throw new IllegalArgumentException("Error storing response in partialCreditCardNumber, context may not be null");
 		}
 		if (iinResponse == null) {
-			throw new InvalidParameterException("Error storing response in iinResponse, iinResponse may not be null");
+			throw new IllegalArgumentException("Error storing response in iinResponse, iinResponse may not be null");
 		}
 
 		// Retrieve the currenct cached items and add the new one to it
@@ -104,10 +108,10 @@ class WriteInternalStorage {
 	public void storeLogoOnInternalStorage(String paymentProductId, Drawable image) {
 
 		if (paymentProductId == null) {
-			throw new InvalidParameterException("Error storing drawable on disk, paymentProductId may not be null");
+			throw new IllegalArgumentException("Error storing drawable on disk, paymentProductId may not be null");
 		}
 		if (image == null) {
-			throw new InvalidParameterException("Error storing drawable on disk, image may not be null");
+			throw new IllegalArgumentException("Error storing drawable on disk, image may not be null");
 		}
 
 		// Write the Drawable to disk

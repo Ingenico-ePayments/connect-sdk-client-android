@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 import java.util.ArrayList;
@@ -5,9 +9,6 @@ import java.util.ArrayList;
 
 /**
  * Pojo that contains the DirectoryEntries for the response from PaymentProductDirectory lookup
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class DirectoryEntry {
 

@@ -1,18 +1,25 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.security.InvalidParameterException;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
 
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.ingenico.connect.gateway.sdk.client.android.sdk.ClientApi;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiError;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
 /**
  * AsyncTask which executes an convert amount call to the Ingenico ePayments platform
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated use {@link ClientApi#convertAmount(String, String, long, Success, ApiError, Failure)} instead
  */
+
+@Deprecated
 public class ConvertAmountAsyncTask extends AsyncTask<String, Void, Long> {
 
 	// The listener which will be called by the AsyncTask
@@ -42,22 +49,22 @@ public class ConvertAmountAsyncTask extends AsyncTask<String, Void, Long> {
     							  C2sCommunicator communicator, OnAmountConvertedListener listener) {
 
     	if (amount == null) {
-			throw new InvalidParameterException("Error creating ConvertAmountAsyncTask, amount may not be null");
+			throw new IllegalArgumentException("Error creating ConvertAmountAsyncTask, amount may not be null");
 		}
     	if (source == null) {
-			throw new InvalidParameterException("Error creating ConvertAmountAsyncTask, source may not be null");
+			throw new IllegalArgumentException("Error creating ConvertAmountAsyncTask, source may not be null");
 		}
     	if (target == null) {
-			throw new InvalidParameterException("Error creating ConvertAmountAsyncTask, target may not be null");
+			throw new IllegalArgumentException("Error creating ConvertAmountAsyncTask, target may not be null");
 		}
     	if (context == null) {
-			throw new InvalidParameterException("Error creating ConvertAmountAsyncTask, context may not be null");
+			throw new IllegalArgumentException("Error creating ConvertAmountAsyncTask, context may not be null");
 		}
     	if (communicator == null) {
-			throw new InvalidParameterException("Error creating ConvertAmountAsyncTask, communicator may not be null");
+			throw new IllegalArgumentException("Error creating ConvertAmountAsyncTask, communicator may not be null");
 		}
     	if (listener == null) {
-			throw new InvalidParameterException("Error creating ConvertAmountAsyncTask, listener may not be null");
+			throw new IllegalArgumentException("Error creating ConvertAmountAsyncTask, listener may not be null");
 		}
 
     	this.context = context;
@@ -90,9 +97,9 @@ public class ConvertAmountAsyncTask extends AsyncTask<String, Void, Long> {
      * Interface for OnAmountConvertedListener listener
      * Is called from the ConvertAmountAsyncTask when it has converted the given amount from one currency to another
      *
-     * Copyright 2017 Global Collect Services B.V
-     *
+	 * @deprecated use {@link ClientApi#convertAmount(String, String, long, Success, ApiError, Failure)} instead
      */
+    @Deprecated
     public interface OnAmountConvertedListener {
 
 

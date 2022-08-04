@@ -1,15 +1,14 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin;
 
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * Pojo that contains the response for IIN lookup
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class IinDetailsResponse implements Serializable {
 
@@ -41,20 +40,7 @@ public class IinDetailsResponse implements Serializable {
 		this.status = status;
 	}
 
-	/**
-	 * @deprecated In the next major release, the type of countryCode will change to String.
-	 * Note that `null` will be returned when an unknown String value was set.
-	 */
-	@Deprecated
-	public CountryCode getCountryCode() {
-		try {
-			return CountryCode.valueOf(countryCode);
-		} catch (IllegalArgumentException e) {
-			return null;
-		}
-	}
-
-	public String getCountryCodeString(){
+	public String getCountryCode() {
 		return countryCode;
 	}
 
@@ -95,5 +81,13 @@ public class IinDetailsResponse implements Serializable {
 		hash = 31 * hash + (coBrands != null ? coBrands.hashCode() : 0);
 		hash = 31 * hash + Boolean.valueOf(isAllowedInContext).hashCode();
 		return hash;
+	}
+
+	/**
+	 * @deprecated use {@link #getCountryCode()} instead.
+	 */
+	@Deprecated
+	public String getCountryCodeString(){
+		return countryCode;
 	}
 }

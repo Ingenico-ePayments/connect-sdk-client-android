@@ -1,24 +1,25 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
+
+import com.google.gson.annotations.SerializedName;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.formatter.StringFormatter;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.FormatResult;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints.DisplayHintsProductFields;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.AbstractValidationRule;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationErrorMessage;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleBoletoBancarioRequiredness;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ingenico.connect.gateway.sdk.client.android.sdk.formatter.StringFormatter;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints.DisplayHintsProductFields;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.FormatResult;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.AbstractValidationRule;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationErrorMessage;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleBoletoBancarioRequiredness;
-import com.google.gson.annotations.SerializedName;
-
 /**
  * Represents a PaymentProductField object
  * This class is filled by deserialising a JSON string from the GC gateway
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class PaymentProductField implements Serializable {
 
@@ -100,41 +101,6 @@ public class PaymentProductField implements Serializable {
 			return true;
 		}
 		return false;
-	}
-
-
-	/**
-	 * Gets all errormessagecodes for this field's value.
-	 * This list is filled after doing isValid() on this field
-	 * @return A list of error messages that apply to this field. If the list is empty you can
-	 * assume that the field value is a valid value.
-	 * @deprecated use {@link #validateValue(PaymentRequest)} instead
-	 */
-	@Deprecated
-	public List<ValidationErrorMessage> validateValue(String value) {
-
-		// Remove possible existing errors first
-		errorMessageIds.clear();
-
-		// check required first
-		if (dataRestrictions.isRequired() && valueNullOrEmpty(value)) {
-
-			// If field is required, but has no value, add to the the errormessage list
-			errorMessageIds.add(new ValidationErrorMessage("required", id, null));
-		} else {
-
-			if (!valueNullOrEmpty(value)) {
-				for (AbstractValidationRule rule : dataRestrictions.getValidationRules()) {
-						if (!rule.validate(value)) {
-
-						// If an invalid fieldvalue is found, add to the the errormessage list
-						errorMessageIds.add(new ValidationErrorMessage(rule.getMessageId(), id, rule));
-					}
-				}
-			}
-		}
-
-		return errorMessageIds;
 	}
 
 	/**

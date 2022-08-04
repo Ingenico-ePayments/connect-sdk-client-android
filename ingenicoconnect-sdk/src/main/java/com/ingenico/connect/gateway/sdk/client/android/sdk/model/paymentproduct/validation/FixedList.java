@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.validation;
 
 import java.io.Serializable;
@@ -8,9 +12,6 @@ import java.util.List;
  * Pojo which holds the FixedList data
  * This class is filled by deserialising a JSON string from the GC gateway
  * Used for validation
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class FixedList implements Serializable {
 

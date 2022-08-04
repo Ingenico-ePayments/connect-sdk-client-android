@@ -1,8 +1,8 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.validation.Validator;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.AbstractValidationRule;
@@ -19,14 +19,15 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.Vali
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleTermsAndConditions;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationType;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * POJO that represents an Data restrictions object
  * This class is filled by deserialising a JSON string from the GC gateway
  * The DataRestrictions are used for validating user input
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class DataRestrictions implements Serializable {
 

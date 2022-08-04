@@ -1,10 +1,11 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 /**
  * Model for getting scaled images
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class Size {
 

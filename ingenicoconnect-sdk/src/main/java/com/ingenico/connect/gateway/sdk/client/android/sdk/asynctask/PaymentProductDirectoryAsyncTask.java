@@ -1,21 +1,26 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
 
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.ingenico.connect.gateway.sdk.client.android.sdk.ClientApi;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
-
-import java.security.InvalidParameterException;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiError;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
 /**
  * AsyncTask which executes an paymentproduct directory call to the Ingenico ePayments platform
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated use {@link ClientApi#getPaymentProductDirectory(String, Success, ApiError, Failure)} instead
  */
+
+@Deprecated
 public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, PaymentProductDirectoryResponse> {
 
 	// The listener which will be called by the AsyncTask
@@ -34,16 +39,6 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
 	private String countryCode;
 
 	/**
-	 * @deprecated use {@link #PaymentProductDirectoryAsyncTask(String, String, String, Context, C2sCommunicator, OnPaymentProductDirectoryCallCompleteListener)} instead
-	 */
-	@Deprecated
-	public PaymentProductDirectoryAsyncTask(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context,
-											C2sCommunicator communicator, OnPaymentProductDirectoryCallCompleteListener listener) {
-
-		this(productId, currencyCode.toString(), countryCode.toString(), context, communicator, listener);
-	}
-
-	/**
 	 * Constructor
 	 *
  	 * @param productId, for which product must the lookup be done
@@ -57,22 +52,22 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
 											C2sCommunicator communicator, OnPaymentProductDirectoryCallCompleteListener listener) {
 
     	if (productId == null) {
-			throw new InvalidParameterException("Error creating PaymentProductDirectoryAsyncTask, productId may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductDirectoryAsyncTask, productId may not be null");
 		}
     	if (currencyCode == null) {
-    		throw new InvalidParameterException("Error creating PaymentProductDirectoryAsyncTask, currencyCode may not be null");
+    		throw new IllegalArgumentException("Error creating PaymentProductDirectoryAsyncTask, currencyCode may not be null");
 		}
     	if (countryCode == null) {
-			throw new InvalidParameterException("Error creating PaymentProductDirectoryAsyncTask, countryCode may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductDirectoryAsyncTask, countryCode may not be null");
 		}
     	if (context == null) {
-			throw new InvalidParameterException("Error creating PaymentProductDirectoryAsyncTask, context may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductDirectoryAsyncTask, context may not be null");
 		}
     	if (communicator == null) {
-			throw new InvalidParameterException("Error creating PaymentProductDirectoryAsyncTask, communicator may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductDirectoryAsyncTask, communicator may not be null");
 		}
     	if (listener == null) {
-			throw new InvalidParameterException("Error creating PaymentProductDirectoryAsyncTask, listener may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductDirectoryAsyncTask, listener may not be null");
 		}
 
     	this.context = context;
@@ -104,9 +99,9 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
      * Interface for OnPaymentProductDirectoryCallComplete listener
      * Is called from the PaymentProductDirectoryAsyncTask when it has retrieved the directory list for the given paymentproductid
      *
-     * Copyright 2017 Global Collect Services B.V
-     *
+	 * @deprecated use {@link ClientApi#getPaymentProductDirectory(String, Success, ApiError, Failure)} instead
      */
+    @Deprecated
     public interface OnPaymentProductDirectoryCallCompleteListener {
 
 

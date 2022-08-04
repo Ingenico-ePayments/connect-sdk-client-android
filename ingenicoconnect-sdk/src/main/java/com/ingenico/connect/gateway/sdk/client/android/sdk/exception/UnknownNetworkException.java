@@ -1,10 +1,13 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.exception;
 
 /**
- *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated this class will be removed in the future.
  */
+@Deprecated
 public class UnknownNetworkException extends RuntimeException {
 
     private static final long serialVersionUID = 7604981282147428917L;

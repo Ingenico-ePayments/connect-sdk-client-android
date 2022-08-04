@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
 import java.io.Serializable;
@@ -5,9 +9,6 @@ import java.io.Serializable;
 /**
  * Pojo which holds a PaymentProductFieldDisplayElement.
  * This class is filled by deserialising a JSON string from the GC gateway
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class PaymentProductFieldDisplayElement implements Serializable {
 

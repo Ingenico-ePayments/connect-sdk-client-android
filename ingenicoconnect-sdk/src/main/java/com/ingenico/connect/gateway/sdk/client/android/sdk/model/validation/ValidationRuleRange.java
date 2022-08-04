@@ -1,16 +1,13 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import android.util.Log;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
-import java.security.InvalidParameterException;
-
 /**
  * Validation rule for range
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class ValidationRuleRange extends AbstractValidationRule {
 
@@ -25,39 +22,15 @@ public class ValidationRuleRange extends AbstractValidationRule {
 		super(errorMessage, type);
 
 		if (minValue == null) {
-			throw new InvalidParameterException("Error initialising FieldValidationRuleRange, rangeFrom may not be null");
+			throw new IllegalArgumentException("Error initialising FieldValidationRuleRange, rangeFrom may not be null");
 		}
 
 		if (maxValue == null) {
-			throw new InvalidParameterException("Error initialising FieldValidationRuleRange, rangeTo may not be null");
+			throw new IllegalArgumentException("Error initialising FieldValidationRuleRange, rangeTo may not be null");
 		}
 
 		this.minValue = minValue;
 		this.maxValue = maxValue;
-	}
-
-
-	/**
-	 * Validates that the text value is of the correct amount
-	 * @param text, the text to be validated
-	 * @return True if the String is valid, false otherwise
-	 * @deprecated use {@link #validate(PaymentRequest, String)} instead
-	 */
-	@Override
-	@Deprecated
-	public boolean validate(String text) {
-		Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
-
-		if (text == null) {
-			return false;
-		}
-
-		try {
-			Integer enteredValue = Integer.parseInt(text);
-			return enteredValue > minValue && enteredValue < maxValue;
-		} catch (NumberFormatException e) {
-			return false;
-		}
 	}
 
 	/**

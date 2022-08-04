@@ -1,25 +1,26 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.security.InvalidParameterException;
-import java.util.HashMap;
-import java.util.Map;
+package com.ingenico.connect.gateway.sdk.client.android.sdk;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
+import com.google.gson.Gson;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.encryption.EncryptUtil;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Environment;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Region;
-import com.google.gson.Gson;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Contains util methods for getting device metadata
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated This class will be made internal to the SDK in a future release.
  */
+@Deprecated
 public class Util {
 
 	private static final EncryptUtil encryptUtil = new EncryptUtil();
@@ -58,7 +59,7 @@ public class Util {
 	public static Map<String, String> getMetadata(Context context, String appIdentifier, String ipAddress) {
 
 		if (context == null) {
-			throw new InvalidParameterException("Error creating metadata, context may not be null.");
+			throw new IllegalArgumentException("Error creating metadata, context may not be null.");
 		}
 
 		Map<String, String> metaData = new HashMap<String, String>();
@@ -96,22 +97,6 @@ public class Util {
 		return metaData;
 	}
 
-	/**
-	 * Returns base64 encoded version of a map of metadata of the device this SDK is running on
-	 * The map contains the SDK version, OS, OS version and screensize
-	 *
-	 * @return String containing base64 url of json representation of the metadata
-	 * @deprecated use {@link #getBase64EncodedMetadata(Context, String)} or {@link #getBase64EncodedMetadata(Context, String, String)} instead.
-	 */
-	@Deprecated
-	public static String getBase64EncodedMetadata(Context context) {
-
-		Gson gson = new Gson();
-		String jsonMetadata = gson.toJson(getMetadata(context));
-		String encodedData = new String(encryptUtil.base64UrlEncode(jsonMetadata.getBytes()));
-
-		return encodedData;
-	}
 
 	/**
 	 * Returns base64 encoded version of a map of metadata of the device this SDK is running on
@@ -161,55 +146,5 @@ public class Util {
 		String encodedData = new String(encryptUtil.base64UrlEncode(jsonMetadata.getBytes()));
 
 		return encodedData;
-	}
-
-	/**
-	 * Determines the Base url given a Region
-	 *
-	 * @param region, which region to get the base url for
-	 * @param environment, which environment to get the base url for
-	 * @return base url for the GC gateway
-	 *
-	 * @deprecated Asset- and BaseUrl are no longer provided by the SDK. Use the server to server
-	 * "create client session" API to retrieve these URL's
-	 */
-	@Deprecated
-	public static String getC2SBaseUrlByRegion(Region region, Environment.EnvironmentType environment) {
-
-		if (region == null) {
-			throw new InvalidParameterException("Error getting client to server baseurl,  region may not be null");
-		}
-
-		if (environment == null) {
-			throw new InvalidParameterException("Error getting client to server baseurl,  environment may not be null");
-		}
-
-		// Check which region is selected
-		return region.getC2SBaseUrl(environment);
-	}
-
-	/**
-	 * Determines the asset baseurl given a Region
-	 *
-	 * @param region, which region to get the baseurl for
-	 * @param environment, which environment to get the baseurl for
-	 * @return base url for loading assets
-	 *
-	 * @deprecated Asset- and BaseUrl are no longer provided by the SDK. Use the server to server
-	 * "create client session" API to retrieve these URL's
-	 */
-	@Deprecated
-	public static String getAssetsBaseUrlByRegion(Region region, Environment.EnvironmentType environment) {
-
-		if (region == null) {
-			throw new InvalidParameterException("Error getting AssetsBaseUrl,  region may not be null");
-		}
-
-		if (environment == null) {
-			throw new InvalidParameterException("Error getting AssetsBaseUrl,  environment may not be null");
-		}
-
-		// Check which region is selected
-		return region.getAssetBaseUrl(environment);
 	}
 }

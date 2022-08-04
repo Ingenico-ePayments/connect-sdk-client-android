@@ -1,13 +1,13 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 
 import java.io.Serializable;
-import java.security.InvalidParameterException;
 
 /**
  * Abstract class which contains functionality to handle validation
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public abstract class AbstractValidationRule implements Serializable, ValidationRule  {
 
@@ -23,10 +23,10 @@ public abstract class AbstractValidationRule implements Serializable, Validation
 	public AbstractValidationRule(String messageId, ValidationType type) {
 
 		if (messageId == null) {
-			throw new InvalidParameterException("Error initialising ValidationRule, messageId may not be null");
+			throw new IllegalArgumentException("Error initialising ValidationRule, messageId may not be null");
 		}
 		if (type == null) {
-			throw new InvalidParameterException("Error initialising ValidationRule, type may not be null");
+			throw new IllegalArgumentException("Error initialising ValidationRule, type may not be null");
 		}
 		this.messageId = messageId;
 		this.type = type;

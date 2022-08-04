@@ -1,7 +1,13 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.session;
 
 import android.content.Context;
 
+import com.ingenico.connect.gateway.sdk.client.android.ConnectSDK;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.ClientApi;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductGroupsAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask;
@@ -19,8 +25,6 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PaymentProd
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PublicKeyAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.ThirdPartyStatusAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CountryCode;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CurrencyCode;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentItemCacheKey;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
@@ -38,7 +42,6 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.
 import com.ingenico.connect.gateway.sdk.client.android.sdk.session.SessionEncryptionHelper.OnPaymentRequestPreparedListener;
 
 import java.io.Serializable;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,9 +50,11 @@ import java.util.Map;
 /**
  * Session contains all methods needed for making a payment
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated Replaced by {@link ClientApi}. Obtain an instance by initializing {@link com.ingenico.connect.gateway.sdk.client.android.ConnectSDK}
+ * and calling {@link ConnectSDK#getClientApi()}.
  */
+
+@Deprecated
 public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIinLookupCompleteListener, OnPaymentProductCallCompleteListener, BasicPaymentProductGroupsAsyncTask.OnBasicPaymentProductGroupsCallCompleteListener, PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener, BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener, Serializable {
 
 	private static final long serialVersionUID = 686891053207055508L;
@@ -86,7 +91,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	 */
 	public static Session getInstance(C2sCommunicator communicator) {
 		if (communicator == null ) {
-			throw new InvalidParameterException("Error creating Session instance, communicator may not be null");
+			throw new IllegalArgumentException("Error creating Session instance, communicator may not be null");
 		}
 		return new Session(communicator);
 	}
@@ -117,13 +122,13 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void getBasicPaymentItems(Context context, PaymentContext paymentContext, BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener listener, boolean groupPaymentProducts) {
 
 		if (context == null ) {
-			throw new InvalidParameterException("Error getting paymentproduct, context may not be null");
+			throw new IllegalArgumentException("Error getting paymentproduct, context may not be null");
 		}
 		if (paymentContext == null ) {
-			throw new InvalidParameterException("Error getting paymentproducts, paymentContext may not be null");
+			throw new IllegalArgumentException("Error getting paymentproducts, paymentContext may not be null");
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error getting paymentproducts, listener may not be null");
+			throw new IllegalArgumentException("Error getting paymentproducts, listener may not be null");
 		}
 
 		this.paymentContext = paymentContext;
@@ -150,13 +155,13 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void getBasicPaymentProducts(Context context, PaymentContext paymentContext, OnBasicPaymentProductsCallCompleteListener listener) {
 
 		if (context == null ) {
-			throw new InvalidParameterException("Error getting paymentproduct, context may not be null");
+			throw new IllegalArgumentException("Error getting paymentproduct, context may not be null");
 		}
 		if (paymentContext == null ) {
-			throw new InvalidParameterException("Error getting paymentproducts, paymentContext may not be null");
+			throw new IllegalArgumentException("Error getting paymentproducts, paymentContext may not be null");
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error getting paymentproducts, listener may not be null");
+			throw new IllegalArgumentException("Error getting paymentproducts, listener may not be null");
 		}
 
 		this.paymentContext = paymentContext;
@@ -184,16 +189,16 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void getPaymentProduct(Context context, String productId, PaymentContext paymentContext, OnPaymentProductCallCompleteListener listener) {
 
 		if (context == null ) {
-			throw new InvalidParameterException("Error getting paymentproduct, context may not be null");
+			throw new IllegalArgumentException("Error getting paymentproduct, context may not be null");
 		}
 		if (productId == null ) {
-			throw new InvalidParameterException("Error getting paymentproduct, groupId may not be null");
+			throw new IllegalArgumentException("Error getting paymentproduct, groupId may not be null");
 		}
 		if (paymentContext == null) {
-			throw new InvalidParameterException(("Error getting paymentproduct, paymentContext may not be null"));
+			throw new IllegalArgumentException(("Error getting paymentproduct, paymentContext may not be null"));
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error getting paymentproduct, listener may not be null");
+			throw new IllegalArgumentException("Error getting paymentproduct, listener may not be null");
 		}
 
 		this.paymentContext = paymentContext;
@@ -230,13 +235,13 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void getBasicPaymentProductGroups(Context context, PaymentContext paymentContext, BasicPaymentProductGroupsAsyncTask.OnBasicPaymentProductGroupsCallCompleteListener listener) {
 
 		if (context == null ) {
-			throw new InvalidParameterException("Error getting paymentProductGroups, context may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductGroups, context may not be null");
 		}
 		if (paymentContext == null ) {
-			throw new InvalidParameterException("Error getting paymentProductGroups, paymentContext may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductGroups, paymentContext may not be null");
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error getting paymentProductGroups, listener may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductGroups, listener may not be null");
 		}
 
 		this.paymentContext = paymentContext;
@@ -264,16 +269,16 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void getPaymentProductGroup(Context context, String groupId, PaymentContext paymentContext, PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener listener) {
 
 		if (context == null ) {
-			throw new InvalidParameterException("Error getting paymentproduct, context may not be null");
+			throw new IllegalArgumentException("Error getting paymentproduct, context may not be null");
 		}
 		if (groupId == null ) {
-			throw new InvalidParameterException("Error getting paymentproduct, groupId may not be null");
+			throw new IllegalArgumentException("Error getting paymentproduct, groupId may not be null");
 		}
 		if (paymentContext == null) {
-			throw new InvalidParameterException(("Error getting paymentproduct, paymentContext may not be null"));
+			throw new IllegalArgumentException(("Error getting paymentproduct, paymentContext may not be null"));
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error getting paymentproduct, listener may not be null");
+			throw new IllegalArgumentException("Error getting paymentproduct, listener may not be null");
 		}
 
 		this.paymentContext = paymentContext;
@@ -298,16 +303,6 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 		}
 	}
 
-
-	/**
-	 * @deprecated use {@link #getCustomerDetails(Context, String, String, List,OnCustomerDetailsCallCompleteListener)} instead.
-	 */
-
-	@Deprecated
-	public void getCustomerDetails(Context context, String productId, CountryCode countryCode, List<KeyValuePair> values, OnCustomerDetailsCallCompleteListener listener) {
-		getCustomerDetails(context, productId, countryCode.toString(), values, listener);
-	}
-
 	/**
 	 * Gets the CustomerDetails from the GC gateway
 	 *
@@ -318,29 +313,20 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void getCustomerDetails(Context context, String productId, String countryCode, List<KeyValuePair> values, OnCustomerDetailsCallCompleteListener listener) {
 
 		if (context == null) {
-			throw new InvalidParameterException("Error getting CustomerDetails, context may not be null");
+			throw new IllegalArgumentException("Error getting CustomerDetails, context may not be null");
 		}
 		if (productId == null) {
-			throw new InvalidParameterException("Error getting CustomerDetails, productId may not be null");
+			throw new IllegalArgumentException("Error getting CustomerDetails, productId may not be null");
 		}
 		if (countryCode == null) {
-			throw new InvalidParameterException("Error getting CustomerDetails, countryCode may not be null");
+			throw new IllegalArgumentException("Error getting CustomerDetails, countryCode may not be null");
 		}
 		if (values == null) {
-			throw new InvalidParameterException("Error getting CustomerDetails, values may not be null");
+			throw new IllegalArgumentException("Error getting CustomerDetails, values may not be null");
 		}
 
 		CustomerDetailsAsyncTask task = new CustomerDetailsAsyncTask(context, productId, countryCode, values, communicator, listener);
 		task.execute();
-	}
-
-	/**
- 	 * @deprecated use {@link #getDirectoryForPaymentProductId(String, String, String, Context,OnPaymentProductDirectoryCallCompleteListener)} instead.
-	 */
-
-	@Deprecated
-	public void getDirectoryForPaymentProductId(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context, OnPaymentProductDirectoryCallCompleteListener listener) {
-		getDirectoryForPaymentProductId(productId, currencyCode.toString(), countryCode.toString(), context, listener);
 	}
 
 	/**
@@ -356,19 +342,19 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void getDirectoryForPaymentProductId(String productId, String currencyCode, String countryCode, Context context, OnPaymentProductDirectoryCallCompleteListener listener) {
 
 		if (productId == null) {
-			throw new InvalidParameterException("Error getting PaymentProductDirectory, productId may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProductDirectory, productId may not be null");
 		}
 		if (currencyCode == null) {
-			throw new InvalidParameterException("Error getting PaymentProductDirectory, currencyCode may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProductDirectory, currencyCode may not be null");
 		}
 		if (countryCode == null) {
-			throw new InvalidParameterException("Error getting PaymentProductDirectory, countryCode may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProductDirectory, countryCode may not be null");
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error getting PaymentProductDirectory, listener may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProductDirectory, listener may not be null");
 		}
 		if (context == null ) {
-			throw new InvalidParameterException("Error getting PaymentProductDirectory, context may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProductDirectory, context may not be null");
 		}
 
 		PaymentProductDirectoryAsyncTask task = new PaymentProductDirectoryAsyncTask(productId, currencyCode, countryCode, context, communicator, listener);
@@ -387,13 +373,13 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void getIinDetails(Context context, String partialCreditCardNumber, OnIinLookupCompleteListener listener, PaymentContext paymentContext) {
 
 		if (context == null ) {
-			throw new InvalidParameterException("Error getting iinDetails, context may not be null");
+			throw new IllegalArgumentException("Error getting iinDetails, context may not be null");
 		}
 		if (partialCreditCardNumber == null ) {
-			throw new InvalidParameterException("Error getting iinDetails, productId may not be null");
+			throw new IllegalArgumentException("Error getting iinDetails, productId may not be null");
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error getting iinDetails, listener may not be null");
+			throw new IllegalArgumentException("Error getting iinDetails, listener may not be null");
 		}
 
 		// Add OnPaymentProductsCallComplete listener and this class to list of listeners so we can reset the iinLookupPending flag
@@ -421,10 +407,10 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void getPublicKey(Context context, PublicKeyAsyncTask.OnPublicKeyLoadedListener listener) {
 
 		if (context == null ) {
-			throw new InvalidParameterException("Error getting public key, context may not be null");
+			throw new IllegalArgumentException("Error getting public key, context may not be null");
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error getting public key, listener may not be null");
+			throw new IllegalArgumentException("Error getting public key, listener may not be null");
 		}
 		PublicKeyAsyncTask task = new PublicKeyAsyncTask(context, communicator, listener);
 		task.execute();
@@ -440,13 +426,13 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void getThirdPartyStatus(Context context, String paymentId, ThirdPartyStatusAsyncTask.OnThirdPartyStatusCallCompleteListener listener) {
 
 		if (context == null ) {
-			throw new InvalidParameterException("Error getting ThirdPartyStatus, context may not be null");
+			throw new IllegalArgumentException("Error getting ThirdPartyStatus, context may not be null");
 		}
 		if (paymentId == null) {
-			throw new InvalidParameterException("Error getting ThirdPartyStatus, paymentId may not be null");
+			throw new IllegalArgumentException("Error getting ThirdPartyStatus, paymentId may not be null");
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error getting payment product public key, listener may not be null");
+			throw new IllegalArgumentException("Error getting payment product public key, listener may not be null");
 		}
 
 		ThirdPartyStatusAsyncTask task = new ThirdPartyStatusAsyncTask(context, paymentId, communicator, listener);
@@ -465,13 +451,13 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void preparePaymentRequest(PaymentRequest paymentRequest, Context context, OnPaymentRequestPreparedListener listener) {
 
 		if (paymentRequest == null ) {
-			throw new InvalidParameterException("Error preparing payment request, paymentRequest may not be null");
+			throw new IllegalArgumentException("Error preparing payment request, paymentRequest may not be null");
 		}
 		if (context == null ) {
-			throw new InvalidParameterException("Error preparing payment request, context may not be null");
+			throw new IllegalArgumentException("Error preparing payment request, context may not be null");
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error preparing payment request, listener may not be null");
+			throw new IllegalArgumentException("Error preparing payment request, listener may not be null");
 		}
 
 		Map<String, String>  metaData = communicator.getMetadata(context);
@@ -495,19 +481,19 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void convertAmount (Long amount, String source, String target, Context context, ConvertAmountAsyncTask.OnAmountConvertedListener listener) {
 
 		if (amount == null ) {
-			throw new InvalidParameterException("Error converting amount, amount may not be null");
+			throw new IllegalArgumentException("Error converting amount, amount may not be null");
 		}
 		if (source == null ) {
-			throw new InvalidParameterException("Error converting amount, source may not be null");
+			throw new IllegalArgumentException("Error converting amount, source may not be null");
 		}
 		if (target == null ) {
-			throw new InvalidParameterException("Error converting amount, target may not be null");
+			throw new IllegalArgumentException("Error converting amount, target may not be null");
 		}
 		if (context == null ) {
-			throw new InvalidParameterException("Error converting amount, context may not be null");
+			throw new IllegalArgumentException("Error converting amount, context may not be null");
 		}
 		if (listener == null ) {
-			throw new InvalidParameterException("Error converting amount, listener may not be null");
+			throw new IllegalArgumentException("Error converting amount, listener may not be null");
 		}
 
 		ConvertAmountAsyncTask task = new ConvertAmountAsyncTask(amount, source, target, context, communicator, listener);
@@ -522,7 +508,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	public void setClientSessionId(String clientSessionId) {
 
 		if (clientSessionId == null ) {
-			throw new InvalidParameterException("Error setting clientSessionId, clientSessionId may not be null");
+			throw new IllegalArgumentException("Error setting clientSessionId, clientSessionId may not be null");
 		}
 
 		this.clientSessionId = clientSessionId;
@@ -540,8 +526,8 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 		// Create the cache key for this retrieved BasicPaymentitem
 		return new PaymentItemCacheKey(paymentContext.getAmountOfMoney().getAmount(),
-				paymentContext.getCountryCodeString(),
-				paymentContext.getAmountOfMoney().getCurrencyCodeString(),
+				paymentContext.getCountryCode(),
+				paymentContext.getAmountOfMoney().getCurrencyCode(),
 				paymentContext.isRecurring(),
 				paymentItemId);
 	}

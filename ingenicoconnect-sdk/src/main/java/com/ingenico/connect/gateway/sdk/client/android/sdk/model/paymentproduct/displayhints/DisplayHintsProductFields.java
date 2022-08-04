@@ -1,18 +1,19 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints;
 
-import java.io.Serializable;
-
+import com.google.gson.annotations.SerializedName;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.FormElement;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.Tooltip;
-import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 
 /**
  * POJO that represents an DisplayHintsProductFields object
  * This class is filled by deserialising a JSON string from the GC gateway
  * Contains information for payment product fields
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class DisplayHintsProductFields implements Serializable {
 

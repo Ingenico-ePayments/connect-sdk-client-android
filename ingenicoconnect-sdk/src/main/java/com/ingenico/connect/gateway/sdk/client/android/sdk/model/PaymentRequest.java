@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.AccountOnFile;
@@ -7,7 +11,6 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationErrorMessage;
 
 import java.io.Serializable;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,9 +19,6 @@ import java.util.Map.Entry;
 
 /**
  * Contains all payment request data needed for doing a payment
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class PaymentRequest implements Serializable {
 
@@ -130,10 +130,10 @@ public class PaymentRequest implements Serializable {
 	public void setValue(String paymentProductFieldId, String value) {
 
 		if (paymentProductFieldId == null) {
-			throw new InvalidParameterException("Error setting value on PaymentRequest, paymentProductFieldId may not be null");
+			throw new IllegalArgumentException("Error setting value on PaymentRequest, paymentProductFieldId may not be null");
 		}
 		if (value == null) {
-			throw new InvalidParameterException("Error setting value on PaymentRequest, value may not be null");
+			throw new IllegalArgumentException("Error setting value on PaymentRequest, value may not be null");
 		}
 
 		if (fieldValues.containsKey(paymentProductFieldId)) {
@@ -149,7 +149,7 @@ public class PaymentRequest implements Serializable {
 	public String getValue(String paymentProductFieldId) {
 
 		if (paymentProductFieldId == null) {
-			throw new InvalidParameterException("Error getting value from PaymentRequest, paymentProductFieldId may not be null");
+			throw new IllegalArgumentException("Error getting value from PaymentRequest, paymentProductFieldId may not be null");
 		}
 		return fieldValues.get(paymentProductFieldId);
 	}
@@ -161,7 +161,7 @@ public class PaymentRequest implements Serializable {
 	public void removeValue(String paymentProductFieldId) {
 
 		if (paymentProductFieldId == null) {
-			throw new InvalidParameterException("Error removing value from PaymentRequest, paymentProductFieldId may not be null");
+			throw new IllegalArgumentException("Error removing value from PaymentRequest, paymentProductFieldId may not be null");
 		}
 		fieldValues.remove(paymentProductFieldId);
 	}
@@ -179,13 +179,13 @@ public class PaymentRequest implements Serializable {
 	public FormatResult getMaskedValue(String paymentProductFieldId, String newValue, String oldValue, Integer cursorIndex) {
 
 		if (paymentProductFieldId == null) {
-			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, paymentProductFieldId may not be null");
+			throw new IllegalArgumentException("Error getting maskedvalue from PaymentRequest, paymentProductFieldId may not be null");
 		}
 		if (newValue == null) {
-			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, newValue may not be null");
+			throw new IllegalArgumentException("Error getting maskedvalue from PaymentRequest, newValue may not be null");
 		}
 		if (oldValue == null) {
-			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, oldValue may not be null");
+			throw new IllegalArgumentException("Error getting maskedvalue from PaymentRequest, oldValue may not be null");
 		}
 
 		// Loop trough all fields and format the matching field value.
@@ -208,10 +208,10 @@ public class PaymentRequest implements Serializable {
 	 */
 	public String getUnmaskedValue(String paymentProductFieldId, String value){
 		if (paymentProductFieldId == null) {
-			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, paymentProductFieldId may not be null");
+			throw new IllegalArgumentException("Error getting maskedvalue from PaymentRequest, paymentProductFieldId may not be null");
 		}
 		if (value == null) {
-			throw new InvalidParameterException("Error getting maskedvalue from PaymentRequest, value may not be null");
+			throw new IllegalArgumentException("Error getting maskedvalue from PaymentRequest, value may not be null");
 		}
 
 		// Loop through all fields and deformat the matching field value.
@@ -297,7 +297,7 @@ public class PaymentRequest implements Serializable {
 	public void mergePaymentRequest(PaymentProduct paymentProduct) {
 
 		if (paymentProduct == null) {
-			throw new InvalidParameterException("Error merging PaymentRequest, paymentProduct may not be null");
+			throw new IllegalArgumentException("Error merging PaymentRequest, paymentProduct may not be null");
 		}
 
 		// Create new map which contains all values for fields who are also present in the new paymentproduct
@@ -328,7 +328,7 @@ public class PaymentRequest implements Serializable {
 	public void setPaymentProduct(PaymentProduct paymentProduct) {
 
 		if (paymentProduct == null) {
-			throw new InvalidParameterException("Error setting paymentproduct, paymentProduct may not be null");
+			throw new IllegalArgumentException("Error setting paymentproduct, paymentProduct may not be null");
 		}
 		this.paymentProduct = paymentProduct;
 	}
@@ -342,7 +342,7 @@ public class PaymentRequest implements Serializable {
 	public void setAccountOnFile(AccountOnFile accountOnFile) {
 
 		if (accountOnFile == null) {
-			throw new InvalidParameterException("Error setting accountOnFile, accountOnFile may not be null");
+			throw new IllegalArgumentException("Error setting accountOnFile, accountOnFile may not be null");
 		}
 		this.accountOnFile = accountOnFile;
 	}

@@ -1,9 +1,14 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
 import com.google.gson.annotations.SerializedName;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.GooglePayUtil;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
 
 import java.io.Serializable;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -12,9 +17,6 @@ import java.util.List;
 /**
  * Pojo with convenience methods for getting PaymentProduct and AccountOnFile objects
  * This class is filled by deserialising a JSON string from the GC gateway
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class BasicPaymentProducts implements Serializable {
 
@@ -35,8 +37,21 @@ public class BasicPaymentProducts implements Serializable {
 	 * @return A sorted list of basicPaymentProducts
 	 */
 	public List<BasicPaymentProduct> getBasicPaymentProducts() {
-		sortList();
-		return basicPaymentProducts;
+		try {
+			List<BasicPaymentProduct> filteredBasicPaymentProducts = new ArrayList<>();
+			for (BasicPaymentProduct paymentProduct : basicPaymentProducts) {
+
+				if (paymentProduct.getId().equals(Constants.PAYMENTPRODUCTID_GOOGLEPAY) && GooglePayUtil.isGooglePayAllowed(paymentProduct)) {
+					filteredBasicPaymentProducts.add(paymentProduct);
+				} else if (!paymentProduct.getId().equals(Constants.PAYMENTPRODUCTID_APPLEPAY)) {
+					filteredBasicPaymentProducts.add(paymentProduct);
+				}
+			}
+			return filteredBasicPaymentProducts;
+		} catch (Exception exception) {
+			sortList();
+			return basicPaymentProducts;
+		}
 	}
 
 	private void sortList(){
@@ -86,7 +101,7 @@ public class BasicPaymentProducts implements Serializable {
 	public BasicPaymentProduct getBasicPaymentProductById(String basicPaymentProductId) {
 
 		if (basicPaymentProductId == null) {
-			throw new InvalidParameterException("Error getting BasicPaymentProduct by id, basicPaymentProductId may not be null");
+			throw new IllegalArgumentException("Error getting BasicPaymentProduct by id, basicPaymentProductId may not be null");
 		}
 
 		for (BasicPaymentProduct basicPaymentProduct : basicPaymentProducts) {
@@ -107,7 +122,7 @@ public class BasicPaymentProducts implements Serializable {
 	public BasicPaymentProduct getBasicPaymentProductByAccountOnFileId(Integer accountOnFileId) {
 
 		if (accountOnFileId == null) {
-			throw new InvalidParameterException("Error getting paymentproduct by accountonfile id, accountOnFileId may not be null");
+			throw new IllegalArgumentException("Error getting paymentproduct by accountonfile id, accountOnFileId may not be null");
 		}
 
 		// Loop trough al basicPaymentProducts to search for the paymentProduct with given AccountOnFileId
@@ -127,10 +142,6 @@ public class BasicPaymentProducts implements Serializable {
 	 * @return list of PaymentProductSelectables
      */
 	public List<BasicPaymentItem> getPaymentProductsAsItems() {
-		List<BasicPaymentItem> basicPaymentItems = new ArrayList<>();
-		for (BasicPaymentProduct paymentProduct: getBasicPaymentProducts()) {
-			basicPaymentItems.add(paymentProduct);
-		}
-		return basicPaymentItems;
+		return new ArrayList<>(getBasicPaymentProducts());
 	}
 }

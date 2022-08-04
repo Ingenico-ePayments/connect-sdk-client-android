@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.manager;
 
 import android.content.Context;
@@ -5,34 +9,29 @@ import android.graphics.drawable.Drawable;
 import android.util.Log;
 
 import com.google.gson.reflect.TypeToken;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.Util;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.LoadImageAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.LoadImageAsyncTask.OnImageLoadedListener;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.caching.CacheHandler;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.caching.Preferences;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Environment.EnvironmentType;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Region;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.Size;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItem;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
-import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 
-
 /**
  * Singleton who handles all logo related functionality
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated this class will be removed in the future.
  */
+@Deprecated
 public class AssetManager implements OnImageLoadedListener {
 
 	// Name of cache in preferences
@@ -70,7 +69,7 @@ public class AssetManager implements OnImageLoadedListener {
 	public static synchronized AssetManager getInstance(Context context) {
 
 		if (context == null) {
-			throw new InvalidParameterException("Error creating AssetManager, context may not be null");
+			throw new IllegalArgumentException("Error creating AssetManager, context may not be null");
 		}
 
 		if (INSTANCE == null) {
@@ -103,20 +102,6 @@ public class AssetManager implements OnImageLoadedListener {
 		}
 
 		return null;
-	}
-
-	/**
-	 * Update the logos for the given paymentProducts if there is a new version
-	 *
-	 * @param region,            region determines what baseurl is used for loading images
-	 * @param environment,       environment determines what baseurl is used for loading images
-	 * @param basicPaymentItems, PaymentProductSelectables for which the logo will be updated if there is a new version
-	 * @deprecated use {@link #updateLogos(String, List, Size)}
-	 */
-	@Deprecated
-	public void updateLogos(Region region, EnvironmentType environment, List<BasicPaymentItem> basicPaymentItems, Size size) {
-		String assetBaseUrl = Util.getAssetsBaseUrlByRegion(region, environment);
-		updateLogos(assetBaseUrl, basicPaymentItems, size);
 	}
 
 	/**
@@ -181,22 +166,6 @@ public class AssetManager implements OnImageLoadedListener {
 		}
 
 		return logoMapping;
-	}
-
-	/**
-	 * Loads an image from the products url
-	 *
-	 * @param region,      region determines what baseurl is used for loading images
-	 * @param environment, environment determines what baseurl is used for loading images
-	 * @param logoMapping, map containing mapping with url's and paymentproductid
-	 * @param product,     this products image is loaded
-	 * @param size,        can be used to retrieve images of certain size
-	 * @deprecated use {@link #getImageFromUrl(String, Map, BasicPaymentItem, Size)}
-	 */
-	@Deprecated
-	private void getImageFromUrl(Region region, EnvironmentType environment, Map<String, String> logoMapping, BasicPaymentItem product, Size size) {
-		String assetBaseUrl = Util.getAssetsBaseUrlByRegion(region, environment);
-		getImageFromUrl(assetBaseUrl, logoMapping, product, size);
 	}
 
 	/**

@@ -1,9 +1,8 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.security.InvalidParameterException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
 
 import android.os.AsyncTask;
 
@@ -14,12 +13,17 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PublicKeyRespon
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductField.Type;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 /**
  * AsyncTask which encrypts all PaymentProductFields with the GC gateway publickey
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated this class will be removed in the future.
  */
+
+@Deprecated
 public class EncryptDataAsyncTask extends AsyncTask<String, Void, String>{
 
 	// The listener which will be called by the AsyncTask when the paymentproductfields are encrypted
@@ -34,16 +38,16 @@ public class EncryptDataAsyncTask extends AsyncTask<String, Void, String>{
     public EncryptDataAsyncTask(PublicKeyResponse publicKeyResponse, PaymentRequest paymentRequest, String clientSessionId, OnEncryptDataCompleteListener listener) {
 
     	if (publicKeyResponse == null) {
-			throw new InvalidParameterException("Error creating EncryptDataAsyncTask, publicKeyResponse may not be null");
+			throw new IllegalArgumentException("Error creating EncryptDataAsyncTask, publicKeyResponse may not be null");
 		}
     	if (paymentRequest == null) {
-			throw new InvalidParameterException("Error creating EncryptDataAsyncTask, paymentRequest may not be null");
+			throw new IllegalArgumentException("Error creating EncryptDataAsyncTask, paymentRequest may not be null");
 		}
     	if (clientSessionId == null) {
-			throw new InvalidParameterException("Error creating EncryptDataAsyncTask, clientSessionId may not be null");
+			throw new IllegalArgumentException("Error creating EncryptDataAsyncTask, clientSessionId may not be null");
 		}
     	if (listener == null) {
-			throw new InvalidParameterException("Error creating EncryptDataAsyncTask, listener may not be null");
+			throw new IllegalArgumentException("Error creating EncryptDataAsyncTask, listener may not be null");
 		}
 
     	this.clientSessionId = clientSessionId;
@@ -112,9 +116,9 @@ public class EncryptDataAsyncTask extends AsyncTask<String, Void, String>{
      * Interface for onEncryptDataComplete listener
      * Is called from the EncryptDataAsyncTask when it has encrypted the given paymentproductfields
      *
-     * Copyright 2017 Global Collect Services B.V
-     *
+	 * @deprecated this class will be removed in the future.
      */
+    @Deprecated
     public interface OnEncryptDataCompleteListener {
         void onEncryptDataComplete(String encryptedData);
     }

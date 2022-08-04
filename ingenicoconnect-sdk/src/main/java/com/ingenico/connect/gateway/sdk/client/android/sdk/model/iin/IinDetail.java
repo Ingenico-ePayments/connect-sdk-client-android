@@ -1,12 +1,13 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin;
 
 import java.io.Serializable;
 
 /**
  * Pojo that contains IinDetail
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class IinDetail implements Serializable {
 

@@ -1,19 +1,26 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.security.InvalidParameterException;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
 
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.ingenico.connect.gateway.sdk.client.android.sdk.ClientApi;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiError;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
 /**
  * AsyncTask which executes an publickey lookup call to the Ingenico ePayments platform
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated use {@link ClientApi#getPublicKey(Success, ApiError, Failure)} instead
  */
+
+@Deprecated
 public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyResponse> {
 
 	// The listener which will be called by the AsyncTask
@@ -34,13 +41,13 @@ public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyRespons
     public PublicKeyAsyncTask(Context context, C2sCommunicator communicator, OnPublicKeyLoadedListener listener) {
 
     	if (context == null) {
-			throw new InvalidParameterException("Error creating PublicKeyAsyncTask, context may not be null");
+			throw new IllegalArgumentException("Error creating PublicKeyAsyncTask, context may not be null");
 		}
     	if (communicator == null) {
-			throw new InvalidParameterException("Error creating PublicKeyAsyncTask, communicator may not be null");
+			throw new IllegalArgumentException("Error creating PublicKeyAsyncTask, communicator may not be null");
 		}
     	if (listener == null) {
-			throw new InvalidParameterException("Error creating PublicKeyAsyncTask, listener may not be null");
+			throw new IllegalArgumentException("Error creating PublicKeyAsyncTask, listener may not be null");
 		}
 
     	this.context = context;
@@ -69,9 +76,9 @@ public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyRespons
      * Interface for OnPublicKeyLoaded listener
      * Is called from the BasicPaymentProductsAsyncTask when it has the publickey
      *
-     * Copyright 2017 Global Collect Services B.V
-     *
+	 * @deprecated use {@link ClientApi#getPublicKey(Success, ApiError, Failure)} instead
      */
+    @Deprecated
     public interface OnPublicKeyLoadedListener {
 
 

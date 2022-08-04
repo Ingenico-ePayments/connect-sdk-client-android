@@ -1,7 +1,8 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationRuleExpirationDate;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation.ValidationType;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 
 import org.junit.Test;
 

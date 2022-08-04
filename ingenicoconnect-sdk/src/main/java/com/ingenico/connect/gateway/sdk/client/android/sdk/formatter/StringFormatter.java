@@ -1,15 +1,15 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.formatter;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.io.Serializable;
-import java.security.InvalidParameterException;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.formatter;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.FormatResult;
 
+import java.io.Serializable;
+
 /**
  * Contains util methods for stringformatting
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class StringFormatter implements Serializable {
 
@@ -60,7 +60,7 @@ public class StringFormatter implements Serializable {
 		// count > 0 if characters have been removed from the string.
 		// both should never be < 0.
 		if (count < 0 || after < 0) {
-			throw new InvalidParameterException("Error when determining mask; count and/or after may not be < 0");
+			throw new IllegalArgumentException("Error when determining mask; count and/or after may not be < 0");
 		}
 		if (after != 0 && count == 0) {
 			return ChangeType.ADDED;
@@ -178,7 +178,7 @@ public class StringFormatter implements Serializable {
 				}
 
 			} else {
-				throw new InvalidParameterException("Error while masking inputText; there seems to be an invalid mask.");
+				throw new IllegalArgumentException("Error while masking inputText; there seems to be an invalid mask.");
 			}
 		}
 		return new FormatResult(formattedValue, newCursorIndex);

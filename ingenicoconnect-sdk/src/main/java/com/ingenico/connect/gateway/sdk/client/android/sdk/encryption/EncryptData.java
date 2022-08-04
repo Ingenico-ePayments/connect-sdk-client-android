@@ -1,4 +1,12 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.encryption;
+
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,9 +14,9 @@ import java.util.Map;
 /**
  * Pojo which contains the all the possible EncryptData fields
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated This class will become internal to the SDK. Use {@link com.ingenico.connect.gateway.sdk.client.android.ConnectSDK#encryptPaymentRequest(PaymentRequest, Success, Failure)} for encryption instead.
  */
+@Deprecated
 public class EncryptData {
 
 	Integer accountOnFileId;

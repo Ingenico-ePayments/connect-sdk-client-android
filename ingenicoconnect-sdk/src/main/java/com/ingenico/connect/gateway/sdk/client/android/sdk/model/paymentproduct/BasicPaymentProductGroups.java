@@ -1,9 +1,12 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -13,9 +16,6 @@ import java.util.List;
  *
  * Pojo with convenience methods for getting ProdcutGroup and AccountOnFile objects
  * This class is filled by deserialising a JSON string from the GC gateway
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class BasicPaymentProductGroups implements Serializable {
 
@@ -88,7 +88,7 @@ public class BasicPaymentProductGroups implements Serializable {
     public BasicPaymentProductGroup getPaymentProductGroupById(String paymentProductGroupId) {
 
         if (paymentProductGroupId == null) {
-            throw new InvalidParameterException("Error getting paymentProductGroup by id, paymentProductId may not be null");
+            throw new IllegalArgumentException("Error getting paymentProductGroup by id, paymentProductId may not be null");
         }
 
         for (BasicPaymentProductGroup paymentProductGroup : basicPaymentProductGroups) {

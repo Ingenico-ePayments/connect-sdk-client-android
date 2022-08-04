@@ -1,12 +1,13 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 import java.io.Serializable;
 
 /**
  * Pojo that contains the response for IIN lookup
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class ConvertedAmountResponse implements Serializable {
 

@@ -1,6 +1,8 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import android.util.Log;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
@@ -8,9 +10,6 @@ import java.util.List;
 
 /**
  * Validation rule for fixedlist
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class ValidationRuleFixedList extends AbstractValidationRule {
 
@@ -28,31 +27,6 @@ public class ValidationRuleFixedList extends AbstractValidationRule {
 
 	public List<String> getListValues() {
 		return listValues;
-	}
-
-	/**
-	 * Validates the value based on a list of possibilities.
-	 * @param text, the text to be validated
-	 * @return whether the field is valid
-	 * @deprecated use {@link #validate(PaymentRequest, String)} instead
-     */
-	@Override
-	@Deprecated
-	public boolean validate(String text) {
-		Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
-
-		if (text == null) {
-			return false;
-		}
-
-		// Loop through all allowed values and see if the text is one of them
-		for (String value : listValues) {
-
-			if (value.equals(text)) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	/**

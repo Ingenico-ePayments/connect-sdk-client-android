@@ -1,1 +1,12 @@
-include ':app', ':ingenicoconnect-sdk', ':ingenicoconnect-sdk-integrationtest'
+/*
+ * Copyright (c) 2022. Global Collect Services B.V
+ */
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+include ':ingenicoconnect-sdk'

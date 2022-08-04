@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
 import java.io.Serializable;
@@ -9,9 +13,6 @@ import java.util.List;
 /**
  * Pojo which holds the BasicPaymentProduct data and its PaymentProductFields
  * This class is filled by deserialising a JSON string from the GC gateway
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class PaymentProduct extends BasicPaymentProduct implements PaymentItem, Serializable {
 

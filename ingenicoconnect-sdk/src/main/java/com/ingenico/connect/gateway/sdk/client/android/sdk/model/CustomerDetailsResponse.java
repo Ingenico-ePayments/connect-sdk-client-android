@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 import java.util.HashMap;
@@ -5,9 +9,6 @@ import java.util.Map;
 
 /**
  * Pojo that holds the CustomerDetails call response
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class CustomerDetailsResponse {
 

@@ -1,4 +1,13 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
+
+import android.util.Base64;
+import android.util.Log;
+
+import com.ingenico.connect.gateway.sdk.client.android.sdk.encryption.Encryptor;
 
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
@@ -6,16 +15,8 @@ import java.security.PublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
 
-import android.util.Base64;
-import android.util.Log;
-
-import com.ingenico.connect.gateway.sdk.client.android.sdk.encryption.Encryptor;
-
 /**
  * Pojo that holds the PublicKey call response from the GC gateway
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class PublicKeyResponse {
 

@@ -1,7 +1,10 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
 import java.io.Serializable;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -9,9 +12,6 @@ import java.util.List;
 
 /**
  * Pojo with convenience methods for getting BasicPaymentItem and AccountOnFile objects
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class BasicPaymentItems implements Serializable {
 
@@ -71,7 +71,7 @@ public class BasicPaymentItems implements Serializable {
     public BasicPaymentItem getBasicPaymentItemById(String basicPaymentItemId) {
 
         if (basicPaymentItemId == null) {
-            throw new InvalidParameterException("Error getting basicPaymentItem by id, basicPaymentItemId may not be null");
+            throw new IllegalArgumentException("Error getting basicPaymentItem by id, basicPaymentItemId may not be null");
         }
 
         for (BasicPaymentItem basicPaymentItem : basicPaymentItems) {

@@ -1,9 +1,14 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.ingenico.connect.gateway.sdk.client.android.sdk.ClientApi;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductGroupsAsyncTask.OnBasicPaymentProductGroupsCallCompleteListener;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask.OnBasicPaymentProductsCallCompleteListener;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
@@ -15,8 +20,10 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiError;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,8 +39,10 @@ import java.util.concurrent.Future;
  * the BasicPaymentProductGroups. After both calls have been finished both responses are combined to create
  * a single BasicPaymentItems object.
  *
- * Copyright 2017 Global Collect Services B.V
+ * @deprecated use {@link ClientApi#getPaymentItems(Success, ApiError, Failure)} instead
  */
+
+@Deprecated
 public class BasicPaymentItemsAsyncTask extends AsyncTask<String, Void, BasicPaymentItems> {
 
     private static final String TAG = BasicPaymentItemsAsyncTask.class.getName();
@@ -57,16 +66,16 @@ public class BasicPaymentItemsAsyncTask extends AsyncTask<String, Void, BasicPay
     public BasicPaymentItemsAsyncTask(Context context, PaymentContext paymentContext, C2sCommunicator communicator, List<OnBasicPaymentItemsCallCompleteListener> listeners, boolean groupPaymentItems) {
 
         if (context == null ) {
-            throw new InvalidParameterException("Error creating BasicPaymentItemsAsyncTask, context may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentItemsAsyncTask, context may not be null");
         }
         if (paymentContext == null ) {
-            throw new InvalidParameterException("Error creating BasicPaymentItemsAsyncTask, c2sContext may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentItemsAsyncTask, c2sContext may not be null");
         }
         if (communicator == null ) {
-            throw new InvalidParameterException("Error creating BasicPaymentItemsAsyncTask, communicator may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentItemsAsyncTask, communicator may not be null");
         }
         if (listeners == null) {
-            throw new InvalidParameterException("Error creating BasicPaymentItemsAsyncTask, listeners may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentItemsAsyncTask, listeners may not be null");
         }
 
         this.context = context;
@@ -216,9 +225,9 @@ public class BasicPaymentItemsAsyncTask extends AsyncTask<String, Void, BasicPay
      * Interface for OnPaymentProductsCallComplete listener
      * Is called from the BasicPaymentProductsAsyncTask when it has the BasicPaymentProducts
      *
-     * Copyright 2017 Global Collect Services B.V
-     *
+     * @deprecated use {@link ClientApi#getPaymentItems(Success, ApiError, Failure)} instead
      */
+    @Deprecated
     public interface OnBasicPaymentItemsCallCompleteListener {
         public void onBasicPaymentItemsCallComplete(BasicPaymentItems basicPaymentItems);
     }

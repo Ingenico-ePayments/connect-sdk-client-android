@@ -1,13 +1,13 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 
 import java.io.Serializable;
-import java.security.InvalidParameterException;
 
 /**
  * Contains errormessage information for one field
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class ValidationErrorMessage implements Serializable {
 
@@ -20,10 +20,10 @@ public class ValidationErrorMessage implements Serializable {
 	public ValidationErrorMessage(String errorMessage, String paymentProductFieldId, ValidationRule rule) {
 
 		if (errorMessage == null) {
-			throw new InvalidParameterException("Error creating ValidationErrorMessage, errorMessage may not be null");
+			throw new IllegalArgumentException("Error creating ValidationErrorMessage, errorMessage may not be null");
 		}
 		if (paymentProductFieldId == null) {
-			throw new InvalidParameterException("Error creating ValidationErrorMessage, paymentProductFieldId may not be null");
+			throw new IllegalArgumentException("Error creating ValidationErrorMessage, paymentProductFieldId may not be null");
 		}
 
 		this.errorMessage = errorMessage;

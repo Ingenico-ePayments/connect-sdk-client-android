@@ -1,9 +1,12 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints.DisplayHintsPaymentItem;
 
 import java.io.Serializable;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +14,6 @@ import java.util.List;
  *
  * Pojo which holds the BasicPaymentProductGroup properties
  * This class is filled by deserialising a JSON string from the GC gateway
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class BasicPaymentProductGroup implements BasicPaymentItem, Serializable {
 
@@ -40,7 +40,7 @@ public class BasicPaymentProductGroup implements BasicPaymentItem, Serializable 
     public AccountOnFile getAccountOnFileById(String accountOnFileId) {
 
         if (accountOnFileId == null) {
-            throw new InvalidParameterException("Error getting AccountOnFile by id, accountOnFileId may not be null");
+            throw new IllegalArgumentException("Error getting AccountOnFile by id, accountOnFileId may not be null");
         }
 
         for (AccountOnFile accountOnFile : accountsOnFile) {

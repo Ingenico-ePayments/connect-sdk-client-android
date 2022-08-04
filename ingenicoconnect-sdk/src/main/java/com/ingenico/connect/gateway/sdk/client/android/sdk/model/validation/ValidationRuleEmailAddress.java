@@ -1,17 +1,13 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
-
-
-import android.util.Log;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
-import java.security.InvalidParameterException;
-
 /**
  * Validation rule for emailaddress
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class ValidationRuleEmailAddress extends AbstractValidationRule {
 
@@ -27,24 +23,6 @@ public class ValidationRuleEmailAddress extends AbstractValidationRule {
 	}
 
 	/**
-	 * Validates an e-mail address
-	 * @param text, the text to be validated
-	 * @deprecated use {@link #validate(PaymentRequest, String)} instead
-	 */
-	@Override
-	@Deprecated
-	public boolean validate(String text) {
-		Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
-
-		if (text == null) {
-			return false;
-		}
-
-		// Check whether text matches the regex for email addresses
-		return text.matches(EMAIL_REGEX);
-	}
-
-	/**
 	 * Validates an e-mailaddress
 	 * @param paymentRequest The fully filled payment request that is ready for doing the payment
 	 * @param fieldId The ID of the field to which to apply the current validator
@@ -54,10 +32,10 @@ public class ValidationRuleEmailAddress extends AbstractValidationRule {
 	@Override
 	public boolean validate(PaymentRequest paymentRequest, String fieldId) {
 		if (paymentRequest == null) {
-			throw new InvalidParameterException("Error validating, paymentRequest may not be null");
+			throw new IllegalArgumentException("Error validating, paymentRequest may not be null");
 		}
 		if (fieldId == null) {
-			throw new InvalidParameterException("Error validating, fieldId may not be null");
+			throw new IllegalArgumentException("Error validating, fieldId may not be null");
 		}
 
 		String text = paymentRequest.getValue(fieldId);

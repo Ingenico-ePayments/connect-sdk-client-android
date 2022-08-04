@@ -1,13 +1,8 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.caching;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.StreamCorruptedException;
-import java.security.InvalidParameterException;
-import java.util.HashMap;
-import java.util.Map;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.caching;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -19,12 +14,21 @@ import android.util.Log;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.StreamCorruptedException;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * This class is responsible for reading files on disk who act as cache for certain data
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated this class will be removed in a future release.
  */
+
+@Deprecated
 class ReadInternalStorage {
 
 	// Tag for logging
@@ -46,7 +50,7 @@ class ReadInternalStorage {
 	public Map<String, IinDetailsResponse> getIinResponsesFromCache() {
 
 		if (context == null) {
-			throw new InvalidParameterException("Error getting response in cache, context may not be null");
+			throw new IllegalArgumentException("Error getting response in cache, context may not be null");
 		}
 
 		// Create new map which contains all the iinResponses
@@ -86,7 +90,7 @@ class ReadInternalStorage {
 	public Drawable getLogoFromInternalStorage(String paymentProductId, Resources resources) {
 
 		if (paymentProductId == null) {
-			throw new InvalidParameterException("Error getting drawable from file, paymentProductId may not be null");
+			throw new IllegalArgumentException("Error getting drawable from file, paymentProductId may not be null");
 		}
 
 		Drawable imageFromFile = null;

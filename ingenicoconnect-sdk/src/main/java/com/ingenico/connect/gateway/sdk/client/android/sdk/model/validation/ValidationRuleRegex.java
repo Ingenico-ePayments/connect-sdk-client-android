@@ -1,17 +1,13 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import android.util.Log;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
-import java.security.InvalidParameterException;
-
-
 /**
  * Validation rule for regex
- *
- * Copyright 2017 Global Collect Services B.V
- *
  */
 public class ValidationRuleRegex extends AbstractValidationRule {
 
@@ -25,28 +21,10 @@ public class ValidationRuleRegex extends AbstractValidationRule {
 		super(errorMessage, type);
 
 		if (regex == null) {
-			throw new InvalidParameterException("Error initialising FieldValidationRuleRegex, regex may not be null");
+			throw new IllegalArgumentException("Error initialising FieldValidationRuleRegex, regex may not be null");
 		}
 
 		this.regex = regex;
-	}
-
-	/**
-	 * Validates if the text matches the regular expression
-	 * @param text, the text to be validated
-	 * @return True if the text matches the regex, false otherwise
-	 * @deprecated use {@link #validate(PaymentRequest, String)} instead
-     */
-	@Override
-	@Deprecated
-	public boolean validate(String text) {
-		Log.w(TAG, "This method is deprecated and should not be used! Use <validate(PaymentRequest paymentRequest, String)> instead.");
-
-		if (text == null) {
-			return false;
-		}
-
-		return text.matches(regex);
 	}
 
 	/**

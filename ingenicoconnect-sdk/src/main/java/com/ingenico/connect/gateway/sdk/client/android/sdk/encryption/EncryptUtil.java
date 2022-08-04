@@ -1,8 +1,18 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.encryption;
+
+import android.util.Base64;
+
+import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.EncryptDataException;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.security.PublicKey;
 import java.security.SecureRandom;
 
@@ -11,17 +21,13 @@ import javax.crypto.Mac;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import android.util.Base64;
-
-import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.EncryptDataException;
-
-
 /**
  * Util class that contains methods for encryption
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated This class will become internal to the SDK. Use {@link com.ingenico.connect.gateway.sdk.client.android.ConnectSDK#encryptPaymentRequest(PaymentRequest, Success, Failure)} for encryption instead.
  */
+
+@Deprecated
 public class EncryptUtil {
 
 
@@ -44,7 +50,6 @@ public class EncryptUtil {
 	 *
 	 * @param data, the data which will be encoded
 	 * @return encoded data
-	 * @throws UnsupportedEncodingException
 	 */
 	public String base64UrlEncode(byte[] data) {
 		String encodedData = new String(Base64.encode(data, Base64.URL_SAFE));

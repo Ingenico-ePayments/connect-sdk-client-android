@@ -1,13 +1,20 @@
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
+
 package com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask;
 
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.ingenico.connect.gateway.sdk.client.android.sdk.ClientApi;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.communicate.C2sCommunicator;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiError;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
-import java.security.InvalidParameterException;
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -15,9 +22,10 @@ import java.util.concurrent.Callable;
 /**
  * AsyncTask which loads all BasicPaymentProductGroups from the GC Gateway
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated use {@link ClientApi#getPaymentProductGroups(Success, ApiError, Failure)} instead
  */
+
+@Deprecated
 public class BasicPaymentProductGroupsAsyncTask extends AsyncTask<String, Void, BasicPaymentProductGroups> implements Callable<BasicPaymentProductGroups> {
 
     // The listeners that will be called by the AsyncTask when the BasicPaymentProducts are loaded
@@ -43,16 +51,16 @@ public class BasicPaymentProductGroupsAsyncTask extends AsyncTask<String, Void, 
     public BasicPaymentProductGroupsAsyncTask(Context context, PaymentContext paymentContext, C2sCommunicator communicator, List<OnBasicPaymentProductGroupsCallCompleteListener> listeners) {
 
         if (context == null ) {
-            throw new InvalidParameterException("Error creating BasicPaymentProductsAsyncTask, context may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, context may not be null");
         }
         if (paymentContext == null ) {
-            throw new InvalidParameterException("Error creating BasicPaymentProductsAsyncTask, c2sContext may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, c2sContext may not be null");
         }
         if (communicator == null ) {
-            throw new InvalidParameterException("Error creating BasicPaymentProductsAsyncTask, communicator may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, communicator may not be null");
         }
         if (listeners == null ) {
-            throw new InvalidParameterException("Error creating BasicPaymentProductsAsyncTask, listeners may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, listeners may not be null");
         }
 
         this.context = context;
@@ -92,9 +100,9 @@ public class BasicPaymentProductGroupsAsyncTask extends AsyncTask<String, Void, 
      * Interface for OnPaymentProductGroupsCallComplete listener
      * Is called from the BasicPaymentProductGroupsAsyncTask when it has the BasicPaymentProductGroups
      *
-     * Copyright 2017 Global Collect Services B.V
-     *
+     * @deprecated use {@link ClientApi#getPaymentProductGroups(Success, ApiError, Failure)} instead
      */
+    @Deprecated
     public interface OnBasicPaymentProductGroupsCallCompleteListener {
         public void onBasicPaymentProductGroupsCallComplete(BasicPaymentProductGroups basicPaymentProductGroups);
     }

@@ -1,14 +1,16 @@
-package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
+/*
+ * Copyright (c) 2022 Global Collect Services B.V
+ */
 
-import java.security.InvalidParameterException;
+package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 /**
  * Contains all encrypted paymentrequest data needed for doing a payment
  *
- * Copyright 2017 Global Collect Services B.V
- *
+ * @deprecated use {@link EncryptedPaymentRequest} instead
  */
 
+@Deprecated
 public class PreparedPaymentRequest {
 
 	private String encryptedFields;
@@ -17,10 +19,10 @@ public class PreparedPaymentRequest {
 	public PreparedPaymentRequest(String encryptedFields, String encodedClientMetaInfo) {
 
 		if (encryptedFields == null) {
-			throw new InvalidParameterException("Error creating PreparedPaymentRequest, encryptedFields may not be null");
+			throw new IllegalArgumentException("Error creating PreparedPaymentRequest, encryptedFields may not be null");
 		}
 		if (encodedClientMetaInfo == null) {
-			throw new InvalidParameterException("Error creating PreparedPaymentRequest, encodedClientMetaInfo may not be null");
+			throw new IllegalArgumentException("Error creating PreparedPaymentRequest, encodedClientMetaInfo may not be null");
 		}
 
 		this.encryptedFields = encryptedFields;
