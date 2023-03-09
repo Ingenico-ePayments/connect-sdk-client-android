@@ -10,7 +10,12 @@ import io.reactivex.rxjava3.core.Observable
 
 internal class ConvertAmount {
 
-    operator fun invoke(connectSDKConfiguration: ConnectSDKConfiguration, source: String, target: String, amount: Long): Observable<NetworkResponse<Long>> {
+    operator fun invoke(
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        source: String,
+        target: String,
+        amount: Long
+    ): Observable<NetworkResponse<Long>> {
         return RemoteSupportRepository().convertAmount(connectSDKConfiguration, source, target, amount)
             .map {
                 if (it is NetworkResponse.Success) {

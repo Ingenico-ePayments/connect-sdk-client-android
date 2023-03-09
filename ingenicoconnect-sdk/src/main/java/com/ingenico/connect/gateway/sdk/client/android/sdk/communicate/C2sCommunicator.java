@@ -913,11 +913,7 @@ public class C2sCommunicator implements Serializable {
 			SSLContext sslContext = SSLContext.getInstance("TLS");
 			sslContext.init(null, null, null);
 			SSLSocketFactory noSSLv3Factory;
-			if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
-				noSSLv3Factory = new TLSSocketFactory(sslContext.getSocketFactory());
-			} else {
-				noSSLv3Factory = sslContext.getSocketFactory();
-			}
+			noSSLv3Factory = sslContext.getSocketFactory();
 			((HttpsURLConnection) connection).setSSLSocketFactory(noSSLv3Factory);
 		} else {
 			connection = (HttpURLConnection) url.openConnection();

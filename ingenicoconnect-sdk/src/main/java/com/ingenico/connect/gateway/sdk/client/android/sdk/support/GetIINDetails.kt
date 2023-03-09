@@ -20,7 +20,7 @@ internal class GetIINDetails {
     ): Observable<NetworkResponse<IinDetailsResponse>> {
 
         return if (bin.length < MINIMUM_BIN_LENGTH) {
-            throw BinNotValidException
+            Observable.just(NetworkResponse.Success(IinDetailsResponse(IinStatus.NOT_ENOUGH_DIGITS)))
         } else {
             RemoteSupportRepository().getIINDetails(
                 paymentContext, connectSDKConfiguration, bin.take(MINIMUM_BIN_LENGTH)
@@ -40,9 +40,3 @@ internal class GetIINDetails {
         const val MINIMUM_BIN_LENGTH = 6
     }
 }
-
-object BinNotValidException :
-    Exception("The minimum number of digits for identifying the financial institution is 6")
-
-
-

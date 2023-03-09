@@ -39,7 +39,7 @@ public class Preferences {
 		editor.putString(key, gson.toJson(value));
 
 		// Commit to SharedPreferences
-		editor.commit();
+		editor.apply();
 	}
 
 
@@ -82,7 +82,7 @@ public class Preferences {
 		SharedPreferences sharedPref = context.getSharedPreferences(Constants.PREFERENCES_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = sharedPref.edit();
 		editor.remove(key);
-		editor.commit();
+		editor.apply();
 	}
 
 }

@@ -15,11 +15,23 @@ import io.reactivex.rxjava3.core.Observable
 
 internal interface SupportRepository {
 
-    fun getIINDetails(paymentContext: PaymentContext, connectSDKConfiguration: ConnectSDKConfiguration, bin: String): Observable<NetworkResponse<IinDetailsResponse>>
+    fun getIINDetails(
+        paymentContext: PaymentContext,
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        bin: String
+    ): Observable<NetworkResponse<IinDetailsResponse>>
 
     fun getPublicKey(connectSDKConfiguration: ConnectSDKConfiguration): Observable<NetworkResponse<PublicKeyResponse>>
 
-    fun getThirdPartyStatus(connectSDKConfiguration: ConnectSDKConfiguration, paymentId: String): Observable<NetworkResponse<ThirdPartyStatusResponse>>
+    fun getThirdPartyStatus(
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        paymentId: String
+    ): Observable<NetworkResponse<ThirdPartyStatusResponse>>
 
-    fun convertAmount(connectSDKConfiguration: ConnectSDKConfiguration, source: String, target: String, amount: Long): Observable<NetworkResponse<ConvertedAmountResponse>>
+    fun convertAmount(
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        source: String,
+        target: String,
+        amount: Long
+    ): Observable<NetworkResponse<ConvertedAmountResponse>>
 }

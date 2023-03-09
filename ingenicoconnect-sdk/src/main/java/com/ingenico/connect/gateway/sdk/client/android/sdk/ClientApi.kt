@@ -13,12 +13,21 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentProductD
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PublicKeyResponse
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.ThirdPartyStatus
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinDetailsResponse
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.*
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItems
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct
+import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiError
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.extension.subscribeAndMapNetworkResponse
-import com.ingenico.connect.gateway.sdk.client.android.sdk.product.*
+import com.ingenico.connect.gateway.sdk.client.android.sdk.product.GetCustomerDetails
+import com.ingenico.connect.gateway.sdk.client.android.sdk.product.GetPaymentItems
+import com.ingenico.connect.gateway.sdk.client.android.sdk.product.GetPaymentProduct
+import com.ingenico.connect.gateway.sdk.client.android.sdk.product.GetPaymentProductDirectory
+import com.ingenico.connect.gateway.sdk.client.android.sdk.product.GetPaymentProducts
 import com.ingenico.connect.gateway.sdk.client.android.sdk.productsgroup.GetPaymentProductGroup
 import com.ingenico.connect.gateway.sdk.client.android.sdk.productsgroup.GetPaymentProductGroups
 import com.ingenico.connect.gateway.sdk.client.android.sdk.support.ConvertAmount
@@ -126,7 +135,8 @@ class ClientApi(
     /**
      * Gets the payment product group from the gateway.
      *
-     * @param paymentProductGroupId The paymentProductGroupId of the product which needs to be retrieved from the server.
+     * @param paymentProductGroupId
+     * The paymentProductGroupId of the product which needs to be retrieved from the server.
      * @param onSuccess Calls this parameter when payment product group successful fetched.
      * @param onApiError Calls this parameter when an api error is returned by the server.
      * @param onFailure Calls this parameter when an unexpected error thrown.
@@ -192,6 +202,7 @@ class ClientApi(
      * @param onApiError Calls this parameter when an api error is returned by the server.
      * @param onFailure Calls this parameter when an unexpected error thrown.
      */
+    @Suppress("LongParameterList")
     fun getCustomerDetails(
         paymentProductId: String,
         countryCode: String,
@@ -340,6 +351,7 @@ class ClientApi(
      * @param onApiError Calls this parameter when an api error is returned by the server.
      * @param onFailure Calls this parameter when an unexpected error thrown.
      */
+    @Suppress("LongParameterList")
     fun convertAmount(
         source: String,
         target: String,
@@ -394,4 +406,5 @@ class ClientApi(
     }
 }
 
-object ClientApiNotInitializedException: Exception("Initialise the ConnectSDK first before you use the ClientApi class.")
+object ClientApiNotInitializedException :
+    Exception("Initialise the ConnectSDK first before you use the ClientApi class.")

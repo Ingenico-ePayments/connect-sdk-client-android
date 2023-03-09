@@ -11,7 +11,9 @@ import io.reactivex.rxjava3.core.Observable
 
 internal class GetPublicKey {
 
-    operator fun invoke(connectSDKConfiguration: ConnectSDKConfiguration): Observable<NetworkResponse<PublicKeyResponse>>{
+    operator fun invoke(
+        connectSDKConfiguration: ConnectSDKConfiguration
+    ): Observable<NetworkResponse<PublicKeyResponse>>{
         return RemoteSupportRepository().getPublicKey(connectSDKConfiguration)
     }
 }

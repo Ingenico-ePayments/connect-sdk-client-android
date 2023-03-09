@@ -9,7 +9,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.FormatResult;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -20,16 +20,16 @@ import static org.junit.Assert.assertTrue;
 @RunWith(MockitoJUnitRunner.class)
 public class MaskTest {
 
-	private static final String maskExpiryDate = "{{99}}-{{99}}";
-	private static final String maskCardNumber = "{{9999}} {{9999}} {{9999}} {{9999}} {{999}}";
+	private final String maskExpiryDate = "{{99}}-{{99}}";
+	private final String maskCardNumber = "{{9999}} {{9999}} {{9999}} {{9999}} {{999}}";
 
-	private static final String emptyString		= "";
+	private final String emptyString		= "";
 
-	private static final String maskTestString1 = "1";
-	private static final String maskTestString2 = "12";
-	private static final String maskTestString3 = "1234";
-	private static final String maskTestString4 = "1234567890123456789";
-	private static final String maskTestString5 = "12-34";
+	private final String maskTestString1 = "1";
+	private final String maskTestString2 = "12";
+	private final String maskTestString3 = "1234";
+	private final String maskTestString4 = "1234567890123456789";
+	private final String maskTestString5 = "12-34";
 
 	@Test
 	public void testMaskingSingleCharacterInclCursor() {

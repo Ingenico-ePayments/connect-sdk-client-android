@@ -1,0 +1,7 @@
+complexity:
+  TooManyFunctions:
+    active: false
+
+style:
+  ReturnCount:
+    active: false

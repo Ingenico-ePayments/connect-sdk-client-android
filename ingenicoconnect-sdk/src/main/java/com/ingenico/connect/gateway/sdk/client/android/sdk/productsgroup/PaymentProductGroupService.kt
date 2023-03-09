@@ -15,7 +15,9 @@ import retrofit2.http.QueryMap
 interface PaymentProductGroupService {
 
     @GET("productgroups")
-    fun getPaymentProductGroups(@QueryMap parameters: Map<String, String>): Observable<Response<BasicPaymentProductGroups>>
+    fun getPaymentProductGroups(
+        @QueryMap parameters: Map<String, String>
+    ): Observable<Response<BasicPaymentProductGroups>>
 
     @GET("productgroups/{paymentProductGroupId}")
     fun getPaymentProductGroup(

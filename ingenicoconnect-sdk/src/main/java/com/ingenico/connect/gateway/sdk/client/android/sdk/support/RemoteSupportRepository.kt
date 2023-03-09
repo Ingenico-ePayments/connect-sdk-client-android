@@ -36,14 +36,19 @@ internal class RemoteSupportRepository : SupportRepository {
             }
     }
 
-    override fun getPublicKey(connectSDKConfiguration: ConnectSDKConfiguration): Observable<NetworkResponse<PublicKeyResponse>> {
+    override fun getPublicKey(
+        connectSDKConfiguration: ConnectSDKConfiguration
+    ): Observable<NetworkResponse<PublicKeyResponse>> {
             return getSupportService(connectSDKConfiguration).getPublicKey()
                 .flatMap { response ->
                     mapRetrofitResponseToNetworkResponse(response)
                 }
     }
 
-    override fun getThirdPartyStatus(connectSDKConfiguration: ConnectSDKConfiguration, paymentId: String): Observable<NetworkResponse<ThirdPartyStatusResponse>> {
+    override fun getThirdPartyStatus(
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        paymentId: String
+    ): Observable<NetworkResponse<ThirdPartyStatusResponse>> {
         return getSupportService(connectSDKConfiguration).getThirdPartyStatus(paymentId)
             .flatMap { response ->
                 mapRetrofitResponseToNetworkResponse(response)
@@ -71,7 +76,10 @@ internal class RemoteSupportRepository : SupportRepository {
 
         fun getSupportService(connectSdkConfiguration: ConnectSDKConfiguration): SupportService =
             Retrofit.Builder()
-                .baseUrl("${connectSdkConfiguration.sessionConfiguration.getFormattedClientApiUrl()}${connectSdkConfiguration.sessionConfiguration.customerId}/")
+                .baseUrl(
+                    connectSdkConfiguration.sessionConfiguration.getFormattedClientApiUrl() +
+                            "${connectSdkConfiguration.sessionConfiguration.customerId}/"
+                )
                 .client(
                     OkHttpClientBuilder.okHttpClient(
                         connectSdkConfiguration

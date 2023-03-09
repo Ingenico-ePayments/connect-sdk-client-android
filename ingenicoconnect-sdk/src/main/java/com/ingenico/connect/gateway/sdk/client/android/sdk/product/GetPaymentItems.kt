@@ -57,7 +57,9 @@ internal class GetPaymentItems {
         }
     }
 
-    private fun mapBasicPaymentProductsToBasicPaymentItems(networkResponse: NetworkResponse<BasicPaymentProducts>): NetworkResponse<BasicPaymentItems> {
+    private fun mapBasicPaymentProductsToBasicPaymentItems(
+        networkResponse: NetworkResponse<BasicPaymentProducts>
+    ): NetworkResponse<BasicPaymentItems> {
         return when (networkResponse) {
             is NetworkResponse.ApiError -> {
                 NetworkResponse.ApiError(networkResponse.apiErrorResponse)

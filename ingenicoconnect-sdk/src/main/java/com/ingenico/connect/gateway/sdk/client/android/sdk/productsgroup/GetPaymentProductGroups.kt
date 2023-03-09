@@ -45,7 +45,11 @@ internal class GetPaymentProductGroups {
                     ).subscribe ({
                         basicPaymentProductGroup.displayHints.logo = it
                     },{
-                        Log.w("ConnectSDK", "Drawable for paymentProductGroup: ${basicPaymentProductGroup.id} can't be loaded", it)
+                        Log.w(
+                            "ConnectSDK",
+                            "Drawable for paymentProductGroup: ${basicPaymentProductGroup.id} can't be loaded",
+                            it
+                        )
                     })
                 }
                 Observable.just(networkResponse.data?.let { NetworkResponse.Success(it) }

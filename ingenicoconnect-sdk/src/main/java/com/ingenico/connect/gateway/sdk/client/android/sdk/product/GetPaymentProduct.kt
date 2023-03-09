@@ -83,7 +83,10 @@ internal class GetPaymentProduct {
             var count = 0
             if (!paymentProduct.paymentProductFields.isNullOrEmpty()) {
                 paymentProduct.paymentProductFields.forEach { paymentProductField ->
-                    if (paymentProductField.displayHints.tooltip != null && !paymentProductField.displayHints.tooltip.imageURL.isNullOrBlank()) {
+                    if (
+                        paymentProductField.displayHints.tooltip != null &&
+                        !paymentProductField.displayHints.tooltip.imageURL.isNullOrBlank()
+                    ) {
                         GetDrawableFromUrl().invoke(
                             connectSDKConfiguration,
                             paymentProductField.displayHints.tooltip.imageURL

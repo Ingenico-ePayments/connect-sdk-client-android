@@ -56,23 +56,23 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
 	 */
     public IinLookupAsyncTask(Context context, String partialCreditCardNumber, C2sCommunicator communicator,
     						  List<OnIinLookupCompleteListener> listeners, PaymentContext paymentContext) {
-    	if (context == null) {
+		if (context == null) {
 			throw new IllegalArgumentException("Error creating IinLookupAsyncTask, context may not be null");
 		}
-    	if (partialCreditCardNumber == null) {
+		if (partialCreditCardNumber == null) {
     		throw new IllegalArgumentException("Error creating IinLookupAsyncTask, partialCreditCardNumber may not be null");
 		}
-    	if (communicator == null ) {
+		if (communicator == null ) {
 			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, communicator may not be null");
 		}
-    	if (listeners == null) {
+		if (listeners == null) {
     		throw new IllegalArgumentException("Error creating IinLookupAsyncTask, listeners may not be null");
 		}
 
-    	this.context = context;
-        this.listeners = listeners;
-        this.communicator = communicator;
-        this.partialCreditCardNumber = partialCreditCardNumber;
+		this.context = context;
+		this.listeners = listeners;
+		this.communicator = communicator;
+		this.partialCreditCardNumber = partialCreditCardNumber;
 		this.paymentContext = paymentContext;
     }
 

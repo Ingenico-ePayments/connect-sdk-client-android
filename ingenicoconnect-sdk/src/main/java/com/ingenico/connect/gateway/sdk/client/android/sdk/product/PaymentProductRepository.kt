@@ -16,11 +16,27 @@ import io.reactivex.rxjava3.core.Observable
 
 internal interface PaymentProductRepository {
 
-    fun getPaymentProducts(paymentContext: PaymentContext, connectSDKConfiguration: ConnectSDKConfiguration): Observable<NetworkResponse<BasicPaymentProducts>>
+    fun getPaymentProducts(
+        paymentContext: PaymentContext,
+        connectSDKConfiguration: ConnectSDKConfiguration
+    ): Observable<NetworkResponse<BasicPaymentProducts>>
 
-    fun getPaymentProduct(paymentContext: PaymentContext, connectSDKConfiguration: ConnectSDKConfiguration, paymentProductId: String): Observable<NetworkResponse<PaymentProduct>>
+    fun getPaymentProduct(
+        paymentContext: PaymentContext,
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        paymentProductId: String
+    ): Observable<NetworkResponse<PaymentProduct>>
 
-    fun getCustomerDetails(connectSDKConfiguration: ConnectSDKConfiguration, paymentProductId: String, countryCode: String, values: List<KeyValuePair>): Observable<NetworkResponse<CustomerDetailsResponse>>
+    fun getCustomerDetails(
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        paymentProductId: String,
+        countryCode: String,
+        values: List<KeyValuePair>
+    ): Observable<NetworkResponse<CustomerDetailsResponse>>
 
-    fun getPaymentProductDirectory(paymentContext: PaymentContext, connectSDKConfiguration: ConnectSDKConfiguration, paymentProductId: String): Observable<NetworkResponse<PaymentProductDirectoryResponse>>
+    fun getPaymentProductDirectory(
+        paymentContext: PaymentContext,
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        paymentProductId: String
+    ): Observable<NetworkResponse<PaymentProductDirectoryResponse>>
 }

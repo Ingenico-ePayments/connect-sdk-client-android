@@ -12,8 +12,12 @@ import io.reactivex.rxjava3.core.Observable
 
 internal class GetPaymentProductDirectory {
 
-    operator fun invoke(paymentContext: PaymentContext, connectSDKConfiguration: ConnectSDKConfiguration, paymentProductId: String): Observable<NetworkResponse<PaymentProductDirectoryResponse>> {
-        return RemotePaymentProductRepository().getPaymentProductDirectory(paymentContext, connectSDKConfiguration, paymentProductId)
+    operator fun invoke(
+        paymentContext: PaymentContext,
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        paymentProductId: String
+    ): Observable<NetworkResponse<PaymentProductDirectoryResponse>> {
+        return RemotePaymentProductRepository()
+                .getPaymentProductDirectory(paymentContext, connectSDKConfiguration, paymentProductId)
     }
 }
-

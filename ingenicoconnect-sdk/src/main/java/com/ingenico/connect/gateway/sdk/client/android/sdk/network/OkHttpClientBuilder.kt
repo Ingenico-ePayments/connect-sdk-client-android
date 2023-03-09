@@ -34,17 +34,28 @@ internal object OkHttpClientBuilder {
         chain.proceed(request)
     }
 
-    fun okHttpClient(connectSDKConfiguration: ConnectSDKConfiguration) = if (connectSDKConfiguration.enableNetworkLogs) {
-        val loggingInterceptor = HttpLoggingInterceptor()
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-        OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor)
-            .addInterceptor(getHeaderInterceptor(connectSDKConfiguration.sessionConfiguration.clientSessionId, connectSDKConfiguration))
-            .build()
-    } else {
-        OkHttpClient
-            .Builder()
-            .addInterceptor(getHeaderInterceptor(connectSDKConfiguration .sessionConfiguration.clientSessionId, connectSDKConfiguration))
-            .build()
-    }
+    fun okHttpClient(connectSDKConfiguration: ConnectSDKConfiguration) =
+        if (connectSDKConfiguration.enableNetworkLogs) {
+            val loggingInterceptor = HttpLoggingInterceptor()
+            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+            OkHttpClient.Builder()
+                .addInterceptor(loggingInterceptor)
+                .addInterceptor(
+                    getHeaderInterceptor(
+                        connectSDKConfiguration.sessionConfiguration.clientSessionId,
+                        connectSDKConfiguration
+                    )
+                )
+                .build()
+        } else {
+            OkHttpClient
+                .Builder()
+                .addInterceptor(
+                    getHeaderInterceptor(
+                        connectSDKConfiguration.sessionConfiguration.clientSessionId,
+                        connectSDKConfiguration
+                    )
+                )
+                .build()
+        }
 }

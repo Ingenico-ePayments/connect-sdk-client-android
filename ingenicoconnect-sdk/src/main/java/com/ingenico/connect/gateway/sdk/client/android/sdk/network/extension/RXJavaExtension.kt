@@ -5,7 +5,12 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.network.extension
 
 import com.google.gson.Gson
-import com.ingenico.connect.gateway.sdk.client.android.sdk.network.*
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiError
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiErrorResponse
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.NetworkResponse
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success
+import com.ingenico.connect.gateway.sdk.client.android.sdk.network.UnknownNetworkResponseException
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.ObservableSource
 import io.reactivex.rxjava3.disposables.Disposable

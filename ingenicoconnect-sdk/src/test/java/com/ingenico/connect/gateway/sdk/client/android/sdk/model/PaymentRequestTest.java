@@ -9,7 +9,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,12 +23,12 @@ import static org.junit.Assert.*;
 @RunWith(MockitoJUnitRunner.class)
 public class PaymentRequestTest {
 
-    private static PaymentProduct paymentProductVisa =  fromResourceJson("paymentProductVisa.json", PaymentProduct.class);
-    private static PaymentProduct paymentProductInvoice = fromResourceJson("paymentProductInVoice.json", PaymentProduct.class);
-    private static PaymentProduct paymentProductPayPal = fromResourceJson("paymentProductPayPal.json", PaymentProduct.class);
-    private static PaymentProduct paymentProductBoletoBancario = fromResourceJson("paymentProductBoletoBancario.json", PaymentProduct.class);
+    private final PaymentProduct paymentProductVisa =  fromResourceJson("paymentProductVisa.json", PaymentProduct.class);
+    private final PaymentProduct paymentProductInvoice = fromResourceJson("paymentProductInVoice.json", PaymentProduct.class);
+    private final PaymentProduct paymentProductPayPal = fromResourceJson("paymentProductPayPal.json", PaymentProduct.class);
+    private final PaymentProduct paymentProductBoletoBancario = fromResourceJson("paymentProductBoletoBancario.json", PaymentProduct.class);
 
-    private static AccountOnFile accountOnFileVisa = fromResourceJson("accountOnFileVisa.json", AccountOnFile.class);
+    private final AccountOnFile accountOnFileVisa = fromResourceJson("accountOnFileVisa.json", AccountOnFile.class);
 
     public static Map<String, String> allValidValuesVisa = new HashMap<>();
     static {
@@ -166,9 +166,7 @@ public class PaymentRequestTest {
     public void TestValidAccountOnFile(){
         PaymentRequest accountOnFileVisaRequest = new PaymentRequest();
         accountOnFileVisaRequest.setPaymentProduct(paymentProductVisa);
-        accountOnFileVisaRequest.setAccountOnFile(paymentProductVisa.getAccountsOnFile().get(0));
-        accountOnFileVisaRequest.setValue("expiryDate", "1230");
-        accountOnFileVisaRequest.setValue("cvv", "1234");
+        accountOnFileVisaRequest.setAccountOnFile(accountOnFileVisa);
         assertTrue(accountOnFileVisaRequest.validate().isEmpty());
     }
 
@@ -176,8 +174,7 @@ public class PaymentRequestTest {
     public void TestInvalidCvvNumberAccountOnFile(){
         PaymentRequest accountOnFileVisaRequest = new PaymentRequest();
         accountOnFileVisaRequest.setPaymentProduct(paymentProductVisa);
-        accountOnFileVisaRequest.setAccountOnFile(paymentProductVisa.getAccountsOnFile().get(0));
-        accountOnFileVisaRequest.setValue("expiryDate", "1230");
+        accountOnFileVisaRequest.setAccountOnFile(accountOnFileVisa);
         accountOnFileVisaRequest.setValue("cvv", "  ");
         assertFalse(accountOnFileVisaRequest.validate().isEmpty());
     }
@@ -186,8 +183,7 @@ public class PaymentRequestTest {
     public void TestInvalidExpiryDateMustWriteAccountOnFile(){
         PaymentRequest accountOnFileVisaRequest = new PaymentRequest();
         accountOnFileVisaRequest.setPaymentProduct(paymentProductVisa);
-        accountOnFileVisaRequest.setAccountOnFile(paymentProductVisa.getAccountsOnFile().get(0));
-        accountOnFileVisaRequest.setValue("cvv", "1234");
+        accountOnFileVisaRequest.setAccountOnFile(accountOnFileVisa);
         accountOnFileVisaRequest.setValue("expiryDate", "1221");
         assertFalse(accountOnFileVisaRequest.validate().isEmpty());
     }
@@ -196,9 +192,7 @@ public class PaymentRequestTest {
     public void TestValidExpiryDateMustWriteAccountOnFile(){
         PaymentRequest accountOnFileVisaRequest = new PaymentRequest();
         accountOnFileVisaRequest.setPaymentProduct(paymentProductVisa);
-        accountOnFileVisaRequest.setAccountOnFile(paymentProductVisa.getAccountsOnFile().get(0));
-        accountOnFileVisaRequest.setValue("cvv", "2345");
-        accountOnFileVisaRequest.setValue("expiryDate", "1240");
+        accountOnFileVisaRequest.setAccountOnFile(accountOnFileVisa);
         assertTrue(accountOnFileVisaRequest.validate().isEmpty());
     }
 

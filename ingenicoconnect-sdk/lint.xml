@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="StaticFieldLeak">
+        <ignore path="src/main/java/com/ingenico/connect/gateway/sdk/client/android/sdk/manager/AssetManager" />
+        <ignore path="src/main/java/com/ingenico/connect/gateway/sdk/client/android/sdk/asynctask/*" />
+    </issue>
+    <issue id="DiscouragedApi">
+        <ignore path="src/main/java/com/ingenico/connect/gateway/sdk/client/android/sdk/manager/AssetManager" />
+    </issue>
+    <issue id="CheckResult">
+        <ignore path="src/main/java/com/ingenico/connect/gateway/sdk/client/android/sdk/product/*" />
+        <ignore path="src/main/java/com/ingenico/connect/gateway/sdk/client/android/sdk/productsgroup/*" />
+    </issue>
+</lint>
+

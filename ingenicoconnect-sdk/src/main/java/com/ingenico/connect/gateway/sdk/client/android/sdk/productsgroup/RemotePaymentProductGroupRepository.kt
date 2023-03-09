@@ -46,9 +46,14 @@ internal class RemotePaymentProductGroupRepository : PaymentProductGroupReposito
 
     private companion object {
 
-        fun getPaymentProductGroupService(connectSdkConfiguration: ConnectSDKConfiguration): PaymentProductGroupService =
+        fun getPaymentProductGroupService(
+            connectSdkConfiguration: ConnectSDKConfiguration
+        ): PaymentProductGroupService =
             Retrofit.Builder()
-                .baseUrl("${connectSdkConfiguration.sessionConfiguration.getFormattedClientApiUrl()}${connectSdkConfiguration.sessionConfiguration.customerId}/")
+                .baseUrl(
+                    connectSdkConfiguration.sessionConfiguration.getFormattedClientApiUrl() +
+                            "${connectSdkConfiguration.sessionConfiguration.customerId}/"
+                )
                 .client(
                     OkHttpClientBuilder.okHttpClient(
                         connectSdkConfiguration

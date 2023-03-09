@@ -21,10 +21,10 @@ class ConnectSDKConfiguration private constructor(
         var enableNetworkLogs: Boolean = false,
         var applicationId: String? = null,
         var ipAddress: String? = null,
-        var preLoadImages: Boolean = false
+        var preLoadImages: Boolean = true
     ) {
         constructor(sessionConfiguration: SessionConfiguration, applicationContext: Context) : this(
-            sessionConfiguration,applicationContext, false, null, null, false
+            sessionConfiguration,applicationContext, false, null, null, true
         )
 
         fun enableNetworkLogs(enableNetworkLogs: Boolean) =

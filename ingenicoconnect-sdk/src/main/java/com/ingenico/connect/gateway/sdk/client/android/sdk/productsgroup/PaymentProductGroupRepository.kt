@@ -13,7 +13,14 @@ import io.reactivex.rxjava3.core.Observable
 
 internal interface PaymentProductGroupRepository {
 
-    fun getPaymentProductGroups(paymentContext: PaymentContext, connectSDKConfiguration: ConnectSDKConfiguration): Observable<NetworkResponse<BasicPaymentProductGroups>>
+    fun getPaymentProductGroups(
+        paymentContext: PaymentContext,
+        connectSDKConfiguration: ConnectSDKConfiguration
+    ): Observable<NetworkResponse<BasicPaymentProductGroups>>
 
-    fun getPaymentProductGroup(paymentContext: PaymentContext, connectSDKConfiguration: ConnectSDKConfiguration, paymentProductGroupId: String): Observable<NetworkResponse<PaymentProductGroup>>
+    fun getPaymentProductGroup(
+        paymentContext: PaymentContext,
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        paymentProductGroupId: String
+    ): Observable<NetworkResponse<PaymentProductGroup>>
 }

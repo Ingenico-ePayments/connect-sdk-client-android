@@ -4,6 +4,8 @@
 
 package com.ingenico.connect.gateway.sdk.client.android.sdk.configuration
 
+import java.util.Locale
+
 data class SessionConfiguration(
     val clientSessionId: String,
     val customerId: String,
@@ -20,12 +22,12 @@ data class SessionConfiguration(
         }
 
         // Check if the URL is correct
-        if (formattedClientApiUrl.lowercase().endsWith(API_PATH)) {
+        if (formattedClientApiUrl.lowercase(Locale.ROOT).endsWith(API_PATH)) {
             return formattedClientApiUrl
         }
 
         // Add the version if it is missing
-        if (formattedClientApiUrl.lowercase().endsWith(API_BASE)) {
+        if (formattedClientApiUrl.lowercase(Locale.ROOT).endsWith(API_BASE)) {
             return formattedClientApiUrl + API_VERSION
         }
 

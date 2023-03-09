@@ -50,7 +50,11 @@ internal class GetPaymentProductGroup {
                     GetDrawableFromUrl().invoke(connectSDKConfiguration, logoUrl).subscribe( { drawable ->
                         networkResponse.data.displayHints.logo = drawable
                     },{
-                        Log.w("ConnectSDK", "Drawable for paymentProductGroup: ${networkResponse.data.id} can't be loaded", it)
+                        Log.w(
+                            "ConnectSDK",
+                            "Drawable for paymentProductGroup: ${networkResponse.data.id} can't be loaded",
+                            it
+                        )
                     })
                 }
 

@@ -8,10 +8,11 @@ import com.ingenico.connect.gateway.sdk.client.android.testUtil.GsonHelper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Junit Testclass which tests iin details response equality
@@ -40,35 +41,35 @@ public class IinDetailsResponseTest {
     @Test
     public void testEqualsIinDetailsResponse() {
         // Test equality of two normal IinResponses
-        assertTrue(fstNormalVisa.equals(sndNormalVisa));
-        assertTrue(sndNormalVisa.equals(fstNormalVisa));
+        assertEquals(fstNormalVisa, sndNormalVisa);
+        assertEquals(sndNormalVisa, fstNormalVisa);
 
         // Test inequality of two normal IinResponses
-        assertFalse(fstNormalMC.equals(fstNormalVisa));
+        assertNotEquals(fstNormalMC, fstNormalVisa);
 
         // Test equality of two minimal IinResponses
-        assertTrue(fstMinimalVisa.equals(sndMinimalVisa));
-        assertTrue(sndMinimalVisa.equals(fstMinimalVisa));
+        assertEquals(fstMinimalVisa, sndMinimalVisa);
+        assertEquals(sndMinimalVisa, fstMinimalVisa);
 
         // Test inequality of two minimal IinResponses
-        assertFalse(fstMinimalVisa.equals(fstMinimalMC));
+        assertNotEquals(fstMinimalVisa, fstMinimalMC);
 
         // Test inequality of normal and minimal IinResponses
-        assertFalse(fstNormalVisa.equals(fstMinimalVisa));
-        assertFalse(fstNormalMC.equals(fstMinimalMC));
+        assertNotEquals(fstNormalVisa, fstMinimalVisa);
+        assertNotEquals(fstNormalMC, fstMinimalMC);
 
         // Test (in)equality of empty with different statuscodes
-        assertTrue(fstEmptyWithCodeUnknown.equals(sndEmptyWithCodeUnknown));
-        assertFalse(fstEmptyWithCodeUnknown.equals(fstEmptyWithCodeExistingButNotAllowed));
-        assertFalse(fstEmptyWithCodeUnknown.equals(fstEmptyWithCodeNotEnoughDigits));
-        assertFalse(fstEmptyWithCodeUnknown.equals(fstEmptyWithCodeSupported));
+        assertEquals(fstEmptyWithCodeUnknown, sndEmptyWithCodeUnknown);
+        assertNotEquals(fstEmptyWithCodeUnknown, fstEmptyWithCodeExistingButNotAllowed);
+        assertNotEquals(fstEmptyWithCodeUnknown, fstEmptyWithCodeNotEnoughDigits);
+        assertNotEquals(fstEmptyWithCodeUnknown, fstEmptyWithCodeSupported);
 
         // Test inequality of normals response with and without co-brands
-        assertFalse(fstNormalVisa.equals(fstNormalResponseVisaNoCoBrands));
+        assertNotEquals(fstNormalVisa, fstNormalResponseVisaNoCoBrands);
 
         // Test null
-        assertFalse(fstNormalVisa.equals(null));
-        assertFalse(fstEmptyWithCodeUnknown.equals(null));
-        assertFalse(fstEmptyWithCodeSupported.equals(null));
+        assertNotNull(fstNormalVisa);
+        assertNotNull(fstEmptyWithCodeUnknown);
+        assertNotNull(fstEmptyWithCodeSupported);
     }
 }

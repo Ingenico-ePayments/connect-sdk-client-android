@@ -19,7 +19,10 @@ import java.util.*
 
 internal class EncryptPaymentRequest {
 
-    operator fun invoke(connectSDKConfiguration: ConnectSDKConfiguration, paymentRequest: PaymentRequest): Observable<NetworkResponse<EncryptedPaymentRequest>> {
+    operator fun invoke(
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        paymentRequest: PaymentRequest
+    ): Observable<NetworkResponse<EncryptedPaymentRequest>> {
 
         return GetPublicKey().invoke(
             connectSDKConfiguration
@@ -35,7 +38,11 @@ internal class EncryptPaymentRequest {
         }
     }
 
-    private fun encryptPublicKey(connectSDKConfiguration: ConnectSDKConfiguration, paymentRequest: PaymentRequest, publicKeyResponse: PublicKeyResponse?): NetworkResponse<EncryptedPaymentRequest> {
+    private fun encryptPublicKey(
+        connectSDKConfiguration: ConnectSDKConfiguration,
+        paymentRequest: PaymentRequest,
+        publicKeyResponse: PublicKeyResponse?
+    ): NetworkResponse<EncryptedPaymentRequest> {
 
         // Format all values based on their paymentproductfield.type and them to the encryptedValues
         val formattedPaymentValues: MutableMap<String, String> = HashMap()

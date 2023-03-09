@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 /**
  * Validation rule for expirationdate
@@ -64,8 +65,8 @@ public class ValidationRuleExpirationDate extends AbstractValidationRule {
 
 	Date obtainEnteredDateFromUnmaskedValue(String text) throws ParseException {
 		// Parse the input to date and see if this is in the future
-		DateFormat fieldDateFormat = new SimpleDateFormat(DATE_FORMAT_PATTERN_MONTH_YEAR);
-		DateFormat centuryDateFormat = new SimpleDateFormat(DATE_FORMAT_PATTERN_CENTURY);
+		DateFormat fieldDateFormat = new SimpleDateFormat(DATE_FORMAT_PATTERN_MONTH_YEAR, Locale.ROOT);
+		DateFormat centuryDateFormat = new SimpleDateFormat(DATE_FORMAT_PATTERN_CENTURY, Locale.ROOT);
 		fieldDateFormat.setLenient(false);
 
 		// Add centuries to prevent swapping back to previous century with yy dateformatpattern:
