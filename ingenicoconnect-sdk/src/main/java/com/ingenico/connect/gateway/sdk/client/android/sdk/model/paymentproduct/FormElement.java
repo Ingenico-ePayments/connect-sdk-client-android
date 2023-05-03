@@ -40,7 +40,7 @@ public class FormElement implements Serializable {
 	}
 
 	private ListType type;
-	private List<ValueMap> valueMapping = new ArrayList<ValueMap>();
+	private List<ValueMap> valueMapping = new ArrayList<>();
 
 
 	public ListType getType(){

@@ -16,8 +16,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.nio.charset.Charset;
-import java.security.interfaces.RSAPublicKey;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 
@@ -80,13 +79,13 @@ public class Encryptor {
 
 			// Create protected header and encode it with Base64 encoding
 			String protectedHeader = createProtectedHeader();
-			String encodededProtectedHeader = encryptUtil.base64UrlEncode(protectedHeader.getBytes());
+			String encodededProtectedHeader = encryptUtil.base64UrlEncode(protectedHeader.getBytes(StandardCharsets.UTF_8));
 
 			// Create ContentEncryptionKey, is a random byte[]
 			byte[] contentEncryptionKey = encryptUtil.generateSecureRandomBytes(CONTENT_ENCRYPTION_KEY_SIZE);
 
 			// Encrypt the contentEncryptionKey with the GC gateway publickey and encode it with Base64 encoding
-			byte[] encryptedContentEncryptionKey = encryptUtil.encryptContentEncryptionKey(contentEncryptionKey, (RSAPublicKey)publicKeyResponse.getPublicKey());
+			byte[] encryptedContentEncryptionKey = encryptUtil.encryptContentEncryptionKey(contentEncryptionKey, publicKeyResponse.getPublicKey());
 			String encodedEncryptedContentEncryptionKey = encryptUtil.base64UrlEncode(encryptedContentEncryptionKey);
 
 			// Split the contentEncryptionKey in ENC_KEY and MAC_KEY for using hmac
@@ -102,7 +101,7 @@ public class Encryptor {
 			String encodedCipherText = encryptUtil.base64UrlEncode(cipherText);
 
 			// Create Additional Authenticated Data  and Additional Authenticated Data Length
-			byte[] additionalAuthenticatedData = encodededProtectedHeader.getBytes(Charset.forName("UTF-8"));
+			byte[] additionalAuthenticatedData = encodededProtectedHeader.getBytes(StandardCharsets.UTF_8);
 			byte[] al = calculateAdditionalAuthenticatedDataLength(additionalAuthenticatedData);
 
 			// Calculates HMAC
@@ -117,7 +116,7 @@ public class Encryptor {
 											   encodededinitializationVector,
 											   encodedCipherText, encodedAuthenticationTag);
 
-		} catch (EncryptDataException e) {
+		} catch (EncryptDataException | IOException e) {
 			Log.i(TAG, "Error while encrypting fields" + e.getMessage());
 		}
 
@@ -138,23 +137,12 @@ public class Encryptor {
 	 *
 	 * @return encrypted
 	 */
-	private byte[] calculateHMAC(byte[] macKey, byte[] additionalAuthenticatedData, byte[] initializationVector, byte[] cipherText, byte[] al) {
+	private byte[] calculateHMAC(byte[] macKey, byte[] additionalAuthenticatedData, byte[] initializationVector, byte[] cipherText, byte[] al) throws IOException, EncryptDataException {
+		// Create HMAC Computation input
+		byte[] hmacInput = encryptUtil.concatenateByteArrays(additionalAuthenticatedData, initializationVector, cipherText, al);
 
-		try {
-			// Create HMAC Computation input
-			byte[] hmacInput = encryptUtil.concatenateByteArrays(additionalAuthenticatedData, initializationVector, cipherText, al);
-
-			// And calculate HMAC over those byte[]
-			return encryptUtil.calculateHmac(macKey, hmacInput);
-
-		} catch (EncryptDataException e) {
-			Log.i(TAG, "Error while encrypting fields" + e.getMessage());
-
-		} catch (IOException e) {
-			Log.i(TAG, "Error while encrypting fields" + e.getMessage());
-		}
-
-		return null;
+		// And calculate HMAC over those byte[]
+		return encryptUtil.calculateHmac(macKey, hmacInput);
 	}
 
 

@@ -96,8 +96,8 @@ public class BasicPaymentItemsAsyncTask extends AsyncTask<String, Void, BasicPay
             ExecutorService executorService = Executors.newFixedThreadPool(2);
 
             // Create the callables that will be executed
-            Callable<BasicPaymentProducts> paymentProductsCallable = new BasicPaymentProductsAsyncTask(context, paymentContext, communicator, new LinkedList<OnBasicPaymentProductsCallCompleteListener>());
-            Callable<BasicPaymentProductGroups> paymentProductGroupsCallable = new BasicPaymentProductGroupsAsyncTask(context, paymentContext, communicator, new LinkedList<OnBasicPaymentProductGroupsCallCompleteListener>());
+            Callable<BasicPaymentProducts> paymentProductsCallable = new BasicPaymentProductsAsyncTask(context, paymentContext, communicator, new LinkedList<>());
+            Callable<BasicPaymentProductGroups> paymentProductGroupsCallable = new BasicPaymentProductGroupsAsyncTask(context, paymentContext, communicator, new LinkedList<>());
 
             // Retrieve the futures from the callable tasks
             Future<BasicPaymentProducts> paymentProductsFuture = executorService.submit(paymentProductsCallable);
@@ -111,17 +111,14 @@ public class BasicPaymentItemsAsyncTask extends AsyncTask<String, Void, BasicPay
                 // Return a list of the basicPaymentProducts and basicPaymentProductGroups combined
                 return createBasicPaymentItems(basicPaymentProducts, basicPaymentProductGroups);
 
-            } catch (InterruptedException e) {
-                Log.i(TAG, "Error while getting paymentItems: " + e.getMessage());
-                e.printStackTrace();
-            } catch (ExecutionException e) {
+            } catch (InterruptedException | ExecutionException e) {
                 Log.i(TAG, "Error while getting paymentItems: " + e.getMessage());
                 e.printStackTrace();
             }
         } else {
 
             // Create the paymentProductsCallable
-            Callable<BasicPaymentProducts> paymentProductsCallable = new BasicPaymentProductsAsyncTask(context, paymentContext, communicator, new LinkedList<OnBasicPaymentProductsCallCompleteListener>());
+            Callable<BasicPaymentProducts> paymentProductsCallable = new BasicPaymentProductsAsyncTask(context, paymentContext, communicator, new LinkedList<>());
             try {
 
                 // Retrieve the basicPaymentProducts
@@ -229,6 +226,6 @@ public class BasicPaymentItemsAsyncTask extends AsyncTask<String, Void, BasicPay
      */
     @Deprecated
     public interface OnBasicPaymentItemsCallCompleteListener {
-        public void onBasicPaymentItemsCallComplete(BasicPaymentItems basicPaymentItems);
+        void onBasicPaymentItemsCallComplete(BasicPaymentItems basicPaymentItems);
     }
 }

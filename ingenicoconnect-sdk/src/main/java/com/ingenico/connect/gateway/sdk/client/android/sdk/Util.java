@@ -12,6 +12,7 @@ import com.google.gson.Gson;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constants;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.encryption.EncryptUtil;
 
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,7 +63,7 @@ public class Util {
 			throw new IllegalArgumentException("Error creating metadata, context may not be null.");
 		}
 
-		Map<String, String> metaData = new HashMap<String, String>();
+		Map<String, String> metaData = new HashMap<>();
 
 		// Add OS + buildversion
 		metaData.put(METADATA_PLATFORM_IDENTIFIER, "Android/" + android.os.Build.VERSION.RELEASE);
@@ -109,7 +110,7 @@ public class Util {
 
 		Gson gson = new Gson();
 		String jsonMetadata = gson.toJson(getMetadata(context, appIdentifier, null));
-		String encodedData = new String(encryptUtil.base64UrlEncode(jsonMetadata.getBytes()));
+		String encodedData = new String(encryptUtil.base64UrlEncode(jsonMetadata.getBytes(StandardCharsets.UTF_8)));
 
 		return encodedData;
 	}
@@ -126,7 +127,7 @@ public class Util {
 
 		Gson gson = new Gson();
 		String jsonMetadata = gson.toJson(getMetadata(context, appIdentifier, ipAddress));
-		String encodedData = new String(encryptUtil.base64UrlEncode(jsonMetadata.getBytes()));
+		String encodedData = new String(encryptUtil.base64UrlEncode(jsonMetadata.getBytes(StandardCharsets.UTF_8)));
 
 		return encodedData;
 	}
@@ -143,7 +144,7 @@ public class Util {
 
 		Gson gson = new Gson();
 		String jsonMetadata = gson.toJson(metadata);
-		String encodedData = new String(encryptUtil.base64UrlEncode(jsonMetadata.getBytes()));
+		String encodedData = new String(encryptUtil.base64UrlEncode(jsonMetadata.getBytes(StandardCharsets.UTF_8)));
 
 		return encodedData;
 	}

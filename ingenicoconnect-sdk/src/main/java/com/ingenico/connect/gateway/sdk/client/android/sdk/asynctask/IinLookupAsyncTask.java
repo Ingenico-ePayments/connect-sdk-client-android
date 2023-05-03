@@ -130,6 +130,6 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
     	 * Listener that is called when IIN lookup is done
     	 * @param response, the IinDetailsResponse returned by the GC gateway
     	 */
-        public void onIinLookupComplete(IinDetailsResponse response);
+        void onIinLookupComplete(IinDetailsResponse response);
     }
 }

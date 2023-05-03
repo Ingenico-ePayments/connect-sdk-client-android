@@ -54,31 +54,19 @@ class ReadInternalStorage {
 		}
 
 		// Create new map which contains all the iinResponses
-		Map<String, IinDetailsResponse> iinResponses = new HashMap<String, IinDetailsResponse>();
+		Map<String, IinDetailsResponse> iinResponses = new HashMap<>();
 
 		// Check if the cachefile exists
 		String directory = context.getFilesDir() + Constants.DIRECTORY_IINRESPONSES;
 		File file = new File(directory, Constants.FILENAME_IINRESPONSE_CACHE);
 		if (file.exists()) {
-
 			// read the content and parse it to Map<String, IinDetailsResponse>
-			FileInputStream fileInputStream = null;
-			ObjectInputStream objectInputStream = null;
-			try {
-				fileInputStream = new FileInputStream(file);
-				objectInputStream = new ObjectInputStream(fileInputStream);
+			try(FileInputStream fileInputStream = new FileInputStream(file);
+				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)
+			) {
 				iinResponses = (Map<String, IinDetailsResponse>)objectInputStream.readObject();
-			} catch (StreamCorruptedException e) {
+			} catch (ClassNotFoundException | IOException e) {
 				Log.e(TAG, "Error getting List<PaymentProduct> from internal file ", e);
-			} catch (IOException e) {
-				Log.e(TAG, "Error getting List<PaymentProduct> from internal file ", e);
-			} catch (ClassNotFoundException e) {
-				Log.e(TAG, "Error getting List<PaymentProduct> from internal file ", e);
-			} finally {
-				try {
-					objectInputStream.close();
-					fileInputStream.close();
-				} catch (IOException e) {}
 			}
 		}
 
@@ -99,20 +87,12 @@ class ReadInternalStorage {
 		String directory = context.getFilesDir() + Constants.DIRECTORY_LOGOS;
 		File file = new File(directory, Constants.FILENAME_LOGO_PREFIX + paymentProductId);
 		if (file.exists()) {
-
 			// read the content and parse it to BitmapDrawable
-			FileInputStream fileInputStream = null;
-			try {
-
-				fileInputStream = new FileInputStream(file);
+			try(FileInputStream fileInputStream = new FileInputStream(file)) {
 				imageFromFile = new BitmapDrawable(resources, BitmapFactory.decodeStream(fileInputStream));
 
 			} catch (IOException e) {
 				Log.e(TAG, "Error getting drawable from file ", e);
-			} finally {
-				try {
-					fileInputStream.close();
-				} catch (IOException e) {}
 			}
 		}
 

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
@@ -23,10 +24,10 @@ public class BasicPaymentProductGroups implements Serializable {
 
     // List containing all BasicPaymentProductGroups
     @SerializedName("paymentProductGroups")
-    private List<BasicPaymentProductGroup> basicPaymentProductGroups = new ArrayList<BasicPaymentProductGroup>();
+    private List<BasicPaymentProductGroup> basicPaymentProductGroups = new ArrayList<>();
 
     // List containing all AccountsOnFile
-    private List<AccountOnFile> accountsOnFile = new ArrayList<AccountOnFile>();
+    private List<AccountOnFile> accountsOnFile = new ArrayList<>();
 
     // Boolean containing whether or not the list has already been sorted
     private Boolean hasBeenSorted = false;
@@ -45,14 +46,14 @@ public class BasicPaymentProductGroups implements Serializable {
         if (!hasBeenSorted) {
             Collections.sort(basicPaymentProductGroups, new Comparator<BasicPaymentProductGroup>() {
                 public int compare(BasicPaymentProductGroup group1, BasicPaymentProductGroup group2) {
-                    if (group1 == group2) return 0;
+                    if (Objects.equals(group1, group2)) return 0;
                     if (group1 == null) return -1;
                     if (group2 == null) return 1;
 
                     Integer displayOrder1 = group1.getDisplayHints().getDisplayOrder();
                     Integer displayOrder2 = group2.getDisplayHints().getDisplayOrder();
 
-                    if (displayOrder1 == displayOrder2) return 0;
+                    if (Objects.equals(displayOrder1, displayOrder2)) return 0;
                     if (displayOrder1 == null) return -1;
                     if (displayOrder2 == null) return 1;
                     return displayOrder1.compareTo(displayOrder2);

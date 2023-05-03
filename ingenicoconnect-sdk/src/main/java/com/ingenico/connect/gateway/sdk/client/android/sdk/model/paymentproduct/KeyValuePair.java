@@ -26,7 +26,7 @@ public class KeyValuePair implements Serializable {
 
 		private boolean isEditingAllowed;
 
-		private Status(boolean isEditingAllowed) {
+		Status(boolean isEditingAllowed) {
 			this.isEditingAllowed = isEditingAllowed;
 		}
 

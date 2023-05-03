@@ -80,15 +80,17 @@ public final class GooglePayUtil {
         // Wait for a response
         try {
             Tasks.await(task, Constants.ACCEPTABLE_WAIT_TIME_IN_MILISECONDS, TimeUnit.MILLISECONDS);
+
+            // Handle result
+            if (task.isSuccessful()) {
+                return task.getResult();
+            }
+
+            return false;
         } catch (TimeoutException e) {
             Log.e(TAG, "Timeout while making isReadyToPay call: " + task.getException());
+            return false;
         } catch (Exception e) {
-            Log.e(TAG, "Exception occurred while making isReadyToPay call: " + task.getException());
-        }
-        // Handle result
-        if (task.isSuccessful()) {
-            return task.getResult();
-        } else {
             Log.e(TAG, "Exception occurred while making isReadyToPay call: " + task.getException());
             return false;
         }
@@ -129,17 +131,19 @@ public final class GooglePayUtil {
         // Wait for a response
         try {
             Tasks.await(task, Constants.ACCEPTABLE_WAIT_TIME_IN_MILISECONDS, TimeUnit.MILLISECONDS);
+
+            // Handle result
+            if (task.isSuccessful()) {
+                return task.getResult();
+            }
+
+            return false;
         } catch (TimeoutException e) {
             Log.e(TAG, "Timeout while making isReadyToPay call: " + task.getException());
+            return false;
         } catch (Exception e) {
             Log.e(TAG, "Exception occurred while making isReadyToPay call: " + task.getException());
-        }
-        // Handle result
-        if (task.isSuccessful()) {
-            return task.getResult();
-        } else {
-            Log.e(TAG, "Exception occurred while making isReadyToPay call: " + task.getException());
-            return true;
+            return false;
         }
     }
 

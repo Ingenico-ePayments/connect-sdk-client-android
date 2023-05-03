@@ -68,7 +68,7 @@ public class PaymentProductField implements Serializable {
 	private StringFormatter formatter = new StringFormatter();
 
 	// List of all invalid field errormessages
-	private List<ValidationErrorMessage> errorMessageIds = new ArrayList<ValidationErrorMessage>();
+	private List<ValidationErrorMessage> errorMessageIds = new ArrayList<>();
 
 
 

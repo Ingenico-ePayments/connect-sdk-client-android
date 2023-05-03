@@ -102,6 +102,6 @@ public class PaymentProductGroupAsyncTask extends AsyncTask<String, Void, Paymen
      */
     @Deprecated
     public interface OnPaymentProductGroupCallCompleteListener {
-        public void onPaymentProductGroupCallComplete(PaymentProductGroup paymentProductGroup);
+        void onPaymentProductGroupCallComplete(PaymentProductGroup paymentProductGroup);
     }
 }

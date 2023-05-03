@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Pojo which holds the BasicPaymentProductGroup data and it's PaymentProductFields
@@ -44,14 +45,14 @@ public class PaymentProductGroup extends BasicPaymentProductGroup implements Pay
         if (!hasBeenSorted) {
             Collections.sort(fields, new Comparator<PaymentProductField>() {
                 public int compare(PaymentProductField field1, PaymentProductField field2) {
-                    if (field1 == field2) return 0;
+                    if (Objects.equals(field1, field2)) return 0;
                     if (field1 == null) return -1;
                     if (field2 == null) return 1;
 
                     Integer displayOrder1 = field1.getDisplayHints().getDisplayOrder();
                     Integer displayOrder2 = field2.getDisplayHints().getDisplayOrder();
 
-                    if (displayOrder1 == displayOrder2) return 0;
+                    if (Objects.equals(displayOrder1, displayOrder2)) return 0;
                     if (displayOrder1 == null) return -1;
                     if (displayOrder2 == null) return 1;
                     return displayOrder1.compareTo(displayOrder2);

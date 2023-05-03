@@ -12,5 +12,5 @@ import java.util.List;
  */
 public interface PaymentItem extends BasicPaymentItem, Serializable {
 
-    public List<PaymentProductField> getPaymentProductFields();
+    List<PaymentProductField> getPaymentProductFields();
 }

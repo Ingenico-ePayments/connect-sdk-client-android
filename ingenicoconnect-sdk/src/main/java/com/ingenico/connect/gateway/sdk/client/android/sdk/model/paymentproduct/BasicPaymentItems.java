@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Pojo with convenience methods for getting BasicPaymentItem and AccountOnFile objects
@@ -45,14 +46,14 @@ public class BasicPaymentItems implements Serializable {
         if (!hasBeenSorted) {
             Collections.sort(basicPaymentItems, new Comparator<BasicPaymentItem>() {
                 public int compare(BasicPaymentItem product1, BasicPaymentItem product2) {
-                    if (product1 == product2) return 0;
+                    if (Objects.equals(product1, product2)) return 0;
                     if (product1 == null) return -1;
                     if (product2 == null) return 1;
 
                     Integer displayOrder1 = product1.getDisplayHints().getDisplayOrder();
                     Integer displayOrder2 = product2.getDisplayHints().getDisplayOrder();
 
-                    if (displayOrder1 == displayOrder2) return 0;
+                    if (Objects.equals(displayOrder1, displayOrder2)) return 0;
                     if (displayOrder1 == null) return -1;
                     if (displayOrder2 == null) return 1;
                     return displayOrder1.compareTo(displayOrder2);

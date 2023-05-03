@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v6.0.1";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v6.1.0";
 
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
@@ -118,7 +118,7 @@ public class Constants {
 	public static final int ACCEPTABLE_WAIT_TIME_IN_MILISECONDS = 10000;
 
 	/** Cards Group ID **/
-	public static String PAYMENTPRODUCTGROUPID_CARDS = "cards";
+	public final static String PAYMENTPRODUCTGROUPID_CARDS = "cards";
 
 	/** Payment product Id's of android and apple pay **/
 	public final static String PAYMENTPRODUCTID_APPLEPAY = "302";
@@ -128,22 +128,22 @@ public class Constants {
 	public final static String 	GOOGLE_PAY_TOKEN_FIELD_ID = "encryptedPaymentData";
 
 	/** Boleto Bancario product ID and Fiscal number field ID **/
-	public static String PAYMENTPRODUCTID_BOLETOBANCARIO 	= "1503";
-	public static String FISCAL_NUMBER_FIELD_ID				= "fiscalNumber";
+	public final static String PAYMENTPRODUCTID_BOLETOBANCARIO = "1503";
+	public final static String FISCAL_NUMBER_FIELD_ID = "fiscalNumber";
 
 	/** BanContact payment product ID **/
-	public static String PAYMENTPRODUCTID_BanContact = "3012";
+	public final static String PAYMENTPRODUCTID_BanContact = "3012";
 
 	/** @deprecated Use {@link #PAYMENTPRODUCTID_BanContact} instead **/
 	@Deprecated
-	public static String PAYMENTPRODUCTID_BCMC = "3012";
+	public final static String PAYMENTPRODUCTID_BCMC = "3012";
 
 	/** Afterpay Installments payment product ID and relevant field ID's**/
-	public static String PAYMENTPRODUCTID_AFTERPAY_INSTALLMENTS = "9000";
-	public static String PAYMENTPRODUCTID_AFTERPAY_INVOICE = "9001";
-	public static String INSTALLMENTPLAN_FIELD_ID = "installmentId";
-	public static String TERMSANDCONDITIONS_FIELD_ID = "termsAndConditions";
+	public final static String PAYMENTPRODUCTID_AFTERPAY_INSTALLMENTS = "9000";
+	public final static String PAYMENTPRODUCTID_AFTERPAY_INVOICE = "9001";
+	public final static String INSTALLMENTPLAN_FIELD_ID = "installmentId";
+	public final static String TERMSANDCONDITIONS_FIELD_ID = "termsAndConditions";
 
 	/** Link placeholder for label texts **/
-	public static String LINK_PLACEHOLDER = "{link}";
+	public final static String LINK_PLACEHOLDER = "{link}";
 }

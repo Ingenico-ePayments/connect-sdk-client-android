@@ -80,22 +80,12 @@ class WriteInternalStorage {
 		File file = new File(directory, Constants.FILENAME_IINRESPONSE_CACHE);
 		file.getParentFile().mkdirs();
 
-		FileOutputStream fileOutputStream = null;
-		ObjectOutputStream objectOutputStream = null;
-
-		try {
-			fileOutputStream = new FileOutputStream(file);
-			objectOutputStream = new ObjectOutputStream(fileOutputStream);
+		try(FileOutputStream fileOutputStream = new FileOutputStream(file);
+			ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)
+		) {
 			objectOutputStream.writeObject(currentCachedIinResponses);
-        } catch (StreamCorruptedException e) {
+        } catch (IOException e) {
 			Log.e(TAG, "Error storing BasicPaymentProducts on internal device storage", e);
-		} catch (IOException e) {
-			Log.e(TAG, "Error storing BasicPaymentProducts on internal device storage", e);
-		} finally {
-			try {
-				objectOutputStream.close();
-				fileOutputStream.close();
-			} catch (IOException e) {}
 		}
 	}
 
@@ -119,13 +109,9 @@ class WriteInternalStorage {
 		File file = new File(directory, Constants.FILENAME_LOGO_PREFIX + paymentProductId);
 		file.getParentFile().mkdirs();
 
-		FileOutputStream fileOutputStream = null;
-		ByteArrayOutputStream byteArrayOutputStream = null;
-
-		try {
-			fileOutputStream = new FileOutputStream(file);
-			byteArrayOutputStream = new ByteArrayOutputStream();
-
+		try(FileOutputStream fileOutputStream = new FileOutputStream(file);
+			ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()
+		) {
 			// Parse the image to byte[] and write it
 			Bitmap bitmap = ((BitmapDrawable)image).getBitmap();
 			bitmap.compress(CompressFormat.PNG, 0 , byteArrayOutputStream);
@@ -133,15 +119,8 @@ class WriteInternalStorage {
 
 			fileOutputStream.write(bitmapdata);
 
-        } catch (StreamCorruptedException e) {
+        } catch (IOException e) {
 			Log.e(TAG, "Error storing drawable on internal device storage", e);
-		} catch (IOException e) {
-			Log.e(TAG, "Error storing drawable on internal device storage", e);
-		} finally {
-			try {
-				byteArrayOutputStream.close();
-				fileOutputStream.close();
-			} catch (IOException e) {}
 		}
 	}
 

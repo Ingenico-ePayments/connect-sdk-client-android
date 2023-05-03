@@ -63,7 +63,7 @@ public class EncryptDataAsyncTask extends AsyncTask<String, Void, String>{
     	EncryptData encryptData = new EncryptData();
 
     	// Format all values based on their paymentproductfield.type and them to the encryptedValues
-    	Map<String, String> formattedPaymentValues = new HashMap<String, String>();
+    	Map<String, String> formattedPaymentValues = new HashMap<>();
     	for (PaymentProductField field : paymentRequest.getPaymentProduct().getPaymentProductFields()) {
 
     		String value = paymentRequest.getValue(field.getId());

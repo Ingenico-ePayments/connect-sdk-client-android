@@ -35,7 +35,7 @@ public class DataRestrictions implements Serializable {
 
 	private Boolean isRequired;
 
-	private List<AbstractValidationRule> validationRules = new ArrayList<AbstractValidationRule>();
+	private List<AbstractValidationRule> validationRules = new ArrayList<>();
 
 	private Validator validators;
 

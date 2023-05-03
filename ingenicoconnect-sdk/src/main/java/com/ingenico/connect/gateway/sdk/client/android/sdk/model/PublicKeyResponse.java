@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.encryption.Encryptor;
 
+import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
@@ -60,7 +61,7 @@ public class PublicKeyResponse {
 			try {
 
 				// Decode base64 and convert the String to a PublicKey instance
-				byte[] keyBytes = Base64.decode(publicKey.getBytes(), Base64.DEFAULT);
+				byte[] keyBytes = Base64.decode(publicKey.getBytes(StandardCharsets.UTF_8), Base64.DEFAULT);
 				X509EncodedKeySpec spec = new X509EncodedKeySpec(keyBytes);
 				KeyFactory keyFactory = KeyFactory.getInstance(RSA_ALGORITHM_TYPE);
 

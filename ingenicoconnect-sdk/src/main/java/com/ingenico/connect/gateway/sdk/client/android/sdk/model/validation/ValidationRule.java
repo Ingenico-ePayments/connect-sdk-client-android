@@ -12,6 +12,5 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
  */
 public interface ValidationRule {
 
-	public abstract boolean validate(PaymentRequest paymentRequest, String fieldId);
-
+	boolean validate(PaymentRequest paymentRequest, String fieldId);
 }

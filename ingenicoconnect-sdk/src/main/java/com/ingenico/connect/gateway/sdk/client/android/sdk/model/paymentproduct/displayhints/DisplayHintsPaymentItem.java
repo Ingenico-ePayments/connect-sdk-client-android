@@ -37,7 +37,7 @@ public class DisplayHintsPaymentItem implements Serializable{
 	}
 
 	public Drawable getLogo(){
-		return (Drawable)logoDrawable;
+		return logoDrawable;
 	}
 
 	public String getLogoUrl() {

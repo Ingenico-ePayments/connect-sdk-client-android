@@ -7,6 +7,7 @@ plugins {
     id 'kotlin-android'
     id 'signing'
     id 'maven-publish'
+    id 'org.sonarqube'
 }
 
 android {
@@ -17,6 +18,7 @@ android {
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
+        consumerProguardFiles 'consumer-rules.pro'
     }
 
     compileOptions {
@@ -32,7 +34,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }

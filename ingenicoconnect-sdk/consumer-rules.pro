@@ -15,3 +15,6 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# The line below ensures that JSON deserialisation succeeds when using obfuscation in your app.
+-keep class com.ingenico.connect.gateway.sdk.client.android.sdk.model.** { *; }

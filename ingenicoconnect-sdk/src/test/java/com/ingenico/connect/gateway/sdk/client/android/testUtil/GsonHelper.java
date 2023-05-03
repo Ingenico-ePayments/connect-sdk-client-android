@@ -15,16 +15,8 @@ public class GsonHelper {
     private static final Gson gson = new Gson();
 
     public static <T> T fromResourceJson(String resource, Class<T> classOfT) {
-        try {
-            Reader reader = new InputStreamReader(GsonHelper
-                    .class
-                    .getClassLoader()
-                    .getResourceAsStream(resource));
-            try {
+        try (Reader reader = new InputStreamReader(GsonHelper.class.getClassLoader().getResourceAsStream(resource))) {
                 return gson.fromJson(reader, classOfT);
-            } finally {
-                reader.close();
-            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

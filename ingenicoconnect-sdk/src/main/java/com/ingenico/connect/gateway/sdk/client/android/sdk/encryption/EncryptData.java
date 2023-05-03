@@ -24,7 +24,7 @@ public class EncryptData {
 	String nonce;
 	Integer paymentProductId;
 	Boolean tokenize;
-	Map<String, String> paymentValues = new HashMap<String, String>();
+	Map<String, String> paymentValues = new HashMap<>();
 
 	public void setAccountOnFileId(Integer accountOnFileId) {
 		this.accountOnFileId = accountOnFileId;
@@ -73,9 +73,4 @@ public class EncryptData {
 	public Map<String, String> getPaymentValues() {
 		return paymentValues;
 	}
-
-
-
-
-
 }

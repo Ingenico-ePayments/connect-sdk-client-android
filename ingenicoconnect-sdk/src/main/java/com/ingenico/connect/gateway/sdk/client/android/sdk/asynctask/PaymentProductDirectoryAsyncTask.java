@@ -111,6 +111,6 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
     	 * @param paymentProductDirectoryResponse, the PaymentProductDirectoryResponse returned
     	 *
     	 */
-        public void onPaymentProductDirectoryCallComplete(PaymentProductDirectoryResponse paymentProductDirectoryResponse);
+        void onPaymentProductDirectoryCallComplete(PaymentProductDirectoryResponse paymentProductDirectoryResponse);
     }
 }

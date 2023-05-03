@@ -81,29 +81,29 @@ internal class GetPaymentProduct {
     ): Observable<Unit> {
         return Observable.create {
             var count = 0
-            if (!paymentProduct.paymentProductFields.isNullOrEmpty()) {
-                paymentProduct.paymentProductFields.forEach { paymentProductField ->
-                    if (
-                        paymentProductField.displayHints.tooltip != null &&
-                        !paymentProductField.displayHints.tooltip.imageURL.isNullOrBlank()
-                    ) {
-                        GetDrawableFromUrl().invoke(
-                            connectSDKConfiguration,
-                            paymentProductField.displayHints.tooltip.imageURL
-                        ).doFinally {
-                            count++
-                            if (count == paymentProduct.paymentProductFields.count()) it.onComplete()
-                        }
-                            .subscribe({ drawable ->
-                                paymentProductField.displayHints.tooltip.imageDrawable = drawable
-                            }, {})
-                    } else {
+
+            if(paymentProduct.paymentProductFields.isNullOrEmpty()) it.onComplete()
+
+            paymentProduct.paymentProductFields.forEach { paymentProductField ->
+                if (
+                    paymentProductField.displayHints.tooltip != null &&
+                    !paymentProductField.displayHints.tooltip.imageURL.isNullOrBlank()
+                ) {
+                    GetDrawableFromUrl().invoke(
+                        connectSDKConfiguration,
+                        paymentProductField.displayHints.tooltip.imageURL
+                    ).doFinally {
                         count++
                         if (count == paymentProduct.paymentProductFields.count()) it.onComplete()
                     }
+                        .subscribe({ drawable ->
+                            paymentProductField.displayHints.tooltip.imageDrawable = drawable },
+                            {}
+                        )
+                    return@forEach
                 }
-            } else {
-                it.onComplete()
+                count++
+                if (count == paymentProduct.paymentProductFields.count()) it.onComplete()
             }
         }
     }

@@ -34,6 +34,9 @@ import java.util.Properties;
 @Deprecated
 public class AssetManager implements OnImageLoadedListener {
 
+	// Tag used for logging
+	private static final String TAG = AssetManager.class.getName();
+
 	// Name of cache in preferences
 	private static final String LOGO_MAPPING_FILENAME = "initial_logo_mapping.list";
 
@@ -117,7 +120,7 @@ public class AssetManager implements OnImageLoadedListener {
 		Map<String, String> logoMapping = preferences.getMapFromSharedPreferences(Constants.PREFERENCES_LOGO_MAP,
 				context,
 				listType,
-				new HashMap<String, String>());
+				new HashMap<>());
 
 		// If there is no logo mapping in the preferences,
 		// Read the initial logo mapping from the LOGO_MAPPING_FILENAME file.
@@ -152,15 +155,15 @@ public class AssetManager implements OnImageLoadedListener {
 
 		// Parse the LOGO_MAPPING_FILENAME as a properties file
 		Properties properties = new Properties();
-		try {
-			InputStream inputStream = context.getAssets().open(LOGO_MAPPING_FILENAME);
+
+		try(InputStream inputStream = context.getAssets().open(LOGO_MAPPING_FILENAME)) {
 			properties.load(inputStream);
 		} catch (IOException e) {
 			return null;
 		}
 
 		// Fill the logoMapping with all entries
-		Map<String, String> logoMapping = new HashMap<String, String>();
+		Map<String, String> logoMapping = new HashMap<>();
 		for (Entry<Object, Object> property : properties.entrySet()) {
 			logoMapping.put((String) property.getKey(), (String) property.getValue());
 		}

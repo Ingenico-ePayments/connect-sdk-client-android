@@ -38,6 +38,7 @@ import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
@@ -154,7 +155,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Do the call and deserialise the result to BasicPaymentProducts
 			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
 
 			// Log the response
 			if (Constants.ENABLE_REQUEST_LOGGING) {
@@ -234,7 +235,7 @@ public class C2sCommunicator implements Serializable {
 			// Do the call and deserialise the result to PaymentProduct
 			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
 
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
 
 			// Log the response
 			if (Constants.ENABLE_REQUEST_LOGGING) {
@@ -302,7 +303,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Do the call and deserialise the result to BasicPaymentProducts
 			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
 
 			// Log the response
 			if (Constants.ENABLE_REQUEST_LOGGING) {
@@ -377,7 +378,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Do the call and deserialise the result to PaymentProduct
 			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
 
 			// Log the response
 			if (Constants.ENABLE_REQUEST_LOGGING) {
@@ -431,7 +432,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Do the call and deserialize the result to IinDetailsResponse
 			connection = doHTTPPostRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context), customerDetailsRequestJson);
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
 
 			// Log the response
 			if (Constants.ENABLE_REQUEST_LOGGING) {
@@ -503,7 +504,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Do the call and deserialise the result to PaymentProductDirectoryResponse
 			connection = doHTTPGetRequest(completePath, configuration.getClientSessionId(), configuration.getMetadata(context));
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
 
 			// Log the response
 			if (Constants.ENABLE_REQUEST_LOGGING) {
@@ -567,7 +568,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Do the call and deserialise the result to IinDetailsResponse
 			connection = doHTTPPostRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context), iinRequestJson);
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
 
 			// Log the response
 			if (Constants.ENABLE_REQUEST_LOGGING) {
@@ -613,7 +614,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Do the call and deserialise the result to PublicKeyResponse
 			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
 
 			// Log the response
 			if (Constants.ENABLE_REQUEST_LOGGING) {
@@ -657,7 +658,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Do the call and deserialize the result to PaymentProductPublicKeyResponse
 			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
 
 			// Log the response
 			if (Constants.ENABLE_REQUEST_LOGGING) {
@@ -728,7 +729,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Do the call and deserialise the result to PublicKeyResponse
 			connection = doHTTPGetRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context));
-			String responseBody = new Scanner(connection.getInputStream(),"UTF-8").useDelimiter("\\A").next();
+			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
 
 			// Log the response
 			if (Constants.ENABLE_REQUEST_LOGGING) {
@@ -872,7 +873,7 @@ public class C2sCommunicator implements Serializable {
 
 			// Add post body
 			connection.setDoOutput(true);
-			writer = new OutputStreamWriter(connection.getOutputStream(), "UTF-8");
+			writer = new OutputStreamWriter(connection.getOutputStream(), StandardCharsets.UTF_8);
 			writer.write(postBody);
 			writer.flush();
 

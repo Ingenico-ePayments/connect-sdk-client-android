@@ -108,6 +108,6 @@ public class ConvertAmountAsyncTask extends AsyncTask<String, Void, Long> {
     	 *
     	 * @param convertedAmount
     	 */
-        public void OnAmountConverted(Long convertedAmount);
+        void OnAmountConverted(Long convertedAmount);
     }
 }

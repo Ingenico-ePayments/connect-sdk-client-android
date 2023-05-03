@@ -11,12 +11,12 @@ import java.util.List;
 
 public interface BasicPaymentItem extends Serializable {
 
-    public String getId();
+    String getId();
 
-    public DisplayHintsPaymentItem getDisplayHints();
+    DisplayHintsPaymentItem getDisplayHints();
 
-    public List<AccountOnFile> getAccountsOnFile();
+    List<AccountOnFile> getAccountsOnFile();
 
-    public String getAcquirerCountry();
+    String getAcquirerCountry();
 
 }

@@ -32,10 +32,10 @@ public class PaymentRequest implements Serializable {
 	private AccountOnFile accountOnFile;
 
 	// All field values which the customer has entered
-	private Map<String, String> fieldValues = new HashMap<String, String>();
+	private Map<String, String> fieldValues = new HashMap<>();
 
 	// All validation errormessages for the entered values
-	private List<ValidationErrorMessage> errorMessageIds = new ArrayList<ValidationErrorMessage>();
+	private List<ValidationErrorMessage> errorMessageIds = new ArrayList<>();
 
 	// Used for storing account on file (true is storing)
 	private Boolean tokenize = false;
@@ -236,7 +236,7 @@ public class PaymentRequest implements Serializable {
 	 * Gets the map with all unmasked fieldvalues
 	 */
 	public Map<String, String> getUnmaskedValues(){
-		Map<String, String> unMaskedFieldValues = new HashMap<String, String>();
+		Map<String, String> unMaskedFieldValues = new HashMap<>();
 
 		// Loop through all the fieldValues
 		for (Entry<String, String> entry : fieldValues.entrySet()){
@@ -264,7 +264,7 @@ public class PaymentRequest implements Serializable {
 	 * Gets the map with all masked fieldvalues
 	 */
 	public Map<String, String> getMaskedValues(){
-		Map<String, String> maskedFieldValues = new HashMap<String, String>();
+		Map<String, String> maskedFieldValues = new HashMap<>();
 		// Loop through all the fieldValues
 		for (Entry<String, String> entry : fieldValues.entrySet()) {
 			String key = entry.getKey();
@@ -301,7 +301,7 @@ public class PaymentRequest implements Serializable {
 		}
 
 		// Create new map which contains all values for fields who are also present in the new paymentproduct
-		Map<String, String> newFieldValues = new HashMap<String, String>();
+		Map<String, String> newFieldValues = new HashMap<>();
 
 		// Loop trough all new fields and see of they match the fieldvalues id
 		if (paymentProduct.getPaymentProductFields() != null) {

@@ -24,7 +24,7 @@ public class BasicPaymentProductGroup implements BasicPaymentItem, Serializable 
     private DisplayHintsPaymentItem displayHints;
 
     // List containing all AccountOnFiles
-    private List<AccountOnFile> accountsOnFile = new ArrayList<AccountOnFile>();
+    private List<AccountOnFile> accountsOnFile = new ArrayList<>();
 
     private String acquirerCountry;
 

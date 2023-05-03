@@ -158,6 +158,6 @@ public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, Basic
      */
 	@Deprecated
     public interface OnBasicPaymentProductsCallCompleteListener {
-        public void onBasicPaymentProductsCallComplete(BasicPaymentProducts basicPaymentProducts);
+        void onBasicPaymentProductsCallComplete(BasicPaymentProducts basicPaymentProducts);
     }
 }

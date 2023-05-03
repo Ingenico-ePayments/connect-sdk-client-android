@@ -25,7 +25,7 @@ public class AccountOnFile implements Serializable {
 	private DisplayHintsAccountOnFile displayHints;
 
 
-	private List<KeyValuePair> attributes = new ArrayList<KeyValuePair>();
+	private List<KeyValuePair> attributes = new ArrayList<>();
 
 
 	public Integer getId() {

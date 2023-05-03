@@ -86,6 +86,6 @@ public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyRespons
     	 * Listener that is called when publickey is loaded
     	 * @param response, the PublicKeyResponse which contains the public key data
     	 */
-        public void onPublicKeyLoaded(PublicKeyResponse response);
+        void onPublicKeyLoaded(PublicKeyResponse response);
     }
 }
