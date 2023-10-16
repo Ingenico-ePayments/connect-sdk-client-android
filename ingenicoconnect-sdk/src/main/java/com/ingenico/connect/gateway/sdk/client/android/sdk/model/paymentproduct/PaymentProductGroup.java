@@ -12,8 +12,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Pojo which holds the BasicPaymentProductGroup data and it's PaymentProductFields
- * This class is filled by deserialising a JSON string from the GC gateway
+ * POJO which holds the {@link BasicPaymentProductGroup} data and its paymentProductFields.
  */
 public class PaymentProductGroup extends BasicPaymentProductGroup implements PaymentItem, Serializable {
 

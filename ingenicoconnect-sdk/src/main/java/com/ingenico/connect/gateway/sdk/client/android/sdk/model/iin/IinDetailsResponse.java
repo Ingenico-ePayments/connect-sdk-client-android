@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Pojo that contains the response for IIN lookup
+ * POJO that contains the response for IIN lookup.
  */
 public class IinDetailsResponse implements Serializable {
 

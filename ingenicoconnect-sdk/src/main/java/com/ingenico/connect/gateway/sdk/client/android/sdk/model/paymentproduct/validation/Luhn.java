@@ -7,9 +7,8 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct
 import java.io.Serializable;
 
 /**
- * Pojo which holds the Luhn data
- * This class is filled by deserialising a JSON string from the GC gateway
- * Used for validation
+ * POJO which holds the Luhn data.
+ * Used for validation.
  */
 public class Luhn implements Serializable {
 

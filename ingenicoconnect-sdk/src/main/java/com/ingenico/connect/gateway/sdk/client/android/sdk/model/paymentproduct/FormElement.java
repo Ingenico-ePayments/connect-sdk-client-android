@@ -11,10 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * POJO that represents a Formelement object
- * This class is filled by deserialising a JSON string from the GC gateway
- * The Formelements are used for determining whether it is a list or text input field
- * In case of list, it also has values inside the valuemapping
+ * POJO that represents a FormElement object.
+ * The FormElement is used for determining its list type (text, list, currency, date or boolean).
+ * In case of a list, it also has values inside the valueMapping.
  */
 public class FormElement implements Serializable {
 

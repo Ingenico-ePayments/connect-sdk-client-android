@@ -5,7 +5,7 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct;
 
 /**
- * Enum containing all the possible Mobile Integration Levels
+ * Enum containing all the possible Mobile Integration Levels.
  */
 public enum MobileIntegrationLevel {
 	NO_SUPPORT,

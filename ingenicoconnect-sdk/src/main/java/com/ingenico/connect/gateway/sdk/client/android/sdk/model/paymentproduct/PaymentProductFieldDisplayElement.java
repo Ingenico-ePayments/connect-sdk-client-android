@@ -7,8 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct
 import java.io.Serializable;
 
 /**
- * Pojo which holds a PaymentProductFieldDisplayElement.
- * This class is filled by deserialising a JSON string from the GC gateway
+ * POJO which holds a PaymentProductFieldDisplayElement.
  */
 public class PaymentProductFieldDisplayElement implements Serializable {
 

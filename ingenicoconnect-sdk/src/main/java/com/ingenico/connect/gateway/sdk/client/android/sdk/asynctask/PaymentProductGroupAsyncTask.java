@@ -18,36 +18,37 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 import java.util.List;
 
 /**
- * AsyncTask which loads a PaymentProductGroup with fields from the GC Gateway
+ * AsyncTask which loads a {@link PaymentProductGroup} from the GC Gateway.
  *
- * @deprecated use {@link ClientApi#getPaymentProductGroup(String, Success, ApiError, Failure)} instead
+ * @deprecated use {@link ClientApi#getPaymentProductGroup(String, Success, ApiError, Failure)} instead.
  */
 
 @Deprecated
 public class PaymentProductGroupAsyncTask extends AsyncTask<String, Void, PaymentProductGroup> {
 
-    // The listener which will be called by the AsyncTask when PaymentProduct with fields is retrieved
+    // The listener which will be called by the AsyncTask when the PaymentProductGroup is retrieved
     private List<OnPaymentProductGroupCallCompleteListener> listeners;
 
-    // Context needed for reading stubbed PaymentProduct
+    // Context needed for reading metadata which is sent to the GC gateway
     private Context context;
 
-    // The groupId for the product which need to be retrieved
+    // The id of the PaymentProductGroup which needs to be retrieved
     private String groupId;
 
     // Communicator which does the communication to the GC gateway
     private C2sCommunicator communicator;
 
-    // PaymentContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
+    // PaymentContext which contains all necessary data for doing call to the GC gateway to retrieve the PaymentProductGroup
     private PaymentContext paymentContext;
 
     /**
-     * Constructor
-     * @param context, used for reading stubbing data
-     * @param groupId, the groupId for the product which need to be retrieved
-     * @param paymentContext, PaymentContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
-     * @param communicator, communicator which does the communication to the GC gateway
-     * @param listeners, listener which will be called by the AsyncTask when the PaymentProduct with fields is retrieved
+     * Create PaymentProductGroupAsyncTask
+     *
+     * @param context used for reading device metadata which is sent to the GC gateway
+     * @param groupId the id of the {@link PaymentProductGroup} which needs to be retrieved
+     * @param paymentContext {@link PaymentContext} which contains all necessary data for doing call to the GC gateway to retrieve the {@link PaymentProductGroup}
+     * @param communicator {@link C2sCommunicator} which does the communication to the GC gateway
+     * @param listeners list of {@link OnPaymentProductGroupCallCompleteListener} which will be called by the AsyncTask when a {@link PaymentProductGroup} is retrieved
      */
     public PaymentProductGroupAsyncTask(Context context, String groupId, PaymentContext paymentContext, C2sCommunicator communicator, List<OnPaymentProductGroupCallCompleteListener> listeners) {
 
@@ -95,13 +96,18 @@ public class PaymentProductGroupAsyncTask extends AsyncTask<String, Void, Paymen
     }
 
     /**
-     * Interface for OnPaymentProductGroupComplete listener
-     * Is called from the PaymentProductGroupAsyncTask when it has retrieved a BasicPaymentProductGroup with fields
+     * Interface for the Async task that retrieved a {@link PaymentProductGroup}.
+     * Is called from the {@link PaymentProductGroupAsyncTask} when it has retrieved a {@link PaymentProductGroup}.
      *
-     * @deprecated use {@link ClientApi#getPaymentProductGroup(String, Success, ApiError, Failure)} instead
+     * @deprecated use {@link ClientApi#getPaymentProductGroup(String, Success, ApiError, Failure)} instead.
      */
     @Deprecated
     public interface OnPaymentProductGroupCallCompleteListener {
+        /**
+         * Invoked when async task was successful and data is available.
+         *
+         * @param paymentProductGroup the retrieved {@link PaymentProductGroup}
+         */
         void onPaymentProductGroupCallComplete(PaymentProductGroup paymentProductGroup);
     }
 }

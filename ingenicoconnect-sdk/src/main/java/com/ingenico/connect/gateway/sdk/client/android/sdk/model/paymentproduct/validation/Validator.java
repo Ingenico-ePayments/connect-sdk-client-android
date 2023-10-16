@@ -7,9 +7,8 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct
 import java.io.Serializable;
 
 /**
- * Pojo which holds the Validator data
- * This class is filled by deserialising a JSON string from the GC gateway
- * Containing all the validation types
+ * POJO which holds the Validator data.
+ * Containing all the validation types.
  */
 public class Validator implements Serializable {
 
@@ -27,7 +26,6 @@ public class Validator implements Serializable {
 	private TermsAndConditions termsAndConditions;
 	private ResidentIdNumber residentIdNumber;
 
-	/** Getters **/
 	public ExpirationDate getExpirationDate(){
 		return expirationDate;
 	}

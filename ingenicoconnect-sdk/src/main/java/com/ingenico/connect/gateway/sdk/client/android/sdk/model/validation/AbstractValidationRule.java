@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 import java.io.Serializable;
 
 /**
- * Abstract class which contains functionality to handle validation
+ * Abstract class which contains functionality to handle validation.
  */
 public abstract class AbstractValidationRule implements Serializable, ValidationRule  {
 

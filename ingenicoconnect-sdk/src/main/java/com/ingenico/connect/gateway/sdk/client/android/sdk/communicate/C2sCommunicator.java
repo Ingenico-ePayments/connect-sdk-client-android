@@ -80,7 +80,7 @@ public class C2sCommunicator implements Serializable {
 
 
 	/**
-	 * Creates the Communicator object which handles the communication with the Ingenico Connect Client API
+	 * Creates the Communicator object which handles the communication with the Ingenico Connect Client API.
 	 */
 	private C2sCommunicator(C2sCommunicatorConfiguration configuration) {
 		this.configuration = configuration;
@@ -88,9 +88,11 @@ public class C2sCommunicator implements Serializable {
 
 
 	/**
-	 * Get C2sCommunicator instance
+	 * Get C2sCommunicator instance.
+	 *
 	 * @param configuration configuration which is used to establish a connection with the GC gateway
-	 * @return the instance of this class
+	 *
+	 * @return {@link C2sCommunicator} singleton instance
 	 */
 	public static C2sCommunicator getInstance(C2sCommunicatorConfiguration configuration) {
 
@@ -102,7 +104,9 @@ public class C2sCommunicator implements Serializable {
 
 
 	/**
-	 * Returns true if the EnvironmentType is set to production; otherwise false is returned.
+	 * Checks whether the EnvironmentType is set to production or not.
+	 *
+	 * @return a Boolean indicating whether the EnvironmentType is set to production or not
      */
 	public boolean isEnvironmentTypeProduction() {
 		return configuration.environmentIsProduction();
@@ -116,12 +120,12 @@ public class C2sCommunicator implements Serializable {
 	}
 
 	/**
-	 * Retrieves a list of basicpaymentproducts from the GC gateway without any fields
+	 * Retrieves {@link BasicPaymentProducts} from the GC gateway without any fields.
 	 *
-	 * @param context, used for reading device metadata which is send to the GC gateway
-	 * @param paymentContext, payment information that is used to retrieve the correct payment products
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param paymentContext {@link PaymentContext} which contains all necessary data to retrieve the correct {@link BasicPaymentProducts}
 	 *
-	 * @return list of BasicPaymentProducts, or null when an error has occured
+	 * @return {@link BasicPaymentProducts}, or null when an error has occurred
 	 */
 	public BasicPaymentProducts getBasicPaymentProducts(PaymentContext paymentContext, Context context) {
 
@@ -175,10 +179,10 @@ public class C2sCommunicator implements Serializable {
 			return basicPaymentProducts;
 
 		} catch (CommunicationException e) {
-			Log.i(TAG, "Error while getting paymentproducts:" + e.getMessage());
+			Log.i(TAG, "Error while getting basicPaymentProducts:" + e.getMessage());
 			return null;
 		} catch (Exception e) {
-			Log.i(TAG, "Error while getting paymentproducts:" + e.getMessage());
+			Log.i(TAG, "Error while getting basicPaymentProducts:" + e.getMessage());
 			return null;
 		} finally {
 			try {
@@ -187,20 +191,20 @@ public class C2sCommunicator implements Serializable {
 					connection.disconnect();
 				}
 			} catch (IOException e) {
-				Log.i(TAG, "Error while getting paymentproducts:" + e.getMessage());
+				Log.i(TAG, "Error while getting basicPaymentProducts:" + e.getMessage());
 			}
 		}
 	}
 
 
 	/**
-	 * Retrieves a single paymentproduct from the GC gateway including all its fields
+	 * Retrieves a single {@link PaymentProduct} from the GC gateway including all its fields.
 	 *
-	 * @param productId, used to retrieve the PaymentProduct that is associated with this id
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param paymentContext, PaymentContext which contains all neccesary data to retrieve a paymentproduct
+	 * @param productId used to retrieve the {@link PaymentProduct} that is associated with this id
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param paymentContext {@link PaymentContext} which contains all necessary data to retrieve a {@link PaymentProduct}
 	 *
-	 * @return PaymentProduct, or null when an error has occured
+	 * @return the {@link PaymentProduct} associated with the entered id, or null when an error has occurred
 	 */
 	public PaymentProduct getPaymentProduct(String productId, Context context, PaymentContext paymentContext) {
 
@@ -264,12 +268,12 @@ public class C2sCommunicator implements Serializable {
 
 
 	/**
-	 * Retrieves a list of basicpaymentproductgroups from the GC gateway without any fields
+	 * Retrieves a list of basic payment groups as {@link BasicPaymentProductGroups} from the GC gateway without any fields.
 	 *
-	 * @param context, used for reading device metadata which is send to the GC gateway
-	 * @param paymentContext, used to retrieve the correct productGroups from the GC gateway
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param paymentContext {@link PaymentContext} which contains all necessary data to retrieve the correct {@link BasicPaymentProductGroups}
 	 *
-	 * @return list of BasicPaymentProducts, or null when an error has occured
+	 * @return {@link BasicPaymentProductGroups}, or null when an error has occurred
 	 */
 	public BasicPaymentProductGroups getBasicPaymentProductGroups(PaymentContext paymentContext, Context context) {
 
@@ -323,10 +327,10 @@ public class C2sCommunicator implements Serializable {
 			return basicPaymentProductGroups;
 
 		} catch (CommunicationException e) {
-			Log.i(TAG, "Error while getting paymentProductGroups:" + e.getMessage());
+			Log.i(TAG, "Error while getting basicPaymentProductGroups:" + e.getMessage());
 			return null;
 		} catch (Exception e) {
-			Log.i(TAG, "Error while getting paymentProductGroups:" + e.getMessage());
+			Log.i(TAG, "Error while getting basicPaymentProductGroups:" + e.getMessage());
 			return null;
 		} finally {
 			try {
@@ -335,19 +339,19 @@ public class C2sCommunicator implements Serializable {
 					connection.disconnect();
 				}
 			} catch (IOException e) {
-				Log.i(TAG, "Error while getting paymentProductGroups:" + e.getMessage());
+				Log.i(TAG, "Error while getting basicPaymentProductGroups:" + e.getMessage());
 			}
 		}
 	}
 
 	/**
-	 * Retrieves a single paymentProductGroup from the GC gateway including all its fields
+	 * Retrieves a single {@link PaymentProductGroup} from the GC gateway including all its fields.
 	 *
-	 * @param groupId, used to retrieve the BasicPaymentProductGroup that is associated with this id
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param paymentContext, PaymentContext which contains all neccesary data to retrieve a paymentProductGroup
+	 * @param groupId used to retrieve the {@link PaymentProductGroup} that is associated with this id
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param paymentContext {@link PaymentContext} which contains all necessary data to retrieve the {@link PaymentProductGroup}
 	 *
-	 * @return PaymentProduct, or null when an error has occured
+	 * @return PaymentProduct, or null when an error has occurred
 	 */
 	public PaymentProductGroup getPaymentProductGroup(String groupId, Context context, PaymentContext paymentContext) {
 
@@ -405,7 +409,16 @@ public class C2sCommunicator implements Serializable {
 		}
 	}
 
-
+	/**
+	 * Retrieves Customer Details from the GC gateway.
+	 *
+	 * @param productId the product id of which the {@link CustomerDetailsResponse} should be retrieved
+	 * @param countryCode the code of the country where the customer resides
+	 * @param values list of {@link KeyValuePair} containing which details from the customer should be retrieved
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 *
+	 * @return CustomerDetailsResponse, or null when an error has occurred
+	 */
 	public CustomerDetailsResponse getCustomerDetails(String productId, String countryCode, List<KeyValuePair> values, Context context) {
 
 		if (productId == null) {
@@ -444,10 +457,10 @@ public class C2sCommunicator implements Serializable {
 			return customerDetailsResponse;
 
 		} catch (CommunicationException e) {
-			Log.i(TAG, "Error while getting customer details:" + e.getMessage());
+			Log.i(TAG, "Error while getting customerDetails:" + e.getMessage());
 			return null;
 		} catch (Exception e) {
-			Log.i(TAG, "Error while getting customer details:" + e.getMessage());
+			Log.i(TAG, "Error while getting customerDetails:" + e.getMessage());
 			return null;
 		} finally {
 			try {
@@ -456,34 +469,34 @@ public class C2sCommunicator implements Serializable {
 					connection.disconnect();
 				}
 			} catch (IOException e) {
-				Log.i(TAG, "Error while getting customer details:" + e.getMessage());
+				Log.i(TAG, "Error while getting customerDetails:" + e.getMessage());
 			}
 		}
 	}
 
 	/**
-	 * Retrieves a list of directories for a given paymentproduct
+	 * Retrieves a list of directory entries as a {@link PaymentProductDirectoryResponse} for a given product id.
 	 *
-	 * @param productId, for which product must the lookup be done
-	 * @param currencyCode, for which currencyCode must the lookup be done
-	 * @param countryCode, for which countryCode must the lookup be done
-	 * @param context, used for reading device metada which is send to the GC gateway
+	 * @param productId the id of the product for which the lookup must be done
+	 * @param currencyCode the currencyCode for which the lookup must be done
+	 * @param countryCode the countryCode for which the lookup must be done
+	 * @param context used for reading device metadata which is sent to the GC gateway
 	 *
-	 * @return PaymentProductDirectoryResponse, or null when an error has occured
+	 * @return the {@link PaymentProductDirectoryResponse} associated with the entered product id, or null when an error has occurred
 	 */
 	public PaymentProductDirectoryResponse getPaymentProductDirectory(String productId, String currencyCode, String countryCode, Context context) {
 
 		if (productId == null) {
-			throw new IllegalArgumentException("Error getting PaymentProduct directory, productId may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProductDirectory, productId may not be null");
 		}
 		if (currencyCode == null) {
-			throw new IllegalArgumentException("Error getting PaymentProduct directory, currencyCode may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProductDirectory, currencyCode may not be null");
 		}
 		if (countryCode == null) {
-			throw new IllegalArgumentException("Error getting PaymentProduct directory, countryCode may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProductDirectory, countryCode may not be null");
 		}
 		if (context == null) {
-			throw new IllegalArgumentException("Error getting PaymentProduct directory, context may not be null");
+			throw new IllegalArgumentException("Error getting PaymentProductDirectory, context may not be null");
 		}
 
 		HttpURLConnection connection = null;
@@ -514,10 +527,10 @@ public class C2sCommunicator implements Serializable {
 			return gson.fromJson(responseBody, PaymentProductDirectoryResponse.class);
 
 		} catch (CommunicationException e) {
-			Log.i(TAG, "Error while getting paymentproduct directory:" + e.getMessage());
+			Log.i(TAG, "Error while getting paymentProductDirectory:" + e.getMessage());
 			return null;
 		} catch (Exception e) {
-			Log.i(TAG, "Error while getting paymentproduct directory:" + e.getMessage());
+			Log.i(TAG, "Error while getting paymentProductDirectory:" + e.getMessage());
 			return null;
 		} finally {
 			try {
@@ -526,25 +539,25 @@ public class C2sCommunicator implements Serializable {
 					connection.disconnect();
 				}
 			} catch (IOException e) {
-				Log.i(TAG, "Error while getting paymentproduct directory:" + e.getMessage());
+				Log.i(TAG, "Error while getting paymentProductDirectory:" + e.getMessage());
 			}
 		}
 	}
 
 
 	/**
-	 * Get the IIN details for the entered partial creditcardnumber
+	 * Retrieves the IIN details as a {@link IinDetailsResponse} for the entered partial credit card number.
 	 *
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param partialCreditCardNumber, entered partial creditcardnumber
-	 * @param paymentContext, meta data for the payment that is used to get contextual information from the GC gateway
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param partialCreditCardNumber entered partial credit card number for which the {@link IinDetailsResponse} should be retrieved
+	 * @param paymentContext {@link PaymentContext} which contains all necessary data to retrieve the {@link IinDetailsResponse}
 	 *
-	 * @return IinDetailsResponse which contains the result of the IIN lookup, or null when an error has occured
+	 * @return {@link IinDetailsResponse} which contains the result of the IIN lookup, or null when an error has occurred
 	 */
 	public IinDetailsResponse getPaymentProductIdByCreditCardNumber(String partialCreditCardNumber, Context context, PaymentContext paymentContext) {
 
 		if (partialCreditCardNumber == null ) {
-			throw new IllegalArgumentException("Error getting IinDetails, partialCreditCardNumber may not be null");
+			throw new IllegalArgumentException("Error getting iinDetails, partialCreditCardNumber may not be null");
 		}
 
 		// Trim partialCreditCardNumber to MAX_CHARS_PAYMENT_PRODUCT_ID_LOOKUP digits
@@ -580,7 +593,7 @@ public class C2sCommunicator implements Serializable {
 			return iinResponse;
 
 		} catch (Exception e) {
-			Log.i(TAG, "Error getting PaymentProductIdByCreditCardNumber response:" + e.getMessage());
+			Log.i(TAG, "Error getting iinDetails:" + e.getMessage());
 			return null;
 		} finally {
 			try {
@@ -589,18 +602,18 @@ public class C2sCommunicator implements Serializable {
 					connection.disconnect();
 				}
 			} catch (IOException e) {
-				Log.i(TAG, "Error while getting PaymentProductIdByCreditCardNumber response:" + e.getMessage());
+				Log.i(TAG, "Error while getting iinDetails:" + e.getMessage());
 			}
 		}
 	}
 
 
 	/**
-	 * Retrieves the publickey from the GC gateway
+	 * Retrieves the public key as a {@link PublicKeyResponse} from the GC gateway.
 	 *
-	 * @param context, used for reading device metada which is send to the GC gateway
+	 * @param context used for reading device metadata which is sent to the GC gateway
 	 *
-	 * @return PublicKeyResponse response , or null when an error has occured
+	 * @return {@link PublicKeyResponse}, or null when an error has occurred
 	 */
 	public PublicKeyResponse getPublicKey(Context context) {
 
@@ -624,10 +637,10 @@ public class C2sCommunicator implements Serializable {
 			return gson.fromJson(responseBody, PublicKeyResponse.class);
 
 		} catch (CommunicationException e) {
-			Log.i(TAG, "Error getting Public key response:" + e.getMessage());
+			Log.i(TAG, "Error getting publicKeyResponse:" + e.getMessage());
 			return null;
 		}  catch (Exception e) {
-			Log.i(TAG, "Error getting Public key response:" + e.getMessage());
+			Log.i(TAG, "Error getting publicKeyResponse:" + e.getMessage());
 			return null;
 		} finally {
 			try {
@@ -636,15 +649,18 @@ public class C2sCommunicator implements Serializable {
 					connection.disconnect();
 				}
 			} catch (IOException e) {
-				Log.i(TAG, "Error getting Public key response:" + e.getMessage());
+				Log.i(TAG, "Error getting publicKeyResponse:" + e.getMessage());
 			}
 		}
 	}
 
 	/**
-	 * Retrieves the ThirdPartyStatus for a given payment
+	 * Retrieves the third party status as a {@link ThirdPartyStatusResponse} for a given payment.
 	 *
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param paymentId the id of the payment for which the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.ThirdPartyStatus} should be retrieved
 	 *
+	 * @return the {@link ThirdPartyStatusResponse} received from the server, or null when an error has occurred
 	 */
 	public ThirdPartyStatusResponse getThirdPartyStatus (Context context, String paymentId) {
 
@@ -668,10 +684,10 @@ public class C2sCommunicator implements Serializable {
 			return gson.fromJson(responseBody, ThirdPartyStatusResponse.class);
 
 		} catch (CommunicationException e) {
-			Log.i(TAG, "Error getting Payment Product Public key response:" + e.getMessage());
+			Log.i(TAG, "Error getting thirdPartyStatusResponse:" + e.getMessage());
 			return null;
 		}  catch (Exception e) {
-			Log.i(TAG, "Error getting Payment Product Public key response:" + e.getMessage());
+			Log.i(TAG, "Error getting thirdPartyStatusResponse:" + e.getMessage());
 			return null;
 		} finally {
 			try {
@@ -680,19 +696,19 @@ public class C2sCommunicator implements Serializable {
 					connection.disconnect();
 				}
 			} catch (IOException e) {
-				Log.i(TAG, "Error getting Payment Product Public key response:" + e.getMessage());
+				Log.i(TAG, "Error getting thirdPartyStatusResponse:" + e.getMessage());
 			}
 		}
 	}
 
 
 	/**
-	 * Converts a given amount in cents from the given source currency to the given target currency
+	 * Converts a given amount in cents from the given source currency to the given target currency.
 	 *
-	 * @param amount,  the amount in cents to be converted
-	 * @param source,  source currency
-	 * @param target,  target currency
-	 * @param context, needed for reading metadata
+	 * @param amount the amount in cents to be converted
+	 * @param source the current currency of the amount
+	 * @param target the currency to which the amount should be converted
+	 * @param context used for reading device metadata which is sent to the GC gateway
 	 *
 	 * @return converted amount
 	 */
@@ -760,23 +776,23 @@ public class C2sCommunicator implements Serializable {
 
 
 	/**
-	 * Returns map of metadata of the device this SDK is running on
-	 * The map contains the SDK version, OS, OS version and screensize
+	 * Returns a map of metadata of the device this SDK is running on.
+	 * The map contains the SDK version, OS, OS version and screen size.
 	 *
-	 * @param context, used for reading device metada which is send to the GC gateway
+	 * @param context used for retrieving device metadata
 	 *
-	 * @return Map<String, String> containing key/values of metadata
+	 * @return a Map containing key/values of metadata
 	 */
 	public Map<String, String> getMetadata(Context context) {
 		return configuration.getMetadata(context);
 	}
 
 	/**
-	 * Does a GET request with HttpURLConnection
+	 * Does a GET request with HttpURLConnection.
 	 *
-	 * @param location, url where the request is sent to
-	 * @param clientSessionId, used for session identification on the GC gateway
-	 * @param metadata, map filled with metadata, which is added to the request
+	 * @param location url where the request is sent to
+	 * @param clientSessionId used for session identification on the GC gateway
+	 * @param metadata map filled with metadata, which is added to the request
 	 *
 	 * @return HttpURLConnection, which contains the response of the request
 	 *
@@ -819,22 +835,22 @@ public class C2sCommunicator implements Serializable {
 			Log.e(TAG, "doHTTPGetRequest, IOException while opening connection " + e.getMessage());
 			throw new CommunicationException("IOException while opening connection " + e.getMessage(), e);
 		} catch (KeyManagementException e) {
-			Log.e(TAG, "doHTTPPostRequest, KeyManagementException while opening connection " + e.getMessage());
+			Log.e(TAG, "doHTTPGetRequest, KeyManagementException while opening connection " + e.getMessage());
 			throw new CommunicationException("KeyManagementException while opening connection " + e.getMessage(), e);
 		} catch (NoSuchAlgorithmException e) {
-			Log.e(TAG, "doHTTPPostRequest, NoSuchAlgorithmException while opening connection " + e.getMessage());
+			Log.e(TAG, "doHTTPGetRequest, NoSuchAlgorithmException while opening connection " + e.getMessage());
 			throw new CommunicationException("NoSuchAlgorithmException while opening connection " + e.getMessage(), e);
 		}
 	}
 
 
 	/**
-	 * Does a POST request with HttpClient
+	 * Does a POST request with HttpClient.
 	 *
-	 * @param location, url where the request is sent to
-	 * @param clientSessionId, used for identification on the GC gateway
-	 * @param metadata, map filled with metadata, which is added to the request
-	 * @param postBody, the content of the postbody
+	 * @param location url where the request is sent to
+	 * @param clientSessionId used for identification on the GC gateway
+	 * @param metadata map filled with metadata, which is added to the request
+	 * @param postBody the content of the post body
 	 *
 	 * @return HttpURLConnection, which contains the response of the request
 	 *
@@ -930,7 +946,7 @@ public class C2sCommunicator implements Serializable {
 
 
 	/**
-	 * Logs all request headers, url and body
+	 * Logs all request headers, url and body.
 	 */
 	private void logRequest(HttpURLConnection connection, String postBody) {
 
@@ -951,9 +967,9 @@ public class C2sCommunicator implements Serializable {
 	}
 
 	/**
-	 * Logs all response headers, statuscode and body
+	 * Logs all response headers, status code and body.
 	 *
-	 * @throws IOException
+	 * @throws IOException when an error occurs while retrieving response code
      */
 	private void logResponse(HttpURLConnection connection, String responseBody) throws IOException {
 

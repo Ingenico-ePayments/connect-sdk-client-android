@@ -15,8 +15,7 @@ import java.util.Objects;
 
 /**
  *
- * Pojo with convenience methods for getting ProdcutGroup and AccountOnFile objects
- * This class is filled by deserialising a JSON string from the GC gateway
+ * POJO with convenience methods for getting {@link BasicPaymentProductGroup} and {@link AccountOnFile} objects.
  */
 public class BasicPaymentProductGroups implements Serializable {
 
@@ -35,7 +34,8 @@ public class BasicPaymentProductGroups implements Serializable {
 
     /**
      * Gets all basicPaymentProductGroups
-     * @return
+     *
+     * @return a sorted list of all basicPaymentProductGroups
      */
     public List<BasicPaymentProductGroup> getBasicPaymentProductGroups() {
         sortList();
@@ -65,8 +65,9 @@ public class BasicPaymentProductGroups implements Serializable {
 
 
     /**
-     * Gets all AccountsOnFile for all BasicPaymentProductGroups
-     * @return all AccountsOnFile for all BasicPaymentProductGroups
+     * Gets all AccountsOnFile for all basicPaymentProductGroups
+     *
+     * @return all AccountsOnFile for all basicPaymentProductGroups
      */
     public List<AccountOnFile> getAccountsOnFile() {
 
@@ -82,14 +83,15 @@ public class BasicPaymentProductGroups implements Serializable {
 
 
     /**
-     * Gets a BasicPaymentProductGroup by its id
-     * @param paymentProductGroupId, the id of the BasicPaymentProductGroup
-     * @return paymentProductGroup, the paymentProductGroup, corresponding to the id
+     * Gets a {@link BasicPaymentProductGroup} by its id
+     *
+     * @param paymentProductGroupId the id of the {@link BasicPaymentProductGroup}
+     * @return the retrieved {@link BasicPaymentProductGroup}, or null if not found
      */
     public BasicPaymentProductGroup getPaymentProductGroupById(String paymentProductGroupId) {
 
         if (paymentProductGroupId == null) {
-            throw new IllegalArgumentException("Error getting paymentProductGroup by id, paymentProductId may not be null");
+            throw new IllegalArgumentException("Error getting paymentProductGroup by id, paymentProductGroupId may not be null");
         }
 
         for (BasicPaymentProductGroup paymentProductGroup : basicPaymentProductGroups) {
@@ -101,8 +103,9 @@ public class BasicPaymentProductGroups implements Serializable {
     }
 
     /**
-     * returns a list of PaymentProductSelectables instead of BasicPaymentProducts
-     * @return list of PaymentProductSelectables
+     * Returns a list of basicPaymentItems instead of basicPaymentProducts
+     *
+     * @return list of basicPaymentItems
      */
     public List<BasicPaymentItem> getPaymentProductGroupsAsItems() {
         List<BasicPaymentItem> basicPaymentItems = new ArrayList<>();

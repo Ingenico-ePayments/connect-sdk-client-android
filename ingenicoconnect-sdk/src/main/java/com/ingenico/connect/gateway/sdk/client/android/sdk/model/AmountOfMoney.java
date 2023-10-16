@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 
 /**
- * Pojo that contains money information for a payment
+ * POJO that contains money information for a payment.
  */
 public class AmountOfMoney implements Serializable {
 
@@ -17,6 +17,11 @@ public class AmountOfMoney implements Serializable {
     private final Long amount;
     private final String currencyCode;
 
+    /**
+     * @param amount the amount in the smallest possible denominator of the provided currency
+     * @param currencyCode the ISO-4217 Currency Code
+     * @see <a href="https://www.iso.org/iso-4217-currency-codes.html">ISO 4217 Currency Codes</a>
+     */
     public AmountOfMoney(Long amount, String currencyCode) {
         this.amount = amount;
         this.currencyCode = currencyCode;

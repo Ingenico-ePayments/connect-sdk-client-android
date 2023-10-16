@@ -25,9 +25,8 @@ import java.util.List;
 
 
 /**
- * POJO that represents an Data restrictions object
- * This class is filled by deserialising a JSON string from the GC gateway
- * The DataRestrictions are used for validating user input
+ * POJO that represents an Data restrictions object.
+ * The DataRestrictions are used for validating user input.
  */
 public class DataRestrictions implements Serializable {
 

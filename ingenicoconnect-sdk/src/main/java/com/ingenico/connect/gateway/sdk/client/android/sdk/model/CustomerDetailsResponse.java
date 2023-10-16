@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Pojo that holds the CustomerDetails call response
+ * POJO that holds the CustomerDetails call response.
  */
 public class CustomerDetailsResponse {
 
@@ -111,7 +111,9 @@ public class CustomerDetailsResponse {
     }
 
     /**
-     * Returns a Map of the fields, where the key is the fieldId
+     * Returns a Map of the fields, where the key is the fieldId.
+     *
+     * @return a Map containing the fields and their corresponding values
      */
     public Map<String, String> getFieldsAsMap() {
         HashMap<String, String> fieldsAsMap = new HashMap<>();

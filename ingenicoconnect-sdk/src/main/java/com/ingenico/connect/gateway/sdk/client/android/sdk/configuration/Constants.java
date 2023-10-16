@@ -7,12 +7,12 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v6.1.0";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v6.1.1";
 
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
 
-	/** Available paths on the Ingenico Connect Client API  **/
+	// Available paths on the Ingenico Connect Client API
 	/**
 	 * @deprecated Will be removed in a future release.
 	 */
@@ -69,7 +69,7 @@ public class Constants {
 	@Deprecated
 	public final static String GC_GATEWAY_THIRDPARTYSTATUS_PATH = "[cid]/payments/[paymentid]/thirdpartystatus";
 
-	/** SharedPreferences keys **/
+	// SharedPreferences keys
 	/**
 	 * @deprecated Will be removed in a future release.
 	 */
@@ -81,7 +81,7 @@ public class Constants {
 	@Deprecated
 	public final static String PREFERENCES_LOGO_MAP = "payment_product_logos_map";
 
-	/** File location settings **/
+	// File location settings
 	/**
 	 * @deprecated Will be removed in a future release.
 	 */
@@ -103,15 +103,17 @@ public class Constants {
 	@Deprecated
 	public final static String FILENAME_LOGO_PREFIX = "logo_logos";
 
-	/** Disable/Enable logging of all requests and responses made to the Ingenico Connect Client API **/
 	/**
+	 * Disable/Enable logging of all requests and responses made to the Ingenico Connect Client API
+	 *
 	 * @deprecated Will be removed in a future release.
 	 */
 	@Deprecated
 	public final static Boolean ENABLE_REQUEST_LOGGING = true;
 
-	/** Time constant that should be used to determine if a call took to long to return **/
 	/**
+	 * Time constant that should be used to determine if a call took to long to return
+	 *
 	 * @deprecated Will be removed in a future release.
 	 */
 	@Deprecated
@@ -120,27 +122,31 @@ public class Constants {
 	/** Cards Group ID **/
 	public final static String PAYMENTPRODUCTGROUPID_CARDS = "cards";
 
-	/** Payment product Id's of android and apple pay **/
+	/** Apple Pay product ID **/
 	public final static String PAYMENTPRODUCTID_APPLEPAY = "302";
+	/** Google Pay product ID**/
 	public final static String PAYMENTPRODUCTID_GOOGLEPAY = "320";
 
 	public final static int GOOGLE_API_VERSION = 2;
 	public final static String 	GOOGLE_PAY_TOKEN_FIELD_ID = "encryptedPaymentData";
 
-	/** Boleto Bancario product ID and Fiscal number field ID **/
+	/** Boleto Bancario product ID **/
 	public final static String PAYMENTPRODUCTID_BOLETOBANCARIO = "1503";
+	/** Fiscal number field ID **/
 	public final static String FISCAL_NUMBER_FIELD_ID = "fiscalNumber";
 
-	/** BanContact payment product ID **/
+	/** BanContact product ID **/
 	public final static String PAYMENTPRODUCTID_BanContact = "3012";
 
 	/** @deprecated Use {@link #PAYMENTPRODUCTID_BanContact} instead **/
 	@Deprecated
 	public final static String PAYMENTPRODUCTID_BCMC = "3012";
 
-	/** Afterpay Installments payment product ID and relevant field ID's**/
+	/** Afterpay Installments product ID **/
 	public final static String PAYMENTPRODUCTID_AFTERPAY_INSTALLMENTS = "9000";
+	/** Afterpay Invoice product ID **/
 	public final static String PAYMENTPRODUCTID_AFTERPAY_INVOICE = "9001";
+	// Other relevant field ID's for Afterpay Installments
 	public final static String INSTALLMENTPLAN_FIELD_ID = "installmentId";
 	public final static String TERMSANDCONDITIONS_FIELD_ID = "termsAndConditions";
 

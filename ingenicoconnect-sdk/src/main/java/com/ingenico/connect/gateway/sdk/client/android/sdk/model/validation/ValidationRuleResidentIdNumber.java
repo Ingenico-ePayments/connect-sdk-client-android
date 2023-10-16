@@ -20,11 +20,12 @@ public class ValidationRuleResidentIdNumber extends AbstractValidationRule {
     }
 
     /**
-     * Validates that the value in the field with fieldId is a valid Chinese Resident ID number
-     * @param paymentRequest The initialized payment request
-     * @param fieldId The ID of the field to which to apply the current validator
-     * @return true if the value in the field with <code>fieldId</code> is a valid Resident ID number;
-     * false if the value does not pass the check.
+     * Validates that the value in the field with fieldId is a valid Chinese Resident ID number.
+     *
+     * @param paymentRequest the fully filled {@link PaymentRequest} that will be used for doing a payment
+     * @param fieldId the ID of the field to which to apply the current validator
+     *
+     * @return true, if the value in the field with fieldId is a valid Resident ID number; false, if the value does not pass the check or if the fieldId could not be found
      */
     @Override
     public boolean validate(PaymentRequest paymentRequest, String fieldId) {

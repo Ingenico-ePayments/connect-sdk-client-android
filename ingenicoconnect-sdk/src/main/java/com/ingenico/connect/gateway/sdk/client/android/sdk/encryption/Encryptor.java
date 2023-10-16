@@ -21,10 +21,10 @@ import java.util.Arrays;
 
 
 /**
- * Handles all Encryption related functionality
- * Uses the JOSE web encryption standard which can be found at
- * http://tools.ietf.org/html/draft-ietf-jose-json-web-encryption-29
+ * Handles all Encryption related functionality.
+ * Uses the JOSE web encryption standard.
  *
+ * @see <a href="http://tools.ietf.org/html/draft-ietf-jose-json-web-encryption-29">JOSE web encryption standard</a>
  * @deprecated This class will become internal to the SDK. Use {@link com.ingenico.connect.gateway.sdk.client.android.ConnectSDK#encryptPaymentRequest(PaymentRequest, Success, Failure)} for encryption instead.
  */
 @Deprecated
@@ -51,9 +51,9 @@ public class Encryptor {
 
 
 	/**
-	 * Constructor
+	 * Create Encryptor
 	 *
-	 * @param publicKeyResponse, contains the GC gateway public key
+	 * @param publicKeyResponse contains the GC gateway public key
 	 */
 	public Encryptor(PublicKeyResponse publicKeyResponse) {
 		this.publicKeyResponse = publicKeyResponse;
@@ -61,9 +61,9 @@ public class Encryptor {
 
 
 	/**
-	 * Encrypts all paymentproductfield values for the given PaymentRequest
+	 * Encrypts all payment product field values for the given paymentRequest as {@link EncryptData}.
 	 *
-	 * @param encryptData, EncryptData which contains all fieldvalues and variables required for making a paymentrequest
+	 * @param encryptData contains all field values and variables required for making a payment request
 	 *
 	 * @return encrypted String
 	 */
@@ -127,15 +127,15 @@ public class Encryptor {
 
 
 	/**
-	 * Calculates HMAC over the data
+	 * Calculates HMAC over the data.
 	 *
-	 * @param macKey, unique random key
-	 * @param additionalAuthenticatedData
-	 * @param initializationVector
-	 * @param cipherText
-	 * @param al
+	 * @param macKey unique random key
+	 * @param additionalAuthenticatedData Additional Authenticated Data
+	 * @param initializationVector Initialization Vector
+	 * @param cipherText encrypted data
+	 * @param al Additional Authenticated Data Length
 	 *
-	 * @return encrypted
+	 * @return HMAC value
 	 */
 	private byte[] calculateHMAC(byte[] macKey, byte[] additionalAuthenticatedData, byte[] initializationVector, byte[] cipherText, byte[] al) throws IOException, EncryptDataException {
 		// Create HMAC Computation input
@@ -148,9 +148,9 @@ public class Encryptor {
 
 
 	/**
-	 * Creates Protected header string which determines the Algorithm and Encryption with which the payload will be encrypted
+	 * Creates Protected header string which determines the Algorithm and Encryption with which the payload will be encrypted.
 	 *
-	 * @return Protected header String
+	 * @return protected header String
 	 */
 	private String createProtectedHeader() {
 
@@ -165,9 +165,11 @@ public class Encryptor {
 
 
 	/**
-	 * Creates the CompactRespresentation of all the encrypted components
-	 * @param components, list of all components
-	 * @return CompactRespresentation of all the encrypted components
+	 * Creates the CompactRepresentation of all the encrypted components.
+	 *
+	 * @param components list of all components
+	 *
+	 * @return CompactRepresentation of all the encrypted components
 	 */
 	private String buildCompactRespresentation(String ... components) {
 
@@ -187,9 +189,9 @@ public class Encryptor {
 
 
 	/**
-	 * Calculate Additional Authenticated Data Length
+	 * Calculate Additional Authenticated Data Length.
 	 *
-	 * @return byte respresentation of the Additional Authenticated Data Length
+	 * @return byte representation of the Additional Authenticated Data Length
 	 */
 	private byte[] calculateAdditionalAuthenticatedDataLength(byte[] additionalAuthenticatedData) {
 		long lengthInBits = Long.valueOf(additionalAuthenticatedData.length) * 8;

@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 import java.io.Serializable;
 
 /**
- * Contains errormessage information for one field
+ * Contains error message information for a specific field.
  */
 public class ValidationErrorMessage implements Serializable {
 

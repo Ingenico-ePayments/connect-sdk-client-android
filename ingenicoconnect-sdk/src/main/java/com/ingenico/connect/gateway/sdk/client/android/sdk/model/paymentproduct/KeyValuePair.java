@@ -7,9 +7,8 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct
 import java.io.Serializable;
 
 /**
- * POJO that represents an KeyValuePair object
- * This class is filled by deserialising a JSON string from the GC gateway
- * The KeyValuePairs contains the information from the account on file
+ * POJO that represents an KeyValuePair object.
+ * The KeyValuePairs contains the information from the {@link AccountOnFile}.
  */
 public class KeyValuePair implements Serializable {
 

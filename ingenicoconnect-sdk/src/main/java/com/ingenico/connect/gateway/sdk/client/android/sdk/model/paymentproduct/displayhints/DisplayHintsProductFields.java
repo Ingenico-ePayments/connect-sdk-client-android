@@ -11,16 +11,14 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.
 import java.io.Serializable;
 
 /**
- * POJO that represents an DisplayHintsProductFields object
- * This class is filled by deserialising a JSON string from the GC gateway
- * Contains information for payment product fields
+ * POJO that represents an DisplayHintsProductFields object.
  */
 public class DisplayHintsProductFields implements Serializable {
 
 	private static final long serialVersionUID = -4396644758512959868L;
 
 	/**
-	 * Enum containing all the possible input types
+	 * Enum containing all the possible input types.
 	 *
 	 */
 	public enum PreferredInputType {
@@ -52,8 +50,6 @@ public class DisplayHintsProductFields implements Serializable {
 	private Tooltip tooltip;
 	private FormElement formElement;
 
-
-	/** Getters **/
 	public Tooltip getTooltip(){
 		return tooltip;
 	}

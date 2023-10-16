@@ -24,7 +24,7 @@ import java.util.Map;
 
 
 /**
- * This class is responsible for writing files on disk who act as cache for certain data
+ * This class is responsible for writing files on disk that act as a cache for certain data.
  *
  * @deprecated this class will be removed in a future release.
  */
@@ -51,22 +51,21 @@ class WriteInternalStorage {
 
 
 	/**
-	 * Stores the given iinResponses in the cache on disk
+	 * Stores the given {@link IinDetailsResponse} in the cache on disk.
 	 *
-	 * @param context, used for writing files
-	 * @param partialCreditCardNumber, entered partial creditcardnumber
-	 * @param IinDetailsResponse, the IinDetailsResponse which is added to the current cache
+	 * @param partialCreditCardNumber entered partial credit card number
+	 * @param iinResponse the {@link IinDetailsResponse} which is added to the current cache
 	 */
 	public void storeIinResponseInCache(String partialCreditCardNumber, IinDetailsResponse iinResponse) {
 
 		if (partialCreditCardNumber == null) {
-			throw new IllegalArgumentException("Error storing response in partialCreditCardNumber, context may not be null");
+			throw new IllegalArgumentException("Error storing response in cache, partialCreditCardNumber may not be null");
 		}
 		if (iinResponse == null) {
-			throw new IllegalArgumentException("Error storing response in iinResponse, iinResponse may not be null");
+			throw new IllegalArgumentException("Error storing response in cache, iinResponse may not be null");
 		}
 
-		// Retrieve the currenct cached items and add the new one to it
+		// Retrieve the current cached items and add the new one to it
 		Map<String, IinDetailsResponse> currentCachedIinResponses = storage.getIinResponsesFromCache();
 
 		// Overwrite old value if it exists
@@ -85,15 +84,15 @@ class WriteInternalStorage {
 		) {
 			objectOutputStream.writeObject(currentCachedIinResponses);
         } catch (IOException e) {
-			Log.e(TAG, "Error storing BasicPaymentProducts on internal device storage", e);
+			Log.e(TAG, "Error storing IinDetailsResponse on internal device storage", e);
 		}
 	}
 
 	/**
-	 * Stores the given image on disk
+	 * Stores the given image on disk.
 	 *
-	 * @param paymentProductId, used for creating the file on disk
-	 * @param image, Drawable that is written to disl
+	 * @param paymentProductId used for creating the file on disk
+	 * @param image Drawable that is written to disk after conversion to a Bitmap
 	 */
 	public void storeLogoOnInternalStorage(String paymentProductId, Drawable image) {
 

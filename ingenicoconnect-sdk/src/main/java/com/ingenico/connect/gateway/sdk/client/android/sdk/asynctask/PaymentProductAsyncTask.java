@@ -20,18 +20,18 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 import java.util.List;
 
 /**
- * AsyncTask which loads a PaymentProduct with fields from the GC Gateway
+ * AsyncTask which loads a {@link PaymentProduct} from the GC Gateway.
  *
- * @deprecated use {@link ClientApi#getPaymentProduct(String, Success, ApiError, Failure)} instead
+ * @deprecated use {@link ClientApi#getPaymentProduct(String, Success, ApiError, Failure)} instead.
  */
 
 @Deprecated
 public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProduct> {
 
-	// The listener which will be called by the AsyncTask when PaymentProduct with fields is retrieved
+	// The listeners which will be called by the AsyncTask when the PaymentProduct is retrieved
 	private List<OnPaymentProductCallCompleteListener> listeners;
 
-	// Context needed for reading stubbed PaymentProduct
+	// Context needed for reading metadata which is sent to the GC gateway
 	private Context context;
 
 	// The productId for the product which need to be retrieved
@@ -40,17 +40,18 @@ public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProd
 	// Communicator which does the communication to the GC gateway
 	private C2sCommunicator communicator;
 
-	// PaymentContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
+	// PaymentContext which contains all necessary data for doing call to the GC gateway to retrieve the PaymentProduct
 	private PaymentContext paymentContext;
 
 
 	/**
-	 * Constructor
-	 * @param context, used for reading stubbing data
-	 * @param productId, the productId for the product which need to be retrieved
-	 * @param paymentContext, PaymentContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
-	 * @param communicator, communicator which does the communication to the GC gateway
-	 * @param listeners, listener which will be called by the AsyncTask when the PaymentProduct with fields is retrieved
+	 * Create PaymentProductAsyncTask
+	 *
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param productId the productId of the product which need to be retrieved
+	 * @param paymentContext {@link PaymentContext} which contains all necessary data for doing call to the GC gateway to retrieve the {@link PaymentProduct}
+	 * @param communicator {@link C2sCommunicator} which does the communication to the GC gateway
+	 * @param listeners list of {@link OnPaymentProductCallCompleteListener} which will be called by the AsyncTask when the {@link PaymentProduct} is loaded
 	 */
 	public PaymentProductAsyncTask(Context context, String productId, PaymentContext paymentContext, C2sCommunicator communicator,
 								   List<OnPaymentProductCallCompleteListener> listeners) {
@@ -68,7 +69,7 @@ public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProd
 			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, communicator may not be null");
 		}
 		if (listeners == null ) {
-			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, listener may not be null");
+			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, listeners may not be null");
 		}
 
 		this.context = context;
@@ -108,13 +109,18 @@ public class PaymentProductAsyncTask extends AsyncTask<String, Void, PaymentProd
 
 
 	/**
-	 * Interface for OnPaymentProductCallComplete listener
-	 * Is called from the PaymentProductAsyncTask when it has retrieved a PaymentProduct with fields
+	 * Interface for the Async task that retrieves a {@link PaymentProduct}.
+	 * Is called from the {@link PaymentProductAsyncTask} when it has retrieved a {@link PaymentProduct}.
 	 *
-	 * @deprecated use {@link ClientApi#getPaymentProduct(String, Success, ApiError, Failure)} instead
+	 * @deprecated use {@link ClientApi#getPaymentProduct(String, Success, ApiError, Failure)} instead.
 	 */
 	@Deprecated
 	public interface OnPaymentProductCallCompleteListener {
+		/**
+		 * Invoked when async task was successful and data is available.
+		 *
+		 * @param paymentProduct the retrieved {@link PaymentProduct}
+		 */
 		void onPaymentProductCallComplete(PaymentProduct paymentProduct);
 	}
 }

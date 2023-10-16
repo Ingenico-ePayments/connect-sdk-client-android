@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin;
 import java.io.Serializable;
 
 /**
- * Pojo that contains IinDetail
+ * POJO that contains IinDetail.
  */
 public class IinDetail implements Serializable {
 

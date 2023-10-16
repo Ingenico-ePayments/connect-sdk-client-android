@@ -5,7 +5,7 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 /**
- * Model for getting scaled images
+ * POJO for getting scaled images.
  */
 public class Size {
 

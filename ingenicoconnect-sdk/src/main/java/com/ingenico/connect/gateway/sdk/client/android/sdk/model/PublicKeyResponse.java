@@ -17,7 +17,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
 
 /**
- * Pojo that holds the PublicKey call response from the GC gateway
+ * POJO that holds the PublicKey call response from the GC gateway.
  */
 public class PublicKeyResponse {
 
@@ -38,7 +38,8 @@ public class PublicKeyResponse {
 	}
 
 	/**
-	 * Gets the keyId
+	 * Gets the keyId.
+	 *
 	 * @return String keyId
 	 */
 	public String getKeyId() {
@@ -46,7 +47,8 @@ public class PublicKeyResponse {
 	}
 
 	/**
-	 * Gets the PublicKey
+	 * Gets the PublicKey.
+	 *
 	 * @return PublicKey
 	 */
 	public PublicKey getPublicKey() {

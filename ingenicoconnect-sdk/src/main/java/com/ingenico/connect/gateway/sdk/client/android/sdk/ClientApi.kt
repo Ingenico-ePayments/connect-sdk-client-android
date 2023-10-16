@@ -49,11 +49,11 @@ class ClientApi(
     private var compositeDisposable = CompositeDisposable()
 
     /**
-     * Gets the payment products from the gateway.
+     * Gets the [BasicPaymentProducts] from the gateway.
      *
-     * @param onSuccess Calls this parameter when payment products successful fetched.
-     * @param onApiError Calls this parameter when an api error is returned by the server.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param onSuccess calls this parameter when [BasicPaymentProducts] is successfully fetched
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     fun getPaymentProducts(
         onSuccess: Success<BasicPaymentProducts>,
@@ -76,12 +76,12 @@ class ClientApi(
     }
 
     /**
-     * Gets the payment product from the gateway.
+     * Gets the [PaymentProduct] from the gateway.
      *
-     * @param paymentProductId The paymentProductId of the product which needs to be retrieved from the server.
-     * @param onSuccess Calls this parameter when payment a product successful fetched.
-     * @param onApiError Calls this parameter when an api error is returned by the server.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param paymentProductId the paymentProductId of the product which needs to be retrieved from the server
+     * @param onSuccess calls this parameter when a [PaymentProduct] is successfully fetched
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     fun getPaymentProduct(
         paymentProductId: String,
@@ -106,11 +106,11 @@ class ClientApi(
     }
 
     /**
-     * Gets the payment products from the gateway.
+     * Gets the [BasicPaymentProductGroups] from the gateway.
      *
-     * @param onSuccess Calls this parameter when payment product groups successful fetched.
-     * @param onApiError Calls this parameter when an api error is returned by the server.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param onSuccess calls this parameter when [BasicPaymentProductGroups] is successfully fetched
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     fun getPaymentProductGroups(
         onSuccess: Success<BasicPaymentProductGroups>,
@@ -133,13 +133,12 @@ class ClientApi(
     }
 
     /**
-     * Gets the payment product group from the gateway.
+     * Gets the [PaymentProductGroup] from the gateway.
      *
-     * @param paymentProductGroupId
-     * The paymentProductGroupId of the product which needs to be retrieved from the server.
-     * @param onSuccess Calls this parameter when payment product group successful fetched.
-     * @param onApiError Calls this parameter when an api error is returned by the server.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param paymentProductGroupId the paymentProductGroupId of the product which needs to be retrieved from the server
+     * @param onSuccess calls this parameter when a [PaymentProductGroup] is successfully fetched
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     fun getPaymentProductGroup(
         paymentProductGroupId: String,
@@ -164,11 +163,11 @@ class ClientApi(
     }
 
     /**
-     * Gets the payment items from the gateway.
+     * Gets the [BasicPaymentItems] from the gateway.
      *
-     * @param onSuccess Calls this parameter when payment items successful fetched.
-     * @param onApiError Calls this parameter when an api error is returned by the server.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param onSuccess calls this parameter when [BasicPaymentItems] is successfully fetched
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     fun getPaymentItems(
         onSuccess: Success<BasicPaymentItems>,
@@ -192,15 +191,17 @@ class ClientApi(
     }
 
     /**
-     * Gets the customer details from the gateway.
+     * Gets the customer details as a [CustomerDetailsResponse] from the gateway.
      *
-     * @param paymentProductId The paymentProductId of the product which needs to be retrieved from the server.
-     * @param countryCode The code of the country where the customer should reside.
-     * @param values A list of keys with a value used to retrieve the details of a customer.
-     * Depending on the country code, different keys are required
-     * @param onSuccess Calls this parameter when customer details successful fetched.
-     * @param onApiError Calls this parameter when an api error is returned by the server.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param paymentProductId the paymentProductId of the product
+     *        for which the customer details need to be retrieved from the server
+     * @param countryCode the code of the country where the customer resides
+     * @param values a list of keys with a value used to retrieve the details of a customer.
+     *        Depending on the country code, different keys are required
+     * @param onSuccess calls this parameter when customer details
+     *        are successfully fetched as a [CustomerDetailsResponse]
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     @Suppress("LongParameterList")
     fun getCustomerDetails(
@@ -229,12 +230,13 @@ class ClientApi(
     }
 
     /**
-     * Gets payment product directories from the gateway.
+     * Gets payment product directories as a [PaymentProductDirectoryResponse] from the gateway.
      * Mainly used for IDEAL payments.
      *
-     * @param onSuccess Calls this parameter when payment product directories successful fetched.
-     * @param onApiError Calls this parameter when an api error is returned by the server.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param onSuccess calls this parameter when payment product directories
+     *        are successfully fetched as a [PaymentProductDirectoryResponse]
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     fun getPaymentProductDirectory(
         paymentProductId: String,
@@ -259,12 +261,13 @@ class ClientApi(
     }
 
     /**
-     * Gets the IinDetails for a given Bank Identification Number
+     * Gets the IinDetails as a [IinDetailsResponse] for a given Bank Identification Number.
      *
      * @param bin Bank Identification Number, first six digits of a bank card number or payment cards number
-     * @param onSuccess Calls this parameter when the details of a IIN successful fetched.
-     * @param onApiError Calls this parameter when an api error is returned by the server.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param onSuccess calls this parameter when the details of an IIN
+     *        are successfully fetched as a [IinDetailsResponse]
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     fun getIINDetails(
         bin: String,
@@ -289,8 +292,12 @@ class ClientApi(
     }
 
     /**
-     * Gets the public key from the gateway.
+     * Gets the public key as a [PublicKeyResponse] from the gateway.
      * Use this method only in combination with an encryption method.
+     *
+     * @param onSuccess calls this parameter when the public key is successfully fetched as a [PublicKeyResponse]
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     fun getPublicKey(
         onSuccess: Success<PublicKeyResponse>,
@@ -312,13 +319,13 @@ class ClientApi(
     }
 
     /**
-     * Gets the third party status from the gateway.
-     * supported payment products for this call is Bancontact and WeChat Pay.
+     * Gets the [ThirdPartyStatus] from the gateway.
+     * Supported payment products for this call are Bancontact and WeChat Pay.
      *
-     * @param paymentId The payment id for this payment.
-     * @param onSuccess Calls this parameter when the third party status successful fetched.
-     * @param onApiError Calls this parameter when an api error is returned by the server.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param paymentId the payment id for this payment
+     * @param onSuccess calls this parameter when the [ThirdPartyStatus] is successfully fetched
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     fun getThirdPartyStatus(
         paymentId: String,
@@ -344,12 +351,12 @@ class ClientApi(
     /**
      * Converts a given amount in cents from the given source currency to the given target currency
      *
-     * @param source Source currency.
-     * @param target Target currency.
-     * @param amount The amount in cents to be converted.
-     * @param onSuccess Calls this parameter when the amount is successful converted.
-     * @param onApiError Calls this parameter when an api error is returned by the server.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param source the currency which the amount currently is
+     * @param target the currency to which the amount should be converted
+     * @param amount the amount in cents to be converted
+     * @param onSuccess calls this parameter when the amount is successfully converted
+     * @param onApiError calls this parameter when an api error is returned by the server
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     @Suppress("LongParameterList")
     fun convertAmount(
@@ -378,11 +385,11 @@ class ClientApi(
     }
 
     /**
-     * Gets an drawable from the gateway.
+     * Gets a drawable from the gateway.
      *
-     * @param drawableUrl the path to the image, the base URL should be omitted.
-     * @param onSuccess Calls this parameter when the drawable is successful fetched.
-     * @param onFailure Calls this parameter when an unexpected error thrown.
+     * @param drawableUrl the path to the image, the base URL should be omitted
+     * @param onSuccess calls this parameter when the drawable is successfully fetched
+     * @param onFailure calls this parameter when an unexpected error thrown
      */
     fun getDrawableFromUrl(
         drawableUrl: String,

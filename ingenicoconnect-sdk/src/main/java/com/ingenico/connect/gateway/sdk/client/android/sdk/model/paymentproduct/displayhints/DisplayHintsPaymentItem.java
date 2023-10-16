@@ -11,9 +11,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 /**
- * POJO that represents an DisplayHintsPaymentItem object
- * This class is filled by deserialising a JSON string from the GC gateway
- * Contains information for payment products
+ * POJO that represents an DisplayHintsPaymentItem object.
  */
 public class DisplayHintsPaymentItem implements Serializable{
 

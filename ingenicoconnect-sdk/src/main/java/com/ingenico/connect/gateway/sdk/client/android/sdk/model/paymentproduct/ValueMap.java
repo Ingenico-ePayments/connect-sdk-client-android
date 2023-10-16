@@ -8,11 +8,10 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Pojo which holds the ValueMap data and it's PaymentProductFields
- * This class is filled by deserialising a JSON string from the GC gateway
- * Used for filling a list input field
+ * POJO which holds the ValueMap data and its paymentProductFieldDisplayElements.
+ * If the {@link FormElement} is a list, ValueMap is used to display a value and its displayElements.
  */
-public class ValueMap implements Serializable{
+public class ValueMap implements Serializable {
 
 	private static final long serialVersionUID = -8334806247597370688L;
 

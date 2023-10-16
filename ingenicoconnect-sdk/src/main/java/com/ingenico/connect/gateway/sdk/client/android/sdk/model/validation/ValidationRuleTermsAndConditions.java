@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
 /**
- * Validation rule for terms and conditions
+ * Validation rule for terms and conditions.
  */
 public class ValidationRuleTermsAndConditions extends AbstractValidationRule {
 
@@ -20,10 +20,12 @@ public class ValidationRuleTermsAndConditions extends AbstractValidationRule {
     }
 
     /**
-     * Validates that the terms and conditions have been accepted
-     * @param paymentRequest The fully filled payment request that is ready for doing the payment
-     * @param fieldId The ID of the field to which to apply the current validator
-     * @return True if the value in the field with <code>fieldId</code> is true
+     * Validates that the terms and conditions have been accepted.
+     *
+     * @param paymentRequest the fully filled {@link PaymentRequest} that will be used for doing a payment
+     * @param fieldId the ID of the field to which to apply the current validator
+     *
+     * @return true, if the value in the field with fieldId is true; false, if the value in the field is false or if the fieldId could not be found
      */
     @Override
     public boolean validate(PaymentRequest paymentRequest, String fieldId) {

@@ -9,9 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Pojo which holds the FixedList data
- * This class is filled by deserialising a JSON string from the GC gateway
- * Used for validation
+ * POJO which holds the FixedList data.
+ * Used for validation.
  */
 public class FixedList implements Serializable {
 

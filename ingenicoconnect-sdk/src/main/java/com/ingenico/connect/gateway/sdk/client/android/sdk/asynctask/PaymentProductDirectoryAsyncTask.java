@@ -15,18 +15,18 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
 /**
- * AsyncTask which executes an paymentproduct directory call to the Ingenico ePayments platform
+ * AsyncTask which executes a PaymentProductDirectory call to the GC Gateway.
  *
- * @deprecated use {@link ClientApi#getPaymentProductDirectory(String, Success, ApiError, Failure)} instead
+ * @deprecated use {@link ClientApi#getPaymentProductDirectory(String, Success, ApiError, Failure)} instead.
  */
 
 @Deprecated
 public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, PaymentProductDirectoryResponse> {
 
-	// The listener which will be called by the AsyncTask
+	// The listener which will be called by the AsyncTask when the PaymentProductDirectoryResponse is received
 	private OnPaymentProductDirectoryCallCompleteListener listener;
 
-	// Context needed for reading metadata which is sent to the backend
+	// Context needed for reading metadata which is sent to the GC gateway
 	private Context context;
 
 	// Communicator which does the communication to the GC gateway
@@ -34,19 +34,20 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
 
 	// The productId for the product which need to be retrieved
 	private String productId;
-
+	// For which currencyCode the lookup must be done
 	private String currencyCode;
+	// For which countryCode the lookup must be done
 	private String countryCode;
 
 	/**
-	 * Constructor
+	 * Create PaymentProductDirectoryAsyncTask
 	 *
- 	 * @param productId, for which product must the lookup be done
-	 * @param currencyCode, for which currencyCode must the lookup be done
-	 * @param countryCode, for which countryCode must the lookup be done
-	 * @param context,      needed for reading metadata
-	 * @param communicator, Communicator which does the communication to the GC gateway
-	 * @param listener,     listener which will be called by the AsyncTask
+	 * @param productId id of the product for which the lookup must be done
+	 * @param currencyCode for which currencyCode the lookup must be done
+	 * @param countryCode for which countryCode the lookup must be done
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param communicator {@link C2sCommunicator} which does the communication to the GC gateway
+	 * @param listener {@link OnPaymentProductDirectoryCallCompleteListener} which will be called by the AsyncTask when a {@link PaymentProductDirectoryResponse} is received
 	 */
     public PaymentProductDirectoryAsyncTask(String productId, String currencyCode, String countryCode, Context context,
 											C2sCommunicator communicator, OnPaymentProductDirectoryCallCompleteListener listener) {
@@ -96,21 +97,18 @@ public class PaymentProductDirectoryAsyncTask extends AsyncTask<String, Void, Pa
 
 
     /**
-     * Interface for OnPaymentProductDirectoryCallComplete listener
-     * Is called from the PaymentProductDirectoryAsyncTask when it has retrieved the directory list for the given paymentproductid
+     * Interface for the Async task that retrieved a Payment Product Directory.
+     * Is called from the {@link PaymentProductDirectoryAsyncTask} when it has received a {@link PaymentProductDirectoryResponse}.
      *
-	 * @deprecated use {@link ClientApi#getPaymentProductDirectory(String, Success, ApiError, Failure)} instead
+	 * @deprecated use {@link ClientApi#getPaymentProductDirectory(String, Success, ApiError, Failure)} instead.
      */
     @Deprecated
     public interface OnPaymentProductDirectoryCallCompleteListener {
-
-
-    	/**
-    	 * Listener that is called when the call to retrieve the directory is done
-    	 *
-    	 * @param paymentProductDirectoryResponse, the PaymentProductDirectoryResponse returned
-    	 *
-    	 */
+		/**
+		 * Invoked when async task was successful and data is available.
+		 *
+		 * @param paymentProductDirectoryResponse the received {@link PaymentProductDirectoryResponse}
+		 */
         void onPaymentProductDirectoryCallComplete(PaymentProductDirectoryResponse paymentProductDirectoryResponse);
     }
 }

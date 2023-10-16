@@ -10,7 +10,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import java.io.Serializable;
 
 /**
- * Pojo that contains the request for IIN lookup
+ * POJO that contains the request for IIN lookup.
  */
 public class IinDetailsRequest implements Serializable {
 

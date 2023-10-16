@@ -42,11 +42,14 @@ public final class GooglePayUtil {
     private GooglePayUtil() {}
 
     /**
-     * Check whether or not Google Pay is allowed by creating an IsReadyToPayRequest
-     * containing minimal information and sending it to Google through the Google Pay PaymentsClient.
+     * Check whether or not Google Pay is allowed by creating an IsReadyToPayRequest containing minimal information and sending it to Google through the Google Pay PaymentsClient.
      *
-     * @param googlePay,   the Google Pay paymentproduct object containing the networks that are
-     *          allowed for the current payment.
+     * @param context used to interact with the Google Pay API to check if it is allowed
+     * @param communicator used to check whether the environment is production
+     * @param googlePay the Google Pay payment product object containing the networks that are allowed for the current payment
+     *
+     * @return a Boolean indicating whether Google Pay is allowed or not
+     *
      * @deprecated Use {@link GooglePayUtil#isGooglePayAllowed(BasicPaymentProduct)} instead.
      */
     @Deprecated
@@ -97,13 +100,12 @@ public final class GooglePayUtil {
     }
 
     /**
-     * Check whether or not Google Pay is allowed by creating an IsReadyToPayRequest containing
-     * minimal information and sending it to Google through the Google Pay PaymentsClient.
-     * Note that {@link ConnectSDK#initialize(ConnectSDKConfiguration, PaymentConfiguration)} must
-     * be called before this method can be used.
+     * Check whether or not Google Pay is allowed by creating an IsReadyToPayRequest containing minimal information and sending it to Google through the Google Pay PaymentsClient.
+     * Note that {@link ConnectSDK#initialize(ConnectSDKConfiguration, PaymentConfiguration)} must be called before this method can be used.
      *
-     * @param googlePay, the Google Pay paymentproduct object as obtained through the get Payment
-     *                   Product request.
+     * @param googlePay the Google Pay payment product object as obtained through the getPaymentProduct request
+     *
+     * @return a Boolean indicating whether Google Pay is allowed or not
      */
     public static boolean isGooglePayAllowed(BasicPaymentProduct googlePay) {
 
@@ -148,10 +150,9 @@ public final class GooglePayUtil {
     }
 
     /**
-     * Assemble the minimal Google Pay payment request that can be used to verify whether the current
-     * user is Ready to Pay with Google Pay.
+     * Assemble the minimal Google Pay payment request that can be used to verify whether the current user is Ready to Pay with Google Pay.
      *
-     * @param networks,   needed for reading metadata
+     * @param networks needed for reading metadata
      */
     private static JSONObject createGooglePayRequest(List<String> networks) {
 

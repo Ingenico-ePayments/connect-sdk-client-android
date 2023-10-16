@@ -11,9 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * POJO that represents an DisplayHintsAccountOnFile object
- * This class is filled by deserialising a JSON string from the GC gateway
- * Contains a list with the values of the account on file
+ * POJO that represents an DisplayHintsAccountOnFile object.
  */
 public class DisplayHintsAccountOnFile implements Serializable {
 

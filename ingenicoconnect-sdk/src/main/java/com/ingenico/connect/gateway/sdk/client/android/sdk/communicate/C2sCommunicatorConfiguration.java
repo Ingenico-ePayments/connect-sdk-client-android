@@ -19,7 +19,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Contains all configuration parameters needed for communicating with the GC gateway
+ * Contains all configuration parameters needed for communicating with the GC gateway.
  *
  * @deprecated Use {@link com.ingenico.connect.gateway.sdk.client.android.ConnectSDK} and initialize using {@link ConnectSDKConfiguration} instead.
  */
@@ -45,15 +45,15 @@ public class C2sCommunicatorConfiguration implements Serializable {
 	private String ipAddress;
 
 	/**
-	 * Constructor, creates the C2SCommunicatorConfiguration object
+	 * Constructor, creates the C2SCommunicatorConfiguration object.
 	 *
-	 * @param clientSessionId,         used for identifying the customer on the GC gateway
-	 * @param customerId,              used for sending calls to the GC gateway
-	 * @param clientApiUrl,            the endpoint baseurl
-	 * @param assetUrl,            	   the asset baseurl
-	 * @param environmentIsProduction, states if the environment is production
-	 * @param appIdentifier,           used to create device metadata
-	 * @param ipAddress,               used to create device metadata; may be null
+	 * @param clientSessionId used for identifying the session on the GC gateway
+	 * @param customerId used for identifying the customer on the GC gateway
+	 * @param clientApiUrl the endpoint baseurl
+	 * @param assetUrl the asset baseurl
+	 * @param environmentIsProduction states if the environment is production
+	 * @param appIdentifier used to create device metadata
+	 * @param ipAddress used to create device metadata; may be null
 	 */
 	public C2sCommunicatorConfiguration(String clientSessionId, String customerId, String clientApiUrl, String assetUrl, boolean environmentIsProduction, String appIdentifier, String ipAddress) {
 
@@ -83,14 +83,15 @@ public class C2sCommunicatorConfiguration implements Serializable {
 	}
 
 	/**
-	 * Convenience method for creating Session given the clientSessionId, customerId and region
+	 * Convenience method for creating a {@link Session} without a given ipAddress
 	 *
-	 * @param clientSessionId,         used for identifying the customer on the GC gateway
-	 * @param customerId,              used for sending calls to the GC gateway
-	 * @param clientApiUrl,                 the endpoint baseurl
-	 * @param assetBaseUrl,            the asset baseurl
-	 * @param environmentIsProduction, states if the environment is production
-	 * @param appIdentifier,           used to create device metadata
+	 * @param clientSessionId used for identifying the session on the GC gateway
+	 * @param customerId used for identifying the customer on the GC gateway
+	 * @param clientApiUrl the endpoint baseurl
+	 * @param assetBaseUrl the asset baseurl
+	 * @param environmentIsProduction states if the environment is production
+	 * @param appIdentifier used to create device metadata
+	 *
 	 * @return initialised Session
 	 */
 	public static Session initWithClientSessionId(String clientSessionId, String customerId, String clientApiUrl, String assetBaseUrl, boolean environmentIsProduction, String appIdentifier) {
@@ -98,14 +99,16 @@ public class C2sCommunicatorConfiguration implements Serializable {
 	}
 
 	/**
-	 * Convenience method for creating Session given the clientSessionId, customerId and region
+	 * Convenience method for creating a {@link Session} with a given ipAddress
 	 *
-	 * @param clientSessionId, used for identifying the customer on the GC gateway
-	 * @param customerId,      used for sending calls to the GC gateway
-	 * @param clientApiUrl,         the endpoint baseurl
-	 * @param assetBaseUrl,    the asset baseurl
-	 * @param appIdentifier,   used to create device metadata
-	 * @param ipAddress,       used to create device metadata
+	 * @param clientSessionId used for identifying the session on the GC gateway
+	 * @param customerId used for identifying the customer on the GC gateway
+	 * @param clientApiUrl the endpoint baseurl
+	 * @param assetBaseUrl the asset baseurl
+	 * @param environmentIsProduction states if the environment is production
+	 * @param appIdentifier used to create device metadata
+	 * @param ipAddress used to create device metadata
+	 *
 	 * @return initialised Session
 	 */
 	public static Session initWithClientSessionId(String clientSessionId, String customerId, String clientApiUrl, String assetBaseUrl, boolean environmentIsProduction, String appIdentifier, String ipAddress) {
@@ -142,7 +145,7 @@ public class C2sCommunicatorConfiguration implements Serializable {
 	}
 
 	/**
-	 * @return may return null
+	 * @return may return null.
 	 */
 	@Nullable
 	public String getIpAddress() {
@@ -158,10 +161,12 @@ public class C2sCommunicatorConfiguration implements Serializable {
 	}
 
 	/**
-	 * Returns map of metadata of the device this SDK is running on
-	 * The map contains the SDK version, OS, OS version and screensize
+	 * Returns a map of metadata of the device this SDK is running on.
+	 * The map contains the SDK version, OS, OS version and screen size.
 	 *
-	 * @return Map<String, String> containing key/values of metadata
+	 * @param context used for retrieving device metadata
+	 *
+	 * @return a Map containing key/values of metadata
 	 */
 	public Map<String, String> getMetadata(Context context) {
 		return Util.getMetadata(context, appIdentifier, ipAddress);

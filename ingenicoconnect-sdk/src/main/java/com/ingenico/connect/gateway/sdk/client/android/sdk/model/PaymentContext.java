@@ -11,7 +11,8 @@ import java.util.Map;
 
 
 /**
- * Pojo that contains PaymentContext information
+ * POJO that contains PaymentContext information.
+ * It contains information about a payment, like its {@link AmountOfMoney}, countryCode and locale.
  */
 public class PaymentContext implements Serializable {
 
@@ -47,6 +48,10 @@ public class PaymentContext implements Serializable {
         return countryCode;
     }
 
+    /**
+     * @param countryCode the Country Code of the Country where the transaction will take place. The provided code should match the ISO-3166-alpha-2 standard.
+     * @see <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166 Country Codes</a>
+     */
     public void setCountryCode(String countryCode){
         this.countryCode = countryCode;
     }

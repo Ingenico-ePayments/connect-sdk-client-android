@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Pojo that represents a paymentItem
+ * POJO that represents a PaymentItem.
  */
 public interface PaymentItem extends BasicPaymentItem, Serializable {
 

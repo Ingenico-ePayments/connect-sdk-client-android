@@ -14,8 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Pojo which holds the BasicPaymentProduct properties
- * This class is filled by deserialising a JSON string from the GC gateway
+ * POJO which holds the BasicPaymentProduct properties.
  */
 public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 
@@ -31,11 +30,14 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 	private Boolean autoTokenized;
 	private Boolean usesRedirectionTo3rdParty;
 	private Boolean allowsInstallments;
+	private AuthenticationIndicator authenticationIndicator;
+	private Boolean supportsMandates;
 	private String acquirerCountry;
+	private Boolean deviceFingerprintEnabled;
 	private MobileIntegrationLevel mobileIntegrationLevel;
 	private DisplayHintsPaymentItem displayHints;
 
-	// List containing all AccountOnFiles
+	// List containing all AccountsOnFile
 	private List<AccountOnFile> accountsOnFile = new ArrayList<>();
 
 	// Payment product specific data
@@ -83,8 +85,20 @@ public class BasicPaymentProduct implements BasicPaymentItem, Serializable {
 		return allowsInstallments;
 	}
 
+	public AuthenticationIndicator getAuthenticationIndicator() {
+		return authenticationIndicator;
+	}
+
+	public Boolean supportsMandates() {
+		return supportsMandates;
+	}
+
 	public String getAcquirerCountry() {
 		return acquirerCountry;
+	}
+
+	public Boolean deviceFingerprintEnabled() {
+		return deviceFingerprintEnabled;
 	}
 
 	public MobileIntegrationLevel mobileIntegrationLevel(){

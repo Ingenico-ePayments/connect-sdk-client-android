@@ -9,7 +9,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import java.math.BigInteger;
 
 /**
- * Validation rule for IBAN
+ * Validation rule for IBAN.
  */
 public class ValidationRuleIBAN extends AbstractValidationRule {
 
@@ -25,9 +25,11 @@ public class ValidationRuleIBAN extends AbstractValidationRule {
 
 	/**
 	 * Validates that the value in the field with ID fieldId is a valid IBAN.
-	 * @param paymentRequest The fully filled payment request that is ready for doing the payment
-	 * @param fieldId The ID of the field to which to apply the current validator
-	 * @return True if the value in the field with <code>fieldId</code> is a proper IBAN; false if it's not.
+	 *
+	 * @param paymentRequest the fully filled {@link PaymentRequest} that will be used for doing a payment
+	 * @param fieldId the ID of the field to which to apply the current validator
+	 *
+	 * @return true, if the value in the field with fieldId is a proper IBAN; false, if it is not or if the fieldId could not be found
 	 */
 	@Override
 	public boolean validate(PaymentRequest paymentRequest, String fieldId) {

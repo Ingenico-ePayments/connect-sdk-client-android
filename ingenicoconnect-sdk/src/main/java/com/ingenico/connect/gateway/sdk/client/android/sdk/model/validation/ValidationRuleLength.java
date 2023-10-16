@@ -9,7 +9,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Validation rule for length
+ * Validation rule for length.
  */
 public class ValidationRuleLength extends AbstractValidationRule {
 
@@ -30,11 +30,12 @@ public class ValidationRuleLength extends AbstractValidationRule {
 	}
 
 	/**
-	 * Validates that the value has the desired length
-	 * @param paymentRequest The fully filled payment request that is ready for doing the payment
-	 * @param fieldId The ID of the field to which to apply the current validator
-	 * @return True if the value in the field with <code>fieldId</code> has the correct length; false
-	 * if it is not of the correct length or the fieldId could not be found.
+	 * Validates that the value has the desired length.
+	 *
+	 * @param paymentRequest the fully filled {@link PaymentRequest} that will be used for doing a payment
+	 * @param fieldId the ID of the field to which to apply the current validator
+	 *
+	 * @return true, if the value in the field with fieldId has the correct length; false, if it is not of the correct length or if the fieldId could not be found.
 	 */
 	@Override
 	public boolean validate(PaymentRequest paymentRequest, String fieldId) {

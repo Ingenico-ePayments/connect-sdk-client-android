@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
 /**
- * Validation rule for luhn check
+ * Validation rule for luhn check.
  */
 public class ValidationRuleLuhn extends AbstractValidationRule {
 
@@ -20,11 +20,12 @@ public class ValidationRuleLuhn extends AbstractValidationRule {
 	}
 
 	/**
-	 * Validates that the value in the field with fieldId passes the Luhn check
-	 * @param paymentRequest The fully filled payment request that is ready for doing the payment
-	 * @param fieldId The ID of the field to which to apply the current validator
-	 * @return True if the value in the field with <code>fieldId</code> passes the Luhn check; false
-	 * if it doesn't or the fieldId could not be found.
+	 * Validates that the value in the field with fieldId passes the Luhn check.
+	 *
+	 * @param paymentRequest the fully filled {@link PaymentRequest} that will be used for doing a payment
+	 * @param fieldId the ID of the field to which to apply the current validator
+	 *
+	 * @return true, if the value in the field with fieldId passes the Luhn check; false, if it doesn't or if the fieldId could not be found
 	 */
 	@Override
 	public boolean validate(PaymentRequest paymentRequest, String fieldId) {

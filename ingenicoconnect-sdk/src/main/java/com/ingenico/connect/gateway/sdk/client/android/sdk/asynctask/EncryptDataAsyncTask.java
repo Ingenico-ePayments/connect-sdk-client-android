@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * AsyncTask which encrypts all PaymentProductFields with the GC gateway publickey
+ * AsyncTask which encrypts all PaymentProductFields with the GC gateway public key.
  *
  * @deprecated this class will be removed in the future.
  */
@@ -26,15 +26,24 @@ import java.util.UUID;
 @Deprecated
 public class EncryptDataAsyncTask extends AsyncTask<String, Void, String>{
 
-	// The listener which will be called by the AsyncTask when the paymentproductfields are encrypted
+	// The listener which will be called by the AsyncTask when the PaymentProductFields are encrypted
 	private OnEncryptDataCompleteListener listener;
 
-	// Variables needed for the Encryptor for encryption
+	// PaymentRequest whose product fields will be encrypted
 	private PaymentRequest paymentRequest;
+	// Contains the public key that will be used for encrypting the PaymentProductFields
 	private PublicKeyResponse publicKeyResponse;
+	// Used for identifying the session on the GC gateway
 	private String clientSessionId;
 
-
+	/**
+	 * Create EncryptDataAsyncTask
+	 *
+	 * @param publicKeyResponse {@link PublicKeyResponse} contains the public key that will be used to encrypt the PaymentProductFields
+	 * @param paymentRequest {@link PaymentRequest} whose product fields will be encrypted
+	 * @param clientSessionId used to identify the session on the GC gateway
+	 * @param listener {@link OnEncryptDataCompleteListener} which will be called by the AsyncTask when the PaymentProductFields are encrypted
+	 */
     public EncryptDataAsyncTask(PublicKeyResponse publicKeyResponse, PaymentRequest paymentRequest, String clientSessionId, OnEncryptDataCompleteListener listener) {
 
     	if (publicKeyResponse == null) {
@@ -98,7 +107,7 @@ public class EncryptDataAsyncTask extends AsyncTask<String, Void, String>{
     		encryptData.setTokenize(true);
     	}
 
-    	// Encrypt all the fields in the paymentproduct
+    	// Encrypt all the fields in the PaymentProduct
     	Encryptor encryptor = new Encryptor(publicKeyResponse);
 		return encryptor.encrypt(encryptData);
     }
@@ -113,13 +122,18 @@ public class EncryptDataAsyncTask extends AsyncTask<String, Void, String>{
 
 
     /**
-     * Interface for onEncryptDataComplete listener
-     * Is called from the EncryptDataAsyncTask when it has encrypted the given paymentproductfields
+     * Interface for Async task that encrypts the given PaymentProductFields.
+     * Is called from the {@link EncryptDataAsyncTask} when it has encrypted the given PaymentProductFields.
      *
-	 * @deprecated this class will be removed in the future.
+	 * @deprecated this interface will be removed in the future.
      */
     @Deprecated
     public interface OnEncryptDataCompleteListener {
+		/**
+		 * Invoked when async task was successful and data is available.
+		 *
+		 * @param encryptedData the encrypted data
+		 */
         void onEncryptDataComplete(String encryptedData);
     }
 }

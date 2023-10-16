@@ -9,7 +9,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.FormatResult;
 import java.io.Serializable;
 
 /**
- * Contains util methods for stringformatting
+ * Contains util methods for string formatting.
  */
 public class StringFormatter implements Serializable {
 
@@ -22,18 +22,20 @@ public class StringFormatter implements Serializable {
 	}
 
 	/**
-	 * Applies a mask to a String, based on the previous value and splice information. The result
-	 * is a FormatResult object, that holds the masked String and the new cursor index. This masker is meant
-	 * for user input fields, where users are still entering their information.
+	 * Applies a mask to a String, based on the previous value and splice information.
+	 * The result is a {@link FormatResult} object, that holds the masked String and the new cursor index.
+	 * This masker is meant for user input fields, where users are still entering their information.
 	 *
 	 * @param mask the mask that will be applied. Characters to be masked should be surrounded by double accolades,
 	 *             mask characters should be between accolade-blocks. E.g. a mask for an expiry date would look like
-	 *             this: {{99}}/{{99}}.
-	 * @param value the value that the mask will be applied to.
-	 * @param oldValue the value that was in the edit text, before characters were removed or added.
-	 * @param start the index of the start of the change.
-	 * @param count the number of characters that were removed.
-     * @param after the number of characters that were added.
+	 *             this: {{99}}/{{99}}
+	 * @param value the String that the mask will be applied to
+	 * @param oldValue the value that was in the edit text, before characters were removed or added
+	 * @param start the index of the start of the change
+	 * @param count the number of characters that were removed
+     * @param after the number of characters that were added
+	 *
+	 * @return {@link FormatResult} that contains the masked String and the new cursor index
      */
 	public FormatResult applyMask(String mask, String value, String oldValue, int start, int count, int after) {
 
@@ -259,12 +261,15 @@ public class StringFormatter implements Serializable {
 
 
 	/**
-	 * Will apply a mask and returns formatresult.
+	 * Will apply a mask and returns a {@link FormatResult} that holds the masked String and the new cursor index.
+	 *
 	 * @param mask the mask that will be applied
-	 * @param value the value that the mask should be applied to
+	 * @param value the String that the mask will be applied to
 	 * @param oldValue the value that was in previously in the editText
 	 * @param oldCursorIndex the cursorIndex before applying the changes
-	 * @return formatresult, containing the formatted value and the new cursor index
+	 *
+	 * @return {@link FormatResult}, containing the formatted value and the new cursor index
+	 *
 	 * @deprecated the masking behaviour that is provided by {@link #applyMask(String, String, String, int, int, int)} provides a better user experience.
 	 */
 	@Deprecated
@@ -289,11 +294,13 @@ public class StringFormatter implements Serializable {
 
 
 	/**
-	 * Method calculates the masked value and the cursorIndex
-	 * @param mask
-	 * @param value
-	 * @param cursorIndex
-	 * @param getMask
+	 * Method calculates the masked value and the cursorIndex.
+	 *
+	 * @param mask the mask that will be applied
+	 * @param value the String that the mask will be applied to
+	 * @param cursorIndex the cursorIndex before applying the changes
+	 * @param getMask indicates whether the masked value should be returned
+	 *
 	 * @return mask or cursorIndex
 	 */
 	private Object getMaskOrGetCursorIndex(String mask, String value, int cursorIndex, boolean getMask){
@@ -371,9 +378,11 @@ public class StringFormatter implements Serializable {
 	}
 
 	/**
-	 * Applies the mask to the value. This method can be used if you want to mask a static String
-	 * @param mask the mask that should be applied to value
-	 * @param value the String that the mask is applied to
+	 * Applies the mask to the value. This method can be used if you want to mask a static String.
+	 *
+	 * @param mask the mask that will be applied
+	 * @param value the String that the mask will be applied to
+	 *
 	 * @return the masked value
 	 */
 	public String applyMask(String mask, String value){
@@ -382,10 +391,12 @@ public class StringFormatter implements Serializable {
 	}
 
 	/**
-	 * Removes the mask on a given value
+	 * Removes the mask on a given value.
+	 *
 	 * @param mask the mask that is applied to the value
 	 * @param value the value of which the mask will be removed
-	 * @return the unMasked value
+	 *
+	 * @return the unmasked value
 	 */
 	public String removeMask(String mask, String value){
 
@@ -428,9 +439,11 @@ public class StringFormatter implements Serializable {
 
 
 	/**
-	 * Replaces a maskcharacter with a regex so it can be used for matching
-	 * @param maskCharacter
-	 * @return the regexversion of the maskCharacter
+	 * Replaces a mask character with a regex so it can be used for matching.
+	 *
+	 * @param maskCharacter the character whose regex version should be returned
+	 *
+	 * @return the regex version of the maskCharacter
 	 */
 	private String convertMaskCharacterToRegex(String maskCharacter) {
 

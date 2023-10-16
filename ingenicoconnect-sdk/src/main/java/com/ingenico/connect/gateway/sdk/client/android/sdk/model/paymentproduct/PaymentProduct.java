@@ -11,8 +11,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Pojo which holds the BasicPaymentProduct data and its PaymentProductFields
- * This class is filled by deserialising a JSON string from the GC gateway
+ * POJO which holds the {@link BasicPaymentProduct} data and its paymentProductFields.
  */
 public class PaymentProduct extends BasicPaymentProduct implements PaymentItem, Serializable {
 
@@ -22,10 +21,15 @@ public class PaymentProduct extends BasicPaymentProduct implements PaymentItem, 
 	private boolean hasBeenSorted = false;
 
 	private List<PaymentProductField> fields = new ArrayList<>();
+	private String fieldsWarning;
 
 	public List<PaymentProductField> getPaymentProductFields() {
 		sortList();
 		return fields;
+	}
+
+	public String getFieldsWarning() {
+		return fieldsWarning;
 	}
 
 	public void setPaymentProductFields(List<PaymentProductField> paymentProductFields) {

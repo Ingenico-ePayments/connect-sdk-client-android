@@ -8,8 +8,7 @@ import java.io.Serializable;
 
 
 /**
- * POJO that represents an AccountOnFile object
- * This class is filled by deserialising a JSON string from the GC gateway
+ * POJO that represents an AccountOnFileDisplay object.
  */
 public class AccountOnFileDisplay implements Serializable {
 

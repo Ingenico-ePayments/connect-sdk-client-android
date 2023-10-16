@@ -5,7 +5,7 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 /**
- * Pojo that holds the ThirdPartyStatus call response
+ * POJO that holds the ThirdPartyStatus call response.
  */
 public class ThirdPartyStatusResponse {
 

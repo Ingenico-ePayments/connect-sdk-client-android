@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 
 /**
- * Pojo that contains the DirectoryEntries for the response from PaymentProductDirectory lookup
+ * POJO that contains the DirectoryEntry, which is used as a list type in a {@link PaymentProductDirectoryResponse}.
  */
 public class DirectoryEntry {
 

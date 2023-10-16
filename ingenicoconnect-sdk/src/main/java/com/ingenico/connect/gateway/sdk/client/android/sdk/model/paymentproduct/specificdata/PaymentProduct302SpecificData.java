@@ -8,8 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Pojo which holds the payment product 302 specific properties
- * This class is filled by deserialising a JSON string from the GC gateway
+ * POJO which holds the payment product 302 specific properties.
  */
 public class PaymentProduct302SpecificData implements Serializable {
 

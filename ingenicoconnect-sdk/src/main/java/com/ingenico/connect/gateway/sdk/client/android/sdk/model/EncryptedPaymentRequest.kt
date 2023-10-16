@@ -5,7 +5,7 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model
 
 /**
- * Contains all encrypted paymentRequest data needed for doing a payment.
+ * Contains all encrypted payment request data needed for doing a payment.
  */
 data class EncryptedPaymentRequest(
     val encryptedFields: String,

@@ -7,8 +7,8 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 import java.io.Serializable;
 
 /**
- * Pojo which holds the PaymentProductCachkey data
- * It's used to determine if a PaymentProduct should be retrieved from the Ingenico ePayments platform, or retrieved from the memory cache
+ * POJO which holds the PaymentProductCacheKey data.
+ * It's used to determine if a PaymentProduct should be retrieved from the Ingenico ePayments platform, or retrieved from the memory cache.
  */
 public class PaymentItemCacheKey implements Serializable {
 

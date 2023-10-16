@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
 /**
- * Validation rule for emailaddress
+ * Validation rule for email address.
  */
 public class ValidationRuleEmailAddress extends AbstractValidationRule {
 
@@ -23,19 +23,20 @@ public class ValidationRuleEmailAddress extends AbstractValidationRule {
 	}
 
 	/**
-	 * Validates an e-mailaddress
-	 * @param paymentRequest The fully filled payment request that is ready for doing the payment
-	 * @param fieldId The ID of the field to which to apply the current validator
-     * @return True if the value in the field with <code>fieldId</code> is a valid e-mail address; false
-	 * if it is not a valid e-mail address or the fieldId could not be found.
+	 * Validates an email address.
+	 *
+	 * @param paymentRequest the fully filled {@link PaymentRequest} that will be used for doing a payment
+	 * @param fieldId the ID of the field to which to apply the current validator
+	 *
+     * @return true, if the value in the field with fieldId is a valid e-mail address; false, if it is not a valid email address or if the fieldId could not be found
      */
 	@Override
 	public boolean validate(PaymentRequest paymentRequest, String fieldId) {
 		if (paymentRequest == null) {
-			throw new IllegalArgumentException("Error validating, paymentRequest may not be null");
+			throw new IllegalArgumentException("Error validating email address, paymentRequest may not be null");
 		}
 		if (fieldId == null) {
-			throw new IllegalArgumentException("Error validating, fieldId may not be null");
+			throw new IllegalArgumentException("Error validating email address, fieldId may not be null");
 		}
 
 		String text = paymentRequest.getValue(fieldId);

@@ -5,7 +5,7 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 /**
- * Result after a masking is apploed on a field
+ * Result after a mask is applied on a field.
  */
 public class FormatResult {
 

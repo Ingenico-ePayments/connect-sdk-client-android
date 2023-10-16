@@ -11,9 +11,8 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 /**
- * Pojo that represents a Tooltip object
- * This class is filled by deserialising a JSON string from the GC gateway
- * Tooltips are used when showing tooltips payment product specific
+ * POJO that represents a Tooltip object.
+ * Tooltips are payment product specific and are used to show extra information about an input field.
  */
 public class Tooltip implements Serializable {
 

@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Contains util methods for getting device metadata
+ * Contains util methods for getting device metadata.
  *
  * @deprecated This class will be made internal to the SDK in a future release.
  */
@@ -38,10 +38,13 @@ public class Util {
 	private static final String METADATA_IP_ADDRESS          = "ipAddress";
 
 	/**
-	 * Returns map of metadata of the device this SDK is running on
-	 * The map contains the SDK version, OS, OS version and screensize
+	 * Returns map of metadata of the device this SDK is running on.
+	 * The map contains the SDK version, OS, OS version and screen size.
 	 *
-	 * @return Map<String, String> containing key/values of metadata
+	 * @param context used for retrieving device metadata
+	 *
+	 * @return a Map containing key/values of metadata
+	 *
 	 * @deprecated use {@link #getMetadata(Context, String, String)} instead.
 	 */
 	@Deprecated
@@ -50,12 +53,14 @@ public class Util {
 	}
 
 	/**
-	 * Returns map of metadata of the device this SDK is running on
-	 * The map contains the SDK version, OS, OS version and screensize
+	 * Returns map of metadata of the device this SDK is running on.
+	 * The map contains the SDK version, OS, OS version and screen size.
 	 *
-	 * @param appIdentifier a String that describes the application, preferably with version number.
-	 * @param ipAddress the public ip-address of the device.
-	 * @return Map<String, String> containing key/values of metadata
+	 * @param context used for retrieving device metadata
+	 * @param appIdentifier a String that describes the application, preferably with version number
+	 * @param ipAddress the public ip-address of the device
+	 *
+	 * @return a Map containing key/values of metadata
 	 */
 	public static Map<String, String> getMetadata(Context context, String appIdentifier, String ipAddress) {
 
@@ -100,10 +105,12 @@ public class Util {
 
 
 	/**
-	 * Returns base64 encoded version of a map of metadata of the device this SDK is running on
-	 * The map contains the SDK version, OS, OS version and screensize
+	 * Returns base64 encoded version of a map of metadata of the device this SDK is running on.
+	 * The map contains the SDK version, OS, OS version and screen size.
 	 *
-	 *  @param appIdentifier a String that describes the application, preferably with version number.
+	 * @param context used for retrieving device metadata
+	 * @param appIdentifier a String that describes the application, preferably with version number
+	 *
 	 * @return String containing base64 url of json representation of the metadata
 	 */
 	public static String getBase64EncodedMetadata(Context context, String appIdentifier) {
@@ -116,11 +123,13 @@ public class Util {
 	}
 
 	/**
-	 * Returns base64 encoded version of a map of metadata of the device this SDK is running on
-	 * The map contains the SDK version, OS, OS version and screensize
+	 * Returns base64 encoded version of a map of metadata of the device this SDK is running on.
+	 * The map contains the SDK version, OS, OS version and screen size.
 	 *
-	 * @param appIdentifier a String that describes the application, preferably with version number.
+	 * @param context used for retrieving device metadata
+	 * @param appIdentifier a String that describes the application, preferably with version number
 	 * @param ipAddress the public ip-address of the device.
+	 *
 	 * @return String containing base64 url of json representation of the metadata
 	 */
 	public static String getBase64EncodedMetadata(Context context, String appIdentifier, String ipAddress) {
@@ -136,7 +145,7 @@ public class Util {
 	/**
 	 * Returns base64 encoded map of metadata.
 	 *
-	 * @param metadata, map of metadata which is base64 encoded
+	 * @param metadata map of metadata which is base64 encoded
 	 *
 	 * @return String containing base64 url of json representation of the metadata
 	 */

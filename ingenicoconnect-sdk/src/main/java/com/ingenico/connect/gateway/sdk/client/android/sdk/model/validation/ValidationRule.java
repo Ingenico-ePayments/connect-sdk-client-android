@@ -8,7 +8,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
 /**
- * Interface for ValidationRule
+ * Interface for ValidationRule.
  */
 public interface ValidationRule {
 

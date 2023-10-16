@@ -5,7 +5,7 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 
 /**
- * Contains all encrypted paymentrequest data needed for doing a payment
+ * Contains all encrypted {@link PaymentRequest} data needed for doing a payment.
  *
  * @deprecated use {@link EncryptedPaymentRequest} instead
  */

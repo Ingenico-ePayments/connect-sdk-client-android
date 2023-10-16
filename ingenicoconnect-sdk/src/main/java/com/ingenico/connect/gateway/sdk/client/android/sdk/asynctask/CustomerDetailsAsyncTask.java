@@ -18,9 +18,9 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 import java.util.List;
 
 /**
- * AsyncTask which executes a get Customer Details request
+ * AsyncTask which loads {@link CustomerDetailsResponse} from the GC Gateway.
  *
- * @deprecated use {@link ClientApi#getCustomerDetails(String, String, List, Success, ApiError, Failure)} instead
+ * @deprecated use {@link ClientApi#getCustomerDetails(String, String, List, Success, ApiError, Failure)} instead.
  */
 
 @Deprecated
@@ -34,26 +34,36 @@ public class CustomerDetailsAsyncTask extends AsyncTask<String, Void, CustomerDe
     private C2sCommunicator communicator;
     private OnCustomerDetailsCallCompleteListener listener;
 
+    /**
+     * Create CustomerDetailsAsyncTask
+     *
+     * @param context {@link Context} used for reading device metadata which is sent to the GC gateway
+     * @param productId the product id of which the {@link CustomerDetailsResponse} should be retrieved
+     * @param countryCode the code of the country where the customer resides
+     * @param values list of {@link KeyValuePair} containing which details from the customer should be retrieved
+     * @param communicator {@link C2sCommunicator} which does the communication to the GC gateway
+     * @param listener {@link OnCustomerDetailsCallCompleteListener} which will be called by the AsyncTask when the {@link CustomerDetailsResponse} is retrieved
+     */
     public CustomerDetailsAsyncTask(Context context, String productId, String countryCode, List<KeyValuePair> values,
                                     C2sCommunicator communicator, OnCustomerDetailsCallCompleteListener listener) {
 
         if (context == null) {
-            throw new IllegalArgumentException("Error getting CustomerDetails, context may not be null");
+            throw new IllegalArgumentException("Error creating CustomerDetailsAsyncTask, context may not be null");
         }
         if (productId == null) {
-            throw new IllegalArgumentException("Error getting CustomerDetails, productId may not be null");
+            throw new IllegalArgumentException("Error creating CustomerDetailsAsyncTask, productId may not be null");
         }
         if (countryCode == null) {
-            throw new IllegalArgumentException("Error getting CustomerDetails, countryCode may not be null");
+            throw new IllegalArgumentException("Error creating CustomerDetailsAsyncTask, countryCode may not be null");
         }
         if (values == null) {
-            throw new IllegalArgumentException("Error getting CustomerDetails, values may not be null");
+            throw new IllegalArgumentException("Error creating CustomerDetailsAsyncTask, values may not be null");
         }
         if (communicator == null) {
-            throw new IllegalArgumentException("Error getting CustomerDetails, communicator may not be null");
+            throw new IllegalArgumentException("Error creating CustomerDetailsAsyncTask, communicator may not be null");
         }
         if (listener == null) {
-            throw new IllegalArgumentException("Error getting CustomerDetails, communicator may not be null");
+            throw new IllegalArgumentException("Error creating CustomerDetailsAsyncTask, listener may not be null");
         }
 
         this.context = context;
@@ -80,13 +90,17 @@ public class CustomerDetailsAsyncTask extends AsyncTask<String, Void, CustomerDe
     }
 
     /**
-     * @deprecated use {@link ClientApi#getCustomerDetails(String, String, List, Success, ApiError, Failure)} instead
+     * Interface for Async task that retrieves Customer Details.
+     * Is called from the {@link CustomerDetailsAsyncTask} when it has received the {@link CustomerDetailsResponse}.
+     * 
+     * @deprecated use {@link ClientApi#getCustomerDetails(String, String, List, Success, ApiError, Failure)} instead.
      */
     @Deprecated
     public interface OnCustomerDetailsCallCompleteListener {
-
         /**
-         * Listener that is called when the CustomerDetails response has completed
+         * Invoked when async task was successful and data is available.
+         *
+         * @param customerDetailsResponse the received {@link CustomerDetailsResponse}
          */
         void onCustomerDetailsCallComplete(CustomerDetailsResponse customerDetailsResponse);
     }

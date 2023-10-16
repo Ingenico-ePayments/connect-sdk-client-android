@@ -22,26 +22,27 @@ import java.net.URL;
 import java.util.Map;
 
 /**
- * AsyncTask which loads an Image from a given url
+ * AsyncTask which loads an Image from a given url.
  *
- * @deprecated use {@link ClientApi#getDrawableFromUrl(String, Success, Failure)} instead
+ * @deprecated use {@link ClientApi#getDrawableFromUrl(String, Success, Failure)} instead.
  */
 
 @Deprecated
 public class LoadImageAsyncTask extends AsyncTask<String, Void, Drawable> {
 
-	// The listener which will be called by the AsyncTask
+	// The listener which will be called by the AsyncTask when the image is loaded
 	private OnImageLoadedListener listener;
 
-	// Image url which will be loaded
+	// Complete image url which will be loaded, contains the url where the assets are retrieved from
 	private String imageUrl;
 
-	// Product id used for callback
+	// Product id for which the image is loaded
 	private String productId;
 
 	// Product id used for callback
 	private Map<String, String> logoMapping;
 
+	// Url of the logo which will be loaded
 	private String url;
 
 	// Context needed for parsing image to drawable
@@ -49,12 +50,14 @@ public class LoadImageAsyncTask extends AsyncTask<String, Void, Drawable> {
 
 
 	/**
-	 * Constructor
+	 * Create LoadImageAsyncTask
 	 *
-	 * @param imageUrl, url which will be loaded
-	 * @param productId, used for callback
-	 * @param context, needed for parsing image to drawable
-	 * @param listener, listener which will be called by the AsyncTask
+	 * @param imageUrl complete url of the image which will be loaded, contains the url where the assets are retrieved from
+	 * @param productId id of the product for which the image is loaded
+	 * @param context needed for parsing the image to a drawable
+	 * @param logoMapping contains the product id with the corresponding logo url
+	 * @param url url of the logo which will be loaded
+	 * @param listener {@link OnImageLoadedListener} which will be called by the AsyncTask when the image is loaded
 	 */
     public LoadImageAsyncTask(String imageUrl, String productId, Context context, Map<String, String> logoMapping, String url, OnImageLoadedListener listener) {
 
@@ -108,9 +111,10 @@ public class LoadImageAsyncTask extends AsyncTask<String, Void, Drawable> {
 
 
     /**
-     * Interface for OnImageLoaded listener
+     * Interface for the Async task that loads an image from an URL.
+	 * Is called from the {@link LoadImageAsyncTask} when it has the image.
      *
-	 * @deprecated use {@link ClientApi#getDrawableFromUrl(String, Success, Failure)} instead
+	 * @deprecated use {@link ClientApi#getDrawableFromUrl(String, Success, Failure)} instead.
      */
     @Deprecated
     public interface OnImageLoadedListener {

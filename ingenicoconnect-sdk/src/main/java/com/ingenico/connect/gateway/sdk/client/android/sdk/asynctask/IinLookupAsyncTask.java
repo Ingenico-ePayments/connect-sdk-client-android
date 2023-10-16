@@ -19,9 +19,9 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 import java.util.List;
 
 /**
- * AsyncTask which executes an IIN lookup call to the GC gateway
+ * AsyncTask which executes an IIN lookup call to the GC gateway.
  *
- * @deprecated use {@link ClientApi#getIINDetails(String, Success, ApiError, Failure)} instead
+ * @deprecated use {@link ClientApi#getIINDetails(String, Success, ApiError, Failure)} instead.
  */
 
 @Deprecated
@@ -30,13 +30,13 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
 	// Minimal nr of chars before doing a iin lookup
 	private final Integer IIN_LOOKUP_MIN_NR_OF_CHARS = 6;
 
-	// The listeners which will be called by the AsyncTask
+	// The listeners which will be called by the AsyncTask when the IinDetailsResponse is received
 	private List<OnIinLookupCompleteListener> listeners;
 
-	// Context needed for reading stubbed IinLookup
+	// Context needed for reading metadata which is sent to the GC gateway
 	private Context context;
 
-	// Entered partial creditcardnumber
+	// Entered partial CreditCardNumber
 	private String partialCreditCardNumber;
 
 	// Communicator which does the communication to the GC gateway
@@ -47,12 +47,13 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
 
 
 	/**
-	 * Constructor
-	 * @param context, used for reading stubbing data
-	 * @param partialCreditCardNumber, entered partial creditcardnumber
-	 * @param communicator, communicator which does the communication to the GC gateway
-	 * @param listeners, listeners which will be called by the AsyncTask when the IIN result is retrieved
-	 * @param paymentContext, payment data that is sent to the gc Gateway; May be null, but this will yield a limited response from the gateway
+	 * Create IinLookupAsyncTask
+	 *
+	 * @param context {@link Context} used for reading device metada which is sent to the GC gateway
+	 * @param partialCreditCardNumber partial credit card number that was entered by the user
+	 * @param communicator {@link C2sCommunicator} which does the communication to the GC gateway
+	 * @param listeners list of {@link OnIinLookupCompleteListener} which will be called by the AsyncTask when the {@link IinDetailsResponse} is laoded
+	 * @param paymentContext {@link PaymentContext} which contains all necessary payment data for doing a call to the GC gateway to get the {@link IinDetailsResponse}; May be null, but this will yield a limited response from the gateway
 	 */
     public IinLookupAsyncTask(Context context, String partialCreditCardNumber, C2sCommunicator communicator,
     						  List<OnIinLookupCompleteListener> listeners, PaymentContext paymentContext) {
@@ -63,7 +64,7 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
     		throw new IllegalArgumentException("Error creating IinLookupAsyncTask, partialCreditCardNumber may not be null");
 		}
 		if (communicator == null ) {
-			throw new IllegalArgumentException("Error creating PaymentProductAsyncTask, communicator may not be null");
+			throw new IllegalArgumentException("Error creating IinLookupAsyncTask, communicator may not be null");
 		}
 		if (listeners == null) {
     		throw new IllegalArgumentException("Error creating IinLookupAsyncTask, listeners may not be null");
@@ -118,18 +119,18 @@ public class IinLookupAsyncTask extends AsyncTask<String, Void, IinDetailsRespon
 
 
     /**
-     * Interface for OnIinLookupComplete listener
-     * Is called from the IinLookupAsyncTask when it has the result for the IinLookup
+     * Interface for the Async task that executes an IIN lookup.
+     * Is called from the {@link IinLookupAsyncTask} when it has received the {@link IinDetailsResponse}.
      *
-	 * @deprecated use {@link ClientApi#getIINDetails(String, Success, ApiError, Failure)} instead
+	 * @deprecated use {@link ClientApi#getIINDetails(String, Success, ApiError, Failure)} instead.
      */
     @Deprecated
     public interface OnIinLookupCompleteListener {
-
-    	/**
-    	 * Listener that is called when IIN lookup is done
-    	 * @param response, the IinDetailsResponse returned by the GC gateway
-    	 */
+		/**
+		 * Invoked when async task was successful and data is available.
+		 *
+		 * @param response the received {@link IinDetailsResponse}
+		 */
         void onIinLookupComplete(IinDetailsResponse response);
     }
 }

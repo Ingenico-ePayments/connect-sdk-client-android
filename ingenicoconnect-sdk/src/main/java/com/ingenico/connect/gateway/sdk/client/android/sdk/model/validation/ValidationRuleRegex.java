@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 
 /**
- * Validation rule for regex
+ * Validation rule for regex.
  */
 public class ValidationRuleRegex extends AbstractValidationRule {
 
@@ -21,19 +21,19 @@ public class ValidationRuleRegex extends AbstractValidationRule {
 		super(errorMessage, type);
 
 		if (regex == null) {
-			throw new IllegalArgumentException("Error initialising FieldValidationRuleRegex, regex may not be null");
+			throw new IllegalArgumentException("Error initialising ValidationRuleRegex, regex may not be null");
 		}
 
 		this.regex = regex;
 	}
 
 	/**
-	 * Validates that the value in the field with fieldId matches the regular expression of this
-	 * validator.
-	 * @param paymentRequest The fully filled payment request that is ready for doing the payment
-	 * @param fieldId The ID of the field to which to apply the current validator
-	 * @return True if the value in the field with <code>fieldId</code> matches the regex; false
-	 * if it doesn't or the fieldId could not be found.
+	 * Validates that the value in the field with fieldId matches the regular expression of this validator.
+	 *
+	 * @param paymentRequest the fully filled {@link PaymentRequest} that will be used for doing a payment
+	 * @param fieldId the ID of the field to which to apply the current validator
+	 *
+	 * @return true, if the value in the field with fieldId matches the regex; false, if it doesn't or if the fieldId could not be found
 	 */
 	@Override
 	public boolean validate(PaymentRequest paymentRequest, String fieldId) {

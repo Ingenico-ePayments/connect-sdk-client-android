@@ -48,7 +48,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Session contains all methods needed for making a payment
+ * Session contains all methods needed for making a payment.
  *
  * @deprecated Replaced by {@link ClientApi}. Obtain an instance by initializing {@link com.ingenico.connect.gateway.sdk.client.android.ConnectSDK}
  * and calling {@link ConnectSDK#getClientApi()}.
@@ -66,7 +66,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	// Communicator used for communicating with the GC gateway
 	private C2sCommunicator communicator;
 
-	// C2sPaymentProductContext which contains all necessary data for making a call to the GC gateway to retrieve payment products
+	// PaymentContext which contains all necessary data for making a call to the GC gateway to retrieve payment products
 	private PaymentContext paymentContext;
 
 	// Flag to determine if the iinlookup is being executed,
@@ -83,11 +83,11 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Gets instance of the Session
+	 * Gets instance of the Session.
 	 *
-	 * @param communicator, used for communicating with the GC gateway
+	 * @param communicator used for communicating with the GC gateway
 	 *
-	 * @return Session instance
+	 * @return {@link Session} singleton instance
 	 */
 	public static Session getInstance(C2sCommunicator communicator) {
 		if (communicator == null ) {
@@ -98,107 +98,111 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Returns true when the application is running in production; false otherwise
+	 * Checks whether the EnvironmentType is set to production or not.
+	 *
+	 * @return a Boolean indicating whether the EnvironmentType is set to production or not
 	 */
 	public boolean isEnvironmentTypeProduction() {
 		return communicator.isEnvironmentTypeProduction();
 	}
 
 	/**
-	 * Returns the asset base URL that was used to create the Session
+	 * Returns the asset base URL that was used to create the Session.
+	 *
+	 * @return the asset base URL
 	 */
 	public String getAssetUrl() {
 		return communicator.getAssetUrl();
 	}
 
 	/**
-	 * Gets all basitPaymentItems for a given payment context
+	 * Gets all {@link BasicPaymentItems} for a given {@link PaymentContext}.
 	 *
-	 * @param context Used for reading device metadata which is send to the GC gateway
-	 * @param paymentContext PaymentContext which contains all neccessary payment info to retrieve the allowed payment items
-	 * @param listener Listener that will be called when the lookup is done
-	 * @param groupPaymentProducts boolean that controls whether the basicPaymentItem call will group the retrieved payment items; true for grouping, false otherwise
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param paymentContext {@link PaymentContext} which contains all necessary payment data for making a call to the GC gateway to get the {@link BasicPaymentItems}
+	 * @param listener {@link com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener} that will be called when the {@link BasicPaymentItems} are retrieved
+	 * @param groupPaymentProducts a Boolean that controls whether the getBasicPaymentItems call will group the retrieved {@link BasicPaymentItems}; true for grouping, false otherwise
      */
 	public void getBasicPaymentItems(Context context, PaymentContext paymentContext, BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener listener, boolean groupPaymentProducts) {
 
 		if (context == null ) {
-			throw new IllegalArgumentException("Error getting paymentproduct, context may not be null");
+			throw new IllegalArgumentException("Error getting basicPaymentItems, context may not be null");
 		}
 		if (paymentContext == null ) {
-			throw new IllegalArgumentException("Error getting paymentproducts, paymentContext may not be null");
+			throw new IllegalArgumentException("Error getting basicPaymentItems, paymentContext may not be null");
 		}
 		if (listener == null ) {
-			throw new IllegalArgumentException("Error getting paymentproducts, listener may not be null");
+			throw new IllegalArgumentException("Error getting basicPaymentItems, listener may not be null");
 		}
 
 		this.paymentContext = paymentContext;
 
-		// Add OnBasicPaymentItemsCallCompleteListener and this class to list of listeners so we can store the paymentproducts here
+		// Add OnBasicPaymentItemsCallCompleteListener and this class to list of listeners so we can store the basicPaymentItems here
 		List<BasicPaymentItemsAsyncTask.OnBasicPaymentItemsCallCompleteListener> listeners = new ArrayList<>();
 		listeners.add(this);
 		listeners.add(listener);
 
-		// Start the task which gets paymentproducts
+		// Start the task which gets basicPaymentItems
 		BasicPaymentItemsAsyncTask task = new BasicPaymentItemsAsyncTask(context, paymentContext, communicator, listeners, groupPaymentProducts);
 		task.execute();
 	}
 
 
 	/**
-	 * Gets BasicPaymentProducts for the given PaymentRequest
+	 * Gets {@link BasicPaymentProducts} for the given {@link PaymentContext}.
 	 *
-	 * @param context, used for reading device metadata which is send to the GC gateway
-	 * @param paymentContext, PaymentContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
-	 * @param listener, OnPaymentProductsCallComplete which will be called by the BasicPaymentProductsAsyncTask when the BasicPaymentProducts are loaded
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param paymentContext {@link PaymentContext} which contains all necessary payment data for making a call to the GC gateway to get the {@link BasicPaymentProducts}
+	 * @param listener {@link OnBasicPaymentProductsCallCompleteListener} that will be called when the {@link BasicPaymentProducts} are retrieved
 	 *
 	 */
 	public void getBasicPaymentProducts(Context context, PaymentContext paymentContext, OnBasicPaymentProductsCallCompleteListener listener) {
 
 		if (context == null ) {
-			throw new IllegalArgumentException("Error getting paymentproduct, context may not be null");
+			throw new IllegalArgumentException("Error getting basicPaymentProducts, context may not be null");
 		}
 		if (paymentContext == null ) {
-			throw new IllegalArgumentException("Error getting paymentproducts, paymentContext may not be null");
+			throw new IllegalArgumentException("Error getting basicPaymentProducts, paymentContext may not be null");
 		}
 		if (listener == null ) {
-			throw new IllegalArgumentException("Error getting paymentproducts, listener may not be null");
+			throw new IllegalArgumentException("Error getting basicPaymentProducts, listener may not be null");
 		}
 
 		this.paymentContext = paymentContext;
 
-		// Add OnBasicPaymentProductsCallCompleteListener and this class to list of listeners so we can store the paymentproducts here
+		// Add OnBasicPaymentProductsCallCompleteListener and this class to list of listeners so we can store the basicPaymentProducts here
 		List<OnBasicPaymentProductsCallCompleteListener> listeners = new ArrayList<>();
 		listeners.add(this);
 		listeners.add(listener);
 
-		// Start the task which gets paymentproducts
+		// Start the task which gets basicPaymentProducts
 		BasicPaymentProductsAsyncTask task = new BasicPaymentProductsAsyncTask(context, paymentContext, communicator, listeners);
 		task.execute();
 	}
 
 
 	/**
-	 * Gets PaymentProduct with fields from the GC gateway
+	 * Gets {@link PaymentProduct} with fields by product id.
 	 *
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param productId, the productId of the product which needs to be retrieved from the GC gateway
-	 * @param paymentContext, PaymentContext which contains all neccesary data for doing call to the GC gateway to retrieve BasicPaymentProducts
-	 * @param listener, listener which will be called by the AsyncTask when the PaymentProduct with fields is retrieved
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param productId the productId of the {@link PaymentProduct} which needs to be retrieved from the GC gateway
+	 * @param paymentContext {@link PaymentContext} which contains all necessary payment data for making a call to the GC gateway to get the {@link PaymentProduct}
+	 * @param listener {@link OnPaymentProductCallCompleteListener} that will be called when the {@link PaymentProduct} with fields is retrieved
 	 *
 	 */
 	public void getPaymentProduct(Context context, String productId, PaymentContext paymentContext, OnPaymentProductCallCompleteListener listener) {
 
 		if (context == null ) {
-			throw new IllegalArgumentException("Error getting paymentproduct, context may not be null");
+			throw new IllegalArgumentException("Error getting paymentProduct, context may not be null");
 		}
 		if (productId == null ) {
-			throw new IllegalArgumentException("Error getting paymentproduct, groupId may not be null");
+			throw new IllegalArgumentException("Error getting paymentProduct, productId may not be null");
 		}
 		if (paymentContext == null) {
-			throw new IllegalArgumentException(("Error getting paymentproduct, paymentContext may not be null"));
+			throw new IllegalArgumentException(("Error getting paymentProduct, paymentContext may not be null"));
 		}
 		if (listener == null ) {
-			throw new IllegalArgumentException("Error getting paymentproduct, listener may not be null");
+			throw new IllegalArgumentException("Error getting paymentProduct, listener may not be null");
 		}
 
 		this.paymentContext = paymentContext;
@@ -206,18 +210,18 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 		// Create the cache key for this paymentProduct
 		PaymentItemCacheKey key = createPaymentItemCacheKey(paymentContext, productId);
 
-		// If the paymentProduct is already in the cache, call the listener with that paymentproduct
+		// If the paymentProduct is already in the cache, call the listener with that paymentProduct
 		if (paymentItemMapping.containsKey(key)) {
 			PaymentProduct cachedPP = (PaymentProduct) paymentItemMapping.get(key);
 			listener.onPaymentProductCallComplete(cachedPP);
 		} else {
 
-			// Add OnPaymentProductsCallComplete listener and this class to list of listeners so we can store the paymentproduct here
+			// Add OnPaymentProductsCallComplete listener and this class to list of listeners so we can store the paymentProduct here
 			List<OnPaymentProductCallCompleteListener> listeners = new ArrayList<>();
 			listeners.add(this);
 			listeners.add(listener);
 
-			// Do the call to the GC gateway
+			// Make the call to the GC gateway
 			PaymentProductAsyncTask task = new PaymentProductAsyncTask(context, productId, paymentContext, communicator, listeners);
 			task.execute();
 		}
@@ -225,60 +229,60 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Gets BasicPaymentProducts for the given PaymentRequest
+	 * Gets {@link BasicPaymentProductGroups} for the given {@link PaymentContext}.
 	 *
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param paymentContext, C2sPaymentProductContext which contains all neccesary data for doing call to the GC gateway to retrieve paymentproducts
-	 * @param listener, OnPaymentProductsCallComplete which will be called by the BasicPaymentProductsAsyncTask when the BasicPaymentProducts are loaded
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param paymentContext {@link PaymentContext} which contains all necessary payment data for making a call to the GC gateway to get the {@link BasicPaymentProductGroups}
+	 * @param listener {@link com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductGroupsAsyncTask.OnBasicPaymentProductGroupsCallCompleteListener} that will be when the {@link BasicPaymentProductGroups} are retrieved
 	 *
 	 */
 	public void getBasicPaymentProductGroups(Context context, PaymentContext paymentContext, BasicPaymentProductGroupsAsyncTask.OnBasicPaymentProductGroupsCallCompleteListener listener) {
 
 		if (context == null ) {
-			throw new IllegalArgumentException("Error getting paymentProductGroups, context may not be null");
+			throw new IllegalArgumentException("Error getting basicPaymentProductGroups, context may not be null");
 		}
 		if (paymentContext == null ) {
-			throw new IllegalArgumentException("Error getting paymentProductGroups, paymentContext may not be null");
+			throw new IllegalArgumentException("Error getting basicPaymentProductGroups, paymentContext may not be null");
 		}
 		if (listener == null ) {
-			throw new IllegalArgumentException("Error getting paymentProductGroups, listener may not be null");
+			throw new IllegalArgumentException("Error getting basicPaymentProductGroups, listener may not be null");
 		}
 
 		this.paymentContext = paymentContext;
 
-		// Add OnBasicPaymentProductGroupsCallCompleteListener and this class to list of listeners so we can store the paymentProductGroups here
+		// Add OnBasicPaymentProductGroupsCallCompleteListener and this class to list of listeners so we can store the basicPaymentProductGroups here
 		List<BasicPaymentProductGroupsAsyncTask.OnBasicPaymentProductGroupsCallCompleteListener> listeners = new ArrayList<>();
 		listeners.add(this);
 		listeners.add(listener);
 
-		// Start the task which gets paymentproducts
+		// Start the task which gets basicPaymentProductGroups
 		BasicPaymentProductGroupsAsyncTask task = new BasicPaymentProductGroupsAsyncTask(context, paymentContext, communicator, listeners);
 		task.execute();
 	}
 
 
 	/**
-	 * Gets PaymentProductGroup with fields from the GC gateway
+	 * Gets {@link PaymentProductGroup} with fields from the GC gateway.
 	 *
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param groupId, the productId of the group which needs to be retrieved from the GC gateway
-	 * @param paymentContext, PaymentContext which contains all necessary data for doing call to the GC gateway to retrieve PaymentProductGroup
-	 * @param listener, listener which will be called by the AsyncTask when the PaymentProductGroup with fields is retrieved
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param groupId the productId of the {@link PaymentProductGroup} which needs to be retrieved from the GC gateway
+	 * @param paymentContext {@link PaymentContext} which contains all necessary data for making call to the GC gateway to retrieve {@link PaymentProductGroup}
+	 * @param listener {@link com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener} that will be called when the {@link PaymentProductGroup} with fields is retrieved
 	 *
 	 */
 	public void getPaymentProductGroup(Context context, String groupId, PaymentContext paymentContext, PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener listener) {
 
 		if (context == null ) {
-			throw new IllegalArgumentException("Error getting paymentproduct, context may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductGroup, context may not be null");
 		}
 		if (groupId == null ) {
-			throw new IllegalArgumentException("Error getting paymentproduct, groupId may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductGroup, groupId may not be null");
 		}
 		if (paymentContext == null) {
-			throw new IllegalArgumentException(("Error getting paymentproduct, paymentContext may not be null"));
+			throw new IllegalArgumentException(("Error getting paymentProductGroup, paymentContext may not be null"));
 		}
 		if (listener == null ) {
-			throw new IllegalArgumentException("Error getting paymentproduct, listener may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductGroup, listener may not be null");
 		}
 
 		this.paymentContext = paymentContext;
@@ -292,37 +296,39 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 			listener.onPaymentProductGroupCallComplete(cachedPPG);
 		} else {
 
-			// Add OnPaymentProductsCallComplete listener and this class to list of listeners so we can store the paymentproduct here
+			// Add OnPaymentProductsCallComplete listener and this class to list of listeners so we can store the paymentProductGroup here
 			List<PaymentProductGroupAsyncTask.OnPaymentProductGroupCallCompleteListener> listeners = new ArrayList<>();
 			listeners.add(this);
 			listeners.add(listener);
 
-			// Do the call to the GC gateway
+			// Make the call to the GC gateway
 			PaymentProductGroupAsyncTask task = new PaymentProductGroupAsyncTask(context, groupId, paymentContext, communicator, listeners);
 			task.execute();
 		}
 	}
 
 	/**
-	 * Gets the CustomerDetails from the GC gateway
+	 * Gets the CustomerDetails as a {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse} from the GC gateway.
 	 *
-	 * @param productId, the productId for which you want to look up customerDetails
-	 * @param countryCode, the country of the customer
-	 * @param values, the
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param productId the product id of which the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse} should be retrieved
+	 * @param countryCode the code of the country where the customer resides
+	 * @param values list of {@link KeyValuePair} containing which details from the customer should be retrieved
+	 * @param listener {@link OnCustomerDetailsCallCompleteListener} that will be called when the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse} is retrieved
 	 */
 	public void getCustomerDetails(Context context, String productId, String countryCode, List<KeyValuePair> values, OnCustomerDetailsCallCompleteListener listener) {
 
 		if (context == null) {
-			throw new IllegalArgumentException("Error getting CustomerDetails, context may not be null");
+			throw new IllegalArgumentException("Error getting customerDetails, context may not be null");
 		}
 		if (productId == null) {
-			throw new IllegalArgumentException("Error getting CustomerDetails, productId may not be null");
+			throw new IllegalArgumentException("Error getting customerDetails, productId may not be null");
 		}
 		if (countryCode == null) {
-			throw new IllegalArgumentException("Error getting CustomerDetails, countryCode may not be null");
+			throw new IllegalArgumentException("Error getting customerDetails, countryCode may not be null");
 		}
 		if (values == null) {
-			throw new IllegalArgumentException("Error getting CustomerDetails, values may not be null");
+			throw new IllegalArgumentException("Error getting customerDetails, values may not be null");
 		}
 
 		CustomerDetailsAsyncTask task = new CustomerDetailsAsyncTask(context, productId, countryCode, values, communicator, listener);
@@ -330,31 +336,30 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	}
 
 	/**
-	 * Gets PaymentProductDirectory from the GC gateway
+	 * Gets PaymentProductDirectory as a {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse} from the GC gateway.
 	 *
-	 * @param productId, for which product must the lookup be done
-	 * @param currencyCode, for which currencyCode must the lookup be done
-	 * @param countryCode, for which countryCode must the lookup be done
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param listener, listener which will be called by the AsyncTask when the PaymentProductDirectory with fields is retrieved
+	 * @param productId  id of the product for which the lookup must be done
+	 * @param currencyCode for which currencyCode the lookup must be done
+	 * @param countryCode for which countryCode the lookup must be done
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param listener {@link OnPaymentProductDirectoryCallCompleteListener} that will be called when the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse} is retrieved
 	 */
-
 	public void getDirectoryForPaymentProductId(String productId, String currencyCode, String countryCode, Context context, OnPaymentProductDirectoryCallCompleteListener listener) {
 
 		if (productId == null) {
-			throw new IllegalArgumentException("Error getting PaymentProductDirectory, productId may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductDirectory, productId may not be null");
 		}
 		if (currencyCode == null) {
-			throw new IllegalArgumentException("Error getting PaymentProductDirectory, currencyCode may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductDirectory, currencyCode may not be null");
 		}
 		if (countryCode == null) {
-			throw new IllegalArgumentException("Error getting PaymentProductDirectory, countryCode may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductDirectory, countryCode may not be null");
 		}
 		if (listener == null ) {
-			throw new IllegalArgumentException("Error getting PaymentProductDirectory, listener may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductDirectory, listener may not be null");
 		}
 		if (context == null ) {
-			throw new IllegalArgumentException("Error getting PaymentProductDirectory, context may not be null");
+			throw new IllegalArgumentException("Error getting paymentProductDirectory, context may not be null");
 		}
 
 		PaymentProductDirectoryAsyncTask task = new PaymentProductDirectoryAsyncTask(productId, currencyCode, countryCode, context, communicator, listener);
@@ -362,12 +367,12 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	}
 
 	/**
-	 * Gets the IinDetails for a given partialCreditCardNumber
+	 * Gets the IinDetails as a {@link IinDetailsResponse} for a given partial credit card number.
 	 *
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param partialCreditCardNumber, entered partial creditcardnumber for which the IinDetails will be retrieved
-	 * @param listener, listener which will be called by the AsyncTask when the IIN result is retrieved
-	 * @param paymentContext, payment information for which the IinDetails will be retrieved
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param partialCreditCardNumber entered partial credit card number for which the {@link IinDetailsResponse} will be retrieved
+	 * @param listener {@link OnIinLookupCompleteListener} that will be called when the {@link IinDetailsResponse} is retrieved
+	 * @param paymentContext {@link PaymentContext} for which the {@link IinDetailsResponse} will be retrieved
 	 *
 	 */
 	public void getIinDetails(Context context, String partialCreditCardNumber, OnIinLookupCompleteListener listener, PaymentContext paymentContext) {
@@ -398,10 +403,10 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Retrieves the publickey from the GC gateway
+	 * Retrieves the public key as a {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.PublicKeyResponse} from the GC gateway.
 	 *
-	 * @param context, used for reading device metadata which is send to the GC gateway
-	 * @param listener, OnPublicKeyLoaded listener which is called when the publickey is retrieved
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param listener {@link PublicKeyAsyncTask.OnPublicKeyLoadedListener} that will be called when the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.PublicKeyResponse} is retrieved
 	 *
 	 */
 	public void getPublicKey(Context context, PublicKeyAsyncTask.OnPublicKeyLoadedListener listener) {
@@ -417,11 +422,13 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	}
 
 	/**
-	 * Retrieves the ThirdPartyPaymentStatus of a payment that is being processed with a
-	 * third party. This call has been designed specifically for payment products that support
-	 * it. Please make sure that this call is compatible with the payment product you are implementing.
+	 * Retrieves the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.ThirdPartyStatus} as a {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.ThirdPartyStatusResponse} of a payment that is being processed with a third party.
+	 * This call has been designed specifically for payment products that support it.
+	 * Please make sure that this call is compatible with the payment product you are implementing.
 	 *
-	 * @param context, used for reading device metadata, which is send to the GC gateway
+	 * @param context used for reading device metadata, which is sent to the GC gateway
+	 * @param paymentId the id of the payment for which the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.ThirdPartyStatus} should be retrieved
+	 * @param listener {@link com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.ThirdPartyStatusAsyncTask.OnThirdPartyStatusCallCompleteListener} that will be called when the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.ThirdPartyStatus} is retrieved
 	 */
 	public void getThirdPartyStatus(Context context, String paymentId, ThirdPartyStatusAsyncTask.OnThirdPartyStatusCallCompleteListener listener) {
 
@@ -432,7 +439,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 			throw new IllegalArgumentException("Error getting ThirdPartyStatus, paymentId may not be null");
 		}
 		if (listener == null ) {
-			throw new IllegalArgumentException("Error getting payment product public key, listener may not be null");
+			throw new IllegalArgumentException("Error getting ThirdPartyStatus, listener may not be null");
 		}
 
 		ThirdPartyStatusAsyncTask task = new ThirdPartyStatusAsyncTask(context, paymentId, communicator, listener);
@@ -441,23 +448,23 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Prepares a PreparedPaymentRequest from the current paymentRequest
+	 * Prepares a {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.PreparedPaymentRequest} from the supplied {@link PaymentRequest}.
 	 *
-	 * @param paymentRequest, the paymentRequest which contains all values for all fields
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param listener, OnPaymentRequestPrepared which is called when the PreparedPaymentRequest is created
+	 * @param paymentRequest the {@link PaymentRequest} which contains all values for all fields
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param listener {@link OnPaymentRequestPreparedListener} which is called when the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.PreparedPaymentRequest} is created
 	 *
 	 */
 	public void preparePaymentRequest(PaymentRequest paymentRequest, Context context, OnPaymentRequestPreparedListener listener) {
 
 		if (paymentRequest == null ) {
-			throw new IllegalArgumentException("Error preparing payment request, paymentRequest may not be null");
+			throw new IllegalArgumentException("Error creating preparedPaymentRequest, paymentRequest may not be null");
 		}
 		if (context == null ) {
-			throw new IllegalArgumentException("Error preparing payment request, context may not be null");
+			throw new IllegalArgumentException("Error creating preparedPaymentRequest, context may not be null");
 		}
 		if (listener == null ) {
-			throw new IllegalArgumentException("Error preparing payment request, listener may not be null");
+			throw new IllegalArgumentException("Error creating preparedPaymentRequest, listener may not be null");
 		}
 
 		Map<String, String>  metaData = communicator.getMetadata(context);
@@ -469,13 +476,13 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Converts a given amount in cents from the given source currency to the given target currency
+	 * Converts a given amount in cents from the given source currency to the given target currency.
 	 *
-	 * @param amount,   the amount in cents to be converted
-	 * @param source,   source currency
-	 * @param target,   target currency
-	 * @param context,  needed for reading metadata
-	 * @param listener, listener which will be called by the AsyncTask
+	 * @param amount the amount in cents to be converted
+	 * @param source the currency which the amount currently is
+	 * @param target the currency to which the amount should be converted
+	 * @param context needed for reading metadata
+	 * @param listener {@link ConvertAmountAsyncTask.OnAmountConvertedListener} that will be called when the amount is converted
 	 *
 	 */
 	public void convertAmount (Long amount, String source, String target, Context context, ConvertAmountAsyncTask.OnAmountConvertedListener listener) {
@@ -502,8 +509,9 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Utility methods for setting clientSessionId
-	 * @param clientSessionId
+	 * Utility method for setting clientSessionId.
+	 *
+	 * @param clientSessionId the client session id which should be set
 	 */
 	public void setClientSessionId(String clientSessionId) {
 
@@ -515,7 +523,9 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	}
 
 	/**
-	 * Utility methods for getting clientSessionId
+	 * Utility method for getting clientSessionId.
+	 *
+	 * @return the client session id of the current session
 	 */
 	public String getClientSessionId() {
 		return clientSessionId;
@@ -524,7 +534,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 	private PaymentItemCacheKey createPaymentItemCacheKey(PaymentContext paymentContext, String paymentItemId) {
 
-		// Create the cache key for this retrieved BasicPaymentitem
+		// Create the cache key for this retrieved BasicPaymentItem
 		return new PaymentItemCacheKey(paymentContext.getAmountOfMoney().getAmount(),
 				paymentContext.getCountryCode(),
 				paymentContext.getAmountOfMoney().getCurrencyCode(),
@@ -553,7 +563,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 	}
 
 	/**
-	 * Listener for retrieved basicpaymentproducts from the GC gateway
+	 * Listener for retrieved {@link BasicPaymentProducts} from the GC gateway.
 	 */
 	@Override
 	public void onBasicPaymentProductsCallComplete(BasicPaymentProducts basicPaymentProducts) {
@@ -566,7 +576,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Listener for retrieved paymentproduct from the GC gateway
+	 * Listener for retrieved {@link PaymentProduct} from the GC gateway.
 	 */
 	@Override
 	public void onPaymentProductCallComplete(PaymentProduct paymentProduct) {
@@ -577,7 +587,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Listener for retrieved basicpaymentproductgroups from the GC gateway
+	 * Listener for retrieved {@link BasicPaymentProductGroups} from the GC gateway.
      */
 	@Override
 	public void onBasicPaymentProductGroupsCallComplete(BasicPaymentProductGroups basicPaymentProductGroups) {
@@ -590,7 +600,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Listener for retrieved paymentproductgroup from the GC gateway
+	 * Listener for retrieved {@link PaymentProductGroup} from the GC gateway.
      */
 	@Override
 	public void onPaymentProductGroupCallComplete(PaymentProductGroup paymentProductGroup) {
@@ -601,7 +611,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Listener for retrieved paymentitems from the GC gateway
+	 * Listener for retrieved {@link BasicPaymentItems} from the GC gateway.
      */
 	@Override
 	public void onBasicPaymentItemsCallComplete(BasicPaymentItems basicPaymentItems) {
@@ -616,7 +626,7 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 
 
 	/**
-	 * Listener for retrieved iindetails from the GC gateway
+	 * Listener for retrieved {@link IinDetailsResponse} from the GC gateway.
 	 */
 	@Override
 	public void onIinLookupComplete(IinDetailsResponse response) {

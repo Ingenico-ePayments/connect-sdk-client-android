@@ -15,28 +15,29 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success;
 
 /**
- * AsyncTask which executes an publickey lookup call to the Ingenico ePayments platform
+ * AsyncTask which executes a public key lookup call to the GC Gateway.
  *
- * @deprecated use {@link ClientApi#getPublicKey(Success, ApiError, Failure)} instead
+ * @deprecated use {@link ClientApi#getPublicKey(Success, ApiError, Failure)} instead.
  */
 
 @Deprecated
 public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyResponse> {
 
-	// The listener which will be called by the AsyncTask
+	// The listener which will be called by the AsyncTask when a PublicKeyResponse has been received
 	private OnPublicKeyLoadedListener listener;
 
-	// Context needed for reading stubbed publickey data
+	// Context needed for reading metadata which is sent to the GC gateway
 	private Context context;
 
 	// Communicator which does the communication to the GC gateway
 	private C2sCommunicator communicator;
 
 	/**
-	 * Constructor
-	 * @param context, needed for reading stubbed publickey data
-	 * @param communicator, Communicator which does the communication to the GC gateway
-	 * @param listener, listener which will be called by the AsyncTask
+	 * Create PublicKeyAsyncTask
+	 *
+	 * @param context used for reading device metadata which is sent to the GC gateway
+	 * @param communicator {@link C2sCommunicator} which does the communication to the GC gateway
+	 * @param listener {@link OnPublicKeyLoadedListener} which will be called by the AsyncTask when a {@link PublicKeyResponse} has been received
 	 */
     public PublicKeyAsyncTask(Context context, C2sCommunicator communicator, OnPublicKeyLoadedListener listener) {
 
@@ -73,19 +74,18 @@ public class PublicKeyAsyncTask extends AsyncTask<String, Void, PublicKeyRespons
 
 
     /**
-     * Interface for OnPublicKeyLoaded listener
-     * Is called from the BasicPaymentProductsAsyncTask when it has the publickey
+     * Interface for the Async task that executes a public key lookup call.
+     * Is called from the {@link PublicKeyAsyncTask} when it has received a {@link PublicKeyResponse}.
      *
-	 * @deprecated use {@link ClientApi#getPublicKey(Success, ApiError, Failure)} instead
+	 * @deprecated use {@link ClientApi#getPublicKey(Success, ApiError, Failure)} instead.
      */
     @Deprecated
     public interface OnPublicKeyLoadedListener {
-
-
-    	/**
-    	 * Listener that is called when publickey is loaded
-    	 * @param response, the PublicKeyResponse which contains the public key data
-    	 */
+		/**
+		 * Listener that is called when publickey is loaded.
+		 *
+		 * @param response the {@link PublicKeyResponse} which contains the public key data
+		 */
         void onPublicKeyLoaded(PublicKeyResponse response);
     }
 }

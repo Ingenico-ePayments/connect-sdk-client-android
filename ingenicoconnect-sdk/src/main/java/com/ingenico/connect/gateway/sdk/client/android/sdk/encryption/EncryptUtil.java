@@ -23,7 +23,7 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
- * Util class that contains methods for encryption
+ * Util class that contains methods for encryption.
  *
  * @deprecated This class will become internal to the SDK. Use {@link com.ingenico.connect.gateway.sdk.client.android.ConnectSDK#encryptPaymentRequest(PaymentRequest, Success, Failure)} for encryption instead.
  */
@@ -45,11 +45,11 @@ public class EncryptUtil {
 
 
 	/**
-	 * Encodes a String with base64Url encoding
-	 * It also removes characters which must be removed according to the JOSE spec:
-	 * http://tools.ietf.org/html/draft-ietf-jose-json-web-signature-29#appendix-C
+	 * Encodes a String with base64Url encoding.
+	 * It also removes characters which must be removed according to the <a href="http://tools.ietf.org/html/draft-ietf-jose-json-web-signature-29#appendix-C">JOSE spec</a>.
 	 *
-	 * @param data, the data which will be encoded
+	 * @param data the data which will be encoded
+	 *
 	 * @return encoded data
 	 */
 	public String base64UrlEncode(byte[] data) {
@@ -61,8 +61,10 @@ public class EncryptUtil {
 
 
 	/**
-	 * Generates bytearray which is filled with random bytes from SecureRandom
-	 * @param size, the size of the random byte[]
+	 * Generates bytearray which is filled with random bytes from SecureRandom.
+	 *
+	 * @param size the size of the random byte[]
+	 *
 	 * @return byte[size]
 	 */
 	byte[] generateSecureRandomBytes(int size) {
@@ -79,11 +81,14 @@ public class EncryptUtil {
 
 
 	/**
-	 * Encrypts a given ContentEncryptionKey with a public key using RSA
-	 * @param contentEncryptionKey, the ContentEncryptionKey to be encrypted
-	 * @param publicKey, the public key
-	 * @return byte[] of encrypted ContentEncryptionKey
-	 * @throws EncryptDataException
+	 * Encrypts a given byte array with a public key using RSA.
+	 *
+	 * @param contentEncryptionKey the byte array to be encrypted
+	 * @param publicKey the public key
+	 *
+	 * @return byte[] of encrypted contentEncryptionKey
+	 *
+	 * @throws EncryptDataException when an error occurs while encrypting data
 	 */
 	byte[] encryptContentEncryptionKey(byte[] contentEncryptionKey, PublicKey publicKey) throws EncryptDataException {
 
@@ -104,12 +109,15 @@ public class EncryptUtil {
 
 
 	/**
-	 * Encrypts a given String with a contentEncryptionKey and initializationVector using AES
-	 * @param payload, the data which is encrypted
-	 * @param contentEncryptionKey, the secret which is used for encrypting the payload
-	 * @param initializationVector,  the initializationVector which is used for encypting the payload
+	 * Encrypts a given String with a contentEncryptionKey and initializationVector using AES.
+	 *
+	 * @param payload the data which will be encrypted
+	 * @param contentEncryptionKey the secret which is used for encrypting the payload
+	 * @param initializationVector the initializationVector which is used for encrypting the payload
+	 *
 	 * @return byte[] of encrypted payload
-	 * @throws EncryptDataException
+	 *
+	 * @throws EncryptDataException when an error occurs while encrypting data
 	 */
 	byte[] encryptPayload(String payload, byte[] contentEncryptionKey, byte[] initializationVector) throws EncryptDataException {
 
@@ -131,10 +139,13 @@ public class EncryptUtil {
 
 
 	/**
-	 * Concatenates multiple byteArrays into one byte[]
-	 * @param byteArrays
+	 * Concatenates multiple byteArrays into one byte[].
+	 *
+	 * @param byteArrays the data which should be concatenated
+	 *
 	 * @return Concatenated byte[]
-	 * @throws IOException
+	 *
+	 * @throws IOException when there is an error writing to the ByteArrayOutputStream
 	 */
 	byte [] concatenateByteArrays(byte[]... byteArrays) throws IOException {
 
@@ -149,11 +160,14 @@ public class EncryptUtil {
 
 
 	/**
-	 * Calculates HMAC given the byte[] data and the secure random key
-	 * @param key, sucure random key, used for encrypting the data
-	 * @param hmacInput, the data to be encrypted
+	 * Calculates the HMAC for the message represented by byte[] hmacInput and the secure random key.
+	 *
+	 * @param key secure random key, used for encrypting the data
+	 * @param hmacInput the data to be encrypted
+	 *
 	 * @return encrypted data
-	 * @throws EncryptDataException
+	 *
+	 * @throws EncryptDataException when an error occurs while encrypting data
 	 */
 	byte[] calculateHmac(byte[] key, byte[] hmacInput) throws EncryptDataException {
 		try {

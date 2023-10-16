@@ -12,8 +12,7 @@ import java.util.List;
 
 
 /**
- * POJO that represents an AccountOnFile object
- * This class is filled by deserialising a JSON string from the GC gateway
+ * POJO that represents an AccountOnFile object.
  */
 public class AccountOnFile implements Serializable {
 

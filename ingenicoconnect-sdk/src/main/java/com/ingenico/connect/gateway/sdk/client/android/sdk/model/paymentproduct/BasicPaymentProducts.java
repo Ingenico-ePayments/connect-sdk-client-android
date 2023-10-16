@@ -16,8 +16,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Pojo with convenience methods for getting PaymentProduct and AccountOnFile objects
- * This class is filled by deserialising a JSON string from the GC gateway
+ * POJO with convenience methods for getting {@link BasicPaymentProduct} and {@link AccountOnFile} objects.
  */
 public class BasicPaymentProducts implements Serializable {
 
@@ -34,8 +33,9 @@ public class BasicPaymentProducts implements Serializable {
 	private Boolean hasBeenSorted = false;
 
 	/**
-	 * Gets all paymentproducts
-	 * @return A sorted list of basicPaymentProducts
+	 * Gets all basicPaymentProducts.
+	 *
+	 * @return a sorted list of basicPaymentProducts
 	 */
 	public List<BasicPaymentProduct> getBasicPaymentProducts() {
 		try {
@@ -78,8 +78,9 @@ public class BasicPaymentProducts implements Serializable {
 
 
 	/**
-	 * Gets all AccountsOnFile for all BasicPaymentProducts
-	 * @return all AccountsOnFile for all BasicPaymentProducts
+	 * Gets all AccountsOnFile for all BasicPaymentProducts.
+	 *
+	 * @return a list of all AccountsOnFile
 	 */
 	public List<AccountOnFile> getAccountsOnFile() {
 
@@ -95,9 +96,11 @@ public class BasicPaymentProducts implements Serializable {
 
 
 	/**
-	 * Gets a PaymentProduct by its id
-	 * @param basicPaymentProductId, the id of PaymentProduct
-	 * @return BasicPaymentProduct or null if not found
+	 * Gets a {@link BasicPaymentProduct} by its id
+	 *
+	 * @param basicPaymentProductId the id of the {@link BasicPaymentProduct} that should be retrieved
+	 *
+	 * @return the retrieved {@link BasicPaymentProduct}, or null if not found
 	 */
 	public BasicPaymentProduct getBasicPaymentProductById(String basicPaymentProductId) {
 
@@ -116,9 +119,11 @@ public class BasicPaymentProducts implements Serializable {
 
 
 	/**
-	 * Gets a BasicPaymentProduct by its AccountOnFileId
-	 * @param accountOnFileId, the accountOnFileId for which the belonging PaymentProduct is found
-	 * @return PaymentProduct, or null if not found
+	 * Gets a {@link BasicPaymentProduct} by its AccountOnFileId.
+	 *
+	 * @param accountOnFileId the accountOnFileId for which the belonging {@link BasicPaymentProduct} should be retrieved
+	 *
+	 * @return the retrieved {@link BasicPaymentProduct}, or null if not found
 	 */
 	public BasicPaymentProduct getBasicPaymentProductByAccountOnFileId(Integer accountOnFileId) {
 
@@ -139,8 +144,9 @@ public class BasicPaymentProducts implements Serializable {
 	}
 
 	/**
-	 * returns a list of PaymentProductSelectables instead of BasicPaymentProducts
-	 * @return list of PaymentProductSelectables
+	 * Returns a list of basicPaymentItems instead of basicPaymentProducts.
+	 *
+	 * @return list of basicPaymentItems
      */
 	public List<BasicPaymentItem> getPaymentProductsAsItems() {
 		return new ArrayList<>(getBasicPaymentProducts());

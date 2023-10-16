@@ -12,8 +12,7 @@ import java.util.List;
 
 /**
  *
- * Pojo which holds the BasicPaymentProductGroup properties
- * This class is filled by deserialising a JSON string from the GC gateway
+ * POJO which holds the BasicPaymentProductGroup properties.
  */
 public class BasicPaymentProductGroup implements BasicPaymentItem, Serializable {
 
@@ -23,7 +22,7 @@ public class BasicPaymentProductGroup implements BasicPaymentItem, Serializable 
     private String id;
     private DisplayHintsPaymentItem displayHints;
 
-    // List containing all AccountOnFiles
+    // List containing all AccountsOnFile
     private List<AccountOnFile> accountsOnFile = new ArrayList<>();
 
     private String acquirerCountry;

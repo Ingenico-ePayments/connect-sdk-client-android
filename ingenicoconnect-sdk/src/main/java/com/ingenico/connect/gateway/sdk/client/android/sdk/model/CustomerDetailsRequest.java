@@ -9,7 +9,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.
 import java.util.List;
 
 /**
- * Pojo that holds the CustomerDetails call request
+ * POJO that holds the CustomerDetails call request.
  */
 public class CustomerDetailsRequest {
 
@@ -26,6 +26,10 @@ public class CustomerDetailsRequest {
         return countryCode;
     }
 
+    /**
+     * @param countryCode the Country Code of the Country where the transaction will take place. The provided code should match the ISO-3166-alpha-2 standard.
+     * @see <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166 Country Codes</a>
+     */
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }

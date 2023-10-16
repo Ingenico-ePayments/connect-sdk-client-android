@@ -10,7 +10,7 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentRequest;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Validation rule for boleto bancario requiredness
+ * Validation rule for Boleto Bancario.
  */
 public class ValidationRuleBoletoBancarioRequiredness extends AbstractValidationRule {
 
@@ -29,18 +29,19 @@ public class ValidationRuleBoletoBancarioRequiredness extends AbstractValidation
     /**
      * Validates that, if the field is required for the current FiscalNumber value, the value is not
      * null or empty.
-     * @param paymentRequest The fully filled payment request that is ready for doing the payment
-     * @param fieldId The ID of the field to which to apply the current validator
-     * @return True if the value in the field with <code>fieldId</code> is required (based on Fiscal
-     * Number) and is not empty.
+     *
+     * @param paymentRequest the fully filled {@link PaymentRequest} that will be used for doing a payment
+     * @param fieldId the ID of the field to which to apply the current validator
+     *
+     * @return true if the value in the field with <code>fieldId</code> is required (based on Fiscal Number), and is not empty
      */
     @Override
     public boolean validate(PaymentRequest paymentRequest, String fieldId) {
         if (paymentRequest == null) {
-            throw new IllegalArgumentException("Error validating, paymentRequest may not be null");
+            throw new IllegalArgumentException("Error validating Boleto Bancario, paymentRequest may not be null");
         }
         if (fieldId == null) {
-            throw new IllegalArgumentException("Error validating, fieldId may not be null");
+            throw new IllegalArgumentException("Error validating Boleto Bancario, fieldId may not be null");
         }
 
         // If the field is not required for Boleto, it is definitely valid
@@ -55,13 +56,15 @@ public class ValidationRuleBoletoBancarioRequiredness extends AbstractValidation
 
     /**
      * Validates if the field is required based on the length of the Fiscal Number field.
-     * @param paymentRequest The fully filled payment request that is ready for doing the payment
-     * @return True if the current value in the Fiscal Number field has the length that was specified in
-     * {@link #ValidationRuleBoletoBancarioRequiredness(Integer, String, ValidationType)}.
+     *
+     * @param paymentRequest the fully filled {@link PaymentRequest} that will be used for doing a payment
+     *
+     * @return true if the current value in the Fiscal Number field has the length that was specified in
+     * {@link #ValidationRuleBoletoBancarioRequiredness(Integer, String, ValidationType)}
      */
     public boolean isFieldRequired(PaymentRequest paymentRequest) {
         if (paymentRequest == null) {
-            throw new IllegalArgumentException("Error validating, paymentRequest may not be null");
+            throw new IllegalArgumentException("Error validating Boleto Bancario, paymentRequest may not be null");
         }
 
         String fiscalNumber = paymentRequest.getValue(Constants.FISCAL_NUMBER_FIELD_ID);

@@ -22,32 +22,33 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 /**
- * AsyncTask which loads all BasicPaymentProducts from the GC Gateway
+ * AsyncTask which loads all {@link BasicPaymentProducts} from the GC Gateway.
  *
- * @deprecated use {@link ClientApi#getPaymentProducts(Success, ApiError, Failure)} instead
+ * @deprecated use {@link ClientApi#getPaymentProducts(Success, ApiError, Failure)} instead.
  */
 
 @Deprecated
 public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, BasicPaymentProducts> implements Callable<BasicPaymentProducts> {
 
-	// The listener which will be called by the AsyncTask when the BasicPaymentProducts are loaded
+	// The listeners which will be called by the AsyncTask when the BasicPaymentProducts are loaded
 	private List<OnBasicPaymentProductsCallCompleteListener> listeners;
 
-	// Context needed for reading stubbed BasicPaymentProducts
+	// Context needed for reading metadata which is sent to the GC gateway
 	private Context context;
 
-	// Contains all the information needed to communicate with the GC gateway to get paymentproducts
+	// Contains all the information needed to communicate with the GC gateway to get BasicPaymentProducts
 	private PaymentContext paymentContext;
 
 	// Communicator which does the communication to the GC gateway
 	private C2sCommunicator communicator;
 
 	/**
-	 * Constructor
-	 * @param context, used for reading device metada which is send to the GC gateway
-	 * @param paymentContext, request which contains all necessary data for doing call to the GC gateway to get paymentproducts
-	 * @param communicator, Communicator which does the communication to the GC gateway
-	 * @param listeners, list of listeners which will be called by the AsyncTask when the BasicPaymentProducts are loaded
+	 * Create a BasicPaymentProductsAsyncTask
+	 *
+	 * @param context {@link Context} used for reading device metadata which is sent to the GC gateway
+	 * @param paymentContext {@link PaymentContext} which contains all necessary payment data for doing a call to the GC gateway to get the {@link BasicPaymentProducts}
+	 * @param communicator {@link C2sCommunicator} which does the communication to the GC gateway
+	 * @param listeners list of {@link OnBasicPaymentProductsCallCompleteListener} which will be called by the AsyncTask when the {@link BasicPaymentProducts} are loaded
 	 */
 	public BasicPaymentProductsAsyncTask(Context context, PaymentContext paymentContext, C2sCommunicator communicator, List<OnBasicPaymentProductsCallCompleteListener> listeners) {
 
@@ -55,7 +56,7 @@ public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, Basic
 			throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, context may not be null");
 		}
 		if (paymentContext == null ) {
-			throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, c2sContext may not be null");
+			throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, paymentContext may not be null");
 		}
 		if (communicator == null ) {
 			throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, communicator may not be null");
@@ -151,13 +152,18 @@ public class BasicPaymentProductsAsyncTask extends AsyncTask<String, Void, Basic
 
 
 	/**
-     * Interface for OnBasicPaymentProductsCallComplete listener
-     * Is called from the BasicPaymentProductsAsyncTask when it has the BasicPaymentProducts
+     * Interface for the Async task that retrieves {@link BasicPaymentProducts}.
+     * Is called from the {@link BasicPaymentProductsAsyncTask} when it has loaded the {@link BasicPaymentProducts}.
      *
-	 * @deprecated use {@link ClientApi#getPaymentProducts(Success, ApiError, Failure)} instead
+	 * @deprecated use {@link ClientApi#getPaymentProducts(Success, ApiError, Failure)} instead.
      */
 	@Deprecated
     public interface OnBasicPaymentProductsCallCompleteListener {
+		/**
+		 * Invoked when async task was successful and data is available.
+		 *
+		 * @param basicPaymentProducts the retrieved {@link BasicPaymentProducts}
+		 */
         void onBasicPaymentProductsCallComplete(BasicPaymentProducts basicPaymentProducts);
     }
 }

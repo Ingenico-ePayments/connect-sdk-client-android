@@ -20,21 +20,21 @@ import java.util.concurrent.Callable;
 
 
 /**
- * AsyncTask which loads all BasicPaymentProductGroups from the GC Gateway
+ * AsyncTask which loads all {@link BasicPaymentProductGroups} from the GC Gateway.
  *
- * @deprecated use {@link ClientApi#getPaymentProductGroups(Success, ApiError, Failure)} instead
+ * @deprecated use {@link ClientApi#getPaymentProductGroups(Success, ApiError, Failure)} instead.
  */
 
 @Deprecated
 public class BasicPaymentProductGroupsAsyncTask extends AsyncTask<String, Void, BasicPaymentProductGroups> implements Callable<BasicPaymentProductGroups> {
 
-    // The listeners that will be called by the AsyncTask when the BasicPaymentProducts are loaded
+    // The listeners that will be called by the AsyncTask when the BasicPaymentProductGroups are loaded
     private List<OnBasicPaymentProductGroupsCallCompleteListener> listeners;
 
-    // Context needed for reading stubbed BasicPaymentProducts
+    // Context needed for reading metadata which is sent to the GC gateway
     private Context context;
 
-    // Contains all the information needed to communicate with the GC gateway to get paymentproducts
+    // Contains all the information needed to communicate with the GC gateway to get BasicPaymentProductGroups
     private PaymentContext paymentContext;
 
     // Communicator which does the communication to the GC gateway
@@ -42,25 +42,26 @@ public class BasicPaymentProductGroupsAsyncTask extends AsyncTask<String, Void, 
 
 
     /**
-     * Constructor
-     * @param context, used for reading device metada which is send to the GC gateway
-     * @param paymentContext, request which contains all neccesary data for doing call to the GC gateway to get paymentproducts
-     * @param communicator, Communicator which does the communication to the GC gateway
-     * @param listeners, list of listeners which will be called by the AsyncTask when the BasicPaymentProducts are loaded
+     * Create a BasicPaymentProductGroupsAsyncTask
+     *
+     * @param context {@link Context} used for reading device metadata which is sent to the GC gateway
+     * @param paymentContext {@link PaymentContext} which contains all necessary payment data for doing a call to the GC gateway to get the {@link BasicPaymentProductGroups}
+     * @param communicator {@link C2sCommunicator} which does the communication to the GC gateway
+     * @param listeners list of {@link OnBasicPaymentProductGroupsCallCompleteListener} which will be called by the AsyncTask when the {@link BasicPaymentProductGroups} are loaded
      */
     public BasicPaymentProductGroupsAsyncTask(Context context, PaymentContext paymentContext, C2sCommunicator communicator, List<OnBasicPaymentProductGroupsCallCompleteListener> listeners) {
 
         if (context == null ) {
-            throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, context may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentProductGroupsAsyncTask, context may not be null");
         }
         if (paymentContext == null ) {
-            throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, c2sContext may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentProductGroupsAsyncTask, paymentContext may not be null");
         }
         if (communicator == null ) {
-            throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, communicator may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentProductGroupsAsyncTask, communicator may not be null");
         }
         if (listeners == null ) {
-            throw new IllegalArgumentException("Error creating BasicPaymentProductsAsyncTask, listeners may not be null");
+            throw new IllegalArgumentException("Error creating BasicPaymentProductGroupsAsyncTask, listeners may not be null");
         }
 
         this.context = context;
@@ -97,13 +98,18 @@ public class BasicPaymentProductGroupsAsyncTask extends AsyncTask<String, Void, 
     }
 
     /**
-     * Interface for OnPaymentProductGroupsCallComplete listener
-     * Is called from the BasicPaymentProductGroupsAsyncTask when it has the BasicPaymentProductGroups
+     * Interface for the Async task that retrieves {@link BasicPaymentProductGroups}.
+     * Is called from the {@link BasicPaymentProductGroupsAsyncTask} when it has loaded the {@link BasicPaymentProductGroups}.
      *
-     * @deprecated use {@link ClientApi#getPaymentProductGroups(Success, ApiError, Failure)} instead
+     * @deprecated use {@link ClientApi#getPaymentProductGroups(Success, ApiError, Failure)} instead.
      */
     @Deprecated
     public interface OnBasicPaymentProductGroupsCallCompleteListener {
+        /**
+         * Invoked when async task was successful and data is available.
+         *
+         * @param basicPaymentProductGroups the retrieved {@link BasicPaymentProductGroups}
+         */
         void onBasicPaymentProductGroupsCallComplete(BasicPaymentProductGroups basicPaymentProductGroups);
     }
 }

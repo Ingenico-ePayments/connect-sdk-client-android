@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 import java.io.Serializable;
 
 /**
- * Pojo that contains the response for IIN lookup
+ * POJO that contains the response for a converted amount.
  */
 public class ConvertedAmountResponse implements Serializable {
 

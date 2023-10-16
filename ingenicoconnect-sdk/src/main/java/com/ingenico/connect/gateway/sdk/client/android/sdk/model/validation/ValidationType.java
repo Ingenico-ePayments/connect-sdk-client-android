@@ -5,7 +5,7 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation;
 
 /**
- * Enum containing all the validation types
+ * Enum containing all the validation types.
  */
 public enum ValidationType {
 	EXPIRATIONDATE,

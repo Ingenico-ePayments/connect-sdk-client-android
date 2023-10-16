@@ -27,7 +27,7 @@ import java.util.Map.Entry;
 import java.util.Properties;
 
 /**
- * Singleton who handles all logo related functionality
+ * Singleton who handles all logo related functionality.
  *
  * @deprecated this class will be removed in the future.
  */
@@ -54,9 +54,9 @@ public class AssetManager implements OnImageLoadedListener {
 	private CacheHandler cacheHandler;
 
 	/**
-	 * Private constructor for Singleton purposes
+	 * Private constructor for Singleton purposes.
 	 *
-	 * @param context, needed for reading and writing files
+	 * @param context needed for reading and writing files
 	 */
 	private AssetManager(Context context) {
 		this.context = context;
@@ -64,10 +64,11 @@ public class AssetManager implements OnImageLoadedListener {
 	}
 
 	/**
-	 * Gets Singleton instance of this AssetManager
+	 * Gets Singleton instance of this AssetManager.
 	 *
-	 * @param context, needed for reading and writing files
-	 * @return AssetManager singleton instance
+	 * @param context needed for reading and writing files
+	 *
+	 * @return {@link AssetManager} singleton instance
 	 */
 	public static synchronized AssetManager getInstance(Context context) {
 
@@ -82,12 +83,13 @@ public class AssetManager implements OnImageLoadedListener {
 	}
 
 	/**
-	 * Retrieves a logo for the given paymentProductId
-	 * First the diskcache is checked for this logo
-	 * If it doesn't exist there, the version in the app is returned
+	 * Retrieves a logo for the given paymentProductId.
+	 * First, the diskcache is checked for this logo.
+	 * If it doesn't exist there, the version that is stored in the app is returned.
 	 *
-	 * @param paymentProductId, the paymentProductId for which the logo is returned
-	 * @return Drawable logo
+	 * @param paymentProductId the paymentProductId for which the logo should be returned
+	 *
+	 * @return Drawable logo.
 	 */
 	public Drawable getLogo(String paymentProductId) {
 
@@ -108,14 +110,15 @@ public class AssetManager implements OnImageLoadedListener {
 	}
 
 	/**
-	 * Update the logos for the given paymentProducts if there is a new version
+	 * Update the logos for the given basicPaymentItems if there is a new version.
 	 *
-	 * @param assetUrl,				the asset url for loading images
-	 * @param basicPaymentItems, 	PaymentProductSelectables for which the logo will be updated if there is a new version
+	 * @param assetUrl the asset url for loading images
+	 * @param basicPaymentItems list of basic payment items for which the logo will be updated if there is a new version
+	 * @param size can be used to retrieve images of a certain size
 	 */
 	public void updateLogos(String assetUrl, List<BasicPaymentItem> basicPaymentItems, Size size) {
 
-		// Get the map containg all logos per paymentProductId from the preferences
+		// Get the map containing all logos per paymentProductId from the preferences
 		Type listType = new TypeToken<Map<String, String>>() {}.getType();
 		Map<String, String> logoMapping = preferences.getMapFromSharedPreferences(Constants.PREFERENCES_LOGO_MAP,
 				context,
@@ -147,9 +150,9 @@ public class AssetManager implements OnImageLoadedListener {
 	}
 
 	/**
-	 * Parses the key/value map in the file LOGO_MAPPING_FILENAME to a Map containing all initial logo url per paymentproductId
+	 * Parses the key/value map in the file LOGO_MAPPING_FILENAME to a Map containing all initial logo url per paymentProductId.
 	 *
-	 * @return Map containing all logos for paymentproducts
+	 * @return Map containing all logos for paymentProducts
 	 */
 	private Map<String, String> readInitialLogoMapping() {
 
@@ -172,12 +175,12 @@ public class AssetManager implements OnImageLoadedListener {
 	}
 
 	/**
-	 * Loads an image from the products url
+	 * Loads an image from the {@link BasicPaymentItem}'s logo url.
 	 *
-	 * @param assetUrl,		the asset url for loading images
-	 * @param logoMapping, 	map containing mapping with url's and paymentproductid
-	 * @param product,     	this products image is loaded
-	 * @param size,        	can be used to retrieve images of certain size
+	 * @param assetUrl the asset url for loading images
+	 * @param logoMapping map containing mapping with url's and paymentProductId
+	 * @param product image is loaded for this {@link BasicPaymentItem}
+	 * @param size can be used to retrieve images of certain size
 	 */
 	private void getImageFromUrl(String assetUrl, Map<String, String> logoMapping, BasicPaymentItem product, Size size) {
 

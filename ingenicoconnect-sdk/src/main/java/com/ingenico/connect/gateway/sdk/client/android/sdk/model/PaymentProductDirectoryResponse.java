@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.model;
 import java.util.ArrayList;
 
 /**
- * Pojo that contains the response for PaymentProductDirectory lookup
+ * POJO that contains the response for PaymentProductDirectory lookup.
  */
 public class PaymentProductDirectoryResponse {
 
