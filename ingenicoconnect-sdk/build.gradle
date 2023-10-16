@@ -66,6 +66,8 @@ task sourcesJar(type: Jar) {
 }
 
 task javadoc(type: Javadoc) {
+    dependsOn "generateReleaseRFile"
+    dependsOn "compileReleaseKotlin"
     failOnError false
     configurations.implementation.setCanBeResolved(true)
     source = android.sourceSets.main.java.sourceFiles
