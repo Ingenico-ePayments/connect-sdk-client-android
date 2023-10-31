@@ -1,0 +1,17 @@
+com.ingenico.connect.gateway.sdk.client.android.sdk
+com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask
+com.ingenico.connect.gateway.sdk.client.android.sdk.caching
+com.ingenico.connect.gateway.sdk.client.android.sdk.communicate
+com.ingenico.connect.gateway.sdk.client.android.sdk.configuration
+com.ingenico.connect.gateway.sdk.client.android.sdk.encryption
+com.ingenico.connect.gateway.sdk.client.android.sdk.exception
+com.ingenico.connect.gateway.sdk.client.android.sdk.formatter
+com.ingenico.connect.gateway.sdk.client.android.sdk.manager
+com.ingenico.connect.gateway.sdk.client.android.sdk.model
+com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin
+com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct
+com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.displayhints
+com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.specificdata
+com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.validation
+com.ingenico.connect.gateway.sdk.client.android.sdk.model.validation
+com.ingenico.connect.gateway.sdk.client.android.sdk.session
