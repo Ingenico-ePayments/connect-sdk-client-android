@@ -77,6 +77,10 @@ public class PaymentProductField implements Serializable {
 		return type;
 	}
 
+	/**
+	 * @deprecated Will be removed in a future release.
+	 */
+	@Deprecated
 	public Boolean getUsedForLookup() {
 		return usedForLookup;
 	}

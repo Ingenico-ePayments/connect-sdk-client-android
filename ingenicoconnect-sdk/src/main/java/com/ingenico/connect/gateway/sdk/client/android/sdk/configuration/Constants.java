@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v6.1.3";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v6.1.4";
 
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
@@ -142,12 +142,31 @@ public class Constants {
 	@Deprecated
 	public final static String PAYMENTPRODUCTID_BCMC = "3012";
 
-	/** Afterpay Installments product ID **/
+	/**
+	 * Afterpay Installments product ID
+	 * @deprecated Will be removed in a future release.
+	 */
+	@Deprecated
 	public final static String PAYMENTPRODUCTID_AFTERPAY_INSTALLMENTS = "9000";
-	/** Afterpay Invoice product ID **/
+
+	/**
+	 * Afterpay Invoice product ID
+	 * @deprecated Will be removed in a future release.
+	 */
+	@Deprecated
 	public final static String PAYMENTPRODUCTID_AFTERPAY_INVOICE = "9001";
+
 	// Other relevant field ID's for Afterpay Installments
+	/**
+	 * @deprecated Will be removed in a future release.
+	 */
+	@Deprecated
 	public final static String INSTALLMENTPLAN_FIELD_ID = "installmentId";
+	
+	/**
+	 * @deprecated Will be removed in a future release.
+	 */
+	@Deprecated
 	public final static String TERMSANDCONDITIONS_FIELD_ID = "termsAndConditions";
 
 	/** Link placeholder for label texts **/
