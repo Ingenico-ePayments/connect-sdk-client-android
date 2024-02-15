@@ -7,7 +7,7 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.configuration;
 public class Constants {
 
 	/** SDK version **/
-	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v6.1.5";
+	public final static String SDK_IDENTIFIER = "AndroidClientSDK/v6.2.0";
 
 	/** SDK creator **/
 	public final static String SDK_CREATOR = "Ingenico";
@@ -33,11 +33,6 @@ public class Constants {
 	 */
 	@Deprecated
 	public final static String GC_GATEWAY_RETRIEVE_PAYMENTPRODUCT_NETWORKS_PATH = "[cid]/products/[pid]/networks";
-	/**
-	 * @deprecated Will be removed in a future release.
-	 */
-	@Deprecated
-	public final static String GC_GATEWAY_CUSTOMERDETAILS_PATH = "[cid]/products/[pid]/customerDetails";
 	/**
 	 * @deprecated Will be removed in a future release.
 	 */

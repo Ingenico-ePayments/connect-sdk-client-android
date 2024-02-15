@@ -40,6 +40,11 @@ internal class RemotePaymentProductGroupRepository : PaymentProductGroupReposito
             paymentContext.convertToNetworkRequestParameters()
         )
             .flatMap { response ->
+                response.body()?.let { paymentProductGroup ->
+                    for (field in paymentProductGroup.paymentProductFields) {
+                        field.setValidationRules()
+                    }
+                }
                 mapRetrofitResponseToNetworkResponse(response)
             }
     }

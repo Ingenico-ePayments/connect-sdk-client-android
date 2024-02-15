@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ValidationRuleExpirationDateTest {
 
-    private final ValidationRuleExpirationDate testValidationRule = new ValidationRuleExpirationDate("", ValidationType.EXPIRATIONDATE);
+    private final ValidationRuleExpirationDate testValidationRule = new ValidationRuleExpirationDate();
 
     private final Date simulatedNow = new GregorianCalendar(2018, 8, 24, 5, 53, 33).getTime();
     private final Date simulatedFutureLimit = new GregorianCalendar(2033, 11, 24, 5, 53, 33).getTime();

@@ -20,6 +20,24 @@ public class ValidationRuleBoletoBancarioRequiredness extends AbstractValidation
 
     private Integer fiscalNumberLengthToValidate;
 
+    /**
+     * @deprecated This constructor is for internal use only.
+     */
+    @Deprecated
+    public ValidationRuleBoletoBancarioRequiredness(Integer fiscalNumberLengthToValidate) {
+        super("boletobancariorequiredness", ValidationType.BOLETOBANCARIOREQUIREDNESS);
+
+        if (fiscalNumberLengthToValidate == null) {
+            throw new IllegalArgumentException("Error initialising ValidationRuleBoletoBancarioRequiredness, fiscalNumberLengthToValidate may not be null");
+        }
+
+        this.fiscalNumberLengthToValidate = fiscalNumberLengthToValidate;
+    }
+
+    /**
+     * @deprecated In a future release, this constructor will be removed.
+     */
+    @Deprecated
     public ValidationRuleBoletoBancarioRequiredness(Integer fiscalNumberLengthToValidate, String errorMessage, ValidationType type) {
         super(errorMessage, type);
 
@@ -60,7 +78,7 @@ public class ValidationRuleBoletoBancarioRequiredness extends AbstractValidation
      * @param paymentRequest the fully filled {@link PaymentRequest} that will be used for doing a payment
      *
      * @return true if the current value in the Fiscal Number field has the length that was specified in
-     * {@link #ValidationRuleBoletoBancarioRequiredness(Integer, String, ValidationType)}
+     * {@link #ValidationRuleBoletoBancarioRequiredness(Integer)}
      */
     public boolean isFieldRequired(PaymentRequest paymentRequest) {
         if (paymentRequest == null) {

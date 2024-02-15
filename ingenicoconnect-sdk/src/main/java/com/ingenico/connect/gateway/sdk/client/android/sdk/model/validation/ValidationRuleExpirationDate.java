@@ -26,6 +26,18 @@ public class ValidationRuleExpirationDate extends AbstractValidationRule {
 	private static String DATE_FORMAT_PATTERN_MONTH_YEAR = "MMyyyy";
 	private static String DATE_FORMAT_PATTERN_CENTURY = "yyyy";
 
+	/**
+	 * @deprecated This constructor is for internal use only.
+	 */
+	@Deprecated
+	public ValidationRuleExpirationDate() {
+		super("expirationDate", ValidationType.EXPIRATIONDATE);
+	}
+
+	/**
+	 * @deprecated In a future release, this constructor will be removed.
+	 */
+	@Deprecated
 	public ValidationRuleExpirationDate(String errorMessage, ValidationType type) {
 		super(errorMessage, type);
 	}

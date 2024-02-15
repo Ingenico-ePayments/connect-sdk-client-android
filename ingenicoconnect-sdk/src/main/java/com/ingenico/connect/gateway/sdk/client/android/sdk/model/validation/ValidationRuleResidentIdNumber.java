@@ -15,6 +15,18 @@ public class ValidationRuleResidentIdNumber extends AbstractValidationRule {
 
     private static final String TAG = ValidationRuleRange.class.getName();
 
+    /**
+     * @deprecated This constructor is for internal use only.
+     */
+    @Deprecated
+    public ValidationRuleResidentIdNumber() {
+        super("residentIdNumber", ValidationType.RESIDENTIDNUMBER);
+    }
+
+    /**
+     * @deprecated In a future release, this constructor will be removed.
+     */
+    @Deprecated
     public ValidationRuleResidentIdNumber(String errorMessage, ValidationType type) {
         super(errorMessage, type);
     }

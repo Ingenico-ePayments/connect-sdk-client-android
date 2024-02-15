@@ -25,7 +25,13 @@ public class BasicPaymentProductGroup implements BasicPaymentItem, Serializable 
     // List containing all AccountsOnFile
     private List<AccountOnFile> accountsOnFile = new ArrayList<>();
 
+    /**
+     * @deprecated In a future release, this property will be removed since it is not returned from the API.
+     */
+    @Deprecated
     private String acquirerCountry;
+    private boolean deviceFingerprintEnabled;
+    private boolean allowsInstallments;
 
 
     public String getId(){
@@ -54,7 +60,19 @@ public class BasicPaymentProductGroup implements BasicPaymentItem, Serializable 
         return displayHints;
     }
 
+    /**
+     * @deprecated In a future release, this getter will be removed since its value is not returned from the API.
+     */
+    @Deprecated
     public String getAcquirerCountry() {
         return acquirerCountry;
+    }
+
+    public boolean deviceFingerprintEnabled() {
+        return deviceFingerprintEnabled;
+    }
+
+    public boolean allowsInstallments() {
+        return allowsInstallments;
     }
 }

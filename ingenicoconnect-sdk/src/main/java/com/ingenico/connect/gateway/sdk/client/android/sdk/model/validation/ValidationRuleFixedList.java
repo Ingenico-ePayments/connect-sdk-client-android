@@ -19,6 +19,24 @@ public class ValidationRuleFixedList extends AbstractValidationRule {
 
 	private List<String> listValues;
 
+	/**
+	 * @deprecated This constructor is for internal use only.
+	 */
+	@Deprecated
+	public ValidationRuleFixedList(List<String> listValues) {
+		super("fixedList", ValidationType.FIXEDLIST);
+
+		if (listValues == null) {
+			throw new IllegalArgumentException("Error initialising ValidationRuleFixedList, listValues may not be null");
+		}
+
+		this.listValues = listValues;
+	}
+
+	/**
+	 * @deprecated In a future release, this constructor will be removed.
+	 */
+	@Deprecated
 	public ValidationRuleFixedList(List<String> listValues, String errorMessage, ValidationType type) {
 
 		super(errorMessage, type);

@@ -17,7 +17,7 @@ public abstract class AbstractValidationRule implements Serializable, Validation
 	private String messageId;
 
 	// Validationtype
-	private ValidationType type;
+	private ValidationType validationType;
 
 
 	public AbstractValidationRule(String messageId, ValidationType type) {
@@ -29,7 +29,7 @@ public abstract class AbstractValidationRule implements Serializable, Validation
 			throw new IllegalArgumentException("Error initialising ValidationRule, type may not be null");
 		}
 		this.messageId = messageId;
-		this.type = type;
+		this.validationType = type;
 	}
 
 
@@ -38,7 +38,7 @@ public abstract class AbstractValidationRule implements Serializable, Validation
 	}
 
 	public ValidationType getType() {
-		return type;
+		return validationType;
 	}
 
 }

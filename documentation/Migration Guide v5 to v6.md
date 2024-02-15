@@ -131,7 +131,6 @@ This is the full list of classes that have become deprecated related to the arch
 - `BasicPaymentProductGroupsAsyncTask`
 - `BasicPaymentProductsAsyncTask`
 - `ConvertAmountAsyncTask`
-- `CustomerDetailsAsyncTask`
 - `EncryptDataAsyncTask`
 - `IinLookupAsyncTask`
 - `LoadImageAsyncTask`
@@ -198,17 +197,11 @@ The following methods and constructors had their arguments or return types chang
 - Constructors in `AmountOfMoney`:
     - `AmountOfMoney(Long amount, CurrencyCode currencyCode)`
 - Methods in `Session`:
-    - `getCustomerDetails(Context context, String productId, CountryCode countryCode, List<KeyValuePair> values, OnCustomerDetailsCallCompleteListener listener)`
     - `getDirectoryForPaymentProductId(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context, OnPaymentProductDirectoryCallCompleteListener listener)`
 - Methods in `C2sCommunicator`:
-    - `getCustomerDetails(String productId, CountryCode countryCode, List<KeyValuePair> values, Context context)`
     - `getPaymentProductDirectory(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context)`
 - Constructor in `PaymentProductDirectoryAsyncTask`:
     - `PaymentProductDirectoryAsyncTask(String productId, CurrencyCode currencyCode, CountryCode countryCode, Context context, C2sCommunicator communicator, OnPaymentProductDirectoryCallCompleteListener listener)`
-- Constructor in `CustomerDetailsRequest`:
-    - `CustomerDetailsRequest(CountryCode countryCode, List<KeyValuePair> values)`
-- Method in `CustomerDetailsRequest`:
-    - `setCountryCode(CountryCode countryCode)`
 - Constructor in `PaymentItemCacheKey`:
     - `PaymentItemCacheKey(Long amount, CountryCode countryCode, CurrencyCode currencyCode, boolean isRecurring, String paymentProductId)`
 
@@ -217,8 +210,6 @@ The following getters have been marked deprecated, and should no longer be used:
 - `AmountOfMoney`:
     - `getCurrencyCodeString()`
 - `IinDetailsResponse`:
-    - `getCountryCodeString()`
-- `CustomerDetailsRequest`:
     - `getCountryCodeString()`
 - `PaymentContext`:
     - `getCountryCodeString()`

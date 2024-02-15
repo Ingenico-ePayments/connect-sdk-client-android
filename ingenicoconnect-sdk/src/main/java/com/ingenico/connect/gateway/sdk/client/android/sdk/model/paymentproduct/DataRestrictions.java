@@ -46,11 +46,11 @@ public class DataRestrictions implements Serializable {
 		validationRules.add(validationRule);
 	}
 
-	public List<AbstractValidationRule> getValidationRules() {
+	public void setValidationRules() {
 		validationRules.clear();
 
 		if (validators.getExpirationDate() != null) {
-			AbstractValidationRule validationRule = new ValidationRuleExpirationDate("expirationDate", ValidationType.EXPIRATIONDATE);
+			AbstractValidationRule validationRule = new ValidationRuleExpirationDate();
 			validationRules.add(validationRule);
 
 		}
@@ -58,26 +58,26 @@ public class DataRestrictions implements Serializable {
 		if (validators.getFixedList() != null) {
 
 			if (validators.getFixedList().getAllowedValues() != null) {
-				AbstractValidationRule validationRule = new ValidationRuleFixedList(validators.getFixedList().getAllowedValues(), "fixedList", ValidationType.FIXEDLIST);
+				AbstractValidationRule validationRule = new ValidationRuleFixedList(validators.getFixedList().getAllowedValues());
 				validationRules.add(validationRule);
 			}
 		}
 
 		if (validators.getIBAN() != null) {
-			AbstractValidationRule validationRule = new ValidationRuleIBAN("iban", ValidationType.IBAN);
+			AbstractValidationRule validationRule = new ValidationRuleIBAN();
 			validationRules.add(validationRule);
 		}
 
 		if (validators.getLength() != null) {
 
 			if (validators.getLength().getMinLength() != null && validators.getLength().getMaxLength() != null) {
-				AbstractValidationRule validationRule = new ValidationRuleLength(validators.getLength().getMinLength(), validators.getLength().getMaxLength(), "length", ValidationType.LENGTH);
+				AbstractValidationRule validationRule = new ValidationRuleLength(validators.getLength().getMinLength(), validators.getLength().getMaxLength());
 				validationRules.add(validationRule);
 			}
 		}
 
 		if (validators.getLuhn() != null) {
-			AbstractValidationRule validationRule = new ValidationRuleLuhn("luhn", ValidationType.LUHN);
+			AbstractValidationRule validationRule = new ValidationRuleLuhn();
 			validationRules.add(validationRule);
 		}
 
@@ -85,40 +85,46 @@ public class DataRestrictions implements Serializable {
 		if (validators.getRange() != null) {
 
 			if (validators.getRange().getMinValue() != null && validators.getRange().getMaxValue() != null) {
-				AbstractValidationRule validationRule = new ValidationRuleRange(validators.getRange().getMinValue(), validators.getRange().getMaxValue(), "range", ValidationType.RANGE);
+				AbstractValidationRule validationRule = new ValidationRuleRange(validators.getRange().getMinValue(), validators.getRange().getMaxValue());
 				validationRules.add(validationRule);
 			}
 		}
 
 		if (validators.getTermsAndConditions() != null) {
-			AbstractValidationRule validationRule = new ValidationRuleTermsAndConditions("termsAndConditions", ValidationType.TERMSANDCONDITIONS);
+			AbstractValidationRule validationRule = new ValidationRuleTermsAndConditions();
 			validationRules.add(validationRule);
 		}
 
 		if (validators.getRegularExpression() != null) {
 
 			if (validators.getRegularExpression().getRegularExpression() != null) {
-				AbstractValidationRule validationRule = new ValidationRuleRegex(validators.getRegularExpression().getRegularExpression(), "regularExpression", ValidationType.REGULAREXPRESSION);
+				AbstractValidationRule validationRule = new ValidationRuleRegex(validators.getRegularExpression().getRegularExpression());
 				validationRules.add(validationRule);
 			}
 		}
 
 		if (validators.getEmailAddress() != null) {
-			AbstractValidationRule validationRule = new ValidationRuleEmailAddress("emailAddress", ValidationType.EMAILADDRESS);
+			AbstractValidationRule validationRule = new ValidationRuleEmailAddress();
 			validationRules.add(validationRule);
 		}
 
 		if (validators.getBoletoBancarioRequiredness() != null) {
 
 			if (validators.getBoletoBancarioRequiredness().getFiscalNumberLength() != null) {
-				AbstractValidationRule validationRule = new ValidationRuleBoletoBancarioRequiredness(validators.getBoletoBancarioRequiredness().getFiscalNumberLength(), "boletobancariorequiredness", ValidationType.BOLETOBANCARIOREQUIREDNESS);
+				AbstractValidationRule validationRule = new ValidationRuleBoletoBancarioRequiredness(validators.getBoletoBancarioRequiredness().getFiscalNumberLength());
 				validationRules.add(validationRule);
 			}
 		}
 
 		if (validators.getResidentIdNumber() != null) {
-			AbstractValidationRule validationRule = new ValidationRuleResidentIdNumber("residentIdNumber", ValidationType.RESIDENTIDNUMBER);
+			AbstractValidationRule validationRule = new ValidationRuleResidentIdNumber();
 			validationRules.add(validationRule);
+		}
+	}
+
+	public List<AbstractValidationRule> getValidationRules() {
+		if (validationRules.isEmpty()) {
+			setValidationRules();
 		}
 
 		return validationRules;

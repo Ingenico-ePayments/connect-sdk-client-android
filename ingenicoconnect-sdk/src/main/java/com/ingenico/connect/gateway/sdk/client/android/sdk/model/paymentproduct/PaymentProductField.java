@@ -103,6 +103,10 @@ public class PaymentProductField implements Serializable {
 		return false;
 	}
 
+	public void setValidationRules() {
+		dataRestrictions.setValidationRules();
+	}
+
 	/**
 	 * Gets all error message codes for the {@link PaymentRequest}'s value.
 	 * This list is filled after doing isValid() on this field.

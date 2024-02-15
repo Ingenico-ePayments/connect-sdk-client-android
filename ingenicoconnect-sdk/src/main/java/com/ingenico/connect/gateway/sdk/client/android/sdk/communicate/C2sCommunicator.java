@@ -6,7 +6,6 @@ package com.ingenico.connect.gateway.sdk.client.android.sdk.communicate;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -16,8 +15,6 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.Constan
 import com.ingenico.connect.gateway.sdk.client.android.sdk.exception.CommunicationException;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.manager.AssetManager;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.ConvertedAmountResponse;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsRequest;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PublicKeyResponse;
@@ -28,7 +25,6 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
 
@@ -405,71 +401,6 @@ public class C2sCommunicator implements Serializable {
 				}
 			} catch (IOException e) {
 				Log.i(TAG, "Error while getting paymentProductGroup: " + e.getMessage());
-			}
-		}
-	}
-
-	/**
-	 * Retrieves Customer Details from the GC gateway.
-	 *
-	 * @param productId the product id of which the {@link CustomerDetailsResponse} should be retrieved
-	 * @param countryCode the code of the country where the customer resides
-	 * @param values list of {@link KeyValuePair} containing which details from the customer should be retrieved
-	 * @param context used for reading device metadata which is sent to the GC gateway
-	 *
-	 * @return CustomerDetailsResponse, or null when an error has occurred
-	 */
-	public CustomerDetailsResponse getCustomerDetails(String productId, String countryCode, List<KeyValuePair> values, Context context) {
-
-		if (productId == null) {
-			throw new IllegalArgumentException("Error getting CustomerDetails, productId may not be null");
-		}
-		if (countryCode == null) {
-			throw new IllegalArgumentException("Error getting CustomerDetails, countryCode may not be null");
-		}
-		if (values == null) {
-			throw new IllegalArgumentException("Error getting CustomerDetails, values may not be null");
-		}
-
-		HttpURLConnection connection = null;
-
-		try {
-
-			// Construct the url for the getCustomerDetailsCall
-			String paymentProductPath = Constants.GC_GATEWAY_CUSTOMERDETAILS_PATH.replace("[cid]", configuration.getCustomerId()).replace("[pid]", productId);
-			String url = configuration.getBaseUrl() + paymentProductPath;
-
-			// Serialise the getCustomerDetailsRequest to json, so it can be added to the postbody
-			CustomerDetailsRequest customerDetailsRequest = new CustomerDetailsRequest(countryCode, values);
-			String customerDetailsRequestJson = gson.toJson(customerDetailsRequest);
-
-			// Do the call and deserialize the result to IinDetailsResponse
-			connection = doHTTPPostRequest(url, configuration.getClientSessionId(), configuration.getMetadata(context), customerDetailsRequestJson);
-			String responseBody = new Scanner(connection.getInputStream(), StandardCharsets.UTF_8.name()).useDelimiter("\\A").next();
-
-			// Log the response
-			if (Constants.ENABLE_REQUEST_LOGGING) {
-				logResponse(connection, responseBody);
-			}
-
-			CustomerDetailsResponse customerDetailsResponse = gson.fromJson(responseBody, CustomerDetailsResponse.class);
-
-			return customerDetailsResponse;
-
-		} catch (CommunicationException e) {
-			Log.i(TAG, "Error while getting customerDetails:" + e.getMessage());
-			return null;
-		} catch (Exception e) {
-			Log.i(TAG, "Error while getting customerDetails:" + e.getMessage());
-			return null;
-		} finally {
-			try {
-				if (connection != null) {
-					connection.getInputStream().close();
-					connection.disconnect();
-				}
-			} catch (IOException e) {
-				Log.i(TAG, "Error while getting customerDetails:" + e.getMessage());
 			}
 		}
 	}

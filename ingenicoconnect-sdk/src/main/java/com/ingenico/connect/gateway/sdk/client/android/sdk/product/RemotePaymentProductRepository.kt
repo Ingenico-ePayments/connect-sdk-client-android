@@ -5,12 +5,9 @@
 package com.ingenico.connect.gateway.sdk.client.android.sdk.product
 
 import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.ConnectSDKConfiguration
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsRequest
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentContext
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.NetworkResponse
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.OkHttpClientBuilder
@@ -44,21 +41,11 @@ internal class RemotePaymentProductRepository : PaymentProductRepository {
             paymentContext.convertToNetworkRequestParameters()
         )
             .flatMap { response ->
-                mapRetrofitResponseToNetworkResponse(response)
-            }
-    }
-
-    override fun getCustomerDetails(
-        connectSDKConfiguration: ConnectSDKConfiguration,
-        paymentProductId: String,
-        countryCode: String,
-        values: List<KeyValuePair>
-    ): Observable<NetworkResponse<CustomerDetailsResponse>> {
-        return getPaymentProductService(connectSDKConfiguration).getCustomerDetails(
-            paymentProductId,
-            CustomerDetailsRequest(countryCode, values)
-        )
-            .flatMap { response ->
+                response.body()?.let { paymentProduct ->
+                    for (field in paymentProduct.paymentProductFields) {
+                        field.setValidationRules()
+                    }
+                }
                 mapRetrofitResponseToNetworkResponse(response)
             }
     }

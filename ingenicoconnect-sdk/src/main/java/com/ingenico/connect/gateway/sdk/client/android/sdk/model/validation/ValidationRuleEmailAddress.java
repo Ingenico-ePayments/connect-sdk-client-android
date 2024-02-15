@@ -17,7 +17,18 @@ public class ValidationRuleEmailAddress extends AbstractValidationRule {
 
 	private static final String EMAIL_REGEX = "[^@\\.]+(\\.[^@\\.]+)*@([^@\\.]+\\.)*[^@\\.]+\\.[^@\\.][^@\\.]+";
 
+	/**
+	 * @deprecated This constructor is for internal use only.
+	 */
+	@Deprecated
+	public ValidationRuleEmailAddress() {
+		super("emailAddress", ValidationType.EMAILADDRESS);
+	}
 
+	/**
+	 * @deprecated In a future release, this constructor will be removed.
+	 */
+	@Deprecated
 	public ValidationRuleEmailAddress(String errorMessage, ValidationType type) {
 		super(errorMessage, type);
 	}

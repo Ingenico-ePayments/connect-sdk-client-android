@@ -1,7 +1,7 @@
 {
   "attributes" : [ {
     "key" : "alias",
-    "value" : "************1111",
+    "value" : "411111XXXXXX1111",
     "status" : "READ_ONLY"
   }, {
     "key" : "firstName",
@@ -17,8 +17,12 @@
     "status" : "READ_ONLY"
   }, {
     "key" : "cardNumber",
-    "value" : "************1111",
+    "value" : "411111XXXXXX1111",
     "status" : "READ_ONLY"
+  }, {
+    "key" : "cvv",
+    "value" : "111",
+    "status" : "CAN_WRITE"
   }, {
     "key" : "expiryDate",
     "value" : "0120",

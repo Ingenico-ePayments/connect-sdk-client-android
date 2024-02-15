@@ -14,5 +14,7 @@ data class Error(
     val code: String,
     val httpStatusCode: Int,
     val id: String,
-    val message: String
+    val message: String,
+    val propertyName: String?,
+    val requestId: String?
 )

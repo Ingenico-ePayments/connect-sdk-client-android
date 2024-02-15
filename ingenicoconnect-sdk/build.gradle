@@ -13,13 +13,12 @@ plugins {
 android {
     namespace 'com.ingenico.connect.gateway.sdk.client.android.sdk'
 
-    compileSdkVersion 33
-
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 33
+        compileSdk 34
+        targetSdkVersion 34
         versionCode 1
-        versionName "1.0"
+        versionName "6.2.0"
         consumerProguardFiles 'consumer-rules.pro'
     }
 
@@ -38,58 +37,40 @@ android {
             minifyEnabled false
         }
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
-    implementation 'com.google.android.gms:play-services-wallet:19.2.0'
-    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'com.google.android.gms:play-services-wallet:19.2.1'
+    implementation 'org.apache.commons:commons-lang3:3.13.0'
 
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:5.4.0'
+    testImplementation 'org.mockito:mockito-core:5.9.0'
 
     // RX
-    implementation "io.reactivex.rxjava3:rxjava:3.1.6"
+    implementation "io.reactivex.rxjava3:rxjava:3.1.8"
     implementation "io.reactivex.rxjava3:rxkotlin:3.0.1"
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
 
     // Network
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
     implementation 'com.google.code.gson:gson:2.10.1'
 }
 
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    archiveClassifier.set("sources")
-}
-
-task javadoc(type: Javadoc) {
-    dependsOn "generateReleaseRFile"
-    dependsOn "compileReleaseKotlin"
-    failOnError false
-    configurations.implementation.setCanBeResolved(true)
-    source = android.sourceSets.main.java.sourceFiles
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    classpath += configurations.implementation
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    archiveClassifier.set("javadoc")
-    from javadoc.destinationDir
-}
-
 afterEvaluate {
-    javadoc.classpath += files(android.libraryVariants.collect { variant ->
-        variant.javaCompileProvider.get().classpath.files
-    })
     publishing {
         publications {
             mavenJava(MavenPublication) {
                 from components.release
-                artifact sourcesJar
-                artifact javadocJar
 
                 groupId = POM_GROUP_ID
                 artifactId = POM_ARTIFACT_ID

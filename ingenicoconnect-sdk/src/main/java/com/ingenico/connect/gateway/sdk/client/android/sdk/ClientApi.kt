@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable
 import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.ConnectSDKConfiguration
 import com.ingenico.connect.gateway.sdk.client.android.sdk.configuration.PaymentConfiguration
 import com.ingenico.connect.gateway.sdk.client.android.sdk.drawable.GetDrawableFromUrl
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PaymentProductDirectoryResponse
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.PublicKeyResponse
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.ThirdPartyStatus
@@ -16,14 +15,12 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.iin.IinDetailsR
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentItems
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.ApiError
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Failure
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.Success
 import com.ingenico.connect.gateway.sdk.client.android.sdk.network.extension.subscribeAndMapNetworkResponse
-import com.ingenico.connect.gateway.sdk.client.android.sdk.product.GetCustomerDetails
 import com.ingenico.connect.gateway.sdk.client.android.sdk.product.GetPaymentItems
 import com.ingenico.connect.gateway.sdk.client.android.sdk.product.GetPaymentProduct
 import com.ingenico.connect.gateway.sdk.client.android.sdk.product.GetPaymentProductDirectory
@@ -178,45 +175,6 @@ class ClientApi(
             paymentConfiguration.paymentContext,
             connectSDKConfiguration,
             paymentConfiguration.groupPaymentProducts
-        )
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeAndMapNetworkResponse(
-                { (onSuccess::success)(it) },
-                { (onApiError::apiError)(it) },
-                { (onFailure::failure)(it) }
-            )
-
-        compositeDisposable.add(disposable)
-    }
-
-    /**
-     * Gets the customer details as a [CustomerDetailsResponse] from the gateway.
-     *
-     * @param paymentProductId the paymentProductId of the product
-     *        for which the customer details need to be retrieved from the server
-     * @param countryCode the code of the country where the customer resides
-     * @param values a list of keys with a value used to retrieve the details of a customer.
-     *        Depending on the country code, different keys are required
-     * @param onSuccess calls this parameter when customer details
-     *        are successfully fetched as a [CustomerDetailsResponse]
-     * @param onApiError calls this parameter when an api error is returned by the server
-     * @param onFailure calls this parameter when an unexpected error thrown
-     */
-    @Suppress("LongParameterList")
-    fun getCustomerDetails(
-        paymentProductId: String,
-        countryCode: String,
-        values: List<KeyValuePair>,
-        onSuccess: Success<CustomerDetailsResponse>,
-        onApiError: ApiError,
-        onFailure: Failure
-    ) {
-        val disposable = GetCustomerDetails().invoke(
-            connectSDKConfiguration,
-            paymentProductId,
-            countryCode,
-            values
         )
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

@@ -76,7 +76,7 @@ public class ValidationTest {
 	public void testValidEmailAddress() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("emailAddress", emailAddressValid);
-		ValidationRuleEmailAddress rule = new ValidationRuleEmailAddress("", ValidationType.EMAILADDRESS);
+		ValidationRuleEmailAddress rule = new ValidationRuleEmailAddress();
 		assertTrue(rule.validate(paymentRequest, "emailAddress"));
 	}
 
@@ -84,7 +84,7 @@ public class ValidationTest {
 	public void testInvalidEmailAddress() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("emailAddress", emailAddressInvalid);
-		ValidationRuleEmailAddress rule = new ValidationRuleEmailAddress("", ValidationType.EMAILADDRESS);
+		ValidationRuleEmailAddress rule = new ValidationRuleEmailAddress();
 		assertFalse(rule.validate(paymentRequest, "emailAddress"));
 	}
 
@@ -94,7 +94,7 @@ public class ValidationTest {
 	public void testValidExpirationDate() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("expirationDate", expirationDateValid);
-		ValidationRuleExpirationDate rule = new ValidationRuleExpirationDate("", ValidationType.EXPIRATIONDATE);
+		ValidationRuleExpirationDate rule = new ValidationRuleExpirationDate();
 		assertTrue(rule.validate(paymentRequest, "expirationDate"));
 	}
 
@@ -102,7 +102,7 @@ public class ValidationTest {
 	public void testInvalidExpirationDate() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("expirationDate", expirationDateInvalid);
-		ValidationRuleExpirationDate rule = new ValidationRuleExpirationDate("", ValidationType.EXPIRATIONDATE);
+		ValidationRuleExpirationDate rule = new ValidationRuleExpirationDate();
 		assertFalse(rule.validate(paymentRequest, "expirationDate"));
 	}
 
@@ -130,7 +130,7 @@ public class ValidationTest {
 	public void testValidIBAN() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("IBAN", validIBAN);
-		ValidationRuleIBAN rule = new ValidationRuleIBAN("", ValidationType.IBAN);
+		ValidationRuleIBAN rule = new ValidationRuleIBAN();
 		assertTrue(rule.validate(paymentRequest, "IBAN"));
 	}
 
@@ -138,7 +138,7 @@ public class ValidationTest {
 	public void testInvalidIBAN() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("IBAN", invalidIBAN);
-		ValidationRuleIBAN rule = new ValidationRuleIBAN("", ValidationType.IBAN);
+		ValidationRuleIBAN rule = new ValidationRuleIBAN();
 		assertFalse(rule.validate(paymentRequest, "IBAN"));
 	}
 
@@ -148,7 +148,7 @@ public class ValidationTest {
 	public void testValidLength() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("length", validLength);
-		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength, "", ValidationType.LENGTH);
+		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength);
 		assertTrue(rule.validate(paymentRequest, "length"));
 	}
 
@@ -156,14 +156,14 @@ public class ValidationTest {
 	public void testValidZeroLength() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("length", "");
-		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength, "", ValidationType.LENGTH);
+		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength);
 		assertTrue(rule.validate(paymentRequest, "length"));
 	}
 
 	@Test
 	public void testValidFieldNullLength() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
-		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength, "", ValidationType.LENGTH);
+		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength);
 		assertTrue(rule.validate(paymentRequest, "length"));
 	}
 
@@ -171,7 +171,7 @@ public class ValidationTest {
 	public void testInvalidLength() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("length", invalidLength);
-		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength, "", ValidationType.LENGTH);
+		ValidationRuleLength rule = new ValidationRuleLength(minLength, maxLength);
 		assertFalse(rule.validate(paymentRequest, "length"));
 	}
 
@@ -181,7 +181,7 @@ public class ValidationTest {
 	public void testValidLuhn() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("luhn", validLuhnCheck);
-		ValidationRuleLuhn rule = new ValidationRuleLuhn("", ValidationType.LUHN);
+		ValidationRuleLuhn rule = new ValidationRuleLuhn();
 		assertTrue(rule.validate(paymentRequest, "luhn"));
 	}
 
@@ -189,7 +189,7 @@ public class ValidationTest {
 	public void testInvalidLuhn() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("luhn", invalidLuhnCheck);
-		ValidationRuleLuhn rule = new ValidationRuleLuhn("", ValidationType.LUHN);
+		ValidationRuleLuhn rule = new ValidationRuleLuhn();
 		assertFalse(rule.validate(paymentRequest, "luhn"));
 	}
 
@@ -199,7 +199,7 @@ public class ValidationTest {
 	public void testValidRange() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("range", validRange);
-		ValidationRuleRange rule = new ValidationRuleRange(minLength, maxLength, "", ValidationType.RANGE);
+		ValidationRuleRange rule = new ValidationRuleRange(minLength, maxLength);
 		assertTrue(rule.validate(paymentRequest, "range"));
 	}
 
@@ -207,7 +207,7 @@ public class ValidationTest {
 	public void testInvalidRange() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("range", invalidRange);
-		ValidationRuleRange rule = new ValidationRuleRange(minLength, maxLength,"", ValidationType.RANGE);
+		ValidationRuleRange rule = new ValidationRuleRange(minLength, maxLength);
 		assertFalse(rule.validate(paymentRequest, "range"));
 	}
 
@@ -216,7 +216,7 @@ public class ValidationTest {
 	public void testValidRegex() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("regex", validRegex);
-		ValidationRuleRegex rule = new ValidationRuleRegex(regex, "", ValidationType.RANGE);
+		ValidationRuleRegex rule = new ValidationRuleRegex(regex);
 		assertTrue(rule.validate(paymentRequest, "regex"));
 	}
 
@@ -224,7 +224,7 @@ public class ValidationTest {
 	public void testInValidRegex() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("regex", invalidRegex);
-		ValidationRuleRegex rule = new ValidationRuleRegex(regex, "", ValidationType.RANGE);
+		ValidationRuleRegex rule = new ValidationRuleRegex(regex);
 		assertFalse(rule.validate(paymentRequest, "regex"));
 	}
 
@@ -234,7 +234,7 @@ public class ValidationTest {
 	public void testValidTermsAndConditions() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("termsAndConditions", Boolean.TRUE.toString());
-		ValidationRuleTermsAndConditions rule = new ValidationRuleTermsAndConditions("", ValidationType.TERMSANDCONDITIONS);
+		ValidationRuleTermsAndConditions rule = new ValidationRuleTermsAndConditions();
 		assertTrue(rule.validate(paymentRequest, "termsAndConditions"));
 	}
 
@@ -242,7 +242,7 @@ public class ValidationTest {
 	public void testInValidTermsAndConditions() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("termsAndConditions", "test");
-		ValidationRuleTermsAndConditions rule = new ValidationRuleTermsAndConditions("", ValidationType.TERMSANDCONDITIONS);
+		ValidationRuleTermsAndConditions rule = new ValidationRuleTermsAndConditions();
 		assertFalse(rule.validate(paymentRequest, "termsAndConditions"));
 	}
 
@@ -253,7 +253,7 @@ public class ValidationTest {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("fiscalNumber", "123");
 		paymentRequest.setValue("companyName", "Ingenico ePayments");
-		ValidationRuleBoletoBancarioRequiredness rule = new ValidationRuleBoletoBancarioRequiredness(3, "", ValidationType.BOLETOBANCARIOREQUIREDNESS);
+		ValidationRuleBoletoBancarioRequiredness rule = new ValidationRuleBoletoBancarioRequiredness(3);
 		assertTrue(rule.validate(paymentRequest, "companyName"));
 	}
 
@@ -262,7 +262,7 @@ public class ValidationTest {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("fiscalNumber", "1");
 		paymentRequest.setValue("companyName", "Ingenico ePayments");
-		ValidationRuleBoletoBancarioRequiredness rule = new ValidationRuleBoletoBancarioRequiredness(3, "", ValidationType.BOLETOBANCARIOREQUIREDNESS);
+		ValidationRuleBoletoBancarioRequiredness rule = new ValidationRuleBoletoBancarioRequiredness(3);
 		assertTrue(rule.validate(paymentRequest, "companyName"));
 	}
 
@@ -271,7 +271,7 @@ public class ValidationTest {
         PaymentRequest paymentRequest = new TestPaymentRequest();
         paymentRequest.setValue("fiscalNumber", "123");
         paymentRequest.setValue("companyName", "");
-        ValidationRuleBoletoBancarioRequiredness rule = new ValidationRuleBoletoBancarioRequiredness(3, "", ValidationType.BOLETOBANCARIOREQUIREDNESS);
+        ValidationRuleBoletoBancarioRequiredness rule = new ValidationRuleBoletoBancarioRequiredness(3);
         assertFalse(rule.validate(paymentRequest, "companyName"));
     }
 
@@ -279,42 +279,42 @@ public class ValidationTest {
 	public void testRegularValue() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("residentIdNumber", "110101202011271168");
-		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber();
 		assertTrue(rule.validate(paymentRequest, "residentIdNumber"));
 	}
 
 	public void testValueEndingInX() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("residentIdNumber", "11010120201127836X");
-		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber();
 		assertTrue(rule.validate(paymentRequest, "residentIdNumber"));
 	}
 
 	public void testValueOfLenght15() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("residentIdNumber", "110101202011271");
-		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber();
 		assertTrue(rule.validate(paymentRequest, "residentIdNumber"));
 	}
 
 	public void testValueOfLenght16() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("residentIdNumber", "1101012020112711");
-		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber();
 		assertFalse(rule.validate(paymentRequest, "residentIdNumber"));
 	}
 
 	public void testValueContainingLetterLength15() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("residentIdNumber", "1101012a2011271");
-		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber();
 		assertFalse(rule.validate(paymentRequest, "residentIdNumber"));
 	}
 
 	public void testValueContainingLetterLength18() {
 		PaymentRequest paymentRequest = new TestPaymentRequest();
 		paymentRequest.setValue("residentIdNumber", "1a0101202011271168");
-		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber("", ValidationType.RESIDENTIDNUMBER);
+		ValidationRuleResidentIdNumber rule = new ValidationRuleResidentIdNumber();
 		assertFalse(rule.validate(paymentRequest, "residentIdNumber"));
 	}
 

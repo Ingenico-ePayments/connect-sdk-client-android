@@ -454,4 +454,36 @@ public class StringFormatter implements Serializable {
 		return result;
 	}
 
+	/**
+	 * Relaxes the given mask, meaning it will also mask characters not corresponding to the initial mask.
+	 *
+	 * @param mask the mask that should be relaxed
+	 *
+	 * @return the relaxed mask
+	 */
+	public String relaxMask(String mask) {
+		boolean replaceCharacters = false;
+		StringBuilder relaxedMask = new StringBuilder();
+
+		// loop over the mask characters
+		for(int i = 0; i < mask.length(); i++){
+			Character maskCharacter = mask.charAt(i);
+			if (maskCharacter.equals('}')) {
+				replaceCharacters = false;
+				relaxedMask.append("}");
+			} else if (maskCharacter.equals('{')) {
+				replaceCharacters = true;
+				relaxedMask.append("{");
+			} else {
+				// if between {{ and }}, replace the character with a *
+				if (replaceCharacters) {
+					relaxedMask.append("*");
+				} else {
+					relaxedMask.append(" ");
+				}
+			}
+		}
+
+		return relaxedMask.toString();
+	}
 }

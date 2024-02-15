@@ -225,4 +225,31 @@ public class PaymentRequestTest {
             request.setValue(entry.getKey(), entry.getValue());
         }
     }
+
+    @Test
+    public void testMaskedValue() {
+        PaymentRequest validVisaValuesRequest = new PaymentRequest();
+        setValuesInRequest(allValidValuesVisa, validVisaValuesRequest);
+        validVisaValuesRequest.setPaymentProduct(paymentProductVisa);
+
+        assertEquals(validVisaValuesRequest.getValue("cardNumber"), "4012000033330026");
+
+        String maskedCardNumber = validVisaValuesRequest.getMaskedValue("cardNumber");
+
+        assertEquals(maskedCardNumber, "4012 0000 3333 0026 ");
+    }
+
+    @Test
+    public void testUnmaskedValue() {
+        PaymentRequest validVisaValuesRequest = new PaymentRequest();
+        validVisaValuesRequest.setPaymentProduct(paymentProductVisa);
+        validVisaValuesRequest.setValue("cardNumber", "4012 0000 3333 0026");
+        validVisaValuesRequest.setValue("expiryDate", "1240");
+        validVisaValuesRequest.setValue("cvv", "123");
+
+        assertEquals(validVisaValuesRequest.getValue("cardNumber"), "4012 0000 3333 0026");
+        String unmaskedCardNumber = validVisaValuesRequest.getUnmaskedValue("cardNumber");
+
+        assertEquals(unmaskedCardNumber, "4012000033330026");
+    }
 }

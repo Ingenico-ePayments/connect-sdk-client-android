@@ -13,8 +13,6 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymen
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.BasicPaymentProductsAsyncTask.OnBasicPaymentProductsCallCompleteListener;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.ConvertAmountAsyncTask;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.CustomerDetailsAsyncTask;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.CustomerDetailsAsyncTask.OnCustomerDetailsCallCompleteListener;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.IinLookupAsyncTask;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.IinLookupAsyncTask.OnIinLookupCompleteListener;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.asynctask.PaymentProductAsyncTask;
@@ -35,7 +33,6 @@ import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroup;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProductGroups;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.BasicPaymentProducts;
-import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.KeyValuePair;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentItem;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProduct;
 import com.ingenico.connect.gateway.sdk.client.android.sdk.model.paymentproduct.PaymentProductGroup;
@@ -305,34 +302,6 @@ public class Session implements OnBasicPaymentProductsCallCompleteListener, OnIi
 			PaymentProductGroupAsyncTask task = new PaymentProductGroupAsyncTask(context, groupId, paymentContext, communicator, listeners);
 			task.execute();
 		}
-	}
-
-	/**
-	 * Gets the CustomerDetails as a {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse} from the GC gateway.
-	 *
-	 * @param context used for reading device metadata which is sent to the GC gateway
-	 * @param productId the product id of which the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse} should be retrieved
-	 * @param countryCode the code of the country where the customer resides
-	 * @param values list of {@link KeyValuePair} containing which details from the customer should be retrieved
-	 * @param listener {@link OnCustomerDetailsCallCompleteListener} that will be called when the {@link com.ingenico.connect.gateway.sdk.client.android.sdk.model.CustomerDetailsResponse} is retrieved
-	 */
-	public void getCustomerDetails(Context context, String productId, String countryCode, List<KeyValuePair> values, OnCustomerDetailsCallCompleteListener listener) {
-
-		if (context == null) {
-			throw new IllegalArgumentException("Error getting customerDetails, context may not be null");
-		}
-		if (productId == null) {
-			throw new IllegalArgumentException("Error getting customerDetails, productId may not be null");
-		}
-		if (countryCode == null) {
-			throw new IllegalArgumentException("Error getting customerDetails, countryCode may not be null");
-		}
-		if (values == null) {
-			throw new IllegalArgumentException("Error getting customerDetails, values may not be null");
-		}
-
-		CustomerDetailsAsyncTask task = new CustomerDetailsAsyncTask(context, productId, countryCode, values, communicator, listener);
-		task.execute();
 	}
 
 	/**

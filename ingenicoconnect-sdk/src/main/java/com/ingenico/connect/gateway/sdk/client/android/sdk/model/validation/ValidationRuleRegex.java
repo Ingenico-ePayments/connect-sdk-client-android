@@ -17,6 +17,24 @@ public class ValidationRuleRegex extends AbstractValidationRule {
 
 	private String regex;
 
+	/**
+	 * @deprecated This constructor is for internal use only.
+	 */
+	@Deprecated
+	public ValidationRuleRegex(String regex) {
+		super("regularExpression", ValidationType.REGULAREXPRESSION);
+
+		if (regex == null) {
+			throw new IllegalArgumentException("Error initialising ValidationRuleRegex, regex may not be null");
+		}
+
+		this.regex = regex;
+	}
+
+	/**
+	 * @deprecated In a future release, this constructor will be removed.
+	 */
+	@Deprecated
 	public ValidationRuleRegex(String regex, String errorMessage, ValidationType type) {
 		super(errorMessage, type);
 
