@@ -1,5 +1,9 @@
 ## Ingenico Connect - Android SDK
 
+**This SDK has been rebranded to Worldline. As part of the rebranding the SDK has moved to https://github.com/Worldline-Global-Collect/connect-sdk-client-android.**
+
+---
+
 The Ingenico Connect Android SDK provides a convenient way to support a large number of payment methods inside your Android app.
 It supports Lollipop (Api version 21) and up out-of-the box.
 The Android SDK comes with an [example application](https:/github.com/Ingenico-ePayments/connect-sdk-client-android-example-kotlin) that illustrates the use of the SDK and the services provided by Ingenico ePayments on the Ingenico ePayments platform.
